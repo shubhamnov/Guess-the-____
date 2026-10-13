@@ -77,7 +77,7 @@ The Daily Mix and Guess the Flag games use locally cached flag images under `ass
 
 ## Guess the Cuisine
 
-- The first 10 questions are in `catalogs/cuisines-v1.json`, with a 100-question target.
+- The first 20 questions are in `catalogs/cuisines-v1.json`, with a 100-question target. Questions are in two curated batches of 10.
 - The standalone game is at `guess-the-cuisine/index.html`.
 - Cuisine photos are optimized into local WebP files under `assets/cuisines/`; creator, license, original image source and fact-source metadata are retained.
-- The first 10 questions remain drafts until image rendering is checked in the published GitHub Pages site.
+- All 20 questions remain drafts until image rendering is checked in the published GitHub Pages site.
