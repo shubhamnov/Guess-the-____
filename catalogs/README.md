@@ -81,3 +81,12 @@ The Daily Mix and Guess the Flag games use locally cached flag images under `ass
 - The standalone game is at `guess-the-cuisine/index.html`.
 - Cuisine photos are optimized into local WebP files under `assets/cuisines/`; creator, license, original image source and fact-source metadata are retained.
 - All 20 questions remain drafts until image rendering is checked in the published GitHub Pages site.
+
+
+## Consistent gameplay
+
+- Clicking a category tile opens directly into an active round; individual game pages do not show a separate mode picker.
+- Correct and incorrect answers provide audio feedback and then advance automatically.
+- The Daily Mix entry point lives on the homepage. Brand Logos has a single **Play** mode; it no longer offers a separate Daily Mix option.
+- Landmark answer choices include the country in parentheses, for example `Eiffel Tower (France)`.
+- Daily Mix remains its own date-based, 14-question challenge. Its immutable question and logo snapshots are unchanged.
