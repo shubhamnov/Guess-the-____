@@ -75,13 +75,13 @@ function shuffle(items){const a=items.slice();for(let i=a.length-1;i>0;i--){cons
 function chooseQuestion(){if(used.size>=BRANDS.length)used.clear();const remaining=BRANDS.filter(b=>!used.has(b));current=remaining[Math.floor(Math.random()*remaining.length)];used.add(current.name);const distractors=shuffle(BRANDS.filter(b=>b.name!==current.name)).slice(0,3);return shuffle([current].concat(distractors))}
 function renderQuestion(){
  if(!running)return;
+ const options=chooseQuestion();
  locked=false;roundNumber++;$('round').textContent='LOGO '+roundNumber;$('feedback').textContent='';$('feedback').className='feedback';
  const clue=$('clue');clue.innerHTML='';
  const img=document.createElement('img');img.className='logo-image';img.alt='Mystery brand logo';img.src='https://cdn.simpleicons.org/'+current.slug;img.loading='eager';img.decoding='async';
- img.addEventListener('error',function(){if(!running||clue.containsFallback)return;clue.innerHTML='<span class="logo-fallback" aria-hidden="true">?</span>'});
+ img.addEventListener('error',function(){if(!running||!clue.contains(img))return;clue.innerHTML='<span class="logo-fallback" aria-hidden="true">?</span>'});
  clue.appendChild(img);
  $('answers').innerHTML='';
- const options=chooseOptionsForCurrent();
  options.forEach(brand=>{const btn=document.createElement('button');btn.type='button';btn.className='answer';btn.textContent=brand.name;btn.addEventListener('click',()=>answer(brand,btn));$('answers').appendChild(btn)});
 }
 function chooseOptionsForCurrent(){const others=shuffle(BRANDS.filter(b=>b.name!==current.name)).slice(0,3);return shuffle([current].concat(others))}
