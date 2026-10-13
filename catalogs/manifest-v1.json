@@ -134,8 +134,8 @@
       "category": "gameplay",
       "version": 1,
       "change": "Standardized category entry to start each game immediately; added correct/incorrect audio feedback and automatic progression to the photo quizzes; added country names to landmark answer options; simplified Brand Logos to one Play mode and removed its duplicate Daily Mix entry.",
-      "validation": "All category pages contain direct-start calls; landmark option labels cover all 77 unique answer choices; photo quiz answers retain raw IDs for scoring; Daily Mix page and immutable snapshots were not modified.",
-      "commit": "d72a142e100b725d760959c3c6548fe93f0b70ba"
+      "validation": "All category pages auto-start on entry. Brand Logos has one Play mode and no Daily Mix option. Landmark answer labels include countries; photo quizzes play answer sounds and auto-advance. The GitHub Pages build succeeded; visual browser verification remains separate.",
+      "commit": "0e33442bc10cba3d9d1fbaa07d5820226be63ca3"
     },
     {
       "date": "2026-10-13",
@@ -144,6 +144,14 @@
       "change": "Expanded the cuisine catalog from 10 to 20 curated questions with a second batch of 10 dishes, source/license attribution, fact references and local WebP paths.",
       "validation": "20 unique IDs, four distinct options per question, correct answer appears exactly once, and all records retain source, creator, license and fact-source metadata. New image caching workflow is running.",
       "commit": "3779e2d3ec200e43ab2cfcdb403c7a4a148ff886"
+    },
+    {
+      "date": "2026-10-13",
+      "category": "cuisines",
+      "version": 1,
+      "change": "Completed local photo caching for the 20-question cuisine catalog.",
+      "validation": "All 20 photo files are stored as local WebP assets (about 1.69 MB total); the caching workflow succeeded. Questions remain drafts until the published photos are visually checked.",
+      "commit": "985507b2ca1722b8876e1b5649025e1c81a7a16e"
     }
   ]
 }
