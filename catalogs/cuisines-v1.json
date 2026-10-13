@@ -4,13 +4,14 @@
   "title": "Guess the Cuisine",
   "version": 1,
   "targetQuestions": 100,
-  "batch": 3,
+  "batch": 4,
   "batchSize": 10,
   "createdAt": "2026-10-13",
   "notes": [
-    "Cuisine photos are stored in the repository as locally optimized WebP files so gameplay does not fetch each photo from Wikimedia Commons.",
-    "Each image retains sourcePage, sourceUrl, cachedSourceUrl, creator, and license metadata. If sourceUrl changes, the cache refreshes that local WebP.",
-    "Photo rendering in the published GitHub Pages site must still be checked before questions are marked approved."
+    "First 40 questions curated toward the 100-question v1 target, in four batches of 10.",
+    "Question order and answer choices are randomized each round.",
+    "Approved questions have passed published browser image-load tests and manual photo-to-answer review. New batch records stay in draft until their local photos are cached, tested and visually checked.",
+    "Photos are optimized into local WebP assets with source page, source URL, cached source URL, creator, license, explanation and fact-source metadata."
   ],
   "questions": [
     {
@@ -732,6 +733,236 @@
       "factSource": "https://en.wikipedia.org/wiki/Poutine",
       "difficulty": "easy",
       "status": "approved"
+    },
+    {
+      "id": "cuisine_031",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "../assets/cuisines/cuisine_031.webp",
+        "path": "assets/cuisines/cuisine_031.webp",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Baklava_1.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Baklava_1.jpg?width=1200",
+        "creator": "Challiyan",
+        "license": "CC BY-SA 4.0"
+      },
+      "options": [
+        "Baklava",
+        "Knafeh",
+        "Halva",
+        "Lokum"
+      ],
+      "answer": "Baklava",
+      "explanation": "Baklava is a layered pastry made with thin filo dough, chopped nuts and syrup or honey, popular across parts of the Middle East and Mediterranean.",
+      "factSource": "https://en.wikipedia.org/wiki/Baklava",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_032",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "../assets/cuisines/cuisine_032.webp",
+        "path": "assets/cuisines/cuisine_032.webp",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Japanese_curry_rice.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Japanese_curry_rice.jpg?width=1200",
+        "creator": "Donghun Kim",
+        "license": "CC BY 2.0"
+      },
+      "options": [
+        "Japanese curry rice",
+        "Biryani",
+        "Nasi lemak",
+        "Bibimbap"
+      ],
+      "answer": "Japanese curry rice",
+      "explanation": "Japanese curry rice pairs a thick, mildly spiced curry sauce—often with vegetables and meat—with steamed rice.",
+      "factSource": "https://en.wikipedia.org/wiki/Japanese_curry",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_033",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "../assets/cuisines/cuisine_033.webp",
+        "path": "assets/cuisines/cuisine_033.webp",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Onigiri_001.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Onigiri_001.jpg?width=1200",
+        "creator": "Ocdp",
+        "license": "CC0 1.0"
+      },
+      "options": [
+        "Onigiri",
+        "Sushi",
+        "Mochi",
+        "Bao buns"
+      ],
+      "answer": "Onigiri",
+      "explanation": "Onigiri are Japanese rice balls, often shaped by hand or in moulds and commonly wrapped in nori, with savoury fillings.",
+      "factSource": "https://en.wikipedia.org/wiki/Onigiri",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_034",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "../assets/cuisines/cuisine_034.webp",
+        "path": "assets/cuisines/cuisine_034.webp",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Butter_Chicken_(2447373994).jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Butter_Chicken_(2447373994).jpg?width=1200",
+        "creator": "Mack Male",
+        "license": "CC BY-SA 2.0"
+      },
+      "options": [
+        "Butter chicken",
+        "Chicken tikka masala",
+        "Tandoori chicken",
+        "Chicken korma"
+      ],
+      "answer": "Butter chicken",
+      "explanation": "Butter chicken is an Indian curry featuring chicken in a creamy tomato-based sauce seasoned with spices.",
+      "factSource": "https://en.wikipedia.org/wiki/Butter_chicken",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_035",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "../assets/cuisines/cuisine_035.webp",
+        "path": "assets/cuisines/cuisine_035.webp",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Peking_Duck.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Peking_Duck.jpg?width=1200",
+        "creator": "Danrah",
+        "license": "CC BY-SA 4.0"
+      },
+      "options": [
+        "Peking duck",
+        "Char siu",
+        "Roast goose",
+        "Crispy pork belly"
+      ],
+      "answer": "Peking duck",
+      "explanation": "Peking duck is a celebrated Beijing dish known for crisp skin and is traditionally served with thin pancakes and accompaniments.",
+      "factSource": "https://en.wikipedia.org/wiki/Peking_duck",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_036",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "../assets/cuisines/cuisine_036.webp",
+        "path": "assets/cuisines/cuisine_036.webp",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Churros.jpeg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Churros.jpeg?width=1200",
+        "creator": "Managementboy",
+        "license": "CC BY-SA 3.0"
+      },
+      "options": [
+        "Churros",
+        "Beignets",
+        "Loukoumades",
+        "Zeppole"
+      ],
+      "answer": "Churros",
+      "explanation": "Churros are ridged fried-dough pastries commonly served with sugar and sometimes dipped in thick hot chocolate.",
+      "factSource": "https://en.wikipedia.org/wiki/Churro",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_037",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "../assets/cuisines/cuisine_037.webp",
+        "path": "assets/cuisines/cuisine_037.webp",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:2023-01-02_Borscht.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2023-01-02_Borscht.jpg?width=1200",
+        "creator": "Maksym Kozlenko",
+        "license": "CC BY-SA 4.0"
+      },
+      "options": [
+        "Borscht",
+        "Gazpacho",
+        "Minestrone",
+        "Tom yum"
+      ],
+      "answer": "Borscht",
+      "explanation": "Borscht is a soup associated especially with Ukraine and other Eastern European cuisines, often recognized by its beetroot-red colour.",
+      "factSource": "https://en.wikipedia.org/wiki/Borscht",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_038",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "../assets/cuisines/cuisine_038.webp",
+        "path": "assets/cuisines/cuisine_038.webp",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Banh_mi_sandwich.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Banh_mi_sandwich.jpg?width=1200",
+        "creator": "jeffreyw",
+        "license": "CC BY 2.0"
+      },
+      "options": [
+        "Bánh mì",
+        "Shawarma",
+        "Submarine sandwich",
+        "Katsu sando"
+      ],
+      "answer": "Bánh mì",
+      "explanation": "Bánh mì is a Vietnamese sandwich typically served in a crisp baguette with savoury fillings, pickled vegetables, herbs and condiments.",
+      "factSource": "https://en.wikipedia.org/wiki/B%C3%A1nh_m%C3%AC",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_039",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "../assets/cuisines/cuisine_039.webp",
+        "path": "assets/cuisines/cuisine_039.webp",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Egyptian_Koshari.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Egyptian_Koshari.jpg?width=1200",
+        "creator": "Basma",
+        "license": "CC BY-SA 4.0"
+      },
+      "options": [
+        "Koshari",
+        "Jollof rice",
+        "Paella",
+        "Kedgeree"
+      ],
+      "answer": "Koshari",
+      "explanation": "Koshari is an Egyptian street-food dish combining rice, lentils and pasta, commonly topped with fried onions and tomato sauce.",
+      "factSource": "https://en.wikipedia.org/wiki/Koshary",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_040",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "../assets/cuisines/cuisine_040.webp",
+        "path": "assets/cuisines/cuisine_040.webp",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Udon_by_udono.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Udon_by_udono.jpg?width=1200",
+        "creator": "udono",
+        "license": "CC BY 2.0"
+      },
+      "options": [
+        "Udon",
+        "Soba",
+        "Ramen",
+        "Pho"
+      ],
+      "answer": "Udon",
+      "explanation": "Udon are thick Japanese wheat noodles, often served in a hot broth with toppings such as scallions, tofu or tempura.",
+      "factSource": "https://en.wikipedia.org/wiki/Udon",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
     }
   ]
 }
