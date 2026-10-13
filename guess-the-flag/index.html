@@ -276,7 +276,7 @@ $('shareBtn').addEventListener('click',()=>shareScoreImage({
   secondLabel:'BEST STREAK',secondValue:String(bestStreakThisGame),
   challenge:'60 seconds. 195 flags. Your turn.',
   shareTitle:'My Flags score',shareText:'I scored '+score+' in Guess the Flag — Flags. Can you beat me?',
-  filename:'flag-rush-score.png',url:'guess-the-____'
+  filename:'guess-the-flags-score.png',url:'guess-the-____'
 }));
 document.addEventListener('visibilitychange',()=>{if(document.hidden&&running){/* The clock intentionally keeps running. */}});
 if(COUNTRIES.length!==195)console.warn('Expected 195 countries; found',COUNTRIES.length);
