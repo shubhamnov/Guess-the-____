@@ -65,10 +65,10 @@
   </section>
   <footer class="footer"><span>GUESS THE ?</span><a class="creator-credit" href="https://github.com/shubhamnov" target="_blank" rel="noopener noreferrer">MADE BY SHUBHAM ↗</a></footer>
 </main>
-<script src="./brand-logos-easy.js"></script>
+<script src="./brand-logos-preview.js"></script>
 <script>
 (function(){
- const logos=window.BRAND_LOGOS||[];
+ const logos=window.BRAND_LOGOS_PREVIEW||[];
  document.querySelectorAll('.brand-visual [data-preview-slug]').forEach(img=>{
   const item=logos.find(x=>x.slug===img.dataset.previewSlug);
   if(item)img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(item.svg);
