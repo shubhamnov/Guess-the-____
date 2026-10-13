@@ -1,0 +1,1262 @@
+[
+  {
+    "name": "Instagram",
+    "slug": "instagram",
+    "difficulty": "Easy"
+  },
+  {
+    "name": "Target",
+    "slug": "target",
+    "difficulty": "Easy"
+  },
+  {
+    "name": "Puma",
+    "slug": "puma",
+    "difficulty": "Easy"
+  },
+  {
+    "name": "Ferrari",
+    "slug": "ferrari",
+    "difficulty": "Easy"
+  },
+  {
+    "name": "Honda",
+    "slug": "honda",
+    "difficulty": "Easy"
+  },
+  {
+    "name": "Hyundai",
+    "slug": "hyundai",
+    "difficulty": "Easy"
+  },
+  {
+    "name": "Snapchat",
+    "slug": "snapchat",
+    "difficulty": "Easy"
+  },
+  {
+    "name": "Pinterest",
+    "slug": "pinterest",
+    "difficulty": "Easy"
+  },
+  {
+    "name": "Zoom",
+    "slug": "zoom",
+    "difficulty": "Easy"
+  },
+  {
+    "name": "Sony",
+    "slug": "sony",
+    "difficulty": "Easy"
+  },
+  {
+    "name": "Dell",
+    "slug": "dell",
+    "difficulty": "Easy"
+  },
+  {
+    "name": "HP",
+    "slug": "hp",
+    "difficulty": "Easy"
+  },
+  {
+    "name": "Porsche",
+    "slug": "porsche",
+    "difficulty": "Easy"
+  },
+  {
+    "name": "Android",
+    "slug": "android",
+    "difficulty": "Easy"
+  },
+  {
+    "name": "Firefox",
+    "slug": "firefox",
+    "difficulty": "Easy"
+  },
+  {
+    "name": "Discord",
+    "slug": "discord",
+    "difficulty": "Easy"
+  },
+  {
+    "name": "Twitch",
+    "slug": "twitch",
+    "difficulty": "Easy"
+  },
+  {
+    "name": "Vimeo",
+    "slug": "vimeo",
+    "difficulty": "Easy"
+  },
+  {
+    "name": "SoundCloud",
+    "slug": "soundcloud",
+    "difficulty": "Easy"
+  },
+  {
+    "name": "Ducati",
+    "slug": "ducati",
+    "difficulty": "Easy"
+  },
+  {
+    "name": "The North Face",
+    "slug": "thenorthface",
+    "difficulty": "Easy"
+  },
+  {
+    "name": "Cisco",
+    "slug": "cisco",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Lenovo",
+    "slug": "lenovo",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "ASUS",
+    "slug": "asus",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Acer",
+    "slug": "acer",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Razer",
+    "slug": "razer",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Xiaomi",
+    "slug": "xiaomi",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Huawei",
+    "slug": "huawei",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "OPPO",
+    "slug": "oppo",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "OnePlus",
+    "slug": "oneplus",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Motorola",
+    "slug": "motorola",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Nokia",
+    "slug": "nokia",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "AMD",
+    "slug": "amd",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Qualcomm",
+    "slug": "qualcomm",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Seagate",
+    "slug": "seagate",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Volkswagen",
+    "slug": "volkswagen",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Audi",
+    "slug": "audi",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Volvo",
+    "slug": "volvo",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Renault",
+    "slug": "renault",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Peugeot",
+    "slug": "peugeot",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Škoda",
+    "slug": "skoda",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Kia",
+    "slug": "kia",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Mazda",
+    "slug": "mazda",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Nissan",
+    "slug": "nissan",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Jeep",
+    "slug": "jeep",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Chevrolet",
+    "slug": "chevrolet",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Ford",
+    "slug": "ford",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Subaru",
+    "slug": "subaru",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Mitsubishi",
+    "slug": "mitsubishi",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Mahindra",
+    "slug": "mahindra",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Air India",
+    "slug": "airindia",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "IndiGo",
+    "slug": "indigo",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Emirates",
+    "slug": "emirates",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Qatar Airways",
+    "slug": "qatarairways",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Singapore Airlines",
+    "slug": "singaporeairlines",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Lufthansa",
+    "slug": "lufthansa",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "British Airways",
+    "slug": "britishairways",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "American Airlines",
+    "slug": "americanairlines",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Delta Air Lines",
+    "slug": "delta",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Qantas",
+    "slug": "qantas",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Expedia",
+    "slug": "expedia",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Tripadvisor",
+    "slug": "tripadvisor",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Yelp",
+    "slug": "yelp",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Lyft",
+    "slug": "lyft",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Grab",
+    "slug": "grab",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "DoorDash",
+    "slug": "doordash",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Uber Eats",
+    "slug": "ubereats",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Swiggy",
+    "slug": "swiggy",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Zomato",
+    "slug": "zomato",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Paytm",
+    "slug": "paytm",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "PhonePe",
+    "slug": "phonepe",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Stripe",
+    "slug": "stripe",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Wise",
+    "slug": "wise",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Revolut",
+    "slug": "revolut",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "American Express",
+    "slug": "americanexpress",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Chase",
+    "slug": "chase",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "HSBC",
+    "slug": "hsbc",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "CNN",
+    "slug": "cnn",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "The Guardian",
+    "slug": "theguardian",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Uniqlo",
+    "slug": "uniqlo",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Under Armour",
+    "slug": "underarmour",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Reebok",
+    "slug": "reebok",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "New Balance",
+    "slug": "newbalance",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Garmin",
+    "slug": "garmin",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Strava",
+    "slug": "strava",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Air Canada",
+    "slug": "aircanada",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Ryanair",
+    "slug": "ryanair",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "easyJet",
+    "slug": "easyjet",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "AirAsia",
+    "slug": "airasia",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Etsy",
+    "slug": "etsy",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "AliExpress",
+    "slug": "aliexpress",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Bose",
+    "slug": "bose",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "JBL",
+    "slug": "jbl",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "DJI",
+    "slug": "dji",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "Fitbit",
+    "slug": "fitbit",
+    "difficulty": "Medium"
+  },
+  {
+    "name": "GitLab",
+    "slug": "gitlab",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Bitbucket",
+    "slug": "bitbucket",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Stack Overflow",
+    "slug": "stackoverflow",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Quora",
+    "slug": "quora",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Medium",
+    "slug": "medium",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Substack",
+    "slug": "substack",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "WordPress",
+    "slug": "wordpress",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Wikipedia",
+    "slug": "wikipedia",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Notion",
+    "slug": "notion",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Figma",
+    "slug": "figma",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Sketch",
+    "slug": "sketch",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Framer",
+    "slug": "framer",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Webflow",
+    "slug": "webflow",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Shopify",
+    "slug": "shopify",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "HubSpot",
+    "slug": "hubspot",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Zendesk",
+    "slug": "zendesk",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Atlassian",
+    "slug": "atlassian",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Trello",
+    "slug": "trello",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Asana",
+    "slug": "asana",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "ClickUp",
+    "slug": "clickup",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Linear",
+    "slug": "linear",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Anthropic",
+    "slug": "anthropic",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Perplexity",
+    "slug": "perplexity",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Hugging Face",
+    "slug": "huggingface",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Zapier",
+    "slug": "zapier",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "IFTTT",
+    "slug": "ifttt",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Cloudflare",
+    "slug": "cloudflare",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Vercel",
+    "slug": "vercel",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Netlify",
+    "slug": "netlify",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "DigitalOcean",
+    "slug": "digitalocean",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Google Cloud",
+    "slug": "googlecloud",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Firebase",
+    "slug": "firebase",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "MongoDB",
+    "slug": "mongodb",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "PostgreSQL",
+    "slug": "postgresql",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "MySQL",
+    "slug": "mysql",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Redis",
+    "slug": "redis",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Kubernetes",
+    "slug": "kubernetes",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Docker",
+    "slug": "docker",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Terraform",
+    "slug": "terraform",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Databricks",
+    "slug": "databricks",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Snowflake",
+    "slug": "snowflake",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "SAP",
+    "slug": "sap",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Signal",
+    "slug": "signal",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "WeChat",
+    "slug": "wechat",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "LINE",
+    "slug": "line",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Viber",
+    "slug": "viber",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Mastodon",
+    "slug": "mastodon",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Threads",
+    "slug": "threads",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Bluesky",
+    "slug": "bluesky",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Tumblr",
+    "slug": "tumblr",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Flickr",
+    "slug": "flickr",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Deezer",
+    "slug": "deezer",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Tidal",
+    "slug": "tidal",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Apple Music",
+    "slug": "applemusic",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Max",
+    "slug": "hbo",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Paramount+",
+    "slug": "paramountplus",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Crunchyroll",
+    "slug": "crunchyroll",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Steam",
+    "slug": "steam",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Epic Games",
+    "slug": "epicgames",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Roblox",
+    "slug": "roblox",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Fortnite",
+    "slug": "fortnite",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Riot Games",
+    "slug": "riotgames",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "League of Legends",
+    "slug": "leagueoflegends",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Valorant",
+    "slug": "valorant",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Klarna",
+    "slug": "klarna",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Adyen",
+    "slug": "adyen",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Cash App",
+    "slug": "cashapp",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Venmo",
+    "slug": "venmo",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Google Pay",
+    "slug": "googlepay",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Apple Pay",
+    "slug": "applepay",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Razorpay",
+    "slug": "razorpay",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "ICICI Bank",
+    "slug": "icicibank",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "HDFC Bank",
+    "slug": "hdfcbank",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Axis Bank",
+    "slug": "axisbank",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Polestar",
+    "slug": "polestar",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Lamborghini",
+    "slug": "lamborghini",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Bugatti",
+    "slug": "bugatti",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Bentley",
+    "slug": "bentley",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Maserati",
+    "slug": "maserati",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Rolls-Royce",
+    "slug": "rollsroyce",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Air France",
+    "slug": "airfrance",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "KLM",
+    "slug": "klm",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Turkish Airlines",
+    "slug": "turkishairlines",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Japan Airlines",
+    "slug": "japanairlines",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Hermès",
+    "slug": "hermes",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Abbott",
+    "slug": "abbott",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Red Hat",
+    "slug": "redhat",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Ubuntu",
+    "slug": "ubuntu",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Fedora",
+    "slug": "fedora",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Debian",
+    "slug": "debian",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Arch Linux",
+    "slug": "archlinux",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Manjaro",
+    "slug": "manjaro",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Neovim",
+    "slug": "neovim",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "JetBrains",
+    "slug": "jetbrains",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "IntelliJ IDEA",
+    "slug": "intellijidea",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "PyCharm",
+    "slug": "pycharm",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Jupyter",
+    "slug": "jupyter",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Kaggle",
+    "slug": "kaggle",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "LangChain",
+    "slug": "langchain",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "OpenRouter",
+    "slug": "openrouter",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Gemini",
+    "slug": "googlegemini",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "DeepSeek",
+    "slug": "deepseek",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Mistral AI",
+    "slug": "mistralai",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Binance",
+    "slug": "binance",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Coinbase",
+    "slug": "coinbase",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Bitcoin",
+    "slug": "bitcoin",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Ethereum",
+    "slug": "ethereum",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Robinhood",
+    "slug": "robinhood",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "TradingView",
+    "slug": "tradingview",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "DuckDuckGo",
+    "slug": "duckduckgo",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Brave",
+    "slug": "brave",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Opera",
+    "slug": "opera",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Tor Browser",
+    "slug": "torbrowser",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Proton Mail",
+    "slug": "protonmail",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "iCloud",
+    "slug": "icloud",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Box",
+    "slug": "box",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Google Drive",
+    "slug": "googledrive",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Evernote",
+    "slug": "evernote",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Obsidian",
+    "slug": "obsidian",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Todoist",
+    "slug": "todoist",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "TickTick",
+    "slug": "ticktick",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "LastPass",
+    "slug": "lastpass",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "1Password",
+    "slug": "1password",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "NordVPN",
+    "slug": "nordvpn",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "ExpressVPN",
+    "slug": "expressvpn",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Proton VPN",
+    "slug": "protonvpn",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Bitwarden",
+    "slug": "bitwarden",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Dashlane",
+    "slug": "dashlane",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Kaspersky",
+    "slug": "kaspersky",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "McAfee",
+    "slug": "mcafee",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Avast",
+    "slug": "avast",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Malwarebytes",
+    "slug": "malwarebytes",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Trend Micro",
+    "slug": "trendmicro",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Fortinet",
+    "slug": "fortinet",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Palo Alto Networks",
+    "slug": "paloaltonetworks",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Caterpillar",
+    "slug": "caterpillar",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "John Deere",
+    "slug": "johndeere",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "3M",
+    "slug": "3m",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Peloton",
+    "slug": "peloton",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Kick",
+    "slug": "kick",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Rumble",
+    "slug": "rumble",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Badoo",
+    "slug": "badoo",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Tinder",
+    "slug": "tinder",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "OkCupid",
+    "slug": "okcupid",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Duolingo",
+    "slug": "duolingo",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Coursera",
+    "slug": "coursera",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Udemy",
+    "slug": "udemy",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "edX",
+    "slug": "edx",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Khan Academy",
+    "slug": "khanacademy",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "BYJU'S",
+    "slug": "byjus",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Unacademy",
+    "slug": "unacademy",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Jio",
+    "slug": "jio",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Airtel",
+    "slug": "airtel",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Vodafone",
+    "slug": "vodafone",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Verizon",
+    "slug": "verizon",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Roku",
+    "slug": "roku",
+    "difficulty": "Hard"
+  },
+  {
+    "name": "Sonos",
+    "slug": "sonos",
+    "difficulty": "Hard"
+  }
+]
