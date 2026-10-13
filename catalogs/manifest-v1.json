@@ -41,8 +41,8 @@
       "approvedQuestions": 0,
       "currentVersion": 1,
       "lastRefreshedAt": "2026-10-13",
-      "nextAction": "Check the 20 local WebP photos in the published quiz; approve verified images and continue curating toward 100.",
-      "draftQuestions": 20
+      "nextAction": "Run the new published-site browser smoke tests; inspect loaded cuisine photos and answer progression before approving any questions. Continue toward 100.",
+      "draftQuestions": 30
     },
     {
       "id": "geography",
@@ -152,6 +152,22 @@
       "change": "Completed local photo caching for the 20-question cuisine catalog.",
       "validation": "All 20 photo files are stored as local WebP assets (about 1.69 MB total); the caching workflow succeeded. Questions remain drafts until the published photos are visually checked.",
       "commit": "985507b2ca1722b8876e1b5649025e1c81a7a16e"
+    },
+    {
+      "date": "2026-10-13",
+      "category": "cuisines",
+      "version": 1,
+      "change": "Added cuisine questions 21–30: arepas, okonomiyaki, tiramisu, shakshuka, empanadas, Moroccan tagine, injera, bibingka, firfir and poutine.",
+      "validation": "30 unique IDs, four distinct options per question, one correct answer per question, source page/creator/license/fact-source metadata retained. New photos are queued for local WebP caching; all remain drafts pending browser and visual checks.",
+      "commit": "2b50cabf4e7de220c4c92ee617a20c869c3e3b91"
+    },
+    {
+      "date": "2026-10-13",
+      "category": "quality",
+      "version": 1,
+      "change": "Added Playwright browser smoke tests to run after successful GitHub Pages deployments.",
+      "validation": "Tests cover direct game start across all nine categories, answer feedback, audio oscillator activity, automatic progression, photo loading and Daily Mix placement. Results are pending the first live run.",
+      "commit": "a2069116995318435cee241a6de069ec7d97e501"
     }
   ]
 }
