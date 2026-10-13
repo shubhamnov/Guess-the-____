@@ -30,18 +30,19 @@
       "approvedQuestions": 0,
       "currentVersion": 1,
       "lastRefreshedAt": "2026-10-13",
-      "nextAction": "Cache all landmark photos as optimized local WebP assets, then verify the published game renders the local images before approving questions.",
+      "nextAction": "Local optimized WebP photos are committed. Verify all photos on the published GitHub Pages game before approving the first 20 questions.",
       "draftQuestions": 20
     },
     {
       "id": "cuisines",
       "title": "Guess the Cuisine",
-      "status": "planned",
+      "status": "in-progress",
       "targetQuestions": 100,
       "approvedQuestions": 0,
-      "currentVersion": null,
-      "lastRefreshedAt": null,
-      "nextAction": "Start after the landmark catalog workflow is validated."
+      "currentVersion": 1,
+      "lastRefreshedAt": "2026-10-13",
+      "nextAction": "Verify the 10 local WebP photos on the published game, then approve the first batch and expand toward 100.",
+      "draftQuestions": 10
     },
     {
       "id": "geography",
@@ -111,6 +112,22 @@
       "change": "Added a GitHub Actions image-cache workflow and Python optimization script. The workflow converts Wikimedia Commons source photos to local WebP assets, preserves source/license metadata, and updates catalog paths. Improved round selection to avoid the exact same 10-question set on consecutive plays.",
       "validation": "Question order and answer choices are shuffled. Consecutive rounds cannot use the exact same question set when the catalog has enough alternatives. Local asset generation and published image rendering still need workflow/browser validation; approval count remains 0.",
       "commit": "fc849189d78696e38538797d2941490773cd1950"
+    },
+    {
+      "date": "2026-10-13",
+      "category": "daily-mix",
+      "version": 1,
+      "change": "Switched Daily Mix and Guess the Flag to repository-local optimized WebP flags for 195 country codes. Kept the date-seeded challenge order and immutable question/logo snapshots unchanged.",
+      "validation": "195 local flag assets committed (366,272 bytes total); daily-challenge-data-v1.js and brand-logos-daily-v1.js remain unchanged. Published image rendering still needs a browser check.",
+      "commit": "6043131bb34c1cdd20f688ca9fbc4829a383ee15"
+    },
+    {
+      "date": "2026-10-13",
+      "category": "cuisines",
+      "version": 1,
+      "change": "Added the first 10-question Guess the Cuisine photo quiz and catalog, plus a workflow to cache optimized local WebP photos.",
+      "validation": "10 unique question IDs, four distinct choices per question, correct answer appears exactly once, photo attribution/license and fact-source metadata retained, and 10 local WebP assets generated. Questions remain drafts pending published browser image checks.",
+      "commit": "633b08ebb50b1763b3eacf450b9cc11b5097fa9f"
     }
   ]
 }
