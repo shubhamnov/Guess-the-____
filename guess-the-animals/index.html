@@ -14,6 +14,24 @@
 @media(min-width:560px){.shell{padding-top:30px}.game{gap:20px}.clue{height:255px}.answer{min-height:64px;font-size:15px}.intro{gap:24px}}
 @media(max-width:430px){.brand{font-size:19px}.pill{font-size:8px;padding:7px 8px}.sound-toggle{font-size:9px;padding:7px 8px}.stat{padding:10px}.stat strong{font-size:22px}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+/* Playful end-of-round popup, with sharing as the main action */
+.result{display:none;position:fixed;inset:0;z-index:1000;box-sizing:border-box;flex-direction:column;align-items:center;justify-content:center;gap:0;margin:0;padding:clamp(14px,4vh,30px) 14px;overflow-y:auto;background:rgba(25,27,26,.62);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.result.active{display:flex}
+.result-modal{position:relative;isolation:isolate;flex:none;width:min(100%,440px);max-height:100%;overflow-y:auto;display:flex;flex-direction:column;gap:17px;padding:clamp(21px,5vw,31px);background:var(--paper);border:2px solid var(--ink);border-radius:30px;box-shadow:9px 9px 0 var(--lime)}
+.result-modal:before{content:"✳";position:absolute;top:13px;right:18px;color:var(--lime);-webkit-text-stroke:1px var(--ink);font-size:43px;line-height:1;transform:rotate(12deg);pointer-events:none}
+.result-modal .eyebrow{position:relative;z-index:1;padding-right:42px}
+.result-modal .bigscore{display:inline-block;align-self:flex-start;margin:5px 0 4px;padding:7px 16px 12px;background:var(--lime);border:2px solid var(--ink);border-radius:20px;box-shadow:4px 4px 0 var(--ink);font-size:clamp(76px,19vw,112px);line-height:.86}
+.result-modal h2{font-size:clamp(28px,7.5vw,36px)}
+.result-modal .resultbox{background:#efeee7;border:0;padding:16px;gap:14px}
+.result-modal #shareBtn{order:2;background:var(--lime);color:var(--ink);border:2px solid var(--ink);border-radius:15px;padding:16px 14px;font-weight:950;box-shadow:0 4px 0 var(--ink)}
+.result-modal #againBtn{order:3;background:transparent;color:var(--ink);border:1.5px solid var(--line);box-shadow:none;padding:14px}
+.result-modal .micro,.result-modal .games-link,.result-modal .links{order:4}
+.creator-credit{color:inherit;text-decoration:none;font-size:10px;font-weight:900;letter-spacing:.04em;white-space:nowrap}
+.creator-credit:hover{text-decoration:underline;text-underline-offset:3px}
+@media(max-height:700px){.result{justify-content:flex-start}.result-modal{margin:auto 0}}
+@media(prefers-reduced-motion:reduce){.result-modal{scroll-behavior:auto}}
+
 </style>
 </head>
 <body data-game="animals">
@@ -36,12 +54,16 @@
 <div class="micro">Answer quickly to build your streak.</div>
 </section>
 <section class="result" id="result">
+    <div class="result-modal">
+
 <div><div class="eyebrow">TIME'S UP · ANIMALS</div><div class="bigscore" id="finalScore">0</div><h2 id="resultTitle">Nice work.</h2><p id="resultText">Fancy another round?</p></div>
 <div class="resultbox"><div><label>Personal best</label><strong id="resultBest">0</strong></div><div><label>Accuracy</label><strong id="accuracy">0%</strong></div><div><label>Correct</label><strong id="correctCount">0</strong></div><div><label>Answered</label><strong id="answeredCount">0</strong></div></div>
 <button class="primary" id="againBtn">Play again <span class="arrow">↻</span></button><button class="secondary" id="shareBtn">Share score image ↗</button>
 <nav class="links"><a href="../">All categories</a><span>·</span><a href="../guess-the-color/">Colors</a><span>·</span><a href="../guess-the-flag/">Flags</a><span>·</span><a href="../guess-the-capitals/">Capital Cities</a></nav>
-</section>
-<footer class="bottomline"><span>GUESS THE ?</span><span>TRUST YOUR INSTINCTS.</span></footer>
+
+    </div>
+  </section>
+<footer class="bottomline"><span>GUESS THE ?</span><a class="creator-credit" href="https://github.com/shubhamnov" target="_blank" rel="noopener noreferrer">MADE BY SHUBHAM ↗</a></footer>
 </main>
 <div class="toast" id="toast" role="status"></div>
 <script>(function(){
