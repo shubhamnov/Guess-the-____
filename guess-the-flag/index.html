@@ -273,6 +273,9 @@ $('soundToggle').addEventListener('click',()=>{soundEnabled=!soundEnabled;try{lo
 $('shareBtn').addEventListener('click',async()=>{const text='I scored '+score+' in Guess the Flag — Flag Rush! Can you beat me?';if(navigator.share){try{await navigator.share({title:'Guess the Flag — Flag Rush',text,url:location.href})}catch(e){}}else if(navigator.clipboard){try{await navigator.clipboard.writeText(text+' '+location.href)}catch(e){}}});
 document.addEventListener('visibilitychange',()=>{if(document.hidden&&running){/* The clock intentionally keeps running. */}});
 if(COUNTRIES.length!==195)console.warn('Expected 195 countries; found',COUNTRIES.length);
+
+// Enter straight into gameplay after choosing Flag on the home page.
+window.addEventListener('load', startGame, { once: true });
 </script>
 </body>
 </html>
