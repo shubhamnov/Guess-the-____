@@ -1,6 +1,137 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#f8f7f2"><title>Animals — Guess the ____</title>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#f8f7f2">
+<meta name="description" content="Identify animals in a timed multiple-choice guessing game.">
+<title>Guess the Animals — Guess the ____</title>
 <style>
-:root{--bg:#f8f7f2;--ink:#191b1a;--muted:#777b75;--line:#e7e5dd;--paper:#fffefa;--lime:#d7fb55;--display:ui-rounded,"Arial Rounded MT Bold",system-ui,sans-serif}
-*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a:focus-visible{outline:3px solid #7871e8;outline-offset:4}.shell{width:min(100% - 32px,620px);margin:0 auto;padding:24px 0 28px;min-height:100dvh;display:flex;flex-direction:column}.top{display:flex;justify-content:space-between;align-items:center}.brand{font-family:var(--display);font-size:22px;font-weight:1000;letter-spacing:-1.1px;color:var(--ink);text-decoration:none}.brand span{display:inline-grid;place-items:center;background:var(--lime);border-radius:9px;width:27px;height:27px;margin-left:3px;transform:rotate(5deg)}.pill{font-size:10px;font-weight:900;letter-spacing:.09em;border:1px solid var(--line);padding:8px 11px;border-radius:999px;color:#555950}.main{margin:auto 0;padding:clamp(50px,10vh,90px) 0}.eyebrow{font-size:11px;letter-spacing:.15em;font-weight:900;color:#777b72;text-transform:uppercase}.status{display:inline-flex;margin-top:20px;padding:8px 11px;border-radius:999px;background:#ecebe4;color:#53574f;font-size:10px;letter-spacing:.08em;font-weight:900}.h1{font-family:var(--display);font-size:clamp(46px,12vw,76px);line-height:.92;letter-spacing:-.065em;margin:15px 0;font-weight:1000}.h1 em{font-style:normal;position:relative;z-index:0}.h1 em:after{content:"";position:absolute;z-index:-1;bottom:2px;left:0;right:0;height:35%;background:var(--lime);transform:rotate(-2deg);border-radius:5px}.desc{margin:0;color:#686d65;font-size:15px;line-height:1.6;max-width:400px}.preview{height:225px;border-radius:22px;background:#efeee7;padding:12px;margin:27px 0}.shapes{display:grid;place-items:center}.shapes svg{width:100%;height:100%;max-height:200px}.shapes path{fill:#9bc5a5;stroke:#2d7252;stroke-width:2.5;stroke-linejoin:round}.preview.animals{display:flex;align-items:center;justify-content:space-around;gap:4px}.animals span{font-size:clamp(44px,12vw,78px);filter:drop-shadow(0 5px 3px #00000010)}.back{display:flex;align-items:center;justify-content:center;background:var(--ink);color:white;text-decoration:none;border-radius:15px;padding:17px 20px;font-weight:900}.back span{color:var(--lime);margin-left:10px}.footer{margin-top:auto;display:flex;justify-content:space-between;color:#92958d;font-size:10px;gap:10px}
-</style></head><body><main class="shell"><header class="top"><a class="brand" href="../">GUESS THE <span>?</span></a><div class="pill">NEW CATEGORY</div></header><section class="main"><div class="eyebrow">A new challenge is on its way</div><div class="status">WORK IN PROGRESS</div><h1 class="h1">Guess the<br><em>animals.</em></h1><p class="desc">The animal quiz is still being put together. We’ll open this category once the questions and game experience are ready.</p><div class="preview animals" aria-hidden="true"><span>🦊</span><span>🦉</span><span>🐬</span><span>🦒</span></div><a class="back" href="../">Back to all categories <span>→</span></a></section><footer class="footer"><span>GUESS THE ?</span><span>MORE CATEGORIES COMING SOON</span></footer></main></body></html>
+:root{--bg:#f8f7f2;--ink:#191b1a;--muted:#777b75;--line:#e7e5dd;--paper:#fffefa;--lime:#d7fb55;--green:#26764f;--red:#c44e38;--display:ui-rounded,"Arial Rounded MT Bold",system-ui,sans-serif}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button{font:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}button:focus-visible,a:focus-visible{outline:3px solid #7871e8;outline-offset:3px}
+.shell{width:min(100% - 32px,620px);margin:0 auto;padding:22px 0 30px;min-height:100dvh;display:flex;flex-direction:column}.top{display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{font-family:var(--display);font-size:22px;font-weight:1000;letter-spacing:-1.1px;color:var(--ink);text-decoration:none;white-space:nowrap}.brand span{display:inline-grid;place-items:center;background:var(--lime);border-radius:9px;width:27px;height:27px;margin-left:3px;transform:rotate(5deg)}.pill{font-size:10px;font-weight:850;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);padding:8px 11px;border-radius:999px;color:#555950;white-space:nowrap}.sound-toggle{border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:999px;padding:8px 10px;font-size:10px;font-weight:900;letter-spacing:.04em;white-space:nowrap}
+.hero h1{font-family:var(--display);font-size:clamp(44px,12vw,72px);line-height:.92;letter-spacing:-.065em;margin:10px 0 14px;font-weight:1000}.hero h1 em{font-style:normal;position:relative;z-index:0}.hero h1 em:after{content:"";position:absolute;z-index:-1;bottom:2px;left:0;right:0;height:35%;background:var(--lime);transform:rotate(-2deg);border-radius:5px}.hero p{margin:0;max-width:400px;color:#686d65;font-size:15px;line-height:1.55}.intro{margin:auto 0;display:flex;flex-direction:column;gap:20px;padding:clamp(28px,7vh,70px) 0 30px}.preview{height:clamp(170px,30vh,225px);border-radius:22px;overflow:hidden;background:#efeee7;padding:10px;display:grid;place-items:center;position:relative}.preview .emojis{display:flex;width:100%;height:100%;justify-content:space-around;align-items:center;gap:4px}.preview .emojis span{font-size:clamp(43px,12vw,82px)}.preview svg{width:100%;height:100%;max-height:220px}.preview path{fill:#9bc5a5;stroke:#2d7252;stroke-width:2.5;stroke-linejoin:round}.primary{background:var(--ink);color:white;border:0;border-radius:16px;padding:17px 20px;font-weight:900;font-size:15px;display:flex;align-items:center;justify-content:center;gap:10px;width:100%;box-shadow:0 4px 0 #00000013}.primary .arrow{background:var(--lime);color:var(--ink);width:25px;height:25px;border-radius:50%;display:grid;place-items:center}.micro{font-size:11px;color:var(--muted);text-align:center;line-height:1.5}.links{display:flex;justify-content:center;gap:7px;flex-wrap:wrap;font-size:11px;line-height:1.6;color:var(--muted)}.links a{color:var(--ink);font-weight:850;text-decoration:none}.links a:hover{text-decoration:underline;text-underline-offset:4px}.status{align-self:flex-start;background:#ecebe4;border:1px solid #d4d1c6;color:#53574f;border-radius:999px;padding:7px 10px;font-size:9px;font-weight:900;letter-spacing:.07em}
+.game{display:none;flex:1;flex-direction:column;gap:17px;padding-top:28px}.game.active{display:flex}.stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}.stat{border:1px solid var(--line);background:var(--paper);border-radius:15px;padding:11px 13px;min-width:0}.stat label{display:block;text-transform:uppercase;font-size:9px;letter-spacing:.12em;color:var(--muted);font-weight:900;margin-bottom:5px}.stat strong{font-size:24px;line-height:1;font-variant-numeric:tabular-nums;letter-spacing:-.04em}.stat.timer.urgent strong{color:#d84d37}.track{height:5px;background:#e9e7df;border-radius:99px;overflow:hidden;margin-top:-9px}.track span{display:block;height:100%;width:100%;background:var(--lime);transition:width .1s linear}.question-head{display:flex;align-items:center;justify-content:space-between;gap:8px}.eyebrow{font-size:10px;letter-spacing:.15em;font-weight:900;color:#7a7e74;text-transform:uppercase}.level{font-size:10px;font-weight:900;border-radius:999px;padding:7px 10px;background:#efeee7;color:#6a6c63}.clue{height:clamp(190px,34vh,270px);min-height:170px;border-radius:24px;border:1px solid var(--line);background:var(--paper);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;overflow:hidden;position:relative}.country-svg{width:100%;height:100%;position:absolute;inset:0}.animal-emoji{font-size:clamp(110px,32vw,170px);line-height:1;filter:drop-shadow(0 9px 8px #00000010);user-select:none}.prompt{text-align:center;font-family:var(--display);font-size:clamp(21px,5.9vw,28px);font-weight:950;letter-spacing:-.04em;margin:0}.answers{display:grid;grid-template-columns:1fr 1fr;gap:10px}.answer{min-height:58px;padding:12px 10px;background:var(--paper);border:1.5px solid var(--line);border-radius:15px;font-weight:850;font-size:clamp(12px,3.4vw,15px);transition:transform .1s,border-color .12s,background .12s;overflow-wrap:anywhere}.answer:active{transform:scale(.98)}.answer.correct{background:#e0f6df;border-color:#5ca86d;color:#205c37}.answer.wrong{background:#ffe6df;border-color:#ef8a73;color:#943d2c}.answer:disabled{cursor:default}.feedback{min-height:20px;text-align:center;font-size:12px;font-weight:850;color:var(--muted);margin-top:-7px}.feedback.good{color:var(--green)}.feedback.bad{color:var(--red)}
+.result{display:none;flex:1;flex-direction:column;justify-content:center;gap:20px;padding:32px 0}.result.active{display:flex}.bigscore{font-family:var(--display);font-size:clamp(80px,22vw,130px);font-weight:1000;line-height:.85;letter-spacing:-.08em;margin:6px 0}.result h2{font-family:var(--display);font-size:34px;line-height:1;margin:0;letter-spacing:-.05em}.result p{color:var(--muted);line-height:1.55;margin:0}.resultbox{border:1px solid var(--line);background:var(--paper);border-radius:20px;padding:19px;display:grid;grid-template-columns:1fr 1fr;gap:16px}.resultbox label{display:block;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;font-size:10px;font-weight:900;margin-bottom:6px}.resultbox strong{font-size:27px;letter-spacing:-.04em}.secondary{background:transparent;border:1px solid var(--line);border-radius:15px;padding:14px;font-weight:850;width:100%}.bottomline{margin-top:auto;padding-top:22px;display:flex;justify-content:space-between;gap:12px;color:#92958d;font-size:10px}
+@media(min-width:560px){.shell{padding-top:30px}.game{gap:20px}.clue{height:255px}.answer{min-height:64px;font-size:15px}.intro{gap:24px}}
+@media(max-width:430px){.brand{font-size:19px}.pill{font-size:8px;padding:7px 8px}.sound-toggle{font-size:9px;padding:7px 8px}.stat{padding:10px}.stat strong{font-size:22px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body data-game="animals">
+<main class="shell">
+<header class="top"><a class="brand" href="../">GUESS THE <span>?</span></a><div class="pill">WORK IN PROGRESS · PLAYABLE</div><button class="sound-toggle" id="soundToggle" aria-pressed="true" type="button">♫ SOUND ON</button></header>
+<section class="intro" id="intro">
+<div class="hero"><div class="eyebrow">A LITTLE WILD KNOWLEDGE</div><h1>Know your<br><em>animals?</em></h1><p>From big cats to ocean creatures, identify as many animals as you can in sixty seconds.</p></div>
+<div class="preview"><div class="emojis"><span>🦊</span><span>🦉</span><span>🐬</span><span>🦒</span></div></div>
+<button class="primary" id="startBtn">Let's play <span class="arrow">→</span></button>
+<div class="micro">70 animal illustrations · four choices · personal best saved on this device<br>No sign-up. Just a quick brain break.</div>
+<nav class="links" aria-label="Other categories"><a href="../">All categories</a><span>·</span><a href="../guess-the-color/">Colors</a><span>·</span><a href="../guess-the-flag/">Flags</a><span>·</span><a href="../guess-the-capitals/">Capital Cities</a></nav>
+</section>
+<section class="game" id="game">
+<div class="stats"><div class="stat timer" id="timerStat"><label>Time left</label><strong id="time">60</strong></div><div class="stat"><label>Score</label><strong id="score">0</strong></div><div class="stat"><label>Streak</label><strong id="streak">0</strong></div></div>
+<div class="track"><span id="timebar"></span></div>
+<div class="question-head"><span class="eyebrow" id="roundLabel">ANIMALS 01</span><span class="level" id="level">ANIMAL KINGDOM</span></div>
+<div class="clue" id="clue"></div>
+<p class="prompt">Which animal is this?</p>
+<div class="answers" id="answers"></div><div class="feedback" id="feedback" aria-live="polite"></div>
+<div class="micro">Answer quickly to build your streak.</div>
+</section>
+<section class="result" id="result">
+<div><div class="eyebrow">TIME'S UP · ANIMALS</div><div class="bigscore" id="finalScore">0</div><h2 id="resultTitle">Nice work.</h2><p id="resultText">Fancy another round?</p></div>
+<div class="resultbox"><div><label>Personal best</label><strong id="resultBest">0</strong></div><div><label>Accuracy</label><strong id="accuracy">0%</strong></div><div><label>Correct</label><strong id="correctCount">0</strong></div><div><label>Answered</label><strong id="answeredCount">0</strong></div></div>
+<button class="primary" id="againBtn">Play again <span class="arrow">↻</span></button><button class="secondary" id="shareBtn">Share score image ↗</button>
+<nav class="links"><a href="../">All categories</a><span>·</span><a href="../guess-the-color/">Colors</a><span>·</span><a href="../guess-the-flag/">Flags</a><span>·</span><a href="../guess-the-capitals/">Capital Cities</a></nav>
+</section>
+<footer class="bottomline"><span>GUESS THE ?</span><span>TRUST YOUR INSTINCTS.</span></footer>
+</main>
+<div class="toast" id="toast" role="status"></div>
+<script>(function(){
+'use strict';
+const KIND=document.body.dataset.game;
+const DATA=[{"name":"Lion","emoji":"🦁"},{"name":"Tiger","emoji":"🐯"},{"name":"Leopard","emoji":"🐆"},{"name":"Wolf","emoji":"🐺"},{"name":"Fox","emoji":"🦊"},{"name":"Bear","emoji":"🐻"},{"name":"Polar bear","emoji":"🐻‍❄️"},{"name":"Panda","emoji":"🐼"},{"name":"Koala","emoji":"🐨"},{"name":"Kangaroo","emoji":"🦘"},{"name":"Elephant","emoji":"🐘"},{"name":"Giraffe","emoji":"🦒"},{"name":"Zebra","emoji":"🦓"},{"name":"Horse","emoji":"🐴"},{"name":"Donkey","emoji":"🫏"},{"name":"Cow","emoji":"🐄"},{"name":"Buffalo","emoji":"🐃"},{"name":"Goat","emoji":"🐐"},{"name":"Sheep","emoji":"🐑"},{"name":"Pig","emoji":"🐖"},{"name":"Deer","emoji":"🦌"},{"name":"Moose","emoji":"🫎"},{"name":"Rabbit","emoji":"🐇"},{"name":"Squirrel","emoji":"🐿️"},{"name":"Hedgehog","emoji":"🦔"},{"name":"Bat","emoji":"🦇"},{"name":"Otter","emoji":"🦦"},{"name":"Beaver","emoji":"🦫"},{"name":"Seal","emoji":"🦭"},{"name":"Dolphin","emoji":"🐬"},{"name":"Whale","emoji":"🐳"},{"name":"Orca","emoji":"🐋"},{"name":"Shark","emoji":"🦈"},{"name":"Octopus","emoji":"🐙"},{"name":"Squid","emoji":"🦑"},{"name":"Crab","emoji":"🦀"},{"name":"Lobster","emoji":"🦞"},{"name":"Shrimp","emoji":"🦐"},{"name":"Jellyfish","emoji":"🪼"},{"name":"Turtle","emoji":"🐢"},{"name":"Crocodile","emoji":"🐊"},{"name":"Snake","emoji":"🐍"},{"name":"Lizard","emoji":"🦎"},{"name":"Frog","emoji":"🐸"},{"name":"Eagle","emoji":"🦅"},{"name":"Owl","emoji":"🦉"},{"name":"Parrot","emoji":"🦜"},{"name":"Flamingo","emoji":"🦩"},{"name":"Penguin","emoji":"🐧"},{"name":"Peacock","emoji":"🦚"},{"name":"Chicken","emoji":"🐓"},{"name":"Duck","emoji":"🦆"},{"name":"Swan","emoji":"🦢"},{"name":"Turkey","emoji":"🦃"},{"name":"Pigeon","emoji":"🕊️"},{"name":"Crow","emoji":"🐦‍⬛"},{"name":"Pelican","emoji":"🪿"},{"name":"Bee","emoji":"🐝"},{"name":"Butterfly","emoji":"🦋"},{"name":"Ant","emoji":"🐜"},{"name":"Spider","emoji":"🕷️"},{"name":"Scorpion","emoji":"🦂"},{"name":"Snail","emoji":"🐌"},{"name":"Pufferfish","emoji":"🐡"},{"name":"Tropical fish","emoji":"🐠"},{"name":"Ladybug","emoji":"🐞"},{"name":"Mosquito","emoji":"🦟"},{"name":"Beetle","emoji":"🪲"},{"name":"Mammoth","emoji":"🦣"},{"name":"Dromedary camel","emoji":"🐪"},{"name":"Llama","emoji":"🦙"}];
+const LABEL=KIND==='countries'?'Countries':'Animals';
+const $=id=>document.getElementById(id);
+const safeGet=k=>{try{return localStorage.getItem(k)}catch(e){return null}};
+const safeSet=(k,v)=>{try{localStorage.setItem(k,String(v))}catch(e){}};
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const pick=a=>a[Math.floor(Math.random()*a.length)];
+let best=Number(safeGet('guessThe'+LABEL.replace(/\s/g,'')+'Best')||0);
+let time=60,score=0,correct=0,answered=0,streak=0,round=0,locked=false,current=null,timer=null,advance=null,music=null,audio=null,musicIndex=0, soundOn=safeGet('guessTheSound')!=='off', used=new Set();
+const storageKey='guessThe'+LABEL.replace(/\s/g,'')+'Best';
+$('soundToggle').textContent=soundOn?'♫ SOUND ON':'♫ SOUND OFF';
+$('soundToggle').setAttribute('aria-pressed',String(soundOn));
+function tone(freq,dur,wave='triangle',vol=.03,delay=0){if(!soundOn)return;try{const AC=window.AudioContext||window.webkitAudioContext;if(!AC)return;if(!audio)audio=new AC();if(audio.state==='suspended')audio.resume();const o=audio.createOscillator(),g=audio.createGain();o.type=wave;o.frequency.value=freq;g.gain.setValueAtTime(.0001,audio.currentTime+delay);g.gain.exponentialRampToValueAtTime(vol,audio.currentTime+delay+.015);g.gain.exponentialRampToValueAtTime(.0001,audio.currentTime+delay+dur);o.connect(g);g.connect(audio.destination);o.start(audio.currentTime+delay);o.stop(audio.currentTime+delay+dur+.03)}catch(e){}}
+function startMusic(){if(!soundOn||music)return;const notes=[392,494,587,494,440,523,659,523];music=setInterval(()=>{tone(notes[musicIndex%notes.length],.23,'triangle',.012);musicIndex++},460)}
+function stopMusic(){if(music){clearInterval(music);music=null}}
+$('soundToggle').addEventListener('click',()=>{soundOn=!soundOn;safeSet('guessTheSound',soundOn?'on':'off');$('soundToggle').textContent=soundOn?'♫ SOUND ON':'♫ SOUND OFF';$('soundToggle').setAttribute('aria-pressed',String(soundOn));if(soundOn&&$('game').classList.contains('active'))startMusic();else if(!soundOn)stopMusic()});
+function renderClue(q){
+ const clue=$('clue');clue.innerHTML='';
+ if(KIND==='countries'){
+  const angle=pick([27,38,49,63,74,108,121,137,152,208,224,241,257,278,299,317,333]);
+  clue.innerHTML='<svg class="country-svg" viewBox="0 0 220 220" role="img" aria-label="Country outline shown at an unusual angle"><g transform="rotate('+angle+' 110 110)"><path d="'+q.path+'" fill="#a8ceb1" stroke="#2c7151" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round"/></g></svg>';
+ }else{
+  const el=document.createElement('div');el.className='animal-emoji';el.setAttribute('role','img');el.setAttribute('aria-label',q.name);el.textContent=q.emoji;clue.appendChild(el);
+ }
+}
+function chooseQuestion(){
+ if(used.size>=DATA.length)used.clear();
+ let options=DATA.filter(q=>!used.has(q.name));if(!options.length){used.clear();options=DATA.slice()}
+ current=pick(options);used.add(current.name);return current;
+}
+function renderQuestion(){
+ if(time<=0)return;locked=false;chooseQuestion();round++;
+ $('roundLabel').textContent=LABEL.toUpperCase()+' '+String(round).padStart(2,'0');
+ $('level').textContent=KIND==='countries'?'ROTATED OUTLINE':'ANIMAL KINGDOM';
+ renderClue(current);const others=shuffle(DATA.filter(q=>q.name!==current.name)).slice(0,3).map(q=>q.name);
+ const answers=shuffle([current.name,...others]);const wrap=$('answers');wrap.innerHTML='';
+ answers.forEach(name=>{const b=document.createElement('button');b.type='button';b.className='answer';b.textContent=name;b.addEventListener('click',()=>answer(b,name));wrap.appendChild(b)});
+ $('feedback').textContent='';$('feedback').className='feedback';
+}
+function answer(btn,name){
+ if(locked||time<=0)return;locked=true;answered++;
+ const right=name===current.name;const buttons=Array.from($('answers').querySelectorAll('button'));
+ buttons.forEach(b=>{b.disabled=true;if(b.textContent===current.name)b.classList.add('correct')});
+ if(right){score++;correct++;streak++;$('feedback').textContent=pick(['Correct!','That’s it!','Nice one!','You got it!']);$('feedback').classList.add('good');tone(660,.1,'sine',.05);tone(880,.15,'triangle',.035,.075)}
+ else{streak=0;btn.classList.add('wrong');$('feedback').textContent='It was '+current.name+'. Keep going!';$('feedback').classList.add('bad');tone(230,.16,'sawtooth',.025);tone(174,.20,'triangle',.025,.08)}
+ $('score').textContent=score;$('streak').textContent=streak;
+ advance=setTimeout(()=>{if(time>0)renderQuestion()},560);
+}
+function tick(){time=Math.max(0,time-1);$('time').textContent=time;$('timebar').style.width=(time/60*100)+'%';$('timerStat').classList.toggle('urgent',time<=10);if(time===0)endGame()}
+function startGame(){
+ if(timer)clearInterval(timer);if(advance)clearTimeout(advance);stopMusic();
+ time=60;score=0;correct=0;answered=0;streak=0;round=0;locked=false;used.clear();
+ $('time').textContent='60';$('score').textContent='0';$('streak').textContent='0';$('timebar').style.width='100%';$('timerStat').classList.remove('urgent');
+ $('intro').style.display='none';$('result').classList.remove('active');$('result').style.display='none';$('game').classList.add('active');$('game').style.display='flex';
+ renderQuestion();if(soundOn){tone(523,.08,'sine',.02);startMusic()}timer=setInterval(tick,1000);
+}
+function endGame(){
+ if(timer){clearInterval(timer);timer=null}if(advance){clearTimeout(advance);advance=null}stopMusic();locked=true;
+ $('game').classList.remove('active');$('game').style.display='none';$('result').classList.add('active');$('result').style.display='flex';
+ if(score>best){best=score;safeSet(storageKey,best)}
+ const accuracy=answered?Math.round(correct/answered*100):0;
+ $('finalScore').textContent=score;$('resultBest').textContent=best;$('accuracy').textContent=accuracy+'%';$('correctCount').textContent=correct;$('answeredCount').textContent=answered;
+ $('resultTitle').textContent=score>=20?'Brilliant instincts.':score>=10?'Looking sharp.':score>=4?'You’re warming up.':'Every round makes you sharper.';
+ $('resultText').textContent='You got '+correct+' out of '+answered+' answers right. Fancy another round?';
+}
+$('startBtn').addEventListener('click',startGame);$('againBtn').addEventListener('click',startGame);
+function rounded(c,x,y,w,h,r){c.beginPath();c.moveTo(x+r,y);c.arcTo(x+w,y,x+w,y+h,r);c.arcTo(x+w,y+h,x,y+h,r);c.arcTo(x,y+h,x,y,r);c.arcTo(x,y,x+w,y,r);c.closePath()}
+async function makeImage(){
+ const canvas=document.createElement('canvas');canvas.width=1080;canvas.height=1350;const c=canvas.getContext('2d');
+ c.fillStyle='#f8f7f2';c.fillRect(0,0,1080,1350);c.fillStyle='#d7fb55';rounded(c,70,70,940,1210,36);c.fill();c.fillStyle='#fffefa';rounded(c,96,96,888,1128,28);c.fill();
+ c.fillStyle='#191b1a';c.font='900 46px Arial,sans-serif';c.fillText('GUESS THE  ____',145,190);c.fillStyle='#777b75';c.font='800 28px Arial,sans-serif';c.fillText(LABEL.toUpperCase(),145,292);
+ c.fillStyle='#d7fb55';rounded(c,145,355,790,330,25);c.fill();c.fillStyle='#191b1a';c.font='800 30px Arial,sans-serif';c.fillText('YOUR SCORE',195,427);c.font='900 205px Arial,sans-serif';c.fillText(String(score),185,640);
+ c.font='800 30px Arial,sans-serif';c.fillText('ACCURACY',145,790);c.fillText('CORRECT',580,790);c.font='900 70px Arial,sans-serif';c.fillText((answered?Math.round(correct/answered*100):0)+'%',145,875);c.fillText(correct+' / '+answered,580,875);
+ c.fillStyle='#777b75';c.font='700 28px Arial,sans-serif';c.fillText('Can you beat my score?',145,1020);c.fillStyle='#191b1a';c.font='900 25px Arial,sans-serif';c.fillText('SHORT ROUNDS. SHARP INSTINCTS.',145,1145);c.fillStyle='#81867b';c.font='600 22px Arial,sans-serif';c.fillText('guess the ____',145,1190);
+ return await new Promise((resolve,reject)=>canvas.toBlob(b=>b?resolve(b):reject(new Error('Could not create image')),'image/png'));
+}
+async function shareScore(){
+ const btn=$('shareBtn'),label=btn.textContent;btn.disabled=true;btn.textContent='Creating image…';
+ try{
+  const blob=await makeImage(),file=new File([blob],'guess-the-'+KIND+'-score.png',{type:'image/png'});
+  if(navigator.share&&navigator.canShare&&navigator.canShare({files:[file]}))await navigator.share({files:[file],title:'My '+LABEL+' score',text:'I scored '+score+' in Guess the ____! Can you beat me?'});
+  else{const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='guess-the-'+KIND+'-score.png';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500);$('toast').textContent='Score image saved. Share it from your photos or downloads.';$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),2400)}
+ }catch(e){if(e.name!=='AbortError'){ $('toast').textContent='Could not create image. Try again.';$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),2400)}}
+ finally{btn.disabled=false;btn.textContent=label}
+}
+$('shareBtn').addEventListener('click',shareScore);$('time').textContent='60';
+})();</script>
+</body></html>
