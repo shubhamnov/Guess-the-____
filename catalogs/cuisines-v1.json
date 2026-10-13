@@ -8,10 +8,9 @@
   "batchSize": 10,
   "createdAt": "2026-10-13",
   "notes": [
-    "First 20 questions curated toward the 100-question v1 target, in two batches of 10.",
-    "Question order and answer choices are randomized each round.",
-    "Photos are cached as optimized local WebP assets. Source page, original URL, creator, license, explanation and fact source are retained.",
-    "Keep records in draft status until the local images and published game are checked in a browser."
+    "Cuisine photos are stored in the repository as locally optimized WebP files so gameplay does not fetch each photo from Wikimedia Commons.",
+    "Each image retains its sourcePage, sourceUrl, creator, and license metadata for attribution and provenance.",
+    "Photo rendering in the published GitHub Pages site must still be checked before questions are marked approved."
   ],
   "questions": [
     {
