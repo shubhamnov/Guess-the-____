@@ -56,6 +56,7 @@
   let correct = 0;
   let answered = false;
   let answeredCount = 0;
+  let previousRoundIds = [];
 
   function shuffle(items){
     const copy = items.slice();
@@ -68,7 +69,20 @@
     $('result').classList.toggle('active',screen === 'result');
   }
   function startRound(){
-    round = shuffle(catalog).slice(0,Math.min(questionLimit,catalog.length));
+    const shuffled = shuffle(catalog);
+    const limit = Math.min(questionLimit, shuffled.length);
+    let nextRound = shuffled.slice(0, limit);
+    // Avoid repeating the exact same set of questions on consecutive rounds when alternatives exist.
+    if (shuffled.length > limit && previousRoundIds.length === limit &&
+        nextRound.every(q => previousRoundIds.includes(q.id))) {
+      const replacement = shuffled.find(q => !previousRoundIds.includes(q.id));
+      if (replacement) {
+        nextRound[nextRound.length - 1] = replacement;
+        nextRound = shuffle(nextRound);
+      }
+    }
+    round = nextRound;
+    previousRoundIds = round.map(q => q.id);
     index=0;score=0;correct=0;answered=false;answeredCount=0;
     $('score').textContent='0';$('accuracy').textContent='—';
     setScreen('game');renderQuestion();
