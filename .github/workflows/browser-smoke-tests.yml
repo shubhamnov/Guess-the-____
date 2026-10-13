@@ -1,6 +1,13 @@
 name: Browser smoke tests
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - "tests/**"
+      - "package.json"
+      - "playwright.config.js"
+      - ".github/workflows/browser-smoke-tests.yml"
   workflow_run:
     workflows: ["pages build and deployment"]
     types: [completed]
