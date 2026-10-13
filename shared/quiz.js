@@ -20,7 +20,6 @@ $('resultTitle').textContent = cfg.resultTitle;
 $('footerText').textContent = cfg.footer;
 $('categoryDescription').textContent = cfg.description;
 let best = Number(safeGet(cfg.storage) || 0);
-$('best').textContent = best;
 $('resultBest').textContent = best;
 let time = 60, score = 0, correct = 0, answered = 0, streak = 0, bestStreak = 0, round = 0;
 let timerId = null, advanceId = null, locked = false, current = null, used = new Set(), countryPool = null;
@@ -148,7 +147,7 @@ function startGame(){
 function startActually(){
  if(advanceId)clearTimeout(advanceId);if(timerId)clearInterval(timerId);stopMusic();
  time=60;score=0;correct=0;answered=0;streak=0;bestStreak=0;round=0;used.clear();locked=false;
- $('time').textContent='60';$('score').textContent='0';$('streak').textContent='0';$('timebar').style.width='100%';$('timerStat').classList.remove('urgent');$('best').textContent=best;
+ $('time').textContent='60';$('score').textContent='0';$('streak').textContent='0';$('timebar').style.width='100%';$('timerStat').classList.remove('urgent');
  intro.style.display='none';result.classList.remove('active');result.style.display='none';game.classList.add('active');game.style.display='flex';
  nextQuestion();if(soundOn){setupAudio();startMusic()}timerId=setInterval(tick,1000);
 }
@@ -157,7 +156,7 @@ function endGame(){
  game.classList.remove('active');game.style.display='none';result.classList.add('active');result.style.display='flex';
  const acc=answered?Math.round(correct/answered*100):0;
  if(score>best){best=score;safeSet(cfg.storage,best)}
- $('finalScore').textContent=score;$('resultBest').textContent=best;$('accuracy').textContent=acc+'%';$('correctCount').textContent=correct;$('answeredCount').textContent=answered;$('bestStreak').textContent=bestStreak;
+ $('finalScore').textContent=score;$('resultBest').textContent=best;$('accuracy').textContent=acc+'%';$('correctCount').textContent=correct;$('answeredCount').textContent=answered;
  $('resultTitle').textContent=score>=20?'Brilliant instincts.':score>=10?cfg.resultTitle:score>=4?'You’re warming up.':'Every round makes you sharper.';
  $('resultText').textContent='You got '+correct+' out of '+answered+' answers right. Fancy another round?';
 }
