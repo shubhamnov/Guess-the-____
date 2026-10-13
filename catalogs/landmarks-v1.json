@@ -9,7 +9,7 @@
   "createdAt": "2026-10-13",
   "notes": [
     "Landmark photos are stored in the repository as locally optimized WebP files so gameplay does not fetch each photo from Wikimedia Commons.",
-    "Each image retains sourcePage, sourceUrl, cachedSourceUrl, creator and license metadata for attribution and provenance. When sourceUrl changes, the image cache workflow refreshes that local asset.",
+    "Each image retains its sourcePage, sourceUrl, cachedSourceUrl, creator, and license metadata. If sourceUrl changes, the cache refreshes the local WebP.",
     "Photo rendering in the published GitHub Pages site must still be checked before questions are marked approved."
   ],
   "questions": [
@@ -47,7 +47,7 @@
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Taj_Mahal_Exterior.jpg?width=1000",
         "path": "assets/landmarks/landmark_002.webp",
-        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Taj_Mahal%2C_Agra%2C_India...JPG?width=1000"
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Taj_Mahal_Exterior.jpg?width=1000"
       },
       "options": [
         "Taj Mahal",
@@ -383,7 +383,7 @@
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Big_Ben_Tower.jpg?width=1000",
         "path": "assets/landmarks/landmark_016.webp",
-        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Burj_Khalifa_%285810620261%29.jpg?width=1000"
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Big_Ben_Tower.jpg?width=1000"
       },
       "options": [
         "Big Ben",
