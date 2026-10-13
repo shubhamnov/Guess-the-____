@@ -67,3 +67,17 @@ The existing Daily Challenge snapshot is intentionally unchanged.
 ## Shared flag images
 
 The Daily Mix and Guess the Flag games use locally cached flag images under `assets/flags/` instead of fetching flags from FlagCDN during play. `scripts/cache_flag_images.py` builds 320px-wide WebP versions from the flag-code list in `daily-challenge-data-v1.js`; the source data and date-seeded Daily Mix question order remain unchanged.
+
+
+## Main-game image caching
+
+- Daily Mix and Guess the Flag use locally cached WebP flag images under `assets/flags/`.
+- The cache contains 195 flag codes and totals about 366 KB.
+- The Daily Mix question snapshot and brand-logo snapshot are unchanged. Question selection and answer choices remain deterministic for a given UTC date so shared challenge links match for everyone.
+
+## Guess the Cuisine
+
+- The first 10 questions are in `catalogs/cuisines-v1.json`, with a 100-question target.
+- The standalone game is at `guess-the-cuisine/index.html`.
+- Cuisine photos are optimized into local WebP files under `assets/cuisines/`; creator, license, original image source and fact-source metadata are retained.
+- The first 10 questions remain drafts until image rendering is checked in the published GitHub Pages site.
