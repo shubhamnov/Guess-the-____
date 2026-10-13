@@ -30,7 +30,7 @@
       "approvedQuestions": 0,
       "currentVersion": 1,
       "lastRefreshedAt": "2026-10-13",
-      "nextAction": "The user confirmed the landmark identities in batch 1. Verify all 20 Wikimedia image URLs render in the published browser; approve only after image rendering and content checks pass.",
+      "nextAction": "Cache all landmark photos as optimized local WebP assets, then verify the published game renders the local images before approving questions.",
       "draftQuestions": 20
     },
     {
@@ -103,6 +103,14 @@
       "change": "Replaced the Burj Khalifa fact-source URL with the Council on Tall Buildings and Urban Habitat's verified building record, and aligned the explanation with the published completion year.",
       "validation": "The source page identifies Burj Khalifa in Dubai and records completion in 2010. Draft/image-render status unchanged.",
       "commit": "62e57c4c11424fa6fc8b9c5c73be5a7f8f7a4de4"
+    },
+    {
+      "date": "2026-10-13",
+      "category": "landmarks",
+      "version": 1,
+      "change": "Added a GitHub Actions image-cache workflow and Python optimization script. The workflow converts Wikimedia Commons source photos to local WebP assets, preserves source/license metadata, and updates catalog paths. Improved round selection to avoid the exact same 10-question set on consecutive plays.",
+      "validation": "Question order and answer choices are shuffled. Consecutive rounds cannot use the exact same question set when the catalog has enough alternatives. Local asset generation and published image rendering still need workflow/browser validation; approval count remains 0.",
+      "commit": "fc849189d78696e38538797d2941490773cd1950"
     }
   ]
 }
