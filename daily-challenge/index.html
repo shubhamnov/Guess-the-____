@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f8f7f2">
+<meta name="description" content="One daily mix across all seven Guess the ____ games. Fourteen questions, two from every category, same challenge for everyone.">
+<title>The Daily Mix — Guess the ____</title>
+<style>
+:root{--bg:#f8f7f2;--ink:#191b1a;--muted:#777b75;--line:#e7e5dd;--paper:#fffefa;--lime:#d7fb55;--green:#26764f;--red:#c44e38;--display:ui-rounded,"Arial Rounded MT Bold",system-ui,sans-serif}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button{font:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}button:focus-visible,a:focus-visible{outline:3px solid #7871e8;outline-offset:3px}.shell{width:min(100% - 32px,620px);margin:0 auto;padding:22px 0 30px;min-height:100dvh;display:flex;flex-direction:column}.top{display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{font-family:var(--display);font-size:22px;font-weight:1000;letter-spacing:-1.1px;color:var(--ink);text-decoration:none;white-space:nowrap}.brand span{display:inline-grid;place-items:center;background:var(--lime);border-radius:9px;width:27px;height:27px;margin-left:3px;transform:rotate(5deg)}.pill{font-size:10px;font-weight:850;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);padding:8px 11px;border-radius:999px;color:#555950;white-space:nowrap}.eyebrow{font-size:11px;letter-spacing:.15em;font-weight:900;color:#7a7e74;text-transform:uppercase}.intro{margin:auto 0;display:flex;flex-direction:column;gap:18px;padding:clamp(30px,6vh,58px) 0 26px}.hero h1{font-family:var(--display);font-size:clamp(44px,12vw,74px);line-height:.92;letter-spacing:-.065em;margin:10px 0 14px;font-weight:1000}.hero h1 em{font-style:normal;position:relative;z-index:0}.hero h1 em:after{content:"";position:absolute;z-index:-1;bottom:2px;left:0;right:0;height:35%;background:var(--lime);transform:rotate(-2deg);border-radius:5px}.hero p{margin:0;max-width:460px;color:#686d65;font-size:15px;line-height:1.58}.mix-pills{display:flex;gap:7px;flex-wrap:wrap}.mix-pills span{border:1px solid var(--line);background:var(--paper);padding:7px 10px;border-radius:999px;font-size:10px;font-weight:850;color:#555950}.primary,.secondary{width:100%;border-radius:15px;padding:16px 18px;font-size:14px;font-weight:950}.primary{background:var(--ink);color:#fff;border:0;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 4px 0 #00000013}.primary .arrow{display:grid;place-items:center;width:25px;height:25px;border-radius:50%;background:var(--lime);color:var(--ink);font-size:18px}.secondary{background:var(--paper);border:1.5px solid var(--line);color:var(--ink)}.text-btn{background:transparent;border:0;color:#555950;font-size:12px;font-weight:900;text-decoration:underline;text-underline-offset:4px;padding:3px 8px;align-self:center}.micro{font-size:11px;color:var(--muted);text-align:center;line-height:1.5}.game{display:none;flex:1;flex-direction:column;gap:15px;padding-top:30px}.game.active{display:flex}.stats{display:grid;grid-template-columns:1fr 1fr;gap:9px}.stat{border:1px solid var(--line);background:var(--paper);border-radius:15px;padding:11px 13px;min-width:0}.stat label{display:block;text-transform:uppercase;font-size:9px;letter-spacing:.12em;color:var(--muted);font-weight:900;margin-bottom:5px}.stat strong{font-size:23px;line-height:1;font-variant-numeric:tabular-nums;letter-spacing:-.04em}.progress{height:5px;background:#e9e7df;border-radius:99px;overflow:hidden}.progress span{display:block;height:100%;width:0;background:var(--lime);transition:width .2s}.question-head{display:flex;align-items:center;justify-content:space-between;gap:8px}.category-label{font-size:10px;font-weight:900;border-radius:999px;padding:8px 10px;background:#efeee7;color:#555950;border:1px solid #dfddd5}.number{font-size:11px;color:var(--muted);font-weight:850}.question-visual{height:clamp(205px,34vh,285px);min-height:185px;border-radius:24px;border:1px solid var(--line);background:var(--paper);display:grid;place-items:center;overflow:hidden;position:relative;padding:18px}.question-visual.color{padding:0;background:#fffefa}.color-swatch{width:100%;height:100%;min-height:185px;border:0}.question-visual.flag img{width:min(74%,360px);max-height:190px;object-fit:contain;box-shadow:0 10px 24px #00000012;border-radius:5px}.question-visual.country svg{width:100%;height:100%;max-height:245px;overflow:visible}.question-visual.country path{fill:#9bc5a5;stroke:#2d7252;stroke-width:1.4;stroke-linejoin:round}.animal-sample{font-size:clamp(85px,23vw,135px);line-height:1}.question-visual.capital{background:#e7ebf0}.capital-art{font-size:clamp(66px,16vw,100px);line-height:1}.question-visual.script{background:#eeece7}.script-sample{font-family:system-ui,sans-serif;font-size:clamp(37px,9vw,65px);font-weight:750;line-height:1.35;text-align:center;overflow-wrap:anywhere}.question-visual.logo img{width:min(54%,185px);height:min(68%,160px);object-fit:contain}.prompt{text-align:center;font-family:var(--display);font-size:clamp(22px,5.8vw,29px);font-weight:950;letter-spacing:-.04em;margin:0;line-height:1.13}.answers{display:grid;grid-template-columns:1fr 1fr;gap:10px}.answer{min-height:57px;padding:12px 10px;background:var(--paper);border:1.5px solid var(--line);border-radius:15px;font-weight:850;font-size:clamp(12px,3.4vw,15px);overflow-wrap:anywhere;transition:background .12s,border-color .12s}.answer:active{transform:scale(.985)}.answer.correct{background:#e0f6df;border-color:#5ca86d;color:#205c37}.answer.wrong{background:#ffe6df;border-color:#ef8a73;color:#943d2c}.answer:disabled{cursor:default}.feedback{min-height:22px;text-align:center;font-size:12px;font-weight:850;line-height:1.45;color:var(--muted);margin-top:-4px}.feedback.good{color:var(--green)}.feedback.bad{color:var(--red)}.next{display:none}.next.visible{display:flex}.result{display:none;margin:auto 0;padding:clamp(27px,7vh,54px) 0}.result.active{display:block}.result-card{border:2px solid var(--ink);background:var(--paper);border-radius:27px;box-shadow:7px 7px 0 var(--lime);padding:clamp(22px,6vw,32px);display:flex;flex-direction:column;gap:18px}.bigscore{align-self:flex-start;display:inline-block;padding:7px 16px 12px;background:var(--lime);border:2px solid var(--ink);border-radius:18px;box-shadow:4px 4px 0 var(--ink);font-family:var(--display);font-size:clamp(75px,19vw,108px);font-weight:1000;line-height:.9;letter-spacing:-.08em}.result h2{font-family:var(--display);font-size:clamp(28px,7.5vw,36px);line-height:1;margin:0;letter-spacing:-.05em}.result p{color:var(--muted);line-height:1.55;margin:0}.resultbox{background:#efeee7;border-radius:18px;padding:15px;display:grid;grid-template-columns:1fr 1fr;gap:14px}.resultbox label{display:block;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;font-size:10px;font-weight:900;margin-bottom:6px}.resultbox strong{font-size:25px;letter-spacing:-.04em}.bottomline{margin-top:auto;padding-top:22px;display:flex;justify-content:space-between;gap:12px;color:#92958d;font-size:10px}.creator-credit{color:inherit;text-decoration:none;font-size:10px;font-weight:900;letter-spacing:.04em;white-space:nowrap}.creator-credit:hover{text-decoration:underline;text-underline-offset:3px}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:100;max-width:calc(100% - 24px);background:#191b1a;color:#fff;border-radius:99px;padding:10px 16px;font-size:12px;font-weight:800;opacity:0;pointer-events:none;transition:opacity .2s}.toast.show{opacity:1}@media(min-width:560px){.shell{padding-top:30px}.game{gap:19px}.question-visual{height:260px}.answer{min-height:64px;font-size:15px}}@media(max-width:420px){.brand{font-size:19px}.pill{font-size:8px;padding:7px 8px}.stat{padding:10px}.stat strong{font-size:21px}}@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<main class="shell">
+<header class="top"><a class="brand" href="../">GUESS THE <span>?</span></a><div class="pill">THE DAILY MIX ↗</div></header>
+<section class="intro" id="intro">
+ <div class="hero"><div class="eyebrow" id="dateEyebrow">A NEW MIX EVERY DAY</div><h1>Seven games.<br><em>One daily mix.</em></h1><p>Fourteen questions across all seven categories. Two from each game, mixed into one shared challenge. How much of Guess the ____ do you know?</p></div>
+ <div class="mix-pills"><span>🎨 Colors</span><span>🏳️ Flags</span><span>🌍 Countries</span><span>🐾 Animals</span><span>🏙️ Capitals</span><span>あ Scripts</span><span>✳ Brand logos</span></div>
+ <button class="primary" id="startBtn">Play the daily mix <span class="arrow">→</span></button>
+ <div class="micro" id="dateNote">14 questions · 140 points possible · same questions for everyone today.</div>
+ <button class="text-btn" id="shareBtn">Share this challenge ↗</button>
+ <div class="links"><a href="../">← All categories</a></div>
+</section>
+<section class="game" id="game" aria-label="Daily Mix questions">
+ <div class="stats"><div class="stat"><label>Score</label><strong id="score">0</strong></div><div class="stat"><label>Question</label><strong id="progressText">1 / 14</strong></div></div>
+ <div class="progress" aria-label="Challenge progress"><span id="progressBar"></span></div>
+ <div class="question-head"><div class="eyebrow">NAME THAT ANSWER</div><div class="category-label" id="categoryLabel">COLORS</div></div>
+ <div class="question-visual" id="questionVisual" aria-label="Question clue"></div>
+ <h2 class="prompt" id="prompt">Which one is it?</h2>
+ <div class="answers" id="answers"></div>
+ <div class="feedback" id="feedback" role="status" aria-live="polite"></div>
+ <button class="primary next" id="nextBtn">Next question <span class="arrow">→</span></button>
+</section>
+<section class="result" id="result" aria-label="Daily Mix results">
+ <div class="result-card">
+  <div><div class="eyebrow" id="resultDate">DAILY MIX</div><div class="bigscore" id="finalScore">0</div><h2 id="resultTitle">Nice mix!</h2><p id="resultText">You made your way through all seven categories.</p></div>
+  <div class="resultbox"><div><label>Correct</label><strong id="correctCount">0 / 14</strong></div><div><label>Accuracy</label><strong id="accuracy">0%</strong></div><div><label>Personal best</label><strong id="bestScore">0</strong></div><div><label>Categories played</label><strong>7 / 7</strong></div></div>
+  <button class="primary" id="shareResultBtn">Share my score ↗</button>
+  <button class="secondary" id="againBtn">Play this mix again ↻</button>
+  <div class="links"><a href="../">Explore all seven games</a><span>·</span><a href="../guess-the-brand-logos/">Brand Logos</a></div>
+ </div>
+</section>
+<footer class="bottomline"><span>GUESS THE ?</span><a class="creator-credit" href="https://github.com/shubhamnov" target="_blank" rel="noopener noreferrer">MADE BY SHUBHAM ↗</a></footer>
+</main>
+<div class="toast" id="toast" role="status"></div>
+<script src="../daily-challenge-data-v1.js"></script>
+<script src="../brand-logos.js"></script>
+<script>
+(function(){
+'use strict';
+const $=id=>document.getElementById(id);
+const CATEGORIES=[
+ {key:'colors',label:'Colors',kind:'color',prompt:()=> 'Which color is shown?'},
+ {key:'flags',label:'Flags',kind:'flag',prompt:()=> 'Which country does this flag belong to?'},
+ {key:'countries',label:'Countries',kind:'country',prompt:()=> 'Which country is this outline?'},
+ {key:'animals',label:'Animals',kind:'animal',prompt:()=> 'Which animal is this?'},
+ {key:'capitals',label:'Capital Cities',kind:'capital',prompt:q=>'What is the capital of '+q.target.country+'?'},
+ {key:'scripts',label:'Scripts',kind:'script',prompt:()=> 'Which writing system is shown?'},
+ {key:'logos',label:'Brand Logos',kind:'logo',prompt:()=> 'Which brand owns this logo?'}
+];
+const DATA=window.DAILY_CHALLENGE_DATA_V1||{};
+const LOGOS=window.BRAND_LOGOS_V1||window.BRAND_LOGOS||[];
+const params=new URLSearchParams(window.location.search);
+function todayUTC(){return new Date().toISOString().slice(0,10)}
+function validDate(value){if(!/^\d{4}-\d{2}-\d{2}$/.test(value||''))return false;const d=new Date(value+'T00:00:00Z');return !Number.isNaN(d.getTime())&&d.toISOString().slice(0,10)===value}
+let activeDate=validDate(params.get('date'))?params.get('date'):todayUTC();
+let questions=[],questionIndex=0,score=0,correct=0,answered=false,finished=false;
+function formatDate(value){return new Intl.DateTimeFormat('en-US',{month:'long',day:'numeric',year:'numeric',timeZone:'UTC'}).format(new Date(value+'T00:00:00Z'))}
+function hashSeed(seed){let h=2166136261;for(let i=0;i<seed.length;i++){h^=seed.charCodeAt(i);h=Math.imul(h,16777619)}return h>>>0}
+function rngFor(seed){let state=hashSeed(String(seed));return function(){state=(state+0x6D2B79F5)|0;let t=state;t=Math.imul(t^(t>>>15),t|1);t^=t+Math.imul(t^(t>>>7),t|61);return ((t^(t>>>14))>>>0)/4294967296}}
+function shuffle(items,rng){const a=items.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(rng()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function distinctByAnswer(items,getAnswer){const out=[],seen=new Set();for(const item of items){const value=getAnswer(item);if(value&&!seen.has(value)){seen.add(value);out.push(item)}}return out}
+function makeQuestion(category,item,pool,rng){
+ let answer,visual={},prompt=category.prompt({target:item}),getAnswer;
+ if(category.key==='colors'){answer=item.name;visual={hex:item.hex};getAnswer=x=>x.name}
+ else if(category.key==='flags'){answer=item[0];visual={code:item[1]};getAnswer=x=>x[0]}
+ else if(category.key==='countries'){answer=item.name;visual={path:item.path};getAnswer=x=>x.name}
+ else if(category.key==='animals'){answer=item.name;visual={emoji:item.emoji};getAnswer=x=>x.name}
+ else if(category.key==='capitals'){answer=item.capital;prompt=category.prompt({target:item});visual={country:item.country};getAnswer=x=>x.capital}
+ else if(category.key==='scripts'){answer=item.name;visual={sample:item.sample};getAnswer=x=>x.name}
+ else {answer=item.name;visual={svg:item.svg,hex:item.hex};getAnswer=x=>x.name}
+ const alternatives=distinctByAnswer(shuffle(pool.filter(x=>getAnswer(x)!==answer),rng),getAnswer).slice(0,3).map(getAnswer);
+ return {category:category.label,kind:category.kind,prompt,answer,visual,target:item,options:shuffle([answer].concat(alternatives),rng)};
+}
+function buildDailyQuestions(date){
+ const rng=rngFor('guess-the-daily-mix-v1|'+date);
+ const pools={
+  colors:DATA.colors||[],flags:DATA.flags||[],countries:DATA.countries||[],animals:DATA.animals||[],capitals:DATA.capitals||[],scripts:DATA.scripts||[],logos:LOGOS
+ };
+ const all=[];
+ CATEGORIES.forEach(category=>{
+  const pool=pools[category.key]||[];
+  if(pool.length<4)throw new Error('Not enough questions for '+category.label);
+  shuffle(pool,rng).slice(0,2).forEach(target=>all.push(makeQuestion(category,target,pool,rng)));
+ });
+ return shuffle(all,rng);
+}
+function svgData(svg){return 'data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg)}
+function renderVisual(q){
+ const host=$('questionVisual');host.replaceChildren();host.className='question-visual '+q.kind;
+ if(q.kind==='color'){const swatch=document.createElement('div');swatch.className='color-swatch';swatch.style.backgroundColor=q.visual.hex;host.appendChild(swatch)}
+ else if(q.kind==='flag'){const img=document.createElement('img');img.src='https://flagcdn.com/w320/'+q.visual.code+'.png';img.alt='Mystery flag';host.appendChild(img)}
+ else if(q.kind==='country'){const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.setAttribute('viewBox','0 0 260 245');svg.setAttribute('role','img');svg.setAttribute('aria-label','Country silhouette');const path=document.createElementNS('http://www.w3.org/2000/svg','path');path.setAttribute('d',q.visual.path);svg.appendChild(path);host.appendChild(svg)}
+ else if(q.kind==='animal'){const span=document.createElement('span');span.className='animal-sample';span.textContent=q.visual.emoji;span.setAttribute('aria-hidden','true');host.appendChild(span)}
+ else if(q.kind==='capital'){const span=document.createElement('span');span.className='capital-art';span.textContent='🌍';span.setAttribute('aria-hidden','true');host.appendChild(span);const sub=document.createElement('span');sub.className='micro';sub.textContent='COUNTRY: '+q.visual.country.toUpperCase();host.appendChild(sub)}
+ else if(q.kind==='script'){const span=document.createElement('span');span.className='script-sample';span.textContent=q.visual.sample;span.dir='auto';host.appendChild(span)}
+ else if(q.kind==='logo'){const img=document.createElement('img');img.src=svgData(q.visual.svg);img.alt='Mystery brand logo';host.appendChild(img)}
+}
+function loadBest(){try{return Number(localStorage.getItem('guessTheDailyMixBest:'+activeDate)||0)||0}catch(e){return 0}}
+function saveBest(){try{localStorage.setItem('guessTheDailyMixBest:'+activeDate,String(loadBest()<score?score:loadBest()))}catch(e){}}
+function startGame(){
+ questions=buildDailyQuestions(activeDate);questionIndex=0;score=0;correct=0;answered=false;finished=false;
+ $('score').textContent='0';$('progressText').textContent='1 / '+questions.length;$('progressBar').style.width='0%';
+ $('intro').style.display='none';$('result').classList.remove('active');$('game').classList.add('active');renderQuestion();
+}
+function renderQuestion(){
+ if(finished||questionIndex>=questions.length){finishGame();return}
+ const q=questions[questionIndex];answered=false;
+ $('score').textContent=String(score);$('progressText').textContent=(questionIndex+1)+' / '+questions.length;$('progressBar').style.width=(questionIndex/questions.length*100)+'%';
+ $('categoryLabel').textContent=q.category.toUpperCase();$('prompt').textContent=q.prompt;$('feedback').textContent='';$('feedback').className='feedback';
+ $('nextBtn').classList.remove('visible');$('nextBtn').textContent=questionIndex===questions.length-1?'See results':'Next question →';
+ renderVisual(q);$('answers').replaceChildren();
+ q.options.forEach(option=>{const button=document.createElement('button');button.type='button';button.className='answer';button.textContent=option;button.addEventListener('click',()=>answerQuestion(option,button));$('answers').appendChild(button)});
+}
+function answerQuestion(option,clicked){
+ if(answered||finished)return;answered=true;
+ const q=questions[questionIndex];const buttons=$('answers').querySelectorAll('button');
+ buttons.forEach(button=>{button.disabled=true;if(button.textContent===q.answer)button.classList.add('correct')});
+ if(option===q.answer){score+=10;correct++;$('feedback').textContent='Correct! +10 points';$('feedback').classList.add('good')}
+ else{clicked.classList.add('wrong');$('feedback').textContent='Not quite — the answer was '+q.answer+'.';$('feedback').classList.add('bad')}
+ $('score').textContent=String(score);$('nextBtn').classList.add('visible');
+}
+function finishGame(){
+ finished=true;$('game').classList.remove('active');$('result').classList.add('active');
+ const best=Math.max(loadBest(),score);try{localStorage.setItem('guessTheDailyMixBest:'+activeDate,String(best))}catch(e){}
+ $('resultDate').textContent='DAILY MIX · '+formatDate(activeDate).toUpperCase();$('finalScore').textContent=String(score);$('correctCount').textContent=correct+' / '+questions.length;$('accuracy').textContent=Math.round(correct/questions.length*100)+'%';$('bestScore').textContent=String(best);
+ let title='Nice mix!',message='A little world knowledge, color instinct, and brand memory all in one round.';
+ if(correct>=12){title='All-rounder!';message='Seven categories and you handled almost all of them.'}else if(correct>=9){title='Sharp instincts!';message='You’ve got a good mix of knowledge. Come back for tomorrow’s challenge.'}else if(correct>=6){title='Good start!';message='Now you know which categories to practise. Tomorrow brings another mix.'}
+ $('resultTitle').textContent=title;$('resultText').textContent=message;
+}
+function advance(){if(!answered)return;if(questionIndex>=questions.length-1){finishGame();return}questionIndex++;renderQuestion()}
+function challengeURL(){const url=new URL(window.location.href);url.search='';url.hash='';url.searchParams.set('date',activeDate);return url.toString()}
+async function share(text){
+ const url=challengeURL();const payload={title:'Guess the ____ · Daily Mix',text:text+' The questions are fixed for '+formatDate(activeDate)+'.',url};
+ try{if(navigator.share){await navigator.share(payload);return}}catch(e){if(e.name==='AbortError')return}
+ const copyText=payload.text+' '+url;
+ try{if(navigator.clipboard&&window.isSecureContext)await navigator.clipboard.writeText(copyText);else{const area=document.createElement('textarea');area.value=copyText;area.setAttribute('readonly','');area.style.position='fixed';area.style.opacity='0';document.body.appendChild(area);area.select();const ok=document.execCommand('copy');area.remove();if(!ok)throw new Error('Copy unavailable')}showToast('Challenge link and message copied. Send it to a friend.')}
+ catch(e){window.prompt('Copy this message and send it to a friend:',copyText)}
+}
+function showToast(message){$('toast').textContent=message;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),2400)}
+function initIntro(){
+ $('dateEyebrow').textContent=(activeDate===todayUTC()?'TODAY’S DAILY MIX':'DAILY MIX · '+formatDate(activeDate)).toUpperCase();
+ $('dateNote').textContent='14 questions · 140 points possible · fixed challenge for '+formatDate(activeDate)+' (UTC).';
+ $('startBtn').addEventListener('click',startGame);$('nextBtn').addEventListener('click',advance);$('againBtn').addEventListener('click',startGame);
+ $('shareBtn').addEventListener('click',()=>share('Play my 14-question Daily Mix challenge.'));$('shareResultBtn').addEventListener('click',()=>share('I scored '+score+' / '+(questions.length*10)+' ('+correct+'/'+questions.length+' correct) in the Guess the ____ Daily Mix. Can you beat me?'));
+}
+initIntro();
+})();
+</script>
+</body>
+</html>
