@@ -100,7 +100,7 @@ function svgData(svg){return 'data:image/svg+xml;charset=utf-8,'+encodeURICompon
 function renderVisual(q){
  const host=$('questionVisual');host.replaceChildren();host.className='question-visual '+q.kind;
  if(q.kind==='color'){const swatch=document.createElement('div');swatch.className='color-swatch';swatch.style.backgroundColor=q.visual.hex;host.appendChild(swatch)}
- else if(q.kind==='flag'){const img=document.createElement('img');img.src='https://flagcdn.com/w320/'+q.visual.code+'.png';img.alt='Mystery flag';host.appendChild(img)}
+ else if(q.kind==='flag'){const img=document.createElement('img');img.src='../assets/flags/'+q.visual.code+'.webp';img.alt='Mystery flag';host.appendChild(img)}
  else if(q.kind==='country'){const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.setAttribute('viewBox','0 0 260 245');svg.setAttribute('role','img');svg.setAttribute('aria-label','Country silhouette');const path=document.createElementNS('http://www.w3.org/2000/svg','path');path.setAttribute('d',q.visual.path);svg.appendChild(path);host.appendChild(svg)}
  else if(q.kind==='animal'){const span=document.createElement('span');span.className='animal-sample';span.textContent=q.visual.emoji;span.setAttribute('aria-hidden','true');host.appendChild(span)}
  else if(q.kind==='capital'){const span=document.createElement('span');span.className='capital-art';span.textContent='🌍';span.setAttribute('aria-hidden','true');host.appendChild(span);const sub=document.createElement('span');sub.className='micro';sub.textContent='COUNTRY: '+q.visual.country.toUpperCase();host.appendChild(sub)}
