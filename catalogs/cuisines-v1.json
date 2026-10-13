@@ -4,13 +4,14 @@
   "title": "Guess the Cuisine",
   "version": 1,
   "targetQuestions": 100,
-  "batch": 1,
+  "batch": 2,
   "batchSize": 10,
   "createdAt": "2026-10-13",
   "notes": [
-    "Cuisine photos are stored in the repository as locally optimized WebP files so gameplay does not fetch each photo from Wikimedia Commons.",
-    "Each image retains its sourcePage, sourceUrl, creator, and license metadata for attribution and provenance.",
-    "Photo rendering in the published GitHub Pages site must still be checked before questions are marked approved."
+    "First 20 questions curated toward the 100-question v1 target, in two batches of 10.",
+    "Question order and answer choices are randomized each round.",
+    "Photos are cached as optimized local WebP assets. Source page, original URL, creator, license, explanation and fact source are retained.",
+    "Keep records in draft status until the local images and published game are checked in a browser."
   ],
   "questions": [
     {
@@ -241,6 +242,236 @@
       "explanation": "Peruvian ceviche is traditionally made with raw fish marinated in citrus and seasoned with chilli and salt.",
       "factSource": "https://ich.unesco.org/en/RL/practices-and-meanings-associated-with-the-preparation-and-consumption-of-ceviche-an-expression-of-peruvian-traditional-cuisine-01952",
       "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_011",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "../assets/cuisines/cuisine_011.webp",
+        "path": "assets/cuisines/cuisine_011.webp",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Dosa_dosa.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Dosa_dosa.jpg?width=1200",
+        "creator": "Anushka10patel",
+        "license": "CC BY-SA 4.0"
+      },
+      "options": [
+        "Dosa",
+        "Injera",
+        "Crêpe",
+        "Paratha"
+      ],
+      "answer": "Dosa",
+      "explanation": "Dosa is a South Indian crepe-like dish made from a fermented batter, commonly based on rice and lentils.",
+      "factSource": "https://en.wikipedia.org/wiki/Dosa",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_012",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "../assets/cuisines/cuisine_012.webp",
+        "path": "assets/cuisines/cuisine_012.webp",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Falafel.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Falafel.jpg?width=1200",
+        "creator": "NB",
+        "license": "CC BY-SA 3.0"
+      },
+      "options": [
+        "Falafel",
+        "Arancini",
+        "Croquettes",
+        "Pakora"
+      ],
+      "answer": "Falafel",
+      "explanation": "Falafel consists of seasoned ground chickpeas or fava beans, shaped into balls or patties and fried.",
+      "factSource": "https://en.wikipedia.org/wiki/Falafel",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_013",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "../assets/cuisines/cuisine_013.webp",
+        "path": "assets/cuisines/cuisine_013.webp",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Hummus.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Hummus.jpg?width=1200",
+        "creator": "Donovan Govan",
+        "license": "CC BY-SA 3.0"
+      },
+      "options": [
+        "Hummus",
+        "Baba ganoush",
+        "Tzatziki",
+        "Muhammara"
+      ],
+      "answer": "Hummus",
+      "explanation": "Hummus is a dip made mainly from chickpeas blended with tahini, lemon and other seasonings.",
+      "factSource": "https://en.wikipedia.org/wiki/Hummus",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_014",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "../assets/cuisines/cuisine_014.webp",
+        "path": "assets/cuisines/cuisine_014.webp",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Chinese_dumplings.JPG",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Chinese_dumplings.JPG?width=1200",
+        "creator": "Lars Curfs (Grashoofd)",
+        "license": "CC BY-SA 3.0 Netherlands"
+      },
+      "options": [
+        "Chinese dumplings",
+        "Pierogi",
+        "Ravioli",
+        "Gyoza"
+      ],
+      "answer": "Chinese dumplings",
+      "explanation": "Chinese dumplings are parcels of dough filled with ingredients such as meat, seafood or vegetables, prepared in several ways.",
+      "factSource": "https://en.wikipedia.org/wiki/Chinese_dumpling",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_015",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "../assets/cuisines/cuisine_015.webp",
+        "path": "assets/cuisines/cuisine_015.webp",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Moussaka.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Moussaka.jpg?width=1200",
+        "creator": "Cifo Buscemi",
+        "license": "CC BY 3.0"
+      },
+      "options": [
+        "Moussaka",
+        "Lasagna",
+        "Shepherd's pie",
+        "Ratatouille"
+      ],
+      "answer": "Moussaka",
+      "explanation": "Moussaka is a layered dish especially associated with Greek cuisine, commonly made with eggplant and a savoury filling.",
+      "factSource": "https://en.wikipedia.org/wiki/Moussaka",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_016",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "../assets/cuisines/cuisine_016.webp",
+        "path": "assets/cuisines/cuisine_016.webp",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Goulash_hungarian.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Goulash_hungarian.jpg?width=1200",
+        "creator": "RitaE",
+        "license": "CC0 1.0"
+      },
+      "options": [
+        "Goulash",
+        "Beef bourguignon",
+        "Chili con carne",
+        "Risotto"
+      ],
+      "answer": "Goulash",
+      "explanation": "Goulash is a Hungarian dish traditionally prepared as a seasoned soup or stew, often with paprika.",
+      "factSource": "https://en.wikipedia.org/wiki/Goulash",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_017",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "../assets/cuisines/cuisine_017.webp",
+        "path": "assets/cuisines/cuisine_017.webp",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Jerk_chicken.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Jerk_chicken.jpg?width=1200",
+        "creator": "stu_spivack",
+        "license": "CC BY-SA 2.0"
+      },
+      "options": [
+        "Jerk chicken",
+        "Tandoori chicken",
+        "Peri-peri chicken",
+        "Barbecue ribs"
+      ],
+      "answer": "Jerk chicken",
+      "explanation": "Jerk is a Jamaican cooking style known for a spicy marinade or seasoning that commonly includes allspice and Scotch bonnet pepper.",
+      "factSource": "https://en.wikipedia.org/wiki/Jerk_(cooking)",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_018",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "../assets/cuisines/cuisine_018.webp",
+        "path": "assets/cuisines/cuisine_018.webp",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Polish_pierogi_in_a_dish.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Polish_pierogi_in_a_dish.jpg?width=1200",
+        "creator": "Piotrus",
+        "license": "CC BY-SA 4.0"
+      },
+      "options": [
+        "Pierogi",
+        "Ravioli",
+        "Pelmeni",
+        "Tortellini"
+      ],
+      "answer": "Pierogi",
+      "explanation": "Pierogi are filled dumplings associated with Central and Eastern European cuisines, especially Poland.",
+      "factSource": "https://en.wikipedia.org/wiki/Pierogi",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_019",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "../assets/cuisines/cuisine_019.webp",
+        "path": "assets/cuisines/cuisine_019.webp",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Korean_Bibimbap.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Korean_Bibimbap.jpg?width=1200",
+        "creator": "Shene81",
+        "license": "CC BY 3.0"
+      },
+      "options": [
+        "Bibimbap",
+        "Poke bowl",
+        "Donburi",
+        "Fried rice"
+      ],
+      "answer": "Bibimbap",
+      "explanation": "Bibimbap is a Korean rice dish served with a range of toppings, often including vegetables, gochujang and egg or meat.",
+      "factSource": "https://en.wikipedia.org/wiki/Bibimbap",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_020",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "../assets/cuisines/cuisine_020.webp",
+        "path": "assets/cuisines/cuisine_020.webp",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Japanese_Ramen_Noodle_Soup%2C_Bangkok%2C_Thailand.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Japanese_Ramen_Noodle_Soup%2C_Bangkok%2C_Thailand.jpg?width=1200",
+        "creator": "Vyacheslav Argenberg",
+        "license": "CC BY 4.0"
+      },
+      "options": [
+        "Ramen",
+        "Pho",
+        "Udon",
+        "Laksa"
+      ],
+      "answer": "Ramen",
+      "explanation": "Ramen is a Japanese noodle soup usually served in broth with toppings such as sliced meat, egg, vegetables or seaweed.",
+      "factSource": "https://en.wikipedia.org/wiki/Ramen",
+      "difficulty": "easy",
       "status": "needs_image_render_check"
     }
   ]
