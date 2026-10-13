@@ -4,13 +4,14 @@
   "title": "Guess the Cuisine",
   "version": 1,
   "targetQuestions": 100,
-  "batch": 2,
+  "batch": 3,
   "batchSize": 10,
   "createdAt": "2026-10-13",
   "notes": [
-    "Cuisine photos are stored in the repository as locally optimized WebP files so gameplay does not fetch each photo from Wikimedia Commons.",
-    "Each image retains its sourcePage, sourceUrl, creator, and license metadata for attribution and provenance.",
-    "Photo rendering in the published GitHub Pages site must still be checked before questions are marked approved."
+    "First 30 questions curated toward the 100-question v1 target, in three batches of 10.",
+    "Question order and answer choices are randomized each round.",
+    "Photos are cached as optimized local WebP assets. Source page, original URL, creator, license, explanation and fact source are retained.",
+    "Keep records in draft status until local images are loaded successfully in browser tests and photo-to-answer matching has been visually reviewed."
   ],
   "questions": [
     {
@@ -470,6 +471,236 @@
       "answer": "Ramen",
       "explanation": "Ramen is a Japanese noodle soup usually served in broth with toppings such as sliced meat, egg, vegetables or seaweed.",
       "factSource": "https://en.wikipedia.org/wiki/Ramen",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_021",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "../assets/cuisines/cuisine_021.webp",
+        "path": "assets/cuisines/cuisine_021.webp",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Arepitas_Food_Macro.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Arepitas_Food_Macro.jpg?width=1200",
+        "creator": "Steven Depolo",
+        "license": "CC BY 2.0"
+      },
+      "options": [
+        "Arepas",
+        "Pupusas",
+        "Gorditas",
+        "Bao buns"
+      ],
+      "answer": "Arepas",
+      "explanation": "Arepas are round corn cakes widely eaten in Venezuela and Colombia; they may be split and filled with savoury ingredients.",
+      "factSource": "https://en.wikipedia.org/wiki/Arepa",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_022",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "../assets/cuisines/cuisine_022.webp",
+        "path": "assets/cuisines/cuisine_022.webp",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Okonomiyaki_(1).jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Okonomiyaki_(1).jpg?width=1200",
+        "creator": "Hajime NAKANO",
+        "license": "CC BY 2.0"
+      },
+      "options": [
+        "Okonomiyaki",
+        "Takoyaki",
+        "Tempura",
+        "Onigiri"
+      ],
+      "answer": "Okonomiyaki",
+      "explanation": "Okonomiyaki is a Japanese savoury pancake made with a flour-based batter and ingredients such as cabbage, often finished with sauces and toppings.",
+      "factSource": "https://en.wikipedia.org/wiki/Okonomiyaki",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_023",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "../assets/cuisines/cuisine_023.webp",
+        "path": "assets/cuisines/cuisine_023.webp",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Tiramisu_dessert.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Tiramisu_dessert.jpg?width=1200",
+        "creator": "Navneet Sharma",
+        "license": "CC BY-SA 4.0"
+      },
+      "options": [
+        "Tiramisu",
+        "Panna cotta",
+        "Cannoli",
+        "Baklava"
+      ],
+      "answer": "Tiramisu",
+      "explanation": "Tiramisu is an Italian dessert commonly layered with coffee-soaked ladyfingers and a mascarpone-based cream.",
+      "factSource": "https://en.wikipedia.org/wiki/Tiramisu",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_024",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "../assets/cuisines/cuisine_024.webp",
+        "path": "assets/cuisines/cuisine_024.webp",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Shakshuka_picture.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Shakshuka_picture.jpg?width=1200",
+        "creator": "Agustina Cordo",
+        "license": "CC BY-SA 4.0"
+      },
+      "options": [
+        "Shakshuka",
+        "Menemen",
+        "Ratatouille",
+        "Huevos rancheros"
+      ],
+      "answer": "Shakshuka",
+      "explanation": "Shakshuka features eggs cooked in a spiced tomato and pepper sauce and is popular across parts of North Africa and the Middle East.",
+      "factSource": "https://en.wikipedia.org/wiki/Shakshouka",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_025",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "../assets/cuisines/cuisine_025.webp",
+        "path": "assets/cuisines/cuisine_025.webp",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Empanadas_1.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Empanadas_1.jpg?width=1200",
+        "creator": "Caldobasico",
+        "license": "CC BY-SA 4.0"
+      },
+      "options": [
+        "Empanadas",
+        "Samosas",
+        "Pasties",
+        "Spring rolls"
+      ],
+      "answer": "Empanadas",
+      "explanation": "Empanadas are filled pastries baked or fried in many Latin American and Iberian food traditions, with fillings that vary by region.",
+      "factSource": "https://en.wikipedia.org/wiki/Empanada",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_026",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "../assets/cuisines/cuisine_026.webp",
+        "path": "assets/cuisines/cuisine_026.webp",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Moroccan_food_tagine.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Moroccan_food_tagine.jpg?width=1200",
+        "creator": "Kim sosita",
+        "license": "CC BY-SA 4.0"
+      },
+      "options": [
+        "Moroccan tagine",
+        "Jollof rice",
+        "Goulash",
+        "Bibimbap"
+      ],
+      "answer": "Moroccan tagine",
+      "explanation": "A Moroccan tagine is a slow-cooked stew named after the distinctive earthenware cooking vessel traditionally used to prepare it.",
+      "factSource": "https://en.wikipedia.org/wiki/Tajine",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_027",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "../assets/cuisines/cuisine_027.webp",
+        "path": "assets/cuisines/cuisine_027.webp",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Injera.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Injera.jpg?width=1200",
+        "creator": "Lelaw Wondimu",
+        "license": "CC BY-SA 4.0"
+      },
+      "options": [
+        "Injera",
+        "Naan",
+        "Lavash",
+        "Pita"
+      ],
+      "answer": "Injera",
+      "explanation": "Injera is a spongy, fermented flatbread that serves as a staple in Ethiopian cuisine and is often used to scoop up stews.",
+      "factSource": "https://en.wikipedia.org/wiki/Injera",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_028",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "../assets/cuisines/cuisine_028.webp",
+        "path": "assets/cuisines/cuisine_028.webp",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Bibingka.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Bibingka.jpg?width=1200",
+        "creator": "Herbertkikoy",
+        "license": "CC BY-SA 4.0"
+      },
+      "options": [
+        "Bibingka",
+        "Klepon",
+        "Mochi",
+        "Kuih lapis"
+      ],
+      "answer": "Bibingka",
+      "explanation": "Bibingka is a Filipino rice cake traditionally baked in a lined pan and especially associated with the Christmas season.",
+      "factSource": "https://en.wikipedia.org/wiki/Bibingka",
+      "difficulty": "hard",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_029",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "../assets/cuisines/cuisine_029.webp",
+        "path": "assets/cuisines/cuisine_029.webp",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Firfir.JPG",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Firfir.JPG?width=1200",
+        "creator": "Lelaw Wondimu",
+        "license": "CC BY-SA 4.0"
+      },
+      "options": [
+        "Firfir",
+        "Koshari",
+        "Ugali",
+        "Fufu"
+      ],
+      "answer": "Firfir",
+      "explanation": "Firfir is an Ethiopian dish made by mixing pieces of injera with a seasoned sauce, often berbere and clarified butter.",
+      "factSource": "https://en.wikipedia.org/wiki/Fit-fit",
+      "difficulty": "hard",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_030",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "../assets/cuisines/cuisine_030.webp",
+        "path": "assets/cuisines/cuisine_030.webp",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Poutine.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Poutine.jpg?width=1200",
+        "creator": "Gideon Tsang (credited on Commons by Anetode and Delire)",
+        "license": "CC BY-SA 2.0"
+      },
+      "options": [
+        "Poutine",
+        "Disco fries",
+        "Patatas bravas",
+        "Loaded nachos"
+      ],
+      "answer": "Poutine",
+      "explanation": "Poutine is a Canadian dish, especially associated with Quebec, made with fries, cheese curds and hot gravy.",
+      "factSource": "https://en.wikipedia.org/wiki/Poutine",
       "difficulty": "easy",
       "status": "needs_image_render_check"
     }
