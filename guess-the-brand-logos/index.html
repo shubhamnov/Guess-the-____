@@ -29,7 +29,7 @@
 <section class="intro" id="intro">
   <div class="hero"><div class="eyebrow">A quick brand-spotting challenge</div><h1>Know your<br><em>brand logos?</em></h1><p>You know the logo when you see it. Right? Pick the right brand before the clock runs out.</p></div>
   <div class="preview" aria-hidden="true"><div class="preview-logos"><span><img data-preview-slug="apple" alt=""></span><span><img data-preview-slug="nike" alt=""></span><span><img data-preview-slug="netflix" alt=""></span><span><img data-preview-slug="spotify" alt=""></span><span><img data-preview-slug="googlechrome" alt=""></span><span><img data-preview-slug="github" alt=""></span></div></div>
-  <div class="mode-actions"><button class="primary" id="dailyBtn"><span id="dailyBtnLabel">Daily challenge</span><span class="arrow">→</span></button><button class="secondary" id="startBtn">Play now · Adaptive random logos</button></div><div class="micro mode-caption" id="dailyCaption">Same questions and answer choices for everyone · new challenge daily at 00:00 UTC.</div><button class="share-link" type="button" id="shareDailyBtn">Share today’s challenge ↗</button><div class="micro">Play Now keeps the adaptive mode: streaks raise difficulty; missed guesses make it easier.</div><div class="links"><a href="../">← All categories</a><span>·</span><a href="https://simpleicons.org/" target="_blank" rel="noopener noreferrer">Logo icons by Simple Icons</a></div><div class="micro">Unofficial fan-made quiz. Brand names and marks belong to their respective owners.</div>
+  <div class="mode-actions"><a class="primary" href="../daily-challenge/" style="text-decoration:none">Play the Daily Mix <span class="arrow">→</span></a><button class="secondary" id="startBtn">Play now · Adaptive random logos</button></div><div class="micro mode-caption">Daily Mix: 14 questions from all seven categories, with two from each.</div><div class="micro">Play Now keeps the adaptive logo-only mode: streaks raise difficulty; missed guesses make it easier.</div><div class="links"><a href="../">← All categories</a><span>·</span><a href="https://simpleicons.org/" target="_blank" rel="noopener noreferrer">Logo icons by Simple Icons</a></div><div class="micro">Unofficial fan-made quiz. Brand names and marks belong to their respective owners.</div>
 </section>
 <section class="game" id="game" aria-label="Brand logo quiz">
   <div class="stats"><div class="stat"><label>Score</label><strong id="score">0</strong></div><div class="stat"><label>Streak</label><strong id="streak">0</strong></div><div class="stat timer" id="timerStat"><label>Time left</label><strong id="time">60</strong></div></div>
@@ -192,7 +192,7 @@ async function shareScore(){
  const btn=$('shareBtn'),label=btn.textContent;btn.disabled=true;btn.textContent='Creating image…';
  try{
   const blob=await makeImage();const file=new File([blob],'guess-the-brand-logos-score.png',{type:'image/png'});
-  if(navigator.share&&navigator.canShare&&navigator.canShare({files:[file]})){await navigator.share({files:[file],title:'My Brand Logos score',text:'I scored '+score+' in Guess the ____ Brand Logos! Try the same daily challenge: '+challengeURL(getShareDate())})}
+  if(navigator.share&&navigator.canShare&&navigator.canShare({files:[file]})){await navigator.share({files:[file],title:'My Brand Logos score',text:'I scored '+score+' in Guess the ____ Brand Logos. Play the mixed Daily Mix too: '+challengeURL(getShareDate())})}
   else{const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='guess-the-brand-logos-score.png';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500);showToast('Score image saved. Share it from your photos or downloads.')}
  }catch(e){if(e.name!=='AbortError')showToast('Could not create image. Try again.')}
  finally{btn.disabled=false;btn.textContent=label}
@@ -203,12 +203,12 @@ function getShareDate(){
  return todayUTC();
 }
 function challengeURL(date){
- const url=new URL(window.location.href);url.search='';url.hash='';url.searchParams.set('mode','daily');url.searchParams.set('date',date);return url.toString();
+ const url=new URL('../daily-challenge/',window.location.href);url.searchParams.set('date',date);return url.toString();
 }
 async function shareChallengeLink(){
  const date=getShareDate();const url=challengeURL(date);
- const title='Guess the ____ · Brand Logos Daily Challenge';
- const message='Play the same Brand Logos Daily Challenge for '+formatChallengeDate(date)+'. Everyone gets the same logos, order and answer choices.';
+ const title='Guess the ____ · Daily Mix';
+ const message='Play the 14-question Daily Mix for '+formatChallengeDate(date)+'. It has two questions from each of the seven categories.';
  try{
   if(navigator.share){await navigator.share({title:title,text:message,url:url});return}
  }catch(e){if(e.name==='AbortError')return}
@@ -218,19 +218,10 @@ async function shareChallengeLink(){
   showToast('Challenge link copied — send it to a friend.');
  }catch(e){window.prompt('Copy this challenge link and send it to a friend:',url)}
 }
-$('dailyBtn').addEventListener('click',()=>startGame('daily',launchDaily?launchDate:todayUTC()));
 $('startBtn').addEventListener('click',()=>startGame('play'));
-$('againBtn').addEventListener('click',()=>startGame(activeMode,activeDate));
+$('againBtn').addEventListener('click',()=>startGame('play'));
 $('shareBtn').addEventListener('click',shareScore);
-$('shareDailyBtn').addEventListener('click',shareChallengeLink);
 $('shareChallengeBtn').addEventListener('click',shareChallengeLink);
-if(launchDaily){
- $('dailyBtnLabel').textContent='Play this challenge';
- $('dailyCaption').textContent='Challenge date: '+formatChallengeDate(launchDate)+' (UTC) · same sequence for everyone.';
- $('shareDailyBtn').textContent='Share this challenge ↗';
-}else{
- $('dailyCaption').textContent='Today: '+formatChallengeDate(todayUTC())+' (UTC) · same questions and choices for everyone.';
-}
 populatePreview();
 })();
 </script>
