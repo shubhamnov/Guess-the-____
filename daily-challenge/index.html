@@ -140,12 +140,42 @@ function finishGame(){
 }
 function advance(){if(!answered)return;if(questionIndex>=questions.length-1){finishGame();return}questionIndex++;renderQuestion()}
 function challengeURL(){const url=new URL(window.location.href);url.search='';url.hash='';url.searchParams.set('date',activeDate);return url.toString()}
+function makeShareImage(text,url){
+ return new Promise((resolve,reject)=>{
+  const canvas=document.createElement('canvas');canvas.width=1200;canvas.height=630;
+  const ctx=canvas.getContext('2d');if(!ctx){reject(new Error('Canvas unavailable'));return}
+  ctx.fillStyle='#f8f7f2';ctx.fillRect(0,0,1200,630);
+  ctx.fillStyle='#d7fb55';ctx.beginPath();ctx.roundRect(48,48,1104,534,34);ctx.fill();
+  ctx.strokeStyle='#191b1a';ctx.lineWidth=5;ctx.stroke();
+  ctx.fillStyle='#191b1a';ctx.font='900 25px Arial, sans-serif';ctx.fillText('GUESS THE ____',88,112);
+  ctx.font='900 18px Arial, sans-serif';ctx.fillStyle='#45483e';ctx.fillText('THE DAILY MIX',88,166);
+  ctx.font='900 76px Arial, sans-serif';ctx.fillStyle='#191b1a';ctx.fillText('14 questions.',84,270);
+  ctx.fillText('7 categories.',84,355);
+  ctx.font='700 29px Arial, sans-serif';ctx.fillText(formatDate(activeDate),88,414);
+  ctx.font='700 23px Arial, sans-serif';ctx.fillText(text.length>65?text.slice(0,62)+'…':text,88,465);
+  ctx.fillStyle='#fffefa';ctx.beginPath();ctx.roundRect(82,495,1030,58,16);ctx.fill();
+  ctx.font='700 19px Arial, sans-serif';ctx.fillStyle='#191b1a';
+  let displayUrl=url;if(ctx.measureText(displayUrl).width>980){displayUrl=displayUrl.replace('https://','')}
+  ctx.fillText(displayUrl,100,531,990);
+  canvas.toBlob(blob=>blob?resolve(blob):reject(new Error('Image creation failed')),'image/png');
+ });
+}
+async function copyText(text){
+ if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(text);return}
+ const area=document.createElement('textarea');area.value=text;area.setAttribute('readonly','');area.style.position='fixed';area.style.opacity='0';document.body.appendChild(area);area.select();const ok=document.execCommand('copy');area.remove();if(!ok)throw new Error('Copy unavailable');
+}
 async function share(text){
- const url=challengeURL();const payload={title:'Guess the ____ · Daily Mix',text:text+' The questions are fixed for '+formatDate(activeDate)+'.',url};
- try{if(navigator.share){await navigator.share(payload);return}}catch(e){if(e.name==='AbortError')return}
- const copyText=payload.text+' '+url;
- try{if(navigator.clipboard&&window.isSecureContext)await navigator.clipboard.writeText(copyText);else{const area=document.createElement('textarea');area.value=copyText;area.setAttribute('readonly','');area.style.position='fixed';area.style.opacity='0';document.body.appendChild(area);area.select();const ok=document.execCommand('copy');area.remove();if(!ok)throw new Error('Copy unavailable')}showToast('Challenge link and message copied. Send it to a friend.')}
- catch(e){window.prompt('Copy this message and send it to a friend:',copyText)}
+ const url=challengeURL();const message=text+' The questions are fixed for '+formatDate(activeDate)+'. Play here: '+url;
+ let blob=null;try{blob=await makeShareImage(text,url)}catch(e){}
+ if(blob){
+  const file=new File([blob],'guess-the-daily-mix.png',{type:'image/png'});
+  if(navigator.share&&navigator.canShare&&navigator.canShare({files:[file]})){
+   try{await navigator.share({files:[file],title:'Guess the ____ · Daily Mix',text:message});return}catch(e){if(e.name==='AbortError')return}
+  }
+  try{const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='guess-the-daily-mix.png';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}catch(e){}
+ }
+ try{await copyText(message);showToast(blob?'Image saved and challenge link copied. Attach the image when sharing.':'Challenge link and message copied. Send it to a friend.')}
+ catch(e){window.prompt('Copy this message and send it to a friend:',message)}
 }
 function showToast(message){$('toast').textContent=message;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),2400)}
 function initIntro(){
