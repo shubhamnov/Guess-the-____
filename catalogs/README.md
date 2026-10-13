@@ -8,7 +8,7 @@ This folder is the source of truth for the planned expansion of **Guess the ____
 - Aim for 100 approved questions per new category. A target is not a claim that the questions already exist or are validated.
 - Work in small batches, inspect the existing catalog before extending it, and avoid broad rewrites.
 - Keep question content in versioned local files. Do not fetch random questions or image-search results during gameplay.
-- Keep image assets local to the site where practical. Record the original source, creator, license, and source URL for every external image.
+- Keep optimized image assets local to the site. Record the original source page, source URL, creator, and license for every external image. Landmark images are cached as WebP by the GitHub Actions workflow in `.github/workflows/cache-landmark-images.yml`.
 - Do not add new categories to the Daily Mix or change its existing 14-question format until the new standalone catalogs are ready and explicitly reviewed.
 - Preserve previous versions. Do not silently replace a catalog that is referenced by a published daily challenge.
 
@@ -59,6 +59,6 @@ Never invent a last-refresh date. Record the commit SHA in the refresh entry whe
 
 The manifest marks **Guess the Landmark** as the first catalog in progress. The working catalog now contains **20 draft questions across two batches** toward the 100-question target. Each question includes four answer choices, an explanation, a fact source, and a Wikimedia Commons image reference with creator/license attribution. The user confirmed the landmark identities in the first batch; the overall catalog is still marked as draft because image rendering in the published browser has not yet been verified. The standalone game draws **10 random questions per round**, so the catalog can grow without making each round longer.
 
-The photos are remotely referenced from Wikimedia Commons, so the game needs an internet connection to load them. The exact Special:FilePath image links have not been verified by loading the live site in a browser in this working session. Keep this limitation explicit and do not count those records as approved until a browser render check passes.
+The landmark game is being switched to locally cached WebP images. A GitHub Actions workflow downloads each Wikimedia Commons source, optimizes it, stores it under `assets/landmarks/`, and rewrites the catalog to use local paths while retaining attribution and license metadata. The workflow must complete successfully and the published GitHub Pages game must render the local images before questions are marked approved.
 
 The existing Daily Challenge snapshot is intentionally unchanged.
