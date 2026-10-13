@@ -7,7 +7,7 @@ module.exports = defineConfig({
   fullyParallel: false,
   reporter: [['list'], ['html', { outputFolder: 'playwright-report', open: 'never' }]],
   use: {
-    baseURL: process.env.BASE_URL || 'https://shubhamnov.github.io/Guess-the-____',
+    baseURL: process.env.BASE_URL || 'https://shubhamnov.github.io/Guess-the-____/',
     headless: true,
     screenshot: 'only-on-failure',
     trace: 'retain-on-failure'
