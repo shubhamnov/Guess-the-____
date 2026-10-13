@@ -6,8 +6,6 @@ on:
       - "daily-challenge-data-v1.js"
       - "scripts/cache_flag_images.py"
       - ".github/workflows/cache-flag-images.yml"
-      - "daily-challenge/index.html"
-      - "guess-the-flag/index.html"
   workflow_dispatch:
 
 permissions:
@@ -30,7 +28,7 @@ jobs:
         run: python scripts/cache_flag_images.py
       - name: Commit optimized flags
         run: |
-          if git diff --quiet; then
+          if [ -z "$(git status --porcelain -- assets/flags)" ]; then
             echo "No flag asset changes to commit."
             exit 0
           fi
