@@ -34,7 +34,7 @@
 <section class="game" id="game" aria-label="Brand logo quiz">
   <div class="stats"><div class="stat"><label>Score</label><strong id="score">0</strong></div><div class="stat"><label>Streak</label><strong id="streak">0</strong></div><div class="stat timer" id="timerStat"><label>Time left</label><strong id="time">60</strong></div></div>
   <div class="track" aria-hidden="true"><span id="timebar"></span></div>
-  <div class="question-head"><div class="eyebrow" id="modeEyebrow">ADAPTIVE RUSH</div><div class="level" id="round">LOGO 1</div></div>
+  <div class="question-head"><div class="eyebrow" id="modeEyebrow">BRAND LOGOS</div><div class="level" id="round">LOGO 1</div></div>
   <div class="logo-clue" id="clue"><span class="logo-fallback">?</span></div>
   <h2 class="prompt">Which brand owns this logo?</h2>
   <div class="answers" id="answers" aria-label="Answer choices"></div><div class="feedback" id="feedback" role="status" aria-live="polite"></div>
@@ -195,7 +195,7 @@ async function shareScore(){
  const btn=$('shareBtn'),label=btn.textContent;btn.disabled=true;btn.textContent='Creating image…';
  try{
   const blob=await makeImage();const file=new File([blob],'guess-the-brand-logos-score.png',{type:'image/png'});
-  if(navigator.share&&navigator.canShare&&navigator.canShare({files:[file]})){await navigator.share({files:[file],title:'My Brand Logos score',text:'I scored '+score+' in Guess the ____ Brand Logos. Play the mixed Daily Mix too: '+challengeURL(getShareDate())})}
+  if(navigator.share&&navigator.canShare&&navigator.canShare({files:[file]})){await navigator.share({files:[file],title:'My Brand Logos score',text:'I scored '+score+' in Guess the ____ Brand Logos. Can you beat me?'})}
   else{const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='guess-the-brand-logos-score.png';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500);showToast('Score image saved. Share it from your photos or downloads.')}
  }catch(e){if(e.name!=='AbortError')showToast('Could not create image. Try again.')}
  finally{btn.disabled=false;btn.textContent=label}
