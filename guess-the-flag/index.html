@@ -39,7 +39,7 @@
     <div><div class="eyebrow">TIME'S UP · FLAG RUSH</div><div class="bigscore" id="finalScore">0</div><h2 id="resultTitle">World explorer.</h2><p id="resultText">Ready for another trip around the map?</p></div>
     <div class="resultbox"><div><label>Personal best</label><strong id="resultBest">0</strong></div><div><label>Accuracy</label><strong id="accuracy">0%</strong></div><div><label>Correct</label><strong id="correctCount">0</strong></div><div><label>Best streak</label><strong id="bestStreak">0</strong></div></div>
     <button class="primary" id="againBtn">Run it back <span class="arrow">↻</span></button>
-    <button class="secondary" id="shareBtn">Share my score ↗</button>
+    <button class="secondary" id="shareBtn">Share score image ↗</button>
     <a class="games-link" href="../guess-the-color/">← Play Color Rush</a>
   </section>
   <footer class="bottomline"><span>GUESS THE ?</span><span>ONE WORLD. MANY FLAGS.</span></footer>
@@ -270,12 +270,76 @@ function playCorrectSound(){if(!audioReady())return;const t=audioCtx.currentTime
 function playWrongSound(){if(!audioReady())return;const t=audioCtx.currentTime+.015;tone(190,t,.17,'square',.22,sfxGain,138);tone(138,t+.045,.13,'triangle',.14,sfxGain,112)}
 $('startBtn').addEventListener('click',startGame);$('againBtn').addEventListener('click',startGame);
 $('soundToggle').addEventListener('click',()=>{soundEnabled=!soundEnabled;try{localStorage.setItem(SOUND_KEY,soundEnabled?'on':'off')}catch(e){}renderSoundToggle();if(soundEnabled)startMusic();else stopMusic()});renderSoundToggle();
-$('shareBtn').addEventListener('click',async()=>{const text='I scored '+score+' in Guess the Flag — Flag Rush! Can you beat me?';if(navigator.share){try{await navigator.share({title:'Guess the Flag — Flag Rush',text,url:location.href})}catch(e){}}else if(navigator.clipboard){try{await navigator.clipboard.writeText(text+' '+location.href)}catch(e){}}});
+$('shareBtn').addEventListener('click',()=>shareScoreImage({
+  kind:'flag',game:'Flag Rush',score:String(score),subtitle:'A LITTLE WORLD TOUR',
+  accent:'#d7fb55',accuracy:(answered?Math.round(correct/answered*100):0)+'%',
+  secondLabel:'BEST STREAK',secondValue:String(bestStreakThisGame),
+  challenge:'60 seconds. 195 flags. Your turn.',
+  shareTitle:'My Flag Rush score',shareText:'I scored '+score+' in Guess the Flag — Flag Rush. Can you beat me?',
+  filename:'flag-rush-score.png',url:'guess-the-____'
+}));
 document.addEventListener('visibilitychange',()=>{if(document.hidden&&running){/* The clock intentionally keeps running. */}});
 if(COUNTRIES.length!==195)console.warn('Expected 195 countries; found',COUNTRIES.length);
 
 // Enter straight into gameplay after choosing Flag on the home page.
 window.addEventListener('load', startGame, { once: true });
+
+async function makeScoreImage(config){
+  const canvas=document.createElement('canvas');
+  canvas.width=1080;canvas.height=1350;
+  const ctx=canvas.getContext('2d');
+  if(!ctx)throw new Error('Canvas is not available in this browser');
+  const W=canvas.width,H=canvas.height;
+  const roundRect=(x,y,w,h,r,fill,stroke)=>{
+    ctx.beginPath();ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);ctx.quadraticCurveTo(x+w,y,x+w,y+r);
+    ctx.lineTo(x+w,y+h-r);ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);ctx.lineTo(x+r,y+h);
+    ctx.quadraticCurveTo(x,y+h,x,y+h-r);ctx.lineTo(x,y+r);ctx.quadraticCurveTo(x,y,x+r,y);
+    ctx.closePath();if(fill){ctx.fillStyle=fill;ctx.fill()}if(stroke){ctx.strokeStyle=stroke;ctx.lineWidth=2;ctx.stroke()}
+  };
+  const text=(value,x,y,size,weight,color,align='left')=>{
+    ctx.font=weight+' '+size+'px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
+    ctx.fillStyle=color;ctx.textAlign=align;ctx.textBaseline='alphabetic';ctx.fillText(String(value),x,y);
+  };
+  const ink='#191b1a',muted='#777b75',paper='#fffefa',line='#e7e5dd',lime='#d7fb55';
+  ctx.fillStyle='#f8f7f2';ctx.fillRect(0,0,W,H);
+  ctx.fillStyle=config.accent;ctx.beginPath();ctx.arc(1000,60,115,0,Math.PI*2);ctx.fill();
+  ctx.fillStyle=lime;ctx.beginPath();ctx.arc(1020,1250,95,0,Math.PI*2);ctx.fill();
+  roundRect(62,58,956,123,28,paper,line);
+  text('GUESS THE',100,105,27,850,ink);roundRect(282,72,43,43,11,lime,null);text('?',303.5,105,31,950,ink,'center');
+  text(config.game.toUpperCase(),980,108,22,850,muted,'right');
+  text('MY SCORE',72,275,25,900,muted);text(config.score,62,495,190,950,ink);text('POINTS',78,550,24,900,muted);
+  roundRect(62,604,956,328,32,paper,line);text(config.subtitle,100,675,27,800,ink);
+  roundRect(100,709,880,12,6,config.accent,null);
+  const dots=['#ff6255','#e5ef6e','#7766c6','#54bda0','#2878e5','#f28c30','#d7a5d8','#e0e0d5'];
+  dots.forEach((c,i)=>{ctx.beginPath();ctx.fillStyle=c;ctx.arc(123+(i%4)*245,785+Math.floor(i/4)*38,14,0,Math.PI*2);ctx.fill()});
+  text(config.kind==='flag'?'A LITTLE WORLD TOUR':'COLOR INSTINCTS',100,868,18,850,muted);
+  const left=62,top=970,gap=18,boxW=465,boxH=112;
+  [{label:'ACCURACY',value:config.accuracy},{label:config.secondLabel,value:config.secondValue}].forEach((item,i)=>{
+    const x=left+i*(boxW+gap);roundRect(x,top,boxW,boxH,22,paper,line);
+    text(item.label,x+24,top+37,17,900,muted);text(item.value,x+24,top+81,35,900,ink);
+  });
+  roundRect(62,1115,956,160,26,ink,null);text('CAN YOU BEAT ME?',100,1177,29,900,'#ffffff');
+  text(config.challenge,100,1227,19,550,'#d8dbd2');roundRect(858,1156,105,64,22,lime,null);
+  text('PLAY ↗',910.5,1197,20,950,ink,'center');
+  text('A QUICK BRAIN BREAK • GUESS THE ?',62,1320,15,800,muted);
+  return await new Promise((resolve,reject)=>{canvas.toBlob(blob=>blob?resolve(blob):reject(new Error('Could not export score image')),'image/png')});
+}
+function downloadScoreImage(blob,filename){
+  const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=filename;a.style.display='none';
+  document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500);
+}
+async function shareScoreImage(config){
+  const button=$('shareBtn'),oldLabel=button.textContent;button.disabled=true;button.textContent='Creating image…';let blob=null;
+  try{
+    blob=await makeScoreImage(config);const file=new File([blob],config.filename,{type:'image/png'});
+    if(typeof navigator.share==='function'&&typeof navigator.canShare==='function'&&navigator.canShare({files:[file]})){
+      try{await navigator.share({files:[file],title:config.shareTitle,text:config.shareText});showToast('Score image shared!')}
+      catch(err){if(err&&err.name==='AbortError')return;downloadScoreImage(blob,config.filename);showToast('Score image downloaded to share.')}
+    }else{downloadScoreImage(blob,config.filename);showToast('Score image downloaded to share.')}
+  }catch(err){showToast('Could not create the score image. Try again.');console.error(err)}
+  finally{button.disabled=false;button.textContent=oldLabel}
+}
+
 </script>
 </body>
 </html>
