@@ -101,8 +101,8 @@
       "id": "landmark_005",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Great_wall_of_China.jpg?width=1000",
-        "sourcePage": "https://commons.wikimedia.org/wiki/File:Great_wall_of_China.jpg",
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Great_wall_of_china.jpg?width=1000",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Great_wall_of_china.jpg",
         "creator": "Akhtargorshani",
         "license": "CC BY-SA 3.0"
       },
