@@ -95,6 +95,7 @@ function chooseQuestion(){
 function renderQuestion(){
  if(!running)return;
  const options=chooseQuestion();
+ if(!running||!options.length)return;
  locked=false;roundNumber++;$('round').textContent=difficulty.toUpperCase()+' · LOGO '+roundNumber;$('feedback').textContent='';$('feedback').className='feedback';
  const clue=$('clue');clue.innerHTML='';
  const img=document.createElement('img');img.className='logo-image';img.alt='Mystery brand logo';img.src=svgData(current);img.loading='eager';img.decoding='async';
