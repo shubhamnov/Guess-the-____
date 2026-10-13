@@ -8,19 +8,21 @@
   "batchSize": 10,
   "createdAt": "2026-10-13",
   "notes": [
-    "Two curated batches contain 20 questions toward the 100-question v1 target.",
-    "Landmark photos are being migrated from remote Wikimedia Commons links to locally optimized WebP assets by the repository workflow.",
-    "Source pages, original URLs, creator names, licenses, explanations, and fact sources must remain recorded. Do not approve questions until local image rendering is checked on the published site."
+    "Landmark photos are stored in the repository as locally optimized WebP files so gameplay does not fetch each photo from Wikimedia Commons.",
+    "Each image retains its sourcePage, sourceUrl, creator, and license metadata for attribution and provenance.",
+    "Photo rendering in the published GitHub Pages site must still be checked before questions are marked approved."
   ],
   "questions": [
     {
       "id": "landmark_001",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Eiffel_Tower_Paris.jpg?width=1000",
+        "url": "../assets/landmarks/landmark_001.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Eiffel_Tower_Paris.jpg",
         "creator": "Adam Andrzejewski",
-        "license": "CC BY 3.0"
+        "license": "CC BY 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Eiffel_Tower_Paris.jpg?width=1000",
+        "path": "assets/landmarks/landmark_001.webp"
       },
       "options": [
         "Eiffel Tower",
@@ -38,10 +40,12 @@
       "id": "landmark_002",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Taj_Mahal%2C_Agra%2C_India...JPG?width=1000",
+        "url": "../assets/landmarks/landmark_002.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Taj_Mahal,_Agra,_India...JPG",
         "creator": "Dr. Suchet Chaudhary",
-        "license": "CC BY-SA 3.0"
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Taj_Mahal%2C_Agra%2C_India...JPG?width=1000",
+        "path": "assets/landmarks/landmark_002.webp"
       },
       "options": [
         "Taj Mahal",
@@ -59,10 +63,12 @@
       "id": "landmark_003",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Colosseum_Rome_.jpg?width=1000",
+        "url": "../assets/landmarks/landmark_003.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Colosseum_Rome_.jpg",
         "creator": "Michael LoCascio",
-        "license": "CC BY-SA 3.0"
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Colosseum_Rome_.jpg?width=1000",
+        "path": "assets/landmarks/landmark_003.webp"
       },
       "options": [
         "Colosseum",
@@ -80,10 +86,12 @@
       "id": "landmark_004",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Petra_Treasury.jpg?width=1000",
+        "url": "../assets/landmarks/landmark_004.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Petra_Treasury.jpg",
         "creator": "David Bjorgen",
-        "license": "CC BY-SA 2.5"
+        "license": "CC BY-SA 2.5",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Petra_Treasury.jpg?width=1000",
+        "path": "assets/landmarks/landmark_004.webp"
       },
       "options": [
         "Petra Treasury",
@@ -101,10 +109,12 @@
       "id": "landmark_005",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Great_wall_of_china.jpg?width=1000",
+        "url": "../assets/landmarks/landmark_005.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Great_wall_of_china.jpg",
         "creator": "Akhtargorshani",
-        "license": "CC BY-SA 3.0"
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Great_wall_of_china.jpg?width=1000",
+        "path": "assets/landmarks/landmark_005.webp"
       },
       "options": [
         "Great Wall of China",
@@ -122,10 +132,12 @@
       "id": "landmark_006",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Statue_of_Liberty%2C_New_York.jpg?width=1000",
+        "url": "../assets/landmarks/landmark_006.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Statue_of_Liberty,_New_York.jpg",
         "creator": "Michael LoCascio",
-        "license": "CC BY-SA 3.0 (file page also records a public-domain dedication)"
+        "license": "CC BY-SA 3.0 (file page also records a public-domain dedication)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Statue_of_Liberty%2C_New_York.jpg?width=1000",
+        "path": "assets/landmarks/landmark_006.webp"
       },
       "options": [
         "Statue of Liberty",
@@ -143,10 +155,12 @@
       "id": "landmark_007",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/MC_Sydney_Opera_House.jpg?width=1000",
+        "url": "../assets/landmarks/landmark_007.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:MC_Sydney_Opera_House.jpg",
         "creator": "Christian Mehlführer",
-        "license": "CC BY 2.5"
+        "license": "CC BY 2.5",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/MC_Sydney_Opera_House.jpg?width=1000",
+        "path": "assets/landmarks/landmark_007.webp"
       },
       "options": [
         "Sydney Opera House",
@@ -164,10 +178,12 @@
       "id": "landmark_008",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Angkor_wat_temple.jpg?width=1000",
+        "url": "../assets/landmarks/landmark_008.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Angkor_wat_temple.jpg",
         "creator": "Andrew Lih",
-        "license": "CC BY-SA 2.0"
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Angkor_wat_temple.jpg?width=1000",
+        "path": "assets/landmarks/landmark_008.webp"
       },
       "options": [
         "Angkor Wat",
@@ -185,10 +201,12 @@
       "id": "landmark_009",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Christ-Redeemer-Rio-de-Janeiro.jpg?width=1000",
+        "url": "../assets/landmarks/landmark_009.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Christ-Redeemer-Rio-de-Janeiro.jpg",
         "creator": "acediscovery",
-        "license": "CC BY 4.0"
+        "license": "CC BY 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Christ-Redeemer-Rio-de-Janeiro.jpg?width=1000",
+        "path": "assets/landmarks/landmark_009.webp"
       },
       "options": [
         "Christ the Redeemer",
@@ -206,10 +224,12 @@
       "id": "landmark_010",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Leaning_Tower_of_Pisa.jpg?width=1000",
+        "url": "../assets/landmarks/landmark_010.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Leaning_Tower_of_Pisa.jpg",
         "creator": "Alberto Boretto",
-        "license": "CC BY-SA 3.0"
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Leaning_Tower_of_Pisa.jpg?width=1000",
+        "path": "assets/landmarks/landmark_010.webp"
       },
       "options": [
         "Leaning Tower of Pisa",
@@ -227,10 +247,12 @@
       "id": "landmark_011",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Machu_Picchu%2C_Peru.jpg?width=1000",
+        "url": "../assets/landmarks/landmark_011.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Machu_Picchu,_Peru.jpg",
         "creator": "Pedro Szekely",
-        "license": "CC BY-SA 2.0"
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Machu_Picchu%2C_Peru.jpg?width=1000",
+        "path": "assets/landmarks/landmark_011.webp"
       },
       "options": [
         "Machu Picchu",
@@ -248,10 +270,12 @@
       "id": "landmark_012",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Athens_-_Parthenon.jpg?width=1000",
+        "url": "../assets/landmarks/landmark_012.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Athens_-_Parthenon.jpg",
         "creator": "roger4336",
-        "license": "CC BY-SA 2.0"
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Athens_-_Parthenon.jpg?width=1000",
+        "path": "assets/landmarks/landmark_012.webp"
       },
       "options": [
         "Parthenon",
@@ -269,10 +293,12 @@
       "id": "landmark_013",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mount_Rushmore_from_the_Grand_View_Terrace.jpg?width=1000",
+        "url": "../assets/landmarks/landmark_013.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Mount_Rushmore_from_the_Grand_View_Terrace.jpg",
         "creator": "Vik Varma",
-        "license": "CC BY-SA 4.0"
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Mount_Rushmore_from_the_Grand_View_Terrace.jpg?width=1000",
+        "path": "assets/landmarks/landmark_013.webp"
       },
       "options": [
         "Mount Rushmore",
@@ -290,10 +316,12 @@
       "id": "landmark_014",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/GoldenGateBridge-001.jpg?width=1000",
+        "url": "../assets/landmarks/landmark_014.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:GoldenGateBridge-001.jpg",
         "creator": "Rich Niewiroski Jr.",
-        "license": "CC BY 2.5"
+        "license": "CC BY 2.5",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/GoldenGateBridge-001.jpg?width=1000",
+        "path": "assets/landmarks/landmark_014.webp"
       },
       "options": [
         "Golden Gate Bridge",
@@ -311,10 +339,12 @@
       "id": "landmark_015",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Forbidden_City_Beijing_China.jpg?width=1000",
+        "url": "../assets/landmarks/landmark_015.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Forbidden_City_Beijing_China.jpg",
         "creator": "Philip Nalangan",
-        "license": "CC BY 4.0"
+        "license": "CC BY 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Forbidden_City_Beijing_China.jpg?width=1000",
+        "path": "assets/landmarks/landmark_015.webp"
       },
       "options": [
         "Forbidden City",
@@ -332,10 +362,12 @@
       "id": "landmark_016",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Burj_Khalifa_%285810620261%29.jpg?width=1000",
+        "url": "../assets/landmarks/landmark_016.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Burj_Khalifa_(5810620261).jpg",
         "creator": "Umedha Hettigoda",
-        "license": "CC BY-SA 2.0"
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Burj_Khalifa_%285810620261%29.jpg?width=1000",
+        "path": "assets/landmarks/landmark_016.webp"
       },
       "options": [
         "Burj Khalifa",
@@ -353,10 +385,12 @@
       "id": "landmark_017",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Moai_Rapa_Nui.jpg?width=1000",
+        "url": "../assets/landmarks/landmark_017.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Moai_Rapa_Nui.jpg",
         "creator": "Juan carlos araya mardones",
-        "license": "CC BY-SA 4.0"
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Moai_Rapa_Nui.jpg?width=1000",
+        "path": "assets/landmarks/landmark_017.webp"
       },
       "options": [
         "Moai statues of Rapa Nui",
@@ -374,10 +408,12 @@
       "id": "landmark_018",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sagrada_familia.jpg?width=1000",
+        "url": "../assets/landmarks/landmark_018.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Sagrada_familia.jpg",
         "creator": "Uli@wiki",
-        "license": "CC BY-SA 3.0"
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Sagrada_familia.jpg?width=1000",
+        "path": "assets/landmarks/landmark_018.webp"
       },
       "options": [
         "Sagrada Família",
@@ -395,10 +431,12 @@
       "id": "landmark_019",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Castle_neuschwanstein.jpg?width=1000",
+        "url": "../assets/landmarks/landmark_019.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Castle_neuschwanstein.jpg",
         "creator": "Asifkhan sahil",
-        "license": "CC BY-SA 4.0"
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Castle_neuschwanstein.jpg?width=1000",
+        "path": "assets/landmarks/landmark_019.webp"
       },
       "options": [
         "Neuschwanstein Castle",
@@ -416,10 +454,12 @@
       "id": "landmark_020",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Pyramids_of_Giza.jpg?width=1000",
+        "url": "../assets/landmarks/landmark_020.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Pyramids_of_Giza.jpg",
         "creator": "Ireneusz Jerzy Borysiewicz",
-        "license": "CC BY-SA 4.0"
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Pyramids_of_Giza.jpg?width=1000",
+        "path": "assets/landmarks/landmark_020.webp"
       },
       "options": [
         "Pyramids of Giza",
