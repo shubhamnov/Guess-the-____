@@ -280,8 +280,6 @@ function startGame(){if(soundEnabled)startMusic();clearInterval(timerId);running
 function finishGame(){if(!running)return;running=false;clearInterval(timerId);game.classList.remove('active');result.classList.add('active');const newBest=score>best;if(newBest){best=score;setBest(best)}$('finalScore').textContent=score;$('resultBest').textContent=best;$('accuracy').textContent=(answered?Math.round(correct/answered*100):0)+'%';$('correctCount').textContent=correct;$('bestStreak').textContent=bestStreakThisGame;const title=score>=25?'World-class explorer.':score>=16?'A serious geography buff.':score>=8?'Getting your bearings.':'Every flag is a new discovery.';$('resultTitle').textContent=newBest&&score>0?'New personal best!':title;$('resultText').textContent=score===0?'Those flags were sneaky. One more go?':newBest&&score>0?'A new record for your world tour. Can you top it?':'Can you beat '+score+' next round?';if(navigator.vibrate)navigator.vibrate([25,30,25])}
 const SOUND_KEY='gtq_sound';
 let soundEnabled=(()=>{try{return localStorage.getItem(SOUND_KEY)!=='off'}catch(e){return true}
-  // AUTO_START_ON_CATEGORY_ENTRY
-  startGame();
 })();
 let audioCtx=null,masterGain=null,musicGain=null,sfxGain=null,musicInterval=null,musicStep=0;
 function renderSoundToggle(){const b=$('soundToggle');b.textContent=soundEnabled?'♫ SOUND ON':'♫ SOUND OFF';b.setAttribute('aria-pressed',String(soundEnabled));b.setAttribute('aria-label',soundEnabled?'Sound on — tap to mute':'Sound off — tap to enable')}
@@ -365,6 +363,8 @@ async function shareScoreImage(config){
   finally{button.disabled=false;button.textContent=oldLabel}
 }
 
+
+startGame();
 </script>
 </body>
 </html>
