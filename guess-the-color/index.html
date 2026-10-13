@@ -92,8 +92,6 @@ let running=false,startedAt=0,elapsed=0,timerId=null,score=0,answered=0,correct=
 
 const SOUND_KEY='gtq_sound';
 let soundEnabled=(()=>{try{return localStorage.getItem(SOUND_KEY)!=='off'}catch(e){return true}
-  // AUTO_START_ON_CATEGORY_ENTRY
-  startGame();
 })();
 let audioCtx=null,masterGain=null,musicGain=null,sfxGain=null,musicInterval=null,musicStep=0;
 function renderSoundToggle(){const b=$('soundToggle');if(!b)return;b.textContent=soundEnabled?'♫ SOUND ON':'♫ SOUND OFF';b.setAttribute('aria-pressed',String(soundEnabled));b.setAttribute('aria-label',soundEnabled?'Sound on — tap to mute':'Sound off — tap to enable')}
@@ -233,6 +231,8 @@ async function shareScoreImage(config){
   }
 }
 
+
+startGame();
 </script>
 </body>
 </html>
