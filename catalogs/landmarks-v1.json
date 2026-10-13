@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 1,
+  "category": "landmarks",
+  "title": "Guess the Landmark",
+  "version": 1,
+  "targetQuestions": 100,
+  "batch": 1,
+  "batchSize": 10,
+  "createdAt": "2026-10-13",
+  "notes": [
+    "Pilot batch of 10 image questions toward the 100-question v1 target.",
+    "Images are referenced from Wikimedia Commons and are not copied into the repository yet; gameplay therefore needs an internet connection for photos.",
+    "Image source pages and license statements were checked during curation. Verify the rendered image URLs in the published browser before marking this batch fully approved."
+  ],
+  "questions": [
+    {
+      "id": "landmark_001",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Eiffel_Tower_Paris.jpg?width=1000",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Eiffel_Tower_Paris.jpg",
+        "creator": "Adam Andrzejewski",
+        "license": "CC BY 3.0"
+      },
+      "options": [
+        "Eiffel Tower",
+        "Tokyo Tower",
+        "CN Tower",
+        "Space Needle"
+      ],
+      "answer": "Eiffel Tower",
+      "explanation": "The Eiffel Tower was built for the 1889 Exposition Universelle in Paris.",
+      "factSource": "https://www.toureiffel.paris/en/the-monument/universal-exhibition",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_002",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Taj_Mahal%2C_Agra%2C_India...JPG?width=1000",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Taj_Mahal,_Agra,_India...JPG",
+        "creator": "Dr. Suchet Chaudhary",
+        "license": "CC BY-SA 3.0"
+      },
+      "options": [
+        "Taj Mahal",
+        "Humayun's Tomb",
+        "Sheikh Zayed Grand Mosque",
+        "Victoria Memorial"
+      ],
+      "answer": "Taj Mahal",
+      "explanation": "The Taj Mahal in Agra was commissioned by Mughal emperor Shah Jahan in memory of Mumtaz Mahal.",
+      "factSource": "https://whc.unesco.org/en/list/252/",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_003",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Colosseum_Rome_.jpg?width=1000",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Colosseum_Rome_.jpg",
+        "creator": "Michael LoCascio",
+        "license": "CC BY-SA 3.0"
+      },
+      "options": [
+        "Colosseum",
+        "Pantheon",
+        "Arena of Verona",
+        "Parthenon"
+      ],
+      "answer": "Colosseum",
+      "explanation": "Rome's Colosseum is an ancient amphitheatre used for public spectacles, including gladiatorial contests.",
+      "factSource": "https://www.britannica.com/topic/Colosseum",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_004",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Petra_Treasury.jpg?width=1000",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Petra_Treasury.jpg",
+        "creator": "David Bjorgen",
+        "license": "CC BY-SA 2.5"
+      },
+      "options": [
+        "Petra Treasury",
+        "Alhambra",
+        "Abu Simbel",
+        "Persepolis"
+      ],
+      "answer": "Petra Treasury",
+      "explanation": "Known as Al-Khazneh, the Treasury is one of Petra's best-known rock-cut monuments in Jordan; its original purpose is debated.",
+      "factSource": "https://whc.unesco.org/en/list/326/",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_005",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Great_wall_of_China.jpg?width=1000",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Great_wall_of_China.jpg",
+        "creator": "Akhtargorshani",
+        "license": "CC BY-SA 3.0"
+      },
+      "options": [
+        "Great Wall of China",
+        "Hadrian's Wall",
+        "Walls of Dubrovnik",
+        "Berlin Wall"
+      ],
+      "answer": "Great Wall of China",
+      "explanation": "The Great Wall is a network of fortifications built and rebuilt across many centuries, not a single wall built at once.",
+      "factSource": "https://whc.unesco.org/en/list/438/",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_006",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Statue_of_Liberty%2C_New_York.jpg?width=1000",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Statue_of_Liberty,_New_York.jpg",
+        "creator": "Michael LoCascio",
+        "license": "CC BY-SA 3.0 (file page also records a public-domain dedication)"
+      },
+      "options": [
+        "Statue of Liberty",
+        "Christ the Redeemer",
+        "Statue of Unity",
+        "The Motherland Calls"
+      ],
+      "answer": "Statue of Liberty",
+      "explanation": "The Statue of Liberty stands on Liberty Island in New York Harbor and was officially dedicated in 1886.",
+      "factSource": "https://www.nps.gov/stli/learn/statue-of-liberty-facts.htm",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_007",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/MC_Sydney_Opera_House.jpg?width=1000",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:MC_Sydney_Opera_House.jpg",
+        "creator": "Christian Mehlführer",
+        "license": "CC BY 2.5"
+      },
+      "options": [
+        "Sydney Opera House",
+        "Marina Bay Sands",
+        "Guggenheim Bilbao",
+        "Walt Disney Concert Hall"
+      ],
+      "answer": "Sydney Opera House",
+      "explanation": "Designed by Danish architect Jørn Utzon, the Sydney Opera House opened in 1973.",
+      "factSource": "https://www.sydneyoperahouse.com/our-story",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_008",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Angkor_wat_temple.jpg?width=1000",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Angkor_wat_temple.jpg",
+        "creator": "Andrew Lih",
+        "license": "CC BY-SA 2.0"
+      },
+      "options": [
+        "Angkor Wat",
+        "Borobudur",
+        "Prambanan",
+        "Bagan temples"
+      ],
+      "answer": "Angkor Wat",
+      "explanation": "Angkor Wat in Cambodia began as a Hindu temple dedicated to Vishnu and later became a Buddhist religious site.",
+      "factSource": "https://whc.unesco.org/en/list/668/",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_009",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Christ-Redeemer-Rio-de-Janeiro.jpg?width=1000",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Christ-Redeemer-Rio-de-Janeiro.jpg",
+        "creator": "acediscovery",
+        "license": "CC BY 4.0"
+      },
+      "options": [
+        "Christ the Redeemer",
+        "Statue of Liberty",
+        "Cristo Rei",
+        "Great Buddha of Thailand"
+      ],
+      "answer": "Christ the Redeemer",
+      "explanation": "Christ the Redeemer is the large Art Deco statue atop Corcovado mountain overlooking Rio de Janeiro, Brazil.",
+      "factSource": "https://www.britannica.com/topic/Christ-the-Redeemer",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_010",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Leaning_Tower_of_Pisa.jpg?width=1000",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Leaning_Tower_of_Pisa.jpg",
+        "creator": "Alberto Boretto",
+        "license": "CC BY-SA 3.0"
+      },
+      "options": [
+        "Leaning Tower of Pisa",
+        "Garisenda Tower",
+        "Asinelli Tower",
+        "Tower of Hercules"
+      ],
+      "answer": "Leaning Tower of Pisa",
+      "explanation": "The Leaning Tower of Pisa is the cathedral's freestanding bell tower; its tilt began because of an inadequate foundation on soft ground.",
+      "factSource": "https://www.britannica.com/topic/Leaning-Tower-of-Pisa",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    }
+  ]
+}
