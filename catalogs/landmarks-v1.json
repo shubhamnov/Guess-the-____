@@ -8,9 +8,9 @@
   "batchSize": 10,
   "createdAt": "2026-10-13",
   "notes": [
-    "Landmark photos are stored in the repository as locally optimized WebP files so gameplay does not fetch each photo from Wikimedia Commons.",
-    "Each image retains its sourcePage, sourceUrl, cachedSourceUrl, creator, and license metadata. If sourceUrl changes, the cache refreshes the local WebP.",
-    "Photo rendering in the published GitHub Pages site must still be checked before questions are marked approved."
+    "All 20 landmark questions passed the published browser image-load check and manual contact-sheet review.",
+    "Landmark choices include country names in parentheses. Photos are optimized local WebP assets with source, creator, license and cached-source metadata.",
+    "Question order and answer choices are randomized each round; expand the catalog in curated batches toward 100 questions."
   ],
   "questions": [
     {
@@ -35,7 +35,7 @@
       "explanation": "The Eiffel Tower was built for the 1889 Exposition Universelle in Paris.",
       "factSource": "https://www.toureiffel.paris/en/the-monument/universal-exhibition",
       "difficulty": "easy",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_002",
@@ -59,7 +59,7 @@
       "explanation": "The Taj Mahal in Agra was commissioned by Mughal emperor Shah Jahan in memory of Mumtaz Mahal.",
       "factSource": "https://whc.unesco.org/en/list/252/",
       "difficulty": "easy",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_003",
@@ -83,7 +83,7 @@
       "explanation": "Rome's Colosseum is an ancient amphitheatre used for public spectacles, including gladiatorial contests.",
       "factSource": "https://www.britannica.com/topic/Colosseum",
       "difficulty": "easy",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_004",
@@ -107,7 +107,7 @@
       "explanation": "Known as Al-Khazneh, the Treasury is one of Petra's best-known rock-cut monuments in Jordan; its original purpose is debated.",
       "factSource": "https://whc.unesco.org/en/list/326/",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_005",
@@ -131,7 +131,7 @@
       "explanation": "The Great Wall is a network of fortifications built and rebuilt across many centuries, not a single wall built at once.",
       "factSource": "https://whc.unesco.org/en/list/438/",
       "difficulty": "easy",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_006",
@@ -155,7 +155,7 @@
       "explanation": "The Statue of Liberty stands on Liberty Island in New York Harbor and was officially dedicated in 1886.",
       "factSource": "https://www.nps.gov/stli/learn/statue-of-liberty-facts.htm",
       "difficulty": "easy",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_007",
@@ -179,7 +179,7 @@
       "explanation": "Designed by Danish architect Jørn Utzon, the Sydney Opera House opened in 1973.",
       "factSource": "https://www.sydneyoperahouse.com/our-story",
       "difficulty": "easy",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_008",
@@ -203,7 +203,7 @@
       "explanation": "Angkor Wat in Cambodia began as a Hindu temple dedicated to Vishnu and later became a Buddhist religious site.",
       "factSource": "https://whc.unesco.org/en/list/668/",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_009",
@@ -227,7 +227,7 @@
       "explanation": "Christ the Redeemer is the large Art Deco statue atop Corcovado mountain overlooking Rio de Janeiro, Brazil.",
       "factSource": "https://www.britannica.com/topic/Christ-the-Redeemer",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_010",
@@ -251,7 +251,7 @@
       "explanation": "The Leaning Tower of Pisa is the cathedral's freestanding bell tower; its tilt began because of an inadequate foundation on soft ground.",
       "factSource": "https://www.britannica.com/topic/Leaning-Tower-of-Pisa",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_011",
@@ -275,7 +275,7 @@
       "explanation": "Machu Picchu is a 15th-century Inca site set high in the Peruvian Andes, surrounded by steep mountain slopes and terraces.",
       "factSource": "https://whc.unesco.org/en/list/274/",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_012",
@@ -299,7 +299,7 @@
       "explanation": "The Parthenon is the famous temple on Athens' Acropolis, built in the 5th century BCE and dedicated to Athena.",
       "factSource": "https://whc.unesco.org/en/list/404/",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_013",
@@ -323,7 +323,7 @@
       "explanation": "Mount Rushmore in South Dakota features the carved faces of four U.S. presidents: George Washington, Thomas Jefferson, Theodore Roosevelt and Abraham Lincoln.",
       "factSource": "https://www.nps.gov/moru/learn/historyculture/memorial-history.htm",
       "difficulty": "easy",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_014",
@@ -347,7 +347,7 @@
       "explanation": "The Golden Gate Bridge spans the entrance to San Francisco Bay and opened to vehicle traffic in May 1937.",
       "factSource": "https://www.goldengate.org/bridge/history-research/statistics-data/faqs/",
       "difficulty": "easy",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_015",
@@ -371,7 +371,7 @@
       "explanation": "The Forbidden City in Beijing was the imperial palace of China's Ming and Qing dynasties for centuries.",
       "factSource": "https://whc.unesco.org/en/list/439/",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_016",
@@ -395,7 +395,7 @@
       "explanation": "Big Ben is the nickname of the Great Bell inside the Elizabeth Tower at the Palace of Westminster in London.",
       "factSource": "https://en.wikipedia.org/wiki/Big_Ben",
       "difficulty": "easy",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_017",
@@ -419,7 +419,7 @@
       "explanation": "The moai are monumental stone figures carved by the Rapa Nui people on Rapa Nui, also known as Easter Island.",
       "factSource": "https://whc.unesco.org/en/list/715",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_018",
@@ -443,7 +443,7 @@
       "explanation": "The Sagrada Família in Barcelona is a basilica designed by Antoni Gaudí; construction began in 1882 and continues today.",
       "factSource": "https://sagradafamilia.org/en/history-of-the-temple",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_019",
@@ -467,7 +467,7 @@
       "explanation": "Neuschwanstein Castle in Bavaria was begun for King Ludwig II in 1869 and was never fully completed.",
       "factSource": "https://www.neuschwanstein.de/englisch/palace/history.htm",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_020",
@@ -491,7 +491,7 @@
       "explanation": "The Giza pyramids are part of the vast ancient necropolis of Memphis and include the Great Pyramid of Khufu, the only surviving wonder of the ancient world.",
       "factSource": "https://whc.unesco.org/en/list/86/",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     }
   ]
 }
