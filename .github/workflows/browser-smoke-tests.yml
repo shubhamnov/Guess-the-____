@@ -7,6 +7,12 @@ on:
       - "tests/**"
       - "package.json"
       - "playwright.config.js"
+      - "catalogs/landmarks-v1.json"
+      - "catalogs/cuisines-v1.json"
+      - "assets/landmarks/**"
+      - "assets/cuisines/**"
+      - "guess-the-landmarks/index.html"
+      - "guess-the-cuisine/index.html"
       - ".github/workflows/browser-smoke-tests.yml"
   workflow_run:
     workflows: ["pages build and deployment"]
