@@ -45,7 +45,7 @@
 </main>
 <div class="toast" id="toast" role="status"></div>
 <script src="../daily-challenge-data-v1.js"></script>
-<script src="../brand-logos.js"></script>
+<script src="../brand-logos-daily-v1.js"></script>
 <script>
 (function(){
 'use strict';
@@ -60,7 +60,7 @@ const CATEGORIES=[
  {key:'logos',label:'Brand Logos',kind:'logo',prompt:()=> 'Which brand owns this logo?'}
 ];
 const DATA=window.DAILY_CHALLENGE_DATA_V1||{};
-const LOGOS=window.BRAND_LOGOS_V1||window.BRAND_LOGOS||[];
+const LOGOS=window.DAILY_MIX_BRAND_LOGOS_V1||[];
 const params=new URLSearchParams(window.location.search);
 function todayUTC(){return new Date().toISOString().slice(0,10)}
 function validDate(value){if(!/^\d{4}-\d{2}-\d{2}$/.test(value||''))return false;const d=new Date(value+'T00:00:00Z');return !Number.isNaN(d.getTime())&&d.toISOString().slice(0,10)===value}
