@@ -1,0 +1,248 @@
+{
+  "schemaVersion": 1,
+  "category": "cuisines",
+  "title": "Guess the Cuisine",
+  "version": 1,
+  "targetQuestions": 100,
+  "batch": 1,
+  "batchSize": 10,
+  "createdAt": "2026-10-13",
+  "notes": [
+    "First curated batch of 10 questions toward the 100-question v1 target.",
+    "Question order and answer choices are randomized each round.",
+    "Photos are cached as optimized local WebP assets. Source page, original URL, creator, license, explanation and fact source are retained.",
+    "Keep records in draft status until the local images and published game are checked in a browser."
+  ],
+  "questions": [
+    {
+      "id": "cuisine_001",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "../assets/cuisines/cuisine_001.webp",
+        "path": "assets/cuisines/cuisine_001.webp",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:SUSHI.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/SUSHI.jpg?width=1200",
+        "creator": "Takeshi Hiramatsu",
+        "license": "CC BY 4.0"
+      },
+      "options": [
+        "Sushi",
+        "Sashimi",
+        "Kimbap",
+        "Spring rolls"
+      ],
+      "answer": "Sushi",
+      "explanation": "Sushi is built around vinegared rice, often paired with seafood, vegetables or egg.",
+      "factSource": "https://en.wikipedia.org/wiki/Sushi",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_002",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "../assets/cuisines/cuisine_002.webp",
+        "path": "assets/cuisines/cuisine_002.webp",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Tacos_s.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Tacos_s.jpg?width=1200",
+        "creator": "Nesamagua",
+        "license": "CC BY-SA 4.0"
+      },
+      "options": [
+        "Tacos",
+        "Quesadillas",
+        "Arepas",
+        "Burritos"
+      ],
+      "answer": "Tacos",
+      "explanation": "Tacos are typically made with a tortilla folded or wrapped around a filling.",
+      "factSource": "https://en.wikipedia.org/wiki/Taco",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_003",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "../assets/cuisines/cuisine_003.webp",
+        "path": "assets/cuisines/cuisine_003.webp",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Neapolitan_pizza.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Neapolitan_pizza.jpg?width=1200",
+        "creator": "Stevemconst61",
+        "license": "Public domain"
+      },
+      "options": [
+        "Neapolitan pizza",
+        "Focaccia",
+        "Calzone",
+        "Pita bread"
+      ],
+      "answer": "Neapolitan pizza",
+      "explanation": "Neapolitan pizza is associated with Naples and is known for its soft centre and raised rim.",
+      "factSource": "https://ich.unesco.org/en/RL/art-of-neapolitan-pizzaiuolo-00722",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_004",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "../assets/cuisines/cuisine_004.webp",
+        "path": "assets/cuisines/cuisine_004.webp",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Briyani_food.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Briyani_food.jpg?width=1200",
+        "creator": "ArulkumarRajamani",
+        "license": "CC0 1.0"
+      },
+      "options": [
+        "Biryani",
+        "Paella",
+        "Jollof rice",
+        "Risotto"
+      ],
+      "answer": "Biryani",
+      "explanation": "Biryani is a South Asian rice dish layered or cooked with spices and often vegetables, meat or seafood.",
+      "factSource": "https://en.wikipedia.org/wiki/Biryani",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_005",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "../assets/cuisines/cuisine_005.webp",
+        "path": "assets/cuisines/cuisine_005.webp",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Pho_Soup.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Pho_Soup.jpg?width=1200",
+        "creator": "Revital Salomon",
+        "license": "CC BY-SA 4.0"
+      },
+      "options": [
+        "Pho",
+        "Ramen",
+        "Laksa",
+        "Tom yum"
+      ],
+      "answer": "Pho",
+      "explanation": "Pho is a Vietnamese noodle soup, commonly served with broth, rice noodles, herbs and meat or other toppings.",
+      "factSource": "https://en.wikipedia.org/wiki/Pho",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_006",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "../assets/cuisines/cuisine_006.webp",
+        "path": "assets/cuisines/cuisine_006.webp",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Paella_paellero.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Paella_paellero.jpg?width=1200",
+        "creator": "Jan Harenburg",
+        "license": "CC BY 4.0"
+      },
+      "options": [
+        "Paella",
+        "Biryani",
+        "Risotto",
+        "Jambalaya"
+      ],
+      "answer": "Paella",
+      "explanation": "Paella is a Spanish rice dish traditionally cooked in a wide, shallow pan and associated with Valencia.",
+      "factSource": "https://en.wikipedia.org/wiki/Paella",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_007",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "../assets/cuisines/cuisine_007.webp",
+        "path": "assets/cuisines/cuisine_007.webp",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Croissant.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Croissant.jpg?width=1200",
+        "creator": "JidGom",
+        "license": "CC BY-SA 3.0"
+      },
+      "options": [
+        "Croissant",
+        "Brioche",
+        "Pretzel",
+        "Danish pastry"
+      ],
+      "answer": "Croissant",
+      "explanation": "A croissant is a buttery, flaky pastry made by layering dough and butter.",
+      "factSource": "https://en.wikipedia.org/wiki/Croissant",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_008",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "../assets/cuisines/cuisine_008.webp",
+        "path": "assets/cuisines/cuisine_008.webp",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Pad_Thai_in_Thailand.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Pad_Thai_in_Thailand.jpg?width=1200",
+        "creator": "Douglas Perkins",
+        "license": "CC BY 4.0"
+      },
+      "options": [
+        "Pad Thai",
+        "Chow mein",
+        "Yakisoba",
+        "Pad see ew"
+      ],
+      "answer": "Pad Thai",
+      "explanation": "Pad Thai is a Thai stir-fried rice-noodle dish commonly made with tamarind, egg, bean sprouts and peanuts.",
+      "factSource": "https://www.doae.go.th/en/pad-thai/",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_009",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "../assets/cuisines/cuisine_009.webp",
+        "path": "assets/cuisines/cuisine_009.webp",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Samosa.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Samosa.jpg?width=1200",
+        "creator": "Aotearoa",
+        "license": "CC BY-SA 3.0"
+      },
+      "options": [
+        "Samosa",
+        "Empanada",
+        "Spring roll",
+        "Pakora"
+      ],
+      "answer": "Samosa",
+      "explanation": "A samosa is a savoury pastry often filled with spiced potatoes and peas, though fillings vary by region.",
+      "factSource": "https://en.wikipedia.org/wiki/Samosa",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_010",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "../assets/cuisines/cuisine_010.webp",
+        "path": "assets/cuisines/cuisine_010.webp",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Ceviche_Peruvian_dish.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ceviche_Peruvian_dish.jpg?width=1200",
+        "creator": "CEllen",
+        "license": "CC BY-SA 4.0"
+      },
+      "options": [
+        "Ceviche",
+        "Poke",
+        "Tartare",
+        "Escabeche"
+      ],
+      "answer": "Ceviche",
+      "explanation": "Peruvian ceviche is traditionally made with raw fish marinated in citrus and seasoned with chilli and salt.",
+      "factSource": "https://ich.unesco.org/en/RL/practices-and-meanings-associated-with-the-preparation-and-consumption-of-ceviche-an-expression-of-peruvian-traditional-cuisine-01952",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    }
+  ]
+}
