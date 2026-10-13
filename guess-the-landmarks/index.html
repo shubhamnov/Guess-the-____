@@ -158,6 +158,7 @@
     catalog=data.questions.filter(q=>q.status!=='retired'&&q.image&&q.image.url&&Array.isArray(q.options)&&q.options.includes(q.answer));
     if(!catalog.length)throw new Error('No valid questions available');
     $('start').disabled=false;
+    startRound();
   }).catch(()=>{
     $('start').disabled=true;$('start').textContent='Catalog temporarily unavailable';
     document.querySelector('.hero p').textContent='The landmark catalog could not be loaded. Please try again later.';
