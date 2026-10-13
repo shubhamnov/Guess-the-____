@@ -62,3 +62,8 @@ The manifest marks **Guess the Landmark** as the first catalog in progress. The 
 The landmark game is being switched to locally cached WebP images. A GitHub Actions workflow downloads each Wikimedia Commons source, optimizes it, stores it under `assets/landmarks/`, and rewrites the catalog to use local paths while retaining attribution and license metadata. The workflow must complete successfully and the published GitHub Pages game must render the local images before questions are marked approved.
 
 The existing Daily Challenge snapshot is intentionally unchanged.
+
+
+## Shared flag images
+
+The Daily Mix and Guess the Flag games use locally cached flag images under `assets/flags/` instead of fetching flags from FlagCDN during play. `scripts/cache_flag_images.py` builds 320px-wide WebP versions from the flag-code list in `daily-challenge-data-v1.js`; the source data and date-seeded Daily Mix question order remain unchanged.
