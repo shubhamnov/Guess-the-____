@@ -52,9 +52,9 @@ for (const game of games) {
   test(`${game.name} gives answer feedback, sound, and advances automatically`, async ({ page }) => {
     await page.goto(game.path, { waitUntil: 'domcontentloaded' });
     await expect.poll(() => page.locator('#game').evaluate(el => el.classList.contains('active'))).toBe(true);
-    const firstPhoto = game.kind === 'photo' ? await page.locator('#photo').getAttribute('src') : null;
     const firstLogo = game.kind === 'logo' ? await page.locator('#clue img').getAttribute('src') : null;
     const firstNumber = game.kind === 'photo' ? await page.locator('#number').innerText() : null;
+    const firstOptions = await page.locator('#answers .answer').allTextContents();
     const before = await page.evaluate(() => window.__quizOscillatorStarts || 0);
     await page.locator('#answers .answer').first().click();
     await expect(page.locator('#feedback')).not.toBeEmpty();
@@ -64,15 +64,11 @@ for (const game of games) {
     } else if (game.kind === 'logo') {
       await expect.poll(() => page.locator('#clue img').getAttribute('src')).not.toBe(firstLogo);
     } else {
+      // Timed games replace their answer set as soon as feedback is shown.
       await expect.poll(async () => {
         const current = await page.locator('#answers .answer').allTextContents();
         return current.join('|');
-      }, { timeout: 5000 }).not.toBe('');
-      // Wait for a new round of choices rather than relying on the timer.
-      await expect.poll(async () => {
-        const current = await page.locator('#answers .answer').allTextContents();
-        return current.join('|');
-      }, { timeout: 5000 }).not.toBe((await page.locator('#answers .answer').allTextContents()).join('|'));
+      }, { timeout: 5000 }).not.toBe(firstOptions.join('|'));
     }
   });
 }
