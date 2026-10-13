@@ -56,7 +56,7 @@
         <div class="meta"><span class="tag">60 seconds</span><span class="tag">27 scripts</span></div>
       </a>
       <a class="game-card" href="./guess-the-brand-logos/" aria-label="Play Guess the Brand Logos">
-        <div class="visual brand-visual" aria-hidden="true"><span><img src="https://cdn.simpleicons.org/apple" alt=""></span><span><img src="https://cdn.simpleicons.org/nike" alt=""></span><span><img src="https://cdn.simpleicons.org/netflix" alt=""></span><span><img src="https://cdn.simpleicons.org/spotify" alt=""></span><span><img src="https://cdn.simpleicons.org/microsoft" alt=""></span><span><img src="https://cdn.simpleicons.org/amazon" alt=""></span></div>
+        <div class="visual brand-visual" aria-hidden="true"><span><img data-preview-slug="apple" alt=""></span><span><img data-preview-slug="nike" alt=""></span><span><img data-preview-slug="netflix" alt=""></span><span><img data-preview-slug="spotify" alt=""></span><span><img data-preview-slug="googlechrome" alt=""></span><span><img data-preview-slug="github" alt=""></span></div>
         <div class="card-info"><div><h2>Brand Logos</h2><p>Can you name the brand from its logo?</p></div><span class="arrow" aria-hidden="true">→</span></div>
         <div class="meta"><span class="tag">60 seconds</span><span class="tag">Brand knowledge</span></div>
       </a>
@@ -65,5 +65,15 @@
   </section>
   <footer class="footer"><span>GUESS THE ?</span><a class="creator-credit" href="https://github.com/shubhamnov" target="_blank" rel="noopener noreferrer">MADE BY SHUBHAM ↗</a></footer>
 </main>
+<script src="./brand-logos-easy.js"></script>
+<script>
+(function(){
+ const logos=window.BRAND_LOGOS||[];
+ document.querySelectorAll('.brand-visual [data-preview-slug]').forEach(img=>{
+  const item=logos.find(x=>x.slug===img.dataset.previewSlug);
+  if(item)img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(item.svg);
+ });
+})();
+</script>
 </body>
 </html>
