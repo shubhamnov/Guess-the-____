@@ -9,7 +9,7 @@
   "createdAt": "2026-10-13",
   "notes": [
     "Cuisine photos are stored in the repository as locally optimized WebP files so gameplay does not fetch each photo from Wikimedia Commons.",
-    "Each image retains its sourcePage, sourceUrl, creator, and license metadata for attribution and provenance.",
+    "Each image retains sourcePage, sourceUrl, cachedSourceUrl, creator, and license metadata. If sourceUrl changes, the cache refreshes that local WebP.",
     "Photo rendering in the published GitHub Pages site must still be checked before questions are marked approved."
   ],
   "questions": [
@@ -695,7 +695,7 @@
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Taita_fit-fit.jpg?width=1200",
         "creator": "Temesgen Woldezion (edited by Merhawie Woldezion)",
         "license": "CC BY-SA 2.5",
-        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Firfir.JPG?width=1200"
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Taita_fit-fit.jpg?width=1200"
       },
       "options": [
         "Taita fit-fit",
