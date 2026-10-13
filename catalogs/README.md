@@ -77,10 +77,10 @@ The Daily Mix and Guess the Flag games use locally cached flag images under `ass
 
 ## Guess the Cuisine
 
-- The first 30 questions are in `catalogs/cuisines-v1.json`, with a 100-question target. Questions are curated in batches of 10.
+- The first 30 approved questions are in `catalogs/cuisines-v1.json`, with a 100-question target. Questions are curated in batches of 10.
 - The standalone game is at `guess-the-cuisine/index.html`.
 - Cuisine photos are optimized into local WebP files under `assets/cuisines/`; creator, license, original image source and fact-source metadata are retained.
-- All 30 questions remain drafts until published browser tests confirm image loading and the photo-to-answer match has been visually reviewed.
+- All 30 cuisine questions are approved after published browser tests confirmed every photo loads and the contact sheet was manually reviewed.
 
 
 ## Consistent gameplay
@@ -95,3 +95,8 @@ The Daily Mix and Guess the Flag games use locally cached flag images under `ass
 ## Browser smoke tests
 
 The `.github/workflows/browser-smoke-tests.yml` workflow runs Playwright against the published GitHub Pages site after a successful deployment. It checks that category URLs start directly, answer feedback plays audio and advances, local photo assets load, and Daily Mix remains a homepage-only entry point. Test screenshots and reports are retained as workflow artifacts.
+
+
+## Latest browser verification
+
+The Playwright smoke suite passed against the published GitHub Pages site on 2026-10-13. It verified direct entry into all nine category games, answer audio and automatic progression, all local Landmark and Cuisine photo loads, country labels for Landmark options, and the Daily Mix homepage entry point. The Cuisine and Landmark contact sheets were visually reviewed; the Taj Mahal, Big Ben and Taita fit-fit photos were corrected before the catalogs were approved.
