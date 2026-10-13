@@ -1,15 +1,15 @@
 const { test, expect } = require('@playwright/test');
 
 const games = [
-  { name: 'Colors', path: '/guess-the-color/', kind: 'timed' },
-  { name: 'Flags', path: '/guess-the-flag/', kind: 'timed' },
-  { name: 'Countries', path: '/guess-the-countries/', kind: 'timed' },
-  { name: 'Landmarks', path: '/guess-the-landmarks/', kind: 'photo' },
-  { name: 'Cuisine', path: '/guess-the-cuisine/', kind: 'photo' },
-  { name: 'Animals', path: '/guess-the-animals/', kind: 'timed' },
-  { name: 'Capital Cities', path: '/guess-the-capitals/', kind: 'timed' },
-  { name: 'Scripts', path: '/guess-the-scripts/', kind: 'timed' },
-  { name: 'Brand Logos', path: '/guess-the-brand-logos/', kind: 'logo' }
+  { name: 'Colors', path: 'guess-the-color/', kind: 'timed' },
+  { name: 'Flags', path: 'guess-the-flag/', kind: 'timed' },
+  { name: 'Countries', path: 'guess-the-countries/', kind: 'timed' },
+  { name: 'Landmarks', path: 'guess-the-landmarks/', kind: 'photo' },
+  { name: 'Cuisine', path: 'guess-the-cuisine/', kind: 'photo' },
+  { name: 'Animals', path: 'guess-the-animals/', kind: 'timed' },
+  { name: 'Capital Cities', path: 'guess-the-capitals/', kind: 'timed' },
+  { name: 'Scripts', path: 'guess-the-scripts/', kind: 'timed' },
+  { name: 'Brand Logos', path: 'guess-the-brand-logos/', kind: 'logo' }
 ];
 
 test.beforeEach(async ({ page }) => {
@@ -74,7 +74,7 @@ for (const game of games) {
 }
 
 test('homepage contains the Daily Challenge and individual games do not offer it as a mode', async ({ page }) => {
-  await page.goto('/', { waitUntil: 'domcontentloaded' });
+  await page.goto('./', { waitUntil: 'domcontentloaded' });
   await expect(page.locator('a[href*="daily-challenge/"]')).toBeVisible();
   const logoLink = page.locator('a[href*="guess-the-brand-logos/"]').first();
   await expect(logoLink).toBeVisible();
