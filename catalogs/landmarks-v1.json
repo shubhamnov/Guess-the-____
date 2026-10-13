@@ -4,13 +4,13 @@
   "title": "Guess the Landmark",
   "version": 1,
   "targetQuestions": 100,
-  "batch": 1,
+  "batch": 2,
   "batchSize": 10,
   "createdAt": "2026-10-13",
   "notes": [
-    "Pilot batch of 10 image questions toward the 100-question v1 target.",
+    "Working catalog has two curated batches of 10 questions, building toward the 100-question v1 target.",
     "Images are referenced from Wikimedia Commons and are not copied into the repository yet; gameplay therefore needs an internet connection for photos.",
-    "Image source pages and license statements were checked during curation. Verify the rendered image URLs in the published browser before marking this batch fully approved."
+    "Question wording, answer choices, fact sources, image source pages, creator names, and license metadata are curated; all image URLs still require a published-browser render check before approval."
   ],
   "questions": [
     {
@@ -220,6 +220,216 @@
       "answer": "Leaning Tower of Pisa",
       "explanation": "The Leaning Tower of Pisa is the cathedral's freestanding bell tower; its tilt began because of an inadequate foundation on soft ground.",
       "factSource": "https://www.britannica.com/topic/Leaning-Tower-of-Pisa",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_011",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Machu_Picchu%2C_Peru.jpg?width=1000",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Machu_Picchu,_Peru.jpg",
+        "creator": "Pedro Szekely",
+        "license": "CC BY-SA 2.0"
+      },
+      "options": [
+        "Machu Picchu",
+        "Tikal",
+        "Chichén Itzá",
+        "Mesa Verde"
+      ],
+      "answer": "Machu Picchu",
+      "explanation": "Machu Picchu is a 15th-century Inca site set high in the Peruvian Andes, surrounded by steep mountain slopes and terraces.",
+      "factSource": "https://whc.unesco.org/en/list/274/",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_012",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Athens_-_Parthenon.jpg?width=1000",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Athens_-_Parthenon.jpg",
+        "creator": "roger4336",
+        "license": "CC BY-SA 2.0"
+      },
+      "options": [
+        "Parthenon",
+        "Erechtheion",
+        "Temple of Hephaestus",
+        "Temple of Olympian Zeus"
+      ],
+      "answer": "Parthenon",
+      "explanation": "The Parthenon is the famous temple on Athens' Acropolis, built in the 5th century BCE and dedicated to Athena.",
+      "factSource": "https://whc.unesco.org/en/list/404/",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_013",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mount_Rushmore_from_the_Grand_View_Terrace.jpg?width=1000",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Mount_Rushmore_from_the_Grand_View_Terrace.jpg",
+        "creator": "Vik Varma",
+        "license": "CC BY-SA 4.0"
+      },
+      "options": [
+        "Mount Rushmore",
+        "Crazy Horse Memorial",
+        "Stone Mountain",
+        "Lincoln Memorial"
+      ],
+      "answer": "Mount Rushmore",
+      "explanation": "Mount Rushmore in South Dakota features the carved faces of four U.S. presidents: George Washington, Thomas Jefferson, Theodore Roosevelt and Abraham Lincoln.",
+      "factSource": "https://www.nps.gov/moru/learn/historyculture/memorial-history.htm",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_014",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/GoldenGateBridge-001.jpg?width=1000",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:GoldenGateBridge-001.jpg",
+        "creator": "Rich Niewiroski Jr.",
+        "license": "CC BY 2.5"
+      },
+      "options": [
+        "Golden Gate Bridge",
+        "Brooklyn Bridge",
+        "Tower Bridge",
+        "Lions Gate Bridge"
+      ],
+      "answer": "Golden Gate Bridge",
+      "explanation": "The Golden Gate Bridge spans the entrance to San Francisco Bay and opened to vehicle traffic in May 1937.",
+      "factSource": "https://www.goldengate.org/bridge/history-research/statistics-data/faqs/",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_015",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Forbidden_City_Beijing_China.jpg?width=1000",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Forbidden_City_Beijing_China.jpg",
+        "creator": "Philip Nalangan",
+        "license": "CC BY 4.0"
+      },
+      "options": [
+        "Forbidden City",
+        "Temple of Heaven",
+        "Summer Palace",
+        "Potala Palace"
+      ],
+      "answer": "Forbidden City",
+      "explanation": "The Forbidden City in Beijing was the imperial palace of China's Ming and Qing dynasties for centuries.",
+      "factSource": "https://whc.unesco.org/en/list/439/",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_016",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Burj_Khalifa_%285810620261%29.jpg?width=1000",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Burj_Khalifa_(5810620261).jpg",
+        "creator": "Umedha Hettigoda",
+        "license": "CC BY-SA 2.0"
+      },
+      "options": [
+        "Burj Khalifa",
+        "Shanghai Tower",
+        "Taipei 101",
+        "One World Trade Center"
+      ],
+      "answer": "Burj Khalifa",
+      "explanation": "The Burj Khalifa is a landmark skyscraper in Dubai, United Arab Emirates, officially opened in 2010.",
+      "factSource": "https://www.britannica.com/topic/Burj-Khalifa",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_017",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Moai_Rapa_Nui.jpg?width=1000",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Moai_Rapa_Nui.jpg",
+        "creator": "Juan carlos araya mardones",
+        "license": "CC BY-SA 4.0"
+      },
+      "options": [
+        "Moai statues of Rapa Nui",
+        "Olmec colossal heads",
+        "Terracotta Army",
+        "Buddhas of Bamiyan"
+      ],
+      "answer": "Moai statues of Rapa Nui",
+      "explanation": "The moai are monumental stone figures carved by the Rapa Nui people on Rapa Nui, also known as Easter Island.",
+      "factSource": "https://whc.unesco.org/en/list/715",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_018",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sagrada_familia.jpg?width=1000",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Sagrada_familia.jpg",
+        "creator": "Uli@wiki",
+        "license": "CC BY-SA 3.0"
+      },
+      "options": [
+        "Sagrada Família",
+        "Cologne Cathedral",
+        "Milan Cathedral",
+        "Basilica of the Sacred Heart"
+      ],
+      "answer": "Sagrada Família",
+      "explanation": "The Sagrada Família in Barcelona is a basilica designed by Antoni Gaudí; construction began in 1882 and continues today.",
+      "factSource": "https://sagradafamilia.org/en/history-of-the-temple",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_019",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Castle_neuschwanstein.jpg?width=1000",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Castle_neuschwanstein.jpg",
+        "creator": "Asifkhan sahil",
+        "license": "CC BY-SA 4.0"
+      },
+      "options": [
+        "Neuschwanstein Castle",
+        "Hohenzollern Castle",
+        "Château de Chambord",
+        "Pena Palace"
+      ],
+      "answer": "Neuschwanstein Castle",
+      "explanation": "Neuschwanstein Castle in Bavaria was begun for King Ludwig II in 1869 and was never fully completed.",
+      "factSource": "https://www.neuschwanstein.de/englisch/palace/history.htm",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_020",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Pyramids_of_Giza.jpg?width=1000",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Pyramids_of_Giza.jpg",
+        "creator": "Ireneusz Jerzy Borysiewicz",
+        "license": "CC BY-SA 4.0"
+      },
+      "options": [
+        "Pyramids of Giza",
+        "Step Pyramid of Djoser",
+        "Pyramid of the Sun",
+        "El Castillo at Chichén Itzá"
+      ],
+      "answer": "Pyramids of Giza",
+      "explanation": "The Giza pyramids are part of the vast ancient necropolis of Memphis and include the Great Pyramid of Khufu, the only surviving wonder of the ancient world.",
+      "factSource": "https://whc.unesco.org/en/list/86/",
       "difficulty": "medium",
       "status": "needs_image_render_check"
     }
