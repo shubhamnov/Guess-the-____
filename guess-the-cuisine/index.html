@@ -48,6 +48,17 @@
 <script>
 (function(){
   const $ = id => document.getElementById(id);
+
+  function playAnswerSound(isCorrect){
+    try{
+      const AudioCtor=window.AudioContext||window.webkitAudioContext;if(!AudioCtor)return;
+      const ctx=new AudioCtor();if(ctx.state==='suspended')ctx.resume();
+      const notes=isCorrect?[[660,0,0.10],[880,0.09,0.15]]:[[230,0,0.13],[174,0.10,0.17]];
+      notes.forEach(([frequency,start,duration])=>{const oscillator=ctx.createOscillator(),gain=ctx.createGain();oscillator.type=isCorrect?'sine':'triangle';oscillator.frequency.setValueAtTime(frequency,ctx.currentTime+start);gain.gain.setValueAtTime(0.0001,ctx.currentTime+start);gain.gain.exponentialRampToValueAtTime(isCorrect?0.12:0.09,ctx.currentTime+start+0.015);gain.gain.exponentialRampToValueAtTime(0.0001,ctx.currentTime+start+duration);oscillator.connect(gain);gain.connect(ctx.destination);oscillator.start(ctx.currentTime+start);oscillator.stop(ctx.currentTime+start+duration+0.02)});
+      setTimeout(()=>ctx.close().catch(()=>{}),500);
+    }catch(error){}
+  }
+
   const questionLimit = 10;
   let catalog = [];
   let round = [];
@@ -56,6 +67,7 @@
   let correct = 0;
   let answered = false;
   let answeredCount = 0;
+  let advanceTimer = null;
   let previousRoundIds = [];
 
   function shuffle(items){
@@ -69,6 +81,7 @@
     $('result').classList.toggle('active',screen === 'result');
   }
   function startRound(){
+    if(advanceTimer){clearTimeout(advanceTimer);advanceTimer=null;}
     const shuffled = shuffle(catalog);
     const limit = Math.min(questionLimit, shuffled.length);
     let nextRound = shuffled.slice(0, limit);
@@ -120,9 +133,12 @@
     $('score').textContent=score;$('accuracy').textContent=Math.round(correct/answeredCount*100)+'%';
     $('feedback').textContent=(isCorrect?'Correct! ':'Answer: '+q.answer+'. ')+q.explanation;
     $('progress').style.width=((index+1)/round.length*100)+'%';
-    $('next').classList.add('visible');
+    $('next').classList.remove('visible');
+    playAnswerSound(isCorrect);
+    advanceTimer=setTimeout(()=>{advanceTimer=null;if(index<round.length-1){index++;renderQuestion();}else finishRound();},520);
   }
   function finishRound(){
+    if(advanceTimer){clearTimeout(advanceTimer);advanceTimer=null;}
     const total=round.length;
     $('finalScore').textContent=score+'/ '+(total*10);
     $('correctCount').textContent=correct+' / '+total;
