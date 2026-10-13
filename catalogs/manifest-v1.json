@@ -41,8 +41,8 @@
       "approvedQuestions": 30,
       "currentVersion": 1,
       "lastRefreshedAt": "2026-10-13",
-      "nextAction": "Add cuisine questions 31–40 in the next curated batch, keeping source/license attribution and photo-to-answer checks.",
-      "draftQuestions": 0
+      "nextAction": "Run the published browser tests and visually review cuisine questions 31–40; approve only the 10 new images that match their labels, then add questions 41–50.",
+      "draftQuestions": 10
     },
     {
       "id": "geography",
@@ -192,6 +192,14 @@
       "change": "Approved 20 landmark questions after image-load automation and manual contact-sheet review; replaced the mismatched Taj Mahal photo and changed a mismatched Burj Khalifa entry to Big Ben with a matching photo.",
       "validation": "20 unique landmark questions; all answer choices include country labels, local images load, and every photo matches its intended landmark in the reviewed contact sheet.",
       "commit": "75c572e269b04692323432d77aa3c373e860c8d7"
+    },
+    {
+      "date": "2026-10-13",
+      "category": "cuisines",
+      "version": 1,
+      "change": "Added cuisine questions 31–40: baklava, Japanese curry rice, onigiri, butter chicken, Peking duck, churros, borscht, bánh mì, koshari and udon.",
+      "validation": "40 unique IDs; 30 previously approved questions retained; 10 new questions remain in needs_image_render_check until local assets are verified and contact-sheet review confirms photo-to-answer matches. All 40 have four distinct choices, one correct answer, source, creator, license and fact-source metadata.",
+      "commit": "6db4efffee025c780f014de3ac58034e4f75f149"
     }
   ]
 }
