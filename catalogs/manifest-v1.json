@@ -95,6 +95,14 @@
       "change": "Added batch 2 with landmark questions 11–20, including four options, explanations, fact sources, and Wikimedia Commons photo attribution/license metadata. Updated the game intro and homepage bank count. Daily Mix unchanged.",
       "validation": "20 total unique IDs; all 20 have four distinct options with the correct answer appearing once; required photo/fact-source metadata present. The user confirmed the landmark identities in batch 1. Published-browser image rendering remains unverified, so approvedQuestions stays 0 and draftQuestions is 20.",
       "commit": "eed6e58413e18c5fe82ae8197befab17d3ccd304"
+    },
+    {
+      "date": "2026-10-13",
+      "category": "landmarks",
+      "version": 1,
+      "change": "Replaced the Burj Khalifa fact-source URL with the Council on Tall Buildings and Urban Habitat's verified building record, and aligned the explanation with the published completion year.",
+      "validation": "The source page identifies Burj Khalifa in Dubai and records completion in 2010. Draft/image-render status unchanged.",
+      "commit": "62e57c4c11424fa6fc8b9c5c73be5a7f8f7a4de4"
     }
   ]
 }
