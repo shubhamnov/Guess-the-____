@@ -140,23 +140,44 @@ function finishGame(){
 }
 function advance(){if(!answered)return;if(questionIndex>=questions.length-1){finishGame();return}questionIndex++;renderQuestion()}
 function challengeURL(){const url=new URL(window.location.href);url.search='';url.hash='';url.searchParams.set('date',activeDate);return url.toString()}
-function makeShareImage(text,url){
+function makeShareImage(text,url,showScore){
  return new Promise((resolve,reject)=>{
   const canvas=document.createElement('canvas');canvas.width=1200;canvas.height=630;
   const ctx=canvas.getContext('2d');if(!ctx){reject(new Error('Canvas unavailable'));return}
-  ctx.fillStyle='#f8f7f2';ctx.fillRect(0,0,1200,630);
-  ctx.fillStyle='#d7fb55';ctx.beginPath();ctx.roundRect(48,48,1104,534,34);ctx.fill();
-  ctx.strokeStyle='#191b1a';ctx.lineWidth=5;ctx.stroke();
-  ctx.fillStyle='#191b1a';ctx.font='900 25px Arial, sans-serif';ctx.fillText('GUESS THE ____',88,112);
-  ctx.font='900 18px Arial, sans-serif';ctx.fillStyle='#45483e';ctx.fillText('THE DAILY MIX',88,166);
-  ctx.font='900 76px Arial, sans-serif';ctx.fillStyle='#191b1a';ctx.fillText('14 questions.',84,270);
-  ctx.fillText('7 categories.',84,355);
-  ctx.font='700 29px Arial, sans-serif';ctx.fillText(formatDate(activeDate),88,414);
-  ctx.font='700 23px Arial, sans-serif';ctx.fillText(text.length>65?text.slice(0,62)+'…':text,88,465);
-  ctx.fillStyle='#fffefa';ctx.beginPath();ctx.roundRect(82,495,1030,58,16);ctx.fill();
-  ctx.font='700 19px Arial, sans-serif';ctx.fillStyle='#191b1a';
-  let displayUrl=url;if(ctx.measureText(displayUrl).width>980){displayUrl=displayUrl.replace('https://','')}
-  ctx.fillText(displayUrl,100,531,990);
+  const roundRect=(x,y,w,h,r,fill,stroke)=>{ctx.beginPath();ctx.roundRect(x,y,w,h,r);if(fill){ctx.fillStyle=fill;ctx.fill()}if(stroke){ctx.strokeStyle=stroke;ctx.lineWidth=4;ctx.stroke()}};
+  // Bright, multi-colour game-card palette.
+  ctx.fillStyle='#17172f';ctx.fillRect(0,0,1200,630);
+  ctx.fillStyle='#ff6b6b';ctx.beginPath();ctx.arc(1090,92,115,0,Math.PI*2);ctx.fill();
+  ctx.fillStyle='#6ee7c8';ctx.beginPath();ctx.arc(1100,575,150,0,Math.PI*2);ctx.fill();
+  ctx.fillStyle='#8b7cff';ctx.beginPath();ctx.arc(50,575,125,0,Math.PI*2);ctx.fill();
+  roundRect(42,38,1116,554,30,'#fffaf0','#17172f');
+  // Game logo / wordmark.
+  roundRect(76,66,66,66,18,'#d7fb55','#17172f');
+  ctx.fillStyle='#17172f';ctx.font='1000 49px Arial, sans-serif';ctx.textAlign='center';ctx.fillText('?',109,116);ctx.textAlign='left';
+  ctx.fillStyle='#17172f';ctx.font='900 24px Arial, sans-serif';ctx.fillText('GUESS THE ____',160,91);
+  ctx.fillStyle='#66627c';ctx.font='800 16px Arial, sans-serif';ctx.fillText('DAILY MIX  /  '+formatDate(activeDate).toUpperCase(),160,117);
+  // Strong score treatment on result shares; challenge shares stay spoiler-free.
+  if(showScore){
+   roundRect(76,153,1048,225,25,'#d7fb55','#17172f');
+   ctx.fillStyle='#17172f';ctx.font='900 18px Arial, sans-serif';ctx.fillText('YOUR DAILY MIX SCORE',108,192);
+   ctx.font='1000 112px Arial, sans-serif';ctx.fillText(String(score),102,302);
+   ctx.font='900 35px Arial, sans-serif';ctx.fillText('/ 140',300,299);
+   roundRect(735,193,350,126,22,'#fffaf0','#17172f');
+   ctx.fillStyle='#17172f';ctx.font='900 18px Arial, sans-serif';ctx.fillText('ACCURACY',766,226);
+   ctx.font='1000 48px Arial, sans-serif';ctx.fillText(Math.round(correct/questions.length*100)+'%',766,278);
+   ctx.font='800 17px Arial, sans-serif';ctx.fillText(correct+' OF '+questions.length+' CORRECT',766,303);
+   ctx.fillStyle='#17172f';ctx.font='800 24px Arial, sans-serif';ctx.fillText(text.length>72?text.slice(0,69)+'…':text,80,421);
+  }else{
+   roundRect(76,153,1048,225,25,'#8b7cff','#17172f');
+   ctx.fillStyle='#fffaf0';ctx.font='1000 61px Arial, sans-serif';ctx.fillText('14 QUESTIONS.',104,237);
+   ctx.fillStyle='#d7fb55';ctx.font='1000 55px Arial, sans-serif';ctx.fillText('7 CATEGORIES.',104,307);
+   ctx.fillStyle='#fffaf0';ctx.font='800 22px Arial, sans-serif';ctx.fillText('Two from every game. One shared challenge.',104,348);
+   ctx.fillStyle='#17172f';ctx.font='800 23px Arial, sans-serif';ctx.fillText(text.length>72?text.slice(0,69)+'…':text,80,421);
+  }
+  roundRect(76,468,1048,74,18,'#ff6b6b','#17172f');
+  ctx.fillStyle='#17172f';ctx.font='900 19px Arial, sans-serif';ctx.fillText('PLAY WITH FRIENDS  ↗',100,497);
+  ctx.font='700 19px Arial, sans-serif';ctx.fillText(url,100,524,990);
+  ctx.fillStyle='#66627c';ctx.font='800 13px Arial, sans-serif';ctx.fillText('MADE BY SHUBHAM',80,570);
   canvas.toBlob(blob=>blob?resolve(blob):reject(new Error('Image creation failed')),'image/png');
  });
 }
@@ -166,7 +187,7 @@ async function copyText(text){
 }
 async function share(text){
  const url=challengeURL();const message=text+' The questions are fixed for '+formatDate(activeDate)+'. Play here: '+url;
- let blob=null;try{blob=await makeShareImage(text,url)}catch(e){}
+ const showScore=questions.length>0&&finished&&text.startsWith('I scored ');let blob=null;try{blob=await makeShareImage(text,url,showScore)}catch(e){}
  if(blob){
   const file=new File([blob],'guess-the-daily-mix.png',{type:'image/png'});
   if(navigator.share&&navigator.canShare&&navigator.canShare({files:[file]})){
