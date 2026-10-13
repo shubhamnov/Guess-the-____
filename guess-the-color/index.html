@@ -48,7 +48,7 @@
     <div><div class="eyebrow">TIME'S UP · COLOR RUSH</div><div class="bigscore" id="finalScore">0</div><h2 id="resultTitle">Nice eye.</h2><p id="resultText">Want another round?</p></div>
     <div class="resultbox"><div><label>Personal best</label><strong id="resultBest">0</strong></div><div><label>Accuracy</label><strong id="accuracy">0%</strong></div><div><label>Correct</label><strong id="correctCount">0</strong></div><div><label>Answered</label><strong id="answeredCount">0</strong></div></div>
     <button class="primary" id="againBtn">Run it back <span class="arrow">↻</span></button>
-    <button class="secondary" id="shareBtn">Share my score ↗</button>
+    <button class="secondary" id="shareBtn">Share score image ↗</button>
     <div class="micro">Your best stays on this device.</div>
   </section>
   <footer class="bottomline"><span>GUESS THE ?</span><span>TRUST YOUR EYES.</span></footer>
@@ -98,12 +98,116 @@ function startGame(){if(soundEnabled)startMusic();clearInterval(timerId);running
 function finishGame(){if(!running)return;running=false;clearInterval(timerId);game.classList.remove('active');result.classList.add('active');stats.plays++;stats.totalCorrect+=correct;stats.totalAnswered+=answered;const newBest=score>stats.best;if(newBest)stats.best=score;saveStats();$('finalScore').textContent=score;$('resultBest').textContent=stats.best;$('accuracy').textContent=(answered?Math.round(correct/answered*100):0)+'%';$('correctCount').textContent=correct;$('answeredCount').textContent=answered;const title=score>=35?'Color legend.':score>=25?'Ridiculously sharp.':score>=15?'Great eye.':score>=7?'Nice instincts.':'Just getting warmed up.';$('resultTitle').textContent=newBest&&score>0?'New personal best!':title;$('resultText').textContent=score===0?'Those shades were sneaky. One more go?':newBest&&score>0?'You just raised the bar. Think you can top it again?':'Can you beat '+score+' next round?';if(navigator.vibrate)navigator.vibrate([25,30,25])}
 function showToast(msg){const t=$('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1800)}
 $('startBtn').addEventListener('click',startGame);$('againBtn').addEventListener('click',startGame);$('soundToggle').addEventListener('click',()=>{soundEnabled=!soundEnabled;try{localStorage.setItem(SOUND_KEY,soundEnabled?'on':'off')}catch(e){}renderSoundToggle();if(soundEnabled)startMusic();else stopMusic()});renderSoundToggle();
-$('shareBtn').addEventListener('click',async()=>{const text='I scored '+score+' in Guess the ? — Color Rush! Can you beat me?';if(navigator.share){try{await navigator.share({title:'Guess the ? — Color Rush',text,url:location.href})}catch(e){}}else if(navigator.clipboard){try{await navigator.clipboard.writeText(text+' '+location.href);showToast('Score copied!')}catch{showToast(text)}}else showToast(text)});
+$('shareBtn').addEventListener('click',()=>shareScoreImage({
+  kind:'color',game:'Color Rush',score:String(score),subtitle:'COLOR INSTINCTS, ON DISPLAY',
+  accent:'#d7fb55',accuracy:(answered?Math.round(correct/answered*100):0)+'%',
+  secondLabel:'PERSONAL BEST',secondValue:String(stats.best),
+  challenge:'90 seconds. Four choices. Your turn.',
+  shareTitle:'My Color Rush score',shareText:'I scored '+score+' in Guess the ? — Color Rush. Can you beat me?',
+  filename:'color-rush-score.png',url:'guess-the-____'
+}));
 $('best').textContent=stats.best;
 document.addEventListener('visibilitychange',()=>{if(document.hidden&&running){/* Clock intentionally continues: the 90-second challenge is real time. */}});
 
 // Enter straight into gameplay after choosing Color on the home page.
 window.addEventListener('load', startGame, { once: true });
+
+async function makeScoreImage(config){
+  const canvas=document.createElement('canvas');
+  canvas.width=1080;canvas.height=1350;
+  const ctx=canvas.getContext('2d');
+  if(!ctx)throw new Error('Canvas is not available in this browser');
+  const W=canvas.width,H=canvas.height;
+  const roundRect=(x,y,w,h,r,fill,stroke)=>{
+    ctx.beginPath();
+    ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);ctx.quadraticCurveTo(x+w,y,x+w,y+r);
+    ctx.lineTo(x+w,y+h-r);ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);
+    ctx.lineTo(x+r,y+h);ctx.quadraticCurveTo(x,y+h,x,y+h-r);
+    ctx.lineTo(x,y+r);ctx.quadraticCurveTo(x,y,x+r,y);ctx.closePath();
+    if(fill){ctx.fillStyle=fill;ctx.fill()}
+    if(stroke){ctx.strokeStyle=stroke;ctx.lineWidth=2;ctx.stroke()}
+  };
+  const text=(value,x,y,size,weight,color,align='left')=>{
+    ctx.font=weight+' '+size+'px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
+    ctx.fillStyle=color;ctx.textAlign=align;ctx.textBaseline='alphabetic';ctx.fillText(String(value),x,y);
+  };
+  const ink='#191b1a',muted='#777b75',paper='#fffefa',line='#e7e5dd',lime='#d7fb55';
+  ctx.fillStyle='#f8f7f2';ctx.fillRect(0,0,W,H);
+  // Small playful corner accents
+  ctx.fillStyle=config.accent;ctx.beginPath();ctx.arc(1000,60,115,0,Math.PI*2);ctx.fill();
+  ctx.fillStyle=lime;ctx.beginPath();ctx.arc(1020,1250,95,0,Math.PI*2);ctx.fill();
+  roundRect(62,58,956,123,28,paper,line);
+  text('GUESS THE',100,105,27,850,ink);
+  roundRect(282,72,43,43,11,lime,null);
+  text('?',303.5,105,31,950,ink,'center');
+  text(config.game.toUpperCase(),980,108,22,850,muted,'right');
+  text('MY SCORE',72,275,25,900,muted);
+  text(config.score,62,495,190,950,ink);
+  text('POINTS',78,550,24,900,muted);
+  roundRect(62,604,956,328,32,paper,line);
+  text(config.subtitle,100,675,27,800,ink);
+  // Bright accent bar and game-specific decorative detail
+  roundRect(100,709,880,12,6,config.accent,null);
+  if(config.kind==='color'){
+    const colors=['#ff6255','#e5ef6e','#7766c6','#54bda0','#2878e5','#f28c28'];
+    colors.forEach((c,i)=>roundRect(100+i*145,756,112,74,17,c,null));
+  }else{
+    const dots=['#ff6255','#e5ef6e','#7766c6','#54bda0','#2878e5','#f28c28','#d7a5d8','#e0e0d5'];
+    dots.forEach((c,i)=>{ctx.beginPath();ctx.fillStyle=c;ctx.arc(123+(i%4)*245,785+Math.floor(i/4)*38,14,0,Math.PI*2);ctx.fill()});
+    text('A LITTLE WORLD TOUR',100,868,18,850,muted);
+  }
+  const left=62,top=970,gap=18,boxW=465,boxH=112;
+  const items=[
+    {label:'ACCURACY',value:config.accuracy},
+    {label:config.secondLabel,value:config.secondValue}
+  ];
+  items.forEach((item,i)=>{
+    const x=left+i*(boxW+gap);
+    roundRect(x,top,boxW,boxH,22,paper,line);
+    text(item.label,x+24,top+37,17,900,muted);
+    text(item.value,x+24,top+81,35,900,ink);
+  });
+  roundRect(62,1115,956,160,26,ink,null);
+  text('CAN YOU BEAT ME?',100,1177,29,900,'#ffffff');
+  text(config.challenge,100,1227,19,550,'#d8dbd2');
+  roundRect(858,1156,105,64,22,lime,null);
+  text('PLAY ↗',910.5,1197,20,950,ink,'center');
+  text('A QUICK BRAIN BREAK • '+(config.url||'GUESS THE ?').toUpperCase(),62,1320,15,800,muted);
+  return await new Promise((resolve,reject)=>{
+    canvas.toBlob(blob=>blob?resolve(blob):reject(new Error('Could not export score image')),'image/png');
+  });
+}
+function downloadScoreImage(blob,filename){
+  const url=URL.createObjectURL(blob),a=document.createElement('a');
+  a.href=url;a.download=filename;a.style.display='none';document.body.appendChild(a);a.click();a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),1500);
+}
+async function shareScoreImage(config){
+  const button=$('shareBtn'),oldLabel=button.textContent;
+  button.disabled=true;button.textContent='Creating image…';
+  let blob=null;
+  try{
+    blob=await makeScoreImage(config);
+    const file=new File([blob],config.filename,{type:'image/png'});
+    if(typeof navigator.share==='function'&&typeof navigator.canShare==='function'&&navigator.canShare({files:[file]})){
+      try{
+        await navigator.share({files:[file],title:config.shareTitle,text:config.shareText});
+        showToast('Score image shared!');
+      }catch(err){
+        if(err&&err.name==='AbortError')return;
+        downloadScoreImage(blob,config.filename);showToast('Score image downloaded to share.');
+      }
+    }else{
+      downloadScoreImage(blob,config.filename);showToast('Score image downloaded to share.');
+    }
+  }catch(err){
+    showToast('Could not create the score image. Try again.');
+    console.error(err);
+  }finally{
+    button.disabled=false;button.textContent=oldLabel;
+  }
+}
+
 </script>
 </body>
 </html>
