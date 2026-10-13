@@ -8,9 +8,10 @@
   "batchSize": 10,
   "createdAt": "2026-10-13",
   "notes": [
-    "Cuisine photos are stored in the repository as locally optimized WebP files so gameplay does not fetch each photo from Wikimedia Commons.",
-    "Each image retains its sourcePage, sourceUrl, creator, and license metadata for attribution and provenance.",
-    "Photo rendering in the published GitHub Pages site must still be checked before questions are marked approved."
+    "First 30 questions curated toward the 100-question v1 target, in three batches of 10.",
+    "Question order and answer choices are randomized each round.",
+    "Photos are cached as optimized local WebP assets. Source page, original source URL, cached source URL, creator, license, explanation and fact source are retained. If an image source changes, the cache refreshes its local file.",
+    "Keep records in draft status until local images load successfully in browser tests and photo-to-answer matching has been visually reviewed."
   ],
   "questions": [
     {
@@ -22,7 +23,8 @@
         "sourcePage": "https://commons.wikimedia.org/wiki/File:SUSHI.jpg",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/SUSHI.jpg?width=1200",
         "creator": "Takeshi Hiramatsu",
-        "license": "CC BY 4.0"
+        "license": "CC BY 4.0",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/SUSHI.jpg?width=1200"
       },
       "options": [
         "Sushi",
@@ -45,7 +47,8 @@
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Tacos_s.jpg",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Tacos_s.jpg?width=1200",
         "creator": "Nesamagua",
-        "license": "CC BY-SA 4.0"
+        "license": "CC BY-SA 4.0",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Tacos_s.jpg?width=1200"
       },
       "options": [
         "Tacos",
@@ -68,7 +71,8 @@
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Neapolitan_pizza.jpg",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Neapolitan_pizza.jpg?width=1200",
         "creator": "Stevemconst61",
-        "license": "Public domain"
+        "license": "Public domain",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Neapolitan_pizza.jpg?width=1200"
       },
       "options": [
         "Neapolitan pizza",
@@ -91,7 +95,8 @@
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Briyani_food.jpg",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Briyani_food.jpg?width=1200",
         "creator": "ArulkumarRajamani",
-        "license": "CC0 1.0"
+        "license": "CC0 1.0",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Briyani_food.jpg?width=1200"
       },
       "options": [
         "Biryani",
@@ -114,7 +119,8 @@
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Pho_Soup.jpg",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Pho_Soup.jpg?width=1200",
         "creator": "Revital Salomon",
-        "license": "CC BY-SA 4.0"
+        "license": "CC BY-SA 4.0",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Pho_Soup.jpg?width=1200"
       },
       "options": [
         "Pho",
@@ -137,7 +143,8 @@
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Paella_paellero.jpg",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Paella_paellero.jpg?width=1200",
         "creator": "Jan Harenburg",
-        "license": "CC BY 4.0"
+        "license": "CC BY 4.0",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Paella_paellero.jpg?width=1200"
       },
       "options": [
         "Paella",
@@ -160,7 +167,8 @@
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Croissant.jpg",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Croissant.jpg?width=1200",
         "creator": "JidGom",
-        "license": "CC BY-SA 3.0"
+        "license": "CC BY-SA 3.0",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Croissant.jpg?width=1200"
       },
       "options": [
         "Croissant",
@@ -183,7 +191,8 @@
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Pad_Thai_in_Thailand.jpg",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Pad_Thai_in_Thailand.jpg?width=1200",
         "creator": "Douglas Perkins",
-        "license": "CC BY 4.0"
+        "license": "CC BY 4.0",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Pad_Thai_in_Thailand.jpg?width=1200"
       },
       "options": [
         "Pad Thai",
@@ -206,7 +215,8 @@
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Samosa.jpg",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Samosa.jpg?width=1200",
         "creator": "Aotearoa",
-        "license": "CC BY-SA 3.0"
+        "license": "CC BY-SA 3.0",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Samosa.jpg?width=1200"
       },
       "options": [
         "Samosa",
@@ -229,7 +239,8 @@
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Ceviche_Peruvian_dish.jpg",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ceviche_Peruvian_dish.jpg?width=1200",
         "creator": "CEllen",
-        "license": "CC BY-SA 4.0"
+        "license": "CC BY-SA 4.0",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ceviche_Peruvian_dish.jpg?width=1200"
       },
       "options": [
         "Ceviche",
@@ -252,7 +263,8 @@
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Dosa_dosa.jpg",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Dosa_dosa.jpg?width=1200",
         "creator": "Anushka10patel",
-        "license": "CC BY-SA 4.0"
+        "license": "CC BY-SA 4.0",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Dosa_dosa.jpg?width=1200"
       },
       "options": [
         "Dosa",
@@ -275,7 +287,8 @@
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Falafel.jpg",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Falafel.jpg?width=1200",
         "creator": "NB",
-        "license": "CC BY-SA 3.0"
+        "license": "CC BY-SA 3.0",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Falafel.jpg?width=1200"
       },
       "options": [
         "Falafel",
@@ -298,7 +311,8 @@
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Hummus.jpg",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Hummus.jpg?width=1200",
         "creator": "Donovan Govan",
-        "license": "CC BY-SA 3.0"
+        "license": "CC BY-SA 3.0",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Hummus.jpg?width=1200"
       },
       "options": [
         "Hummus",
@@ -321,7 +335,8 @@
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Chinese_dumplings.JPG",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Chinese_dumplings.JPG?width=1200",
         "creator": "Lars Curfs (Grashoofd)",
-        "license": "CC BY-SA 3.0 Netherlands"
+        "license": "CC BY-SA 3.0 Netherlands",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Chinese_dumplings.JPG?width=1200"
       },
       "options": [
         "Chinese dumplings",
@@ -344,7 +359,8 @@
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Moussaka.jpg",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Moussaka.jpg?width=1200",
         "creator": "Cifo Buscemi",
-        "license": "CC BY 3.0"
+        "license": "CC BY 3.0",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Moussaka.jpg?width=1200"
       },
       "options": [
         "Moussaka",
@@ -367,7 +383,8 @@
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Goulash_hungarian.jpg",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Goulash_hungarian.jpg?width=1200",
         "creator": "RitaE",
-        "license": "CC0 1.0"
+        "license": "CC0 1.0",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Goulash_hungarian.jpg?width=1200"
       },
       "options": [
         "Goulash",
@@ -390,7 +407,8 @@
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Jerk_chicken.jpg",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Jerk_chicken.jpg?width=1200",
         "creator": "stu_spivack",
-        "license": "CC BY-SA 2.0"
+        "license": "CC BY-SA 2.0",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Jerk_chicken.jpg?width=1200"
       },
       "options": [
         "Jerk chicken",
@@ -413,7 +431,8 @@
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Polish_pierogi_in_a_dish.jpg",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Polish_pierogi_in_a_dish.jpg?width=1200",
         "creator": "Piotrus",
-        "license": "CC BY-SA 4.0"
+        "license": "CC BY-SA 4.0",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Polish_pierogi_in_a_dish.jpg?width=1200"
       },
       "options": [
         "Pierogi",
@@ -436,7 +455,8 @@
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Korean_Bibimbap.jpg",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Korean_Bibimbap.jpg?width=1200",
         "creator": "Shene81",
-        "license": "CC BY 3.0"
+        "license": "CC BY 3.0",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Korean_Bibimbap.jpg?width=1200"
       },
       "options": [
         "Bibimbap",
@@ -459,7 +479,8 @@
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Japanese_Ramen_Noodle_Soup%2C_Bangkok%2C_Thailand.jpg",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Japanese_Ramen_Noodle_Soup%2C_Bangkok%2C_Thailand.jpg?width=1200",
         "creator": "Vyacheslav Argenberg",
-        "license": "CC BY 4.0"
+        "license": "CC BY 4.0",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Japanese_Ramen_Noodle_Soup%2C_Bangkok%2C_Thailand.jpg?width=1200"
       },
       "options": [
         "Ramen",
@@ -482,7 +503,8 @@
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Arepitas_Food_Macro.jpg",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Arepitas_Food_Macro.jpg?width=1200",
         "creator": "Steven Depolo",
-        "license": "CC BY 2.0"
+        "license": "CC BY 2.0",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Arepitas_Food_Macro.jpg?width=1200"
       },
       "options": [
         "Arepas",
@@ -505,7 +527,8 @@
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Okonomiyaki_(1).jpg",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Okonomiyaki_(1).jpg?width=1200",
         "creator": "Hajime NAKANO",
-        "license": "CC BY 2.0"
+        "license": "CC BY 2.0",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Okonomiyaki_(1).jpg?width=1200"
       },
       "options": [
         "Okonomiyaki",
@@ -528,7 +551,8 @@
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Tiramisu_dessert.jpg",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Tiramisu_dessert.jpg?width=1200",
         "creator": "Navneet Sharma",
-        "license": "CC BY-SA 4.0"
+        "license": "CC BY-SA 4.0",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Tiramisu_dessert.jpg?width=1200"
       },
       "options": [
         "Tiramisu",
@@ -551,7 +575,8 @@
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Shakshuka_picture.jpg",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Shakshuka_picture.jpg?width=1200",
         "creator": "Agustina Cordo",
-        "license": "CC BY-SA 4.0"
+        "license": "CC BY-SA 4.0",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Shakshuka_picture.jpg?width=1200"
       },
       "options": [
         "Shakshuka",
@@ -574,7 +599,8 @@
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Empanadas_1.jpg",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Empanadas_1.jpg?width=1200",
         "creator": "Caldobasico",
-        "license": "CC BY-SA 4.0"
+        "license": "CC BY-SA 4.0",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Empanadas_1.jpg?width=1200"
       },
       "options": [
         "Empanadas",
@@ -597,7 +623,8 @@
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Moroccan_food_tagine.jpg",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Moroccan_food_tagine.jpg?width=1200",
         "creator": "Kim sosita",
-        "license": "CC BY-SA 4.0"
+        "license": "CC BY-SA 4.0",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Moroccan_food_tagine.jpg?width=1200"
       },
       "options": [
         "Moroccan tagine",
@@ -620,7 +647,8 @@
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Injera.jpg",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Injera.jpg?width=1200",
         "creator": "Lelaw Wondimu",
-        "license": "CC BY-SA 4.0"
+        "license": "CC BY-SA 4.0",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Injera.jpg?width=1200"
       },
       "options": [
         "Injera",
@@ -643,7 +671,8 @@
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Bibingka.jpg",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Bibingka.jpg?width=1200",
         "creator": "Herbertkikoy",
-        "license": "CC BY-SA 4.0"
+        "license": "CC BY-SA 4.0",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Bibingka.jpg?width=1200"
       },
       "options": [
         "Bibingka",
@@ -663,19 +692,20 @@
       "image": {
         "url": "../assets/cuisines/cuisine_029.webp",
         "path": "assets/cuisines/cuisine_029.webp",
-        "sourcePage": "https://commons.wikimedia.org/wiki/File:Firfir.JPG",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Firfir.JPG?width=1200",
-        "creator": "Lelaw Wondimu",
-        "license": "CC BY-SA 4.0"
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Taita_fit-fit.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Taita_fit-fit.jpg?width=1200",
+        "creator": "Temesgen Woldezion (edited by Merhawie Woldezion)",
+        "license": "CC BY-SA 2.5",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Firfir.JPG?width=1200"
       },
       "options": [
-        "Firfir",
-        "Koshari",
-        "Ugali",
-        "Fufu"
+        "Taita fit-fit",
+        "Injera",
+        "Shiro",
+        "Kitfo"
       ],
-      "answer": "Firfir",
-      "explanation": "Firfir is an Ethiopian dish made by mixing pieces of injera with a seasoned sauce, often berbere and clarified butter.",
+      "answer": "Taita fit-fit",
+      "explanation": "Taita fit-fit is a traditional Eritrean dish made with pieces of flatbread mixed with spiced butter and seasonings.",
       "factSource": "https://en.wikipedia.org/wiki/Fit-fit",
       "difficulty": "hard",
       "status": "needs_image_render_check"
@@ -689,7 +719,8 @@
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Poutine.jpg",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Poutine.jpg?width=1200",
         "creator": "Gideon Tsang (credited on Commons by Anetode and Delire)",
-        "license": "CC BY-SA 2.0"
+        "license": "CC BY-SA 2.0",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Poutine.jpg?width=1200"
       },
       "options": [
         "Poutine",
