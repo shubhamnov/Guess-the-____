@@ -8,10 +8,9 @@
   "batchSize": 10,
   "createdAt": "2026-10-13",
   "notes": [
-    "First 40 questions curated toward the 100-question v1 target, in four batches of 10.",
-    "Question order and answer choices are randomized each round.",
-    "Approved questions have passed published browser image-load tests and manual photo-to-answer review. New batch records stay in draft until their local photos are cached, tested and visually checked.",
-    "Photos are optimized into local WebP assets with source page, source URL, cached source URL, creator, license, explanation and fact-source metadata."
+    "Cuisine photos are stored in the repository as locally optimized WebP files so gameplay does not fetch each photo from Wikimedia Commons.",
+    "Each image retains sourcePage, sourceUrl, cachedSourceUrl, creator, and license metadata. If sourceUrl changes, the cache refreshes that local WebP.",
+    "Photo rendering in the published GitHub Pages site must still be checked before questions are marked approved."
   ],
   "questions": [
     {
@@ -743,7 +742,8 @@
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Baklava_1.jpg",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Baklava_1.jpg?width=1200",
         "creator": "Challiyan",
-        "license": "CC BY-SA 4.0"
+        "license": "CC BY-SA 4.0",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Baklava_1.jpg?width=1200"
       },
       "options": [
         "Baklava",
@@ -766,7 +766,8 @@
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Japanese_curry_rice.jpg",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Japanese_curry_rice.jpg?width=1200",
         "creator": "Donghun Kim",
-        "license": "CC BY 2.0"
+        "license": "CC BY 2.0",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Japanese_curry_rice.jpg?width=1200"
       },
       "options": [
         "Japanese curry rice",
@@ -789,7 +790,8 @@
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Onigiri_001.jpg",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Onigiri_001.jpg?width=1200",
         "creator": "Ocdp",
-        "license": "CC0 1.0"
+        "license": "CC0 1.0",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Onigiri_001.jpg?width=1200"
       },
       "options": [
         "Onigiri",
@@ -812,7 +814,8 @@
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Butter_Chicken_(2447373994).jpg",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Butter_Chicken_(2447373994).jpg?width=1200",
         "creator": "Mack Male",
-        "license": "CC BY-SA 2.0"
+        "license": "CC BY-SA 2.0",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Butter_Chicken_(2447373994).jpg?width=1200"
       },
       "options": [
         "Butter chicken",
@@ -835,7 +838,8 @@
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Peking_Duck.jpg",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Peking_Duck.jpg?width=1200",
         "creator": "Danrah",
-        "license": "CC BY-SA 4.0"
+        "license": "CC BY-SA 4.0",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Peking_Duck.jpg?width=1200"
       },
       "options": [
         "Peking duck",
@@ -858,7 +862,8 @@
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Churros.jpeg",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Churros.jpeg?width=1200",
         "creator": "Managementboy",
-        "license": "CC BY-SA 3.0"
+        "license": "CC BY-SA 3.0",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Churros.jpeg?width=1200"
       },
       "options": [
         "Churros",
@@ -881,7 +886,8 @@
         "sourcePage": "https://commons.wikimedia.org/wiki/File:2023-01-02_Borscht.jpg",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2023-01-02_Borscht.jpg?width=1200",
         "creator": "Maksym Kozlenko",
-        "license": "CC BY-SA 4.0"
+        "license": "CC BY-SA 4.0",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2023-01-02_Borscht.jpg?width=1200"
       },
       "options": [
         "Borscht",
@@ -904,7 +910,8 @@
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Banh_mi_sandwich.jpg",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Banh_mi_sandwich.jpg?width=1200",
         "creator": "jeffreyw",
-        "license": "CC BY 2.0"
+        "license": "CC BY 2.0",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Banh_mi_sandwich.jpg?width=1200"
       },
       "options": [
         "Bánh mì",
@@ -927,7 +934,8 @@
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Egyptian_Koshari.jpg",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Egyptian_Koshari.jpg?width=1200",
         "creator": "Basma",
-        "license": "CC BY-SA 4.0"
+        "license": "CC BY-SA 4.0",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Egyptian_Koshari.jpg?width=1200"
       },
       "options": [
         "Koshari",
@@ -950,7 +958,8 @@
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Udon_by_udono.jpg",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Udon_by_udono.jpg?width=1200",
         "creator": "udono",
-        "license": "CC BY 2.0"
+        "license": "CC BY 2.0",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Udon_by_udono.jpg?width=1200"
       },
       "options": [
         "Udon",
