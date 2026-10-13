@@ -65,10 +65,13 @@ def main():
         current_url = image.get("url", "")
         asset_name = f"{question['id']}.webp"
         asset_path = ASSET_DIR / asset_name
-        if current_url.startswith("../assets/landmarks/") and asset_path.exists():
-            continue
-
         source_url = image.get("sourceUrl") or current_url
+        if (
+            current_url.startswith("../assets/landmarks/")
+            and asset_path.exists()
+            and image.get("cachedSourceUrl") == source_url
+        ):
+            continue
         if not source_url.startswith("https://commons.wikimedia.org/"):
             raise RuntimeError(f"{question.get('id')}: unexpected image URL: {source_url}")
 
@@ -96,18 +99,19 @@ def main():
         asset_path.write_bytes(optimized_bytes)
         image = question["image"]
         image["sourceUrl"] = source_url
+        image["cachedSourceUrl"] = source_url
         image["path"] = f"assets/landmarks/{asset_path.name}"
         image["url"] = f"../assets/landmarks/{asset_path.name}"
         question["status"] = "needs_image_render_check"
 
     data["notes"] = [
         "Landmark photos are stored in the repository as locally optimized WebP files so gameplay does not fetch each photo from Wikimedia Commons.",
-        "Each image retains its sourcePage, sourceUrl, creator, and license metadata for attribution and provenance.",
+        "Each image retains its sourcePage, sourceUrl, cachedSourceUrl, creator, and license metadata. If sourceUrl changes, the cache refreshes the local WebP.",
         "Photo rendering in the published GitHub Pages site must still be checked before questions are marked approved."
     ]
     CATALOG.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"Processed {len(pending)} remote images; catalog now points to local assets.")
-    print("Existing local images were retained without re-downloading.")
+    print("Unchanged local images were retained; assets with changed source URLs were refreshed.")
 
 
 if __name__ == "__main__":
