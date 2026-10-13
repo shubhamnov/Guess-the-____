@@ -8,9 +8,9 @@
   "batchSize": 10,
   "createdAt": "2026-10-13",
   "notes": [
-    "Working catalog has two curated batches of 10 questions, building toward the 100-question v1 target.",
-    "Images are referenced from Wikimedia Commons and are not copied into the repository yet; gameplay therefore needs an internet connection for photos.",
-    "Question wording, answer choices, fact sources, image source pages, creator names, and license metadata are curated; all image URLs still require a published-browser render check before approval."
+    "Two curated batches contain 20 questions toward the 100-question v1 target.",
+    "Landmark photos are being migrated from remote Wikimedia Commons links to locally optimized WebP assets by the repository workflow.",
+    "Source pages, original URLs, creator names, licenses, explanations, and fact sources must remain recorded. Do not approve questions until local image rendering is checked on the published site."
   ],
   "questions": [
     {
