@@ -29,7 +29,7 @@
 <section class="intro" id="intro">
   <div class="hero"><div class="eyebrow">A quick brand-spotting challenge</div><h1>Know your<br><em>brand logos?</em></h1><p>You know the logo when you see it. Right? Pick the right brand before the clock runs out.</p></div>
   <div class="preview" aria-hidden="true"><div class="preview-logos"><span><img data-preview-slug="apple" alt=""></span><span><img data-preview-slug="nike" alt=""></span><span><img data-preview-slug="netflix" alt=""></span><span><img data-preview-slug="spotify" alt=""></span><span><img data-preview-slug="googlechrome" alt=""></span><span><img data-preview-slug="github" alt=""></span></div></div>
-  <div class="mode-actions"><a class="primary" href="../daily-challenge/" style="text-decoration:none">Play the Daily Mix <span class="arrow">→</span></a><button class="secondary" id="startBtn">Play now · Adaptive random logos</button></div><div class="micro mode-caption">Daily Mix: 14 questions from all seven categories, with two from each.</div><div class="micro">Play Now keeps the adaptive logo-only mode: streaks raise difficulty; missed guesses make it easier.</div><div class="links"><a href="../">← All categories</a><span>·</span><a href="https://simpleicons.org/" target="_blank" rel="noopener noreferrer">Logo icons by Simple Icons</a></div><div class="micro">Unofficial fan-made quiz. Brand names and marks belong to their respective owners.</div>
+  <div class="mode-actions"><button class="primary" id="startBtn">Play <span class="arrow">→</span></button></div><div class="links"><a href="../">← All categories</a><span>·</span><a href="https://simpleicons.org/" target="_blank" rel="noopener noreferrer">Logo icons by Simple Icons</a></div><div class="micro">Unofficial fan-made quiz. Brand names and marks belong to their respective owners.</div>
 </section>
 <section class="game" id="game" aria-label="Brand logo quiz">
   <div class="stats"><div class="stat"><label>Score</label><strong id="score">0</strong></div><div class="stat"><label>Streak</label><strong id="streak">0</strong></div><div class="stat timer" id="timerStat"><label>Time left</label><strong id="time">60</strong></div></div>
@@ -43,7 +43,7 @@
   <div class="result-modal">
     <div><div class="eyebrow" id="resultEyebrow">TIME'S UP · BRAND LOGOS</div><div class="bigscore" id="finalScore">0</div><h2 id="resultTitle">Brand buff!</h2><p id="resultText">Nice spotting. Ready for a rematch?</p></div>
     <div class="resultbox"><div><label>Personal best</label><strong id="resultBest">0</strong></div><div><label>Accuracy</label><strong id="accuracy">0%</strong></div><div><label>Correct</label><strong id="correctCount">0</strong></div><div><label>Best streak</label><strong id="bestStreak">0</strong></div></div>
-    <button class="primary" id="shareBtn">Share score image ↗</button><button class="secondary" id="shareChallengeBtn">Challenge a friend ↗</button><button class="secondary" id="againBtn">Play again ↻</button>
+    <button class="primary" id="shareBtn">Share score image ↗</button><button class="secondary" id="againBtn">Play again ↻</button>
     <nav class="links"><a href="../">All categories</a><span>·</span><a href="../guess-the-flag/">Flags</a><span>·</span><a href="../guess-the-capitals/">Capital Cities</a></nav>
   </div>
 </section>
@@ -120,7 +120,7 @@ function renderQuestion(){
  if(!running)return;
  const options=chooseQuestion();
  if(!running||!options.length)return;
- locked=false;roundNumber++;$('modeEyebrow').textContent=activeMode==='daily'?'DAILY CHALLENGE · '+formatChallengeDate(activeDate).toUpperCase():'ADAPTIVE RUSH';$('round').textContent=(current.difficulty||difficulty).toUpperCase()+' · LOGO '+roundNumber;$('feedback').textContent='';$('feedback').className='feedback';
+ locked=false;roundNumber++;$('modeEyebrow').textContent='BRAND LOGOS';$('round').textContent=(current.difficulty||difficulty).toUpperCase()+' · LOGO '+roundNumber;$('feedback').textContent='';$('feedback').className='feedback';
  const clue=$('clue');clue.innerHTML='';
  const img=document.createElement('img');img.className='logo-image';img.alt='Mystery brand logo';img.src=svgData(current);img.loading='eager';img.decoding='async';
  img.addEventListener('error',function(){if(!running||!clue.contains(img))return;clue.innerHTML='<span class="logo-fallback" aria-hidden="true">'+current.name.trim().charAt(0)+'</span>'});
@@ -129,6 +129,8 @@ function renderQuestion(){
  options.forEach(brand=>{const btn=document.createElement('button');btn.type='button';btn.className='answer';btn.textContent=brand.name;btn.addEventListener('click',()=>answer(brand,btn));$('answers').appendChild(btn)});
 }
 function chooseOptionsForCurrent(){const others=shuffle(BRANDS.filter(b=>b.name!==current.name)).slice(0,3);return shuffle([current].concat(others))}
+
+function playAnswerSound(isCorrect){try{const AudioCtor=window.AudioContext||window.webkitAudioContext;if(!AudioCtor)return;const ctx=new AudioCtor();if(ctx.state==='suspended')ctx.resume();const notes=isCorrect?[[660,0,0.10],[880,0.09,0.15]]:[[230,0,0.13],[174,0.10,0.17]];notes.forEach(([frequency,start,duration])=>{const oscillator=ctx.createOscillator(),gain=ctx.createGain();oscillator.type=isCorrect?'sine':'triangle';oscillator.frequency.setValueAtTime(frequency,ctx.currentTime+start);gain.gain.setValueAtTime(0.0001,ctx.currentTime+start);gain.gain.exponentialRampToValueAtTime(isCorrect?0.12:0.09,ctx.currentTime+start+0.015);gain.gain.exponentialRampToValueAtTime(0.0001,ctx.currentTime+start+duration);oscillator.connect(gain);gain.connect(ctx.destination);oscillator.start(ctx.currentTime+start);oscillator.stop(ctx.currentTime+start+duration+0.02)});setTimeout(()=>ctx.close().catch(()=>{}),500)}catch(error){}}
 function answer(brand,button){
  if(!running||locked)return;locked=true;answered++;
  const buttons=$('answers').querySelectorAll('button');buttons.forEach(b=>{b.disabled=true;if(b.textContent===current.name)b.classList.add('correct')});
@@ -156,14 +158,15 @@ function answer(brand,button){
   $('feedback').classList.add('bad');
  }
  $('score').textContent=score;$('streak').textContent=streak;
- clearTimeout(advanceId);advanceId=setTimeout(()=>{if(running)renderQuestion()},720);
+ playAnswerSound(brand.name===current.name);
+ clearTimeout(advanceId);advanceId=setTimeout(()=>{if(running)renderQuestion()},520);
 }
 function tick(){if(!running)return;const left=Math.max(0,ROUND_SECONDS-Math.floor((Date.now()-startedAt)/1000));$('time').textContent=left;$('timebar').style.width=(left/ROUND_SECONDS*100)+'%';$('timerStat').classList.toggle('urgent',left<=10);if(left<=0)finishGame()}
 function finishGame(){
  if(!running)return;running=false;locked=true;clearInterval(timerId);clearTimeout(advanceId);timerId=null;
  best=Math.max(loadBest(activeMode),score);const bestKey=activeMode==='daily'?'guessTheBrandLogosDailyBest':'guessTheBrandLogosBest';try{localStorage.setItem(bestKey,String(best))}catch(e){}
  const accuracy=answered?Math.round(correct/answered*100):0;
- $('resultEyebrow').textContent=activeMode==='daily'?'DAILY CHALLENGE · '+formatChallengeDate(activeDate).toUpperCase():'TIME’S UP · BRAND LOGOS';$('finalScore').textContent=score;$('resultBest').textContent=best;$('accuracy').textContent=accuracy+'%';$('correctCount').textContent=correct+' / '+answered;$('bestStreak').textContent=bestStreak;
+ $('resultEyebrow').textContent='TIME’S UP · BRAND LOGOS';$('finalScore').textContent=score;$('resultBest').textContent=best;$('accuracy').textContent=accuracy+'%';$('correctCount').textContent=correct+' / '+answered;$('bestStreak').textContent=bestStreak;
  let title='Good eye!';let text='Every logo is another little brand memory unlocked.';
  if(score>=250){title='Logo legend!';text='That was seriously sharp brand recognition.'}
  else if(score>=150){title='Brand buff!';text='You know your brands. Can you top that streak?'}
@@ -172,9 +175,9 @@ function finishGame(){
  $('game').classList.remove('active');$('result').classList.add('active');
 }
 function startGame(mode,date){
- activeMode=mode||'play';activeDate=activeMode==='daily'&&validISODate(date)?date:todayUTC();
+ activeMode='play';activeDate=todayUTC();
  clearInterval(timerId);clearTimeout(advanceId);best=loadBest(activeMode);difficulty='Easy';score=0;answered=0;correct=0;streak=0;bestStreak=0;roundNumber=0;used.clear();locked=false;running=true;startedAt=Date.now();
- if(activeMode==='daily')initDailyDeck(activeDate);else{fixedRng=null;fixedDecks={};fixedCursors={}}
+ fixedRng=null;fixedDecks={};fixedCursors={}
  $('score').textContent='0';$('streak').textContent='0';$('time').textContent=String(ROUND_SECONDS);$('timebar').style.width='100%';$('timerStat').classList.remove('urgent');$('intro').style.display='none';$('result').classList.remove('active');$('game').classList.add('active');renderQuestion();timerId=setInterval(tick,200);
 }
 function showToast(message){$('toast').textContent=message;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),2400)}
@@ -182,7 +185,7 @@ function roundRect(ctx,x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.lineTo(x
 function makeImage(){
  const canvas=document.createElement('canvas');canvas.width=1080;canvas.height=1350;const ctx=canvas.getContext('2d');
  ctx.fillStyle='#f8f7f2';ctx.fillRect(0,0,1080,1350);ctx.fillStyle='#d7fb55';roundRect(ctx,70,70,940,1210,36);ctx.fill();ctx.fillStyle='#fffefa';roundRect(ctx,96,96,888,1128,28);ctx.fill();
- ctx.fillStyle='#191b1a';ctx.font='900 46px Arial,sans-serif';ctx.fillText('GUESS THE  ____',145,190);ctx.fillStyle='#777b75';ctx.font='800 28px Arial,sans-serif';const shareModeLabel=activeMode==='daily'?'DAILY CHALLENGE · '+formatChallengeDate(activeDate).toUpperCase():'ADAPTIVE RUSH · BRAND LOGOS';ctx.fillText(shareModeLabel,145,292);
+ ctx.fillStyle='#191b1a';ctx.font='900 46px Arial,sans-serif';ctx.fillText('GUESS THE  ____',145,190);ctx.fillStyle='#777b75';ctx.font='800 28px Arial,sans-serif';const shareModeLabel='BRAND LOGOS';ctx.fillText(shareModeLabel,145,292);
  ctx.fillStyle='#d7fb55';roundRect(ctx,145,355,790,330,25);ctx.fill();ctx.fillStyle='#191b1a';ctx.font='800 30px Arial,sans-serif';ctx.fillText('YOUR SCORE',195,427);ctx.font='900 205px Arial,sans-serif';ctx.fillText(String(score),185,640);
  ctx.font='800 30px Arial,sans-serif';ctx.fillText('ACCURACY',145,790);ctx.fillText('CORRECT',580,790);ctx.font='900 70px Arial,sans-serif';ctx.fillText((answered?Math.round(correct/answered*100):0)+'%',145,875);ctx.fillText(correct+' / '+answered,580,875);
  ctx.fillStyle='#777b75';ctx.font='700 28px Arial,sans-serif';ctx.fillText('Can you beat my score?',145,1020);ctx.fillStyle='#191b1a';ctx.font='900 25px Arial,sans-serif';ctx.fillText('SHORT ROUNDS. SHARP INSTINCTS.',145,1145);ctx.fillStyle='#81867b';ctx.font='600 22px Arial,sans-serif';ctx.fillText('guess the ____ · by Shubham',145,1190);
@@ -197,32 +200,10 @@ async function shareScore(){
  }catch(e){if(e.name!=='AbortError')showToast('Could not create image. Try again.')}
  finally{btn.disabled=false;btn.textContent=label}
 }
-function getShareDate(){
- if(activeMode==='daily'&&(running||$('result').classList.contains('active')))return activeDate;
- if(launchDaily)return launchDate;
- return todayUTC();
-}
-function challengeURL(date){
- const url=new URL('../daily-challenge/',window.location.href);url.searchParams.set('date',date);return url.toString();
-}
-async function shareChallengeLink(){
- const date=getShareDate();const url=challengeURL(date);
- const title='Guess the ____ · Daily Mix';
- const message='Play the 14-question Daily Mix for '+formatChallengeDate(date)+'. It has two questions from each of the seven categories.';
- try{
-  if(navigator.share){await navigator.share({title:title,text:message,url:url});return}
- }catch(e){if(e.name==='AbortError')return}
- try{
-  if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(url)}
-  else{const field=document.createElement('textarea');field.value=url;field.setAttribute('readonly','');field.style.position='fixed';field.style.opacity='0';document.body.appendChild(field);field.select();const copied=document.execCommand('copy');field.remove();if(!copied)throw new Error('Clipboard unavailable')}
-  showToast('Challenge link copied — send it to a friend.');
- }catch(e){window.prompt('Copy this challenge link and send it to a friend:',url)}
-}
 $('startBtn').addEventListener('click',()=>startGame('play'));
 $('againBtn').addEventListener('click',()=>startGame('play'));
 $('shareBtn').addEventListener('click',shareScore);
-$('shareChallengeBtn').addEventListener('click',shareChallengeLink);
-populatePreview();
+startGame('play');
 })();
 </script>
 </body>
