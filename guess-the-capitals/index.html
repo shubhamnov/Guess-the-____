@@ -413,6 +413,9 @@ async function shareScore(){
 shareBtn.addEventListener('click',shareScore);
 let toastTimer=null;function showToast(msg){const el=$('toast');el.textContent=msg;el.classList.add('show');if(toastTimer)clearTimeout(toastTimer);toastTimer=setTimeout(function(){el.classList.remove('show')},2600)}
 $('time').textContent=String(time);
+
+  // AUTO_START_ON_CATEGORY_ENTRY
+  startGame();
 })();
 </script>
 </body>
