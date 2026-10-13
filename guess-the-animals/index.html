@@ -1,50 +1,6 @@
 <!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#f8f7f2">
-<meta name="description" content="A quick visual animal quiz. Sixty seconds, four choices.">
-<title>Guess the Animals — Guess the ____</title>
-<link rel="stylesheet" href="../shared/quiz.css">
-<script defer src="../shared/quiz.js"></script>
-</head>
-<body data-game="animals">
-<main class="shell">
-  <header class="top">
-    <a class="brand" href="../">GUESS THE <span>?</span></a>
-    <div class="top-actions"><div class="pill" id="categoryPill">ANIMALS</div><button class="sound-toggle" id="soundToggle" type="button" aria-label="Toggle sound" aria-pressed="true">♫ SOUND ON</button></div>
-  </header>
-  <section class="intro" id="intro">
-    <div class="hero"><div class="eyebrow" id="eyebrow"></div><h1 id="pageTitle">Know your<br><em>animals?</em></h1><p id="introText"></p></div>
-    <div class="preview" id="introPreview" aria-hidden="true"></div>
-    <button class="primary" id="startBtn">Let’s play <span class="arrow">→</span></button>
-    <div class="micro" id="introNote"></div>
-    <nav class="games-link" aria-label="More categories"><a href="../">All categories</a><span>·</span><a href="../guess-the-color/">Colors</a><span>·</span><a href="../guess-the-flag/">Flags</a><span>·</span><a href="../guess-the-countries/">Countries</a><span>·</span><a href="../guess-the-animals/">Animals</a><span>·</span><a href="../guess-the-capitals/">Capitals</a></nav>
-  </section>
-  <section class="game" id="game" aria-label="Guessing game">
-    <div class="stats">
-      <div class="stat timer" id="timerStat"><label>Time left</label><strong id="time">60</strong></div>
-      <div class="stat"><label>Score</label><strong id="score">0</strong></div>
-      <div class="stat"><label>Streak</label><strong id="streak">0</strong></div>
-    </div>
-    <div class="track" aria-hidden="true"><span id="timebar"></span></div>
-    <div class="question-head"><span class="eyebrow" id="roundLabel"></span><span class="level" id="level"></span></div>
-    <div class="clue" id="clue" aria-live="polite"></div>
-    <p class="prompt" id="prompt"></p>
-    <div class="answers" id="answers"></div>
-    <div class="feedback" id="feedback" aria-live="polite"></div>
-    <div class="micro" id="categoryDescription"></div>
-  </section>
-  <section class="result" id="result">
-    <div><div class="eyebrow" id="resultEyebrow"></div><div class="bigscore" id="finalScore">0</div><h2 id="resultTitle">Nice work.</h2><p id="resultText"></p></div>
-    <div class="resultbox"><div><label>Personal best</label><strong id="resultBest">0</strong></div><div><label>Accuracy</label><strong id="accuracy">0%</strong></div><div><label>Correct</label><strong id="correctCount">0</strong></div><div><label>Answered</label><strong id="answeredCount">0</strong></div></div>
-    <button class="primary" id="againBtn">Run it back <span class="arrow">↻</span></button>
-    <button class="secondary" id="shareBtn">Share score image ↗</button>
-    <nav class="games-link" aria-label="More categories"><a href="../">All categories</a><span>·</span><a href="../guess-the-color/">Colors</a><span>·</span><a href="../guess-the-flag/">Flags</a><span>·</span><a href="../guess-the-countries/">Countries</a><span>·</span><a href="../guess-the-animals/">Animals</a><span>·</span><a href="../guess-the-capitals/">Capitals</a></nav>
-  </section>
-  <footer class="bottomline"><span>GUESS THE ?</span><span id="footerText"></span></footer>
-</main>
-<div class="toast" id="toast" role="status"></div>
-</body>
-</html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#f8f7f2"><title>Animals — Guess the ____</title>
+<style>
+:root{--bg:#f8f7f2;--ink:#191b1a;--muted:#777b75;--line:#e7e5dd;--paper:#fffefa;--lime:#d7fb55;--display:ui-rounded,"Arial Rounded MT Bold",system-ui,sans-serif}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a:focus-visible{outline:3px solid #7871e8;outline-offset:4}.shell{width:min(100% - 32px,620px);margin:0 auto;padding:24px 0 28px;min-height:100dvh;display:flex;flex-direction:column}.top{display:flex;justify-content:space-between;align-items:center}.brand{font-family:var(--display);font-size:22px;font-weight:1000;letter-spacing:-1.1px;color:var(--ink);text-decoration:none}.brand span{display:inline-grid;place-items:center;background:var(--lime);border-radius:9px;width:27px;height:27px;margin-left:3px;transform:rotate(5deg)}.pill{font-size:10px;font-weight:900;letter-spacing:.09em;border:1px solid var(--line);padding:8px 11px;border-radius:999px;color:#555950}.main{margin:auto 0;padding:clamp(50px,10vh,90px) 0}.eyebrow{font-size:11px;letter-spacing:.15em;font-weight:900;color:#777b72;text-transform:uppercase}.status{display:inline-flex;margin-top:20px;padding:8px 11px;border-radius:999px;background:#ecebe4;color:#53574f;font-size:10px;letter-spacing:.08em;font-weight:900}.h1{font-family:var(--display);font-size:clamp(46px,12vw,76px);line-height:.92;letter-spacing:-.065em;margin:15px 0;font-weight:1000}.h1 em{font-style:normal;position:relative;z-index:0}.h1 em:after{content:"";position:absolute;z-index:-1;bottom:2px;left:0;right:0;height:35%;background:var(--lime);transform:rotate(-2deg);border-radius:5px}.desc{margin:0;color:#686d65;font-size:15px;line-height:1.6;max-width:400px}.preview{height:225px;border-radius:22px;background:#efeee7;padding:12px;margin:27px 0}.shapes{display:grid;place-items:center}.shapes svg{width:100%;height:100%;max-height:200px}.shapes path{fill:#9bc5a5;stroke:#2d7252;stroke-width:2.5;stroke-linejoin:round}.animals{display:flex;align-items:center;justify-content:space-around;gap:4px}.animals span{font-size:clamp(44px,12vw,78px);filter:drop-shadow(0 5px 3px #00000010)}.back{display:flex;align-items:center;justify-content:center;background:var(--ink);color:white;text-decoration:none;border-radius:15px;padding:17px 20px;font-weight:900}.back span{color:var(--lime);margin-left:10px}.footer{margin-top:auto;display:flex;justify-content:space-between;color:#92958d;font-size:10px;gap:10px}
+</style></head><body><main class="shell"><header class="top"><a class="brand" href="../">GUESS THE <span>?</span></a><div class="pill">NEW CATEGORY</div></header><section class="main"><div class="eyebrow">A new challenge is on its way</div><div class="status">WORK IN PROGRESS</div><h1 class="h1">Guess the<br><em>animals.</em></h1><p class="desc">The animal quiz is still being put together. We’ll open this category once the questions and game experience are ready.</p><div class="preview animals"><div class="animals" aria-hidden="true"><span>🦊</span><span>🦉</span><span>🐬</span><span>🦒</span></div></div><a class="back" href="../">Back to all categories <span>→</span></a></section><footer class="footer"><span>GUESS THE ?</span><span>MORE CATEGORIES COMING SOON</span></footer></main></body></html>
