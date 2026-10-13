@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "project": "Guess the ____",
+  "policy": {
+    "initialTargetPerNewCategory": 100,
+    "dailyChallengeChangesAllowed": false,
+    "questionIdsAreStable": true,
+    "preservePriorVersions": true,
+    "publishOnlyValidatedRecords": true
+  },
+  "existingCatalogs": {
+    "dailyChallenge": {
+      "version": 1,
+      "path": "daily-challenge-data-v1.js",
+      "status": "frozen-baseline",
+      "note": "Do not change the current Daily Mix while new standalone categories are being built."
+    },
+    "brandLogos": {
+      "path": "brand-logos-daily-v1.js",
+      "status": "existing",
+      "note": "Existing game data is maintained separately from the Daily Challenge snapshot."
+    }
+  },
+  "categories": [
+    {
+      "id": "landmarks",
+      "title": "Guess the Landmark",
+      "status": "planned",
+      "targetQuestions": 100,
+      "approvedQuestions": 0,
+      "currentVersion": null,
+      "lastRefreshedAt": null,
+      "nextAction": "Build the first image-based catalog in small batches; verify each landmark and its image source."
+    },
+    {
+      "id": "cuisines",
+      "title": "Guess the Cuisine",
+      "status": "planned",
+      "targetQuestions": 100,
+      "approvedQuestions": 0,
+      "currentVersion": null,
+      "lastRefreshedAt": null,
+      "nextAction": "Start after the landmark catalog workflow is validated."
+    },
+    {
+      "id": "geography",
+      "title": "Guess the Place",
+      "status": "planned",
+      "targetQuestions": 100,
+      "approvedQuestions": 0,
+      "currentVersion": null,
+      "lastRefreshedAt": null,
+      "nextAction": "Add after the first image-based category workflow is stable."
+    },
+    {
+      "id": "cities",
+      "title": "Guess the City",
+      "status": "planned",
+      "targetQuestions": 100,
+      "approvedQuestions": 0,
+      "currentVersion": null,
+      "lastRefreshedAt": null,
+      "nextAction": "Add after the first image-based category workflow is stable."
+    }
+  ],
+  "refreshHistory": [
+    {
+      "date": "2026-10-13",
+      "category": "catalog-management",
+      "version": 1,
+      "change": "Created the catalog manifest and validation/refresh policy. No game catalog or Daily Mix changed.",
+      "validation": "Manifest structure and category IDs reviewed; new categories are planning records, not published question banks."
+    }
+  ]
+}
