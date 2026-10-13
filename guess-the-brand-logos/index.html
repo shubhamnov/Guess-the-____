@@ -63,9 +63,6 @@ const DAILY_BRANDS=window.BRAND_LOGOS_V1||BRANDS;
 function todayUTC(){return new Date().toISOString().slice(0,10)}
 function validISODate(value){if(!/^\d{4}-\d{2}-\d{2}$/.test(value||''))return false;const d=new Date(value+'T00:00:00Z');return !Number.isNaN(d.getTime())&&d.toISOString().slice(0,10)===value}
 function formatChallengeDate(value){return new Intl.DateTimeFormat('en-US',{month:'short',day:'numeric',year:'numeric',timeZone:'UTC'}).format(new Date(value+'T00:00:00Z'))}
-const pageParams=new URLSearchParams(window.location.search);
-const launchDaily=pageParams.get('mode')==='daily';
-const launchDate=validISODate(pageParams.get('date'))?pageParams.get('date'):todayUTC();
 let activeMode='play',activeDate=todayUTC(),fixedRng=null,fixedDecks={},fixedCursors={};
 let difficulty='Easy';
 function loadBest(mode){try{if(mode==='daily')return Number(localStorage.getItem('guessTheBrandLogosDailyBest')||0)||0;return Math.max(Number(localStorage.getItem('guessTheBrandLogosBest')||0)||0,Number(localStorage.getItem('guessTheBrandLogosBest-Easy')||0)||0,Number(localStorage.getItem('guessTheBrandLogosBest-Medium')||0)||0,Number(localStorage.getItem('guessTheBrandLogosBest-Hard')||0)||0)}catch(e){return 0}}
