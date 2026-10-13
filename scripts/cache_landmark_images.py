@@ -7,6 +7,7 @@ relative path after the download succeeds.
 """
 import json
 import sys
+import time
 from pathlib import Path
 from io import BytesIO
 
@@ -21,6 +22,32 @@ MAX_DIMENSIONS = (1200, 1200)
 WEBP_QUALITY = 72
 
 
+def get_with_retry(session, url, question_id):
+    last_error = None
+    for attempt in range(6):
+        try:
+            response = session.get(url, timeout=60, allow_redirects=True)
+            if response.status_code == 429 or response.status_code >= 500:
+                last_error = RuntimeError(f"HTTP {response.status_code} while fetching {url}")
+                if attempt == 5:
+                    response.raise_for_status()
+                retry_after = response.headers.get("Retry-After", "")
+                delay = int(retry_after) if retry_after.isdigit() else min(60, 8 * (2 ** attempt))
+                print(f"{question_id}: HTTP {response.status_code}; waiting {delay}s before retry {attempt + 2}/6")
+                time.sleep(delay)
+                continue
+            response.raise_for_status()
+            return response
+        except requests.RequestException as exc:
+            last_error = exc
+            if attempt == 5:
+                break
+            delay = min(60, 8 * (2 ** attempt))
+            print(f"{question_id}: request failed ({exc}); waiting {delay}s before retry {attempt + 2}/6")
+            time.sleep(delay)
+    raise RuntimeError(f"{question_id}: unable to download image after retries: {last_error}")
+
+
 def main():
     data = json.loads(CATALOG.read_text(encoding="utf-8"))
     questions = data.get("questions", [])
@@ -29,7 +56,7 @@ def main():
 
     ASSET_DIR.mkdir(parents=True, exist_ok=True)
     session = requests.Session()
-    session.headers.update({"User-Agent": USER_AGENT})
+    session.headers.update({"User-Agent": USER_AGENT, "Accept": "image/avif,image/webp,image/apng,image/*,*/*;q=0.8"})
     pending = []
 
     # Validate/download/optimize all remote files before changing the catalog.
@@ -45,8 +72,9 @@ def main():
         if not source_url.startswith("https://commons.wikimedia.org/"):
             raise RuntimeError(f"{question.get('id')}: unexpected image URL: {source_url}")
 
-        response = session.get(source_url, timeout=45, allow_redirects=True)
-        response.raise_for_status()
+        response = get_with_retry(session, source_url, question["id"])
+        # Be polite to Wikimedia Commons and reduce the chance of HTTP 429 rate limits.
+        time.sleep(2.5)
         content_type = response.headers.get("Content-Type", "").lower()
         if not content_type.startswith("image/"):
             raise RuntimeError(
