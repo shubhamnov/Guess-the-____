@@ -1,0 +1,11 @@
+{
+  "name": "guess-the-quiz-browser-tests",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "test:browser": "playwright test"
+  },
+  "devDependencies": {
+    "playwright": "^1.55.0"
+  }
+}
