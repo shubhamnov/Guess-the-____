@@ -57,6 +57,8 @@ Never invent a last-refresh date. Record the commit SHA in the refresh entry whe
 
 ## Current first milestone
 
-The manifest marks **Guess the Landmark** as the first catalog in progress. The first batch contains **10 draft questions** toward the 100-question target. Each record includes a Wikimedia Commons photo reference, creator/license attribution, a factual explanation, and a fact source. The question IDs/options and required metadata have been checked, but the image URLs still need a live browser render check; therefore the manifest correctly reports **0 approved questions and 10 draft questions** for now. The standalone game and homepage card are in place. After verifying the image rendering, approve this batch and continue in small batches.
+The manifest marks **Guess the Landmark** as the first catalog in progress. The working catalog now contains **20 draft questions across two batches** toward the 100-question target. Each question includes four answer choices, an explanation, a fact source, and a Wikimedia Commons image reference with creator/license attribution. The user confirmed the landmark identities in the first batch; the overall catalog is still marked as draft because image rendering in the published browser has not yet been verified. The standalone game draws **10 random questions per round**, so the catalog can grow without making each round longer.
+
+The photos are remotely referenced from Wikimedia Commons, so the game needs an internet connection to load them. The exact Special:FilePath image links have not been verified by loading the live site in a browser in this working session. Keep this limitation explicit and do not count those records as approved until a browser render check passes.
 
 The existing Daily Challenge snapshot is intentionally unchanged.
