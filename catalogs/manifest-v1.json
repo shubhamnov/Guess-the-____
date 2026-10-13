@@ -79,6 +79,14 @@
       "change": "Added a first batch of 10 landmark questions, photo source and license metadata, factual explanations, and a playable standalone category page. Added the category to the homepage. Daily Mix unchanged.",
       "validation": "Unique IDs; every answer appears exactly once among four distinct options; every record has image source, creator, license, and fact source. Image URLs still require a live browser render check, so approvedQuestions remains 0 and draftQuestions is 10.",
       "commit": "0fe8ac3f063bd2ed6f7dd964382b7a0f487f5dab"
+    },
+    {
+      "date": "2026-10-13",
+      "category": "landmarks",
+      "version": 1,
+      "change": "Corrected the Great Wall of China Wikimedia Commons file title to match the verified source page. The 10-question batch remains in image-render-check status.",
+      "validation": "Question IDs/options and source metadata rechecked; live image rendering remains unverified.",
+      "commit": "c420373400baa3e2f6a43df15418b1f6594a163e"
     }
   ]
 }
