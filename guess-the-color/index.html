@@ -101,6 +101,9 @@ $('startBtn').addEventListener('click',startGame);$('againBtn').addEventListener
 $('shareBtn').addEventListener('click',async()=>{const text='I scored '+score+' in Guess the ? — Color Rush! Can you beat me?';if(navigator.share){try{await navigator.share({title:'Guess the ? — Color Rush',text,url:location.href})}catch(e){}}else if(navigator.clipboard){try{await navigator.clipboard.writeText(text+' '+location.href);showToast('Score copied!')}catch{showToast(text)}}else showToast(text)});
 $('best').textContent=stats.best;
 document.addEventListener('visibilitychange',()=>{if(document.hidden&&running){/* Clock intentionally continues: the 90-second challenge is real time. */}});
+
+// Enter straight into gameplay after choosing Color on the home page.
+window.addEventListener('load', startGame, { once: true });
 </script>
 </body>
 </html>
