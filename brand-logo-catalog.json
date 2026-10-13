@@ -1,25 +1,5 @@
 [
   {
-    "name": "Bose",
-    "slug": "bose",
-    "difficulty": "Medium"
-  },
-  {
-    "name": "JBL",
-    "slug": "jbl",
-    "difficulty": "Medium"
-  },
-  {
-    "name": "DJI",
-    "slug": "dji",
-    "difficulty": "Medium"
-  },
-  {
-    "name": "Fitbit",
-    "slug": "fitbit",
-    "difficulty": "Medium"
-  },
-  {
     "name": "GitLab",
     "slug": "gitlab",
     "difficulty": "Hard"
