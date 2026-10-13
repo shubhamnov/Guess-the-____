@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f8f7f2">
+<meta name="description" content="Can you recognise famous dishes from around the world? Play a quick photo-based guessing game.">
+<title>Guess the Cuisine — Guess the ____</title>
+<style>
+:root{--bg:#f8f7f2;--ink:#191b1a;--muted:#777b75;--line:#e7e5dd;--paper:#fffefa;--lime:#d7fb55;--green:#26764f;--red:#b74432;--display:ui-rounded,"Arial Rounded MT Bold",system-ui,sans-serif}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button{font:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}button:focus-visible,a:focus-visible{outline:3px solid #7871e8;outline-offset:3px}.shell{width:min(100% - 32px,640px);margin:0 auto;padding:22px 0 28px;min-height:100dvh;display:flex;flex-direction:column}.top{display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{font-family:var(--display);font-size:22px;font-weight:1000;letter-spacing:-1.1px;text-decoration:none;white-space:nowrap;color:var(--ink)}.brand span{display:inline-grid;place-items:center;background:var(--lime);border-radius:9px;width:27px;height:27px;margin-left:3px;transform:rotate(5deg)}.pill{font-size:10px;font-weight:850;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);padding:8px 11px;border-radius:999px;color:#555950;white-space:nowrap}.eyebrow{font-size:11px;letter-spacing:.15em;font-weight:900;color:#7a7e74;text-transform:uppercase}.intro{padding:clamp(28px,6vh,58px) 0 22px}.hero h1{font-family:var(--display);font-size:clamp(44px,11vw,72px);line-height:.92;letter-spacing:-.065em;margin:11px 0 14px;font-weight:1000}.hero h1 em{font-style:normal;position:relative;z-index:0}.hero h1 em:after{content:"";position:absolute;z-index:-1;bottom:2px;left:0;right:0;height:35%;background:var(--lime);transform:rotate(-2deg);border-radius:5px}.hero p{margin:0;max-width:450px;color:#686d65;font-size:15px;line-height:1.55}.primary,.secondary{width:100%;border-radius:15px;padding:15px 18px;font-size:14px;font-weight:950}.primary{background:var(--ink);color:#fff;border:0;display:flex;align-items:center;justify-content:center;gap:10px}.primary span{display:grid;place-items:center;width:25px;height:25px;border-radius:50%;background:var(--lime);color:var(--ink);font-size:18px}.secondary{background:var(--paper);border:1.5px solid var(--line);color:var(--ink)}.game{display:none;flex:1;flex-direction:column;gap:14px}.game.active{display:flex}.stats{display:grid;grid-template-columns:1fr 1fr;gap:9px}.stat{border:1px solid var(--line);background:var(--paper);border-radius:15px;padding:11px 13px}.stat label{display:block;text-transform:uppercase;font-size:9px;letter-spacing:.12em;color:var(--muted);font-weight:900;margin-bottom:5px}.stat strong{font-size:23px;line-height:1;font-variant-numeric:tabular-nums;letter-spacing:-.04em}.progress{height:5px;background:#e9e7df;border-radius:99px;overflow:hidden}.progress span{display:block;height:100%;width:0;background:var(--lime);transition:width .2s}.question-head{display:flex;align-items:center;justify-content:space-between;gap:8px}.category-label{font-size:10px;font-weight:900;border-radius:999px;padding:8px 10px;background:#efeee7;color:#555950;border:1px solid #dfddd5}.number{font-size:11px;color:var(--muted);font-weight:850}.photo-wrap{height:clamp(240px,42vh,380px);min-height:210px;border-radius:22px;border:1px solid var(--line);background:#e9e6dc;overflow:hidden;position:relative;display:grid;place-items:center}.photo-wrap img{display:block;width:100%;height:100%;object-fit:cover}.photo-fallback{display:none;padding:24px;text-align:center;color:#65695f;font-size:13px;line-height:1.5}.photo-fallback a{font-weight:850}.credit{margin-top:-7px;text-align:right;font-size:10px;line-height:1.45;color:var(--muted)}.credit a{color:#5c6057;text-underline-offset:2px}.prompt{text-align:center;font-family:var(--display);font-size:clamp(22px,5.8vw,29px);font-weight:950;letter-spacing:-.04em;margin:0;line-height:1.13}.answers{display:grid;grid-template-columns:1fr 1fr;gap:10px}.answer{min-height:57px;padding:12px 10px;background:var(--paper);border:1.5px solid var(--line);border-radius:15px;font-weight:850;font-size:clamp(12px,3.4vw,15px);overflow-wrap:anywhere;transition:background .12s,border-color .12s}.answer.correct{background:#e0f6df;border-color:#5ca86d;color:#205c37}.answer.wrong{background:#ffe6df;border-color:#ef8a73;color:#943d2c}.answer:disabled{cursor:default}.feedback{min-height:22px;text-align:center;font-size:12px;font-weight:800;line-height:1.5;color:var(--muted)}.feedback.good{color:var(--green)}.feedback.bad{color:var(--red)}.next{display:none}.next.visible{display:flex}.result{display:none;margin:auto 0;padding:clamp(28px,7vh,54px) 0}.result.active{display:block}.result-card{border:2px solid var(--ink);background:var(--paper);border-radius:27px;box-shadow:7px 7px 0 var(--lime);padding:clamp(22px,6vw,32px);display:flex;flex-direction:column;gap:18px}.bigscore{align-self:flex-start;display:inline-block;padding:8px 16px 12px;background:var(--lime);border:2px solid var(--ink);border-radius:18px;box-shadow:4px 4px 0 var(--ink);font-family:var(--display);font-size:clamp(76px,19vw,106px);font-weight:1000;line-height:.9;letter-spacing:-.08em}.result h2{font-family:var(--display);font-size:clamp(28px,7.5vw,36px);line-height:1;margin:0;letter-spacing:-.05em}.result p{color:var(--muted);line-height:1.55;margin:0}.resultbox{background:#efeee7;border-radius:18px;padding:15px;display:grid;grid-template-columns:1fr 1fr;gap:14px}.resultbox label{display:block;font-size:9px;text-transform:uppercase;letter-spacing:.1em;font-weight:900;color:var(--muted);margin-bottom:5px}.resultbox strong{font-size:22px}.result-actions{display:grid;gap:9px}.footer{margin-top:auto;display:flex;justify-content:space-between;gap:12px;padding-top:24px;color:#92958d;font-size:10px}.creator-credit{color:inherit;text-decoration:none;font-size:10px;font-weight:900;letter-spacing:.04em;white-space:nowrap}.creator-credit:hover{text-decoration:underline;text-underline-offset:3px}.micro{font-size:10px;color:var(--muted);line-height:1.5;text-align:center;margin:0}@media(max-width:390px){.answers{grid-template-columns:1fr}.photo-wrap{height:250px}.pill{font-size:9px;padding:7px 8px}}
+</style>
+</head>
+<body>
+<main class="shell">
+  <header class="top"><a class="brand" href="../">GUESS THE ____ <span>?</span></a><span class="pill">10 questions · 100 points</span></header>
+  <section class="intro hero" id="intro">
+    <div class="eyebrow">World tour · Photo quiz</div>
+    <h1>Guess the <em>Cuisine.</em></h1>
+    <p>Famous places, one photo at a time. Pick the dish, then get a quick fact about it. Each round draws 10 random questions from the growing photo bank, which is being curated toward 100 verified questions.</p>
+    <button class="primary" id="start">Start guessing <span>→</span></button>
+    <p class="micro">Photos are credited to their creators. Select a photo credit to view its source and license.</p>
+  </section>
+  <section class="game" id="game" aria-live="polite">
+    <div class="stats"><div class="stat"><label>Score</label><strong id="score">0</strong></div><div class="stat"><label>Accuracy</label><strong id="accuracy">—</strong></div></div>
+    <div class="progress" aria-label="Question progress"><span id="progress"></span></div>
+    <div class="question-head"><span class="category-label">GUESS THE CUISINE</span><span class="number" id="number">1 / 10</span></div>
+    <div class="photo-wrap"><img id="photo" alt="Photograph of a dish to identify"><div class="photo-fallback" id="photoFallback">This photo could not be loaded. You can still answer, or <a id="openPhoto" href="#" target="_blank" rel="noopener noreferrer">open the image source</a>.</div></div>
+    <div class="credit" id="credit"></div>
+    <h2 class="prompt" id="prompt">Which dish is shown?</h2>
+    <div class="answers" id="answers"></div>
+    <div class="feedback" id="feedback" role="status"></div>
+    <button class="primary next" id="next">Next question <span>→</span></button>
+    <button class="secondary" id="quit">Finish round</button>
+  </section>
+  <section class="result" id="result">
+    <div class="result-card">
+      <div class="eyebrow">Round complete</div>
+      <div class="bigscore" id="finalScore">0</div>
+      <h2 id="resultTitle">Nice exploring.</h2>
+      <p id="resultCopy"></p>
+      <div class="resultbox"><div><label>Correct answers</label><strong id="correctCount">0 / 10</strong></div><div><label>Accuracy</label><strong id="finalAccuracy">0%</strong></div></div>
+      <div class="result-actions"><button class="primary" id="again">Play another round <span>↻</span></button><button class="secondary" id="home">Back to categories</button></div>
+    </div>
+  </section>
+  <footer class="footer"><span>GUESS THE ?</span><a class="creator-credit" href="https://github.com/shubhamnov" target="_blank" rel="noopener noreferrer">MADE BY SHUBHAM ↗</a></footer>
+</main>
+<script>
+(function(){
+  const $ = id => document.getElementById(id);
+  const questionLimit = 10;
+  let catalog = [];
+  let round = [];
+  let index = 0;
+  let score = 0;
+  let correct = 0;
+  let answered = false;
+  let answeredCount = 0;
+  let previousRoundIds = [];
+
+  function shuffle(items){
+    const copy = items.slice();
+    for(let i=copy.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[copy[i],copy[j]]=[copy[j],copy[i]];}
+    return copy;
+  }
+  function setScreen(screen){
+    $('intro').style.display = screen === 'intro' ? 'flex' : 'none';
+    $('game').classList.toggle('active',screen === 'game');
+    $('result').classList.toggle('active',screen === 'result');
+  }
+  function startRound(){
+    const shuffled = shuffle(catalog);
+    const limit = Math.min(questionLimit, shuffled.length);
+    let nextRound = shuffled.slice(0, limit);
+    // Avoid repeating the exact same set of questions on consecutive rounds when alternatives exist.
+    if (shuffled.length > limit && previousRoundIds.length === limit &&
+        nextRound.every(q => previousRoundIds.includes(q.id))) {
+      const replacement = shuffled.find(q => !previousRoundIds.includes(q.id));
+      if (replacement) {
+        nextRound[nextRound.length - 1] = replacement;
+        nextRound = shuffle(nextRound);
+      }
+    }
+    round = nextRound;
+    previousRoundIds = round.map(q => q.id);
+    index=0;score=0;correct=0;answered=false;answeredCount=0;
+    $('score').textContent='0';$('accuracy').textContent='—';
+    setScreen('game');renderQuestion();
+  }
+  function renderQuestion(){
+    const q=round[index];answered=false;
+    $('number').textContent=(index+1)+' / '+round.length;
+    $('progress').style.width=(index/round.length*100)+'%';
+    $('photo').hidden=false;$('photoFallback').style.display='none';
+    $('photo').alt='Photograph of a dish to identify';
+    $('photo').onerror=()=>{$('photo').hidden=true;$('photoFallback').style.display='block';};
+    $('photo').src=q.image.url;
+    $('openPhoto').href=q.image.sourcePage;
+    $('credit').innerHTML='';
+    const creditLink=document.createElement('a');
+    creditLink.href=q.image.sourcePage;creditLink.target='_blank';creditLink.rel='noopener noreferrer';
+    creditLink.textContent='Photo: '+q.image.creator+' · '+q.image.license;
+    $('credit').appendChild(creditLink);
+    $('prompt').textContent=q.prompt;
+    $('feedback').textContent='';$('feedback').className='feedback';
+    $('next').classList.remove('visible');
+    $('next').textContent=index===round.length-1?'See my score →':'Next question →';
+    $('answers').replaceChildren();
+    shuffle(q.options).forEach(option=>{
+      const button=document.createElement('button');button.className='answer';button.type='button';button.textContent=option;
+      button.addEventListener('click',()=>chooseAnswer(button,option,q));$('answers').appendChild(button);
+    });
+  }
+  function chooseAnswer(button,option,q){
+    if(answered)return;answered=true;answeredCount++;
+    const isCorrect=option===q.answer;
+    if(isCorrect){score+=10;correct++;button.classList.add('correct');$('feedback').classList.add('good');}
+    else{$('feedback').classList.add('bad');Array.from($('answers').children).forEach(b=>{if(b.textContent===q.answer)b.classList.add('correct');});button.classList.add('wrong');}
+    Array.from($('answers').children).forEach(b=>b.disabled=true);
+    $('score').textContent=score;$('accuracy').textContent=Math.round(correct/answeredCount*100)+'%';
+    $('feedback').textContent=(isCorrect?'Correct! ':'Answer: '+q.answer+'. ')+q.explanation;
+    $('progress').style.width=((index+1)/round.length*100)+'%';
+    $('next').classList.add('visible');
+  }
+  function finishRound(){
+    const total=round.length;
+    $('finalScore').textContent=score+'/ '+(total*10);
+    $('correctCount').textContent=correct+' / '+total;
+    $('finalAccuracy').textContent=Math.round(correct/Math.max(1,answeredCount)*100)+'%';
+    $('resultTitle').textContent=score===total*10?'Cuisine expert!':score>=total*6?'Great exploring.':'Keep exploring.';
+    $('resultCopy').textContent='You identified '+correct+' of '+total+' dishes. Play again to get a different order.';
+    setScreen('result');
+  }
+  $('start').addEventListener('click',startRound);
+  $('next').addEventListener('click',()=>{if(!answered)return;if(index<round.length-1){index++;renderQuestion();}else finishRound();});
+  $('quit').addEventListener('click',finishRound);
+  $('again').addEventListener('click',startRound);
+  $('home').addEventListener('click',()=>{window.location.href='../';});
+  fetch('../catalogs/cuisines-v1.json').then(r=>{if(!r.ok)throw new Error('Catalog unavailable');return r.json();}).then(data=>{
+    if(!data||!Array.isArray(data.questions)||!data.questions.length)throw new Error('No questions in catalog');
+    catalog=data.questions.filter(q=>q.status!=='retired'&&q.image&&q.image.url&&Array.isArray(q.options)&&q.options.includes(q.answer));
+    if(!catalog.length)throw new Error('No valid questions available');
+    $('start').disabled=false;
+  }).catch(()=>{
+    $('start').disabled=true;$('start').textContent='Catalog temporarily unavailable';
+    document.querySelector('.hero p').textContent='The cuisine catalog could not be loaded. Please try again later.';
+  });
+  $('start').disabled=true;
+})();
+</script>
+</body>
+</html>
