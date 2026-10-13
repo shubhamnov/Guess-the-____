@@ -68,7 +68,7 @@ const launchDaily=pageParams.get('mode')==='daily';
 const launchDate=validISODate(pageParams.get('date'))?pageParams.get('date'):todayUTC();
 let activeMode='play',activeDate=todayUTC(),fixedRng=null,fixedDecks={},fixedCursors={};
 let difficulty='Easy';
-function loadBest(){try{return Math.max(Number(localStorage.getItem('guessTheBrandLogosBest')||0)||0,Number(localStorage.getItem('guessTheBrandLogosBest-Easy')||0)||0,Number(localStorage.getItem('guessTheBrandLogosBest-Medium')||0)||0,Number(localStorage.getItem('guessTheBrandLogosBest-Hard')||0)||0)}catch(e){return 0}}
+function loadBest(mode){try{if(mode==='daily')return Number(localStorage.getItem('guessTheBrandLogosDailyBest')||0)||0;return Math.max(Number(localStorage.getItem('guessTheBrandLogosBest')||0)||0,Number(localStorage.getItem('guessTheBrandLogosBest-Easy')||0)||0,Number(localStorage.getItem('guessTheBrandLogosBest-Medium')||0)||0,Number(localStorage.getItem('guessTheBrandLogosBest-Hard')||0)||0)}catch(e){return 0}}
 
 let score=0,answered=0,correct=0,streak=0,bestStreak=0,roundNumber=0,startedAt=0,timerId=null,advanceId=null,running=false,locked=false,used=new Set(),current=null,best=0;
 best=loadBest();
@@ -161,7 +161,7 @@ function answer(brand,button){
 function tick(){if(!running)return;const left=Math.max(0,ROUND_SECONDS-Math.floor((Date.now()-startedAt)/1000));$('time').textContent=left;$('timebar').style.width=(left/ROUND_SECONDS*100)+'%';$('timerStat').classList.toggle('urgent',left<=10);if(left<=0)finishGame()}
 function finishGame(){
  if(!running)return;running=false;locked=true;clearInterval(timerId);clearTimeout(advanceId);timerId=null;
- best=Math.max(loadBest(),score);try{localStorage.setItem('guessTheBrandLogosBest',String(best))}catch(e){}
+ best=Math.max(loadBest(activeMode),score);const bestKey=activeMode==='daily'?'guessTheBrandLogosDailyBest':'guessTheBrandLogosBest';try{localStorage.setItem(bestKey,String(best))}catch(e){}
  const accuracy=answered?Math.round(correct/answered*100):0;
  $('resultEyebrow').textContent=activeMode==='daily'?'DAILY CHALLENGE · '+formatChallengeDate(activeDate).toUpperCase():'TIME’S UP · BRAND LOGOS';$('finalScore').textContent=score;$('resultBest').textContent=best;$('accuracy').textContent=accuracy+'%';$('correctCount').textContent=correct+' / '+answered;$('bestStreak').textContent=bestStreak;
  let title='Good eye!';let text='Every logo is another little brand memory unlocked.';
@@ -173,7 +173,7 @@ function finishGame(){
 }
 function startGame(mode,date){
  activeMode=mode||'play';activeDate=activeMode==='daily'&&validISODate(date)?date:todayUTC();
- clearInterval(timerId);clearTimeout(advanceId);best=loadBest();difficulty='Easy';score=0;answered=0;correct=0;streak=0;bestStreak=0;roundNumber=0;used.clear();locked=false;running=true;startedAt=Date.now();
+ clearInterval(timerId);clearTimeout(advanceId);best=loadBest(activeMode);difficulty='Easy';score=0;answered=0;correct=0;streak=0;bestStreak=0;roundNumber=0;used.clear();locked=false;running=true;startedAt=Date.now();
  if(activeMode==='daily')initDailyDeck(activeDate);else{fixedRng=null;fixedDecks={};fixedCursors={}}
  $('score').textContent='0';$('streak').textContent='0';$('time').textContent=String(ROUND_SECONDS);$('timebar').style.width='100%';$('timerStat').classList.remove('urgent');$('intro').style.display='none';$('result').classList.remove('active');$('game').classList.add('active');renderQuestion();timerId=setInterval(tick,200);
 }
