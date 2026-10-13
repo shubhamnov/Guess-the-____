@@ -83,4 +83,7 @@ async function makeImage(){const canvas=document.createElement('canvas');canvas.
 async function shareScore(){const btn=$('shareBtn'),label=btn.textContent;btn.disabled=true;btn.textContent='Creating image…';try{const blob=await makeImage(),file=new File([blob],'guess-the-countries-score.png',{type:'image/png'});if(navigator.share&&navigator.canShare&&navigator.canShare({files:[file]}))await navigator.share({files:[file],title:'My Countries score',text:'I scored '+score+' in Guess the ____! Can you beat me?'});else{const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='guess-the-countries-score.png';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500);showToast('Score image saved. Share it from your photos or downloads.')}}catch(e){if(e.name!=='AbortError')showToast('Could not create image. Try again.')}finally{btn.disabled=false;btn.textContent=label}}
 function showToast(m){$('toast').textContent=m;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),2300)}
 $('shareBtn').addEventListener('click',shareScore);$('time').textContent='60';
+
+  // AUTO_START_ON_CATEGORY_ENTRY
+  startGame();
 })();</script></body></html>
