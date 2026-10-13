@@ -19,13 +19,7 @@
 .result{display:none;position:fixed;inset:0;z-index:1000;box-sizing:border-box;flex-direction:column;align-items:center;justify-content:center;gap:0;margin:0;padding:clamp(14px,4vh,30px) 14px;overflow-y:auto;background:rgba(25,27,26,.62);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}.result.active{display:flex}.result-modal{position:relative;isolation:isolate;flex:none;width:min(100%,440px);max-height:100%;overflow-y:auto;display:flex;flex-direction:column;gap:17px;padding:clamp(21px,5vw,31px);background:var(--paper);border:2px solid var(--ink);border-radius:30px;box-shadow:9px 9px 0 var(--lime)}.result-modal:before{content:"✳";position:absolute;top:13px;right:18px;color:var(--lime);-webkit-text-stroke:1px var(--ink);font-size:43px;line-height:1;transform:rotate(12deg);pointer-events:none}.result-modal .eyebrow{position:relative;z-index:1;padding-right:42px}.bigscore{font-family:var(--display);font-size:clamp(76px,19vw,112px);font-weight:1000;line-height:.85;letter-spacing:-.08em;margin:5px 0 4px;display:inline-block;align-self:flex-start;padding:7px 16px 12px;background:var(--lime);border:2px solid var(--ink);border-radius:20px;box-shadow:4px 4px 0 var(--ink)}.result h2{font-family:var(--display);font-size:clamp(28px,7.5vw,36px);line-height:1;margin:0;letter-spacing:-.05em}.result p{color:var(--muted);line-height:1.55;margin:0}.resultbox{border:0;background:#efeee7;border-radius:20px;padding:16px;display:grid;grid-template-columns:1fr 1fr;gap:14px}.resultbox label{display:block;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;font-size:10px;font-weight:900;margin-bottom:6px}.resultbox strong{font-size:27px;letter-spacing:-.04em}.secondary{background:transparent;border:1px solid var(--line);border-radius:15px;padding:14px;font-weight:850;width:100%}.result-modal #shareBtn{order:2;background:var(--lime);color:var(--ink);border:2px solid var(--ink);border-radius:15px;padding:16px 14px;font-weight:950;box-shadow:0 4px 0 var(--ink)}.result-modal #againBtn{order:3;background:transparent;color:var(--ink);border:1.5px solid var(--line);box-shadow:none;padding:14px}.result-modal .links{order:4}.bottomline{margin-top:auto;padding-top:22px;display:flex;justify-content:space-between;gap:12px;color:#92958d;font-size:10px}.creator-credit{color:inherit;text-decoration:none;font-size:10px;font-weight:900;letter-spacing:.04em;white-space:nowrap}.creator-credit:hover{text-decoration:underline;text-underline-offset:3px}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:1200;max-width:calc(100% - 24px);background:#191b1a;color:white;border-radius:99px;padding:10px 16px;font-size:12px;font-weight:800;opacity:0;pointer-events:none;transition:opacity .2s}.toast.show{opacity:1}
 @media(min-width:560px){.shell{padding-top:30px}.game{gap:20px}.logo-clue{height:260px}.answer{min-height:64px;font-size:15px}.intro{gap:24px}}@media(max-width:430px){.brand{font-size:19px}.pill{font-size:8px;padding:7px 8px}.stat{padding:10px}.stat strong{font-size:22px}}@media(max-height:700px){.result{justify-content:flex-start}.result-modal{margin:auto 0}}@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 
-.difficulty-picker{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
-.difficulty-choice{min-width:0;display:flex;flex-direction:column;align-items:flex-start;gap:6px;text-align:left;background:var(--paper);border:1.5px solid var(--line);border-radius:16px;padding:12px 11px;color:var(--ink)}
-.difficulty-choice strong{font-family:var(--display);font-size:clamp(16px,4vw,20px);font-weight:950;letter-spacing:-.04em}
-.difficulty-choice span{font-size:10px;line-height:1.35;color:var(--muted)}
-.difficulty-choice small{font-size:9px;font-weight:850;line-height:1.35;color:#676b62}
-.difficulty-choice.selected{border:2px solid var(--ink);background:#e9f5bf;box-shadow:0 3px 0 var(--ink);padding:11px 10px}
-@media(max-width:410px){.difficulty-choice{padding:10px 8px}.difficulty-choice.selected{padding:9px 7px}.difficulty-choice span{font-size:9px}.difficulty-choice small{font-size:8px}}
+
 
 </style>
 </head>
@@ -35,12 +29,7 @@
 <section class="intro" id="intro">
   <div class="hero"><div class="eyebrow">A quick brand-spotting challenge</div><h1>Know your<br><em>brand logos?</em></h1><p>You know the logo when you see it. Right? Pick the right brand before the clock runs out.</p></div>
   <div class="preview" aria-hidden="true"><div class="preview-logos"><span><img data-preview-slug="apple" alt=""></span><span><img data-preview-slug="nike" alt=""></span><span><img data-preview-slug="netflix" alt=""></span><span><img data-preview-slug="spotify" alt=""></span><span><img data-preview-slug="googlechrome" alt=""></span><span><img data-preview-slug="github" alt=""></span></div></div>
-  <div class="difficulty-picker" role="group" aria-label="Choose difficulty">
-    <button type="button" class="difficulty-choice selected" data-difficulty="Easy" aria-pressed="true"><strong>Easy</strong><span>Recognisable logos</span><small>10 points · 61 logos</small></button>
-    <button type="button" class="difficulty-choice" data-difficulty="Medium" aria-pressed="false"><strong>Medium</strong><span>Less obvious brands</span><small>15 points · 74 logos</small></button>
-    <button type="button" class="difficulty-choice" data-difficulty="Hard" aria-pressed="false"><strong>Hard</strong><span>For logo experts</span><small>20 points · 84 logos</small></button>
-  </div>
-  <button class="primary" id="startBtn">Play now <span class="arrow">→</span></button><div class="micro">60 seconds · 4 choices · more points on harder levels</div><div class="links"><a href="../">← All categories</a><span>·</span><a href="https://simpleicons.org/" target="_blank" rel="noopener noreferrer">Logo icons by Simple Icons</a></div><div class="micro">Unofficial fan-made quiz. Brand names and marks belong to their respective owners.</div>
+  <button class="primary" id="startBtn">Play now <span class="arrow">→</span></button><div class="micro">Starts familiar, gets trickier as your streak grows · missed guesses bring easier logos</div><div class="links"><a href="../">← All categories</a><span>·</span><a href="https://simpleicons.org/" target="_blank" rel="noopener noreferrer">Logo icons by Simple Icons</a></div><div class="micro">Unofficial fan-made quiz. Brand names and marks belong to their respective owners.</div>
 </section>
 <section class="game" id="game" aria-label="Brand logo quiz">
   <div class="stats"><div class="stat"><label>Score</label><strong id="score">0</strong></div><div class="stat"><label>Streak</label><strong id="streak">0</strong></div><div class="stat timer" id="timerStat"><label>Time left</label><strong id="time">60</strong></div></div>
@@ -61,40 +50,48 @@
 <footer class="bottomline"><span>GUESS THE ?</span><a class="creator-credit" href="https://github.com/shubhamnov" target="_blank" rel="noopener noreferrer">MADE BY SHUBHAM ↗</a></footer>
 </main>
 <div class="toast" id="toast" role="status"></div>
-<script src="../brand-logos-easy.js"></script>
-<script src="../brand-logos-medium.js"></script>
-<script src="../brand-logos-hard.js"></script>
+<script src="../brand-logos.js"></script>
 <script>
 (function(){
 'use strict';
 const $=id=>document.getElementById(id);
 const ROUND_SECONDS=60;
+const LEVELS=['Easy','Medium','Hard'];
 const POINTS={Easy:10,Medium:15,Hard:20};
+const BRANDS=window.BRAND_LOGOS||[];
 let difficulty='Easy';
-let BRANDS=[];
-function loadBest(){try{return Number(localStorage.getItem('guessTheBrandLogosBest-'+difficulty)||0)||0}catch(e){return 0}}
+function loadBest(){try{return Math.max(Number(localStorage.getItem('guessTheBrandLogosBest')||0)||0,Number(localStorage.getItem('guessTheBrandLogosBest-Easy')||0)||0,Number(localStorage.getItem('guessTheBrandLogosBest-Medium')||0)||0,Number(localStorage.getItem('guessTheBrandLogosBest-Hard')||0)||0)}catch(e){return 0}}
 
 let score=0,answered=0,correct=0,streak=0,bestStreak=0,roundNumber=0,startedAt=0,timerId=null,advanceId=null,running=false,locked=false,used=new Set(),current=null,best=0;
 best=loadBest();
 function svgData(item){return 'data:image/svg+xml;charset=utf-8,'+encodeURIComponent(item.svg)}
 function populatePreview(){
- const all=window.BRAND_LOGOS||[];
+ const all=BRANDS;
  document.querySelectorAll('[data-preview-slug]').forEach(img=>{
   const item=all.find(b=>b.slug===img.dataset.previewSlug);
   if(item){img.src=svgData(item);img.loading='eager'}
  });
 }
-function setDifficulty(next){
- if(running)return;
- difficulty=next;
- document.querySelectorAll('.difficulty-choice').forEach(btn=>{
-  const selected=btn.dataset.difficulty===difficulty;
-  btn.classList.toggle('selected',selected);btn.setAttribute('aria-pressed',String(selected));
- });
- best=loadBest();
-}
 function shuffle(items){const a=items.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
-function chooseQuestion(){if(used.size>=BRANDS.length)used.clear();const remaining=BRANDS.filter(b=>!used.has(b));current=remaining[Math.floor(Math.random()*remaining.length)];used.add(current.name);const distractors=shuffle(BRANDS.filter(b=>b.name!==current.name)).slice(0,3);return shuffle([current].concat(distractors))}
+function chooseQuestion(){
+ const remaining=BRANDS.filter(b=>!used.has(b.slug));
+ if(!remaining.length){finishGame();return []}
+ let pool=remaining.filter(b=>b.difficulty===difficulty);
+ if(!pool.length){
+  const currentLevel=LEVELS.indexOf(difficulty);
+  for(let distance=1;distance<LEVELS.length&&!pool.length;distance++){
+   pool=remaining.filter(b=>Math.abs(LEVELS.indexOf(b.difficulty)-currentLevel)===distance);
+  }
+ }
+ if(!pool.length)pool=remaining;
+ current=pool[Math.floor(Math.random()*pool.length)];
+ difficulty=current.difficulty;
+ used.add(current.slug);
+ const sameLevel=BRANDS.filter(b=>b.difficulty===difficulty&&b.slug!==current.slug);
+ const distractorPool=sameLevel.length>=3?sameLevel:BRANDS.filter(b=>b.slug!==current.slug);
+ const distractors=shuffle(distractorPool).slice(0,3);
+ return shuffle([current].concat(distractors))
+}
 function renderQuestion(){
  if(!running)return;
  const options=chooseQuestion();
@@ -110,17 +107,29 @@ function chooseOptionsForCurrent(){const others=shuffle(BRANDS.filter(b=>b.name!
 function answer(brand,button){
  if(!running||locked)return;locked=true;answered++;
  const buttons=$('answers').querySelectorAll('button');buttons.forEach(b=>{b.disabled=true;if(b.textContent===current.name)b.classList.add('correct')});
- if(brand.name===current.name){correct++;score+=POINTS[difficulty];streak++;bestStreak=Math.max(bestStreak,streak);$('feedback').textContent='That’s it! +'+POINTS[difficulty]+' points';$('feedback').classList.add('good')}
- else{streak=0;button.classList.add('wrong');$('feedback').textContent='Not quite — that’s '+current.name+'.';$('feedback').classList.add('bad')}
+ const questionLevel=current.difficulty||difficulty;
+ if(brand.name===current.name){
+  correct++;score+=POINTS[questionLevel]||10;streak++;bestStreak=Math.max(bestStreak,streak);
+  const nextIndex=Math.min(LEVELS.length-1,LEVELS.indexOf(questionLevel)+(streak>0&&streak%3===0?1:0));
+  const nextLevel=LEVELS[nextIndex];
+  $('feedback').textContent='That’s it! +'+(POINTS[questionLevel]||10)+' points'+(nextLevel!==questionLevel?' · Moving up to '+nextLevel+'!':'');
+  $('feedback').classList.add('good');difficulty=nextLevel;
+ }else{
+  streak=0;button.classList.add('wrong');
+  const easierIndex=Math.max(0,LEVELS.indexOf(questionLevel)-1);
+  difficulty=LEVELS[easierIndex];
+  $('feedback').textContent='Not quite — that’s '+current.name+'. '+(difficulty!==questionLevel?'Let’s try an easier logo.':'Keep going — you’ve got this!');
+  $('feedback').classList.add('bad');
+ }
  $('score').textContent=score;$('streak').textContent=streak;
  clearTimeout(advanceId);advanceId=setTimeout(()=>{if(running)renderQuestion()},720);
 }
 function tick(){if(!running)return;const left=Math.max(0,ROUND_SECONDS-Math.floor((Date.now()-startedAt)/1000));$('time').textContent=left;$('timebar').style.width=(left/ROUND_SECONDS*100)+'%';$('timerStat').classList.toggle('urgent',left<=10);if(left<=0)finishGame()}
 function finishGame(){
  if(!running)return;running=false;locked=true;clearInterval(timerId);clearTimeout(advanceId);timerId=null;
- best=Math.max(loadBest(),score);try{localStorage.setItem('guessTheBrandLogosBest-'+difficulty,String(best))}catch(e){}
+ best=Math.max(loadBest(),score);try{localStorage.setItem('guessTheBrandLogosBest',String(best))}catch(e){}
  const accuracy=answered?Math.round(correct/answered*100):0;
- $('resultEyebrow').textContent='TIME’S UP · '+difficulty.toUpperCase()+' BRAND LOGOS';$('finalScore').textContent=score;$('resultBest').textContent=best;$('accuracy').textContent=accuracy+'%';$('correctCount').textContent=correct+' / '+answered;$('bestStreak').textContent=bestStreak;
+ $('resultEyebrow').textContent='TIME’S UP · BRAND LOGOS';$('finalScore').textContent=score;$('resultBest').textContent=best;$('accuracy').textContent=accuracy+'%';$('correctCount').textContent=correct+' / '+answered;$('bestStreak').textContent=bestStreak;
  let title='Good eye!';let text='Every logo is another little brand memory unlocked.';
  if(score>=250){title='Logo legend!';text='That was seriously sharp brand recognition.'}
  else if(score>=150){title='Brand buff!';text='You know your brands. Can you top that streak?'}
@@ -129,7 +138,7 @@ function finishGame(){
  $('game').classList.remove('active');$('result').classList.add('active');
 }
 function startGame(){
- clearInterval(timerId);clearTimeout(advanceId);BRANDS=(window.BRAND_LOGOS||[]).filter(b=>b.difficulty===difficulty);if(BRANDS.length<4){showToast('This difficulty is not available yet.');return}best=loadBest();score=0;answered=0;correct=0;streak=0;bestStreak=0;roundNumber=0;used.clear();locked=false;running=true;startedAt=Date.now();
+ clearInterval(timerId);clearTimeout(advanceId);best=loadBest();difficulty='Easy';score=0;answered=0;correct=0;streak=0;bestStreak=0;roundNumber=0;used.clear();locked=false;running=true;startedAt=Date.now();
  $('score').textContent='0';$('streak').textContent='0';$('time').textContent=String(ROUND_SECONDS);$('timebar').style.width='100%';$('timerStat').classList.remove('urgent');$('intro').style.display='none';$('result').classList.remove('active');$('game').classList.add('active');renderQuestion();timerId=setInterval(tick,200);
 }
 function showToast(message){$('toast').textContent=message;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),2400)}
@@ -137,22 +146,21 @@ function roundRect(ctx,x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.lineTo(x
 function makeImage(){
  const canvas=document.createElement('canvas');canvas.width=1080;canvas.height=1350;const ctx=canvas.getContext('2d');
  ctx.fillStyle='#f8f7f2';ctx.fillRect(0,0,1080,1350);ctx.fillStyle='#d7fb55';roundRect(ctx,70,70,940,1210,36);ctx.fill();ctx.fillStyle='#fffefa';roundRect(ctx,96,96,888,1128,28);ctx.fill();
- ctx.fillStyle='#191b1a';ctx.font='900 46px Arial,sans-serif';ctx.fillText('GUESS THE  ____',145,190);ctx.fillStyle='#777b75';ctx.font='800 28px Arial,sans-serif';ctx.fillText(difficulty.toUpperCase()+' · BRAND LOGOS',145,292);
+ ctx.fillStyle='#191b1a';ctx.font='900 46px Arial,sans-serif';ctx.fillText('GUESS THE  ____',145,190);ctx.fillStyle='#777b75';ctx.font='800 28px Arial,sans-serif';ctx.fillText('ADAPTIVE CHALLENGE · BRAND LOGOS',145,292);
  ctx.fillStyle='#d7fb55';roundRect(ctx,145,355,790,330,25);ctx.fill();ctx.fillStyle='#191b1a';ctx.font='800 30px Arial,sans-serif';ctx.fillText('YOUR SCORE',195,427);ctx.font='900 205px Arial,sans-serif';ctx.fillText(String(score),185,640);
  ctx.font='800 30px Arial,sans-serif';ctx.fillText('ACCURACY',145,790);ctx.fillText('CORRECT',580,790);ctx.font='900 70px Arial,sans-serif';ctx.fillText((answered?Math.round(correct/answered*100):0)+'%',145,875);ctx.fillText(correct+' / '+answered,580,875);
- ctx.fillStyle='#777b75';ctx.font='700 28px Arial,sans-serif';ctx.fillText('Can you beat my score on '+difficulty+'?',145,1020);ctx.fillStyle='#191b1a';ctx.font='900 25px Arial,sans-serif';ctx.fillText('SHORT ROUNDS. SHARP INSTINCTS.',145,1145);ctx.fillStyle='#81867b';ctx.font='600 22px Arial,sans-serif';ctx.fillText('guess the ____ · by Shubham',145,1190);
+ ctx.fillStyle='#777b75';ctx.font='700 28px Arial,sans-serif';ctx.fillText('Can you beat my score?',145,1020);ctx.fillStyle='#191b1a';ctx.font='900 25px Arial,sans-serif';ctx.fillText('SHORT ROUNDS. SHARP INSTINCTS.',145,1145);ctx.fillStyle='#81867b';ctx.font='600 22px Arial,sans-serif';ctx.fillText('guess the ____ · by Shubham',145,1190);
  return new Promise((resolve,reject)=>canvas.toBlob(blob=>blob?resolve(blob):reject(new Error('Could not create image')),'image/png'));
 }
 async function shareScore(){
  const btn=$('shareBtn'),label=btn.textContent;btn.disabled=true;btn.textContent='Creating image…';
  try{
-  const blob=await makeImage();const file=new File([blob],'guess-the-brand-logos-'+difficulty.toLowerCase()+'-score.png',{type:'image/png'});
-  if(navigator.share&&navigator.canShare&&navigator.canShare({files:[file]})){await navigator.share({files:[file],title:'My '+difficulty+' Brand Logos score',text:'I scored '+score+' on '+difficulty+' in Guess the ____! Can you beat me?'})}
-  else{const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='guess-the-brand-logos-'+difficulty.toLowerCase()+'-score.png';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500);showToast('Score image saved. Share it from your photos or downloads.')}
+  const blob=await makeImage();const file=new File([blob],'guess-the-brand-logos-score.png',{type:'image/png'});
+  if(navigator.share&&navigator.canShare&&navigator.canShare({files:[file]})){await navigator.share({files:[file],title:'My Brand Logos score',text:'I scored '+score+' in Guess the ____! Can you beat me?'})}
+  else{const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='guess-the-brand-logos-score.png';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500);showToast('Score image saved. Share it from your photos or downloads.')}
  }catch(e){if(e.name!=='AbortError')showToast('Could not create image. Try again.')}
  finally{btn.disabled=false;btn.textContent=label}
 }
-document.querySelectorAll('.difficulty-choice').forEach(btn=>btn.addEventListener('click',()=>setDifficulty(btn.dataset.difficulty)));
 $('startBtn').addEventListener('click',startGame);$('againBtn').addEventListener('click',startGame);$('shareBtn').addEventListener('click',shareScore);
 populatePreview();
 })();
