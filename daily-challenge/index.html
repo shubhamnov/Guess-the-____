@@ -107,8 +107,7 @@ function renderVisual(q){
  else if(q.kind==='script'){const span=document.createElement('span');span.className='script-sample';span.textContent=q.visual.sample;span.dir='auto';host.appendChild(span)}
  else if(q.kind==='logo'){const img=document.createElement('img');img.src=svgData(q.visual.svg);img.alt='Mystery brand logo';host.appendChild(img)}
 }
-function loadBest(){try{return Number(localStorage.getItem('guessTheDailyMixBest:'+activeDate)||0)||0}catch(e){return 0}}
-function saveBest(){try{localStorage.setItem('guessTheDailyMixBest:'+activeDate,String(loadBest()<score?score:loadBest()))}catch(e){}}
+function loadBest(){try{return Number(localStorage.getItem('guessTheDailyMixBest')||0)||0}catch(e){return 0}}
 function startGame(){
  questions=buildDailyQuestions(activeDate);questionIndex=0;score=0;correct=0;answered=false;finished=false;
  $('score').textContent='0';$('progressText').textContent='1 / '+questions.length;$('progressBar').style.width='0%';
@@ -133,7 +132,7 @@ function answerQuestion(option,clicked){
 }
 function finishGame(){
  finished=true;$('game').classList.remove('active');$('result').classList.add('active');
- const best=Math.max(loadBest(),score);try{localStorage.setItem('guessTheDailyMixBest:'+activeDate,String(best))}catch(e){}
+ const best=Math.max(loadBest(),score);try{localStorage.setItem('guessTheDailyMixBest',String(best));localStorage.setItem('guessTheDailyMixBest:'+activeDate,String(Math.max(Number(localStorage.getItem('guessTheDailyMixBest:'+activeDate)||0)||0,score)))}catch(e){}
  $('resultDate').textContent='DAILY MIX · '+formatDate(activeDate).toUpperCase();$('finalScore').textContent=String(score);$('correctCount').textContent=correct+' / '+questions.length;$('accuracy').textContent=Math.round(correct/questions.length*100)+'%';$('bestScore').textContent=String(best);
  let title='Nice mix!',message='A little world knowledge, color instinct, and brand memory all in one round.';
  if(correct>=12){title='All-rounder!';message='Seven categories and you handled almost all of them.'}else if(correct>=9){title='Sharp instincts!';message='You’ve got a good mix of knowledge. Come back for tomorrow’s challenge.'}else if(correct>=6){title='Good start!';message='Now you know which categories to practise. Tomorrow brings another mix.'}
