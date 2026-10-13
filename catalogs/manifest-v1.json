@@ -25,12 +25,13 @@
     {
       "id": "landmarks",
       "title": "Guess the Landmark",
-      "status": "planned",
+      "status": "in-progress",
       "targetQuestions": 100,
       "approvedQuestions": 0,
-      "currentVersion": null,
-      "lastRefreshedAt": null,
-      "nextAction": "Build the first image-based catalog in small batches; verify each landmark and its image source."
+      "currentVersion": 1,
+      "lastRefreshedAt": "2026-10-13",
+      "nextAction": "Verify all ten Wikimedia image URLs render in the published browser, then approve the batch before adding the next small batch.",
+      "draftQuestions": 10
     },
     {
       "id": "cuisines",
@@ -70,6 +71,14 @@
       "version": 1,
       "change": "Created the catalog manifest and validation/refresh policy. No game catalog or Daily Mix changed.",
       "validation": "Manifest structure and category IDs reviewed; new categories are planning records, not published question banks."
+    },
+    {
+      "date": "2026-10-13",
+      "category": "landmarks",
+      "version": 1,
+      "change": "Added a first batch of 10 landmark questions, photo source and license metadata, factual explanations, and a playable standalone category page. Added the category to the homepage. Daily Mix unchanged.",
+      "validation": "Unique IDs; every answer appears exactly once among four distinct options; every record has image source, creator, license, and fact source. Image URLs still require a live browser render check, so approvedQuestions remains 0 and draftQuestions is 10.",
+      "commit": "0fe8ac3f063bd2ed6f7dd964382b7a0f487f5dab"
     }
   ]
 }
