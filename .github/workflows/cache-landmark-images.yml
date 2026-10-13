@@ -28,12 +28,21 @@ jobs:
         run: python scripts/cache_landmark_images.py
       - name: Commit optimized images and local catalog paths
         run: |
-          if git diff --quiet; then
-            echo "No image or catalog changes to commit."
+          if [ -z "$(git status --porcelain -- assets/landmarks catalogs/landmarks-v1.json)" ]; then
+            echo "No landmark image or catalog changes to commit."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add assets/landmarks catalogs/landmarks-v1.json
           git commit -m "Cache optimized landmark photos locally"
-          git push
+          for attempt in 1 2 3 4 5; do
+            git pull --rebase origin main
+            if git push; then
+              exit 0
+            fi
+            echo "Push raced with another commit; retrying ($attempt/5)."
+            sleep 2
+          done
+          echo "Could not push cached landmark photos after 5 attempts."
+          exit 1
