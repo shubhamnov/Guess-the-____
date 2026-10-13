@@ -27,22 +27,22 @@
       "title": "Guess the Landmark",
       "status": "in-progress",
       "targetQuestions": 100,
-      "approvedQuestions": 0,
+      "approvedQuestions": 20,
       "currentVersion": 1,
       "lastRefreshedAt": "2026-10-13",
-      "nextAction": "Check all 20 local WebP photos in the published quiz before approving the batch.",
-      "draftQuestions": 20
+      "nextAction": "Continue expanding the landmark catalog in curated batches toward 100 questions.",
+      "draftQuestions": 0
     },
     {
       "id": "cuisines",
       "title": "Guess the Cuisine",
       "status": "in-progress",
       "targetQuestions": 100,
-      "approvedQuestions": 0,
+      "approvedQuestions": 30,
       "currentVersion": 1,
       "lastRefreshedAt": "2026-10-13",
-      "nextAction": "Run the new published-site browser smoke tests; inspect loaded cuisine photos and answer progression before approving any questions. Continue toward 100.",
-      "draftQuestions": 30
+      "nextAction": "Add cuisine questions 31–40 in the next curated batch, keeping source/license attribution and photo-to-answer checks.",
+      "draftQuestions": 0
     },
     {
       "id": "geography",
@@ -168,6 +168,30 @@
       "change": "Added Playwright browser smoke tests to run after successful GitHub Pages deployments.",
       "validation": "Tests cover direct game start across all nine categories, answer feedback, audio oscillator activity, automatic progression, photo loading and Daily Mix placement. Results are pending the first live run.",
       "commit": "a2069116995318435cee241a6de069ec7d97e501"
+    },
+    {
+      "date": "2026-10-13",
+      "category": "quality",
+      "version": 1,
+      "change": "Ran Playwright against the published site, reviewed the Cuisine and Landmark contact sheets, corrected mismatched photos, then approved the verified catalog questions.",
+      "validation": "Browser smoke suite passed: all nine category pages started directly, answer feedback/audio/automatic progression worked, all 30 cuisine and 20 landmark local images loaded, landmark choices included country labels, and Daily Mix remained on the homepage. Visual contact-sheet review confirmed the photos match their labels.",
+      "commit": "12bdbbfc81f171eb6515c2228080e49d4d830ec7"
+    },
+    {
+      "date": "2026-10-13",
+      "category": "cuisines",
+      "version": 1,
+      "change": "Approved 30 cuisine questions after image-load automation and manual contact-sheet review; replaced the unclear Firfir photo with a correctly credited Taita fit-fit photo.",
+      "validation": "30 unique IDs, four distinct choices per question, correct answer appears once, full source/license metadata present, and all local image assets loaded in the published browser tests.",
+      "commit": "26b9cc08ba09dc29392aafd58c113d948d34e63d"
+    },
+    {
+      "date": "2026-10-13",
+      "category": "landmarks",
+      "version": 1,
+      "change": "Approved 20 landmark questions after image-load automation and manual contact-sheet review; replaced the mismatched Taj Mahal photo and changed a mismatched Burj Khalifa entry to Big Ben with a matching photo.",
+      "validation": "20 unique landmark questions; all answer choices include country labels, local images load, and every photo matches its intended landmark in the reviewed contact sheet.",
+      "commit": "75c572e269b04692323432d77aa3c373e860c8d7"
     }
   ]
 }
