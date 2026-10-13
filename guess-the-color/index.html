@@ -104,7 +104,7 @@ $('shareBtn').addEventListener('click',()=>shareScoreImage({
   secondLabel:'PERSONAL BEST',secondValue:String(stats.best),
   challenge:'90 seconds. Four choices. Your turn.',
   shareTitle:'My Colors score',shareText:'I scored '+score+' in Guess the ? — Colors. Can you beat me?',
-  filename:'color-rush-score.png',url:'guess-the-____'
+  filename:'guess-the-colors-score.png',url:'guess-the-____'
 }));
 $('best').textContent=stats.best;
 document.addEventListener('visibilitychange',()=>{if(document.hidden&&running){/* Clock intentionally continues: the 90-second challenge is real time. */}});
