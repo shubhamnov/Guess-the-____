@@ -1,50 +1,5 @@
 [
   {
-    "name": "Porsche",
-    "slug": "porsche",
-    "difficulty": "Easy"
-  },
-  {
-    "name": "Android",
-    "slug": "android",
-    "difficulty": "Easy"
-  },
-  {
-    "name": "Firefox",
-    "slug": "firefox",
-    "difficulty": "Easy"
-  },
-  {
-    "name": "Discord",
-    "slug": "discord",
-    "difficulty": "Easy"
-  },
-  {
-    "name": "Twitch",
-    "slug": "twitch",
-    "difficulty": "Easy"
-  },
-  {
-    "name": "Vimeo",
-    "slug": "vimeo",
-    "difficulty": "Easy"
-  },
-  {
-    "name": "SoundCloud",
-    "slug": "soundcloud",
-    "difficulty": "Easy"
-  },
-  {
-    "name": "Ducati",
-    "slug": "ducati",
-    "difficulty": "Easy"
-  },
-  {
-    "name": "The North Face",
-    "slug": "thenorthface",
-    "difficulty": "Easy"
-  },
-  {
     "name": "Cisco",
     "slug": "cisco",
     "difficulty": "Medium"
