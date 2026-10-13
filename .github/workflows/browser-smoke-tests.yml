@@ -26,7 +26,7 @@ jobs:
         run: npx playwright install --with-deps chromium
       - name: Test the published site
         env:
-          BASE_URL: https://shubhamnov.github.io/Guess-the-____
+          BASE_URL: https://shubhamnov.github.io/Guess-the-____/
         run: npm run test:browser
       - name: Upload screenshots and report
         if: always()
