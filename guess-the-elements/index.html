@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f8f7f2">
+<meta name="description" content="See a chemical symbol, name the element. Sixty seconds, four choices.">
+<title>Guess the Elements — Guess the ____</title>
+<link rel="stylesheet" href="../shared/engine.css">
+</head>
+<body data-game="elements">
+<script src="../shared/engine.js"></script>
+<script>
+const DATA=[[1,"H","Hydrogen"],[2,"He","Helium"],[3,"Li","Lithium"],[4,"Be","Beryllium"],[5,"B","Boron"],[6,"C","Carbon"],[7,"N","Nitrogen"],[8,"O","Oxygen"],[9,"F","Fluorine"],[10,"Ne","Neon"],[11,"Na","Sodium","From its Latin name, natrium."],[12,"Mg","Magnesium"],[13,"Al","Aluminium"],[14,"Si","Silicon"],[15,"P","Phosphorus"],[16,"S","Sulfur"],[17,"Cl","Chlorine"],[18,"Ar","Argon"],[19,"K","Potassium","From its Latin name, kalium."],[20,"Ca","Calcium"],[21,"Sc","Scandium"],[22,"Ti","Titanium"],[23,"V","Vanadium"],[24,"Cr","Chromium"],[25,"Mn","Manganese"],[26,"Fe","Iron","From its Latin name, ferrum."],[27,"Co","Cobalt"],[28,"Ni","Nickel"],[29,"Cu","Copper","From its Latin name, cuprum."],[30,"Zn","Zinc"],[31,"Ga","Gallium"],[32,"Ge","Germanium"],[33,"As","Arsenic"],[34,"Se","Selenium"],[35,"Br","Bromine"],[36,"Kr","Krypton"],[37,"Rb","Rubidium"],[38,"Sr","Strontium"],[39,"Y","Yttrium"],[40,"Zr","Zirconium"],[41,"Nb","Niobium"],[42,"Mo","Molybdenum"],[43,"Tc","Technetium"],[44,"Ru","Ruthenium"],[45,"Rh","Rhodium"],[46,"Pd","Palladium"],[47,"Ag","Silver","From its Latin name, argentum."],[48,"Cd","Cadmium"],[49,"In","Indium"],[50,"Sn","Tin","From its Latin name, stannum."],[51,"Sb","Antimony","From its Latin name, stibium."],[52,"Te","Tellurium"],[53,"I","Iodine"],[54,"Xe","Xenon"],[55,"Cs","Caesium"],[56,"Ba","Barium"],[74,"W","Tungsten","From its other name, wolfram."],[78,"Pt","Platinum"],[79,"Au","Gold","From its Latin name, aurum."],[80,"Hg","Mercury","From its Latin name, hydrargyrum."],[82,"Pb","Lead","From its Latin name, plumbum."],[83,"Bi","Bismuth"],[86,"Rn","Radon"],[88,"Ra","Radium"],[92,"U","Uranium"],[94,"Pu","Plutonium"]].map(([number,symbol,name,note])=>({number,symbol,name,note}));
+const pool=GuessGame.util.deck(DATA,x=>x.symbol);
+GuessGame.run({
+ id:'elements',label:'Elements',eyebrow:'A periodic table pop quiz',titleHtml:'Know your<br><em>elements?</em>',
+ intro:'A chemical symbol appears. Name the element. Fe, Au and Pb are waiting to trip you up.',
+ note:DATA.length+' elements. After five warm-up questions, the wrong answers share a symbol letter, so read closely.',
+ previewHtml:'<div class="preview-row"><span class="preview-chip">Fe</span><span class="preview-chip">Au</span><span class="preview-chip">Na</span></div>',
+ prompt:'Which element has this symbol?',
+ links:[{"text":"Colors","href":"../guess-the-color/"},{"text":"Animals","href":"../guess-the-animals/"},{"text":"Scripts","href":"../guess-the-scripts/"}],
+ onStart(){pool.reset()},
+ next(ctx){
+  const item=pool.draw();
+  return {answer:item.name,options:ctx.util.choices(item,DATA,{answer:x=>x.name,group:x=>x.symbol[0],hard:ctx.hard}),level:ctx.hard?'Tricky · lookalike symbols':'Warm-up',explanation:item.symbol+' is '+item.name+', element '+item.number+'.'+(item.note?' '+item.note:''),
+   render(h){const tile=document.createElement('div');tile.className='clue-element';tile.setAttribute('role','img');tile.setAttribute('aria-label','Chemical symbol '+item.symbol);const n=document.createElement('small');n.textContent=item.number;const s=document.createElement('b');s.textContent=item.symbol;tile.append(n,s);h.appendChild(tile)}};
+ }
+});
+</script>
+</body>
+</html>

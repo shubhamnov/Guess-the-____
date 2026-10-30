@@ -1,5 +1,7 @@
 const { test, expect } = require('@playwright/test');
 
+const DAILY_2026_01_15_FIRST_OPTIONS = ['Mauritania', 'United Arab Emirates', 'Slovenia', 'Slovakia'];
+
 const games = [
   { name: 'Colors', path: 'guess-the-color/', kind: 'timed' },
   { name: 'Flags', path: 'guess-the-flag/', kind: 'timed' },
@@ -9,7 +11,10 @@ const games = [
   { name: 'Animals', path: 'guess-the-animals/', kind: 'timed' },
   { name: 'Capital Cities', path: 'guess-the-capitals/', kind: 'timed' },
   { name: 'Scripts', path: 'guess-the-scripts/', kind: 'timed' },
-  { name: 'Brand Logos', path: 'guess-the-brand-logos/', kind: 'logo' }
+  { name: 'Brand Logos', path: 'guess-the-brand-logos/', kind: 'logo' },
+  { name: 'Currencies', path: 'guess-the-currencies/', kind: 'timed' },
+  { name: 'Elements', path: 'guess-the-elements/', kind: 'timed' },
+  { name: 'Languages', path: 'guess-the-languages/', kind: 'timed' }
 ];
 
 test.beforeEach(async ({ page }) => {
@@ -53,7 +58,7 @@ for (const game of games) {
 }
 
 for (const game of games) {
-  test(`${game.name} gives answer feedback, sound, and advances automatically`, async ({ page }) => {
+  test(`${game.name} gives answer feedback, sound, and moves to the next question`, async ({ page }) => {
     await page.goto(game.path, { waitUntil: 'domcontentloaded' });
     await expect.poll(() => page.locator('#game').evaluate(el => el.classList.contains('active'))).toBe(true);
     const firstLogo = game.kind === 'logo' ? await page.locator('#clue img').getAttribute('src') : null;
@@ -64,6 +69,9 @@ for (const game of games) {
     await expect(page.locator('#feedback')).not.toBeEmpty();
     await expect.poll(() => page.evaluate(() => window.__quizOscillatorStarts || 0)).toBeGreaterThan(before);
     if (game.kind === 'photo') {
+      // Photo rounds pause on the explanation; the Next button (or Enter) moves on.
+      await expect(page.locator('#next')).toBeVisible();
+      await page.locator('#next').click();
       await expect.poll(() => page.locator('#number').innerText()).not.toBe(firstNumber);
     } else if (game.kind === 'logo') {
       await expect.poll(() => page.locator('#clue img').getAttribute('src')).not.toBe(firstLogo);
@@ -126,4 +134,43 @@ test('homepage contains the Daily Challenge and individual games do not offer it
   await logoLink.click();
   await expect(page.locator('#game')).toHaveClass(/active/);
   await expect(page.getByText(/adaptive random logos|play the daily mix|daily challenge/i)).toHaveCount(0);
+});
+
+for (const game of games) {
+  test(`${game.name} uses the shared scoring rules`, async ({ page }) => {
+    await page.goto(game.path, { waitUntil: 'domcontentloaded' });
+    await expect.poll(() => page.locator('#game').evaluate(el => el.classList.contains('active'))).toBe(true);
+    const rules = await page.evaluate(() => ({
+      first: window.GuessGame.pointsFor(1),
+      streak: window.GuessGame.pointsFor(3),
+      seconds: window.GuessGame.scoring.timedSeconds
+    }));
+    expect(rules).toEqual({ first: 10, streak: 15, seconds: 60 });
+    await page.keyboard.press('1');
+    await expect(page.locator('#feedback')).not.toBeEmpty();
+    const score = Number(await page.locator('#score').innerText());
+    expect([0, 10]).toContain(score);
+  });
+}
+
+test('Daily Mix plays all 14 questions with the keyboard and shows a result', async ({ page }) => {
+  await page.goto('daily-challenge/?date=2026-01-15', { waitUntil: 'domcontentloaded' });
+  await expect(page.locator('#intro')).toBeVisible();
+  await page.locator('#startBtn').click();
+  for (let i = 1; i <= 14; i++) {
+    await expect(page.locator('#number')).toHaveText(`${i} / 14`);
+    await page.keyboard.press('1');
+    await expect(page.locator('#next')).toBeVisible();
+    await page.keyboard.press('Enter');
+  }
+  await expect(page.locator('#result')).toHaveClass(/active/);
+  await expect(page.locator('#correctCount')).toHaveText(/\/ 14$/);
+});
+
+test('Daily Mix questions for a date never change', async ({ page }) => {
+  await page.goto('daily-challenge/?date=2026-01-15', { waitUntil: 'domcontentloaded' });
+  await page.locator('#startBtn').click();
+  const first = await page.locator('#answers .answer').evaluateAll(bs => bs.map(b => b.dataset.value));
+  // Recorded from the Daily Mix v1 builder before the shared-engine change.
+  expect(first).toEqual(DAILY_2026_01_15_FIRST_OPTIONS);
 });

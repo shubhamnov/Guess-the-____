@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f8f7f2">
+<meta name="description" content="Match countries to the money they use. Sixty seconds, four choices.">
+<title>Guess the Currencies — Guess the ____</title>
+<link rel="stylesheet" href="../shared/engine.css">
+</head>
+<body data-game="currencies">
+<script src="../shared/engine.js"></script>
+<script src="../shared/world.js"></script>
+<script>
+const WORLD=new Map(window.GTQ_WORLD.map(c=>[c.name,c]));
+const DATA=[["United States","US dollar"],["Canada","Canadian dollar"],["Mexico","Mexican peso"],["Brazil","Brazilian real"],["Argentina","Argentine peso"],["Chile","Chilean peso"],["Colombia","Colombian peso"],["Peru","Peruvian sol"],["Bolivia","Boliviano"],["Paraguay","Paraguayan guaraní"],["Uruguay","Uruguayan peso"],["Venezuela","Venezuelan bolívar"],["Guatemala","Guatemalan quetzal"],["Honduras","Honduran lempira"],["Nicaragua","Nicaraguan córdoba"],["Costa Rica","Costa Rican colón"],["Jamaica","Jamaican dollar"],["Haiti","Haitian gourde"],["Dominican Republic","Dominican peso"],["Cuba","Cuban peso"],["United Kingdom","Pound sterling"],["Germany","Euro"],["Italy","Euro"],["Spain","Euro"],["Switzerland","Swiss franc"],["Sweden","Swedish krona"],["Norway","Norwegian krone"],["Denmark","Danish krone"],["Iceland","Icelandic króna"],["Poland","Polish złoty"],["Czechia","Czech koruna"],["Hungary","Hungarian forint"],["Romania","Romanian leu"],["Moldova","Moldovan leu"],["Serbia","Serbian dinar"],["North Macedonia","Macedonian denar"],["Albania","Albanian lek"],["Bosnia and Herzegovina","Convertible mark"],["Russia","Russian ruble"],["Ukraine","Ukrainian hryvnia"],["Belarus","Belarusian ruble"],["Türkiye","Turkish lira"],["Israel","Israeli new shekel"],["Saudi Arabia","Saudi riyal"],["United Arab Emirates","UAE dirham"],["Qatar","Qatari riyal"],["Kuwait","Kuwaiti dinar"],["Jordan","Jordanian dinar"],["Iraq","Iraqi dinar"],["Iran","Iranian rial"],["Oman","Omani rial"],["Georgia","Georgian lari"],["Armenia","Armenian dram"],["Azerbaijan","Azerbaijani manat"],["Kazakhstan","Kazakhstani tenge"],["Mongolia","Mongolian tögrög"],["India","Indian rupee"],["Pakistan","Pakistani rupee"],["Bangladesh","Bangladeshi taka"],["Sri Lanka","Sri Lankan rupee"],["Nepal","Nepalese rupee"],["China","Renminbi (yuan)"],["Japan","Japanese yen"],["South Korea","South Korean won"],["Vietnam","Vietnamese đồng"],["Thailand","Thai baht"],["Cambodia","Cambodian riel"],["Laos","Lao kip"],["Myanmar","Myanmar kyat"],["Malaysia","Malaysian ringgit"],["Indonesia","Indonesian rupiah"],["Philippines","Philippine peso"],["Singapore","Singapore dollar"],["Australia","Australian dollar"],["New Zealand","New Zealand dollar"],["Papua New Guinea","Papua New Guinean kina"],["Fiji","Fijian dollar"],["Tonga","Tongan paʻanga"],["Samoa","Samoan tālā"],["Egypt","Egyptian pound"],["Morocco","Moroccan dirham"],["Algeria","Algerian dinar"],["Tunisia","Tunisian dinar"],["Nigeria","Nigerian naira"],["Ghana","Ghanaian cedi"],["Kenya","Kenyan shilling"],["Uganda","Ugandan shilling"],["Tanzania","Tanzanian shilling"],["Ethiopia","Ethiopian birr"],["South Africa","South African rand"],["Botswana","Botswana pula"],["Zambia","Zambian kwacha"],["Malawi","Malawian kwacha"],["Angola","Angolan kwanza"],["Mozambique","Mozambican metical"],["Madagascar","Malagasy ariary"],["Rwanda","Rwandan franc"],["Gambia","Gambian dalasi"],["Sierra Leone","Sierra Leonean leone"]].map(([country,currency])=>({country,currency,code:WORLD.get(country).code,region:WORLD.get(country).region}));
+const pool=GuessGame.util.deck(DATA,x=>x.country);
+GuessGame.run({
+ id:'currencies',label:'Currencies',eyebrow:'Money around the world',titleHtml:'Know your<br><em>currencies?</em>',
+ intro:'You get a country. You name the money people pay with there. Dollars, pesos, dinars — they are not all the same!',
+ note:DATA.length+' countries. After five warm-up questions, the wrong answers are currencies from the same continent.',
+ previewHtml:'<div class="preview-row"><span class="preview-chip">¥ YEN</span><span class="preview-chip">₹ RUPEE</span><span class="preview-chip">€ EURO</span></div>',
+ prompt:'Which currency is used in this country?',
+ links:[{"text":"Capital Cities","href":"../guess-the-capitals/"},{"text":"Flags","href":"../guess-the-flag/"},{"text":"Languages","href":"../guess-the-languages/"}],
+ onStart(){pool.reset()},
+ next(ctx){
+  const item=pool.draw();
+  return {answer:item.currency,options:ctx.util.choices(item,DATA,{answer:x=>x.currency,group:x=>x.region,hard:ctx.hard}),level:ctx.hard?'Tricky · same continent':'Warm-up',explanation:item.country+' uses the '+item.currency+'.',
+   render(h){const img=document.createElement('img');img.className='clue-backdrop';img.alt='';img.src='../assets/flags/'+item.code+'.webp';img.onerror=()=>img.remove();const shade=document.createElement('div');shade.className='clue-shade';const name=document.createElement('div');name.className='clue-label';name.textContent=item.country;h.append(img,shade,name)}};
+ }
+});
+</script>
+</body>
+</html>
