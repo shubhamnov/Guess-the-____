@@ -12,6 +12,7 @@
 <script src="../shared/engine.js"></script>
 <script>
 const DATA=[["Latin","bonjour","Used for English, French, Spanish and many more.","eu"],["Cyrillic","добрый день","Used for Russian and several other languages.","eu"],["Greek","καλημέρα","The modern writing system used for Greek.","eu"],["Arabic","مرحبا بالعالم","Written right to left; also used for Persian and Urdu.","me"],["Hebrew","שלום עולם","A right-to-left script used for Hebrew.","me"],["Devanagari","नमस्ते दुनिया","Used for Hindi, Marathi, Nepali and Sanskrit.","in"],["Bengali","নমস্কার","Used for Bengali and related languages.","in"],["Gurmukhi","ਸਤ ਸ੍ਰੀ ਅਕਾਲ","Commonly used to write Punjabi in India.","in"],["Gujarati","નમસ્તે","Used to write Gujarati.","in"],["Odia","ନମସ୍କାର","Used to write Odia.","in"],["Tamil","வணக்கம்","Used for Tamil in India, Sri Lanka and elsewhere.","in"],["Telugu","నమస్కారం","Used to write Telugu.","in"],["Kannada","ನಮಸ್ಕಾರ","Used to write Kannada.","in"],["Malayalam","നമസ്കാരം","Used to write Malayalam.","in"],["Sinhala","ආයුබෝවන්","The main writing system for Sinhala.","in"],["Thai","สวัสดี","Used to write Thai.","sea"],["Lao","ສະບາຍດີ","Used to write Lao.","sea"],["Khmer","សួស្តី","Used to write Khmer, Cambodia's official language.","sea"],["Myanmar","မင်္ဂလာပါ","Used for Burmese and other languages in Myanmar.","sea"],["Tibetan","བཀྲ་ཤིས་བདེ་ལེགས","Used to write Tibetan.","in"],["Georgian","გამარჯობა","The script used for Georgian.","eu"],["Armenian","Բարեւ","The script used for Armenian.","eu"],["Ethiopic (Ge'ez)","ሰላም","Used for Amharic and several Ethiopian languages.","me"],["Hangul","안녕하세요","The writing system used for Korean.","ea"],["Hiragana","こんにちは","A Japanese syllabary, often used for native words and grammar.","ea"],["Katakana","コンニチハ","A Japanese syllabary often used for loanwords and emphasis.","ea"],["Han characters","你好","Chinese characters also known as Han characters.","ea"]].map(([name,sample,about,group])=>({name,sample,about,group}));
+const BY_NAME=new Map(DATA.map(x=>[x.name,x]));
 const pool=GuessGame.util.deck(DATA,x=>x.name);
 GuessGame.run({
  id:'scripts',label:'Scripts',eyebrow:'Read the world',titleHtml:'Know your<br><em>scripts?</em>',
@@ -21,10 +22,15 @@ GuessGame.run({
  prompt:'Which writing system is this?',legacyBest:[{key:'guessTheScriptsBest',scale:10}],
  links:[{"text":"Languages","href":"../guess-the-languages/"},{"text":"Flags","href":"../guess-the-flag/"},{"text":"Capital Cities","href":"../guess-the-capitals/"}],
  onStart(){pool.reset()},
+formats:['Name the script','Find the script'],
  next(ctx){
-  const item=pool.draw();
-  return {answer:item.name,options:ctx.util.choices(item,DATA,{answer:x=>x.name,group:x=>x.group,hard:ctx.hard}),level:ctx.hard?'Tricky · same region':'Warm-up',explanation:item.about,
-   render(h){const e=document.createElement('div');e.className='clue-text';e.dir='auto';e.lang='';e.textContent=item.sample;h.appendChild(e)}};
+  const item=pool.draw(),level=ctx.hard?'Tricky · same region':'Warm-up';
+  const options=ctx.util.choices(item,DATA,{answer:x=>x.name,group:x=>x.group,hard:ctx.hard});
+  if(ctx.format(['name','find'])==='find')return {kind:'Find it',answer:item.name,options,answerText:'“'+item.sample+'”',prompt:'Which sample is written in '+item.name+'?',level,explanation:item.about,
+   render(h){ctx.util.bigClue(h,item.name,'Find this script')},
+   renderOption(v,b){const t=document.createElement('span');t.className='opt-text';t.dir='auto';t.textContent=BY_NAME.get(v).sample;b.appendChild(t)}};
+  return {answer:item.name,options,level,explanation:item.about,
+   render(h){const e=document.createElement('div');e.className='clue-text';e.dir='auto';e.textContent=item.sample;h.appendChild(e)}};
  }
 });
 </script>

@@ -13,6 +13,10 @@
 <script src="../shared/world.js"></script>
 <script>
 const DATA=window.GTQ_WORLD;
+const BY_NAME=new Map(DATA.map(x=>[x.name,x]));
+const TRANSCONTINENTAL=['Russia','Türkiye','Cyprus','Northern Cyprus','Georgia','Armenia','Azerbaijan','Kazakhstan'];
+const REGIONS=['Africa','Asia','Europe','North America','South America','Oceania'];
+function flagClue(h,item){const img=document.createElement('img');img.className='clue-flag';img.alt='Flag to identify';img.decoding='async';img.onerror=()=>{img.replaceWith(Object.assign(document.createElement('span'),{className:'clue-fallback',textContent:flagEmoji(item.code)}))};img.src='../assets/flags/'+item.code+'.webp';h.appendChild(img)}
 const pool=GuessGame.util.deck(DATA,x=>x.code);
 function flagEmoji(code){return String.fromCodePoint.apply(null,code.toUpperCase().split('').map(ch=>127397+ch.charCodeAt(0)))}
 GuessGame.run({
@@ -23,10 +27,18 @@ GuessGame.run({
  prompt:'Which country does this flag belong to?',legacyBest:[{key:'gtq_flag_best',scale:10}],
  links:[{"text":"Capital Cities","href":"../guess-the-capitals/"},{"text":"Countries","href":"../guess-the-countries/"},{"text":"Currencies","href":"../guess-the-currencies/"}],
  onStart(){pool.reset()},
+formats:['Name the country','Find the flag','Name the continent'],
  next(ctx){
-  const item=pool.draw();
-  return {answer:item.name,options:ctx.util.choices(item,DATA,{answer:x=>x.name,group:x=>x.region,hard:ctx.hard}),level:ctx.hard?'Tricky · same continent':'Warm-up',explanation:item.name+' is in '+item.region+'.',
-   render(h){const img=document.createElement('img');img.className='clue-flag';img.alt='Flag to identify';img.decoding='async';img.onerror=()=>{img.replaceWith(Object.assign(document.createElement('span'),{className:'clue-fallback',textContent:flagEmoji(item.code)}))};img.src='../assets/flags/'+item.code+'.webp';h.appendChild(img)}};
+  const item=pool.draw(),level=ctx.hard?'Tricky · same continent':'Warm-up';
+  const opts=()=>ctx.util.choices(item,DATA,{answer:x=>x.name,group:x=>x.region,hard:ctx.hard});
+  let f=ctx.format(['name','find','continent']);
+  if(f==='continent'&&TRANSCONTINENTAL.includes(item.name))f='name';
+  if(f==='find')return {kind:'Find it',answer:item.name,options:opts(),answerText:'the flag of '+item.name,prompt:'Which flag belongs to '+item.name+'?',level,
+   render(h){ctx.util.bigClue(h,item.name,item.region)},
+   renderOption(v,b){const img=document.createElement('img');img.alt='';img.src='../assets/flags/'+BY_NAME.get(v).code+'.webp';b.appendChild(img)}};
+  if(f==='continent')return {kind:'Continent',answer:item.region,options:ctx.util.choices({r:item.region},REGIONS.map(r=>({r})),{answer:x=>x.r}),prompt:'Which continent is this flag from?',level:'Where in the world?',explanation:'That is the flag of '+item.name+'.',
+   render(h){flagClue(h,item)}};
+  return {answer:item.name,options:opts(),level,explanation:item.name+' is in '+item.region+'.',render(h){flagClue(h,item)}};
  }
 });
 </script>

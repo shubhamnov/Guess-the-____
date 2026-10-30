@@ -174,3 +174,18 @@ test('Daily Mix questions for a date never change', async ({ page }) => {
   // Recorded from the Daily Mix v1 builder before the shared-engine change.
   expect(first).toEqual(DAILY_2026_01_15_FIRST_OPTIONS);
 });
+
+test('timed games mix several question types', async ({ page }) => {
+  test.setTimeout(90000);
+  await page.goto('guess-the-elements/', { waitUntil: 'domcontentloaded' });
+  await expect(page.locator('#game')).toHaveClass(/active/);
+  const kinds = new Set();
+  for (let i = 0; i < 16; i++) {
+    const label = await page.locator('#roundLabel').innerText();
+    kinds.add(label.split(' · ')[1] || 'MAIN');
+    await page.keyboard.press('1');
+    await expect.poll(() => page.locator('#roundLabel').innerText(), { timeout: 5000 }).not.toBe(label);
+  }
+  // The first three questions use the main format; after that the formats mix.
+  expect(kinds.size).toBeGreaterThan(1);
+});

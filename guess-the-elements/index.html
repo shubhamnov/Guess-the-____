@@ -12,6 +12,7 @@
 <script src="../shared/engine.js"></script>
 <script>
 const DATA=[[1,"H","Hydrogen"],[2,"He","Helium"],[3,"Li","Lithium"],[4,"Be","Beryllium"],[5,"B","Boron"],[6,"C","Carbon"],[7,"N","Nitrogen"],[8,"O","Oxygen"],[9,"F","Fluorine"],[10,"Ne","Neon"],[11,"Na","Sodium","From its Latin name, natrium."],[12,"Mg","Magnesium"],[13,"Al","Aluminium"],[14,"Si","Silicon"],[15,"P","Phosphorus"],[16,"S","Sulfur"],[17,"Cl","Chlorine"],[18,"Ar","Argon"],[19,"K","Potassium","From its Latin name, kalium."],[20,"Ca","Calcium"],[21,"Sc","Scandium"],[22,"Ti","Titanium"],[23,"V","Vanadium"],[24,"Cr","Chromium"],[25,"Mn","Manganese"],[26,"Fe","Iron","From its Latin name, ferrum."],[27,"Co","Cobalt"],[28,"Ni","Nickel"],[29,"Cu","Copper","From its Latin name, cuprum."],[30,"Zn","Zinc"],[31,"Ga","Gallium"],[32,"Ge","Germanium"],[33,"As","Arsenic"],[34,"Se","Selenium"],[35,"Br","Bromine"],[36,"Kr","Krypton"],[37,"Rb","Rubidium"],[38,"Sr","Strontium"],[39,"Y","Yttrium"],[40,"Zr","Zirconium"],[41,"Nb","Niobium"],[42,"Mo","Molybdenum"],[43,"Tc","Technetium"],[44,"Ru","Ruthenium"],[45,"Rh","Rhodium"],[46,"Pd","Palladium"],[47,"Ag","Silver","From its Latin name, argentum."],[48,"Cd","Cadmium"],[49,"In","Indium"],[50,"Sn","Tin","From its Latin name, stannum."],[51,"Sb","Antimony","From its Latin name, stibium."],[52,"Te","Tellurium"],[53,"I","Iodine"],[54,"Xe","Xenon"],[55,"Cs","Caesium"],[56,"Ba","Barium"],[74,"W","Tungsten","From its other name, wolfram."],[78,"Pt","Platinum"],[79,"Au","Gold","From its Latin name, aurum."],[80,"Hg","Mercury","From its Latin name, hydrargyrum."],[82,"Pb","Lead","From its Latin name, plumbum."],[83,"Bi","Bismuth"],[86,"Rn","Radon"],[88,"Ra","Radium"],[92,"U","Uranium"],[94,"Pu","Plutonium"]].map(([number,symbol,name,note])=>({number,symbol,name,note}));
+function tile(h,number,symbol){const t=document.createElement('div');t.className='clue-element';t.setAttribute('role','img');t.setAttribute('aria-label',symbol==='?'?'Atomic number '+number:'Chemical symbol '+symbol);const n=document.createElement('small');n.textContent=number;const b=document.createElement('b');b.textContent=symbol;t.append(n,b);h.appendChild(t)}
 const pool=GuessGame.util.deck(DATA,x=>x.symbol);
 GuessGame.run({
  id:'elements',label:'Elements',eyebrow:'A periodic table pop quiz',titleHtml:'Know your<br><em>elements?</em>',
@@ -21,10 +22,16 @@ GuessGame.run({
  prompt:'Which element has this symbol?',
  links:[{"text":"Colors","href":"../guess-the-color/"},{"text":"Animals","href":"../guess-the-animals/"},{"text":"Scripts","href":"../guess-the-scripts/"}],
  onStart(){pool.reset()},
+formats:['Symbol to element','Element to symbol','Atomic number'],
  next(ctx){
-  const item=pool.draw();
-  return {answer:item.name,options:ctx.util.choices(item,DATA,{answer:x=>x.name,group:x=>x.symbol[0],hard:ctx.hard}),level:ctx.hard?'Tricky · lookalike symbols':'Warm-up',explanation:item.symbol+' is '+item.name+', element '+item.number+'.'+(item.note?' '+item.note:''),
-   render(h){const tile=document.createElement('div');tile.className='clue-element';tile.setAttribute('role','img');tile.setAttribute('aria-label','Chemical symbol '+item.symbol);const n=document.createElement('small');n.textContent=item.number;const s=document.createElement('b');s.textContent=item.symbol;tile.append(n,s);h.appendChild(tile)}};
+  const item=pool.draw(),level=ctx.hard?'Tricky · lookalike symbols':'Warm-up';
+  const explanation=item.symbol+' is '+item.name+', element '+item.number+'.'+(item.note?' '+item.note:'');
+  const f=ctx.format(['symbol','name','number']);
+  if(f==='name')return {kind:'Reverse',answer:item.symbol,options:ctx.util.choices(item,DATA,{answer:x=>x.symbol,group:x=>x.symbol[0],hard:ctx.hard}),prompt:'What is the chemical symbol for '+item.name.toLowerCase()+'?',level,explanation,
+   render(h){ctx.util.bigClue(h,item.name,'Element '+item.number)}};
+  if(f==='number')return {kind:'Number',answer:item.name,options:ctx.util.choices(item,DATA,{answer:x=>x.name,group:x=>Math.floor(x.number/10),hard:true}),prompt:'Which element has atomic number '+item.number+'?',level:'Neighbours on the table',explanation,
+   render(h){tile(h,item.number,'?')}};
+  return {answer:item.name,options:ctx.util.choices(item,DATA,{answer:x=>x.name,group:x=>x.symbol[0],hard:ctx.hard}),level,explanation,render(h){tile(h,item.number,item.symbol)}};
  }
 });
 </script>

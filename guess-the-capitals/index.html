@@ -23,9 +23,16 @@ GuessGame.run({
  prompt:'What is the capital of this country?',legacyBest:[{key:'guessTheCapitalsBest',scale:10}],
  links:[{"text":"Flags","href":"../guess-the-flag/"},{"text":"Countries","href":"../guess-the-countries/"},{"text":"Currencies","href":"../guess-the-currencies/"}],
  onStart(){pool.reset()},
+formats:['Name the capital','Name the country','Flag to capital'],
  next(ctx){
-  const item=pool.draw();
-  return {answer:item.city,options:ctx.util.choices(item,DATA,{answer:x=>x.city,group:x=>x.region,hard:ctx.hard}),level:ctx.hard?'Tricky · same continent':'Warm-up',explanation:item.city+' is the capital of '+item.country+'.',
+  const item=pool.draw(),level=ctx.hard?'Tricky · same continent':'Warm-up';
+  const f=ctx.format(['capital','country','flag']);
+  if(f==='country')return {kind:'Reverse',answer:item.country,options:ctx.util.choices(item,DATA,{answer:x=>x.country,group:x=>x.region,hard:ctx.hard}),prompt:'Which country has this capital?',level,explanation:item.city+' is the capital of '+item.country+'.',
+   render(h){ctx.util.bigClue(h,item.city,'Capital city')}};
+  const options=ctx.util.choices(item,DATA,{answer:x=>x.city,group:x=>x.region,hard:ctx.hard});
+  if(f==='flag')return {kind:'Flag only',answer:item.city,options,prompt:'What is the capital of the country with this flag?',level,explanation:'That is the flag of '+item.country+'; its capital is '+item.city+'.',
+   render(h){const img=document.createElement('img');img.className='clue-flag';img.alt='Flag of the country';img.src='../assets/flags/'+item.code+'.webp';h.appendChild(img)}};
+  return {answer:item.city,options,level,explanation:item.city+' is the capital of '+item.country+'.',
    render(h){const img=document.createElement('img');img.className='clue-backdrop';img.alt='';img.src='../assets/flags/'+item.code+'.webp';img.onerror=()=>img.remove();const shade=document.createElement('div');shade.className='clue-shade';const name=document.createElement('div');name.className='clue-label';name.textContent=item.country;h.append(img,shade,name)}};
  }
 });

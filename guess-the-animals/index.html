@@ -12,6 +12,8 @@
 <script src="../shared/engine.js"></script>
 <script>
 const DATA=[["Lion","🦁","mammal"],["Tiger","🐯","mammal"],["Leopard","🐆","mammal"],["Wolf","🐺","mammal"],["Fox","🦊","mammal"],["Bear","🐻","mammal"],["Polar bear","🐻‍❄️","mammal"],["Panda","🐼","mammal"],["Koala","🐨","mammal"],["Kangaroo","🦘","mammal"],["Elephant","🐘","mammal"],["Giraffe","🦒","mammal"],["Zebra","🦓","mammal"],["Horse","🐴","mammal"],["Donkey","🫏","mammal"],["Cow","🐄","mammal"],["Buffalo","🐃","mammal"],["Goat","🐐","mammal"],["Sheep","🐑","mammal"],["Pig","🐖","mammal"],["Deer","🦌","mammal"],["Moose","🫎","mammal"],["Rabbit","🐇","mammal"],["Squirrel","🐿️","mammal"],["Hedgehog","🦔","mammal"],["Bat","🦇","mammal"],["Otter","🦦","mammal"],["Beaver","🦫","mammal"],["Seal","🦭","sea"],["Dolphin","🐬","sea"],["Whale","🐳","sea"],["Orca","🐋","sea"],["Shark","🦈","sea"],["Octopus","🐙","sea"],["Squid","🦑","sea"],["Crab","🦀","sea"],["Lobster","🦞","sea"],["Shrimp","🦐","sea"],["Jellyfish","🪼","sea"],["Turtle","🐢","reptile"],["Crocodile","🐊","reptile"],["Snake","🐍","reptile"],["Lizard","🦎","reptile"],["Frog","🐸","reptile"],["Eagle","🦅","bird"],["Owl","🦉","bird"],["Parrot","🦜","bird"],["Flamingo","🦩","bird"],["Penguin","🐧","bird"],["Peacock","🦚","bird"],["Chicken","🐓","bird"],["Duck","🦆","bird"],["Swan","🦢","bird"],["Turkey","🦃","bird"],["Pigeon","🕊️","bird"],["Crow","🐦‍⬛","bird"],["Pelican","🪿","bird"],["Bee","🐝","bug"],["Butterfly","🦋","bug"],["Ant","🐜","bug"],["Spider","🕷️","bug"],["Scorpion","🦂","bug"],["Snail","🐌","bug"],["Pufferfish","🐡","sea"],["Tropical fish","🐠","sea"],["Ladybug","🐞","bug"],["Mosquito","🦟","bug"],["Beetle","🪲","bug"],["Mammoth","🦣","mammal"],["Dromedary camel","🐪","mammal"],["Llama","🦙","mammal"]].map(([name,emoji,group])=>({name,emoji,group}));
+const BY_NAME=new Map(DATA.map(x=>[x.name,x]));
+const GROUP_QUESTION={mammal:{label:'a mammal',icon:'🐾',not:['bird','reptile','bug']},bird:{label:'a bird',icon:'🪶',not:['mammal','reptile','bug']},reptile:{label:'a reptile or amphibian',icon:'🦎',not:['mammal','bird','bug']},bug:{label:'a creepy-crawly',icon:'🐛',not:['mammal','bird','reptile']}};
 const pool=GuessGame.util.deck(DATA,x=>x.name);
 GuessGame.run({
  id:'animals',label:'Animals',eyebrow:'A little wild knowledge',titleHtml:'Know your<br><em>animals?</em>',
@@ -21,9 +23,22 @@ GuessGame.run({
  prompt:'Which animal is this?',legacyBest:[{key:'guessTheAnimalsBest',scale:10}],
  links:[{"text":"Flags","href":"../guess-the-flag/"},{"text":"Capital Cities","href":"../guess-the-capitals/"},{"text":"Elements","href":"../guess-the-elements/"}],
  onStart(){pool.reset()},
+formats:['Name the animal','Find the animal','Spot the group'],
  next(ctx){
-  const item=pool.draw();
-  return {answer:item.name,options:ctx.util.choices(item,DATA,{answer:x=>x.name,group:x=>x.group,hard:ctx.hard}),level:ctx.hard?'Tricky · same group':'Warm-up',
+  const item=pool.draw(),level=ctx.hard?'Tricky · same group':'Warm-up';
+  const opts=()=>ctx.util.choices(item,DATA,{answer:x=>x.name,group:x=>x.group,hard:ctx.hard});
+  const f=ctx.format(['name','find','group']);
+  if(f==='find')return {kind:'Find it',answer:item.name,options:opts(),answerText:item.emoji+' '+item.name,prompt:'Which one is the '+item.name.toLowerCase()+'?',level,
+   render(h){ctx.util.bigClue(h,item.name,'Find this animal')},
+   renderOption(v,b){const e=document.createElement('span');e.className='opt-emoji';e.textContent=BY_NAME.get(v).emoji;b.appendChild(e)}};
+  if(f==='group'&&GROUP_QUESTION[item.group]){
+   // Wrong answers only come from groups that can never also be right (sea creatures include mammals, so they are left out).
+   const wrong=ctx.util.shuffle(DATA.filter(x=>GROUP_QUESTION[item.group].not.includes(x.group))).slice(0,3).map(x=>x.name);
+   return {kind:'Group',answer:item.name,options:ctx.util.shuffle([item.name].concat(wrong)),prompt:'Which of these is '+GROUP_QUESTION[item.group].label+'?',level:'Odd one in',explanation:item.name+' is '+GROUP_QUESTION[item.group].label+'.',
+    render(h){ctx.util.bigClue(h,GROUP_QUESTION[item.group].icon,'Spot '+GROUP_QUESTION[item.group].label)},
+    renderOption(v,b){const e=document.createElement('span');e.className='opt-emoji';e.textContent=BY_NAME.get(v).emoji;const n=document.createElement('small');n.textContent=v;b.append(e,n)}};
+  }
+  return {answer:item.name,options:opts(),level,
    render(h){const e=document.createElement('div');e.className='clue-emoji';e.setAttribute('role','img');e.setAttribute('aria-label','Animal to identify');e.textContent=item.emoji;h.appendChild(e)}};
  }
 });

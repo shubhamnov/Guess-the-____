@@ -23,9 +23,13 @@ GuessGame.run({
  prompt:'Which currency is used in this country?',
  links:[{"text":"Capital Cities","href":"../guess-the-capitals/"},{"text":"Flags","href":"../guess-the-flag/"},{"text":"Languages","href":"../guess-the-languages/"}],
  onStart(){pool.reset()},
+formats:['Name the currency','Name the country'],
  next(ctx){
-  const item=pool.draw();
-  return {answer:item.currency,options:ctx.util.choices(item,DATA,{answer:x=>x.currency,group:x=>x.region,hard:ctx.hard}),level:ctx.hard?'Tricky · same continent':'Warm-up',explanation:item.country+' uses the '+item.currency+'.',
+  const item=pool.draw(),level=ctx.hard?'Tricky · same continent':'Warm-up';
+  // The euro is shared by many countries, so it only appears as an answer, never as a "which country" clue.
+  if(ctx.format(['currency','country'])==='country'&&item.currency!=='Euro')return {kind:'Reverse',answer:item.country,options:ctx.util.choices(item,DATA.filter(x=>x.currency!=='Euro'),{answer:x=>x.country,group:x=>x.region,hard:ctx.hard}),prompt:'Which country uses this currency?',level,explanation:item.country+' uses the '+item.currency+'.',
+   render(h){ctx.util.bigClue(h,item.currency,'Currency')}};
+  return {answer:item.currency,options:ctx.util.choices(item,DATA,{answer:x=>x.currency,group:x=>x.region,hard:ctx.hard}),level,explanation:item.country+' uses the '+item.currency+'.',
    render(h){const img=document.createElement('img');img.className='clue-backdrop';img.alt='';img.src='../assets/flags/'+item.code+'.webp';img.onerror=()=>img.remove();const shade=document.createElement('div');shade.className='clue-shade';const name=document.createElement('div');name.className='clue-label';name.textContent=item.country;h.append(img,shade,name)}};
  }
 });

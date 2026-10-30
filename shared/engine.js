@@ -17,6 +17,8 @@ function shuffle(items,rng){const a=items.slice(),r=rng||Math.random;for(let i=a
 function pick(items,rng){return items[Math.floor((rng||Math.random)()*items.length)]}
 function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function el(tag,cls,text){const e=document.createElement(tag);if(cls)e.className=cls;if(text!=null)e.textContent=text;return e}
+/* A large text clue (used when the question shows a name and the answers are pictures). */
+function bigClue(host,text,sub){host.appendChild(el('div','clue-big',text));if(sub)host.appendChild(el('div','clue-sub',sub))}
 
 /* Draws items without repeats until the pool is exhausted. */
 function deck(pool,keyOf){
@@ -131,7 +133,8 @@ function run(cfg){
  '<section class="intro" id="intro"><div class="hero"><div class="eyebrow" id="introEyebrow">'+escapeHtml(cfg.eyebrow||'')+'</div><h1>'+cfg.titleHtml+'</h1><p>'+escapeHtml(cfg.intro||'')+'</p></div>'+
  (cfg.previewHtml?'<div class="preview" aria-hidden="true">'+cfg.previewHtml+'</div>':'')+
  '<button class="primary" id="startBtn" type="button">Let’s play <span class="arrow">→</span></button>'+
- '<div class="rules"><span>'+(timed?seconds+' seconds':roundSize+' questions')+'</span><span>4 choices</span><span>+10 per answer</span><span>+5 streak bonus</span></div>'+
+ '<div class="rules"><span>'+(timed?seconds+' seconds':roundSize+' questions')+'</span>'+(cfg.formats&&cfg.formats.length>1?'<span>'+cfg.formats.length+' question types</span>':'')+'<span>4 choices</span><span>+10 per answer</span><span>+5 streak bonus</span></div>'+
+ (cfg.formats&&cfg.formats.length>1?'<div class="micro formats">'+cfg.formats.map(f=>'<span>'+escapeHtml(f)+'</span>').join('')+'</div>':'')+
  '<div class="micro" id="introNote">'+escapeHtml(cfg.note||'')+(cfg.note?'<br>':'')+'Personal best saved on this device.</div>'+
  '<nav class="links" aria-label="More games"><a href="'+homeHref+'">All games</a>'+links+'</nav></section>'+
  '<section class="game" id="game" aria-label="'+escapeHtml(label)+' quiz">'+
@@ -158,7 +161,9 @@ function run(cfg){
  function toggleSound(){sound.on=!sound.on;safeSet(SOUND_KEY,sound.on?'on':'off');renderSound();if(sound.on&&S.running&&timed)sound.startMusic();else if(!sound.on)sound.stopMusic()}
  renderSound();$('soundToggle').addEventListener('click',toggleSound);
 
- const ctx={util:{shuffle,pick,deck,choices},get n(){return S.n},get streak(){return S.streak},get elapsed(){return elapsed()},get hard(){return S.n>4}};
+ const ctx={util:{shuffle,pick,deck,choices,bigClue},get n(){return S.n},get streak(){return S.streak},get elapsed(){return elapsed()},get hard(){return S.n>4},
+  /* Picks the question format: the first three questions use the game's main format, then formats mix (the main one twice as often). */
+  format(formats){if(S.n<3||formats.length<2)return formats[0];return pick([formats[0]].concat(formats))}};
 
  function elapsed(){if(!S.startedAt)return 0;return ((S.pausedAt||Date.now())-S.startedAt)/1000}
  function setScreen(name){
@@ -198,7 +203,7 @@ function run(cfg){
   if(!q){finish();return}
   S.q=q;S.n++;S.locked=false;
   const total=timed?null:S.round.length;
-  $('roundLabel').textContent=(q.category||cfg.roundLabel||label).toUpperCase()+' '+String(S.n).padStart(2,'0');
+  $('roundLabel').textContent=(q.category||cfg.roundLabel||label).toUpperCase()+' '+String(S.n).padStart(2,'0')+(q.kind?' · '+q.kind.toUpperCase():'');
   $('level').textContent=q.level||'';$('level').style.display=q.level?'':'none';
   if(!timed){$('number').textContent=S.n+' / '+total;$('timebar').style.width=((S.n-1)/total*100)+'%';$('next').classList.remove('visible');$('next').firstChild.textContent=S.n===total?'See my score ':'Next question '}
   const clue=$('clue');clue.className='clue'+(q.clueClass?' '+q.clueClass:'');clue.removeAttribute('style');clue.replaceChildren();q.render(clue);
@@ -206,7 +211,15 @@ function run(cfg){
   $('prompt').textContent=q.prompt||cfg.prompt||'';
   $('feedback').textContent='';$('feedback').className='feedback';
   const wrap=$('answers');wrap.replaceChildren();
-  q.options.forEach((opt,i)=>{const b=el('button','answer');b.type='button';b.dataset.value=opt;const k=el('kbd',null,String(i+1));k.setAttribute('aria-hidden','true');b.append(k,document.createTextNode(cfg.formatOption?cfg.formatOption(opt):opt));b.addEventListener('click',()=>answer(b,opt));wrap.appendChild(b)});
+  wrap.classList.toggle('media',!!q.renderOption);
+  q.options.forEach((opt,i)=>{
+   const b=el('button','answer');b.type='button';b.dataset.value=opt;
+   const k=el('kbd',null,String(i+1));k.setAttribute('aria-hidden','true');b.append(k);
+   // Picture answers (flags, swatches, logos…) get a neutral label so the choice itself is the clue.
+   if(q.renderOption){b.classList.add('media');b.setAttribute('aria-label','Choice '+(i+1));q.renderOption(opt,b)}
+   else b.append(document.createTextNode(cfg.formatOption?cfg.formatOption(opt):opt));
+   b.addEventListener('click',()=>answer(b,opt));wrap.appendChild(b);
+  });
  }
  function answer(btn,opt){
   if(!S.running||S.locked)return;S.locked=true;S.answered++;
@@ -220,7 +233,7 @@ function run(cfg){
    fb.className='feedback good';sound.correct(pts>SCORING.points);
   }else{
    S.streak=0;btn.classList.add('wrong');
-   fb.textContent='Not quite — it was '+(cfg.formatOption?cfg.formatOption(q.answer):q.answer)+'.';
+   fb.textContent=q.answerText?'Not quite — it was '+q.answerText+'.':q.renderOption?'Not quite — the right one is highlighted.':'Not quite — it was '+(cfg.formatOption?cfg.formatOption(q.answer):q.answer)+'.';
    fb.className='feedback bad';sound.wrong();
   }
   if(q.explanation){fb.appendChild(el('span','explain',q.explanation))}
@@ -301,5 +314,5 @@ function run(cfg){
  return {toast};
 }
 
-window.GuessGame={run,util:{shuffle,pick,deck,choices,escapeHtml},scoring:SCORING,pointsFor,bestKey,loadBest};
+window.GuessGame={run,util:{shuffle,pick,deck,choices,bigClue,escapeHtml},scoring:SCORING,pointsFor,bestKey,loadBest};
 })();
