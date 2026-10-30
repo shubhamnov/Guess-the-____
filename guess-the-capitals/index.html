@@ -326,7 +326,7 @@ function renderClue(q){
   clue.style.background='#e8e7df';
   const code=capitalFlagCode(q.country);
   if(code){
-   const flag=document.createElement('img');flag.className='capital-flag';flag.alt='Flag of '+q.country;flag.src='https://flagcdn.com/w640/'+code+'.png';flag.loading='eager';flag.decoding='async';
+   const flag=document.createElement('img');flag.className='capital-flag';flag.alt='Flag of '+q.country;flag.src='../assets/flags/'+code+'.webp';flag.loading='eager';flag.decoding='async';
    flag.addEventListener('error',function(){flag.style.display='none';const fallback=document.createElement('div');fallback.className='capital-fallback';fallback.setAttribute('aria-hidden','true');fallback.textContent='🌍';clue.insertBefore(fallback,clue.firstChild)});
    clue.appendChild(flag);
   }else{
