@@ -119,7 +119,7 @@
         "license": "CC BY-SA 3.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Badaling_China_Great-Wall-of-China-01.jpg?width=1200",
         "path": "assets/landmarks/landmark_005.webp",
-        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Great_wall_of_china.jpg?width=1000",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Badaling_China_Great-Wall-of-China-01.jpg?width=1200",
         "selection": "Replaced from Wikimedia Commons Featured pictures after review of framing (2026-11-04)."
       },
       "options": [
@@ -132,7 +132,7 @@
       "explanation": "The Great Wall is a network of fortifications built and rebuilt across many centuries, not a single wall built at once.",
       "factSource": "https://whc.unesco.org/en/list/438/",
       "difficulty": "easy",
-      "status": "approved"
+      "status": "needs_image_render_check"
     },
     {
       "id": "landmark_006",
@@ -144,7 +144,7 @@
         "license": "Public domain",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Statue_of_Liberty_frontal_2.jpg?width=1200",
         "path": "assets/landmarks/landmark_006.webp",
-        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Statue_of_Liberty%2C_New_York.jpg?width=1000",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Statue_of_Liberty_frontal_2.jpg?width=1200",
         "selection": "Replaced from Wikimedia Commons Quality images after review of framing (2026-11-04)."
       },
       "options": [
@@ -157,7 +157,7 @@
       "explanation": "The Statue of Liberty stands on Liberty Island in New York Harbor and was officially dedicated in 1886.",
       "factSource": "https://www.nps.gov/stli/learn/statue-of-liberty-facts.htm",
       "difficulty": "easy",
-      "status": "approved"
+      "status": "needs_image_render_check"
     },
     {
       "id": "landmark_007",
@@ -169,7 +169,7 @@
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Sydneyoperahouse_at_night.jpg?width=1200",
         "path": "assets/landmarks/landmark_007.webp",
-        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/MC_Sydney_Opera_House.jpg?width=1000",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Sydneyoperahouse_at_night.jpg?width=1200",
         "selection": "Replaced from Wikimedia Commons Featured pictures after review of framing (2026-11-04)."
       },
       "options": [
@@ -182,7 +182,7 @@
       "explanation": "Designed by Danish architect Jørn Utzon, the Sydney Opera House opened in 1973.",
       "factSource": "https://www.sydneyoperahouse.com/our-story",
       "difficulty": "easy",
-      "status": "approved"
+      "status": "needs_image_render_check"
     },
     {
       "id": "landmark_008",
@@ -458,7 +458,7 @@
         "license": "CC0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Neuschwanstein_Castle_2024-02.jpg?width=1200",
         "path": "assets/landmarks/landmark_019.webp",
-        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Castle_neuschwanstein.jpg?width=1000",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Neuschwanstein_Castle_2024-02.jpg?width=1200",
         "selection": "Replaced from Wikimedia Commons Featured pictures after review of framing (2026-11-04)."
       },
       "options": [
@@ -471,7 +471,7 @@
       "explanation": "Neuschwanstein Castle in Bavaria was begun for King Ludwig II in 1869 and was never fully completed.",
       "factSource": "https://www.neuschwanstein.de/englisch/palace/history.htm",
       "difficulty": "medium",
-      "status": "approved"
+      "status": "needs_image_render_check"
     },
     {
       "id": "landmark_020",
@@ -483,7 +483,7 @@
         "license": "CC BY-SA 2.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/All_Gizah_Pyramids.jpg?width=1200",
         "path": "assets/landmarks/landmark_020.webp",
-        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Pyramids_of_Giza.jpg?width=1000",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/All_Gizah_Pyramids.jpg?width=1200",
         "selection": "Replaced from Wikimedia Commons Featured pictures after review of framing (2026-11-04)."
       },
       "options": [
@@ -496,7 +496,7 @@
       "explanation": "The Giza pyramids are part of the vast ancient necropolis of Memphis and include the Great Pyramid of Khufu, the only surviving wonder of the ancient world.",
       "factSource": "https://whc.unesco.org/en/list/86/",
       "difficulty": "medium",
-      "status": "approved"
+      "status": "needs_image_render_check"
     }
   ]
 }
