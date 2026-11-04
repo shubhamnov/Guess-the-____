@@ -29,20 +29,32 @@
       "targetQuestions": 100,
       "approvedQuestions": 20,
       "currentVersion": 1,
-      "lastRefreshedAt": "2026-10-13",
+      "lastRefreshedAt": "2026-11-04",
       "nextAction": "Continue expanding the landmark catalog in curated batches toward 100 questions.",
-      "draftQuestions": 0
+      "draftQuestions": 0,
+      "refreshHistory": [
+        {
+          "date": "2026-11-04",
+          "summary": "Replaced hard-to-recognise photos (Great Wall, Statue of Liberty, Sydney Opera House, Neuschwanstein, Pyramids of Giza, Sagrada Família) with framed Commons photos; visually reviewed and approved."
+        }
+      ]
     },
     {
       "id": "cuisines",
       "title": "Guess the Cuisine",
       "status": "in-progress",
       "targetQuestions": 100,
-      "approvedQuestions": 30,
+      "approvedQuestions": 39,
       "currentVersion": 1,
-      "lastRefreshedAt": "2026-10-13",
-      "nextAction": "Run the published browser tests and visually review cuisine questions 31–40; approve only the 10 new images that match their labels, then add questions 41–50.",
-      "draftQuestions": 10
+      "lastRefreshedAt": "2026-11-04",
+      "nextAction": "Find a clear Butter chicken photo (034) and a broth-style Ramen photo (020) via catalogs/photo-requests.json, then add questions 41–50.",
+      "draftQuestions": 1,
+      "refreshHistory": [
+        {
+          "date": "2026-11-04",
+          "summary": "Replaced Dosa, Okonomiyaki and Shakshuka photos; visually reviewed and approved cuisine 031–033 and 035–040. Butter chicken (034) stays held: the photo does not clearly show the dish."
+        }
+      ]
     },
     {
       "id": "geography",

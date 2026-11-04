@@ -1,9 +1,7 @@
 {
   "note": "Questions whose photos should be replaced. Pushing a change to this file runs .github/workflows/find-photo-candidates.yml, which saves candidate photos to the photo-review branch for a person to choose from. Set \"anywhere\": true to also search outside Commons' reviewed collections.",
   "requests": [
-    {"id": "landmark_018", "answer": "Sagrada Família", "query": "Sagrada Família Barcelona exterior facade", "anywhere": true},
-    {"id": "cuisine_020", "answer": "Ramen", "query": "ramen bowl broth noodles", "anywhere": true},
-    {"id": "cuisine_022", "answer": "Okonomiyaki", "query": "okonomiyaki", "anywhere": true},
-    {"id": "cuisine_024", "answer": "Shakshuka", "query": "shakshuka", "anywhere": true}
+    {"id": "cuisine_034", "answer": "Butter chicken", "query": "butter chicken murgh makhani", "anywhere": true},
+    {"id": "cuisine_020", "answer": "Ramen", "query": "shoyu ramen", "anywhere": true}
   ]
 }

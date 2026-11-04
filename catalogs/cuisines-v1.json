@@ -276,7 +276,7 @@
       "explanation": "Dosa is a South Indian crepe-like dish made from a fermented batter, commonly based on rice and lentils.",
       "factSource": "https://en.wikipedia.org/wiki/Dosa",
       "difficulty": "easy",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "cuisine_012",
@@ -524,11 +524,12 @@
       "image": {
         "url": "../assets/cuisines/cuisine_022.webp",
         "path": "assets/cuisines/cuisine_022.webp",
-        "sourcePage": "https://commons.wikimedia.org/wiki/File:Okonomiyaki_(1).jpg",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Okonomiyaki_(1).jpg?width=1200",
-        "creator": "Hajime NAKANO",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Okonomiyaki_001.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Okonomiyaki_001.jpg?width=1200",
+        "creator": "ume-y",
         "license": "CC BY 2.0",
-        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Okonomiyaki_(1).jpg?width=1200"
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Okonomiyaki_(1).jpg?width=1200",
+        "selection": "Replaced from Wikimedia Commons (All of Commons (not reviewed)) after review of framing (2026-11-04)."
       },
       "options": [
         "Okonomiyaki",
@@ -572,11 +573,12 @@
       "image": {
         "url": "../assets/cuisines/cuisine_024.webp",
         "path": "assets/cuisines/cuisine_024.webp",
-        "sourcePage": "https://commons.wikimedia.org/wiki/File:Shakshuka_picture.jpg",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Shakshuka_picture.jpg?width=1200",
-        "creator": "Agustina Cordo",
-        "license": "CC BY-SA 4.0",
-        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Shakshuka_picture.jpg?width=1200"
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Shakshuka_by_Calliopejen1.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Shakshuka_by_Calliopejen1.jpg?width=1200",
+        "creator": "Calliopejen1",
+        "license": "CC BY-SA 3.0",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Shakshuka_picture.jpg?width=1200",
+        "selection": "Replaced from Wikimedia Commons (All of Commons (not reviewed)) after review of framing (2026-11-04)."
       },
       "options": [
         "Shakshuka",
@@ -756,7 +758,7 @@
       "explanation": "Baklava is a layered pastry made with thin filo dough, chopped nuts and syrup or honey, popular across parts of the Middle East and Mediterranean.",
       "factSource": "https://en.wikipedia.org/wiki/Baklava",
       "difficulty": "easy",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "cuisine_032",
@@ -780,7 +782,7 @@
       "explanation": "Japanese curry rice pairs a thick, mildly spiced curry sauce—often with vegetables and meat—with steamed rice.",
       "factSource": "https://en.wikipedia.org/wiki/Japanese_curry",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "cuisine_033",
@@ -804,7 +806,7 @@
       "explanation": "Onigiri are Japanese rice balls, often shaped by hand or in moulds and commonly wrapped in nori, with savoury fillings.",
       "factSource": "https://en.wikipedia.org/wiki/Onigiri",
       "difficulty": "easy",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "cuisine_034",
@@ -852,7 +854,7 @@
       "explanation": "Peking duck is a celebrated Beijing dish known for crisp skin and is traditionally served with thin pancakes and accompaniments.",
       "factSource": "https://en.wikipedia.org/wiki/Peking_duck",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "cuisine_036",
@@ -876,7 +878,7 @@
       "explanation": "Churros are ridged fried-dough pastries commonly served with sugar and sometimes dipped in thick hot chocolate.",
       "factSource": "https://en.wikipedia.org/wiki/Churro",
       "difficulty": "easy",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "cuisine_037",
@@ -900,7 +902,7 @@
       "explanation": "Borscht is a soup associated especially with Ukraine and other Eastern European cuisines, often recognized by its beetroot-red colour.",
       "factSource": "https://en.wikipedia.org/wiki/Borscht",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "cuisine_038",
@@ -924,7 +926,7 @@
       "explanation": "Bánh mì is a Vietnamese sandwich typically served in a crisp baguette with savoury fillings, pickled vegetables, herbs and condiments.",
       "factSource": "https://en.wikipedia.org/wiki/B%C3%A1nh_m%C3%AC",
       "difficulty": "easy",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "cuisine_039",
@@ -948,7 +950,7 @@
       "explanation": "Koshari is an Egyptian street-food dish combining rice, lentils and pasta, commonly topped with fried onions and tomato sauce.",
       "factSource": "https://en.wikipedia.org/wiki/Koshary",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "cuisine_040",
@@ -972,7 +974,7 @@
       "explanation": "Udon are thick Japanese wheat noodles, often served in a hot broth with toppings such as scallions, tofu or tempura.",
       "factSource": "https://en.wikipedia.org/wiki/Udon",
       "difficulty": "easy",
-      "status": "needs_image_render_check"
+      "status": "approved"
     }
   ]
 }

@@ -132,7 +132,7 @@
       "explanation": "The Great Wall is a network of fortifications built and rebuilt across many centuries, not a single wall built at once.",
       "factSource": "https://whc.unesco.org/en/list/438/",
       "difficulty": "easy",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_006",
@@ -157,7 +157,7 @@
       "explanation": "The Statue of Liberty stands on Liberty Island in New York Harbor and was officially dedicated in 1886.",
       "factSource": "https://www.nps.gov/stli/learn/statue-of-liberty-facts.htm",
       "difficulty": "easy",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_007",
@@ -182,7 +182,7 @@
       "explanation": "Designed by Danish architect Jørn Utzon, the Sydney Opera House opened in 1973.",
       "factSource": "https://www.sydneyoperahouse.com/our-story",
       "difficulty": "easy",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_008",
@@ -429,12 +429,13 @@
       "prompt": "Which landmark is shown?",
       "image": {
         "url": "../assets/landmarks/landmark_018.webp",
-        "sourcePage": "https://commons.wikimedia.org/wiki/File:Sagrada_familia.jpg",
-        "creator": "Uli@wiki",
-        "license": "CC BY-SA 3.0",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Sagrada_familia.jpg?width=1000",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Sagrada_Fam%C3%ADlia_exterior_Barcelona_2026.jpg",
+        "creator": "Wikipsico43",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Sagrada_Fam%C3%ADlia_exterior_Barcelona_2026.jpg?width=1200",
         "path": "assets/landmarks/landmark_018.webp",
-        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Sagrada_familia.jpg?width=1000"
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Sagrada_familia.jpg?width=1000",
+        "selection": "Replaced from Wikimedia Commons (All of Commons (not reviewed)) after review of framing (2026-11-04)."
       },
       "options": [
         "Sagrada Família",
@@ -471,7 +472,7 @@
       "explanation": "Neuschwanstein Castle in Bavaria was begun for King Ludwig II in 1869 and was never fully completed.",
       "factSource": "https://www.neuschwanstein.de/englisch/palace/history.htm",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_020",
@@ -496,7 +497,7 @@
       "explanation": "The Giza pyramids are part of the vast ancient necropolis of Memphis and include the Great Pyramid of Khufu, the only surviving wonder of the ancient world.",
       "factSource": "https://whc.unesco.org/en/list/86/",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     }
   ]
 }
