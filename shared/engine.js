@@ -19,6 +19,20 @@ function shuffle(items,rng){const a=items.slice(),r=rng||Math.random;for(let i=a
 function pick(items,rng){return items[Math.floor((rng||Math.random)()*items.length)]}
 function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function el(tag,cls,text){const e=document.createElement(tag);if(cls)e.className=cls;if(text!=null)e.textContent=text;return e}
+/* Photo clues: show the whole photo (no cropping) over a blurred copy that fills the box, and open it full screen on tap. */
+function framePhoto(host,img){
+ const fill=el('img','clue-photo-fill');fill.alt='';fill.setAttribute('aria-hidden','true');fill.src=img.src;host.insertBefore(fill,img);
+ const zoom=el('button','photo-zoom','⤢ Enlarge');zoom.type='button';host.appendChild(zoom);
+ const open=()=>{
+  const box=el('div','lightbox');box.setAttribute('role','dialog');box.setAttribute('aria-label','Enlarged photo');
+  const big=el('img');big.src=img.src;big.alt=img.alt;const close=el('button','lightbox-close','✕ Close');close.type='button';
+  box.append(big,close);document.body.appendChild(box);close.focus({preventScroll:true});
+  const done=()=>{box.remove();document.removeEventListener('keydown',onKey,true);zoom.focus({preventScroll:true})};
+  const onKey=e=>{e.preventDefault();e.stopPropagation();done()};
+  box.addEventListener('click',done);document.addEventListener('keydown',onKey,true);
+ };
+ zoom.addEventListener('click',open);img.addEventListener('click',open);img.style.cursor='zoom-in';
+}
 /* A large text clue (used when the question shows a name and the answers are pictures). */
 function bigClue(host,text,sub){host.appendChild(el('div','clue-big',text));if(sub)host.appendChild(el('div','clue-sub',sub))}
 
@@ -162,7 +176,7 @@ function run(cfg){
  function toggleSound(){sound.on=!sound.on;safeSet(SOUND_KEY,sound.on?'on':'off');renderSound();if(sound.on&&S.running)sound.startMusic();else if(!sound.on)sound.stopMusic()}
  renderSound();$('soundToggle').addEventListener('click',toggleSound);
 
- const ctx={util:{shuffle,pick,deck,choices,bigClue},get n(){return S.n},get streak(){return S.streak},get elapsed(){return elapsed()},get hard(){return S.n>4},
+ const ctx={util:{shuffle,pick,deck,choices,bigClue,framePhoto},get n(){return S.n},get streak(){return S.streak},get elapsed(){return elapsed()},get hard(){return S.n>4},
   /* Picks the question format: the first three questions use the game's main format, then formats mix (the main one twice as often). */
   format(formats){if(S.n<3||formats.length<2)return formats[0];return pick([formats[0]].concat(formats))}};
 
@@ -304,5 +318,5 @@ function run(cfg){
  return {toast};
 }
 
-window.GuessGame={run,util:{shuffle,pick,deck,choices,bigClue,escapeHtml},scoring:SCORING,pointsFor,bestKey,loadBest};
+window.GuessGame={run,util:{shuffle,pick,deck,choices,bigClue,framePhoto,escapeHtml},scoring:SCORING,pointsFor,bestKey,loadBest};
 })();

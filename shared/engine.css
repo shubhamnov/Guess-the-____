@@ -125,7 +125,12 @@ button:focus-visible,a:focus-visible{outline:3px solid #7871e8;outline-offset:3p
 .clue-label{position:absolute;left:50%;bottom:12px;transform:translateX(-50%);font-family:var(--display);font-weight:950;font-size:clamp(18px,5vw,26px);letter-spacing:-.04em;color:var(--ink);background:rgba(255,254,250,.96);border:1px solid rgba(25,27,26,.14);border-radius:12px;padding:8px 15px;text-align:center;box-shadow:0 5px 18px #00000025;max-width:calc(100% - 24px);width:max-content;overflow-wrap:anywhere}
 .clue-logo{width:min(52%,190px);height:min(60%,160px);object-fit:contain;filter:drop-shadow(0 9px 8px #0000000b)}
 .clue.photo{height:clamp(240px,42vh,380px);background:#e9e6dc}
-.clue-photo{display:block;width:100%;height:100%;object-fit:cover}
+.clue-photo{display:block;width:100%;height:100%;object-fit:contain;position:relative;z-index:1}
+.clue-photo-fill{position:absolute;inset:-20px;width:calc(100% + 40px);height:calc(100% + 40px);object-fit:cover;filter:blur(18px) brightness(.85);z-index:0}
+.photo-zoom{position:absolute;right:10px;bottom:10px;z-index:2;border:0;border-radius:999px;background:rgba(25,27,26,.72);color:#fff;font-size:11px;font-weight:850;padding:7px 11px}
+.lightbox{position:fixed;inset:0;z-index:1500;background:rgba(10,11,10,.92);display:grid;place-items:center;padding:16px;cursor:zoom-out}
+.lightbox img{max-width:100%;max-height:calc(100dvh - 90px);object-fit:contain;border-radius:12px}
+.lightbox-close{position:fixed;top:14px;right:14px;border:0;border-radius:999px;background:#fff;color:var(--ink);font-weight:900;font-size:13px;padding:9px 14px}
 .clue-element{width:min(62%,210px);aspect-ratio:1;border:3px solid var(--ink);border-radius:20px;background:var(--lime);box-shadow:6px 6px 0 var(--ink);display:grid;grid-template-rows:auto 1fr;padding:12px 14px;font-family:var(--display)}
 .clue-element small{font-size:18px;font-weight:900}
 .clue-element b{font-size:clamp(64px,18vw,96px);font-weight:1000;letter-spacing:-.04em;display:grid;place-items:center;line-height:1}

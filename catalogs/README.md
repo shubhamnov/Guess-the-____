@@ -44,6 +44,20 @@ A question is publishable only when all applicable checks pass:
 
 For landmark and geography content, distinguish the subject's name, location, and country carefully. For cuisine, distinguish a dish's historical origin from places where it is popular today.
 
+## Photo quality rules
+
+A photo must be easy to recognise on a phone screen. Before approving one, check that:
+
+- The subject fills at least half of the frame. No distant shots where the landmark is a speck on the horizon.
+- It shows the subject from its best-known angle (the Taj Mahal from the front, not a detail of one minaret).
+- It is in colour, taken in daylight, sharp, and without crowds, text, watermarks or borders in front of the subject.
+- The short side is at least 1000 px.
+- Food is shown from above or at about 45°, on a plain background, as it is usually served.
+
+Prefer Wikimedia Commons' reviewed collections: Featured pictures first, then Quality images. To replace weak photos, list the question IDs in `catalogs/photo-requests.json` and push to `main`. The *Find photo candidates* workflow saves previews and licence details for up to six reviewed photos per question to the `photo-review` branch (`review/candidates.json`). Choose one, copy its `sourcePage`, `sourceUrl`, `creator` and `license` into the question, and push. The cache workflow then downloads the photo and marks the question `needs_image_render_check` until it is reviewed.
+
+The game shows the whole photo without cropping (a blurred copy fills the spare space), and players can tap *Enlarge* to see it full screen.
+
 ## Refresh bookkeeping
 
 Update `manifest-v1.json` whenever a category is created or refreshed:
