@@ -44,15 +44,19 @@
       "title": "Guess the Cuisine",
       "status": "in-progress",
       "targetQuestions": 100,
-      "approvedQuestions": 39,
+      "approvedQuestions": 40,
       "currentVersion": 1,
       "lastRefreshedAt": "2026-11-04",
-      "nextAction": "Find a clear Butter chicken photo (034) and a broth-style Ramen photo (020) via catalogs/photo-requests.json, then add questions 41–50.",
-      "draftQuestions": 1,
+      "nextAction": "Add questions 41–50 in a new batch, checking each photo against the photo quality rules in catalogs/README.md.",
+      "draftQuestions": 0,
       "refreshHistory": [
         {
           "date": "2026-11-04",
           "summary": "Replaced Dosa, Okonomiyaki and Shakshuka photos; visually reviewed and approved cuisine 031–033 and 035–040. Butter chicken (034) stays held: the photo does not clearly show the dish."
+        },
+        {
+          "date": "2026-11-04",
+          "summary": "Replaced Butter chicken (034) and Ramen (020) photos with clearer Commons photos; reviewed and approved. All 40 cuisine questions approved."
         }
       ]
     },

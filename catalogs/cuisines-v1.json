@@ -493,7 +493,7 @@
       "explanation": "Ramen is a Japanese noodle soup usually served in broth with toppings such as sliced meat, egg, vegetables or seaweed.",
       "factSource": "https://en.wikipedia.org/wiki/Ramen",
       "difficulty": "easy",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "cuisine_021",
@@ -832,7 +832,7 @@
       "explanation": "Butter chicken is an Indian curry featuring chicken in a creamy tomato-based sauce seasoned with spices.",
       "factSource": "https://en.wikipedia.org/wiki/Butter_chicken",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "cuisine_035",
