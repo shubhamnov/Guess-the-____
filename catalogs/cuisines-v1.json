@@ -263,7 +263,7 @@
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Dosa_Classic.jpg?width=1200",
         "creator": "Prakrutim",
         "license": "CC BY-SA 4.0",
-        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Dosa_dosa.jpg?width=1200",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Dosa_Classic.jpg?width=1200",
         "selection": "Replaced from Wikimedia Commons Quality images after review of framing (2026-11-04)."
       },
       "options": [
@@ -276,7 +276,7 @@
       "explanation": "Dosa is a South Indian crepe-like dish made from a fermented batter, commonly based on rice and lentils.",
       "factSource": "https://en.wikipedia.org/wiki/Dosa",
       "difficulty": "easy",
-      "status": "approved"
+      "status": "needs_image_render_check"
     },
     {
       "id": "cuisine_012",
