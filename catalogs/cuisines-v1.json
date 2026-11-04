@@ -528,7 +528,7 @@
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Okonomiyaki_001.jpg?width=1200",
         "creator": "ume-y",
         "license": "CC BY 2.0",
-        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Okonomiyaki_(1).jpg?width=1200",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Okonomiyaki_001.jpg?width=1200",
         "selection": "Replaced from Wikimedia Commons (All of Commons (not reviewed)) after review of framing (2026-11-04)."
       },
       "options": [
@@ -541,7 +541,7 @@
       "explanation": "Okonomiyaki is a Japanese savoury pancake made with a flour-based batter and ingredients such as cabbage, often finished with sauces and toppings.",
       "factSource": "https://en.wikipedia.org/wiki/Okonomiyaki",
       "difficulty": "medium",
-      "status": "approved"
+      "status": "needs_image_render_check"
     },
     {
       "id": "cuisine_023",
@@ -577,7 +577,7 @@
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Shakshuka_by_Calliopejen1.jpg?width=1200",
         "creator": "Calliopejen1",
         "license": "CC BY-SA 3.0",
-        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Shakshuka_picture.jpg?width=1200",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Shakshuka_by_Calliopejen1.jpg?width=1200",
         "selection": "Replaced from Wikimedia Commons (All of Commons (not reviewed)) after review of framing (2026-11-04)."
       },
       "options": [
@@ -590,7 +590,7 @@
       "explanation": "Shakshuka features eggs cooked in a spiced tomato and pepper sauce and is popular across parts of North Africa and the Middle East.",
       "factSource": "https://en.wikipedia.org/wiki/Shakshouka",
       "difficulty": "medium",
-      "status": "approved"
+      "status": "needs_image_render_check"
     },
     {
       "id": "cuisine_025",
