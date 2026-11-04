@@ -480,7 +480,7 @@
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Shoyu_Ramen%EF%BC%88Tokyo_Ramen%EF%BC%89_-_01.jpg?width=1200",
         "creator": "Quercus acuta",
         "license": "CC BY-SA 4.0",
-        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Japanese_Ramen_Noodle_Soup%2C_Bangkok%2C_Thailand.jpg?width=1200",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Shoyu_Ramen%EF%BC%88Tokyo_Ramen%EF%BC%89_-_01.jpg?width=1200",
         "selection": "Replaced from Wikimedia Commons (All of Commons (not reviewed)) after review of framing (2026-11-04)."
       },
       "options": [
@@ -493,7 +493,7 @@
       "explanation": "Ramen is a Japanese noodle soup usually served in broth with toppings such as sliced meat, egg, vegetables or seaweed.",
       "factSource": "https://en.wikipedia.org/wiki/Ramen",
       "difficulty": "easy",
-      "status": "approved"
+      "status": "needs_image_render_check"
     },
     {
       "id": "cuisine_021",
@@ -819,7 +819,7 @@
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Chicken_makhani.jpg?width=1200",
         "creator": "stu_spivack",
         "license": "CC BY-SA 2.0",
-        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Butter_Chicken_(2447373994).jpg?width=1200",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Chicken_makhani.jpg?width=1200",
         "selection": "Replaced from Wikimedia Commons (All of Commons (not reviewed)) after review of framing (2026-11-04)."
       },
       "options": [
