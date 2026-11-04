@@ -58,21 +58,18 @@ for (const game of games) {
 }
 
 for (const game of games) {
-  test(`${game.name} gives answer feedback, sound, and moves to the next question`, async ({ page }) => {
+  test(`${game.name} gives answer feedback, sound, and advances automatically`, async ({ page }) => {
     await page.goto(game.path, { waitUntil: 'domcontentloaded' });
     await expect.poll(() => page.locator('#game').evaluate(el => el.classList.contains('active'))).toBe(true);
     const firstLogo = game.kind === 'logo' ? await page.locator('#clue img').getAttribute('src') : null;
-    const firstNumber = game.kind === 'photo' ? await page.locator('#number').innerText() : null;
+    const firstLabel = await page.locator('#roundLabel').innerText();
     const firstOptions = await page.locator('#answers .answer').allTextContents();
     const before = await page.evaluate(() => window.__quizOscillatorStarts || 0);
     await page.locator('#answers .answer').first().click();
     await expect(page.locator('#feedback')).not.toBeEmpty();
     await expect.poll(() => page.evaluate(() => window.__quizOscillatorStarts || 0)).toBeGreaterThan(before);
     if (game.kind === 'photo') {
-      // Photo rounds pause on the explanation; the Next button (or Enter) moves on.
-      await expect(page.locator('#next')).toBeVisible();
-      await page.locator('#next').click();
-      await expect.poll(() => page.locator('#number').innerText()).not.toBe(firstNumber);
+      await expect.poll(() => page.locator('#roundLabel').innerText(), { timeout: 5000 }).not.toBe(firstLabel);
     } else if (game.kind === 'logo') {
       await expect.poll(() => page.locator('#clue img').getAttribute('src')).not.toBe(firstLogo);
     } else {
@@ -141,29 +138,30 @@ for (const game of games) {
     await page.goto(game.path, { waitUntil: 'domcontentloaded' });
     await expect.poll(() => page.locator('#game').evaluate(el => el.classList.contains('active'))).toBe(true);
     const rules = await page.evaluate(() => ({
-      first: window.GuessGame.pointsFor(1),
-      streak: window.GuessGame.pointsFor(3),
-      seconds: window.GuessGame.scoring.timedSeconds
+      right: window.GuessGame.pointsFor(true),
+      wrong: window.GuessGame.pointsFor(false),
+      seconds: window.GuessGame.scoring.seconds
     }));
-    expect(rules).toEqual({ first: 10, streak: 15, seconds: 60 });
+    expect(rules).toEqual({ right: 10, wrong: -5, seconds: 60 });
+    await expect(page.locator('#time')).toHaveText(/^(60|59|58)$/);
     await page.keyboard.press('1');
     await expect(page.locator('#feedback')).not.toBeEmpty();
     const score = Number(await page.locator('#score').innerText());
-    expect([0, 10]).toContain(score);
+    expect([10, -5]).toContain(score);
   });
 }
 
-test('Daily Mix plays all 14 questions with the keyboard and shows a result', async ({ page }) => {
+test('Daily Mix plays all 14 questions within 60 seconds and shows a result', async ({ page }) => {
   await page.goto('daily-challenge/?date=2026-01-15', { waitUntil: 'domcontentloaded' });
   await expect(page.locator('#intro')).toBeVisible();
   await page.locator('#startBtn').click();
   for (let i = 1; i <= 14; i++) {
-    await expect(page.locator('#number')).toHaveText(`${i} / 14`);
+    await expect(page.locator('#roundLabel')).toContainText(String(i).padStart(2, '0'));
     await page.keyboard.press('1');
-    await expect(page.locator('#next')).toBeVisible();
-    await page.keyboard.press('Enter');
+    if (i < 14) await expect(page.locator('#roundLabel')).toContainText(String(i + 1).padStart(2, '0'), { timeout: 5000 });
   }
   await expect(page.locator('#result')).toHaveClass(/active/);
+  await expect(page.locator('#resultEyebrow')).toContainText('ALL DONE');
   await expect(page.locator('#correctCount')).toHaveText(/\/ 14$/);
 });
 

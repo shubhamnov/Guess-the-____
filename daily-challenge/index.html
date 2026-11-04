@@ -75,10 +75,10 @@ function challengeURL(){const url=new URL(window.location.href);url.search='';ur
 const isToday=activeDate===todayUTC();
 
 const game=GuessGame.run({
- id:'daily-mix',label:'Daily Mix',pill:'The Daily Mix',mode:'round',roundSize:14,fixedRound:true,autoStart:false,
+ id:'daily-mix',label:'Daily Mix',pill:'The Daily Mix',autoStart:false,
  eyebrow:isToday?'Today’s Daily Mix':'Daily Mix · '+formatDate(activeDate),
  titleHtml:'Seven games.<br><em>One daily mix.</em>',
- intro:'Fourteen questions across seven categories — two from each game, mixed into one challenge that is the same for everyone on '+formatDate(activeDate)+' (UTC).',
+ intro:'Fourteen questions across seven categories — two from each game — and 60 seconds to get through them. The questions are the same for everyone on '+formatDate(activeDate)+' (UTC).',
  note:'🎨 Colors · 🏳️ Flags · 🌍 Countries · 🐾 Animals · 🏙️ Capitals · あ Scripts · ✳ Brand logos',
  prompt:'Which one is it?',legacyBest:[{key:'guessTheDailyMixBest',scale:1}],
  resultLabel:'Daily Mix · '+formatDate(activeDate),shareHeadline:'Daily Mix · '+formatDate(activeDate),

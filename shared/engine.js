@@ -5,9 +5,11 @@
 'use strict';
 
 /* ---------- Scoring: identical in every game ---------- */
-const SCORING={points:10,streakFrom:3,streakBonus:5,timedSeconds:60,roundSize:10};
-function pointsFor(streak){return SCORING.points+(streak>=SCORING.streakFrom?SCORING.streakBonus:0)}
-const RULES_TEXT='10 points per correct answer · +5 bonus from a 3-answer streak';
+/* Every game lasts 60 seconds: +10 for a right answer, −5 for a wrong one. Totals can go below zero. */
+const SCORING={correct:10,wrong:-5,seconds:60};
+function pointsFor(right){return right?SCORING.correct:SCORING.wrong}
+const RULES_TEXT='60 seconds · +10 for a right answer · −5 for a wrong one';
+function signed(n){return n>0?'+'+n:'−'+Math.abs(n)}
 
 /* ---------- Small helpers ---------- */
 const $=id=>document.getElementById(id);
@@ -118,9 +120,9 @@ function scoreImage(card){
 
 /* ---------- The game ---------- */
 function run(cfg){
- const timed=cfg.mode!=='round';
- const seconds=SCORING.timedSeconds;
- const roundSize=cfg.roundSize||SCORING.roundSize;
+ // Questions come either from next(ctx), one at a time, or from a prepared list (makeRound). The clock is the same.
+ const fromList=typeof cfg.makeRound==='function';
+ const seconds=SCORING.seconds;
  const label=cfg.label;
  const homeHref=cfg.homeHref||'../';
  let best=loadBest(cfg.id,cfg.legacyBest);
@@ -133,20 +135,19 @@ function run(cfg){
  '<section class="intro" id="intro"><div class="hero"><div class="eyebrow" id="introEyebrow">'+escapeHtml(cfg.eyebrow||'')+'</div><h1>'+cfg.titleHtml+'</h1><p>'+escapeHtml(cfg.intro||'')+'</p></div>'+
  (cfg.previewHtml?'<div class="preview" aria-hidden="true">'+cfg.previewHtml+'</div>':'')+
  '<button class="primary" id="startBtn" type="button">Let’s play <span class="arrow">→</span></button>'+
- '<div class="rules"><span>'+(timed?seconds+' seconds':roundSize+' questions')+'</span>'+(cfg.formats&&cfg.formats.length>1?'<span>'+cfg.formats.length+' question types</span>':'')+'<span>4 choices</span><span>+10 per answer</span><span>+5 streak bonus</span></div>'+
+ '<div class="rules"><span>'+seconds+' seconds</span>'+(cfg.formats&&cfg.formats.length>1?'<span>'+cfg.formats.length+' question types</span>':'')+'<span>4 choices</span><span>+10 right</span><span>−5 wrong</span></div>'+
  (cfg.formats&&cfg.formats.length>1?'<div class="micro formats">'+cfg.formats.map(f=>'<span>'+escapeHtml(f)+'</span>').join('')+'</div>':'')+
  '<div class="micro" id="introNote">'+escapeHtml(cfg.note||'')+(cfg.note?'<br>':'')+'Personal best saved on this device.</div>'+
  '<nav class="links" aria-label="More games"><a href="'+homeHref+'">All games</a>'+links+'</nav></section>'+
  '<section class="game" id="game" aria-label="'+escapeHtml(label)+' quiz">'+
- '<div class="stats">'+(timed?'<div class="stat timer" id="timerStat"><label>Time left</label><strong id="time">'+seconds+'</strong></div>':'<div class="stat"><label>Question</label><strong id="number">1 / '+roundSize+'</strong></div>')+
+ '<div class="stats"><div class="stat timer" id="timerStat"><label>Time left</label><strong id="time">'+seconds+'</strong></div>'+
  '<div class="stat"><label>Score</label><strong id="score">0</strong></div><div class="stat"><label>Streak</label><strong id="streak">0</strong></div></div>'+
  '<div class="track" aria-hidden="true"><span id="timebar"></span></div>'+
  '<div class="question-head"><span class="eyebrow" id="roundLabel"></span><span class="level" id="level"></span></div>'+
  '<div class="clue" id="clue"></div><div class="credit" id="credit"></div>'+
  '<p class="prompt" id="prompt"></p><div class="answers" id="answers" aria-label="Answer choices"></div>'+
  '<div class="feedback" id="feedback" role="status" aria-live="polite"></div>'+
- (timed?'':'<button class="primary next" id="next" type="button">Next question <span class="arrow">→</span></button><button class="secondary" id="quit" type="button">Finish round</button>')+
- '<div class="micro keys-hint">Keys 1–4 answer'+(timed?'':' · Enter for next')+' · M toggles sound</div></section>'+
+ '<div class="micro keys-hint">Keys 1–4 answer · Enter plays again · M toggles sound</div></section>'+
  '<section class="result" id="result" aria-label="Your final score"><div class="result-modal">'+
  '<div><div class="eyebrow" id="resultEyebrow"></div><div class="bigscore" id="finalScore">0</div><h2 id="resultTitle"></h2><p id="resultText"></p></div>'+
  '<div class="resultbox"><div><label>Personal best</label><strong id="resultBest">0</strong></div><div><label>Accuracy</label><strong id="accuracy">0%</strong></div><div><label>Correct</label><strong id="correctCount">0</strong></div><div><label>Best streak</label><strong id="bestStreak">0</strong></div></div>'+
@@ -158,7 +159,7 @@ function run(cfg){
  let toastTimer=null;
  function toast(msg){const t=$('toast');t.textContent=msg;t.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove('show'),2600)}
  function renderSound(){const b=$('soundToggle');b.textContent=sound.on?'♫ SOUND ON':'♫ SOUND OFF';b.setAttribute('aria-pressed',String(sound.on));b.setAttribute('aria-label',sound.on?'Sound on — select to mute':'Sound off — select to turn on')}
- function toggleSound(){sound.on=!sound.on;safeSet(SOUND_KEY,sound.on?'on':'off');renderSound();if(sound.on&&S.running&&timed)sound.startMusic();else if(!sound.on)sound.stopMusic()}
+ function toggleSound(){sound.on=!sound.on;safeSet(SOUND_KEY,sound.on?'on':'off');renderSound();if(sound.on&&S.running)sound.startMusic();else if(!sound.on)sound.stopMusic()}
  renderSound();$('soundToggle').addEventListener('click',toggleSound);
 
  const ctx={util:{shuffle,pick,deck,choices,bigClue},get n(){return S.n},get streak(){return S.streak},get elapsed(){return elapsed()},get hard(){return S.n>4},
@@ -173,7 +174,7 @@ function run(cfg){
  }
  function updateStats(){$('score').textContent=S.score;$('streak').textContent=S.streak}
  function tick(){
-  if(!S.running||!timed||S.pausedAt)return;
+  if(!S.running||S.pausedAt)return;
   const left=Math.max(0,seconds-elapsed());
   $('time').textContent=Math.ceil(left);$('timebar').style.width=(left/seconds*100)+'%';
   $('timerStat').classList.toggle('urgent',left<=10);
@@ -190,22 +191,20 @@ function run(cfg){
   }
   Object.assign(S,{running:true,score:0,correct:0,answered:0,streak:0,bestStreak:0,n:0,q:null,locked:false,startedAt:Date.now(),pausedAt:0});
   if(cfg.onStart)cfg.onStart(ctx);
-  if(!timed){S.round=cfg.makeRound(ctx).slice(0,cfg.fixedRound?undefined:roundSize)}
-  updateStats();$('timebar').style.width=timed?'100%':'0%';
-  if(timed){$('time').textContent=seconds;$('timerStat').classList.remove('urgent');S.timer=setInterval(tick,200);sound.startMusic()}
+  if(fromList)S.round=cfg.makeRound(ctx);
+  updateStats();$('timebar').style.width='100%';
+  $('time').textContent=seconds;$('timerStat').classList.remove('urgent');S.timer=setInterval(tick,200);sound.startMusic();
   setScreen('game');next();
  }
  function next(){
   clearTimeout(S.advance);S.advance=null;
   if(!S.running)return;
-  if(!timed&&S.n>=S.round.length){finish();return}
-  const q=timed?cfg.next(ctx):S.round[S.n];
+  if(fromList&&S.n>=S.round.length){finish();return}
+  const q=fromList?S.round[S.n]:cfg.next(ctx);
   if(!q){finish();return}
   S.q=q;S.n++;S.locked=false;
-  const total=timed?null:S.round.length;
   $('roundLabel').textContent=(q.category||cfg.roundLabel||label).toUpperCase()+' '+String(S.n).padStart(2,'0')+(q.kind?' · '+q.kind.toUpperCase():'');
   $('level').textContent=q.level||'';$('level').style.display=q.level?'':'none';
-  if(!timed){$('number').textContent=S.n+' / '+total;$('timebar').style.width=((S.n-1)/total*100)+'%';$('next').classList.remove('visible');$('next').firstChild.textContent=S.n===total?'See my score ':'Next question '}
   const clue=$('clue');clue.className='clue'+(q.clueClass?' '+q.clueClass:'');clue.removeAttribute('style');clue.replaceChildren();q.render(clue);
   const credit=$('credit');credit.replaceChildren();if(q.credit)q.credit(credit);
   $('prompt').textContent=q.prompt||cfg.prompt||'';
@@ -227,33 +226,26 @@ function run(cfg){
   Array.from($('answers').children).forEach(b=>{b.disabled=true;if(b.dataset.value===q.answer)b.classList.add('correct')});
   const fb=$('feedback');
   if(right){
-   S.streak++;S.correct++;S.bestStreak=Math.max(S.bestStreak,S.streak);
-   const pts=pointsFor(S.streak);S.score+=pts;
-   fb.textContent=(q.rightText||pick(['Correct!','That’s it!','Nice one!','You got it!']))+' +'+pts+(pts>SCORING.points?' (streak bonus)':'');
-   fb.className='feedback good';sound.correct(pts>SCORING.points);
+   S.streak++;S.correct++;S.bestStreak=Math.max(S.bestStreak,S.streak);S.score+=SCORING.correct;
+   fb.textContent=(q.rightText||pick(['Correct!','That’s it!','Nice one!','You got it!']))+' '+signed(SCORING.correct);
+   fb.className='feedback good';sound.correct(S.streak>=3);
   }else{
-   S.streak=0;btn.classList.add('wrong');
-   fb.textContent=q.answerText?'Not quite — it was '+q.answerText+'.':q.renderOption?'Not quite — the right one is highlighted.':'Not quite — it was '+(cfg.formatOption?cfg.formatOption(q.answer):q.answer)+'.';
+   S.streak=0;S.score+=SCORING.wrong;btn.classList.add('wrong');
+   fb.textContent=signed(SCORING.wrong)+' · '+(q.answerText?'Not quite — it was '+q.answerText+'.':q.renderOption?'Not quite — the right one is highlighted.':'Not quite — it was '+(cfg.formatOption?cfg.formatOption(q.answer):q.answer)+'.');
    fb.className='feedback bad';sound.wrong();
   }
   if(q.explanation){fb.appendChild(el('span','explain',q.explanation))}
   updateStats();
   if(cfg.onAnswer)cfg.onAnswer(q,right,ctx);
-  if(timed){
-   S.advance=setTimeout(next,right?550:(q.explanation?1700:1200));
-  }else{
-   $('timebar').style.width=(S.n/S.round.length*100)+'%';
-   $('next').classList.add('visible');
-   const words=(fb.textContent||'').split(/\s+/).length;
-   S.advance=setTimeout(next,Math.min(8000,Math.max(2200,1200+words*150)));
-  }
+  // The clock keeps running while feedback shows, so pauses stay short; questions with a fact get a little longer.
+  S.advance=setTimeout(next,right?(q.explanation?1100:550):(q.explanation?1800:1200));
  }
  function finish(){
   if(!S.running)return;
   S.running=false;S.locked=true;clearInterval(S.timer);clearTimeout(S.advance);sound.stopMusic();
   const newBest=S.score>best;if(newBest){best=S.score;safeSet(bestKey(cfg.id),best)}
   const acc=S.answered?Math.round(S.correct/S.answered*100):0;
-  $('resultEyebrow').textContent=(timed?'TIME’S UP':'ROUND COMPLETE')+' · '+(cfg.resultLabel||label).toUpperCase();
+  $('resultEyebrow').textContent=(fromList&&S.answered>=S.round.length?'ALL DONE':'TIME’S UP')+' · '+(cfg.resultLabel||label).toUpperCase();
   $('finalScore').innerHTML=S.score+'<small>pts</small>';
   $('resultBest').textContent=best;$('accuracy').textContent=acc+'%';$('correctCount').textContent=S.correct+' / '+S.answered;$('bestStreak').textContent=S.bestStreak;
   let title;
@@ -264,7 +256,7 @@ function run(cfg){
   else if(acc>=45)title='You’re warming up.';
   else title='Every round makes you sharper.';
   $('resultTitle').textContent=title;
-  $('resultText').textContent=S.answered?'You got '+S.correct+' of '+S.answered+' right'+(S.bestStreak>=SCORING.streakFrom?' with a best streak of '+S.bestStreak:'')+'. '+(cfg.resultNote?cfg.resultNote():'Fancy another round?'):'Give it a proper go next round.';
+  $('resultText').textContent=S.answered?'You got '+S.correct+' of '+S.answered+' right'+(S.bestStreak>=3?' with a best streak of '+S.bestStreak:'')+'. '+(cfg.resultNote?cfg.resultNote():'Fancy another round?'):'Give it a proper go next round.';
   setScreen('result');
   if(cfg.onFinish)cfg.onFinish({score:S.score,correct:S.correct,answered:S.answered,best});
   setTimeout(()=>$('againBtn').focus({preventScroll:true}),50);
@@ -275,7 +267,7 @@ function run(cfg){
   const acc=S.answered?Math.round(S.correct/S.answered*100):0;
   const text='I scored '+S.score+' points in Guess the ____ · '+label+'. Can you beat me?';
   try{
-   const blob=await scoreImage({label,score:S.score,accuracy:acc+'%',correct:S.correct+'/'+S.answered,bestStreak:S.bestStreak,headline:cfg.shareHeadline||('Guess the '+label),rules:RULES_TEXT,format:timed?seconds+' seconds · four choices':S.round.length+' questions · four choices',url:url.replace(/^https?:\/\//,'')});
+   const blob=await scoreImage({label,score:S.score,accuracy:acc+'%',correct:S.correct+'/'+S.answered,bestStreak:S.bestStreak,headline:cfg.shareHeadline||('Guess the '+label),rules:RULES_TEXT,format:'Four choices per question',url:url.replace(/^https?:\/\//,'')});
    const file=new File([blob],'guess-the-'+cfg.id+'-score.png',{type:'image/png'});
    if(navigator.share&&navigator.canShare&&navigator.canShare({files:[file]})){
     try{await navigator.share({files:[file],title:'My '+label+' score',text:text+' '+url});return}catch(e){if(e&&e.name==='AbortError')return}
@@ -289,7 +281,6 @@ function run(cfg){
  $('startBtn').addEventListener('click',start);
  $('againBtn').addEventListener('click',start);
  $('shareBtn').addEventListener('click',share);
- if(!timed){$('next').addEventListener('click',()=>{if(S.locked&&S.running)next()});$('quit').addEventListener('click',finish)}
 
  document.addEventListener('keydown',e=>{
   if(e.altKey||e.ctrlKey||e.metaKey)return;
@@ -298,13 +289,12 @@ function run(cfg){
   if(e.key==='m'||e.key==='M'){toggleSound();return}
   if(S.running&&!S.locked&&/^[1-9]$/.test(e.key)){const b=$('answers').children[Number(e.key)-1];if(b){e.preventDefault();b.click()}return}
   if(e.key==='Enter'&&!/BUTTON|A/.test(tag)){
-   if(S.running&&S.locked&&!timed){e.preventDefault();next()}
-   else if($('result').classList.contains('active')){e.preventDefault();start()}
+   if($('result').classList.contains('active')){e.preventDefault();start()}
   }
  });
  /* Timed rounds pause while the tab is hidden, so switching apps never costs time. */
  document.addEventListener('visibilitychange',()=>{
-  if(!S.running||!timed)return;
+  if(!S.running)return;
   if(document.hidden){S.pausedAt=Date.now();sound.stopMusic()}
   else if(S.pausedAt){S.startedAt+=Date.now()-S.pausedAt;S.pausedAt=0;sound.startMusic();toast('Paused while you were away — the clock is running again.')}
  });

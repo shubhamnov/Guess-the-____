@@ -10,8 +10,9 @@
 </head>
 <body data-game="languages">
 <script src="../shared/engine.js"></script>
+<script src="../data/languages.js"></script>
 <script>
-const DATA=[["French","Merci","eu"],["Spanish","Gracias","eu"],["German","Danke","eu"],["Italian","Grazie","eu"],["Portuguese","Obrigado","eu"],["Dutch","Dank je","eu"],["Afrikaans","Dankie","af"],["Swedish","Tack","eu"],["Danish","Tak","eu"],["Norwegian","Takk","eu"],["Finnish","Kiitos","eu"],["Estonian","Aitäh","eu"],["Latvian","Paldies","eu"],["Lithuanian","Ačiū","eu"],["Polish","Dziękuję","eu"],["Czech","Děkuji","eu"],["Hungarian","Köszönöm","eu"],["Romanian","Mulțumesc","eu"],["Albanian","Faleminderit","eu"],["Greek","Ευχαριστώ","eu"],["Russian","Спасибо","eu"],["Ukrainian","Дякую","eu"],["Bulgarian","Благодаря","eu"],["Welsh","Diolch","eu"],["Irish","Go raibh maith agat","eu"],["Basque","Eskerrik asko","eu"],["Catalan","Gràcies","eu"],["Maltese","Grazzi","eu"],["Turkish","Teşekkürler","me"],["Arabic","شكرا","me"],["Hebrew","תודה","me"],["Persian","سپاس","me"],["Armenian","Շնորհակալություն","me"],["Georgian","მადლობა","me"],["Hindi","धन्यवाद","sa"],["Bengali","ধন্যবাদ","sa"],["Urdu","شکریہ","sa"],["Tamil","நன்றி","sa"],["Telugu","ధన్యవాదాలు","sa"],["Kannada","ಧನ್ಯವಾದ","sa"],["Malayalam","നന്ദി","sa"],["Gujarati","આભાર","sa"],["Punjabi","ਧੰਨਵਾਦ","sa"],["Sinhala","ස්තූතියි","sa"],["Mandarin Chinese","谢谢","ea"],["Japanese","ありがとう","ea"],["Korean","감사합니다","ea"],["Mongolian","Баярлалаа","ea"],["Vietnamese","Cảm ơn","sea"],["Thai","ขอบคุณ","sea"],["Khmer","អរគុណ","sea"],["Burmese","ကျေးဇူးတင်ပါတယ်","sea"],["Indonesian","Terima kasih","sea"],["Tagalog","Salamat","sea"],["Hawaiian","Mahalo","sea"],["Swahili","Asante","af"],["Zulu","Ngiyabonga","af"],["Amharic","አመሰግናለሁ","af"],["Yoruba","Ẹ ṣé","af"],["Hausa","Na gode","af"]].map(([name,thanks,group])=>({name,thanks,group}));
+const DATA=GTQ_DATA.languages.map(([name,thanks,group])=>({name,thanks,group}));
 const BY_NAME=new Map(DATA.map(x=>[x.name,x]));
 const pool=GuessGame.util.deck(DATA,x=>x.name);
 GuessGame.run({

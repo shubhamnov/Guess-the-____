@@ -10,8 +10,9 @@
 </head>
 <body data-game="landmarks">
 <script src="../shared/engine.js"></script>
+<script src="../data/landmark-countries.js"></script>
 <script>
-const LANDMARK_COUNTRIES={"Eiffel Tower":"France","Tokyo Tower":"Japan","CN Tower":"Canada","Space Needle":"United States","Taj Mahal":"India","Humayun's Tomb":"India","Sheikh Zayed Grand Mosque":"United Arab Emirates","Victoria Memorial":"India","Colosseum":"Italy","Pantheon":"Italy","Arena of Verona":"Italy","Parthenon":"Greece","Petra Treasury":"Jordan","Alhambra":"Spain","Abu Simbel":"Egypt","Persepolis":"Iran","Great Wall of China":"China","Hadrian's Wall":"United Kingdom","Walls of Dubrovnik":"Croatia","Berlin Wall":"Germany","Statue of Liberty":"United States","Christ the Redeemer":"Brazil","Statue of Unity":"India","The Motherland Calls":"Russia","Sydney Opera House":"Australia","Marina Bay Sands":"Singapore","Guggenheim Bilbao":"Spain","Walt Disney Concert Hall":"United States","Angkor Wat":"Cambodia","Borobudur":"Indonesia","Prambanan":"Indonesia","Bagan temples":"Myanmar","Cristo Rei":"Portugal","Great Buddha of Thailand":"Thailand","Leaning Tower of Pisa":"Italy","Garisenda Tower":"Italy","Asinelli Tower":"Italy","Tower of Hercules":"Spain","Machu Picchu":"Peru","Tikal":"Guatemala","Chichén Itzá":"Mexico","Mesa Verde":"United States","Erechtheion":"Greece","Temple of Hephaestus":"Greece","Temple of Olympian Zeus":"Greece","Mount Rushmore":"United States","Crazy Horse Memorial":"United States","Stone Mountain":"United States","Lincoln Memorial":"United States","Golden Gate Bridge":"United States","Brooklyn Bridge":"United States","Tower Bridge":"United Kingdom","Lions Gate Bridge":"Canada","Forbidden City":"China","Temple of Heaven":"China","Summer Palace":"China","Potala Palace":"China","Burj Khalifa":"United Arab Emirates","Shanghai Tower":"China","Taipei 101":"Taiwan","One World Trade Center":"United States","Moai statues of Rapa Nui":"Chile","Olmec colossal heads":"Mexico","Terracotta Army":"China","Buddhas of Bamiyan":"Afghanistan","Sagrada Família":"Spain","Cologne Cathedral":"Germany","Milan Cathedral":"Italy","Basilica of the Sacred Heart":"France","Neuschwanstein Castle":"Germany","Hohenzollern Castle":"Germany","Château de Chambord":"France","Pena Palace":"Portugal","Pyramids of Giza":"Egypt","Step Pyramid of Djoser":"Egypt","Pyramid of the Sun":"Mexico","El Castillo at Chichén Itzá":"Mexico","Big Ben":"United Kingdom"};
+const LANDMARK_COUNTRIES=GTQ_DATA.landmarkCountries;
 function formatOption(name){return LANDMARK_COUNTRIES[name]?name+' ('+LANDMARK_COUNTRIES[name]+')':name}
 const LANDMARK_LAND=[...new Set(Object.values(LANDMARK_COUNTRIES))];
 /* Every third photo asks for the country instead of the landmark's name. */
@@ -23,8 +24,8 @@ function extraFormat(q,i,ctx){
 let CATALOG=[],previous=[];
 
 GuessGame.run({
- id:'landmarks',label:'Landmarks',mode:'round',eyebrow:"World tour · Photo quiz",titleHtml:"Guess the <em>landmark.</em>",intro:"Famous places, one photo at a time. Pick the landmark, then read a quick fact about it.",
- note:'Each round draws 10 questions from the verified photo bank. Photos are credited to their creators.',
+ id:'landmarks',label:'Landmarks',eyebrow:"World tour · Photo quiz",titleHtml:"Guess the <em>landmark.</em>",intro:"Famous places, one photo at a time. Pick the landmark, then read a quick fact about it.",
+ note:'Name as many as you can in 60 seconds, drawn from the verified photo bank. Photos are credited to their creators.',
  previewHtml:'<div class="preview-row"><span>🏛️</span><span>🗿</span><span>🛕</span></div>',
  prompt:"Which landmark is shown?",links:[{"text":"Cuisine","href":"../guess-the-cuisine/"},{"text":"Countries","href":"../guess-the-countries/"},{"text":"Capital Cities","href":"../guess-the-capitals/"}],
  formatOption,
@@ -35,10 +36,10 @@ GuessGame.run({
   if(!CATALOG.length)throw new Error('No approved questions');
  },
  makeRound(ctx){
-  // Prefer questions that were not in the previous round when the bank is big enough.
+  // The whole verified bank in random order; photos that opened the last game go to the back so they repeat least.
   const fresh=ctx.util.shuffle(CATALOG.filter(q=>!previous.includes(q.id))),seen=ctx.util.shuffle(CATALOG.filter(q=>previous.includes(q.id)));
-  const round=fresh.concat(seen).slice(0,10);previous=round.map(q=>q.id);
-  return ctx.util.shuffle(round).map((q,i)=>Object.assign({
+  const round=fresh.concat(seen);previous=round.slice(0,12).map(q=>q.id);
+  return round.map((q,i)=>Object.assign({
    answer:q.answer,options:ctx.util.shuffle(q.options),prompt:q.prompt,explanation:q.explanation,clueClass:'photo',level:q.difficulty,
    render(h){const img=document.createElement('img');img.id='photo';img.className='clue-photo';img.alt="Photograph of a landmark to identify";img.onerror=()=>{const f=document.createElement('p');f.className='micro';f.innerHTML='This photo could not be loaded. You can still answer, or <a target="_blank" rel="noopener noreferrer">open the image source</a>.';f.querySelector('a').href=q.image.sourcePage;img.replaceWith(f)};img.src='../'+q.image.url.replace(/^(\.\.\/)+/,'');h.appendChild(img)},
    credit(c){const a=document.createElement('a');a.href=q.image.sourcePage;a.target='_blank';a.rel='noopener noreferrer';a.textContent='Photo: '+q.image.creator+' · '+q.image.license;c.appendChild(a)}
