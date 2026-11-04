@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f8f7f2">
+<meta name="description" content="Match countries to the money they use. Sixty seconds, four choices.">
+<title>Guess the Currencies — Guess the ____</title>
+<link rel="stylesheet" href="../shared/engine.css">
+</head>
+<body data-game="currencies">
+<script src="../shared/engine.js"></script>
+<script src="../data/currencies.js"></script>
+<script src="../shared/world.js"></script>
+<script>
+const WORLD=new Map(window.GTQ_WORLD.map(c=>[c.name,c]));
+const DATA=GTQ_DATA.currencies.map(([country,currency])=>({country,currency,code:WORLD.get(country).code,region:WORLD.get(country).region}));
+const pool=GuessGame.util.deck(DATA,x=>x.country);
+GuessGame.run({
+ id:'currencies',label:'Currencies',eyebrow:'Money around the world',titleHtml:'Know your<br><em>currencies?</em>',
+ intro:'You get a country. You name the money people pay with there. Dollars, pesos, dinars — they are not all the same!',
+ note:DATA.length+' countries. After five warm-up questions, the wrong answers are currencies from the same continent.',
+ previewHtml:'<div class="preview-row"><span class="preview-chip">¥ YEN</span><span class="preview-chip">₹ RUPEE</span><span class="preview-chip">€ EURO</span></div>',
+ prompt:'Which currency is used in this country?',
+ links:[{"text":"Capital Cities","href":"../guess-the-capitals/"},{"text":"Flags","href":"../guess-the-flag/"},{"text":"Languages","href":"../guess-the-languages/"}],
+ onStart(){pool.reset()},
+formats:['Name the currency','Name the country'],
+ next(ctx){
+  const item=pool.draw(),level=ctx.hard?'Tricky · same continent':'Warm-up';
+  // The euro is shared by many countries, so it only appears as an answer, never as a "which country" clue.
+  if(ctx.format(['currency','country'])==='country'&&item.currency!=='Euro')return {kind:'Reverse',answer:item.country,options:ctx.util.choices(item,DATA.filter(x=>x.currency!=='Euro'),{answer:x=>x.country,group:x=>x.region,hard:ctx.hard}),prompt:'Which country uses this currency?',level,explanation:item.country+' uses the '+item.currency+'.',
+   render(h){ctx.util.bigClue(h,item.currency,'Currency')}};
+  return {answer:item.currency,options:ctx.util.choices(item,DATA,{answer:x=>x.currency,group:x=>x.region,hard:ctx.hard}),level,explanation:item.country+' uses the '+item.currency+'.',
+   render(h){const img=document.createElement('img');img.className='clue-backdrop';img.alt='';img.src='../assets/flags/'+item.code+'.webp';img.onerror=()=>img.remove();const shade=document.createElement('div');shade.className='clue-shade';const name=document.createElement('div');name.className='clue-label';name.textContent=item.country;h.append(img,shade,name)}};
+ }
+});
+</script>
+</body>
+</html>

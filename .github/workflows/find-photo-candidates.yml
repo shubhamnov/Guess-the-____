@@ -1,0 +1,38 @@
+name: Find photo candidates
+
+# Searches Wikimedia Commons for better photos for the questions listed in
+# catalogs/photo-requests.json and pushes previews + licence details to the
+# photo-review branch. Catalogs are not changed; a person picks the photos.
+on:
+  push:
+    branches: [main]
+    paths:
+      - "catalogs/photo-requests.json"
+      - "scripts/find_photo_candidates.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  find:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install image tools
+        run: python -m pip install --disable-pip-version-check Pillow requests
+      - name: Search Commons and save previews
+        run: python scripts/find_photo_candidates.py
+      - name: Push candidates to the photo-review branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B photo-review
+          git add -f review
+          git commit -m "Photo candidates for $(date -u +%Y-%m-%d)"
+          git push --force origin photo-review

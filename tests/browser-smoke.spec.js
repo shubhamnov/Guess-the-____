@@ -1,5 +1,7 @@
 const { test, expect } = require('@playwright/test');
 
+const DAILY_2026_01_15_FIRST_OPTIONS = ['Mauritania', 'United Arab Emirates', 'Slovenia', 'Slovakia'];
+
 const games = [
   { name: 'Colors', path: 'guess-the-color/', kind: 'timed' },
   { name: 'Flags', path: 'guess-the-flag/', kind: 'timed' },
@@ -9,7 +11,10 @@ const games = [
   { name: 'Animals', path: 'guess-the-animals/', kind: 'timed' },
   { name: 'Capital Cities', path: 'guess-the-capitals/', kind: 'timed' },
   { name: 'Scripts', path: 'guess-the-scripts/', kind: 'timed' },
-  { name: 'Brand Logos', path: 'guess-the-brand-logos/', kind: 'logo' }
+  { name: 'Brand Logos', path: 'guess-the-brand-logos/', kind: 'logo' },
+  { name: 'Currencies', path: 'guess-the-currencies/', kind: 'timed' },
+  { name: 'Elements', path: 'guess-the-elements/', kind: 'timed' },
+  { name: 'Languages', path: 'guess-the-languages/', kind: 'timed' }
 ];
 
 test.beforeEach(async ({ page }) => {
@@ -57,14 +62,14 @@ for (const game of games) {
     await page.goto(game.path, { waitUntil: 'domcontentloaded' });
     await expect.poll(() => page.locator('#game').evaluate(el => el.classList.contains('active'))).toBe(true);
     const firstLogo = game.kind === 'logo' ? await page.locator('#clue img').getAttribute('src') : null;
-    const firstNumber = game.kind === 'photo' ? await page.locator('#number').innerText() : null;
+    const firstLabel = await page.locator('#roundLabel').innerText();
     const firstOptions = await page.locator('#answers .answer').allTextContents();
     const before = await page.evaluate(() => window.__quizOscillatorStarts || 0);
     await page.locator('#answers .answer').first().click();
     await expect(page.locator('#feedback')).not.toBeEmpty();
     await expect.poll(() => page.evaluate(() => window.__quizOscillatorStarts || 0)).toBeGreaterThan(before);
     if (game.kind === 'photo') {
-      await expect.poll(() => page.locator('#number').innerText()).not.toBe(firstNumber);
+      await expect.poll(() => page.locator('#roundLabel').innerText(), { timeout: 5000 }).not.toBe(firstLabel);
     } else if (game.kind === 'logo') {
       await expect.poll(() => page.locator('#clue img').getAttribute('src')).not.toBe(firstLogo);
     } else {
@@ -126,4 +131,59 @@ test('homepage contains the Daily Challenge and individual games do not offer it
   await logoLink.click();
   await expect(page.locator('#game')).toHaveClass(/active/);
   await expect(page.getByText(/adaptive random logos|play the daily mix|daily challenge/i)).toHaveCount(0);
+});
+
+for (const game of games) {
+  test(`${game.name} uses the shared scoring rules`, async ({ page }) => {
+    await page.goto(game.path, { waitUntil: 'domcontentloaded' });
+    await expect.poll(() => page.locator('#game').evaluate(el => el.classList.contains('active'))).toBe(true);
+    const rules = await page.evaluate(() => ({
+      right: window.GuessGame.pointsFor(true),
+      wrong: window.GuessGame.pointsFor(false),
+      seconds: window.GuessGame.scoring.seconds
+    }));
+    expect(rules).toEqual({ right: 10, wrong: -5, seconds: 60 });
+    await expect(page.locator('#time')).toHaveText(/^(60|59|58)$/);
+    await page.keyboard.press('1');
+    await expect(page.locator('#feedback')).not.toBeEmpty();
+    const score = Number(await page.locator('#score').innerText());
+    expect([10, -5]).toContain(score);
+  });
+}
+
+test('Daily Mix plays all 14 questions within 60 seconds and shows a result', async ({ page }) => {
+  await page.goto('daily-challenge/?date=2026-01-15', { waitUntil: 'domcontentloaded' });
+  await expect(page.locator('#intro')).toBeVisible();
+  await page.locator('#startBtn').click();
+  for (let i = 1; i <= 14; i++) {
+    await expect(page.locator('#roundLabel')).toContainText(String(i).padStart(2, '0'));
+    await page.keyboard.press('1');
+    if (i < 14) await expect(page.locator('#roundLabel')).toContainText(String(i + 1).padStart(2, '0'), { timeout: 5000 });
+  }
+  await expect(page.locator('#result')).toHaveClass(/active/);
+  await expect(page.locator('#resultEyebrow')).toContainText('ALL DONE');
+  await expect(page.locator('#correctCount')).toHaveText(/\/ 14$/);
+});
+
+test('Daily Mix questions for a date never change', async ({ page }) => {
+  await page.goto('daily-challenge/?date=2026-01-15', { waitUntil: 'domcontentloaded' });
+  await page.locator('#startBtn').click();
+  const first = await page.locator('#answers .answer').evaluateAll(bs => bs.map(b => b.dataset.value));
+  // Recorded from the Daily Mix v1 builder before the shared-engine change.
+  expect(first).toEqual(DAILY_2026_01_15_FIRST_OPTIONS);
+});
+
+test('timed games mix several question types', async ({ page }) => {
+  test.setTimeout(90000);
+  await page.goto('guess-the-elements/', { waitUntil: 'domcontentloaded' });
+  await expect(page.locator('#game')).toHaveClass(/active/);
+  const kinds = new Set();
+  for (let i = 0; i < 16; i++) {
+    const label = await page.locator('#roundLabel').innerText();
+    kinds.add(label.split(' · ')[1] || 'MAIN');
+    await page.keyboard.press('1');
+    await expect.poll(() => page.locator('#roundLabel').innerText(), { timeout: 5000 }).not.toBe(label);
+  }
+  // The first three questions use the main format; after that the formats mix.
+  expect(kinds.size).toBeGreaterThan(1);
 });

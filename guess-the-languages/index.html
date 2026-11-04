@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f8f7f2">
+<meta name="description" content="Read “thank you” and name the language. Sixty seconds, four choices.">
+<title>Guess the Languages — Guess the ____</title>
+<link rel="stylesheet" href="../shared/engine.css">
+</head>
+<body data-game="languages">
+<script src="../shared/engine.js"></script>
+<script src="../data/languages.js"></script>
+<script>
+const DATA=GTQ_DATA.languages.map(([name,thanks,group])=>({name,thanks,group}));
+const BY_NAME=new Map(DATA.map(x=>[x.name,x]));
+const pool=GuessGame.util.deck(DATA,x=>x.name);
+GuessGame.run({
+ id:'languages',label:'Languages',eyebrow:'Say thank you around the world',titleHtml:'Know your<br><em>languages?</em>',
+ intro:'Each question shows how to say “thank you” in a different language. Can you tell which one it is?',
+ note:DATA.length+' languages. After five warm-up questions, the wrong answers come from the same part of the world.',
+ previewHtml:'<div class="preview-row"><span class="preview-chip">Merci</span><span class="preview-chip">ありがとう</span><span class="preview-chip">Asante</span></div>',
+ prompt:'Which language says “thank you” like this?',
+ links:[{"text":"Scripts","href":"../guess-the-scripts/"},{"text":"Currencies","href":"../guess-the-currencies/"},{"text":"Capital Cities","href":"../guess-the-capitals/"}],
+ onStart(){pool.reset()},
+formats:['Name the language','Find the phrase'],
+ next(ctx){
+  const item=pool.draw(),level=ctx.hard?'Tricky · same region':'Warm-up';
+  const options=ctx.util.choices(item,DATA,{answer:x=>x.name,group:x=>x.group,hard:ctx.hard});
+  const explanation='“'+item.thanks+'” means thank you in '+item.name+'.';
+  if(ctx.format(['name','find'])==='find')return {kind:'Find it',answer:item.name,options,answerText:'“'+item.thanks+'”',prompt:'How do you say thank you in '+item.name+'?',level,explanation,
+   render(h){ctx.util.bigClue(h,item.name,'Say “thank you”')},
+   renderOption(v,b){const t=document.createElement('span');t.className='opt-text';t.dir='auto';t.textContent=BY_NAME.get(v).thanks;b.appendChild(t)}};
+  return {answer:item.name,options,level,explanation,
+   render(h){const p=document.createElement('div');p.className='clue-phrase';p.dir='auto';p.textContent=item.thanks;const sub=document.createElement('div');sub.className='clue-sub';sub.textContent='“Thank you”';h.append(p,sub)}};
+ }
+});
+</script>
+</body>
+</html>

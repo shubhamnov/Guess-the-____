@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f8f7f2">
+<meta name="description" content="See a chemical symbol, name the element. Sixty seconds, four choices.">
+<title>Guess the Elements — Guess the ____</title>
+<link rel="stylesheet" href="../shared/engine.css">
+</head>
+<body data-game="elements">
+<script src="../shared/engine.js"></script>
+<script src="../data/elements.js"></script>
+<script>
+const DATA=GTQ_DATA.elements.map(([number,symbol,name,note])=>({number,symbol,name,note}));
+function tile(h,number,symbol){const t=document.createElement('div');t.className='clue-element';t.setAttribute('role','img');t.setAttribute('aria-label',symbol==='?'?'Atomic number '+number:'Chemical symbol '+symbol);const n=document.createElement('small');n.textContent=number;const b=document.createElement('b');b.textContent=symbol;t.append(n,b);h.appendChild(t)}
+const pool=GuessGame.util.deck(DATA,x=>x.symbol);
+GuessGame.run({
+ id:'elements',label:'Elements',eyebrow:'A periodic table pop quiz',titleHtml:'Know your<br><em>elements?</em>',
+ intro:'A chemical symbol appears. Name the element. Fe, Au and Pb are waiting to trip you up.',
+ note:DATA.length+' elements. After five warm-up questions, the wrong answers share a symbol letter, so read closely.',
+ previewHtml:'<div class="preview-row"><span class="preview-chip">Fe</span><span class="preview-chip">Au</span><span class="preview-chip">Na</span></div>',
+ prompt:'Which element has this symbol?',
+ links:[{"text":"Colors","href":"../guess-the-color/"},{"text":"Animals","href":"../guess-the-animals/"},{"text":"Scripts","href":"../guess-the-scripts/"}],
+ onStart(){pool.reset()},
+formats:['Symbol to element','Element to symbol','Atomic number'],
+ next(ctx){
+  const item=pool.draw(),level=ctx.hard?'Tricky · lookalike symbols':'Warm-up';
+  const explanation=item.symbol+' is '+item.name+', element '+item.number+'.'+(item.note?' '+item.note:'');
+  const f=ctx.format(['symbol','name','number']);
+  if(f==='name')return {kind:'Reverse',answer:item.symbol,options:ctx.util.choices(item,DATA,{answer:x=>x.symbol,group:x=>x.symbol[0],hard:ctx.hard}),prompt:'What is the chemical symbol for '+item.name.toLowerCase()+'?',level,explanation,
+   render(h){ctx.util.bigClue(h,item.name,'Element '+item.number)}};
+  if(f==='number')return {kind:'Number',answer:item.name,options:ctx.util.choices(item,DATA,{answer:x=>x.name,group:x=>Math.floor(x.number/10),hard:true}),prompt:'Which element has atomic number '+item.number+'?',level:'Neighbours on the table',explanation,
+   render(h){tile(h,item.number,'?')}};
+  return {answer:item.name,options:ctx.util.choices(item,DATA,{answer:x=>x.name,group:x=>x.symbol[0],hard:ctx.hard}),level,explanation,render(h){tile(h,item.number,item.symbol)}};
+ }
+});
+</script>
+</body>
+</html>
