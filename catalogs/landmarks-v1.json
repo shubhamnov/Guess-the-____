@@ -114,12 +114,13 @@
       "prompt": "Which landmark is shown?",
       "image": {
         "url": "../assets/landmarks/landmark_005.webp",
-        "sourcePage": "https://commons.wikimedia.org/wiki/File:Great_wall_of_china.jpg",
-        "creator": "Akhtargorshani",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Badaling_China_Great-Wall-of-China-01.jpg",
+        "creator": "CEphoto, Uwe Aranas",
         "license": "CC BY-SA 3.0",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Great_wall_of_china.jpg?width=1000",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Badaling_China_Great-Wall-of-China-01.jpg?width=1200",
         "path": "assets/landmarks/landmark_005.webp",
-        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Great_wall_of_china.jpg?width=1000"
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Great_wall_of_china.jpg?width=1000",
+        "selection": "Replaced from Wikimedia Commons Featured pictures after review of framing (2026-11-04)."
       },
       "options": [
         "Great Wall of China",
@@ -138,12 +139,13 @@
       "prompt": "Which landmark is shown?",
       "image": {
         "url": "../assets/landmarks/landmark_006.webp",
-        "sourcePage": "https://commons.wikimedia.org/wiki/File:Statue_of_Liberty,_New_York.jpg",
-        "creator": "Michael LoCascio",
-        "license": "CC BY-SA 3.0 (file page also records a public-domain dedication)",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Statue_of_Liberty%2C_New_York.jpg?width=1000",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Statue_of_Liberty_frontal_2.jpg",
+        "creator": "Daniel Schwen",
+        "license": "Public domain",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Statue_of_Liberty_frontal_2.jpg?width=1200",
         "path": "assets/landmarks/landmark_006.webp",
-        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Statue_of_Liberty%2C_New_York.jpg?width=1000"
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Statue_of_Liberty%2C_New_York.jpg?width=1000",
+        "selection": "Replaced from Wikimedia Commons Quality images after review of framing (2026-11-04)."
       },
       "options": [
         "Statue of Liberty",
@@ -162,12 +164,13 @@
       "prompt": "Which landmark is shown?",
       "image": {
         "url": "../assets/landmarks/landmark_007.webp",
-        "sourcePage": "https://commons.wikimedia.org/wiki/File:MC_Sydney_Opera_House.jpg",
-        "creator": "Christian Mehlführer",
-        "license": "CC BY 2.5",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/MC_Sydney_Opera_House.jpg?width=1000",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Sydneyoperahouse_at_night.jpg",
+        "creator": "Thomas Adams",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Sydneyoperahouse_at_night.jpg?width=1200",
         "path": "assets/landmarks/landmark_007.webp",
-        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/MC_Sydney_Opera_House.jpg?width=1000"
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/MC_Sydney_Opera_House.jpg?width=1000",
+        "selection": "Replaced from Wikimedia Commons Featured pictures after review of framing (2026-11-04)."
       },
       "options": [
         "Sydney Opera House",
@@ -450,12 +453,13 @@
       "prompt": "Which landmark is shown?",
       "image": {
         "url": "../assets/landmarks/landmark_019.webp",
-        "sourcePage": "https://commons.wikimedia.org/wiki/File:Castle_neuschwanstein.jpg",
-        "creator": "Asifkhan sahil",
-        "license": "CC BY-SA 4.0",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Castle_neuschwanstein.jpg?width=1000",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Neuschwanstein_Castle_2024-02.jpg",
+        "creator": "Wilfredor",
+        "license": "CC0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Neuschwanstein_Castle_2024-02.jpg?width=1200",
         "path": "assets/landmarks/landmark_019.webp",
-        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Castle_neuschwanstein.jpg?width=1000"
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Castle_neuschwanstein.jpg?width=1000",
+        "selection": "Replaced from Wikimedia Commons Featured pictures after review of framing (2026-11-04)."
       },
       "options": [
         "Neuschwanstein Castle",
@@ -474,12 +478,13 @@
       "prompt": "Which landmark is shown?",
       "image": {
         "url": "../assets/landmarks/landmark_020.webp",
-        "sourcePage": "https://commons.wikimedia.org/wiki/File:Pyramids_of_Giza.jpg",
-        "creator": "Ireneusz Jerzy Borysiewicz",
-        "license": "CC BY-SA 4.0",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Pyramids_of_Giza.jpg?width=1000",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:All_Gizah_Pyramids.jpg",
+        "creator": "Ricardo Liberato",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/All_Gizah_Pyramids.jpg?width=1200",
         "path": "assets/landmarks/landmark_020.webp",
-        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Pyramids_of_Giza.jpg?width=1000"
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Pyramids_of_Giza.jpg?width=1000",
+        "selection": "Replaced from Wikimedia Commons Featured pictures after review of framing (2026-11-04)."
       },
       "options": [
         "Pyramids of Giza",

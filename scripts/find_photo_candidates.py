@@ -2,7 +2,8 @@
 """Find better Wikimedia Commons photos for catalog questions.
 
 Reads catalogs/photo-requests.json, searches Commons' reviewed collections
-(Featured pictures first, then Quality images) for each request, and saves
+(Featured pictures first, then Quality images; all of Commons when a request
+sets "anywhere") for each request, and saves
 small previews plus real author/licence metadata to review/ so a person can
 pick a replacement. Nothing in the catalogs is changed.
 
@@ -37,7 +38,7 @@ def plain(value):
 def search(session, query, collection):
     params = {
         "action": "query", "format": "json", "generator": "search", "gsrnamespace": 6,
-        "gsrlimit": 20, "gsrsearch": f'{query} incategory:"{collection}"',
+        "gsrlimit": 20, "gsrsearch": f'{query} incategory:"{collection}"' if collection else query,
         "prop": "imageinfo", "iiprop": "url|size|extmetadata|mime", "iiurlwidth": 640,
         "iiextmetadatafilter": "Artist|LicenseShortName|LicenseUrl|ImageDescription",
     }
@@ -55,7 +56,8 @@ def main():
     results = {}
     for req in requests_list:
         found, seen = [], set()
-        for collection in COLLECTIONS:
+        # "anywhere": true also searches all of Commons when the reviewed collections have nothing suitable.
+        for collection in COLLECTIONS + ([None] if req.get("anywhere") else []):
             for page in search(session, req["query"], collection):
                 info = (page.get("imageinfo") or [{}])[0]
                 meta = info.get("extmetadata") or {}
@@ -83,7 +85,7 @@ def main():
                 file_name = title.split(":", 1)[1]
                 found.append({
                     "candidate": index,
-                    "collection": collection,
+                    "collection": collection or "All of Commons (not reviewed)",
                     "file": file_name,
                     "sourcePage": info.get("descriptionurl"),
                     "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/" + requests.utils.quote(file_name.replace(" ", "_")) + "?width=1200",
