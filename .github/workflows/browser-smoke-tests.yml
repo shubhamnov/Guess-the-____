@@ -8,6 +8,11 @@ on:
     workflows: ["pages build and deployment"]
     types: [completed]
   workflow_dispatch:
+    inputs:
+      published:
+        description: Test the published site instead of the local copy
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -30,10 +35,10 @@ jobs:
       - name: Install Chromium
         run: npx playwright install --with-deps chromium
       - name: Test the local copy
-        if: github.event_name != 'workflow_run'
+        if: github.event_name != 'workflow_run' && !inputs.published
         run: npm run test:browser
       - name: Test the published site
-        if: github.event_name == 'workflow_run'
+        if: github.event_name == 'workflow_run' || inputs.published
         env:
           BASE_URL: https://shubhamnov.github.io/Guess-the-____/
         run: npm run test:browser
