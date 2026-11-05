@@ -34,6 +34,11 @@ Every game page loads `engine.css` and `engine.js`, then calls `GuessGame.run(co
 | `legacyBest` | Old storage keys to convert into the shared best score. |
 | `links` | Extra links on the intro and results screens. |
 | `autoStart` | Defaults to `true`; the Daily Mix sets it to `false` to show its intro. |
+| `onFinish(result)` | Optional: called with `{score, correct, answered, best, seconds, allDone}` when a game ends. |
+| `replay` | Set to `false` to hide "Play again" (the live race does this). |
+| `pauseWhenHidden` | Set to `false` to keep the clock running when the tab is hidden (the live race, so both players get the same 60 seconds). |
+
+`GuessGame.run` returns `{toast, start}`; `start()` begins a game from code (the race starts both phones this way). `ctx` also exposes `score`, `correct` and `answered`.
 
 A question is `{answer, options, render(clueElement), prompt?, kind?, level?, explanation?, answerText?, renderOption?(value, button), credit?(el), clueClass?, category?}`. `kind` labels the question type, and `renderOption` turns the answers into pictures (flags, swatches, logos, outlines). `ctx.util` provides `shuffle`, `pick`, `deck` (draw without repeats), `choices` (four unique options, same-group first when `hard` is set) and `bigClue` (a large text clue).
 
@@ -45,3 +50,5 @@ A question is `{answer, options, render(clueElement), prompt?, kind?, level?, ex
 - `data/*.js` — each game's question list, one row per line, so you can add or fix questions without touching code.
 - `catalogs/*.json` — the photo catalogs for Landmarks and Cuisine (see `catalogs/README.md`).
 - `brand-logos.js`, `daily-challenge-data-v1.js`, `brand-logos-daily-v1.js` — logo data and the frozen Daily Mix snapshot.
+- `shared/daily-mix-v1.js` — the frozen Daily Mix question builder, used by the Daily Mix page and the race.
+- `race/` — test version of the live two-phone race (see `race/README.md`). `shared/vendor/peerjs.min.js` is the PeerJS library it uses to connect the phones.

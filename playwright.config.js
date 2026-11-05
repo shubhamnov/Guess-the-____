@@ -16,11 +16,17 @@ module.exports = defineConfig({
     screenshot: 'only-on-failure',
     trace: 'retain-on-failure'
   },
-  webServer: publishedURL ? undefined : {
+  // Locally: the static site, plus a PeerJS server so the live-race test can connect two browsers offline.
+  webServer: publishedURL ? undefined : [{
     command: 'python3 -m http.server 4173',
     url: 'http://localhost:4173/',
     reuseExistingServer: !process.env.CI,
     stderr: 'ignore'
-  },
+  }, {
+    command: 'npx peerjs --host 127.0.0.1 --port 9000',
+    port: 9000,
+    reuseExistingServer: !process.env.CI,
+    stdout: 'ignore'
+  }],
   outputDir: 'test-results'
 });

@@ -176,7 +176,7 @@ function run(cfg){
  function toggleSound(){sound.on=!sound.on;safeSet(SOUND_KEY,sound.on?'on':'off');renderSound();if(sound.on&&S.running)sound.startMusic();else if(!sound.on)sound.stopMusic()}
  renderSound();$('soundToggle').addEventListener('click',toggleSound);
 
- const ctx={util:{shuffle,pick,deck,choices,bigClue,framePhoto},get n(){return S.n},get streak(){return S.streak},get elapsed(){return elapsed()},get hard(){return S.n>4},
+ const ctx={util:{shuffle,pick,deck,choices,bigClue,framePhoto},get n(){return S.n},get score(){return S.score},get correct(){return S.correct},get answered(){return S.answered},get streak(){return S.streak},get elapsed(){return elapsed()},get hard(){return S.n>4},
   /* Picks the question format: the first three questions use the game's main format, then formats mix (the main one twice as often). */
   format(formats){if(S.n<3||formats.length<2)return formats[0];return pick([formats[0]].concat(formats))}};
 
@@ -272,8 +272,8 @@ function run(cfg){
   $('resultTitle').textContent=title;
   $('resultText').textContent=S.answered?'You got '+S.correct+' of '+S.answered+' right'+(S.bestStreak>=3?' with a best streak of '+S.bestStreak:'')+'. '+(cfg.resultNote?cfg.resultNote():'Fancy another round?'):'Give it a proper go next round.';
   setScreen('result');
-  if(cfg.onFinish)cfg.onFinish({score:S.score,correct:S.correct,answered:S.answered,best});
-  setTimeout(()=>$('againBtn').focus({preventScroll:true}),50);
+  if(cfg.onFinish)cfg.onFinish({score:S.score,correct:S.correct,answered:S.answered,best,seconds:Math.min(seconds,Math.round(elapsed()*10)/10),allDone:fromList&&S.answered>=S.round.length});
+  if(cfg.replay!==false)setTimeout(()=>$('againBtn').focus({preventScroll:true}),50);
  }
  async function share(){
   const btn=$('shareBtn'),old=btn.textContent;btn.disabled=true;btn.textContent='Creating image…';
@@ -303,19 +303,20 @@ function run(cfg){
   if(e.key==='m'||e.key==='M'){toggleSound();return}
   if(S.running&&!S.locked&&/^[1-9]$/.test(e.key)){const b=$('answers').children[Number(e.key)-1];if(b){e.preventDefault();b.click()}return}
   if(e.key==='Enter'&&!/BUTTON|A/.test(tag)){
-   if($('result').classList.contains('active')){e.preventDefault();start()}
+   if(cfg.replay!==false&&$('result').classList.contains('active')){e.preventDefault();start()}
   }
  });
  /* Timed rounds pause while the tab is hidden, so switching apps never costs time. */
  document.addEventListener('visibilitychange',()=>{
-  if(!S.running)return;
+  if(!S.running||cfg.pauseWhenHidden===false)return;
   if(document.hidden){S.pausedAt=Date.now();sound.stopMusic()}
   else if(S.pausedAt){S.startedAt+=Date.now()-S.pausedAt;S.pausedAt=0;sound.startMusic();toast('Paused while you were away — the clock is running again.')}
  });
 
+ if(cfg.replay===false)$('againBtn').style.display='none';
  if(cfg.setupIntro)cfg.setupIntro({toast,$});
  if(cfg.autoStart===false)setScreen('intro');else start();
- return {toast};
+ return {toast,start};
 }
 
 window.GuessGame={run,util:{shuffle,pick,deck,choices,bigClue,framePhoto,escapeHtml},scoring:SCORING,pointsFor,bestKey,loadBest};
