@@ -82,7 +82,7 @@ function peerOptions(){
  return {host,port:Number(port)||9000,path:'/',secure:false,debug:0,config:{iceServers:[]}};
 }
 
-const R={role:null,peer:null,conn:null,code:'',date:DM.validDate(params.get('date'))?params.get('date'):DM.todayUTC(),
+const R={role:null,peer:null,conn:null,code:'',tries:0,date:DM.validDate(params.get('date'))?params.get('date'):DM.todayUTC(),
  phase:'lobby',myName:'',rival:{name:'Friend',score:0,n:0,streak:0,ready:false,done:null,gone:false},
  me:{score:0,n:0,streak:0},mine:null,lead:0};
 let game,ui={};
@@ -94,48 +94,78 @@ function send(msg){try{if(R.conn&&R.conn.open)R.conn.send(msg)}catch(e){}}
 function inviteURL(){const u=new URL(location.href);u.search='';u.hash='';u.searchParams.set('room',R.code);if(params.get('signal'))u.searchParams.set('signal',params.get('signal'));return u.toString()}
 
 /* ---------- Connecting ---------- */
+/* Phones pause pages in the background, which drops them off the PeerJS service. So the host reconnects when it
+ * comes back on screen, and the guest keeps retrying for a while instead of giving up on the first miss. */
+const MAX_TRIES=4;
+let tryTimer=null;
+const D={service:'—',link:'—'};
+function diag(part,value){if(part)D[part]=value;if(ui.diag)ui.diag.textContent='Connection service: '+D.service+' · Direct link: '+D.link}
 function showRoom(){ui.home.hidden=true;ui.room.hidden=false;ui.codeOut.textContent=R.code;ui.name.disabled=false}
 function peerError(err){
  const type=err&&err.type;
  if(R.role==='host'&&type==='unavailable-id'&&R.phase==='lobby'){createRace();return}
- if(type==='peer-unavailable'){status('No race found with code '+R.code+'. Check the code, or ask your friend to send the link again.','bad');backToHome();return}
- if(type==='network'||type==='server-error'||type==='socket-error'||type==='socket-closed'){
+ if(type==='peer-unavailable'){
+  if(R.role==='guest'&&R.phase==='lobby'&&R.tries<MAX_TRIES){
+   status('Looking for race '+R.code+'… (try '+R.tries+' of '+MAX_TRIES+') The device that created it must keep the race page open on screen.');
+   clearTimeout(tryTimer);tryTimer=setTimeout(tryConnect,2000);return}
+  status('No race found with code '+R.code+'. Check the code, and make sure the race page is still open on your friend’s screen.','bad');backToHome();return}
+ if(type==='network'||type==='server-error'||type==='socket-error'||type==='socket-closed'||type==='disconnected'){
+  diag('service','offline');
   if(R.phase==='playing'||R.phase==='done')return; // the game keeps going over the direct link
-  status('Can’t reach the connection service. Check your internet and try again.','bad');return}
+  status('Can’t reach the connection service. Check your internet; it will retry when this page is back on screen.','bad');return}
  status('Connection problem ('+(type||'unknown')+'). Try again.','bad');
 }
-function backToHome(){ui.home.hidden=false;ui.room.hidden=true;R.role=null;if(R.peer){try{R.peer.destroy()}catch(e){}R.peer=null}}
+function backToHome(){clearTimeout(tryTimer);ui.home.hidden=false;ui.room.hidden=true;R.role=null;if(R.peer){try{R.peer.destroy()}catch(e){}R.peer=null}diag('service','—');diag('link','—')}
+function watchPeer(peer){
+ diag('service','connecting…');
+ peer.on('error',peerError);
+ peer.on('disconnected',()=>{diag('service','offline');if(!document.hidden)setTimeout(()=>reconnect(peer),1000)});
+}
+function reconnect(peer){if(peer&&peer===R.peer&&peer.disconnected&&!peer.destroyed){diag('service','reconnecting…');try{peer.reconnect()}catch(e){}}}
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)reconnect(R.peer)});
 function createRace(){
  if(R.peer){try{R.peer.destroy()}catch(e){}}
  R.role='host';R.code=newCode();showRoom();ui.invite.hidden=false;ui.go.hidden=false;ui.go.disabled=true;ui.ready.hidden=true;
  status('Setting up the race…');
- const peer=new Peer(ID_PREFIX+R.code,peerOptions());R.peer=peer;
- peer.on('open',()=>status('Send the invite link (or the code) to your friend. Waiting for them to join…'));
+ const peer=new Peer(ID_PREFIX+R.code,peerOptions());R.peer=peer;watchPeer(peer);
+ peer.on('open',()=>{diag('service','connected');if(!R.conn||!R.conn.open)status('Send the invite link (or the code) to your friend. Keep this page open on screen until they join.')});
  peer.on('connection',conn=>{
   if(R.conn&&R.conn.open){conn.on('open',()=>{conn.send({t:'full'});setTimeout(()=>conn.close(),300)});return}
   attach(conn);
  });
- peer.on('error',peerError);
 }
 function joinRace(code){
  R.code=cleanCode(code);
  if(R.code.length!==4){status('Enter the 4-letter code from your friend.','bad');return}
  if(R.peer){try{R.peer.destroy()}catch(e){}}
- R.role='guest';showRoom();ui.invite.hidden=true;ui.go.hidden=true;ui.ready.hidden=true;
+ R.role='guest';R.tries=0;showRoom();ui.invite.hidden=true;ui.go.hidden=true;ui.ready.hidden=true;
  status('Connecting to race '+R.code+'…');
- const peer=new Peer(peerOptions());R.peer=peer;
- peer.on('open',()=>{
-  const conn=peer.connect(ID_PREFIX+R.code,{reliable:true});attach(conn);
-  setTimeout(()=>{if(!conn.open&&R.phase==='lobby')status('Couldn’t connect. Some office and mobile networks block direct connections; try both phones on the same Wi-Fi.','bad')},15000);
- });
- peer.on('error',peerError);
+ const peer=new Peer(peerOptions());R.peer=peer;watchPeer(peer);
+ peer.on('open',()=>{diag('service','connected');if(!R.tries)tryConnect()});
+}
+function tryConnect(){
+ const peer=R.peer;
+ if(!peer||peer.destroyed||R.phase!=='lobby'||(R.conn&&R.conn.open))return;
+ if(peer.disconnected){reconnect(peer);clearTimeout(tryTimer);tryTimer=setTimeout(tryConnect,3000);return}
+ R.tries++;diag('link','trying ('+R.tries+')');
+ if(R.conn&&!R.conn.open){try{R.conn.close()}catch(e){}}
+ const conn=peer.connect(ID_PREFIX+R.code,{reliable:true});attach(conn);
+ clearTimeout(tryTimer);
+ tryTimer=setTimeout(()=>{
+  if(conn.open||R.phase!=='lobby')return;
+  if(R.tries<MAX_TRIES){status('Still connecting to race '+R.code+'… (try '+R.tries+' of '+MAX_TRIES+')');tryConnect()}
+  else status('Couldn’t connect. The direct link between the two devices was blocked. Try both on the same Wi-Fi, or two separate devices.','bad');
+ },8000);
 }
 function attach(conn){
- R.conn=conn;R.rival.gone=false;R.rival.ready=false;
- conn.on('open',()=>{if(R.role==='guest')send({t:'hello',name:myName()})});
+ R.conn=conn;R.rival.ready=false;
+ let opened=false;
+ conn.on('open',()=>{opened=true;R.conn=conn;R.rival.gone=false;clearTimeout(tryTimer);diag('link','connected');if(R.role==='guest')send({t:'hello',name:myName()})});
  conn.on('data',onMessage);
- conn.on('close',onRivalGone);
- conn.on('error',onRivalGone);
+ conn.on('iceStateChanged',state=>{if(!opened||state==='failed'||state==='disconnected')diag('link',state)});
+ const gone=()=>{if(opened&&conn===R.conn){diag('link','closed');onRivalGone()}};
+ conn.on('close',gone);
+ conn.on('error',gone);
 }
 function onRivalGone(){
  if(R.rival.gone)return;R.rival.gone=true;
@@ -229,7 +259,7 @@ game=GuessGame.run({
  eyebrow:'Today’s Daily Mix · two players',
  titleHtml:'Race a friend.<br><em>Live.</em>',
  intro:'You both get the same 14 Daily Mix questions and 60 seconds, and you see each other’s score as you play. Higher score wins; if it’s a tie, whoever finished first wins.',
- note:'Test version. Keep this screen open during the race: the clock doesn’t pause. Works best with both phones on the same Wi-Fi.',
+ note:'Test version. Use two devices: a phone pauses a browser that isn’t on screen, so two browsers on one phone can’t race each other. Keep the page open during the race; the clock doesn’t pause.',
  prompt:'Which one is it?',
  links:[{text:'Daily Mix',href:'../daily-challenge/'}],
  makeRound(){return DM.questions(R.date)},
@@ -260,8 +290,8 @@ game=GuessGame.run({
     '<button class="primary" id="goBtn" type="button" disabled>Start the race <span class="arrow">→</span></button>'+
     '<button class="primary" id="readyBtn" type="button" hidden>I’m ready <span class="arrow">✓</span></button>'+
    '</div>'+
-   '<div class="race-status" id="raceStatus" role="status" aria-live="polite"></div></div>');
-  ui={name:$('nameInput'),home:$('lobbyHome'),room:$('lobbyRoom'),codeOut:$('roomCode'),invite:$('inviteBtn'),go:$('goBtn'),ready:$('readyBtn'),status:$('raceStatus')};
+   '<div class="race-status" id="raceStatus" role="status" aria-live="polite"></div><div class="micro" id="raceDiag"></div></div>');
+  ui={name:$('nameInput'),home:$('lobbyHome'),room:$('lobbyRoom'),codeOut:$('roomCode'),invite:$('inviteBtn'),go:$('goBtn'),ready:$('readyBtn'),status:$('raceStatus'),diag:$('raceDiag')};diag();
   ui.name.value=safeGet(NAME_KEY)||'';
   ui.name.addEventListener('change',()=>safeSet(NAME_KEY,myName()));
   $('createBtn').addEventListener('click',()=>{safeSet(NAME_KEY,myName());createRace()});

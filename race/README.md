@@ -14,6 +14,10 @@
 - The free public PeerJS service only introduces the two phones. After that, answers go straight from phone to phone.
 - Some strict office and mobile networks block direct connections. If a pair can't connect, try both phones on the same Wi-Fi. A production version would use a hosted service such as Firebase, which works on any network.
 - The clock doesn't pause if you leave the page during a race, so both players get the same 60 seconds.
+- **Use two devices.** A phone pauses any browser that isn't on screen, so two browsers on one phone can't race each other. Two windows side by side on a computer work, as do a phone and a computer.
+- The page reconnects to the PeerJS service when it comes back on screen, and a joining player retries a few times before giving up. A small status line under the lobby shows the state of the service and of the direct link, which helps when a pair can't connect.
 
 ## Testing
 `npm run test:browser` starts a local PeerJS server and races two browsers against each other (`tests/race.spec.js`). The page connects to that local server through `?signal=127.0.0.1:9000`; `?date=YYYY-MM-DD` picks a fixed Daily Mix.
+
+After each deploy, the post-deploy test run races two browsers on the published site through the real public PeerJS service.

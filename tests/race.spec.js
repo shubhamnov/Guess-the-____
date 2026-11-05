@@ -1,13 +1,12 @@
 const { test, expect } = require('@playwright/test');
 
-// Two browsers race each other through a local PeerJS server (started by playwright.config.js).
-// Skipped against the published site: that would need the public PeerJS service.
-test.skip(!!process.env.BASE_URL, 'Needs the local PeerJS server');
-
-const SIGNAL = 'signal=127.0.0.1:9000';
+// Locally, two browsers race through a local PeerJS server (started by playwright.config.js).
+// Against the published site (BASE_URL), they race through the free public PeerJS service, as real players do.
+const PUBLISHED = !!process.env.BASE_URL;
+const SIGNAL = PUBLISHED ? 'x=1' : 'signal=127.0.0.1:9000';
 
 test('two players race live and both see the same result', async ({ browser }) => {
-  test.setTimeout(90000);
+  test.setTimeout(120000);
   const hostCtx = await browser.newContext();
   const guestCtx = await browser.newContext();
   const host = await hostCtx.newPage();
@@ -17,12 +16,12 @@ test('two players race live and both see the same result', async ({ browser }) =
   await host.goto('race/?' + SIGNAL + '&date=2026-01-15');
   await host.locator('#nameInput').fill('Sam');
   await host.locator('#createBtn').click();
-  await expect(host.locator('#raceStatus')).toContainText('Waiting for them to join');
+  await expect(host.locator('#raceStatus')).toContainText('Keep this page open', { timeout: 20000 });
   const code = await host.locator('#roomCode').innerText();
   expect(code).toMatch(/^[A-Z]{4}$/);
 
   await guest.goto('race/?' + SIGNAL + '&room=' + code);
-  await expect(guest.locator('#readyBtn')).toBeVisible();
+  await expect(guest.locator('#readyBtn')).toBeVisible({ timeout: 45000 });
   await guest.locator('#nameInput').fill('Riya');
   await guest.locator('#readyBtn').click();
   await expect(host.locator('#goBtn')).toBeEnabled();
@@ -65,7 +64,9 @@ test('two players race live and both see the same result', async ({ browser }) =
 });
 
 test('joining a race that does not exist explains the problem', async ({ page }) => {
+  test.skip(PUBLISHED, 'Checked locally only');
+  test.setTimeout(60000);
   await page.goto('race/?' + SIGNAL + '&room=ZZZZ');
-  await expect(page.locator('#raceStatus')).toContainText('No race found with code ZZZZ', { timeout: 15000 });
+  await expect(page.locator('#raceStatus')).toContainText('No race found with code ZZZZ', { timeout: 50000 });
   await expect(page.locator('#createBtn')).toBeVisible();
 });
