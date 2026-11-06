@@ -1026,7 +1026,7 @@
       "explanation": "A hamburger is a cooked patty of ground meat served in a sliced bun, usually with toppings.",
       "factSource": "https://en.wikipedia.org/wiki/Hamburger",
       "difficulty": "easy",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "cuisine_043",
@@ -1176,7 +1176,7 @@
       "explanation": "The pretzel, a bread knotted into a distinctive shape, has long been a speciality of southern Germany.",
       "factSource": "https://en.wikipedia.org/wiki/Pretzel",
       "difficulty": "easy",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "cuisine_049",
@@ -1326,7 +1326,7 @@
       "explanation": "Bouillabaisse is a fish stew from the port city of Marseille, France.",
       "factSource": "https://en.wikipedia.org/wiki/Bouillabaisse",
       "difficulty": "hard",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "cuisine_056",
@@ -1851,7 +1851,7 @@
       "explanation": "Chili con carne is a spicy stew of chilli peppers and meat, often with beans, associated with Texas.",
       "factSource": "https://en.wikipedia.org/wiki/Chili_con_carne",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "cuisine_077",
@@ -2051,7 +2051,7 @@
       "explanation": "Laksa is a spicy noodle soup, often with coconut curry broth, from Malaysia and Singapore.",
       "factSource": "https://en.wikipedia.org/wiki/Laksa",
       "difficulty": "hard",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "cuisine_085",
@@ -2126,7 +2126,7 @@
       "explanation": "Satay is skewered grilled meat served with peanut sauce, popular in Indonesia and Malaysia.",
       "factSource": "https://en.wikipedia.org/wiki/Satay",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "cuisine_088",
@@ -2301,7 +2301,7 @@
       "explanation": "Kimchi is Korean fermented cabbage, usually seasoned with chilli, garlic and ginger.",
       "factSource": "https://en.wikipedia.org/wiki/Kimchi",
       "difficulty": "easy",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "cuisine_096",
@@ -2351,7 +2351,7 @@
       "explanation": "Tempura is seafood or vegetables fried in a very light, crisp batter, a classic of Japanese cooking.",
       "factSource": "https://en.wikipedia.org/wiki/Tempura",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "cuisine_098",

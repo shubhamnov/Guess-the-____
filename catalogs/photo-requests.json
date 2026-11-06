@@ -3,31 +3,27 @@
   "requests": [
     {
       "id": "cuisine_052",
-      "query": "Crêpe",
-      "answer": "Crêpes",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Crêpe"
+      "query": "Cheese fondue",
+      "answer": "Cheese fondue",
+      "factSource": "https://en.wikipedia.org/wiki/Fondue"
     },
     {
       "id": "cuisine_094",
-      "query": "Hot pot",
-      "answer": "Hot pot",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Hot_pot"
+      "query": "Hot dog",
+      "answer": "Hot dog",
+      "factSource": "https://en.wikipedia.org/wiki/Hot_dog"
     },
     {
       "id": "landmark_063",
-      "query": "Sheikh Zayed Mosque",
-      "answer": "Sheikh Zayed Grand Mosque",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Sheikh_Zayed_Grand_Mosque"
+      "query": "Sacré-Cœur Montmartre",
+      "answer": "Sacré-Cœur",
+      "factSource": "https://en.wikipedia.org/wiki/Sacr%C3%A9-C%C5%93ur,_Paris"
     },
     {
       "id": "landmark_077",
-      "query": "Hassan II Mosque",
-      "answer": "Hassan II Mosque",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Hassan_II_Mosque"
+      "query": "Sydney Harbour Bridge",
+      "answer": "Sydney Harbour Bridge",
+      "factSource": "https://en.wikipedia.org/wiki/Sydney_Harbour_Bridge"
     }
   ]
 }

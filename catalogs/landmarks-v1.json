@@ -922,7 +922,7 @@
       "explanation": "Flat-topped Table Mountain overlooks the city of Cape Town in South Africa.",
       "factSource": "https://en.wikipedia.org/wiki/Table_Mountain",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_038",
@@ -1822,7 +1822,7 @@
       "explanation": "More than 2,000 Buddhist temples and pagodas still stand on the plain of Bagan in Myanmar.",
       "factSource": "https://en.wikipedia.org/wiki/Bagan",
       "difficulty": "hard",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_075",

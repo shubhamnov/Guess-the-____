@@ -5,33 +5,33 @@
       "id": "landmark_063",
       "prompt": "Which landmark is shown?",
       "options": [
-        "Sheikh Zayed Grand Mosque",
-        "Blue Mosque",
-        "Hassan II Mosque",
-        "Faisal Mosque"
+        "Sacré-Cœur",
+        "Notre-Dame de Paris",
+        "St. Peter's Basilica",
+        "Florence Cathedral"
       ],
-      "answer": "Sheikh Zayed Grand Mosque",
-      "explanation": "The white marble Sheikh Zayed Grand Mosque in Abu Dhabi was completed in 2007.",
-      "factSource": "https://en.wikipedia.org/wiki/Sheikh_Zayed_Grand_Mosque",
-      "difficulty": "medium",
+      "answer": "Sacré-Cœur",
+      "explanation": "The white-domed Sacré-Cœur Basilica stands on the hill of Montmartre, the highest point in Paris.",
+      "factSource": "https://en.wikipedia.org/wiki/Sacr%C3%A9-C%C5%93ur,_Paris",
+      "difficulty": "easy",
       "status": "draft",
-      "photoQuery": "Sheikh Zayed Grand Mosque"
+      "photoQuery": "Sacré-Cœur Montmartre"
     },
     {
       "id": "landmark_077",
       "prompt": "Which landmark is shown?",
       "options": [
-        "Hassan II Mosque",
-        "Sheikh Zayed Grand Mosque",
-        "Blue Mosque",
-        "Koutoubia Mosque"
+        "Sydney Harbour Bridge",
+        "Golden Gate Bridge",
+        "Tower Bridge",
+        "Brooklyn Bridge"
       ],
-      "answer": "Hassan II Mosque",
-      "explanation": "Casablanca's Hassan II Mosque stands on the Atlantic shore and has a minaret about 210 metres tall.",
-      "factSource": "https://en.wikipedia.org/wiki/Hassan_II_Mosque",
-      "difficulty": "hard",
+      "answer": "Sydney Harbour Bridge",
+      "explanation": "Sydney Harbour Bridge, opened in 1932, is a steel arch nicknamed 'the Coathanger'.",
+      "factSource": "https://en.wikipedia.org/wiki/Sydney_Harbour_Bridge",
+      "difficulty": "medium",
       "status": "draft",
-      "photoQuery": "Hassan II Mosque Casablanca"
+      "photoQuery": "Sydney Harbour Bridge"
     }
   ],
   "cuisines": [
@@ -39,33 +39,33 @@
       "id": "cuisine_052",
       "prompt": "Which dish is shown?",
       "options": [
-        "Crêpes",
-        "Pancakes",
-        "Dosa",
-        "Blini"
+        "Cheese fondue",
+        "Raclette",
+        "Queso dip",
+        "Welsh rarebit"
       ],
-      "answer": "Crêpes",
-      "explanation": "Crêpes are very thin pancakes from France, served sweet or savoury.",
-      "factSource": "https://en.wikipedia.org/wiki/Crêpe",
-      "difficulty": "easy",
+      "answer": "Cheese fondue",
+      "explanation": "Swiss cheese fondue is melted cheese and wine in a shared pot, eaten by dipping bread on long forks.",
+      "factSource": "https://en.wikipedia.org/wiki/Fondue",
+      "difficulty": "medium",
       "status": "draft",
-      "photoQuery": "crêpe"
+      "photoQuery": "Cheese fondue"
     },
     {
       "id": "cuisine_094",
       "prompt": "Which dish is shown?",
       "options": [
-        "Hot pot",
-        "Fondue",
-        "Paella",
-        "Bibimbap"
+        "Hot dog",
+        "Bratwurst",
+        "Corn dog",
+        "Chorizo"
       ],
-      "answer": "Hot pot",
-      "explanation": "At a Chinese hot pot, diners cook raw ingredients at the table in a simmering pot of broth.",
-      "factSource": "https://en.wikipedia.org/wiki/Hot_pot",
-      "difficulty": "medium",
+      "answer": "Hot dog",
+      "explanation": "A hot dog is a grilled or steamed sausage served in a sliced bun, a classic American street food.",
+      "factSource": "https://en.wikipedia.org/wiki/Hot_dog",
+      "difficulty": "easy",
       "status": "draft",
-      "photoQuery": "Chinese hot pot"
+      "photoQuery": "Hot dog"
     }
   ]
 }

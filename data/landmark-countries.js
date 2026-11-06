@@ -270,5 +270,7 @@ GTQ_DATA.landmarkCountries={
  "Willis Tower": "United States",
  "Windsor Castle": "United Kingdom",
  "Woolworth Building": "United States",
- "Yellow Crane Tower": "China"
+ "Yellow Crane Tower": "China",
+ "Sacré-Cœur": "France",
+ "Sydney Harbour Bridge": "Australia"
 };

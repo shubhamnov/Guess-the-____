@@ -27,10 +27,10 @@
       "title": "Guess the Landmark",
       "status": "in-progress",
       "targetQuestions": 100,
-      "approvedQuestions": 96,
+      "approvedQuestions": 98,
       "currentVersion": 1,
       "lastRefreshedAt": "2026-11-06",
-      "nextAction": "Find usable photos for the last 2 drafts (new search running).",
+      "nextAction": "Choose photos for the last 2 drafts (replacement subjects; search running).",
       "draftQuestions": 2,
       "refreshHistory": [
         {
@@ -40,6 +40,10 @@
         {
           "date": "2026-11-06",
           "summary": "Added 76 questions with photos chosen from Commons candidates; cached locally, visually reviewed and approved (96 total)."
+        },
+        {
+          "date": "2026-11-06",
+          "summary": "Approved 2 more questions after reviewing cached photos; replaced 2 drafts whose photos could not be found."
         }
       ]
     },
@@ -48,10 +52,10 @@
       "title": "Guess the Cuisine",
       "status": "in-progress",
       "targetQuestions": 100,
-      "approvedQuestions": 90,
+      "approvedQuestions": 98,
       "currentVersion": 1,
       "lastRefreshedAt": "2026-11-06",
-      "nextAction": "Find usable photos for the last 2 drafts (new search running).",
+      "nextAction": "Choose photos for the last 2 drafts (replacement subjects; search running).",
       "draftQuestions": 2,
       "refreshHistory": [
         {
@@ -65,6 +69,10 @@
         {
           "date": "2026-11-06",
           "summary": "Added 50 questions with photos chosen from Commons candidates; cached locally, visually reviewed and approved (90 total)."
+        },
+        {
+          "date": "2026-11-06",
+          "summary": "Approved 8 more questions after reviewing cached photos; replaced 2 drafts whose photos could not be found."
         }
       ]
     },
@@ -238,6 +246,20 @@
       "version": 1,
       "change": "Added 50 cuisine questions (90 total).",
       "validation": "Photos picked from Commons candidates (CC BY / BY-SA / CC0 / PD, at least 1000px), cached as local WebP and reviewed on a contact sheet; fact sources checked (HTTP 200). Four distinct options and one answer each."
+    },
+    {
+      "date": "2026-11-06",
+      "category": "landmarks",
+      "version": 1,
+      "change": "Added Table Mountain and Bagan temples (98 approved); replaced Sheikh Zayed Grand Mosque and Hassan II Mosque drafts, which had no usable photo, with Sacré-Cœur and Sydney Harbour Bridge.",
+      "validation": "Photos picked from Commons candidates, cached as local WebP and reviewed on a contact sheet; four distinct options and one answer each."
+    },
+    {
+      "date": "2026-11-06",
+      "category": "cuisines",
+      "version": 1,
+      "change": "Added 8 dishes (98 approved); replaced Crêpes and Hot pot drafts, which had no usable photo, with Cheese fondue and Hot dog.",
+      "validation": "Photos picked from Commons candidates, cached as local WebP and reviewed on a contact sheet; four distinct options and one answer each."
     }
   ]
 }
