@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#f8f7f2">
-<meta name="description" content="Sports quiz: cricket, football, tennis, the Olympics, chess, F1 and more. Nicknames, records, venues and champions in sixty seconds.">
+<meta name="description" content="Sports quiz: football, tennis, athletics, basketball, F1, chess, the Olympics, cricket and more. Nicknames, records, venues and champions in sixty seconds.">
 <title>Guess the Sports — Guess the ____</title>
 <link rel="stylesheet" href="../shared/engine.css">
 <style>
@@ -38,17 +38,40 @@ const CHAMPS=[]
 /* Countries that would also be right for some players: Great Britain/England and West Indies/Jamaica. */
 const CLASH={'Great Britain':['England'],'England':['Great Britain'],'West Indies':['Jamaica'],'Jamaica':['West Indies']};
 const COUNTRIES=[...new Set(PLAYERS.map(p=>p.country))];
-const decks={record:U.deck(RECORDS,x=>x.clue),venue:U.deck(VENUES,x=>x.name),
- term:U.deck(TERMS,x=>x.term),word:U.deck(WORDS,x=>x.word),champ:U.deck(CHAMPS,x=>x.sub+x.year)};
-/* Pick a sport first (bigger sports a little more often), then a player from that sport's own pile,
-   so cricket, the biggest list, doesn't crowd out the rest. */
-function sportPicker(list){
- const sports=[...new Set(list.map(p=>p.sport))],piles={},weights=sports.map(s=>Math.sqrt(list.filter(p=>p.sport===s).length));
- sports.forEach(s=>piles[s]=U.deck(list.filter(p=>p.sport===s),x=>x.name));
- const total=weights.reduce((a,b)=>a+b,0);
- return {draw(){let r=Math.random()*total,i=0;while(r>weights[i]&&i<sports.length-1){r-=weights[i];i++}return piles[sports[i]].draw()},reset(){Object.values(piles).forEach(d=>d.reset())}};
+const deckOf=(list,key)=>U.deck(list,key);
+const decks={
+ venue:mix([[deckOf(VENUES.filter(v=>v.sport==='Venue'),x=>x.name),3],[deckOf(VENUES.filter(v=>v.sport!=='Venue'),x=>x.name),1]]),
+ term:mix([[{kind:'word',d:deckOf(WORDS,x=>x.word)},4],[{kind:'term',d:deckOf(TERMS,x=>x.term)},1]].map(([o,w])=>[{reset:()=>o.d.reset(),draw:()=>({kind:o.kind,item:o.d.draw()})},w])),
+ champ:mix([['FIFA World Cup',3],['Summer Olympics',3],['Men’s Cricket World Cup',1],['Men’s T20 World Cup',1],['IPL champions',1]]
+  .map(([sub,w])=>[deckOf(CHAMPS.filter(c=>c.sub===sub),x=>x.sub+x.year),w]))};
+/* Every sport gets a fair turn. Pick a sport first, then an unused item from that sport's pile.
+   Bigger sports come up a little more often, but cricket (by far the biggest list) is weighted no
+   higher than the next-biggest sport, so the game stays an all-sports quiz. Empty piles sit out
+   until every pile is used up. */
+function sportPicker(list,sportOf){
+ const sports=[...new Set(list.map(sportOf))],size={};
+ sports.forEach(s=>size[s]=list.filter(x=>sportOf(x)===s).length);
+ const cap=sports.map(s=>size[s]).sort((a,b)=>b-a)[1]||1,weight={};
+ sports.forEach(s=>weight[s]=Math.sqrt(Math.min(size[s],cap)));
+ let piles={};
+ const reset=()=>{piles={};sports.forEach(s=>piles[s]=U.shuffle(list.filter(x=>sportOf(x)===s)))};
+ reset();
+ return {reset,draw(){
+  let open=sports.filter(s=>piles[s].length);
+  if(!open.length){reset();open=sports}
+  const total=open.reduce((a,s)=>a+weight[s],0);let r=Math.random()*total,i=0;
+  while(i<open.length-1&&r>weight[open[i]]){r-=weight[open[i]];i++}
+  return piles[open[i]].pop();
+ }};
 }
-decks.player=sportPicker(PLAYERS);decks.nick=sportPicker(NICKS);
+/* Mix several decks with fixed shares, e.g. 80% sports words and 20% cricket terms. */
+function mix(parts){
+ const total=parts.reduce((a,p)=>a+p[1],0);
+ return {reset(){parts.forEach(p=>p[0].reset())},draw(){let r=Math.random()*total,i=0;while(i<parts.length-1&&r>parts[i][1]){r-=parts[i][1];i++}return parts[i][0].draw()}};
+}
+const bySport=p=>p.sport;
+decks.player=sportPicker(PLAYERS,bySport);decks.nick=sportPicker(NICKS,bySport);
+decks.record=sportPicker(RECORDS,r=>r.player.sport);
 function quote(h,text,sub){
  const q=document.createElement('div');q.className='clue-quote';q.textContent=text;
  q.style.fontSize=text.length>60?'clamp(20px,5.4vw,28px)':text.length>32?'clamp(24px,6.6vw,36px)':'clamp(30px,8.5vw,50px)';
@@ -57,9 +80,9 @@ function quote(h,text,sub){
 function pickOthers(answer,list){return U.shuffle([answer].concat(U.shuffle(list.filter(x=>x!==answer)).slice(0,3)))}
 GuessGame.run({
  id:'sports',label:'Sports',pill:'Game on',eyebrow:'Game on!',titleHtml:'Know your<br><em>sports?</em>',
- intro:'Name the star from a nickname or a record. Cricket, football, tennis, the Olympics, chess, F1 and more: players, venues, terms and champions.',
+ intro:'Football, tennis, athletics, basketball, F1, chess, boxing, the Olympics, cricket and more. Name the star, the sport, the stadium and the champions.',
  note:PLAYERS.length+' players across '+new Set(PLAYERS.map(p=>p.sport)).size+' sports. After five warm-up questions, the wrong answers come from the same sport.',
- previewHtml:'<div class="preview-row"><span>🏏⚽🎾🏅</span></div>',
+ previewHtml:'<div class="preview-row"><span>⚽🎾🏀🏎️🏅</span></div>',
  prompt:'Who is this?',
  links:[{"text":"Bollywood","href":"../guess-the-bollywood/"},{"text":"Capital Cities","href":"../guess-the-capitals/"},{"text":"Flags","href":"../guess-the-flag/"}],
  onStart(){Object.values(decks).forEach(d=>d.reset())},
@@ -92,12 +115,13 @@ GuessGame.run({
     explanation:g.name+' is in '+g.city+(g.country==='West Indies'||g.country==='UAE'||g.country==='USA'?'':', '+g.country)+'.',render(h){quote(h,g.name,'🏟️ '+g.sport)}};
   }
   if(f==='term'){
-   if(Math.random()<.5){
-    const t=decks.term.draw();
+   const pickT=decks.term.draw();
+   if(pickT.kind==='term'){
+    const t=pickT.item;
     return {kind:'Cricket term',answer:t.term,options:U.choices(t,TERMS,{answer:x=>x.term}),prompt:'What is this called in cricket?',level,
      explanation:t.term+': '+t.meaning.charAt(0).toLowerCase()+t.meaning.slice(1)+'.',render(h){quote(h,t.meaning,'🏏 Cricket term')}};
    }
-   const w=decks.word.draw();
+   const w=pickT.item;
    return {kind:'Sports word',answer:w.sport,options:pickOthers(w.sport,D.sportsList),prompt:'Which sport uses this word?',level,
     explanation:'“'+w.word+'” is from '+w.sport+'.',render(h){quote(h,'“'+w.word+'”','📖 Sports word')}};
   }
