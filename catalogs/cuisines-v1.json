@@ -1276,7 +1276,7 @@
       "explanation": "Swiss cheese fondue is melted cheese and wine in a shared pot, eaten by dipping bread on long forks.",
       "factSource": "https://en.wikipedia.org/wiki/Fondue",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "cuisine_053",
@@ -2318,7 +2318,7 @@
       },
       "options": [
         "Hot dog",
-        "Bratwurst",
+        "Sausage roll",
         "Corn dog",
         "Chorizo"
       ],
@@ -2326,7 +2326,7 @@
       "explanation": "A hot dog is a grilled or steamed sausage served in a sliced bun, a classic American street food.",
       "factSource": "https://en.wikipedia.org/wiki/Hot_dog",
       "difficulty": "easy",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "cuisine_095",

@@ -56,10 +56,10 @@
       "title": "Guess the Cuisine",
       "status": "in-progress",
       "targetQuestions": 100,
-      "approvedQuestions": 98,
+      "approvedQuestions": 100,
       "currentVersion": 1,
       "lastRefreshedAt": "2026-11-06",
-      "nextAction": "Approve Cheese fondue and Hot dog once their cached photos are reviewed.",
+      "nextAction": "Complete at 100 questions; replace any photo that renders poorly.",
       "draftQuestions": 0,
       "refreshHistory": [
         {
@@ -77,6 +77,10 @@
         {
           "date": "2026-11-06",
           "summary": "Approved 8 more questions after reviewing cached photos; replaced 2 drafts whose photos could not be found."
+        },
+        {
+          "date": "2026-11-06",
+          "summary": "Approved Cheese fondue and Hot dog after reviewing the cached photos; Cuisine reaches 100."
         }
       ]
     },
@@ -264,6 +268,13 @@
       "version": 1,
       "change": "Added 8 dishes (98 approved); replaced Crêpes and Hot pot drafts, which had no usable photo, with Cheese fondue and Hot dog.",
       "validation": "Photos picked from Commons candidates, cached as local WebP and reviewed on a contact sheet; four distinct options and one answer each."
+    },
+    {
+      "date": "2026-11-06",
+      "category": "landmarks+cuisines",
+      "version": 1,
+      "change": "Landmarks and Cuisine each reach 100 approved questions.",
+      "validation": "Every photo cached locally and reviewed on a contact sheet; validator and browser tests pass."
     }
   ]
 }

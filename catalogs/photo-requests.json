@@ -1,19 +1,4 @@
 {
   "note": "Questions whose photos should be replaced. Pushing a change to this file runs .github/workflows/find-photo-candidates.yml, which saves candidate photos to the photo-review branch for a person to choose from. Set \"anywhere\": true to also search outside Commons' reviewed collections.",
-  "requests": [
-    {
-      "id": "cuisine_052",
-      "query": "Fondue cheese pot bread",
-      "answer": "Cheese fondue",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Fondue"
-    },
-    {
-      "id": "cuisine_094",
-      "query": "Hot dog bun mustard",
-      "answer": "Hot dog",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Hot_dog"
-    }
-  ]
+  "requests": []
 }
