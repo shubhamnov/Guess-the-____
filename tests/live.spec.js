@@ -129,7 +129,7 @@ test('every game links to live mode and the live page lists them all', async ({ 
   await expect(page.locator('#intro .links a', { hasText: 'Play live with a friend' })).toHaveAttribute('href', '?live');
   await page.goto('live/');
   const hrefs = await page.locator('#categories a, #mixLink').evaluateAll(as => as.map(a => a.getAttribute('href')));
-  expect(hrefs.length).toBe(14);
+  expect(hrefs.length).toBe(15);
   for (const href of hrefs) {
     const res = await page.request.get(new URL(href.split('?')[0], page.url()).toString());
     expect(res.ok(), href).toBe(true);

@@ -14,7 +14,8 @@ const games = [
   { name: 'Brand Logos', path: 'guess-the-brand-logos/', kind: 'logo' },
   { name: 'Currencies', path: 'guess-the-currencies/', kind: 'timed' },
   { name: 'Elements', path: 'guess-the-elements/', kind: 'timed' },
-  { name: 'Languages', path: 'guess-the-languages/', kind: 'timed' }
+  { name: 'Languages', path: 'guess-the-languages/', kind: 'timed' },
+  { name: 'Bollywood', path: 'guess-the-bollywood/', kind: 'timed' }
 ];
 
 test.beforeEach(async ({ page }) => {
