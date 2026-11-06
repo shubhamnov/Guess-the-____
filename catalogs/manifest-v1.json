@@ -27,10 +27,10 @@
       "title": "Guess the Landmark",
       "status": "in-progress",
       "targetQuestions": 100,
-      "approvedQuestions": 98,
+      "approvedQuestions": 100,
       "currentVersion": 1,
       "lastRefreshedAt": "2026-11-06",
-      "nextAction": "Approve Sacré-Cœur and Sydney Harbour Bridge once their cached photos are reviewed.",
+      "nextAction": "Complete at 100 questions; replace any photo that renders poorly.",
       "draftQuestions": 0,
       "refreshHistory": [
         {
@@ -44,6 +44,10 @@
         {
           "date": "2026-11-06",
           "summary": "Approved 2 more questions after reviewing cached photos; replaced 2 drafts whose photos could not be found."
+        },
+        {
+          "date": "2026-11-06",
+          "summary": "Approved Sacré-Cœur and Sydney Harbour Bridge after reviewing the cached photos; Landmarks reaches 100."
         }
       ]
     },
@@ -55,8 +59,8 @@
       "approvedQuestions": 98,
       "currentVersion": 1,
       "lastRefreshedAt": "2026-11-06",
-      "nextAction": "Choose photos for the last 2 drafts (replacement subjects; search running).",
-      "draftQuestions": 2,
+      "nextAction": "Approve Cheese fondue and Hot dog once their cached photos are reviewed.",
+      "draftQuestions": 0,
       "refreshHistory": [
         {
           "date": "2026-11-04",

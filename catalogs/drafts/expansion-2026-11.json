@@ -1,38 +1,5 @@
 {
   "note": "Questions waiting for a photo. Each one moves into its catalog (catalogs/landmarks-v1.json or cuisines-v1.json) once a reviewed Commons photo is chosen from the photo-review branch.",
   "landmarks": [],
-  "cuisines": [
-    {
-      "id": "cuisine_052",
-      "prompt": "Which dish is shown?",
-      "options": [
-        "Cheese fondue",
-        "Raclette",
-        "Queso dip",
-        "Welsh rarebit"
-      ],
-      "answer": "Cheese fondue",
-      "explanation": "Swiss cheese fondue is melted cheese and wine in a shared pot, eaten by dipping bread on long forks.",
-      "factSource": "https://en.wikipedia.org/wiki/Fondue",
-      "difficulty": "medium",
-      "status": "draft",
-      "photoQuery": "Cheese fondue"
-    },
-    {
-      "id": "cuisine_094",
-      "prompt": "Which dish is shown?",
-      "options": [
-        "Hot dog",
-        "Bratwurst",
-        "Corn dog",
-        "Chorizo"
-      ],
-      "answer": "Hot dog",
-      "explanation": "A hot dog is a grilled or steamed sausage served in a sliced bun, a classic American street food.",
-      "factSource": "https://en.wikipedia.org/wiki/Hot_dog",
-      "difficulty": "easy",
-      "status": "draft",
-      "photoQuery": "Hot dog"
-    }
-  ]
+  "cuisines": []
 }

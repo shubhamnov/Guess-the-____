@@ -1572,7 +1572,7 @@
       "explanation": "The white-domed Sacré-Cœur Basilica stands on the hill of Montmartre, the highest point in Paris.",
       "factSource": "https://en.wikipedia.org/wiki/Sacr%C3%A9-C%C5%93ur,_Paris",
       "difficulty": "easy",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_064",
@@ -1922,7 +1922,7 @@
       "explanation": "Sydney Harbour Bridge, opened in 1932, is a steel arch nicknamed 'the Coathanger'.",
       "factSource": "https://en.wikipedia.org/wiki/Sydney_Harbour_Bridge",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_078",

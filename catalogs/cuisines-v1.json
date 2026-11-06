@@ -1254,6 +1254,29 @@
       "status": "approved"
     },
     {
+      "id": "cuisine_052",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Swiss_cheese_fondue.JPG?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Swiss_cheese_fondue.JPG",
+        "creator": "Brücke-Osteuropa",
+        "license": "CC0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Swiss_cheese_fondue.JPG?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Cheese fondue",
+        "Raclette",
+        "Queso dip",
+        "Welsh rarebit"
+      ],
+      "answer": "Cheese fondue",
+      "explanation": "Swiss cheese fondue is melted cheese and wine in a shared pot, eaten by dipping bread on long forks.",
+      "factSource": "https://en.wikipedia.org/wiki/Fondue",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
       "id": "cuisine_053",
       "prompt": "Which dish is shown?",
       "image": {
@@ -2277,6 +2300,29 @@
       "factSource": "https://en.wikipedia.org/wiki/Mapo_tofu",
       "difficulty": "hard",
       "status": "approved"
+    },
+    {
+      "id": "cuisine_094",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hot_dog_%28Buckeye_Beer_Engine%29.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Hot_dog_(Buckeye_Beer_Engine).jpg",
+        "creator": "stu_spivack",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Hot_dog_%28Buckeye_Beer_Engine%29.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Hot dog",
+        "Bratwurst",
+        "Corn dog",
+        "Chorizo"
+      ],
+      "answer": "Hot dog",
+      "explanation": "A hot dog is a grilled or steamed sausage served in a sliced bun, a classic American street food.",
+      "factSource": "https://en.wikipedia.org/wiki/Hot_dog",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
     },
     {
       "id": "cuisine_095",
