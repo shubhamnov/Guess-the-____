@@ -130,7 +130,7 @@ test('every game links to live mode and the live page lists them all', async ({ 
   await expect(page.locator('#modeChip a[aria-current]')).toHaveText('Solo');
   await page.goto('live/');
   const hrefs = await page.locator('#categories a, #mixLink').evaluateAll(as => as.map(a => a.getAttribute('href')));
-  expect(hrefs.length).toBe(15);
+  expect(hrefs.length).toBe(16);
   for (const href of hrefs) {
     const res = await page.request.get(new URL(href.split('?')[0], page.url()).toString());
     expect(res.ok(), href).toBe(true);
