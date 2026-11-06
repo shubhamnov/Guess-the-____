@@ -1,4 +1,4 @@
-/* Scripts questions. Each row: script name, greeting sample, short description, region group. */
+/* Scripts questions. Each row: script name, sample (a greeting or short word), short description, region group (eu | me | in | sea | ea | af | am). */
 window.GTQ_DATA=window.GTQ_DATA||{};
 GTQ_DATA.scripts=[
 ["Latin","bonjour","Used for English, French, Spanish and many more.","eu"],
@@ -35,5 +35,22 @@ GTQ_DATA.scripts=[
 ["Bopomofo","ㄋㄧˇ ㄏㄠˇ","Phonetic symbols used to teach Mandarin pronunciation in Taiwan.","ea"],
 ["Cherokee","ᎣᏏᏲ","A syllabary created by Sequoyah in the 1820s for the Cherokee language.","am"],
 ["Canadian syllabics","ᐊᐃᓐᖓᐃ","Used for Inuktitut, Cree and other Indigenous languages of Canada.","am"],
-["Braille","⠓⠑⠇⠇⠕","A tactile writing system of raised dots, read by touch.","eu"]
+["Braille","⠓⠑⠇⠇⠕","A tactile writing system of raised dots, read by touch.","eu"],
+["Runic","ᚠᚢᚦᚨᚱᚲ","Runes carved by early Germanic peoples; these six letters spell “futhark”, the name of the alphabet.","eu"],
+["Ogham","᚛ᚑᚌᚐᚋ᚜","An early Irish alphabet of notches cut along the edge of standing stones.","eu"],
+["Glagolitic","Ⰳⰾⰰⰳⱁⰾⰹⱌⰰ","The oldest known Slavic alphabet, created in the 9th century.","eu"],
+["Gothic","𐌲𐌿𐍄𐌹𐍃𐌺","Created in the 4th century to translate the Bible into the Gothic language.","eu"],
+["Linear B","𐀀𐀁𐀂𐀃","A syllabic script used for the earliest written Greek, in Mycenaean times.","eu"],
+["Egyptian hieroglyphs","𓂀𓆣𓋹𓅓𓊽","Picture signs used in ancient Egypt for over 3,000 years.","me"],
+["Cuneiform","𒀭𒂗𒆤","Wedge-shaped marks pressed into clay; one of the oldest writing systems, from Mesopotamia.","me"],
+["Phoenician","𐤀𐤁𐤂𐤃","An ancient alphabet from the eastern Mediterranean; the ancestor of Greek, Latin and Hebrew letters.","me"],
+["Javanese","ꦲꦤꦕꦫꦏ","A traditional script used for Javanese in Indonesia.","sea"],
+["Balinese","ᬳᬦᬘᬭᬓ","A traditional script used for Balinese in Indonesia.","sea"],
+["Baybayin","ᜊᜌ᜔ᜊᜌᜒᜈ᜔","A pre-colonial script of the Philippines, now seeing a revival.","sea"],
+["Ol Chiki","ᱥᱟᱱᱛᱟᱲᱤ","Created in 1925 for Santali, spoken in eastern India.","in"],
+["Meetei Mayek","ꯃꯤꯇꯩ ꯃꯌꯦꯛ","Used for Manipuri (Meitei) in northeast India.","in"],
+["Yi","ꆈꌠ","A syllabary used for the Nuosu (Yi) language in southwest China.","ea"],
+["N’Ko","ߒߞߏ","Created in 1949 for Manding languages in West Africa; written right to left.","af"],
+["Adlam","𞤀𞤣𞤤𞤢𞤥","Invented in the 1980s by two teenage brothers to write Fulani.","af"],
+["Vai","ꕙꔤ","A syllabary created in the 1830s for the Vai language of Liberia.","af"]
 ];

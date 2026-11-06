@@ -7,6 +7,33 @@
 <meta name="description" content="Recognise writing systems from a short sample in sixty seconds.">
 <title>Guess the Scripts — Guess the ____</title>
 <link rel="stylesheet" href="../shared/engine.css">
+<style>
+/* Noto Sans fonts (SIL Open Font License), trimmed to the sample text, so rare scripts show on phones without them. */
+@font-face{font-family:'GTQ Thaana';src:url(../assets/fonts/thaana.woff2) format('woff2');unicode-range:U+786,U+787,U+789,U+78D,U+790,U+7A2,U+7A6,U+7A7,U+7A8,U+7AA,U+7B0;font-display:swap}
+@font-face{font-family:'GTQ Syriac';src:url(../assets/fonts/syriac.woff2) format('woff2');unicode-range:U+710,U+720,U+721,U+72B;font-display:swap}
+@font-face{font-family:'GTQ Tifinagh';src:url(../assets/fonts/tifinagh.woff2) format('woff2');unicode-range:U+2D30,U+2D4D,U+2D53,U+2D63;font-display:swap}
+@font-face{font-family:'GTQ Mongolian';src:url(../assets/fonts/mongolian.woff2) format('woff2');unicode-range:U+180E,U+1820,U+1822,U+1824,U+1828,U+182A,U+1830,U+1836;font-display:swap}
+@font-face{font-family:'GTQ Cherokee';src:url(../assets/fonts/cherokee.woff2) format('woff2');unicode-range:U+13A3,U+13CF,U+13F2;font-display:swap}
+@font-face{font-family:'GTQ Canadian Aboriginal';src:url(../assets/fonts/canadian-aboriginal.woff2) format('woff2');unicode-range:U+1403,U+140A,U+14D0,U+1593;font-display:swap}
+@font-face{font-family:'GTQ Runic';src:url(../assets/fonts/runic.woff2) format('woff2');unicode-range:U+16A0,U+16A2,U+16A6,U+16A8,U+16B1,U+16B2;font-display:swap}
+@font-face{font-family:'GTQ Ogham';src:url(../assets/fonts/ogham.woff2) format('woff2');unicode-range:U+168B,U+168C,U+1690,U+1691,U+169B,U+169C;font-display:swap}
+@font-face{font-family:'GTQ Glagolitic';src:url(../assets/fonts/glagolitic.woff2) format('woff2');unicode-range:U+2C03,U+2C30,U+2C33,U+2C39,U+2C3E,U+2C41,U+2C4C;font-display:swap}
+@font-face{font-family:'GTQ Gothic';src:url(../assets/fonts/gothic.woff2) format('woff2');unicode-range:U+10332,U+10339,U+1033A,U+1033F,U+10343,U+10344;font-display:swap}
+@font-face{font-family:'GTQ Linear B';src:url(../assets/fonts/linear-b.woff2) format('woff2');unicode-range:U+10000,U+10001,U+10002,U+10003;font-display:swap}
+@font-face{font-family:'GTQ Egyptian Hieroglyphs';src:url(../assets/fonts/egyptian-hieroglyphs.woff2) format('woff2');unicode-range:U+13080,U+13153,U+131A3,U+132BD,U+132F9;font-display:swap}
+@font-face{font-family:'GTQ Cuneiform';src:url(../assets/fonts/cuneiform.woff2) format('woff2');unicode-range:U+1202D,U+12097,U+121A4;font-display:swap}
+@font-face{font-family:'GTQ Phoenician';src:url(../assets/fonts/phoenician.woff2) format('woff2');unicode-range:U+10900,U+10901,U+10902,U+10903;font-display:swap}
+@font-face{font-family:'GTQ Javanese';src:url(../assets/fonts/javanese.woff2) format('woff2');unicode-range:U+A98F,U+A995,U+A9A4,U+A9AB,U+A9B2;font-display:swap}
+@font-face{font-family:'GTQ Balinese';src:url(../assets/fonts/balinese.woff2) format('woff2');unicode-range:U+1B13,U+1B18,U+1B26,U+1B2D,U+1B33;font-display:swap}
+@font-face{font-family:'GTQ Tagalog';src:url(../assets/fonts/tagalog.woff2) format('woff2');unicode-range:U+1708,U+170A,U+170C,U+1712,U+1714;font-display:swap}
+@font-face{font-family:'GTQ Ol Chiki';src:url(../assets/fonts/ol-chiki.woff2) format('woff2');unicode-range:U+1C5B,U+1C5F,U+1C64,U+1C65,U+1C71,U+1C72;font-display:swap}
+@font-face{font-family:'GTQ Meetei Mayek';src:url(../assets/fonts/meetei-mayek.woff2) format('woff2');unicode-range:U+ABC3,U+ABC7,U+ABCC,U+ABDB,U+ABE4,U+ABE6,U+ABE9;font-display:swap}
+@font-face{font-family:'GTQ Yi';src:url(../assets/fonts/yi.woff2) format('woff2');unicode-range:U+A188,U+A320;font-display:swap}
+@font-face{font-family:'GTQ NKo';src:url(../assets/fonts/nko.woff2) format('woff2');unicode-range:U+7CF,U+7D2,U+7DE;font-display:swap}
+@font-face{font-family:'GTQ Adlam';src:url(../assets/fonts/adlam.woff2) format('woff2');unicode-range:U+1E900,U+1E922,U+1E923,U+1E924,U+1E925;font-display:swap}
+@font-face{font-family:'GTQ Vai';src:url(../assets/fonts/vai.woff2) format('woff2');unicode-range:U+A524,U+A559;font-display:swap}
+.clue-text,.opt-text{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",'GTQ Thaana','GTQ Syriac','GTQ Tifinagh','GTQ Mongolian','GTQ Cherokee','GTQ Canadian Aboriginal','GTQ Runic','GTQ Ogham','GTQ Glagolitic','GTQ Gothic','GTQ Linear B','GTQ Egyptian Hieroglyphs','GTQ Cuneiform','GTQ Phoenician','GTQ Javanese','GTQ Balinese','GTQ Tagalog','GTQ Ol Chiki','GTQ Meetei Mayek','GTQ Yi','GTQ NKo','GTQ Adlam','GTQ Vai',sans-serif}
+</style>
 </head>
 <body data-game="scripts">
 <script src="../shared/engine.js"></script>
@@ -17,7 +44,7 @@ const BY_NAME=new Map(DATA.map(x=>[x.name,x]));
 const pool=GuessGame.util.deck(DATA,x=>x.name);
 GuessGame.run({
  id:'scripts',label:'Scripts',eyebrow:'Read the world',titleHtml:'Know your<br><em>scripts?</em>',
- intro:'A short greeting appears in a writing system. Can you tell which script it is?',
+ intro:'A short word or greeting appears in a writing system. Can you tell which script it is?',
  note:DATA.length+' writing systems. After five warm-up questions, the wrong answers come from the same part of the world.',
  previewHtml:'<div class="preview-row"><span style="font-size:clamp(30px,8vw,52px)">नम</span><span style="font-size:clamp(30px,8vw,52px)">γει</span><span style="font-size:clamp(30px,8vw,52px)">مرح</span><span style="font-size:clamp(30px,8vw,52px)">あ</span></div>',
  prompt:'Which writing system is this?',legacyBest:[{key:'guessTheScriptsBest',scale:10}],
