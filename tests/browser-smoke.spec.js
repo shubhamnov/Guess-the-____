@@ -192,3 +192,38 @@ test('timed games mix several question types', async ({ page }) => {
   // The first three questions use the main format; after that the formats mix.
   expect(kinds.size).toBeGreaterThan(1);
 });
+
+test('Name Them All: typed answers fill the board, near misses count on Enter, and giving up reveals the rest', async ({ page }) => {
+  const errors = [];
+  page.on('pageerror', e => errors.push(e.message));
+  await page.goto('/');
+  await page.locator('.game-card[href="./name-them-all/"]').click();
+  await expect(page).toHaveURL(/name-them-all\/$/);
+  await page.locator('[data-topic="planets"]').click();
+  await expect(page).toHaveURL(/\?t=planets/);
+  const input = page.locator('#answer');
+  await input.pressSequentially('Mercury');
+  await expect(page.locator('.slot.found')).toHaveCount(1);
+  await expect(input).toHaveValue('');
+  await input.pressSequentially('Jupiter');
+  await expect(page.locator('.slot.found')).toHaveCount(2);
+  await input.pressSequentially('neptun');
+  await input.press('Enter');
+  await expect(page.locator('.slot.found')).toHaveCount(3);
+  await input.pressSequentially('pluto');
+  await input.press('Enter');
+  await expect(page.locator('#feedback')).toHaveText('Not on the list');
+  await expect(page.locator('.slot.found')).toHaveCount(3);
+  await page.locator('#giveUp').click();
+  await expect(page.locator('#result')).toBeVisible();
+  await expect(page.locator('#finalScore')).toContainText('30');
+  await expect(page.locator('.slot.missed')).toHaveCount(5);
+  await expect(page.locator('.slot.missed').first()).toHaveText('Venus');
+  // A shared link opens that topic ready to start.
+  await page.goto('/name-them-all/?t=indian-states');
+  await expect(page.locator('#challengeTitle')).toContainText('Indian states');
+  await page.locator('#challengeStart').click();
+  await page.locator('#answer').pressSequentially('UP');
+  await expect(page.locator('.slot.found')).toHaveText('Uttar Pradesh');
+  expect(errors).toEqual([]);
+});

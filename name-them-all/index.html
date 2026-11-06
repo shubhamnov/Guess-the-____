@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f8f7f2">
+<meta name="description" content="Name them all: type as many as you can before the clock runs out. Indian states, SRK films, IPL teams, planets, countries and more.">
+<title>Name Them All — Guess the ____</title>
+<link rel="stylesheet" href="../shared/engine.css">
+<style>
+.nta-head{display:flex;flex-direction:column;gap:6px}
+.nta-title{font-family:var(--display);font-size:clamp(26px,7vw,38px);line-height:1;letter-spacing:-.05em;margin:0;font-weight:1000}
+.nta-note{margin:0;color:var(--muted);font-size:13px;line-height:1.45}
+.nta-entry{position:sticky;top:0;z-index:5;background:var(--bg);padding:8px 0 6px;display:flex;flex-direction:column;gap:6px}
+.nta-input{width:100%;font:inherit;font-size:20px;font-weight:800;padding:15px 16px;border:2px solid var(--ink);border-radius:16px;background:var(--paper);color:var(--ink);box-shadow:0 4px 0 var(--ink);outline:none}
+.nta-input:focus{box-shadow:0 4px 0 var(--ink),0 0 0 4px #d7fb5599}
+.nta-input:disabled{opacity:.5}
+.nta-input.shake{animation:nta-shake .3s}
+@keyframes nta-shake{25%{transform:translateX(-6px)}50%{transform:translateX(6px)}75%{transform:translateX(-3px)}}
+.nta-feedback{min-height:18px;font-size:13px;font-weight:800;color:var(--muted)}
+.nta-feedback.good{color:var(--green)}.nta-feedback.bad{color:var(--red)}
+.nta-board{display:grid;grid-template-columns:repeat(auto-fill,minmax(132px,1fr));gap:6px}
+.nta-board.dense{grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:5px}
+.nta-board.dense .slot{min-height:30px;padding:5px 7px;font-size:12px;border-radius:9px}
+.nta-board.small{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.slot{min-height:40px;border:1.5px dashed #d4d1c6;border-radius:11px;padding:7px 9px;display:flex;flex-direction:column;justify-content:center;background:#fbfaf6;font-size:13px;line-height:1.2;min-width:0;overflow-wrap:anywhere}
+.slot small{color:#a3a69d;font-size:10px;font-weight:800;letter-spacing:.03em}
+.slot b{font-weight:850}
+.slot.found{background:var(--lime);border:1.5px solid var(--ink);animation:nta-pop .25s}
+.slot.found small{color:#4d5340}
+.slot.missed{background:#fbe9e4;border:1.5px solid #e6b5a8;color:#8b3422}
+.slot.missed small{color:#b77a6b}
+@keyframes nta-pop{0%{transform:scale(.9)}60%{transform:scale(1.04)}100%{transform:scale(1)}}
+.nta-giveup{align-self:center}
+.nta-picker{display:flex;flex-direction:column;gap:22px}
+.nta-cat h2{font-size:10px;letter-spacing:.15em;font-weight:900;color:#7a7e74;text-transform:uppercase;margin:0 0 9px}
+.nta-topics{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:8px}
+.topic-btn{display:flex;gap:10px;align-items:center;text-align:left;background:var(--paper);border:1px solid var(--line);border-radius:15px;padding:11px 12px;min-width:0;transition:transform .12s,border-color .12s}
+.topic-btn:hover{transform:translateY(-2px);border-color:#cbc8bd}
+.topic-btn .te{font-size:22px;flex:none}
+.topic-btn b{display:block;font-size:13px;line-height:1.25;font-weight:850}
+.topic-btn small{display:block;font-size:10.5px;color:var(--muted);margin-top:3px;font-weight:700}
+.nta-challenge{display:flex;flex-direction:column;gap:12px;padding:16px;background:var(--paper);border:2px solid var(--ink);border-radius:22px;box-shadow:5px 5px 0 var(--lime)}
+.nta-challenge .nta-title{font-size:clamp(24px,6vw,32px)}
+.nta-result{display:flex;flex-direction:column;gap:14px;padding:18px;background:var(--paper);border:2px solid var(--ink);border-radius:24px;box-shadow:6px 6px 0 var(--lime)}
+.nta-result .bigscore{font-size:clamp(56px,15vw,84px)}
+.nta-result h2{font-family:var(--display);font-size:clamp(24px,6.5vw,32px);line-height:1.05;margin:0;letter-spacing:-.05em}
+.nta-result p{color:var(--muted);line-height:1.5;margin:0;font-size:14px}
+.nta-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.nta-actions .secondary{width:100%;padding:13px 10px}
+.nta-actions #shareBtn{background:var(--lime);border:2px solid var(--ink);font-weight:950;box-shadow:0 3px 0 var(--ink)}
+.game{gap:14px}
+.stats .stat strong small{font-size:13px;color:var(--muted);letter-spacing:0}
+</style>
+</head>
+<body data-game="name-them-all">
+<main class="shell">
+ <header class="top"><a class="brand" href="../" aria-label="Guess the ____ — all games">GUESS THE <span>?</span></a>
+  <div class="top-actions"><div class="pill">Name them all</div><button class="sound-toggle" id="soundToggle" type="button"></button></div></header>
+
+ <section class="intro" id="intro">
+  <div class="hero"><div class="eyebrow">Type to play</div><h1>Name them<br><em>all</em></h1>
+   <p>Pick a topic and type every answer you can think of before the clock runs out. Each one you get fills in on the board. No options, no hints, just you.</p></div>
+  <div class="nta-challenge" id="challenge" hidden>
+   <div class="eyebrow">Your challenge</div>
+   <h2 class="nta-title" id="challengeTitle"></h2>
+   <p class="nta-note" id="challengeNote"></p>
+   <button class="primary" id="challengeStart" type="button">Start <span class="arrow">→</span></button>
+  </div>
+  <button class="primary" id="randomBtn" type="button">🎲 Random topic <span class="arrow">→</span></button>
+  <div class="rules"><span>Type the answers</span><span>+10 each</span><span>No penalty for wrong guesses</span><span>Time bonus for all of them</span></div>
+  <div class="nta-picker" id="picker"></div>
+  <div class="micro">Spelling doesn’t need to be perfect: press Enter and a near miss still counts. Personal best saved on this device.</div>
+  <nav class="links" aria-label="More games"><a href="../">All games</a><span>·</span><a href="../guess-the-bollywood/">Bollywood</a><span>·</span><a href="../guess-the-sports/">Sports</a></nav>
+ </section>
+
+ <section class="game" id="game" aria-label="Name them all">
+  <div class="stats"><div class="stat timer" id="timerStat"><label>Time left</label><strong id="time">0</strong></div>
+   <div class="stat"><label>Found</label><strong id="found">0</strong></div><div class="stat"><label>Score</label><strong id="score">0</strong></div></div>
+  <div class="track" aria-hidden="true"><span id="timebar"></span></div>
+  <div class="nta-result" id="result" hidden aria-live="polite">
+   <div><div class="eyebrow" id="resultEyebrow"></div><div class="bigscore" id="finalScore">0</div><h2 id="resultTitle"></h2></div>
+   <p id="resultText"></p>
+   <div class="resultbox"><div><label>Found</label><strong id="resFound">0</strong></div><div><label>Personal best</label><strong id="resBest">0</strong></div></div>
+   <button class="primary" id="againBtn" type="button">Play again <span class="arrow">↻</span></button>
+   <div class="nta-actions"><button class="secondary" id="shareBtn" type="button">Share ↗</button><button class="secondary" id="topicsBtn" type="button">Other topics</button></div>
+  </div>
+  <div class="nta-head"><div class="eyebrow" id="catLabel"></div><h2 class="nta-title" id="title"></h2><p class="nta-note" id="note"></p></div>
+  <div class="nta-entry" id="entry">
+   <input class="nta-input" id="answer" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" enterkeyhint="done" placeholder="Start typing…" aria-label="Type an answer">
+   <div class="nta-feedback" id="feedback" role="status"></div>
+  </div>
+  <div class="nta-board" id="board" aria-label="Answers found"></div>
+  <button class="secondary nta-giveup" id="giveUp" type="button">I give up</button>
+ </section>
+ <footer class="bottomline"><span>GUESS THE ?</span><a class="creator-credit" href="https://github.com/shubhamnov" target="_blank" rel="noopener noreferrer">MADE BY SHUBHAM ↗</a></footer>
+</main>
+<div class="toast" id="toast" role="status"></div>
+<script src="../shared/world.js"></script>
+<script src="../data/elements.js"></script>
+<script src="../data/name-them-all.js"></script>
+<script>
+(function(){
+'use strict';
+const $=id=>document.getElementById(id);
+const D=window.GTQ_DATA;
+const POINTS=10,BONUS_PER_SECOND=1;
+function safeGet(k){try{return localStorage.getItem(k)}catch(e){return null}}
+function safeSet(k,v){try{localStorage.setItem(k,String(v))}catch(e){}}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+
+/* ---------- Matching ----------
+ * Both the answers and what the player types go through norm(): no accents, case, punctuation or spaces, "&" = "and",
+ * "and"/"vol"/"part" dropped, a leading "the"/"a" dropped, and number words turned into digits. */
+const WORD={one:'1',two:'2',three:'3',four:'4',ii:'2',iii:'3',iv:'4',saint:'st',number:'no'};
+const DROP=new Set(['and','vol','part']);
+function norm(s){
+ let t=String(s).normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase().replace(/&/g,' and ').replace(/[’'`.!*,]/g,'').replace(/[^a-z0-9]+/g,' ').trim().split(' ').filter(Boolean);
+ t=t.map(w=>WORD[w]||w).filter(w=>!DROP.has(w));
+ if(t.length>1&&(t[0]==='the'||t[0]==='a'))t=t.slice(1);
+ return t.join('');
+}
+function lev(a,b){
+ if(Math.abs(a.length-b.length)>2)return 9;
+ let prev=Array.from({length:b.length+1},(_,i)=>i);
+ for(let i=1;i<=a.length;i++){const cur=[i];for(let j=1;j<=b.length;j++)cur[j]=Math.min(prev[j]+1,cur[j-1]+1,prev[j-1]+(a[i-1]===b[j-1]?0:1));prev=cur}
+ return prev[b.length];
+}
+
+/* ---------- Topics ---------- */
+const ELEMENT_ALIASES={Aluminium:['Aluminum'],Sulfur:['Sulphur'],Sulphur:['Sulfur']};
+function buildTopic(t){
+ let items=t.items;
+ if(t.countries)items=window.GTQ_WORLD.filter(c=>c.region===t.countries).map(c=>[c.name,''].concat(D.nameCountryAliases[c.name]||[]));
+ if(t.elements)items=D.elements.slice(0,t.elements).map(e=>[e[2],String(e[0])].concat(ELEMENT_ALIASES[e[2]]||[]));
+ items=items.map((x,i)=>{const a=Array.isArray(x)?x:[x];return {i,name:a[0],hint:a[1]||'',aliases:a.slice(2)}});
+ const strip=(t.strip||[]).map(norm).filter(Boolean).sort((a,b)=>b.length-a.length);
+ // Every accepted spelling → the answers it can mean.
+ const keys=new Map();const add=(k,item)=>{if(!k)return;if(!keys.has(k))keys.set(k,new Set());keys.get(k).add(item)};
+ items.forEach(it=>{add(norm(it.name),it);it.aliases.forEach(a=>add(norm(a),it))});
+ // Optional extras that only count when no other answer shares them: each side of a "Title: Subtitle", and surnames.
+ const extra=new Map();const offer=(k,it)=>{if(!k||k.length<3)return;if(!extra.has(k))extra.set(k,new Set());extra.get(k).add(it)};
+ items.forEach(it=>{
+  const parts=it.name.split(/:| – /);if(parts.length>1)parts.forEach(p=>offer(norm(p),it));
+  strip.forEach(s=>{const k=norm(it.name);if(k.startsWith(s)&&k.length>s.length)offer(k.slice(s.length),it)});
+  if(t.surnames){const w=it.name.split(' ');if(w.length>1)offer(norm(w[w.length-1]),it)}
+ });
+ const ambiguous=new Map();
+ extra.forEach((set,k)=>{if(keys.has(k))return;if(set.size===1)add(k,[...set][0]);else ambiguous.set(k,[...set])});
+ const n=items.length,seconds=n<=12?60:n<=30?90:150;
+ return Object.assign({},t,{items,keys,ambiguous,strip,seconds,n});
+}
+const TOPICS=D.nameTopics.map(buildTopic);
+const BY_ID=new Map(TOPICS.map(t=>[t.id,t]));
+const fullTitle=t=>'Name the '+t.title;
+const clock=s=>s>=60?Math.floor(s/60)+':'+String(s%60).padStart(2,'0'):s+'s';
+
+/* ---------- Sound (same on/off setting as every other game) ---------- */
+const sound={on:safeGet('gtq_sound')!=='off',ctx:null,
+ ready(){if(!this.on)return false;try{const AC=window.AudioContext||window.webkitAudioContext;if(!AC)return false;if(!this.ctx)this.ctx=new AC();if(this.ctx.state==='suspended')this.ctx.resume();return true}catch(e){return false}},
+ tone(f,at,d,type,v){const c=this.ctx;try{const o=c.createOscillator(),g=c.createGain();o.type=type;o.frequency.setValueAtTime(f,at);g.gain.setValueAtTime(.0001,at);g.gain.exponentialRampToValueAtTime(v,at+.015);g.gain.exponentialRampToValueAtTime(.0001,at+d);o.connect(g);g.connect(c.destination);o.start(at);o.stop(at+d+.03)}catch(e){}},
+ good(){if(!this.ready())return;const t=this.ctx.currentTime+.01;this.tone(659.25,t,.1,'sine',.3);this.tone(880,t+.07,.14,'triangle',.25)},
+ bad(){if(!this.ready())return;const t=this.ctx.currentTime+.01;this.tone(180,t,.15,'square',.12)},
+ done(){if(!this.ready())return;const t=this.ctx.currentTime+.01;[523.25,659.25,783.99,1046.5].forEach((f,i)=>this.tone(f,t+i*.09,.18,'triangle',.28))}};
+function renderSound(){const b=$('soundToggle');b.innerHTML='♫<span class="st-word"> SOUND</span> '+(sound.on?'ON':'OFF');b.setAttribute('aria-pressed',String(sound.on))}
+$('soundToggle').addEventListener('click',()=>{sound.on=!sound.on;safeSet('gtq_sound',sound.on?'on':'off');renderSound()});
+renderSound();
+
+/* ---------- Picker ---------- */
+const cats=[...new Set(TOPICS.map(t=>t.cat))];
+$('picker').innerHTML=cats.map(c=>'<section class="nta-cat"><h2>'+esc(c)+'</h2><div class="nta-topics">'+
+ TOPICS.filter(t=>t.cat===c).map(t=>'<button class="topic-btn" type="button" data-topic="'+t.id+'"><span class="te" aria-hidden="true">'+t.emoji+'</span><span><b>'+esc(fullTitle(t))+'</b><small>'+t.n+' answers · '+clock(t.seconds)+'</small></span></button>').join('')+
+ '</div></section>').join('');
+$('picker').addEventListener('click',e=>{const b=e.target.closest('[data-topic]');if(b)start(BY_ID.get(b.dataset.topic))});
+$('randomBtn').addEventListener('click',()=>start(TOPICS[Math.floor(Math.random()*TOPICS.length)]));
+
+function setUrl(t){try{const u=new URL(location.href);if(t)u.searchParams.set('t',t.id);else u.searchParams.delete('t');history.replaceState(null,'',u)}catch(e){}}
+function showIntro(){
+ stopClock();S.topic=null;$('game').classList.remove('active');$('intro').hidden=false;setUrl(null);$('challenge').hidden=true;window.scrollTo(0,0);
+}
+
+/* ---------- The game ---------- */
+const S={topic:null,found:new Set(),score:0,left:0,timer:null,ends:0,pausedLeft:null,running:false,pending:null};
+function start(t){
+ S.topic=t;S.found=new Set();S.score=0;S.left=t.seconds;S.running=true;clearTimeout(S.pending);
+ setUrl(t);
+ $('intro').hidden=true;$('game').classList.add('active');$('result').hidden=true;
+ $('catLabel').textContent=t.emoji+' '+t.cat;$('title').textContent=fullTitle(t);
+ $('note').textContent=(t.note?t.note+' ':'')+t.n+' answers.';
+ const board=$('board');board.className='nta-board'+(t.n<=12?' small':t.n>30?' dense':'');
+ board.innerHTML=t.items.map(it=>'<div class="slot" data-i="'+it.i+'">'+(it.hint?'<small>'+esc(it.hint)+'</small>':'')+'<b> </b></div>').join('');
+ const input=$('answer');input.disabled=false;input.value='';input.focus({preventScroll:true});
+ $('entry').hidden=false;$('giveUp').hidden=false;
+ feedback('','');updateStats();
+ S.ends=Date.now()+t.seconds*1000;S.pausedLeft=null;
+ stopClock();S.timer=setInterval(tick,200);tick();
+ window.scrollTo(0,0);
+}
+function stopClock(){clearInterval(S.timer);S.timer=null}
+function tick(){
+ if(!S.running)return;
+ const ms=Math.max(0,S.ends-Date.now());S.left=Math.ceil(ms/1000);
+ $('time').textContent=clock(S.left);$('timebar').style.width=(ms/(S.topic.seconds*1000)*100)+'%';
+ $('timerStat').classList.toggle('urgent',S.left<=10);
+ if(ms<=0)finish('time');
+}
+document.addEventListener('visibilitychange',()=>{
+ if(!S.running)return;
+ if(document.hidden){S.pausedLeft=S.ends-Date.now();stopClock()}
+ else if(S.pausedLeft!=null){S.ends=Date.now()+S.pausedLeft;S.pausedLeft=null;S.timer=setInterval(tick,200)}
+});
+function updateStats(){$('found').innerHTML=S.found.size+'<small>/'+S.topic.n+'</small>';$('score').textContent=S.score}
+let fbTimer=null;
+function feedback(text,cls){const f=$('feedback');f.textContent=text;f.className='nta-feedback '+(cls||'');clearTimeout(fbTimer);if(text)fbTimer=setTimeout(()=>{f.textContent=''},2200)}
+
+/* What the player typed, with any allowed lead-in ("Harry Potter and the …", "… Ocean") taken off. */
+function candidates(raw){
+ const k=norm(raw),out=[k];
+ S.topic.strip.forEach(s=>{if(k.startsWith(s)&&k.length>s.length)out.push(k.slice(s.length));if(k.endsWith(s)&&k.length>s.length)out.push(k.slice(0,-s.length))});
+ return out;
+}
+function lookup(raw){
+ for(const k of candidates(raw)){const set=S.topic.keys.get(k);if(set){const open=[...set].filter(it=>!S.found.has(it.i));return {key:k,open,all:[...set]}}}
+ return null;
+}
+/* "Niger" is a whole answer but also the start of "Nigeria": wait for a pause (or Enter) before taking it. */
+function startsLonger(key,item){
+ for(const [k,set] of S.topic.keys){if(k!==key&&k.startsWith(key)&&[...set].some(it=>it!==item&&!S.found.has(it.i)))return true}
+ return false;
+}
+/* After "Pacific" is taken, the player is often still typing " Ocean" (or "Chak De" → "Chak De India").
+   Letters that only carry on the answer just taken are cleared quietly instead of counting as a new guess. */
+function itemForms(item){
+ const ks=[];S.topic.keys.forEach((set,k)=>{if(set.has(item))ks.push(k)});
+ const forms=new Set(ks);ks.forEach(k=>S.topic.strip.forEach(st=>{forms.add(k+st);forms.add(st+k)}));
+ return [...forms];
+}
+function continuing(){
+ const L=S.last;if(!L||Date.now()-L.at>3000)return false;
+ const cont=L.key+norm($('answer').value);
+ const forms=itemForms(L.item);
+ if(forms.includes(cont)){$('answer').value='';S.last=null;return true}
+ return forms.some(f=>f.startsWith(cont)&&f!==L.key);
+}
+function accept(item,key){
+ S.last={item,key:key||norm($('answer').value),at:Date.now()};
+ S.found.add(item.i);S.score+=POINTS;
+ const slot=$('board').querySelector('[data-i="'+item.i+'"]');slot.classList.add('found');slot.querySelector('b').textContent=item.name;
+ $('answer').value='';feedback('✓ '+item.name,'good');sound.good();updateStats();
+ if(S.found.size===S.topic.n)finish('all');
+}
+function onType(){
+ if(!S.running)return;clearTimeout(S.pending);
+ const raw=$('answer').value;if(!norm(raw))return;
+ if(continuing())return;
+ const m=lookup(raw);if(!m)return;
+ if(!m.open.length){if(!startsLonger(m.key,null))feedback('Already got '+m.all[0].name,'');return}
+ const item=m.open[0];
+ if(startsLonger(m.key,item))S.pending=setTimeout(()=>{const again=lookup($('answer').value);if(again&&again.open[0]===item)accept(item)},900);
+ else accept(item);
+}
+function onEnter(){
+ if(!S.running)return;clearTimeout(S.pending);
+ const raw=$('answer').value;if(!norm(raw))return;
+ if(continuing()){$('answer').value='';return}
+ const m=lookup(raw);
+ if(m){if(m.open.length)accept(m.open[0]);else{$('answer').value='';feedback('Already got '+m.all[0].name,'')}return}
+ // A near miss: one letter off (two for long names) from exactly one answer still to find.
+ const typed=candidates(raw),hits=new Map();
+ for(const [k,set] of S.topic.keys){
+  if(k.length<4)continue;const limit=k.length>=9?2:1;
+  for(const t of typed){if(lev(t,k)<=limit){set.forEach(it=>{if(!S.found.has(it.i))hits.set(it.i,it)})}}
+ }
+ if(hits.size===1){accept([...hits.values()][0]);return}
+ const amb=typed.map(k=>S.topic.ambiguous.get(k)).find(list=>list&&list.some(it=>!S.found.has(it.i)));
+ if(amb){feedback('More than one answer fits, type the full name','bad');$('answer').select();return}
+ const already=[...S.topic.items].find(it=>S.found.has(it.i)&&typed.some(t=>[norm(it.name)].concat(it.aliases.map(norm)).some(k=>k.length>=4&&lev(t,k)<=(k.length>=9?2:1))));
+ const input=$('answer');input.classList.remove('shake');void input.offsetWidth;input.classList.add('shake');
+ if(already){input.value='';feedback('Already got '+already.name,'');return}
+ feedback(hits.size>1?'Close to more than one answer, keep typing':'Not on the list','bad');sound.bad();input.select();
+}
+$('answer').addEventListener('input',onType);
+$('answer').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();onEnter()}});
+$('giveUp').addEventListener('click',()=>finish('gaveup'));
+
+function finish(why){
+ if(!S.running)return;S.running=false;stopClock();clearTimeout(S.pending);
+ const t=S.topic,secondsLeft=why==='all'?Math.max(0,Math.ceil((S.ends-Date.now())/1000)):0,bonus=secondsLeft*BONUS_PER_SECOND;
+ S.score+=bonus;updateStats();
+ $('answer').disabled=true;$('answer').blur();$('entry').hidden=true;$('giveUp').hidden=true;
+ $('board').querySelectorAll('.slot:not(.found)').forEach(s=>{s.classList.add('missed');s.querySelector('b').textContent=t.items[+s.dataset.i].name});
+ const key='gtq:best:names-'+t.id,prev=Number(safeGet(key))||0,isBest=S.score>prev;
+ if(isBest)safeSet(key,S.score);
+ const n=S.found.size,share=n/t.n;
+ $('resultEyebrow').textContent=why==='all'?'All of them!':why==='time'?'Time’s up':'You stopped';
+ $('finalScore').innerHTML=S.score+'<small>pts</small>';
+ $('resultTitle').textContent=why==='all'?'Every single one':share>=.75?'Brilliant memory':share>=.5?'More than half':share>=.25?'Good start':n?'Tough one':'Try another topic?';
+ $('resultText').textContent='You named '+n+' of '+t.n+'.'+(bonus?' Time bonus: +'+bonus+' for '+secondsLeft+' seconds left.':'')+(n<t.n?' The ones you missed are in red below.':'')+(isBest&&S.score>0?' New personal best!':'');
+ $('resFound').textContent=n+'/'+t.n;$('resBest').textContent=Math.max(prev,S.score);
+ $('result').hidden=false;window.scrollTo({top:0,behavior:'smooth'});
+ if(why==='all')sound.done();
+}
+$('againBtn').addEventListener('click',()=>start(S.topic));
+$('topicsBtn').addEventListener('click',showIntro);
+document.addEventListener('keydown',e=>{if(e.key==='Enter'&&!S.running&&S.topic&&!$('result').hidden&&document.activeElement.tagName!=='BUTTON'){e.preventDefault();start(S.topic)}});
+
+let toastTimer=null;
+function toast(msg){const t=$('toast');t.textContent=msg;t.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove('show'),2600)}
+$('shareBtn').addEventListener('click',async()=>{
+ const t=S.topic,url=location.origin+location.pathname+'?t='+t.id;
+ const text='I named '+S.found.size+'/'+t.n+' '+t.title+' ('+S.score+' pts) on Guess the ____. Can you beat me?';
+ try{if(navigator.share){await navigator.share({title:fullTitle(t),text,url});return}}catch(e){if(e&&e.name==='AbortError')return}
+ try{await navigator.clipboard.writeText(text+' '+url);toast('Copied, paste it to a friend')}catch(e){toast(url)}
+});
+
+/* A shared link (?t=topic) opens on that topic, ready to start. */
+const linked=BY_ID.get(new URLSearchParams(location.search).get('t'));
+if(linked){
+ $('challenge').hidden=false;$('challengeTitle').textContent=linked.emoji+' '+fullTitle(linked);
+ $('challengeNote').textContent=(linked.note?linked.note+' ':'')+linked.n+' answers · '+clock(linked.seconds)+'.';
+ $('challengeStart').addEventListener('click',()=>start(linked));
+}
+window.__nta={TOPICS,norm,start,finish,S};
+})();
+</script>
+</body>
+</html>
