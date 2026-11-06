@@ -1257,12 +1257,14 @@
       "id": "cuisine_052",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Swiss_cheese_fondue.JPG?width=1200",
+        "url": "../assets/cuisines/cuisine_052.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Swiss_cheese_fondue.JPG",
         "creator": "Brücke-Osteuropa",
         "license": "CC0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Swiss_cheese_fondue.JPG?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Swiss_cheese_fondue.JPG?width=1200",
+        "path": "assets/cuisines/cuisine_052.webp"
       },
       "options": [
         "Cheese fondue",
@@ -2305,12 +2307,14 @@
       "id": "cuisine_094",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hot_dog_%28Buckeye_Beer_Engine%29.jpg?width=1200",
+        "url": "../assets/cuisines/cuisine_094.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Hot_dog_(Buckeye_Beer_Engine).jpg",
         "creator": "stu_spivack",
         "license": "CC BY-SA 2.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Hot_dog_%28Buckeye_Beer_Engine%29.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Hot_dog_%28Buckeye_Beer_Engine%29.jpg?width=1200",
+        "path": "assets/cuisines/cuisine_094.webp"
       },
       "options": [
         "Hot dog",
