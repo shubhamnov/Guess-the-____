@@ -19,8 +19,20 @@
 <script src="../data/bollywood.js"></script>
 <script>
 const ERA=y=>y<1990?'classic':y<2000?'90s':y<2010?'2000s':'2010s';
-const DATA=GTQ_DATA.bollywood.map(([film,year,cast,song,dialogue,emoji])=>({film,year,cast,star:cast[0],song,dialogue,emoji,era:ERA(year)}));
-const pool=GuessGame.util.deck(DATA,x=>x.film);
+const DATA=GTQ_DATA.bollywood.map(([film,year,cast,song,dialogue,emoji,saidBy])=>({film,year,cast,star:cast[0],song,dialogue,emoji,saidBy:saidBy||'',era:ERA(year)}));
+const BY_FILM=new Map(DATA.map(x=>[x.film,x]));
+const CHARACTERS=GTQ_DATA.bollywoodCharacters.map(([name,film,actor])=>({name,actor,item:BY_FILM.get(film)}));
+/* The two leads of every film, with its era, for wrong answers. (Supporting cast are only ever right answers.) */
+const ACTORS=[];DATA.forEach(x=>x.cast.slice(0,2).forEach(a=>ACTORS.push({name:a,era:x.era})));
+const pool=GuessGame.util.deck(DATA,x=>x.film),charPool=GuessGame.util.deck(CHARACTERS,x=>x.name);
+/* Three actors who are not in this film (same era first once the warm-up is over). */
+function otherActors(ctx,item,exclude){
+ const bad=new Set(item.cast.concat(exclude||[])),list=ctx.util.shuffle(ACTORS.filter(a=>!bad.has(a.name)));
+ const ordered=ctx.hard?list.filter(a=>a.era===item.era).concat(list):list,out=[];
+ for(const a of ordered)if(!out.includes(a.name)){out.push(a.name);if(out.length===3)break}
+ return out;
+}
+function filmTitle(h,item,sub){const e=document.createElement('div');e.className='clue-film';e.style.fontSize=item.film.length>22?'clamp(26px,7vw,40px)':'clamp(34px,10vw,56px)';e.textContent=item.film;const y=document.createElement('small');y.textContent=sub||item.year;e.appendChild(y);h.appendChild(e)}
 /* Long lines get a smaller font so they fit the clue box on a phone. */
 function quote(h,text,sub){
  const q=document.createElement('div');q.className='clue-quote';q.textContent=text;
@@ -29,28 +41,50 @@ function quote(h,text,sub){
 }
 GuessGame.run({
  id:'bollywood',label:'Bollywood',pill:'Filmy',eyebrow:'Lights, camera, guess!',titleHtml:'Know your<br><em>Bollywood?</em>',
- intro:'Read the story in emoji and name the film. Famous dialogues, hit songs and stars are mixed in too.',
+ intro:'Read the story in emoji and name the film. Dialogues, songs, characters, stars and release years are mixed in too.',
  note:DATA.length+' films from 1955 to today. After five warm-up questions, the wrong answers come from the same era.',
  previewHtml:'<div class="preview-row"><span>🇬🇧✈️🇨🇭🚂🌻💍</span></div>',
  prompt:'Which film is this from?',
  links:[{"text":"Languages","href":"../guess-the-languages/"},{"text":"Cuisine","href":"../guess-the-cuisine/"},{"text":"Landmarks","href":"../guess-the-landmarks/"}],
- onStart(){pool.reset()},
- formats:['Emoji → film','Dialogue → film','Song → film','Film → star'],
+ onStart(){pool.reset();charPool.reset()},
+ formats:['Emoji → film','Dialogue → film','Song → film','Character → film','Film → star','Co-star','Who said it?','Which came first?'],
  next(ctx){
   const item=pool.draw(),level=ctx.hard?'Tricky · same era':'Warm-up';
   const films=()=>ctx.util.choices(item,DATA,{answer:x=>x.film,group:x=>x.era,hard:ctx.hard});
   const label=item.film+' ('+item.year+')';
   // Emoji plots come first and make up about half the questions.
-  let f=ctx.format(['emoji','emoji','dialogue','song','star']);
+  let f=ctx.format(['emoji','emoji','dialogue','song','character','star','costar','saidby','first']);
+  if(f==='saidby'&&!item.saidBy)f='character';
+  if(f==='costar'&&item.cast.length<2)f='star';
   if(f==='dialogue'&&!item.dialogue)f=item.song?'song':'emoji';
+  if(f==='character'){
+   const c=charPool.draw(),it=c.item,lab=it.film+' ('+it.year+')';
+   return {kind:'Character',answer:it.film,options:ctx.util.choices(it,DATA,{answer:x=>x.film,group:x=>x.era,hard:ctx.hard}),prompt:'Which film is this character from?',level,
+    explanation:c.name+' is from '+lab+(c.actor?', played by '+c.actor:'')+'.',render(h){quote(h,c.name,'Character')}};
+  }
+  if(f==='first'){
+   // Four films from different years (one era once the warm-up is over); the oldest is the answer.
+   const src=ctx.util.shuffle(ctx.hard?DATA.filter(x=>x.era===item.era&&x!==item):DATA.filter(x=>x!==item)),picked=[item],years=new Set([item.year]);
+   for(const x of src)if(!years.has(x.year)){picked.push(x);years.add(x.year);if(picked.length===4)break}
+   if(picked.length===4){
+    const sorted=picked.slice().sort((a,b)=>a.year-b.year),first=sorted[0];
+    return {kind:'Oldest film',answer:first.film,options:ctx.util.shuffle(picked.map(x=>x.film)),prompt:'Which of these films came out first?',level,
+     explanation:sorted.map(x=>x.film+' '+x.year).join(' → ')+'.',render(h){ctx.util.bigClue(h,'📅🎬','Oldest first')}};
+   }
+   f='star';
+  }
+  if(f==='costar'){
+   const co=item.cast[1];
+   return {kind:'Co-star',answer:co,options:ctx.util.shuffle([co].concat(otherActors(ctx,item))),prompt:'Who else stars in this film?',level,
+    explanation:co+' stars with '+item.star+' in '+label+'.',render(h){filmTitle(h,item,item.year+' · with '+item.star)}};
+  }
+  if(f==='saidby')return {kind:'Who said it?',answer:item.saidBy,options:ctx.util.shuffle([item.saidBy].concat(otherActors(ctx,item,[item.saidBy]))),prompt:'Who says this line?',level,
+   explanation:item.saidBy+' says it in '+label+'.',render(h){quote(h,'“'+item.dialogue+'”',item.film+' · '+item.year)}};
   if(f==='song'&&!item.song)f=item.dialogue?'dialogue':'emoji';
   if(f==='star'){
    // Anyone else in this film's cast is never offered as a wrong answer.
-   const others=DATA.filter(x=>!item.cast.includes(x.star));
-   const wrong=[];
-   for(const x of ctx.util.shuffle(ctx.hard?others.filter(o=>o.era===item.era).concat(others):others))if(!wrong.includes(x.star)){wrong.push(x.star);if(wrong.length===3)break}
-   return {kind:'Star',answer:item.star,options:ctx.util.shuffle([item.star].concat(wrong)),prompt:'Who stars in this film?',level,explanation:item.star+' stars in '+label+'.',
-    render(h){const e=document.createElement('div');e.className='clue-film';e.style.fontSize=item.film.length>22?'clamp(26px,7vw,40px)':'clamp(34px,10vw,56px)';e.textContent=item.film;const y=document.createElement('small');y.textContent=item.year;e.appendChild(y);h.appendChild(e)}};
+   return {kind:'Star',answer:item.star,options:ctx.util.shuffle([item.star].concat(otherActors(ctx,item))),prompt:'Who stars in this film?',level,explanation:item.star+' stars in '+label+'.',
+    render(h){filmTitle(h,item)}};
   }
   if(f==='dialogue')return {kind:'Dialogue',answer:item.film,options:films(),prompt:'Which film is this dialogue from?',level,explanation:'That line is from '+label+'.',
    render(h){quote(h,'“'+item.dialogue+'”','Famous dialogue')}};
