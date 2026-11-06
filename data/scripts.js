@@ -27,5 +27,13 @@ GTQ_DATA.scripts=[
 ["Hangul","안녕하세요","The writing system used for Korean.","ea"],
 ["Hiragana","こんにちは","A Japanese syllabary, often used for native words and grammar.","ea"],
 ["Katakana","コンニチハ","A Japanese syllabary often used for loanwords and emphasis.","ea"],
-["Han characters","你好","Chinese characters also known as Han characters.","ea"]
+["Han characters","你好","Chinese characters also known as Han characters.","ea"],
+["Thaana","އައްސަލާމު ޢަލައިކުމް","Written right to left; used for Dhivehi in the Maldives.","in"],
+["Syriac","ܫܠܡܐ","A right-to-left script used for Syriac and other Aramaic languages.","me"],
+["Tifinagh","ⴰⵣⵓⵍ","Used for Berber (Amazigh) languages in North Africa.","me"],
+["Mongolian","ᠰᠠᠶᠢᠨ ᠪᠠᠶᠢᠨ᠎ᠠ ᠤᠤ","The traditional Mongolian script, written in vertical columns.","ea"],
+["Bopomofo","ㄋㄧˇ ㄏㄠˇ","Phonetic symbols used to teach Mandarin pronunciation in Taiwan.","ea"],
+["Cherokee","ᎣᏏᏲ","A syllabary created by Sequoyah in the 1820s for the Cherokee language.","am"],
+["Canadian syllabics","ᐊᐃᓐᖓᐃ","Used for Inuktitut, Cree and other Indigenous languages of Canada.","am"],
+["Braille","⠓⠑⠇⠇⠕","A tactile writing system of raised dots, read by touch.","eu"]
 ];
