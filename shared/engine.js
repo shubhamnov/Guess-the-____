@@ -153,14 +153,20 @@ function run(cfg){
  let best=loadBest(cfg.id,cfg.legacyBest);
  const S={rng:null,seed:null,running:false,score:0,correct:0,answered:0,streak:0,bestStreak:0,n:0,q:null,locked:true,round:[],startedAt:0,pausedAt:0,timer:null,advance:null};
 
- const liveLink=!live&&cfg.liveLink!==false?[{text:'Play live with a friend',href:'?live'}]:[];
- const links=liveLink.concat(cfg.links||[]).map(l=>'<span>·</span><a href="'+l.href+'"'+(l.external?' target="_blank" rel="noopener noreferrer"':'')+'>'+escapeHtml(l.text)+'</a>').join('');
+ /* Solo / With a friend: every game shows which mode you are in (header chip) and offers the other one at the end. */
+ const friendOn=!live&&cfg.liveLink!==false;
+ const modeChip=cfg.liveLink===false&&!live?'<div class="pill">'+escapeHtml(cfg.pill||label)+'</div>':
+  '<nav class="mode-chip" id="modeChip" aria-label="How you’re playing"><a href="'+escapeHtml(cfg.live?homeHref:location.pathname)+'"'+(live?'':' aria-current="page"')+'>Solo</a>'+
+  '<a href="?live=new"'+(live?' aria-current="page"':'')+'><span aria-hidden="true">⚡</span> <span class="mc-long">With a friend</span><span class="mc-short">Friend</span></a></nav>';
+ const friendBtn=id=>friendOn?'<a class="friend-btn" id="'+id+'" href="?live=new"><span>⚡ '+escapeHtml(id==='friendIntroBtn'&&cfg.friendText||'Play with a friend')+'</span></a>':'';
+ const links=(cfg.links||[]).map(l=>'<span>·</span><a href="'+l.href+'"'+(l.external?' target="_blank" rel="noopener noreferrer"':'')+'>'+escapeHtml(l.text)+'</a>').join('');
  document.body.insertAdjacentHTML('afterbegin',
  '<main class="shell">'+
- '<header class="top"><a class="brand" href="'+homeHref+'" aria-label="Guess the ____ — all games">GUESS THE <span>?</span></a><div class="top-actions"><div class="pill">'+escapeHtml(cfg.pill||label)+'</div><button class="sound-toggle" id="soundToggle" type="button"></button></div></header>'+
+ '<header class="top"><a class="brand" href="'+homeHref+'" aria-label="Guess the ____ — all games">GUESS THE <span>?</span></a><div class="top-actions">'+modeChip+'<button class="sound-toggle" id="soundToggle" type="button"></button></div></header>'+
  '<section class="intro" id="intro"><div class="hero"><div class="eyebrow" id="introEyebrow">'+escapeHtml(cfg.eyebrow||'')+'</div><h1>'+cfg.titleHtml+'</h1><p>'+escapeHtml(cfg.intro||'')+'</p></div>'+
  (cfg.previewHtml?'<div class="preview" aria-hidden="true">'+cfg.previewHtml+'</div>':'')+
  '<button class="primary" id="startBtn" type="button">Let’s play <span class="arrow">→</span></button>'+
+ friendBtn('friendIntroBtn')+
  '<div class="rules"><span>'+seconds+' seconds</span>'+(cfg.formats&&cfg.formats.length>1?'<span>'+cfg.formats.length+' question types</span>':'')+'<span>4 choices</span><span>+10 right</span><span>−5 wrong</span></div>'+
  (cfg.formats&&cfg.formats.length>1?'<div class="micro formats">'+cfg.formats.map(f=>'<span>'+escapeHtml(f)+'</span>').join('')+'</div>':'')+
  '<div class="micro" id="introNote">'+escapeHtml(cfg.note||'')+(cfg.note?'<br>':'')+'Personal best saved on this device.</div>'+
@@ -175,16 +181,17 @@ function run(cfg){
  '<div class="feedback" id="feedback" role="status" aria-live="polite"></div>'+
  '<div class="micro keys-hint">Keys 1–4 answer · Enter plays again · M toggles sound</div></section>'+
  '<section class="result" id="result" aria-label="Your final score"><div class="result-modal">'+
+ '<a class="result-home" href="'+homeHref+'" aria-label="Home: all games" title="All games"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 11.2 12 4l8.5 7.2M6 9.5V20h4.5v-5.5h3V20H18V9.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>'+
  '<div><div class="eyebrow" id="resultEyebrow"></div><div class="bigscore" id="finalScore">0</div><h2 id="resultTitle"></h2><p id="resultText"></p></div>'+
  '<div class="resultbox"><div><label>Personal best</label><strong id="resultBest">0</strong></div><div><label>Accuracy</label><strong id="accuracy">0%</strong></div><div><label>Correct</label><strong id="correctCount">0</strong></div><div><label>Best streak</label><strong id="bestStreak">0</strong></div></div>'+
- '<button class="secondary" id="shareBtn" type="button">Share score image ↗</button><button class="primary" id="againBtn" type="button">Play again <span class="arrow">↻</span></button>'+
+ '<div class="result-actions">'+friendBtn('friendBtn')+'<button class="secondary" id="shareBtn" type="button">Share score ↗</button></div><button class="primary" id="againBtn" type="button">Play again <span class="arrow">↻</span></button>'+
  '<nav class="links"><a href="'+homeHref+'">All games</a>'+links+'</nav></div></section>'+
  '<footer class="bottomline"><span>GUESS THE ?</span><a class="creator-credit" href="https://github.com/shubhamnov" target="_blank" rel="noopener noreferrer">MADE BY SHUBHAM ↗</a></footer></main>'+
  '<div class="toast" id="toast" role="status"></div>');
 
  let toastTimer=null;
  function toast(msg){const t=$('toast');t.textContent=msg;t.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove('show'),2600)}
- function renderSound(){const b=$('soundToggle');b.textContent=sound.on?'♫ SOUND ON':'♫ SOUND OFF';b.setAttribute('aria-pressed',String(sound.on));b.setAttribute('aria-label',sound.on?'Sound on — select to mute':'Sound off — select to turn on')}
+ function renderSound(){const b=$('soundToggle');b.innerHTML='♫<span class="st-word"> SOUND</span> '+(sound.on?'ON':'OFF');b.setAttribute('aria-pressed',String(sound.on));b.setAttribute('aria-label',sound.on?'Sound on — select to mute':'Sound off — select to turn on')}
  function toggleSound(){sound.on=!sound.on;safeSet(SOUND_KEY,sound.on?'on':'off');renderSound();if(sound.on&&S.running)sound.startMusic();else if(!sound.on)sound.stopMusic()}
  renderSound();$('soundToggle').addEventListener('click',toggleSound);
 
@@ -323,6 +330,11 @@ function run(cfg){
  $('startBtn').addEventListener('click',()=>start());
  $('againBtn').addEventListener('click',()=>start());
  $('shareBtn').addEventListener('click',share);
+ /* The mode chip is a label while a round is running, so a stray tap never throws a game away. */
+ if($('modeChip'))$('modeChip').addEventListener('click',e=>{
+  const a=e.target.closest('a');
+  if(a&&!a.hasAttribute('aria-current')&&S.running){e.preventDefault();toast('Finish this '+(live?'game':'round')+' first.')}
+ });
 
  document.addEventListener('keydown',e=>{
   if(e.altKey||e.ctrlKey||e.metaKey)return;

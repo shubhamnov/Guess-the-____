@@ -126,7 +126,8 @@ test('joining a room that does not exist explains the problem', async ({ page })
 
 test('every game links to live mode and the live page lists them all', async ({ page }) => {
   await page.goto('guess-the-flag/');
-  await expect(page.locator('#intro .links a', { hasText: 'Play live with a friend' })).toHaveAttribute('href', '?live');
+  await expect(page.locator('#friendBtn')).toHaveAttribute('href', '?live=new');
+  await expect(page.locator('#modeChip a[aria-current]')).toHaveText('Solo');
   await page.goto('live/');
   const hrefs = await page.locator('#categories a, #mixLink').evaluateAll(as => as.map(a => a.getAttribute('href')));
   expect(hrefs.length).toBe(15);

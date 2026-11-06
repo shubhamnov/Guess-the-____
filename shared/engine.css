@@ -11,6 +11,16 @@ button:focus-visible,a:focus-visible{outline:3px solid #7871e8;outline-offset:3p
 .brand span{display:inline-grid;place-items:center;background:var(--lime);border-radius:9px;width:27px;height:27px;margin-left:3px;transform:rotate(5deg)}
 .pill{font-size:10px;font-weight:850;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);padding:8px 11px;border-radius:999px;color:#555950;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .sound-toggle{border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:999px;padding:8px 10px;font-size:10px;font-weight:900;letter-spacing:.04em;white-space:nowrap}
+.mode-chip{display:flex;border:1px solid var(--ink);border-radius:999px;padding:2px;background:var(--paper);white-space:nowrap}
+.mode-chip a{font-size:10px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:#666b62;padding:6px 9px;border-radius:999px}
+.mode-chip a[aria-current]{background:var(--lime);color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.mode-chip a:not([aria-current]):hover{color:var(--ink)}
+.mode-chip .mc-short{display:none}
+.friend-btn{display:flex;align-items:center;justify-content:center;gap:6px;text-align:center;background:var(--paper);color:var(--ink);border:2px solid var(--ink);border-radius:15px;padding:15px 12px;font-weight:950;font-size:15px;text-decoration:none;box-shadow:0 4px 0 var(--ink);line-height:1.2}
+.friend-btn:hover{background:#f4f9de}
+.result-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.result-actions>*:only-child{grid-column:1/-1}
+.result-actions .friend-btn{font-size:14px;padding:14px 8px}
 .sound-toggle[aria-pressed="false"]{color:var(--muted);background:#efeee8}
 .eyebrow{font-size:10px;letter-spacing:.15em;font-weight:900;color:#7a7e74;text-transform:uppercase}
 
@@ -75,7 +85,12 @@ button:focus-visible,a:focus-visible{outline:3px solid #7871e8;outline-offset:3p
 .result.active{display:flex}
 .result-modal{position:relative;isolation:isolate;flex:none;width:min(100%,440px);max-height:100%;overflow-y:auto;display:flex;flex-direction:column;gap:17px;padding:clamp(21px,5vw,31px);background:var(--paper);border:2px solid var(--ink);border-radius:30px;box-shadow:9px 9px 0 var(--lime)}
 .result-modal:before{content:"✳";position:absolute;top:13px;right:18px;color:var(--lime);-webkit-text-stroke:1px var(--ink);font-size:43px;line-height:1;transform:rotate(12deg);pointer-events:none}
-.result-modal .eyebrow{position:relative;z-index:1;padding-right:42px}
+.result-modal .eyebrow{position:relative;z-index:1;padding-right:56px}
+/* Home button in the top corner of the score card (replaces the ✳ mark). */
+.result-modal:before{display:none}
+.result-home{position:absolute;top:14px;right:14px;z-index:2;width:42px;height:42px;display:grid;place-items:center;border-radius:50%;background:var(--lime);color:var(--ink);border:2px solid var(--ink);box-shadow:0 3px 0 var(--ink);text-decoration:none}
+.result-home svg{width:21px;height:21px}
+.result-home:hover{transform:translateY(-1px)}
 .bigscore{display:inline-block;align-self:flex-start;margin:5px 0 4px;padding:7px 16px 12px;background:var(--lime);border:2px solid var(--ink);border-radius:20px;box-shadow:4px 4px 0 var(--ink);font-family:var(--display);font-size:clamp(68px,17vw,104px);font-weight:1000;line-height:.86;letter-spacing:-.08em}
 .bigscore small{font-size:.3em;letter-spacing:0;margin-left:6px}
 .result h2{font-family:var(--display);font-size:clamp(28px,7.5vw,36px);line-height:1;margin:0;letter-spacing:-.05em}
@@ -83,7 +98,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #7871e8;outline-offset:3p
 .resultbox{background:#efeee7;border-radius:20px;padding:16px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .resultbox label{display:block;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;font-size:10px;font-weight:900;margin-bottom:6px}
 .resultbox strong{font-size:25px;letter-spacing:-.04em}
-.result-modal #shareBtn{background:var(--lime);color:var(--ink);border:2px solid var(--ink);border-radius:15px;padding:16px 14px;font-weight:950;box-shadow:0 4px 0 var(--ink)}
+.result-modal #shareBtn{font-size:14px;background:var(--lime);color:var(--ink);border:2px solid var(--ink);border-radius:15px;padding:16px 14px;font-weight:950;box-shadow:0 4px 0 var(--ink)}
 .bottomline{margin-top:auto;padding-top:22px;display:flex;justify-content:space-between;gap:12px;color:#92958d;font-size:10px}
 .creator-credit{color:inherit;text-decoration:none;font-size:10px;font-weight:900;letter-spacing:.04em;white-space:nowrap}
 .creator-credit:hover{text-decoration:underline;text-underline-offset:3px}
@@ -91,7 +106,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #7871e8;outline-offset:3p
 .toast.show{opacity:1}
 
 @media(min-width:560px){.shell{padding-top:30px}.game{gap:20px}.clue{height:255px}.answer{min-height:64px;font-size:15px}.intro{gap:24px}}
-@media(max-width:430px){.brand{font-size:19px}.pill{font-size:8px;padding:7px 8px}.sound-toggle{font-size:9px;padding:7px 8px}.stat{padding:10px}.stat strong{font-size:22px}}
+@media(max-width:430px){.brand{font-size:19px}.mode-chip a{font-size:9px;padding:6px 8px}.st-word{display:none}.pill{font-size:8px;padding:7px 8px}.sound-toggle{font-size:9px;padding:7px 8px}.stat{padding:10px}.stat strong{font-size:22px}}
 @media(max-height:700px){.result{justify-content:flex-start}.result-modal{margin:auto 0}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 
@@ -185,3 +200,4 @@ button:focus-visible,a:focus-visible{outline:3px solid #7871e8;outline-offset:3p
 .lobby-part{display:flex;flex-direction:column;gap:12px}
 .solo-link{text-align:center;color:var(--muted)}
 .race-tally{text-align:center;font-family:var(--display);font-weight:1000;font-size:18px;letter-spacing:-.02em;background:var(--bg);border-radius:13px;padding:8px}
+@media(max-width:374px){.mode-chip .mc-long{display:none}.mode-chip .mc-short{display:inline}.brand{font-size:16px;letter-spacing:-.9px}.brand span{width:23px;height:23px}.top{gap:6px}.top-actions{gap:5px}.mode-chip a{padding:5px 7px;letter-spacing:.03em}.sound-toggle{padding:6px 7px}}

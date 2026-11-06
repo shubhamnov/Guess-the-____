@@ -24,6 +24,8 @@ const isToday=activeDate===todayUTC();
 
 const game=GuessGame.run({
  id:'daily-mix',label:'Daily Mix',pill:'The Daily Mix',autoStart:false,
+ // A friend game always plays today's questions, so it is only offered on today's mix.
+ liveLink:isToday,friendText:'Play today’s mix with a friend',
  eyebrow:isToday?'Today’s Daily Mix':'Daily Mix · '+formatDate(activeDate),
  titleHtml:'Seven games.<br><em>One daily mix.</em>',
  intro:'Fourteen questions across seven categories — two from each game — and 60 seconds to get through them. The questions are the same for everyone on '+formatDate(activeDate)+' (UTC).',
@@ -43,7 +45,7 @@ const game=GuessGame.run({
    try{if(navigator.share){await navigator.share({title:'Guess the ____ · Daily Mix',text,url:challengeURL()});return}}catch(e){if(e&&e.name==='AbortError')return}
    try{await navigator.clipboard.writeText(text);toast('Challenge link copied. Send it to a friend.')}catch(e){window.prompt('Copy this link and send it to a friend:',challengeURL())}
   });
-  $('startBtn').after(btn);
+  ($('friendIntroBtn')||$('startBtn')).after(btn);
  }
 });
 })();

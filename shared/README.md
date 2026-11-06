@@ -38,7 +38,8 @@ Every game page loads `engine.css` and `engine.js`, then calls `GuessGame.run(co
 | `replay` | Set to `false` to hide "Play again" (live mode does this). |
 | `pauseWhenHidden` | Set to `false` to keep the clock running when the tab is hidden (live mode, so both players get the same 60 seconds). |
 | `live` | Set to `true` for a page that is always played live (the Live Mix). Any other game goes live when opened with `?live`. |
-| `liveLink` | Set to `false` to leave out the "Play live with a friend" link. |
+| `liveLink` | Set to `false` to leave out "With a friend": the header Solo / With a friend chip (a plain pill with `pill` text shows instead) and the "⚡ Play with a friend" buttons. |
+| `friendText` | Text for the "⚡ Play with a friend" button on the intro screen (only games with `autoStart:false` show one). |
 
 `GuessGame.run` returns `{toast, start, ctx, …}`; `start(seed)` begins a game from code. `ctx` also exposes `score`, `correct`, `answered`, `live` and `seed`.
 

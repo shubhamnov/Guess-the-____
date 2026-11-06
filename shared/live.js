@@ -40,7 +40,7 @@ function attach(api){
  function roomURL(path,code){const u=new URL(path||location.pathname,location.href);u.search='';u.hash='';u.searchParams.set('live',code);if(signal)u.searchParams.set('signal',signal);return u.toString()}
 
  /* ---------- Lobby ---------- */
- $('introEyebrow').textContent='Live · play a friend';
+ $('introEyebrow').textContent='⚡ With a friend';
  $('introNote').textContent='Same questions for both of you, 60 seconds, live scores. Higher score wins; on a tie, whoever finished first. Use two devices and keep this page on screen: phones pause pages in the background.';
  $('startBtn').insertAdjacentHTML('afterend',
   '<div class="lobby" id="lobby">'+
