@@ -1553,12 +1553,14 @@
       "id": "landmark_063",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Paris_-_Basilique_du_Sacr%C3%A9-C%C5%93ur_de_Montmartre_-_2025-09-30_23-31-57_001.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_063.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Paris_-_Basilique_du_Sacr%C3%A9-C%C5%93ur_de_Montmartre_-_2025-09-30_23-31-57_001.jpg",
         "creator": "Giò Terra (Terragio67)",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Paris_-_Basilique_du_Sacr%C3%A9-C%C5%93ur_de_Montmartre_-_2025-09-30_23-31-57_001.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Paris_-_Basilique_du_Sacr%C3%A9-C%C5%93ur_de_Montmartre_-_2025-09-30_23-31-57_001.jpg?width=1200",
+        "path": "assets/landmarks/landmark_063.webp"
       },
       "options": [
         "Sacré-Cœur",
@@ -1901,12 +1903,14 @@
       "id": "landmark_077",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sydney_Harbour_Bridge_from_Circular_Quay.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_077.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Sydney_Harbour_Bridge_from_Circular_Quay.jpg",
         "creator": "JJ Harrison",
         "license": "CC BY-SA 3.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Sydney_Harbour_Bridge_from_Circular_Quay.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Sydney_Harbour_Bridge_from_Circular_Quay.jpg?width=1200",
+        "path": "assets/landmarks/landmark_077.webp"
       },
       "options": [
         "Sydney Harbour Bridge",
