@@ -19,15 +19,17 @@
 <script src="../data/hollywood.js"></script>
 <script>
 const ERA=y=>y<1990?'classic':y<2000?'90s':y<2010?'2000s':'2010s';
-const DATA=GTQ_DATA.hollywood.map(([film,year,cast,song,dialogue,emoji,saidBy])=>({film,year,cast,star:cast[0],song,dialogue,emoji,saidBy:saidBy||'',era:ERA(year)}));
+const ANIMATED=new Set(GTQ_DATA.hollywoodAnimated||[]);
+const DATA=GTQ_DATA.hollywood.map(([film,year,cast,song,dialogue,emoji,saidBy])=>({film,year,cast,star:cast[0],song,dialogue,emoji,saidBy:saidBy||'',era:ERA(year),animated:ANIMATED.has(film)}));
 const BY_FILM=new Map(DATA.map(x=>[x.film,x]));
 const CHARACTERS=GTQ_DATA.hollywoodCharacters.map(([name,film,actor])=>({name,actor,item:BY_FILM.get(film)}));
-/* The two leads of every film, with its era, for wrong answers. (Supporting cast are only ever right answers.) */
-const ACTORS=[];DATA.forEach(x=>x.cast.slice(0,2).forEach(a=>ACTORS.push({name:a,era:x.era})));
+/* The two leads of every film, with its era, for wrong answers. (Supporting cast are only ever right answers.)
+ * Live-action and animated films keep separate lists, so a film star is never up against a voice actor, or the reverse. */
+const ACTORS=[],VOICES=[];DATA.forEach(x=>x.cast.slice(0,2).forEach(a=>(x.animated?VOICES:ACTORS).push({name:a,era:x.era})));
 const pool=GuessGame.util.deck(DATA,x=>x.film),charPool=GuessGame.util.deck(CHARACTERS,x=>x.name);
 /* Three actors who are not in this film (same era first once the warm-up is over). */
 function otherActors(ctx,item,exclude){
- const bad=new Set(item.cast.concat(exclude||[])),list=ctx.util.shuffle(ACTORS.filter(a=>!bad.has(a.name)));
+ const bad=new Set(item.cast.concat(exclude||[])),list=ctx.util.shuffle((item.animated?VOICES:ACTORS).filter(a=>!bad.has(a.name)));
  const ordered=ctx.hard?list.filter(a=>a.era===item.era).concat(list):list,out=[];
  for(const a of ordered)if(!out.includes(a.name)){out.push(a.name);if(out.length===3)break}
  return out;
@@ -60,7 +62,7 @@ GuessGame.run({
   if(f==='character'){
    const c=charPool.draw(),it=c.item,lab=it.film+' ('+it.year+')';
    return {kind:'Character',answer:it.film,options:ctx.util.choices(it,DATA,{answer:x=>x.film,group:x=>x.era,hard:ctx.hard}),prompt:'Which film is this character from?',level,
-    explanation:c.name+' is from '+lab+(c.actor?', played by '+c.actor:'')+'.',render(h){quote(h,c.name,'Character')}};
+    explanation:c.name+' is from '+lab+(c.actor?(it.animated?', voiced by ':', played by ')+c.actor:'')+'.',render(h){quote(h,c.name,'Character')}};
   }
   if(f==='first'){
    // Four films from different years (one era once the warm-up is over); the oldest is the answer.
@@ -75,16 +77,16 @@ GuessGame.run({
   }
   if(f==='costar'){
    const co=item.cast[1];
-   return {kind:'Co-star',answer:co,options:ctx.util.shuffle([co].concat(otherActors(ctx,item))),prompt:'Who else stars in this film?',level,
-    explanation:co+' stars with '+item.star+' in '+label+'.',render(h){filmTitle(h,item,item.year+' · with '+item.star)}};
+   return {kind:'Co-star',answer:co,options:ctx.util.shuffle([co].concat(otherActors(ctx,item))),prompt:item.animated?'Who else voices a lead in this film?':'Who else stars in this film?',level,
+    explanation:co+(item.animated?' voices a lead with ':' stars with ')+item.star+' in '+label+'.',render(h){filmTitle(h,item,item.year+(item.animated?' · animated · voiced with ':' · with ')+item.star)}};
   }
-  if(f==='saidby')return {kind:'Who said it?',answer:item.saidBy,options:ctx.util.shuffle([item.saidBy].concat(otherActors(ctx,item,[item.saidBy]))),prompt:'Who says this line?',level,
-   explanation:item.saidBy+' says it in '+label+'.',render(h){quote(h,'“'+item.dialogue+'”',item.film+' · '+item.year)}};
+  if(f==='saidby')return {kind:'Who said it?',answer:item.saidBy,options:ctx.util.shuffle([item.saidBy].concat(otherActors(ctx,item,[item.saidBy]))),prompt:item.animated?'Who voices the character who says this line?':'Who says this line?',level,
+   explanation:item.saidBy+(item.animated?' voices that line in ':' says it in ')+label+'.',render(h){quote(h,'“'+item.dialogue+'”',item.film+' · '+item.year)}};
   if(f==='song'&&!item.song)f=item.dialogue?'dialogue':'emoji';
   if(f==='star'){
    // Anyone else in this film's cast is never offered as a wrong answer.
-   return {kind:'Star',answer:item.star,options:ctx.util.shuffle([item.star].concat(otherActors(ctx,item))),prompt:'Who stars in this film?',level,explanation:item.star+' stars in '+label+'.',
-    render(h){filmTitle(h,item)}};
+   return {kind:'Star',answer:item.star,options:ctx.util.shuffle([item.star].concat(otherActors(ctx,item))),prompt:item.animated?'Who voices the lead in this film?':'Who stars in this film?',level,explanation:item.star+(item.animated?' voices the lead in ':' stars in ')+label+'.',
+    render(h){filmTitle(h,item,item.animated?item.year+' · animated':item.year)}};
   }
   if(f==='dialogue')return {kind:'Quote',answer:item.film,options:films(),prompt:'Which film is this line from?',level,explanation:'That line is from '+label+'.',
    render(h){quote(h,'“'+item.dialogue+'”','Famous line')}};

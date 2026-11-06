@@ -308,3 +308,7 @@ GTQ_DATA.hollywoodCharacters=[
 ["Elphaba","Wicked","Cynthia Erivo"],
 ["Glinda","Wicked","Ariana Grande"]
 ];
+/* Animated films: their cast are voice actors. Their questions ask who voices whom, with other films' voice leads as the
+ * wrong answers, and their voice leads are never offered as wrong answers for live-action films. */
+GTQ_DATA.hollywoodAnimated=["The Lion King","Toy Story","Shrek","Finding Nemo","The Incredibles","Up","Frozen","Coco",
+ "Beauty and the Beast","Aladdin","Monsters, Inc.","Ratatouille","Kung Fu Panda","Inside Out","Moana"];
