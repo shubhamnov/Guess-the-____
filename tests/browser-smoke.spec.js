@@ -17,6 +17,7 @@ const games = [
   { name: 'Hollywood', path: 'guess-the-hollywood/', kind: 'timed' },
   { name: 'Series', path: 'guess-the-series/', kind: 'timed' },
   { name: 'Web Series', path: 'guess-the-web-series/', kind: 'timed' },
+  { name: 'World Politics', path: 'guess-the-world-politics/', kind: 'timed' },
   { name: 'Sports', path: 'guess-the-sports/', kind: 'timed' }
 ];
 

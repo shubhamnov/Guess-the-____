@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f8f7f2">
+<meta name="description" content="Leaders, parliaments, famous speeches and the years that changed the world. Sixty seconds, four choices.">
+<title>Guess the World Politics — Guess the ____</title>
+<link rel="stylesheet" href="../shared/engine.css">
+<style>
+.clue-quote{font-family:var(--display);font-weight:950;letter-spacing:-.03em;text-align:center;line-height:1.15;max-width:calc(100% - 32px);overflow-wrap:anywhere}
+.clue-quote+.clue-sub{margin-top:10px}
+</style>
+</head>
+<body data-game="world-politics">
+<script src="../shared/engine.js"></script>
+<script src="../shared/region.js"></script>
+<script src="../data/world-politics.js"></script>
+<script>
+const D=GTQ_DATA,U=GuessGame.util;
+const LEADERS=D.wpLeaders.map(([name,country,hint,group,region])=>({name,country,hint,group,region}));
+const PLACES=D.wpPlaces.map(([name,country,what,group,region])=>({name,country,what,group,region}));
+const ORGS=D.wpOrgs.map(([short,full,city,group])=>({short,full,city,group}));
+const EVENTS=D.wpEvents.map(([what,year,region])=>({what,year,region}));
+const SAID=D.wpSaid.map(([clue,person,context,group,region,not])=>({clue,person,context,group,region,not:not||[]}));
+const FIRSTS=D.wpFirsts.map(([post,person,context,group,region,not])=>({post,person,context,group,region,not:not||[]}));
+/* “the United States”, “the United States’ parliament”. Lenin and the Kremlin also fit Russia (and Yeltsin the Soviet Union). */
+const the=c=>/^(United|Soviet|Czech|Philippines|DR )/.test(c)?'the '+c:c;
+const of=c=>the(c)+(/s$/.test(c)?'’':'’s');
+const CLASH={'Soviet Union':'Russia','Russia':'Soviet Union'};
+/* Global / India / Both (shared/region.js). India: Indian firsts, sayings and dates only (every Indian leader or
+   parliament would have the same answer, India). Global: everything without an India tag. Both: everything. */
+let region,decks={},kinds=[],PEOPLE_POOL=[];
+const keep=x=>GTQRegion.keep(x.region==='india'?'india':'global',region);
+function useRegion(r){
+ region=r;
+ const parts={leader:LEADERS.filter(keep),place:PLACES.filter(keep),hq:r==='india'?[]:ORGS,year:EVENTS.filter(keep),said:SAID.filter(keep),first:FIRSTS.filter(keep)};
+ if(r==='india'){parts.leader=[];parts.place=[]}
+ kinds=['leader','first','said','year','place','hq'].filter(k=>parts[k].length>=4);
+ const key={leader:x=>x.name,place:x=>x.name,hq:x=>x.short,year:x=>x.what,said:x=>x.clue,first:x=>x.post};
+ decks={};kinds.forEach(k=>decks[k]=U.deck(parts[k],key[k]));
+ /* Wrong answers for sayings and firsts come from the people in this region's questions. */
+ PEOPLE_POOL=parts.said.concat(parts.first).map(x=>({answer:x.person,group:x.group}));
+}
+function noteText(){return GTQRegion.notePrefix(region)+'Leaders, parliaments, headquarters, famous words and the years that changed the world. After five warm-up questions, the wrong answers come from the same part of the world.'}
+useRegion(GTQRegion.get());
+/* Wrong answers: countries for leaders and places, cities for headquarters, people for sayings and firsts. */
+const COUNTRY_POOL=LEADERS.map(x=>({answer:x.country,group:x.group})).concat(PLACES.map(x=>({answer:x.country,group:x.group})));
+function quote(h,text,sub){
+ const q=document.createElement('div');q.className='clue-quote';q.textContent=text;
+ q.style.fontSize=text.length>70?'clamp(19px,5vw,26px)':text.length>36?'clamp(22px,6vw,32px)':'clamp(28px,8vw,46px)';
+ const s=document.createElement('div');s.className='clue-sub';s.textContent=sub;h.append(q,s);
+}
+GuessGame.run({
+ id:'world-politics',label:'World Politics',eyebrow:'Leaders, treaties and turning points',titleHtml:'Know your<br><em>world politics?</em>',
+ intro:'Name the country a leader ran, who said the famous words, where the UN and NATO are based, and the year history turned.',
+ note:noteText(),onRegion(r){useRegion(r);return noteText()},
+ previewHtml:'<div class="preview-row"><span class="preview-chip">Knesset</span><span class="preview-chip">NATO</span><span class="preview-chip">1989</span></div>',
+ prompt:'Which country did this leader run?',
+ links:[{"text":"Capital Cities","href":"../guess-the-capitals/"},{"text":"Flags","href":"../guess-the-flag/"},{"text":"Currencies","href":"../guess-the-currencies/"}],
+ onStart(){Object.values(decks).forEach(d=>d.reset())},
+ formats:['Leader → country','Firsts','Who said it?','Event → year','Parliament or palace → country','Headquarters'],
+ next(ctx){
+  const f=ctx.format(kinds),item=decks[f].draw(),hard=ctx.hard,level=hard?'Tricky · same region':'Warm-up';
+  if(f==='leader'){
+   const options=ctx.util.choices({answer:item.country,group:item.group},COUNTRY_POOL.filter(x=>x.answer!==CLASH[item.country]),{answer:x=>x.answer,group:x=>x.group,hard});
+   return {kind:'Leader',answer:item.country,options,level,prompt:'Which country did this leader run?',
+    explanation:item.name+' led '+the(item.country)+'. '+item.hint+'.',
+    render(h){ctx.util.bigClue(h,item.name,item.hint)}};
+  }
+  if(f==='place'){
+   const options=ctx.util.choices({answer:item.country,group:item.group},COUNTRY_POOL.filter(x=>x.answer!==CLASH[item.country]),{answer:x=>x.answer,group:x=>x.group,hard});
+   return {kind:'Place',answer:item.country,options,level,prompt:'Which country is this in?',
+    explanation:item.name+' — '+of(item.country)+' '+item.what.charAt(0).toLowerCase()+item.what.slice(1)+'.',
+    render(h){ctx.util.bigClue(h,item.name,item.what)}};
+  }
+  if(f==='hq'){
+   const options=ctx.util.choices(item,ORGS,{answer:x=>x.city,group:x=>x.group,hard});
+   return {kind:'Headquarters',answer:item.city,options,level,prompt:'Where is it based?',
+    explanation:(item.short===item.full?item.short:item.short+' ('+item.full+')')+' is based in '+item.city+(/\.$/.test(item.city)?'':'.'),
+    render(h){ctx.util.bigClue(h,item.short,item.full)}};
+  }
+  if(f==='year'){
+   /* Other years close by: within 3 years once the game turns tricky, within 12 before. */
+   const span=hard?3:12,near=[];
+   for(let d=1;d<=span;d++){near.push(item.year-d);if(item.year+d<=2026)near.push(item.year+d)}
+   const options=ctx.util.shuffle([item.year].concat(ctx.util.shuffle(near).slice(0,3)));
+   return {kind:'Year',answer:item.year,options,level,prompt:'In which year did this happen?',
+    explanation:item.year+' — '+item.what+'.',
+    render(h){quote(h,item.what,'Which year?')}};
+  }
+  const said=f==='said',not=new Set(item.not);
+  const pool=PEOPLE_POOL.filter(x=>!not.has(x.answer));
+  const options=ctx.util.choices({answer:item.person,group:item.group},pool,{answer:x=>x.answer,group:x=>x.group,hard});
+  if(said){
+   const nick=/^Known as/.test(item.clue);
+   return {kind:nick?'Nickname':'Quote',answer:item.person,options,level,prompt:nick?'Who was known by this name?':'Who said it?',
+    explanation:item.person+'. '+item.context+'.',
+    render(h){quote(h,item.clue,nick?'Nickname':'Who said it?')}};
+  }
+  return {kind:'First',answer:item.person,options,level,prompt:'Who was it?',
+   explanation:item.person+' was the '+item.post.charAt(0).toLowerCase()+item.post.slice(1)+'. '+item.context+'.',
+   render(h){quote(h,item.post,'Who was it?')}};
+ }
+});
+</script>
+</body>
+</html>

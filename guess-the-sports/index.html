@@ -18,7 +18,7 @@
 <script src="../data/sports.js"></script>
 <script>
 const D=GTQ_DATA,U=GuessGame.util;
-const ICON={Cricket:'🏏',Football:'⚽',Tennis:'🎾',Athletics:'🏃',Swimming:'🏊',Gymnastics:'🤸',Shooting:'🎯',Boxing:'🥊',Badminton:'🏸',Chess:'♟️',Hockey:'🏑',Basketball:'🏀','Formula 1':'🏎️',Golf:'⛳','Ice hockey':'🏒',Kabaddi:'🤼',Wrestling:'🤼',Rugby:'🏉'};
+const ICON={Cricket:'🏏',Football:'⚽',Tennis:'🎾',Athletics:'🏃',Swimming:'🏊',Gymnastics:'🤸',Shooting:'🎯',Boxing:'🥊',Badminton:'🏸',Chess:'♟️',Hockey:'🏑',Basketball:'🏀','Formula 1':'🏎️',Golf:'⛳','Ice hockey':'🏒',Kabaddi:'🤼',Wrestling:'🤼',Rugby:'🏉',Cycling:'🚴','Table tennis':'🏓',Weightlifting:'🏋️',Archery:'🏹'};
 const ALL_PLAYERS=D.cricketPlayers.map(([name,country,nick])=>({name,sport:'Cricket',country,nick}))
  .concat(D.sportsPlayers.map(([name,sport,country,nick])=>({name,sport,country,nick})));
 const BY_NAME=new Map(ALL_PLAYERS.map(p=>[p.name,p]));

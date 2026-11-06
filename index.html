@@ -55,7 +55,7 @@
   </header>
   <section class="main">
     <div class="hero">
-      <div class="eyebrow">Eighteen games · play solo or with a friend</div>
+      <div class="eyebrow">Nineteen games · play solo or with a friend</div>
       <h1>What do you want<br>to <em>guess?</em></h1>
     </div>
     <p class="mode-help">Pick a game, then choose to play <b>solo</b> or <b>⚡ with a friend</b>.</p>
@@ -153,6 +153,11 @@
         <div class="card-info"><div><h2>Languages</h2><p>Read “thank you” and name the language.</p></div><span class="arrow" aria-hidden="true">→</span></div>
         <div class="meta"><span class="tag">60 seconds</span><span class="tag tag-new">New</span></div>
       </a>
+      <a class="game-card" href="./guess-the-world-politics/" aria-label="Play Guess the World Politics">
+        <div class="visual capital-visual" style="background:#efe3d6" aria-hidden="true"><b>Knesset</b><b>NATO</b><b>1989</b></div>
+        <div class="card-info"><div><h2>World Politics</h2><p>Leaders, parliaments, famous words and turning points.</p></div><span class="arrow" aria-hidden="true">→</span></div>
+        <div class="meta"><span class="tag">60 seconds</span><span class="tag tag-new">New</span></div>
+      </a>
       <a class="game-card" href="./name-them-all/" data-standalone aria-label="Play Name Them All">
         <div class="visual bolly-visual names-visual" aria-hidden="true"><span>⌨️🇮🇳🪐🏏🎬</span><b>“Name the planets”</b><b>8 of 8 ✓</b></div>
         <div class="card-info"><div><h2>Name Them All</h2><p>Type every answer you can think of before time runs out.</p></div><span class="arrow" aria-hidden="true">→</span></div>
@@ -176,9 +181,9 @@
 <script>
 (function(){
  /* Global / India / Both for the whole site (shared/region.js). India-only games (data-region="india") are hidden in Global. */
- const help={global:'International questions in Series, Web Series, Sports and Name Them All. Bollywood is hidden.',
-  india:'Indian questions in Series, Web Series, Sports and Name Them All.',
-  both:'Everything. Series, Web Series, Sports and Name Them All follow this switch.'};
+ const help={global:'International questions in Series, Web Series, Sports, World Politics and Name Them All. Bollywood is hidden.',
+  india:'Indian questions in Series, Web Series, Sports, World Politics and Name Them All.',
+  both:'Everything. Series, Web Series, Sports, World Politics and Name Them All follow this switch.'};
  function apply(r){document.getElementById('regionHelp').textContent=help[r];
   document.querySelectorAll('.game-card[data-region]').forEach(c=>{c.hidden=!GTQRegion.keep(c.dataset.region,r)})}
  document.getElementById('regionHost').appendChild(GTQRegion.picker({onChange:apply}));

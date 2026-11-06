@@ -22,5 +22,6 @@ window.GTQ_GAMES=[
  {path:'guess-the-hollywood',label:'Hollywood',emoji:'🍿'},
  {path:'guess-the-sports',label:'Sports',emoji:'🏅'},
  {path:'guess-the-series',label:'Series',emoji:'📺'},
- {path:'guess-the-web-series',label:'Web Series',emoji:'📱'}
+ {path:'guess-the-web-series',label:'Web Series',emoji:'📱'},
+ {path:'guess-the-world-politics',label:'World Politics',emoji:'🏛️'}
 ];

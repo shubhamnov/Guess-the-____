@@ -24,6 +24,9 @@ const BY_FILM=new Map(DATA.map(x=>[x.film,x]));
 const CHARACTERS=GTQ_DATA.bollywoodCharacters.map(([name,film,actor])=>({name,actor,item:BY_FILM.get(film)}));
 /* The two leads of every film, with its era, for wrong answers. (Supporting cast are only ever right answers.) */
 const ACTORS=[];DATA.forEach(x=>x.cast.slice(0,2).forEach(a=>ACTORS.push({name:a,era:x.era})));
+/* Sequels and other films of one series: never wrong answers for each other's characters. */
+const SERIES=new Map();(GTQ_DATA.bollywoodSeries||[]).forEach((list,i)=>list.forEach(t=>SERIES.set(t,i)));
+const sameSeries=(a,b)=>SERIES.has(a.film)&&SERIES.get(a.film)===SERIES.get(b.film);
 const pool=GuessGame.util.deck(DATA,x=>x.film),charPool=GuessGame.util.deck(CHARACTERS,x=>x.name);
 /* Three actors who are not in this film (same era first once the warm-up is over). */
 function otherActors(ctx,item,exclude){
@@ -59,7 +62,7 @@ GuessGame.run({
   if(f==='dialogue'&&!item.dialogue)f=item.song?'song':'emoji';
   if(f==='character'){
    const c=charPool.draw(),it=c.item,lab=it.film+' ('+it.year+')';
-   return {kind:'Character',answer:it.film,options:ctx.util.choices(it,DATA,{answer:x=>x.film,group:x=>x.era,hard:ctx.hard}),prompt:'Which film is this character from?',level,
+   return {kind:'Character',answer:it.film,options:ctx.util.choices(it,DATA.filter(x=>x===it||!sameSeries(x,it)),{answer:x=>x.film,group:x=>x.era,hard:ctx.hard}),prompt:'Which film is this character from?',level,
     explanation:c.name+' is from '+lab+(c.actor?', played by '+c.actor:'')+'.',render(h){quote(h,c.name,'Character')}};
   }
   if(f==='first'){
