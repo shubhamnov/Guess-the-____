@@ -137,17 +137,13 @@ test('every game links to live mode and the live page lists them all', async ({ 
   }
 });
 
-test('home page: the friend switch turns every game into a new live room, and a code joins from home', async ({ page }) => {
+test('home page: every game card offers Solo and With a friend, and a code joins from home', async ({ page }) => {
   await page.goto('./');
-  const flags = page.locator('.game-card[href^="./guess-the-flag/"]');
-  await expect(flags).toHaveAttribute('href', './guess-the-flag/');
-  await page.getByRole('radio', { name: /With a friend/ }).click();
-  await expect(flags).toHaveAttribute('href', './guess-the-flag/?live=new');
-  await expect(flags.locator('.tag-live')).toHaveText('⚡ Create room');
-  await expect(page.locator('.mixcard')).toBeVisible();
-  // The choice is remembered on the next visit.
-  await page.reload();
-  await expect(flags).toHaveAttribute('href', './guess-the-flag/?live=new');
+  const flags = page.locator('.game-card[data-href="./guess-the-flag/"]');
+  await expect(flags.locator('.play-solo')).toHaveAttribute('href', './guess-the-flag/');
+  await expect(flags.locator('.play-friend')).toHaveAttribute('href', './guess-the-flag/?live=new');
+  await expect(flags.locator('.play-friend')).toBeVisible();
+  expect(await page.locator('.game-card .play-friend').count()).toBe(await page.locator('.game-card').count());
   await page.locator('#homeCode').fill('ab');
   await page.locator('#joinForm button').click();
   await expect(page.locator('#joinError')).toContainText('4-letter code');
@@ -155,10 +151,6 @@ test('home page: the friend switch turns every game into a new live room, and a 
   await page.locator('#homeCode').fill('abcd');
   await page.locator('#joinForm button').click();
   await expect(page).toHaveURL(/race\/\?live=ABCD$/);
-  await page.goto('./');
-  await page.getByRole('radio', { name: /Solo/ }).click();
-  await expect(flags).toHaveAttribute('href', './guess-the-flag/');
-  await expect(flags.locator('.tag-live')).toHaveCount(0);
 });
 
 test('a room made from the home page (?live=new) is ready at once, and a code typed on home finds its game', async ({ browser }) => {
