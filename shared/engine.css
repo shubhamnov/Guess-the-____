@@ -140,3 +140,48 @@ button:focus-visible,a:focus-visible{outline:3px solid #7871e8;outline-offset:3p
 .clue:has(> .clue-big){height:clamp(120px,19vh,165px);min-height:110px}
 .opt-swatch{margin-top:8px}
 .answer.media small{display:block;font-size:11px;font-weight:800;margin-top:4px}
+/* ---------- Live mode (shared/live.js) ---------- */
+[hidden]{display:none!important}
+.lobby{display:flex;flex-direction:column;gap:12px;background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:16px}
+.lobby label{font-size:10px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);display:flex;flex-direction:column;gap:6px}
+.lobby input{font:inherit;font-size:16px;font-weight:800;border:1.5px solid var(--line);border-radius:13px;padding:12px 13px;background:var(--bg);color:var(--ink);width:100%;min-width:0}
+.join-row{display:flex;gap:8px}
+.join-row input{text-transform:uppercase;letter-spacing:.3em;text-align:center}
+.join-row .secondary{width:auto;padding:12px 18px}
+.or{font-size:11px;color:var(--muted);text-align:center;font-weight:800}
+.room-code{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.room-code strong{font-family:var(--display);font-size:40px;letter-spacing:.18em;color:var(--ink);background:var(--lime);border-radius:13px;padding:2px 10px 4px 16px}
+.race-status{font-size:13px;font-weight:800;line-height:1.45;text-align:center;min-height:19px}
+.race-status.bad{color:var(--red)}
+.race-status.good{color:var(--green)}
+.primary:disabled{opacity:.35;cursor:default}
+.race-strip{position:relative;display:flex;flex-direction:column;gap:6px;background:var(--paper);border:1px solid var(--line);border-radius:15px;padding:9px 11px}
+.race-row{display:grid;grid-template-columns:minmax(0,72px) 1fr 52px 40px;align-items:center;gap:8px;font-size:12px;font-weight:850}
+.race-row .who{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.race-row .bar{height:9px;border-radius:9px;background:#efeee7;overflow:hidden}
+.race-row .bar i{display:block;height:100%;width:0;border-radius:9px;background:#b9bcb4;transition:width .3s}
+.race-row.me .bar i{background:var(--ink)}
+.race-row.rival .bar i{background:#7871e8}
+.race-row .pts{text-align:right;font-variant-numeric:tabular-nums;transition:color .2s}
+.race-row .q{text-align:right;color:var(--muted);font-size:10px}
+.race-row.lead .who:after{content:" ▲";color:var(--green)}
+.race-row.flash-good .pts{color:var(--green)}
+.race-row.flash-bad .pts{color:var(--red)}
+.race-row.gone{opacity:.45}
+.race-pop{position:absolute;left:50%;top:100%;transform:translate(-50%,6px);z-index:5;background:var(--ink);color:#fff;font-size:12px;font-weight:900;padding:7px 13px;border-radius:99px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s}
+.race-pop.show{opacity:1}
+.race-pop.warn{background:#7871e8}
+.countdown{position:fixed;inset:0;z-index:1500;display:grid;place-items:center;background:rgba(248,247,242,.94)}
+.countdown span{font-family:var(--display);font-size:min(40vw,200px);font-weight:1000;letter-spacing:-.06em;animation:pop .8s ease-out}
+@keyframes pop{from{transform:scale(1.5);opacity:0}to{transform:scale(1);opacity:1}}
+.race-result{display:flex;flex-direction:column;gap:12px}
+.race-vs{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.race-vs>div{border:1.5px solid var(--line);border-radius:16px;padding:12px}
+.race-vs>div.win{border-color:var(--ink);background:var(--lime)}
+.race-vs label{display:block;font-size:10px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.race-vs strong{display:block;font-family:var(--display);font-size:32px;letter-spacing:-.04em}
+.race-vs small{font-size:11px;color:var(--muted);font-weight:800}
+.race-result a.primary,.race-result a.secondary{text-decoration:none;display:flex;justify-content:center;align-items:center}
+.lobby-part{display:flex;flex-direction:column;gap:12px}
+.solo-link{text-align:center;color:var(--muted)}
+.race-tally{text-align:center;font-family:var(--display);font-weight:1000;font-size:18px;letter-spacing:-.02em;background:var(--bg);border-radius:13px;padding:8px}

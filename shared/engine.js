@@ -13,6 +13,13 @@ function signed(n){return n>0?'+'+n:'−'+Math.abs(n)}
 
 /* ---------- Small helpers ---------- */
 const $=id=>document.getElementById(id);
+const PARAMS=new URLSearchParams(location.search);
+/* Folder this script was loaded from, so live mode can load its extra files from the same place. */
+const SCRIPT_BASE=((document.currentScript&&document.currentScript.src)||'').replace(/[^/]*$/,'');
+/* Seeded random numbers. In live mode both players use the same seed, so every game builds the same questions. */
+function hashSeed(seed){let h=2166136261;for(let i=0;i<seed.length;i++){h^=seed.charCodeAt(i);h=Math.imul(h,16777619)}return h>>>0}
+function rngFor(seed){let state=hashSeed(String(seed));return function(){state=(state+0x6D2B79F5)|0;let t=state;t=Math.imul(t^(t>>>15),t|1);t^=t+Math.imul(t^(t>>>7),t|61);return ((t^(t>>>14))>>>0)/4294967296}}
+function loadScript(src){return new Promise((resolve,reject)=>{const s=document.createElement('script');s.src=src;s.onload=resolve;s.onerror=()=>reject(new Error('Could not load '+src));document.head.appendChild(s)})}
 function safeGet(k){try{return localStorage.getItem(k)}catch(e){return null}}
 function safeSet(k,v){try{localStorage.setItem(k,String(v))}catch(e){}}
 function shuffle(items,rng){const a=items.slice(),r=rng||Math.random;for(let i=a.length-1;i>0;i--){const j=Math.floor(r()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
@@ -136,13 +143,18 @@ function scoreImage(card){
 function run(cfg){
  // Questions come either from next(ctx), one at a time, or from a prepared list (makeRound). The clock is the same.
  const fromList=typeof cfg.makeRound==='function';
+ /* Live mode (?live on any game, or cfg.live): play the same questions as a friend on another device. See shared/live.js. */
+ const live=!!cfg.live||PARAMS.has('live');
+ if(live){cfg.autoStart=false;cfg.replay=false;cfg.pauseWhenHidden=false}
+ let liveHooks=null;
  const seconds=SCORING.seconds;
  const label=cfg.label;
  const homeHref=cfg.homeHref||'../';
  let best=loadBest(cfg.id,cfg.legacyBest);
- const S={running:false,score:0,correct:0,answered:0,streak:0,bestStreak:0,n:0,q:null,locked:true,round:[],startedAt:0,pausedAt:0,timer:null,advance:null};
+ const S={rng:null,seed:null,running:false,score:0,correct:0,answered:0,streak:0,bestStreak:0,n:0,q:null,locked:true,round:[],startedAt:0,pausedAt:0,timer:null,advance:null};
 
- const links=(cfg.links||[]).map(l=>'<span>·</span><a href="'+l.href+'"'+(l.external?' target="_blank" rel="noopener noreferrer"':'')+'>'+escapeHtml(l.text)+'</a>').join('');
+ const liveLink=!live&&cfg.liveLink!==false?[{text:'Play live with a friend',href:'?live'}]:[];
+ const links=liveLink.concat(cfg.links||[]).map(l=>'<span>·</span><a href="'+l.href+'"'+(l.external?' target="_blank" rel="noopener noreferrer"':'')+'>'+escapeHtml(l.text)+'</a>').join('');
  document.body.insertAdjacentHTML('afterbegin',
  '<main class="shell">'+
  '<header class="top"><a class="brand" href="'+homeHref+'" aria-label="Guess the ____ — all games">GUESS THE <span>?</span></a><div class="top-actions"><div class="pill">'+escapeHtml(cfg.pill||label)+'</div><button class="sound-toggle" id="soundToggle" type="button"></button></div></header>'+
@@ -176,10 +188,19 @@ function run(cfg){
  function toggleSound(){sound.on=!sound.on;safeSet(SOUND_KEY,sound.on?'on':'off');renderSound();if(sound.on&&S.running)sound.startMusic();else if(!sound.on)sound.stopMusic()}
  renderSound();$('soundToggle').addEventListener('click',toggleSound);
 
- const ctx={util:{shuffle,pick,deck,choices,bigClue,framePhoto},get n(){return S.n},get score(){return S.score},get correct(){return S.correct},get answered(){return S.answered},get streak(){return S.streak},get elapsed(){return elapsed()},get hard(){return S.n>4},
+ const ctx={util:{shuffle,pick,deck,choices,bigClue,framePhoto},get n(){return S.n},get score(){return S.score},get correct(){return S.correct},get answered(){return S.answered},get streak(){return S.streak},get hard(){return S.n>4},
+  /* In live mode the clock differs between the two devices, so games that get harder over time see a clock based on
+   * the question number instead (2.5 seconds per question), and both players get the same questions. */
+  get live(){return !!S.rng},get seed(){return S.seed},get elapsed(){return S.rng?Math.min(seconds,(S.n)*2.5):elapsed()},
   /* Picks the question format: the first three questions use the game's main format, then formats mix (the main one twice as often). */
   format(formats){if(S.n<3||formats.length<2)return formats[0];return pick([formats[0]].concat(formats))}};
 
+ /* Runs question-building code with Math.random replaced by the seeded generator (only in live mode). The swap is
+  * synchronous, so nothing else on the page can draw from it. Games use ctx.util.shuffle/pick/choices, which fall back
+  * to Math.random, so no game needs its own live code. */
+ function seeded(fn){if(!S.rng)return fn();const original=Math.random;Math.random=S.rng;try{return fn()}finally{Math.random=original}}
+ let loading=null;
+ function ensureLoaded(){if(!cfg.load||cfg._loaded)return Promise.resolve();if(!loading)loading=Promise.resolve().then(()=>cfg.load()).then(()=>{cfg._loaded=true},e=>{loading=null;throw e});return loading}
  function elapsed(){if(!S.startedAt)return 0;return ((S.pausedAt||Date.now())-S.startedAt)/1000}
  function setScreen(name){
   $('intro').style.display=name==='intro'?'flex':'none';
@@ -195,17 +216,18 @@ function run(cfg){
   if(left<=0)finish();
  }
 
- async function start(){
+ async function start(seed){
   clearTimeout(S.advance);clearInterval(S.timer);sound.stopMusic();
   if(cfg.load&&!cfg._loaded){
    const btn=$('startBtn'),old=btn.innerHTML;btn.disabled=true;btn.textContent='Loading questions…';
-   try{await cfg.load();cfg._loaded=true}
+   try{await ensureLoaded()}
    catch(e){btn.textContent='Questions are unavailable right now';$('introNote').textContent='The question bank could not be loaded. Please try again later.';setScreen('intro');return}
    btn.disabled=false;btn.innerHTML=old;
   }
+  S.seed=seed==null?null:String(seed);S.rng=S.seed==null?null:rngFor('guess-the-live-v1|'+S.seed);
   Object.assign(S,{running:true,score:0,correct:0,answered:0,streak:0,bestStreak:0,n:0,q:null,locked:false,startedAt:Date.now(),pausedAt:0});
-  if(cfg.onStart)cfg.onStart(ctx);
-  if(fromList)S.round=cfg.makeRound(ctx);
+  seeded(()=>{if(cfg.onStart)cfg.onStart(ctx);if(fromList)S.round=cfg.makeRound(ctx)});
+  if(liveHooks&&liveHooks.onStart)liveHooks.onStart({total:fromList?S.round.length:0});
   updateStats();$('timebar').style.width='100%';
   $('time').textContent=seconds;$('timerStat').classList.remove('urgent');S.timer=setInterval(tick,200);sound.startMusic();
   setScreen('game');next();
@@ -214,8 +236,11 @@ function run(cfg){
   clearTimeout(S.advance);S.advance=null;
   if(!S.running)return;
   if(fromList&&S.n>=S.round.length){finish();return}
-  const q=fromList?S.round[S.n]:cfg.next(ctx);
+  const q=seeded(()=>fromList?S.round[S.n]:cfg.next(ctx));
   if(!q){finish();return}
+  seeded(()=>showQuestion(q));
+ }
+ function showQuestion(q){
   S.q=q;S.n++;S.locked=false;
   $('roundLabel').textContent=(q.category||cfg.roundLabel||label).toUpperCase()+' '+String(S.n).padStart(2,'0')+(q.kind?' · '+q.kind.toUpperCase():'');
   $('level').textContent=q.level||'';$('level').style.display=q.level?'':'none';
@@ -251,6 +276,7 @@ function run(cfg){
   if(q.explanation){fb.appendChild(el('span','explain',q.explanation))}
   updateStats();
   if(cfg.onAnswer)cfg.onAnswer(q,right,ctx);
+  if(liveHooks&&liveHooks.onAnswer)liveHooks.onAnswer(q,right,ctx);
   // The clock keeps running while feedback shows, so pauses stay short; questions with a fact get a little longer.
   S.advance=setTimeout(next,right?(q.explanation?1100:550):(q.explanation?1800:1200));
  }
@@ -270,9 +296,11 @@ function run(cfg){
   else if(acc>=45)title='You’re warming up.';
   else title='Every round makes you sharper.';
   $('resultTitle').textContent=title;
-  $('resultText').textContent=S.answered?'You got '+S.correct+' of '+S.answered+' right'+(S.bestStreak>=3?' with a best streak of '+S.bestStreak:'')+'. '+(cfg.resultNote?cfg.resultNote():'Fancy another round?'):'Give it a proper go next round.';
+  $('resultText').textContent=S.answered?'You got '+S.correct+' of '+S.answered+' right'+(S.bestStreak>=3?' with a best streak of '+S.bestStreak:'')+'. '+(cfg.resultNote?cfg.resultNote():live?'':'Fancy another round?'):'Give it a proper go next round.';
   setScreen('result');
-  if(cfg.onFinish)cfg.onFinish({score:S.score,correct:S.correct,answered:S.answered,best,seconds:Math.min(seconds,Math.round(elapsed()*10)/10),allDone:fromList&&S.answered>=S.round.length});
+  const res={score:S.score,correct:S.correct,answered:S.answered,best,seconds:Math.min(seconds,Math.round(elapsed()*10)/10),allDone:fromList&&S.answered>=S.round.length};
+  if(cfg.onFinish)cfg.onFinish(res);
+  if(liveHooks&&liveHooks.onFinish)liveHooks.onFinish(res);
   if(cfg.replay!==false)setTimeout(()=>$('againBtn').focus({preventScroll:true}),50);
  }
  async function share(){
@@ -292,8 +320,8 @@ function run(cfg){
   finally{btn.disabled=false;btn.textContent=old}
  }
 
- $('startBtn').addEventListener('click',start);
- $('againBtn').addEventListener('click',start);
+ $('startBtn').addEventListener('click',()=>start());
+ $('againBtn').addEventListener('click',()=>start());
  $('shareBtn').addEventListener('click',share);
 
  document.addEventListener('keydown',e=>{
@@ -315,9 +343,20 @@ function run(cfg){
 
  if(cfg.replay===false)$('againBtn').style.display='none';
  if(cfg.setupIntro)cfg.setupIntro({toast,$});
+ const api={toast,start,ctx,cfg,$,live,total:()=>fromList?S.round.length:0};
+ if(live){
+  /* Live mode: hide the solo start button, fetch the question bank early, then load the room code (PeerJS + live.js). */
+  $('startBtn').style.display='none';
+  $('startBtn').insertAdjacentHTML('afterend','<div class="micro" id="liveLoading">Loading live mode…</div>');
+  ensureLoaded().catch(()=>{});
+  (window.Peer?Promise.resolve():loadScript(SCRIPT_BASE+'vendor/peerjs.min.js'))
+   .then(()=>window.GuessLive?null:loadScript(SCRIPT_BASE+'live.js'))
+   .then(()=>{const l=$('liveLoading');if(l)l.remove();liveHooks=window.GuessLive.attach(api)})
+   .catch(()=>{const l=$('liveLoading');if(l)l.textContent='Live mode could not load. Check your connection and reload the page.'});
+ }
  if(cfg.autoStart===false)setScreen('intro');else start();
- return {toast,start};
+ return api;
 }
 
-window.GuessGame={run,util:{shuffle,pick,deck,choices,bigClue,framePhoto,escapeHtml},scoring:SCORING,pointsFor,bestKey,loadBest};
+window.GuessGame={run,rngFor,util:{shuffle,pick,deck,choices,bigClue,framePhoto,escapeHtml},scoring:SCORING,pointsFor,bestKey,loadBest};
 })();

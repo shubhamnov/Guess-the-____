@@ -35,10 +35,19 @@ Every game page loads `engine.css` and `engine.js`, then calls `GuessGame.run(co
 | `links` | Extra links on the intro and results screens. |
 | `autoStart` | Defaults to `true`; the Daily Mix sets it to `false` to show its intro. |
 | `onFinish(result)` | Optional: called with `{score, correct, answered, best, seconds, allDone}` when a game ends. |
-| `replay` | Set to `false` to hide "Play again" (the live race does this). |
-| `pauseWhenHidden` | Set to `false` to keep the clock running when the tab is hidden (the live race, so both players get the same 60 seconds). |
+| `replay` | Set to `false` to hide "Play again" (live mode does this). |
+| `pauseWhenHidden` | Set to `false` to keep the clock running when the tab is hidden (live mode, so both players get the same 60 seconds). |
+| `live` | Set to `true` for a page that is always played live (the Live Mix). Any other game goes live when opened with `?live`. |
+| `liveLink` | Set to `false` to leave out the "Play live with a friend" link. |
 
-`GuessGame.run` returns `{toast, start}`; `start()` begins a game from code (the race starts both phones this way). `ctx` also exposes `score`, `correct` and `answered`.
+`GuessGame.run` returns `{toast, start, ctx, …}`; `start(seed)` begins a game from code. `ctx` also exposes `score`, `correct`, `answered`, `live` and `seed`.
+
+## Live mode
+Open any game with `?live` to play it against a friend on another device (`/live/` lists them all; `?live=CODE` joins a room).
+- `shared/live.js` (loaded by the engine only in live mode, after `shared/vendor/peerjs.min.js`) runs the room: lobby, invite link, connecting, 3-2-1 countdown, live score strip, head-to-head result, running tally and rematch. See `race/README.md` for how devices connect.
+- **Same questions on both devices without game-specific code.** For each round the host picks a random seed and sends it. While the engine builds a question (`onStart`, `makeRound`, `next`, `render`, `renderOption`) it swaps `Math.random` for a generator seeded from it, so both devices build the same questions. Use `ctx.util.shuffle/pick/choices` or `Math.random` in those functions and live mode just works.
+- Question building must not depend on how a player is doing or on the real clock. In live mode `ctx.elapsed` is based on the question number (2.5 s per question), so games that get harder over time stay in step. A game that adapts to the player's answers should check `ctx.live` (Brand Logos raises its level by question number there instead of by streak).
+- A room code from another game takes the guest to the host's game.
 
 A question is `{answer, options, render(clueElement), prompt?, kind?, level?, explanation?, answerText?, renderOption?(value, button), credit?(el), clueClass?, category?}`. `kind` labels the question type, and `renderOption` turns the answers into pictures (flags, swatches, logos, outlines). `ctx.util` provides `shuffle`, `pick`, `deck` (draw without repeats), `choices` (four unique options, same-group first when `hard` is set) and `bigClue` (a large text clue).
 
@@ -50,5 +59,6 @@ A question is `{answer, options, render(clueElement), prompt?, kind?, level?, ex
 - `data/*.js` — each game's question list, one row per line, so you can add or fix questions without touching code.
 - `catalogs/*.json` — the photo catalogs for Landmarks and Cuisine (see `catalogs/README.md`).
 - `brand-logos.js`, `daily-challenge-data-v1.js`, `brand-logos-daily-v1.js` — logo data and the frozen Daily Mix snapshot.
-- `shared/daily-mix-v1.js` — the frozen Daily Mix question builder, used by the Daily Mix page and the race.
-- `race/` — test version of the live two-phone race (see `race/README.md`). `shared/vendor/peerjs.min.js` is the PeerJS library it uses to connect the phones.
+- `shared/daily-mix-v1.js` — the frozen Daily Mix question builder, used by the Daily Mix page and the Live Mix.
+- `shared/live.js` — live mode (see above). `shared/vendor/peerjs.min.js` is the PeerJS library it uses to connect the devices.
+- `live/` — the "Play live" page: Mix of everything, or pick a category. `race/` — the Live Mix (questions from every category; see `race/README.md`).

@@ -30,6 +30,8 @@ GuessGame.run({
  onStart(){pool.reset();level=0},
 formats:['Name the brand','Find the logo'],
  next(ctx){
+  // Live games must give both players the same logos, so there the level rises with the question number instead of the streak.
+  if(ctx.live)level=Math.min(LEVELS.length-1,Math.floor((ctx.n)/5));
   const item=pool.draw(b=>b.difficulty===LEVELS[level]);
   const options=ctx.util.choices(item,DATA,{answer:x=>x.name,group:x=>x.difficulty,hard:true});
   if(ctx.format(['name','find'])==='find')return {kind:'Find it',answer:item.name,options,prompt:'Which logo belongs to '+item.name+'?',level:item.difficulty,
@@ -39,6 +41,7 @@ formats:['Name the brand','Find the logo'],
    render(h){const img=document.createElement('img');img.className='clue-logo';img.alt='Mystery brand logo';img.src=svgData(item);img.onerror=()=>{h.innerHTML='<span class="clue-fallback">?</span>'};h.appendChild(img)}};
  },
  onAnswer(q,right,ctx){
+  if(ctx.live)return;
   if(right&&ctx.streak%3===0&&level<LEVELS.length-1){level++;GuessGame_note('Moving up to '+LEVELS[level]+' logos!')}
   else if(!right&&level>0){level--}
  }

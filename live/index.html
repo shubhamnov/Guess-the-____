@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f8f7f2">
+<meta name="description" content="Play Guess the ____ live against a friend: a mix of every category, or one category you pick.">
+<title>Play live — Guess the ____</title>
+<style>
+:root{--bg:#f8f7f2;--ink:#191b1a;--muted:#777b75;--line:#e7e5dd;--paper:#fffefa;--lime:#d7fb55;--display:ui-rounded,"Arial Rounded MT Bold",system-ui,sans-serif}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+a{color:inherit}a:focus-visible{outline:3px solid #7871e8;outline-offset:4px}
+.shell{width:min(100% - 32px,820px);margin:0 auto;padding:24px 0 26px;min-height:100dvh;display:flex;flex-direction:column}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{font-family:var(--display);font-size:22px;font-weight:1000;letter-spacing:-1.1px;text-decoration:none;white-space:nowrap}
+.brand span{display:inline-grid;place-items:center;background:var(--lime);border-radius:9px;width:27px;height:27px;margin-left:3px;transform:rotate(5deg)}
+.pill{font-size:10px;font-weight:850;letter-spacing:.09em;text-transform:uppercase;border:1px solid var(--line);padding:8px 11px;border-radius:999px;color:#555950;white-space:nowrap}
+.main{padding:clamp(34px,7vh,70px) 0 40px}
+.eyebrow{font-size:11px;letter-spacing:.16em;font-weight:900;color:#7a7e74;text-transform:uppercase}
+h1{font-family:var(--display);font-size:clamp(40px,8vw,68px);line-height:.95;letter-spacing:-.065em;margin:14px 0 15px;font-weight:1000}
+h1 em{font-style:normal;background:linear-gradient(transparent 62%,var(--lime) 62%,var(--lime) 92%,transparent 92%)}
+.lead{margin:0;max-width:470px;color:#686d65;font-size:15px;line-height:1.6}
+.steps{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 0;padding:0;list-style:none}
+.steps li{font-size:11px;font-weight:850;border:1px solid var(--line);border-radius:999px;padding:7px 10px;color:#555950}
+.mix{display:grid;grid-template-columns:56px minmax(0,1fr) auto;align-items:center;gap:14px;margin-top:28px;padding:15px;background:var(--lime);border:1.5px solid var(--ink);border-radius:22px;text-decoration:none;box-shadow:4px 4px 0 var(--ink);transition:transform .15s,box-shadow .15s}
+.mix:hover{transform:translateY(-2px);box-shadow:5px 6px 0 var(--ink)}
+.mark{height:56px;border-radius:15px;background:var(--paper);border:1.5px solid var(--ink);display:grid;place-items:center;font-size:26px;transform:rotate(-3deg)}
+.mix h2{font-family:var(--display);font-size:clamp(19px,3.4vw,25px);letter-spacing:-.045em;margin:4px 0 5px;font-weight:1000}
+.mix p{font-size:12px;line-height:1.45;color:#45483e;margin:0}
+.arrow{flex:none;display:grid;place-items:center;width:35px;height:35px;background:var(--lime);border-radius:50%;font-size:19px;font-weight:800}
+.mix .arrow{background:var(--paper);border:1.5px solid var(--ink)}
+.or{margin:30px 0 12px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.cat{display:flex;align-items:center;gap:10px;background:var(--paper);border:1px solid var(--line);border-radius:17px;padding:12px;text-decoration:none;font-weight:900;font-size:14px;transition:transform .15s,border-color .15s}
+.cat:hover{transform:translateY(-2px);border-color:#cbc8bd}
+.cat span{font-size:22px;width:34px;text-align:center}
+.cat b{flex:1;min-width:0}
+.cat .arrow{width:27px;height:27px;font-size:14px}
+.note{color:var(--muted);font-size:12px;line-height:1.55;margin:26px 0 0;max-width:560px}
+.footer{margin-top:auto;display:flex;justify-content:space-between;gap:12px;padding-top:22px;color:#92958d;font-size:10px}
+.footer a{text-decoration:none;font-weight:900}
+@media(min-width:650px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<main class="shell">
+ <header class="top"><a class="brand" href="../" aria-label="Guess the ____ — all games">GUESS THE <span>?</span></a><div class="pill">Play live</div></header>
+ <section class="main">
+  <div class="eyebrow">Two players · live scores</div>
+  <h1>Play a friend.<br><em>Live.</em></h1>
+  <p class="lead">Pick what to play, create a room and send the link. You both get the same questions and 60 seconds, and you watch each other’s score as you go. Higher score wins.</p>
+  <ol class="steps"><li>1 · Pick a game</li><li>2 · Create a room</li><li>3 · Send the link</li><li>4 · Play · rematch</li></ol>
+  <a class="mix" id="mixLink" href="../race/?live">
+   <div class="mark" aria-hidden="true">🎲</div>
+   <div><div class="eyebrow">Recommended</div><h2>Mix of everything</h2><p>Random questions from every category: colors, flags, countries, animals, capitals, scripts and logos.</p></div>
+   <span class="arrow" aria-hidden="true">→</span>
+  </a>
+  <div class="eyebrow or">or pick one category</div>
+  <nav class="grid" id="categories" aria-label="Categories">
+   <a class="cat" href="../guess-the-flag/?live"><span aria-hidden="true">🏳️</span><b>Flags</b><i class="arrow" aria-hidden="true">→</i></a>
+   <a class="cat" href="../guess-the-color/?live"><span aria-hidden="true">🎨</span><b>Colors</b><i class="arrow" aria-hidden="true">→</i></a>
+   <a class="cat" href="../guess-the-countries/?live"><span aria-hidden="true">🗺️</span><b>Countries</b><i class="arrow" aria-hidden="true">→</i></a>
+   <a class="cat" href="../guess-the-capitals/?live"><span aria-hidden="true">🏛️</span><b>Capital Cities</b><i class="arrow" aria-hidden="true">→</i></a>
+   <a class="cat" href="../guess-the-landmarks/?live"><span aria-hidden="true">🗼</span><b>Landmarks</b><i class="arrow" aria-hidden="true">→</i></a>
+   <a class="cat" href="../guess-the-cuisine/?live"><span aria-hidden="true">🍜</span><b>Cuisine</b><i class="arrow" aria-hidden="true">→</i></a>
+   <a class="cat" href="../guess-the-animals/?live"><span aria-hidden="true">🦊</span><b>Animals</b><i class="arrow" aria-hidden="true">→</i></a>
+   <a class="cat" href="../guess-the-scripts/?live"><span aria-hidden="true">✍️</span><b>Scripts</b><i class="arrow" aria-hidden="true">→</i></a>
+   <a class="cat" href="../guess-the-brand-logos/?live"><span aria-hidden="true">🏷️</span><b>Brand Logos</b><i class="arrow" aria-hidden="true">→</i></a>
+   <a class="cat" href="../guess-the-currencies/?live"><span aria-hidden="true">💱</span><b>Currencies</b><i class="arrow" aria-hidden="true">→</i></a>
+   <a class="cat" href="../guess-the-elements/?live"><span aria-hidden="true">⚗️</span><b>Elements</b><i class="arrow" aria-hidden="true">→</i></a>
+   <a class="cat" href="../guess-the-languages/?live"><span aria-hidden="true">🗣️</span><b>Languages</b><i class="arrow" aria-hidden="true">→</i></a>
+   <a class="cat" href="../daily-challenge/?live"><span aria-hidden="true">📅</span><b>Today’s Daily Mix</b><i class="arrow" aria-hidden="true">→</i></a>
+  </nav>
+  <p class="note">Got a code from a friend? Open any game above and type it under “join a friend’s room”; you’ll be taken to the right game. Use two devices (two phones, or a phone and a computer) and keep the page on screen: phones pause pages in the background.</p>
+ </section>
+ <footer class="footer"><span>GUESS THE ?</span><a href="https://github.com/shubhamnov" target="_blank" rel="noopener noreferrer">MADE BY SHUBHAM ↗</a></footer>
+</main>
+</body>
+</html>
