@@ -2,396 +2,95 @@
   "note": "Questions whose photos should be replaced. Pushing a change to this file runs .github/workflows/find-photo-candidates.yml, which saves candidate photos to the photo-review branch for a person to choose from. Set \"anywhere\": true to also search outside Commons' reviewed collections.",
   "requests": [
     {
-      "id": "landmark_021",
-      "query": "Burj Khalifa",
-      "answer": "Burj Khalifa",
+      "id": "cuisine_042",
+      "query": "Cheeseburger with lettuce and tomato",
+      "answer": "Hamburger",
       "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Burj_Khalifa"
+      "factSource": "https://en.wikipedia.org/wiki/Hamburger"
     },
     {
-      "id": "landmark_022",
-      "query": "Stonehenge",
-      "answer": "Stonehenge",
+      "id": "cuisine_048",
+      "query": "Brezel pretzel bread",
+      "answer": "Pretzel",
       "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Stonehenge"
+      "factSource": "https://en.wikipedia.org/wiki/Pretzel"
     },
     {
-      "id": "landmark_023",
-      "query": "Chichen Itza El Castillo",
-      "answer": "Chichén Itzá",
+      "id": "cuisine_052",
+      "query": "Crêpes dessert plate",
+      "answer": "Crêpes",
       "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Chichen_Itza"
+      "factSource": "https://en.wikipedia.org/wiki/Crêpe"
     },
     {
-      "id": "landmark_024",
-      "query": "Tower Bridge London",
-      "answer": "Tower Bridge",
+      "id": "cuisine_055",
+      "query": "Bouillabaisse soup",
+      "answer": "Bouillabaisse",
       "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Tower_Bridge"
+      "factSource": "https://en.wikipedia.org/wiki/Bouillabaisse"
     },
     {
-      "id": "landmark_025",
-      "query": "Louvre Pyramid",
-      "answer": "Louvre Pyramid",
+      "id": "cuisine_076",
+      "query": "Chili con carne bowl",
+      "answer": "Chili con carne",
       "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Louvre_Pyramid"
+      "factSource": "https://en.wikipedia.org/wiki/Chili_con_carne"
     },
     {
-      "id": "landmark_026",
-      "query": "Arc de Triomphe Paris",
-      "answer": "Arc de Triomphe",
+      "id": "cuisine_084",
+      "query": "Laksa noodle soup",
+      "answer": "Laksa",
       "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Arc_de_Triomphe"
+      "factSource": "https://en.wikipedia.org/wiki/Laksa"
     },
     {
-      "id": "landmark_027",
-      "query": "Brandenburg Gate Berlin",
-      "answer": "Brandenburg Gate",
+      "id": "cuisine_087",
+      "query": "Satay skewers peanut sauce",
+      "answer": "Satay",
       "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Brandenburg_Gate"
+      "factSource": "https://en.wikipedia.org/wiki/Satay"
     },
     {
-      "id": "landmark_028",
-      "query": "Notre-Dame de Paris facade",
-      "answer": "Notre-Dame de Paris",
+      "id": "cuisine_094",
+      "query": "Sichuan hot pot meal",
+      "answer": "Hot pot",
       "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Notre-Dame_de_Paris"
+      "factSource": "https://en.wikipedia.org/wiki/Hot_pot"
     },
     {
-      "id": "landmark_029",
-      "query": "Saint Basil's Cathedral Moscow",
-      "answer": "Saint Basil's Cathedral",
+      "id": "cuisine_095",
+      "query": "Baechu kimchi napa cabbage",
+      "answer": "Kimchi",
       "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Saint_Basil%27s_Cathedral"
+      "factSource": "https://en.wikipedia.org/wiki/Kimchi"
     },
     {
-      "id": "landmark_030",
-      "query": "Hagia Sophia Istanbul",
-      "answer": "Hagia Sophia",
+      "id": "cuisine_097",
+      "query": "Shrimp tempura",
+      "answer": "Tempura",
       "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Hagia_Sophia"
-    },
-    {
-      "id": "landmark_031",
-      "query": "Sultan Ahmed Mosque Istanbul",
-      "answer": "Blue Mosque",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Blue_Mosque,_Istanbul"
-    },
-    {
-      "id": "landmark_032",
-      "query": "Mont-Saint-Michel",
-      "answer": "Mont-Saint-Michel",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Mont-Saint-Michel"
-    },
-    {
-      "id": "landmark_033",
-      "query": "Mount Fuji",
-      "answer": "Mount Fuji",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Mount_Fuji"
-    },
-    {
-      "id": "landmark_034",
-      "query": "Grand Canyon",
-      "answer": "Grand Canyon",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Grand_Canyon"
-    },
-    {
-      "id": "landmark_035",
-      "query": "Niagara Falls Horseshoe Falls",
-      "answer": "Niagara Falls",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Niagara_Falls"
-    },
-    {
-      "id": "landmark_036",
-      "query": "Uluru",
-      "answer": "Uluru",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Uluru"
+      "factSource": "https://en.wikipedia.org/wiki/Tempura"
     },
     {
       "id": "landmark_037",
-      "query": "Table Mountain Cape Town",
+      "query": "Table Mountain Cape Town Bloubergstrand",
       "answer": "Table Mountain",
       "anywhere": true,
       "factSource": "https://en.wikipedia.org/wiki/Table_Mountain"
     },
     {
-      "id": "landmark_038",
-      "query": "Ha Long Bay",
-      "answer": "Ha Long Bay",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Ha_Long_Bay"
-    },
-    {
-      "id": "landmark_039",
-      "query": "Victoria Falls Zambezi",
-      "answer": "Victoria Falls",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Victoria_Falls"
-    },
-    {
-      "id": "landmark_040",
-      "query": "Matterhorn",
-      "answer": "Matterhorn",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Matterhorn"
-    },
-    {
-      "id": "landmark_041",
-      "query": "Tower of London White Tower",
-      "answer": "Tower of London",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Tower_of_London"
-    },
-    {
-      "id": "landmark_042",
-      "query": "Buckingham Palace",
-      "answer": "Buckingham Palace",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Buckingham_Palace"
-    },
-    {
-      "id": "landmark_043",
-      "query": "Palace of Versailles",
-      "answer": "Palace of Versailles",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Palace_of_Versailles"
-    },
-    {
-      "id": "landmark_044",
-      "query": "Edinburgh Castle",
-      "answer": "Edinburgh Castle",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Edinburgh_Castle"
-    },
-    {
-      "id": "landmark_045",
-      "query": "Charles Bridge Prague",
-      "answer": "Charles Bridge",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Charles_Bridge"
-    },
-    {
-      "id": "landmark_046",
-      "query": "Ponte Vecchio Florence",
-      "answer": "Ponte Vecchio",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Ponte_Vecchio"
-    },
-    {
-      "id": "landmark_047",
-      "query": "Rialto Bridge Venice",
-      "answer": "Rialto Bridge",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Rialto_Bridge"
-    },
-    {
-      "id": "landmark_048",
-      "query": "St. Peter's Basilica facade",
-      "answer": "St. Peter's Basilica",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/St._Peter%27s_Basilica"
-    },
-    {
-      "id": "landmark_049",
-      "query": "Florence Cathedral Duomo",
-      "answer": "Florence Cathedral",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Florence_Cathedral"
-    },
-    {
-      "id": "landmark_050",
-      "query": "Milan Cathedral facade",
-      "answer": "Milan Cathedral",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Milan_Cathedral"
-    },
-    {
-      "id": "landmark_051",
-      "query": "Cologne Cathedral",
-      "answer": "Cologne Cathedral",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Cologne_Cathedral"
-    },
-    {
-      "id": "landmark_052",
-      "query": "Atomium Brussels",
-      "answer": "Atomium",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Atomium"
-    },
-    {
-      "id": "landmark_053",
-      "query": "Alhambra Granada",
-      "answer": "Alhambra",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Alhambra"
-    },
-    {
-      "id": "landmark_054",
-      "query": "Potala Palace Lhasa",
-      "answer": "Potala Palace",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Potala_Palace"
-    },
-    {
-      "id": "landmark_055",
-      "query": "Temple of Heaven Hall of Prayer for Good Harvests",
-      "answer": "Temple of Heaven",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Temple_of_Heaven"
-    },
-    {
-      "id": "landmark_056",
-      "query": "Terracotta Army",
-      "answer": "Terracotta Army",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Terracotta_Army"
-    },
-    {
-      "id": "landmark_057",
-      "query": "Fushimi Inari torii",
-      "answer": "Fushimi Inari Taisha",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Fushimi_Inari-taisha"
-    },
-    {
-      "id": "landmark_058",
-      "query": "Kinkaku-ji",
-      "answer": "Kinkaku-ji",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Kinkaku-ji"
-    },
-    {
-      "id": "landmark_059",
-      "query": "Himeji Castle",
-      "answer": "Himeji Castle",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Himeji_Castle"
-    },
-    {
-      "id": "landmark_060",
-      "query": "Petronas Towers",
-      "answer": "Petronas Towers",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Petronas_Towers"
-    },
-    {
-      "id": "landmark_061",
-      "query": "Marina Bay Sands",
-      "answer": "Marina Bay Sands",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Marina_Bay_Sands"
-    },
-    {
-      "id": "landmark_062",
-      "query": "Burj Al Arab",
-      "answer": "Burj Al Arab",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Burj_Al_Arab"
-    },
-    {
       "id": "landmark_063",
-      "query": "Sheikh Zayed Grand Mosque",
+      "query": "Sheikh Zayed Grand Mosque Abu Dhabi",
       "answer": "Sheikh Zayed Grand Mosque",
       "anywhere": true,
       "factSource": "https://en.wikipedia.org/wiki/Sheikh_Zayed_Grand_Mosque"
     },
     {
-      "id": "landmark_064",
-      "query": "Gateway of India Mumbai",
-      "answer": "Gateway of India",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Gateway_of_India"
-    },
-    {
-      "id": "landmark_065",
-      "query": "India Gate New Delhi",
-      "answer": "India Gate",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/India_Gate"
-    },
-    {
-      "id": "landmark_066",
-      "query": "Golden Temple Amritsar",
-      "answer": "Golden Temple",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Golden_Temple"
-    },
-    {
-      "id": "landmark_067",
-      "query": "Hawa Mahal Jaipur",
-      "answer": "Hawa Mahal",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Hawa_Mahal"
-    },
-    {
-      "id": "landmark_068",
-      "query": "Lotus Temple Delhi",
-      "answer": "Lotus Temple",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Lotus_Temple"
-    },
-    {
-      "id": "landmark_069",
-      "query": "Qutb Minar",
-      "answer": "Qutub Minar",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Qutb_Minar"
-    },
-    {
-      "id": "landmark_070",
-      "query": "Charminar Hyderabad",
-      "answer": "Charminar",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Charminar"
-    },
-    {
-      "id": "landmark_071",
-      "query": "Shwedagon Pagoda",
-      "answer": "Shwedagon Pagoda",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Shwedagon_Pagoda"
-    },
-    {
-      "id": "landmark_072",
-      "query": "Wat Arun Bangkok",
-      "answer": "Wat Arun",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Wat_Arun"
-    },
-    {
-      "id": "landmark_073",
-      "query": "Borobudur",
-      "answer": "Borobudur",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Borobudur"
-    },
-    {
       "id": "landmark_074",
-      "query": "Bagan temples",
+      "query": "Bagan temples plain Myanmar",
       "answer": "Bagan temples",
       "anywhere": true,
       "factSource": "https://en.wikipedia.org/wiki/Bagan"
-    },
-    {
-      "id": "landmark_075",
-      "query": "Abu Simbel temple",
-      "answer": "Abu Simbel",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Abu_Simbel"
-    },
-    {
-      "id": "landmark_076",
-      "query": "Great Sphinx of Giza",
-      "answer": "Great Sphinx of Giza",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Great_Sphinx_of_Giza"
     },
     {
       "id": "landmark_077",
@@ -399,587 +98,6 @@
       "answer": "Hassan II Mosque",
       "anywhere": true,
       "factSource": "https://en.wikipedia.org/wiki/Hassan_II_Mosque"
-    },
-    {
-      "id": "landmark_078",
-      "query": "Kilimanjaro",
-      "answer": "Mount Kilimanjaro",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Mount_Kilimanjaro"
-    },
-    {
-      "id": "landmark_079",
-      "query": "CN Tower Toronto",
-      "answer": "CN Tower",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/CN_Tower"
-    },
-    {
-      "id": "landmark_080",
-      "query": "Space Needle Seattle",
-      "answer": "Space Needle",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Space_Needle"
-    },
-    {
-      "id": "landmark_081",
-      "query": "Empire State Building",
-      "answer": "Empire State Building",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Empire_State_Building"
-    },
-    {
-      "id": "landmark_082",
-      "query": "Chrysler Building",
-      "answer": "Chrysler Building",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Chrysler_Building"
-    },
-    {
-      "id": "landmark_083",
-      "query": "Flatiron Building",
-      "answer": "Flatiron Building",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Flatiron_Building"
-    },
-    {
-      "id": "landmark_084",
-      "query": "White House Washington",
-      "answer": "White House",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/White_House"
-    },
-    {
-      "id": "landmark_085",
-      "query": "United States Capitol",
-      "answer": "United States Capitol",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/United_States_Capitol"
-    },
-    {
-      "id": "landmark_086",
-      "query": "Lincoln Memorial",
-      "answer": "Lincoln Memorial",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Lincoln_Memorial"
-    },
-    {
-      "id": "landmark_087",
-      "query": "Gateway Arch St. Louis",
-      "answer": "Gateway Arch",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Gateway_Arch"
-    },
-    {
-      "id": "landmark_088",
-      "query": "Brooklyn Bridge",
-      "answer": "Brooklyn Bridge",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Brooklyn_Bridge"
-    },
-    {
-      "id": "landmark_089",
-      "query": "Hungarian Parliament Building",
-      "answer": "Hungarian Parliament Building",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Hungarian_Parliament_Building"
-    },
-    {
-      "id": "landmark_090",
-      "query": "Reichstag building Berlin",
-      "answer": "Reichstag building",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Reichstag_building"
-    },
-    {
-      "id": "landmark_091",
-      "query": "Plaza de España Seville",
-      "answer": "Plaza de España, Seville",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Plaza_de_España_(Seville)"
-    },
-    {
-      "id": "landmark_092",
-      "query": "Pena Palace Sintra",
-      "answer": "Pena Palace",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Pena_Palace"
-    },
-    {
-      "id": "landmark_093",
-      "query": "Belém Tower Lisbon",
-      "answer": "Belém Tower",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Belém_Tower"
-    },
-    {
-      "id": "landmark_094",
-      "query": "Trevi Fountain",
-      "answer": "Trevi Fountain",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Trevi_Fountain"
-    },
-    {
-      "id": "landmark_095",
-      "query": "Pantheon Rome",
-      "answer": "Pantheon",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Pantheon,_Rome"
-    },
-    {
-      "id": "landmark_096",
-      "query": "Meteora monastery",
-      "answer": "Meteora",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Meteora"
-    },
-    {
-      "id": "landmark_097",
-      "query": "Cliffs of Moher",
-      "answer": "Cliffs of Moher",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Cliffs_of_Moher"
-    },
-    {
-      "id": "landmark_098",
-      "query": "Giant's Causeway",
-      "answer": "Giant's Causeway",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Giant%27s_Causeway"
-    },
-    {
-      "id": "landmark_099",
-      "query": "Twelve Apostles Victoria",
-      "answer": "Twelve Apostles",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/The_Twelve_Apostles_(Victoria)"
-    },
-    {
-      "id": "landmark_100",
-      "query": "Sugarloaf Mountain Rio de Janeiro",
-      "answer": "Sugarloaf Mountain",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Sugarloaf_Mountain"
-    },
-    {
-      "id": "cuisine_041",
-      "query": "fish and chips",
-      "answer": "Fish and chips",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Fish_and_chips"
-    },
-    {
-      "id": "cuisine_042",
-      "query": "hamburger",
-      "answer": "Hamburger",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Hamburger"
-    },
-    {
-      "id": "cuisine_043",
-      "query": "jollof rice",
-      "answer": "Jollof rice",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Jollof_rice"
-    },
-    {
-      "id": "cuisine_044",
-      "query": "spaghetti carbonara",
-      "answer": "Spaghetti carbonara",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Carbonara"
-    },
-    {
-      "id": "cuisine_045",
-      "query": "lasagna",
-      "answer": "Lasagna",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Lasagna"
-    },
-    {
-      "id": "cuisine_046",
-      "query": "risotto",
-      "answer": "Risotto",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Risotto"
-    },
-    {
-      "id": "cuisine_047",
-      "query": "tabbouleh",
-      "answer": "Tabbouleh",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Tabbouleh"
-    },
-    {
-      "id": "cuisine_048",
-      "query": "pretzel",
-      "answer": "Pretzel",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Pretzel"
-    },
-    {
-      "id": "cuisine_049",
-      "query": "bagel",
-      "answer": "Bagel",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Bagel"
-    },
-    {
-      "id": "cuisine_050",
-      "query": "Wiener schnitzel",
-      "answer": "Wiener schnitzel",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Wiener_schnitzel"
-    },
-    {
-      "id": "cuisine_051",
-      "query": "shawarma",
-      "answer": "Shawarma",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Shawarma"
-    },
-    {
-      "id": "cuisine_052",
-      "query": "crêpe",
-      "answer": "Crêpes",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Crêpe"
-    },
-    {
-      "id": "cuisine_053",
-      "query": "macarons",
-      "answer": "Macarons",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Macaron"
-    },
-    {
-      "id": "cuisine_054",
-      "query": "ratatouille",
-      "answer": "Ratatouille",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Ratatouille"
-    },
-    {
-      "id": "cuisine_055",
-      "query": "bouillabaisse",
-      "answer": "Bouillabaisse",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Bouillabaisse"
-    },
-    {
-      "id": "cuisine_056",
-      "query": "croque monsieur",
-      "answer": "Croque monsieur",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Croque_monsieur"
-    },
-    {
-      "id": "cuisine_057",
-      "query": "Greek salad",
-      "answer": "Greek salad",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Greek_salad"
-    },
-    {
-      "id": "cuisine_058",
-      "query": "gazpacho",
-      "answer": "Gazpacho",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Gazpacho"
-    },
-    {
-      "id": "cuisine_059",
-      "query": "bunny chow",
-      "answer": "Bunny chow",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Bunny_chow"
-    },
-    {
-      "id": "cuisine_060",
-      "query": "full English breakfast",
-      "answer": "Full breakfast",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Full_breakfast"
-    },
-    {
-      "id": "cuisine_061",
-      "query": "eggs Benedict",
-      "answer": "Eggs Benedict",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Eggs_Benedict"
-    },
-    {
-      "id": "cuisine_062",
-      "query": "pancakes stack",
-      "answer": "Pancakes",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Pancake"
-    },
-    {
-      "id": "cuisine_063",
-      "query": "waffles",
-      "answer": "Waffles",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Waffle"
-    },
-    {
-      "id": "cuisine_064",
-      "query": "apple pie",
-      "answer": "Apple pie",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Apple_pie"
-    },
-    {
-      "id": "cuisine_065",
-      "query": "cheesecake slice",
-      "answer": "Cheesecake",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Cheesecake"
-    },
-    {
-      "id": "cuisine_066",
-      "query": "macaroni and cheese",
-      "answer": "Macaroni and cheese",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Macaroni_and_cheese"
-    },
-    {
-      "id": "cuisine_067",
-      "query": "clam chowder",
-      "answer": "Clam chowder",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Clam_chowder"
-    },
-    {
-      "id": "cuisine_068",
-      "query": "knafeh",
-      "answer": "Knafeh",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Knafeh"
-    },
-    {
-      "id": "cuisine_069",
-      "query": "burrito",
-      "answer": "Burrito",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Burrito"
-    },
-    {
-      "id": "cuisine_070",
-      "query": "guacamole",
-      "answer": "Guacamole",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Guacamole"
-    },
-    {
-      "id": "cuisine_071",
-      "query": "tamales",
-      "answer": "Tamales",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Tamale"
-    },
-    {
-      "id": "cuisine_072",
-      "query": "enchiladas",
-      "answer": "Enchiladas",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Enchilada"
-    },
-    {
-      "id": "cuisine_073",
-      "query": "feijoada",
-      "answer": "Feijoada",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Feijoada"
-    },
-    {
-      "id": "cuisine_074",
-      "query": "pão de queijo",
-      "answer": "Pão de queijo",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Pão_de_queijo"
-    },
-    {
-      "id": "cuisine_075",
-      "query": "brigadeiro",
-      "answer": "Brigadeiro",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Brigadeiro"
-    },
-    {
-      "id": "cuisine_076",
-      "query": "chili con carne",
-      "answer": "Chili con carne",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Chili_con_carne"
-    },
-    {
-      "id": "cuisine_077",
-      "query": "naan bread",
-      "answer": "Naan",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Naan"
-    },
-    {
-      "id": "cuisine_078",
-      "query": "tandoori chicken",
-      "answer": "Tandoori chicken",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Tandoori_chicken"
-    },
-    {
-      "id": "cuisine_079",
-      "query": "chole bhature",
-      "answer": "Chole bhature",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Chole_bhature"
-    },
-    {
-      "id": "cuisine_080",
-      "query": "pav bhaji",
-      "answer": "Pav bhaji",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Pav_bhaji"
-    },
-    {
-      "id": "cuisine_081",
-      "query": "gulab jamun",
-      "answer": "Gulab jamun",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Gulab_jamun"
-    },
-    {
-      "id": "cuisine_082",
-      "query": "idli",
-      "answer": "Idli",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Idli"
-    },
-    {
-      "id": "cuisine_083",
-      "query": "jalebi",
-      "answer": "Jalebi",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Jalebi"
-    },
-    {
-      "id": "cuisine_084",
-      "query": "laksa",
-      "answer": "Laksa",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Laksa"
-    },
-    {
-      "id": "cuisine_085",
-      "query": "nasi lemak",
-      "answer": "Nasi lemak",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Nasi_lemak"
-    },
-    {
-      "id": "cuisine_086",
-      "query": "nasi goreng",
-      "answer": "Nasi goreng",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Nasi_goreng"
-    },
-    {
-      "id": "cuisine_087",
-      "query": "satay",
-      "answer": "Satay",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Satay"
-    },
-    {
-      "id": "cuisine_088",
-      "query": "rendang",
-      "answer": "Rendang",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Rendang"
-    },
-    {
-      "id": "cuisine_089",
-      "query": "tom yum",
-      "answer": "Tom yum",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Tom_yum"
-    },
-    {
-      "id": "cuisine_090",
-      "query": "Thai green curry",
-      "answer": "Thai green curry",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Green_curry"
-    },
-    {
-      "id": "cuisine_091",
-      "query": "spring rolls",
-      "answer": "Spring rolls",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Spring_roll"
-    },
-    {
-      "id": "cuisine_092",
-      "query": "xiaolongbao",
-      "answer": "Xiaolongbao",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Xiaolongbao"
-    },
-    {
-      "id": "cuisine_093",
-      "query": "mapo tofu",
-      "answer": "Mapo tofu",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Mapo_tofu"
-    },
-    {
-      "id": "cuisine_094",
-      "query": "Chinese hot pot",
-      "answer": "Hot pot",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Hot_pot"
-    },
-    {
-      "id": "cuisine_095",
-      "query": "kimchi",
-      "answer": "Kimchi",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Kimchi"
-    },
-    {
-      "id": "cuisine_096",
-      "query": "tteokbokki",
-      "answer": "Tteokbokki",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Tteok-bokki"
-    },
-    {
-      "id": "cuisine_097",
-      "query": "tempura",
-      "answer": "Tempura",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Tempura"
-    },
-    {
-      "id": "cuisine_098",
-      "query": "takoyaki",
-      "answer": "Takoyaki",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Takoyaki"
-    },
-    {
-      "id": "cuisine_099",
-      "query": "mochi",
-      "answer": "Mochi",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Mochi"
-    },
-    {
-      "id": "cuisine_100",
-      "query": "pastel de nata",
-      "answer": "Pastel de nata",
-      "anywhere": true,
-      "factSource": "https://en.wikipedia.org/wiki/Pastel_de_nata"
     }
   ]
 }

@@ -37,7 +37,11 @@ def check_catalog(name, rel_path, problems):
         if q.get("difficulty") not in DIFFICULTIES:
             problems.append(f"{where}: difficulty must be one of {sorted(DIFFICULTIES)}")
         image = q.get("image") or {}
+        # A question still waiting for its photo to be cached has no local file yet; games only show approved ones.
+        waiting = q.get("status") != "approved" and not image.get("path")
         for field in IMAGE_REQUIRED:
+            if waiting and field == "path":
+                continue
             if not image.get(field):
                 problems.append(f"{where}: image.{field} missing")
         if image.get("path") and not (ROOT / image["path"]).is_file():

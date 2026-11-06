@@ -498,6 +498,1754 @@
       "factSource": "https://whc.unesco.org/en/list/86/",
       "difficulty": "medium",
       "status": "approved"
+    },
+    {
+      "id": "landmark_021",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Burj_Khalifa_%2816260269606%29.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Burj_Khalifa_(16260269606).jpg",
+        "creator": "Laika ac",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Burj_Khalifa_%2816260269606%29.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Burj Khalifa",
+        "Shanghai Tower",
+        "Taipei 101",
+        "Petronas Towers"
+      ],
+      "answer": "Burj Khalifa",
+      "explanation": "Burj Khalifa in Dubai has been the world's tallest building since it opened in 2010, at about 828 metres.",
+      "factSource": "https://en.wikipedia.org/wiki/Burj_Khalifa",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_022",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Stonehenge%2C_Condado_de_Wiltshire%2C_Inglaterra%2C_2014-08-12%2C_DD_18.JPG?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Stonehenge,_Condado_de_Wiltshire,_Inglaterra,_2014-08-12,_DD_18.JPG",
+        "creator": "Diego Delso",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Stonehenge%2C_Condado_de_Wiltshire%2C_Inglaterra%2C_2014-08-12%2C_DD_18.JPG?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Stonehenge",
+        "Avebury",
+        "Carnac stones",
+        "Ring of Brodgar"
+      ],
+      "answer": "Stonehenge",
+      "explanation": "Stonehenge is a prehistoric stone circle in Wiltshire, England, built in stages from around 3000 BC.",
+      "factSource": "https://en.wikipedia.org/wiki/Stonehenge",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_023",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chichen_Itza_3.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Chichen_Itza_3.jpg",
+        "creator": "Daniel Schwen",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Chichen_Itza_3.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Chichén Itzá",
+        "Tikal",
+        "Teotihuacan",
+        "Palenque"
+      ],
+      "answer": "Chichén Itzá",
+      "explanation": "El Castillo, the stepped pyramid of Kukulcán, stands at the centre of the Maya city of Chichén Itzá in Yucatán, Mexico.",
+      "factSource": "https://en.wikipedia.org/wiki/Chichen_Itza",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_024",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tower_Bridge_golden_hour.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Tower_Bridge_golden_hour.jpg",
+        "creator": "The Cosmonaut",
+        "license": "CC BY-SA 2.5 ca",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Tower_Bridge_golden_hour.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Tower Bridge",
+        "London Bridge",
+        "Brooklyn Bridge",
+        "Charles Bridge"
+      ],
+      "answer": "Tower Bridge",
+      "explanation": "Tower Bridge crosses the River Thames in London and opened in 1894; its roadway lifts to let ships through.",
+      "factSource": "https://en.wikipedia.org/wiki/Tower_Bridge",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_025",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Louvre_museum_01.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Louvre_museum_01.jpg",
+        "creator": "Maksim Sokolov (maxergon.com)",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Louvre_museum_01.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Louvre Pyramid",
+        "Luxor Las Vegas",
+        "Muttart Conservatory",
+        "Walter Pyramid"
+      ],
+      "answer": "Louvre Pyramid",
+      "explanation": "The glass pyramid designed by I. M. Pei became the main entrance of the Louvre museum in Paris in 1989.",
+      "factSource": "https://en.wikipedia.org/wiki/Louvre_Pyramid",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_026",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Arc_de_Triomphe_de_l%27%C3%89toile_at_night_vertical_fix.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Arc_de_Triomphe_de_l%27%C3%89toile_at_night_vertical_fix.jpg",
+        "creator": "Wilfredor",
+        "license": "CC0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Arc_de_Triomphe_de_l%27%C3%89toile_at_night_vertical_fix.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Arc de Triomphe",
+        "Brandenburg Gate",
+        "India Gate",
+        "Washington Square Arch"
+      ],
+      "answer": "Arc de Triomphe",
+      "explanation": "Napoleon commissioned the Arc de Triomphe in Paris in 1806; it was completed in 1836.",
+      "factSource": "https://en.wikipedia.org/wiki/Arc_de_Triomphe",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_027",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Brandenburger_Tor_morgens.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Brandenburger_Tor_morgens.jpg",
+        "creator": "Thomas Wolf, www.foto-tw.de",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Brandenburger_Tor_morgens.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Brandenburg Gate",
+        "Arc de Triomphe",
+        "Siegestor",
+        "Wellington Arch"
+      ],
+      "answer": "Brandenburg Gate",
+      "explanation": "Berlin's neoclassical Brandenburg Gate was completed in 1791 and became a symbol of German reunification.",
+      "factSource": "https://en.wikipedia.org/wiki/Brandenburg_Gate",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_028",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/NotreDameDeParis.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:NotreDameDeParis.jpg",
+        "creator": "Sanchezn",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/NotreDameDeParis.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Notre-Dame de Paris",
+        "Reims Cathedral",
+        "Chartres Cathedral",
+        "Amiens Cathedral"
+      ],
+      "answer": "Notre-Dame de Paris",
+      "explanation": "Notre-Dame stands on the Île de la Cité in Paris; it reopened in December 2024 after the 2019 fire.",
+      "factSource": "https://en.wikipedia.org/wiki/Notre-Dame_de_Paris",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_029",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Moscow_-_2025_-_Daytime_view_of_St._Basil%27s_Cathedral_from_Vasilyevsky_Spusk.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Moscow_-_2025_-_Daytime_view_of_St._Basil%27s_Cathedral_from_Vasilyevsky_Spusk.jpg",
+        "creator": "Юрий Д.К.",
+        "license": "CC BY 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Moscow_-_2025_-_Daytime_view_of_St._Basil%27s_Cathedral_from_Vasilyevsky_Spusk.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Saint Basil's Cathedral",
+        "Church of the Savior on Spilled Blood",
+        "Cathedral of Christ the Saviour",
+        "Kazan Cathedral"
+      ],
+      "answer": "Saint Basil's Cathedral",
+      "explanation": "Saint Basil's Cathedral, with its colourful onion domes, was built on Red Square in Moscow in the 1550s under Ivan the Terrible.",
+      "factSource": "https://en.wikipedia.org/wiki/Saint_Basil%27s_Cathedral",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_030",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hagia_Sophia_Mars_2013.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Hagia_Sophia_Mars_2013.jpg",
+        "creator": "Arild Vågen",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Hagia_Sophia_Mars_2013.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Hagia Sophia",
+        "Blue Mosque",
+        "Süleymaniye Mosque",
+        "Dome of the Rock"
+      ],
+      "answer": "Hagia Sophia",
+      "explanation": "Hagia Sophia in Istanbul was completed in 537 as the cathedral of Constantinople, and its great dome still dominates the skyline.",
+      "factSource": "https://en.wikipedia.org/wiki/Hagia_Sophia",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_031",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Exterior_of_Sultan_Ahmed_I_Mosque_in_Istanbul%2C_Turkey_002.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Exterior_of_Sultan_Ahmed_I_Mosque_in_Istanbul,_Turkey_002.jpg",
+        "creator": "Moonik",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Exterior_of_Sultan_Ahmed_I_Mosque_in_Istanbul%2C_Turkey_002.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Blue Mosque",
+        "Hagia Sophia",
+        "Süleymaniye Mosque",
+        "Sheikh Zayed Grand Mosque"
+      ],
+      "answer": "Blue Mosque",
+      "explanation": "The Sultan Ahmed Mosque in Istanbul, completed in 1616, is called the Blue Mosque after the blue tiles inside.",
+      "factSource": "https://en.wikipedia.org/wiki/Blue_Mosque,_Istanbul",
+      "difficulty": "hard",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_032",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mont_Saint_Michel_and_sheep_-_2026.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Mont_Saint_Michel_and_sheep_-_2026.jpg",
+        "creator": "Eric Kilby",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Mont_Saint_Michel_and_sheep_-_2026.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Mont-Saint-Michel",
+        "St Michael's Mount",
+        "Skellig Michael",
+        "Bled Island"
+      ],
+      "answer": "Mont-Saint-Michel",
+      "explanation": "Mont-Saint-Michel is a tidal island in Normandy, France, crowned by a medieval abbey.",
+      "factSource": "https://en.wikipedia.org/wiki/Mont-Saint-Michel",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_033",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mount_Fuji_at_sunset%2C_March_2025.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Mount_Fuji_at_sunset,_March_2025.jpg",
+        "creator": "Romain Guy from San Francisco, USA",
+        "license": "CC0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Mount_Fuji_at_sunset%2C_March_2025.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Mount Fuji",
+        "Mount Kilimanjaro",
+        "Mount Rainier",
+        "Mayon Volcano"
+      ],
+      "answer": "Mount Fuji",
+      "explanation": "Mount Fuji is Japan's highest mountain at 3,776 metres and an active volcano.",
+      "factSource": "https://en.wikipedia.org/wiki/Mount_Fuji",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_034",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Grand_canyon_march_2013.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Grand_canyon_march_2013.jpg",
+        "creator": "Tomascastelazo",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Grand_canyon_march_2013.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Grand Canyon",
+        "Antelope Canyon",
+        "Bryce Canyon",
+        "Fish River Canyon"
+      ],
+      "answer": "Grand Canyon",
+      "explanation": "The Colorado River carved the Grand Canyon in Arizona, USA, over millions of years.",
+      "factSource": "https://en.wikipedia.org/wiki/Grand_Canyon",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_035",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Maid_of_the_Mist_VII_approaching_the_Horseshoe_Falls%2C_West_view_20170418_1.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Maid_of_the_Mist_VII_approaching_the_Horseshoe_Falls,_West_view_20170418_1.jpg",
+        "creator": "DXR",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Maid_of_the_Mist_VII_approaching_the_Horseshoe_Falls%2C_West_view_20170418_1.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Niagara Falls",
+        "Victoria Falls",
+        "Iguazu Falls",
+        "Angel Falls"
+      ],
+      "answer": "Niagara Falls",
+      "explanation": "Niagara Falls lies on the border between Ontario, Canada, and New York, USA.",
+      "factSource": "https://en.wikipedia.org/wiki/Niagara_Falls",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_036",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Petermann_Ranges_%28AU%29%2C_Uluru-Kata_Tjuta_National_Park%2C_Uluru%2C_Kuniya_Walk_--_2019_--_3674.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Petermann_Ranges_(AU),_Uluru-Kata_Tjuta_National_Park,_Uluru,_Kuniya_Walk_--_2019_--_3674.jpg",
+        "creator": "Dietmar Rabich",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Petermann_Ranges_%28AU%29%2C_Uluru-Kata_Tjuta_National_Park%2C_Uluru%2C_Kuniya_Walk_--_2019_--_3674.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Uluru",
+        "Kata Tjuta",
+        "Mount Augustus",
+        "Devils Tower"
+      ],
+      "answer": "Uluru",
+      "explanation": "Uluru is a huge sandstone rock in Australia's Northern Territory, sacred to the Aṉangu people.",
+      "factSource": "https://en.wikipedia.org/wiki/Uluru",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_038",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/View_of_sea_from_Titov_Island%2C_Ha_Long_Bay%2C_Vietnam%2C_20240128_1337_3732.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:View_of_sea_from_Titov_Island,_Ha_Long_Bay,_Vietnam,_20240128_1337_3732.jpg",
+        "creator": "Jakub Hałun",
+        "license": "CC BY 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/View_of_sea_from_Titov_Island%2C_Ha_Long_Bay%2C_Vietnam%2C_20240128_1337_3732.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Ha Long Bay",
+        "Phang Nga Bay",
+        "Li River",
+        "El Nido"
+      ],
+      "answer": "Ha Long Bay",
+      "explanation": "Ha Long Bay in Vietnam is dotted with thousands of limestone islands and is a UNESCO World Heritage Site.",
+      "factSource": "https://en.wikipedia.org/wiki/Ha_Long_Bay",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_039",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cataratas_Victoria%2C_Zambia-Zimbabue%2C_2018-07-27%2C_DD_30-34_PAN.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Cataratas_Victoria,_Zambia-Zimbabue,_2018-07-27,_DD_30-34_PAN.jpg",
+        "creator": "Diego Delso",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Cataratas_Victoria%2C_Zambia-Zimbabue%2C_2018-07-27%2C_DD_30-34_PAN.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Victoria Falls",
+        "Niagara Falls",
+        "Iguazu Falls",
+        "Kaieteur Falls"
+      ],
+      "answer": "Victoria Falls",
+      "explanation": "Victoria Falls is on the Zambezi River, on the border between Zambia and Zimbabwe.",
+      "factSource": "https://en.wikipedia.org/wiki/Victoria_Falls",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_040",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/GGB_Bhe_2-4_Gornergrat.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:GGB_Bhe_2-4_Gornergrat.jpg",
+        "creator": "Kabelleger / David Gubler (http://www.bahnbilder.ch)",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/GGB_Bhe_2-4_Gornergrat.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Matterhorn",
+        "Mont Blanc",
+        "Eiger",
+        "K2"
+      ],
+      "answer": "Matterhorn",
+      "explanation": "The pyramid-shaped Matterhorn rises 4,478 metres on the border between Switzerland and Italy.",
+      "factSource": "https://en.wikipedia.org/wiki/Matterhorn",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_041",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tower_of_London_viewed_from_the_River_Thames.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Tower_of_London_viewed_from_the_River_Thames.jpg",
+        "creator": "Bob Collowan",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Tower_of_London_viewed_from_the_River_Thames.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Tower of London",
+        "Windsor Castle",
+        "Edinburgh Castle",
+        "Warwick Castle"
+      ],
+      "answer": "Tower of London",
+      "explanation": "The White Tower at the heart of the Tower of London was begun by William the Conqueror around 1078.",
+      "factSource": "https://en.wikipedia.org/wiki/Tower_of_London",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_042",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Buckingham_Palace%2C_London_-_April_2009.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Buckingham_Palace,_London_-_April_2009.jpg",
+        "creator": "Diliff",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Buckingham_Palace%2C_London_-_April_2009.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Buckingham Palace",
+        "Kensington Palace",
+        "Palace of Versailles",
+        "Schönbrunn Palace"
+      ],
+      "answer": "Buckingham Palace",
+      "explanation": "Buckingham Palace in London is the official London residence of the British monarch.",
+      "factSource": "https://en.wikipedia.org/wiki/Buckingham_Palace",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_043",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chateau_Versailles_Galerie_des_Glaces.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Chateau_Versailles_Galerie_des_Glaces.jpg",
+        "creator": "Myrabella",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Chateau_Versailles_Galerie_des_Glaces.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Palace of Versailles",
+        "Schönbrunn Palace",
+        "Peterhof Palace",
+        "Palace of Fontainebleau"
+      ],
+      "answer": "Palace of Versailles",
+      "explanation": "Louis XIV moved the French royal court to the Palace of Versailles in 1682.",
+      "factSource": "https://en.wikipedia.org/wiki/Palace_of_Versailles",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_044",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edinburgh_Castle_from_Esplanade_20211019.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Edinburgh_Castle_from_Esplanade_20211019.jpg",
+        "creator": "Daniel Kraft",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Edinburgh_Castle_from_Esplanade_20211019.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Edinburgh Castle",
+        "Stirling Castle",
+        "Tower of London",
+        "Prague Castle"
+      ],
+      "answer": "Edinburgh Castle",
+      "explanation": "Edinburgh Castle sits on Castle Rock, the plug of an ancient volcano, above Scotland's capital.",
+      "factSource": "https://en.wikipedia.org/wiki/Edinburgh_Castle",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_045",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Charles_Bridge_Covid.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Charles_Bridge_Covid.jpg",
+        "creator": "Tadeáš Gregor",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Charles_Bridge_Covid.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Charles Bridge",
+        "Tower Bridge",
+        "Ponte Vecchio",
+        "Széchenyi Chain Bridge"
+      ],
+      "answer": "Charles Bridge",
+      "explanation": "Building of Prague's Charles Bridge over the Vltava began in 1357; it is lined with 30 statues.",
+      "factSource": "https://en.wikipedia.org/wiki/Charles_Bridge",
+      "difficulty": "hard",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_046",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ponte_Vecchio_from_Ponte_Santa_Trinita_Blue_hour.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Ponte_Vecchio_from_Ponte_Santa_Trinita_Blue_hour.jpg",
+        "creator": "Commonists",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ponte_Vecchio_from_Ponte_Santa_Trinita_Blue_hour.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Ponte Vecchio",
+        "Rialto Bridge",
+        "Charles Bridge",
+        "Pont Neuf"
+      ],
+      "answer": "Ponte Vecchio",
+      "explanation": "Florence's Ponte Vecchio crosses the Arno and is still lined with shops, mostly jewellers.",
+      "factSource": "https://en.wikipedia.org/wiki/Ponte_Vecchio",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_047",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ponte_di_Rialto_Venice_1.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Ponte_di_Rialto_Venice_1.jpg",
+        "creator": "kallerna",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ponte_di_Rialto_Venice_1.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Rialto Bridge",
+        "Ponte Vecchio",
+        "Bridge of Sighs",
+        "Pont Alexandre III"
+      ],
+      "answer": "Rialto Bridge",
+      "explanation": "The stone Rialto Bridge over Venice's Grand Canal was completed in 1591.",
+      "factSource": "https://en.wikipedia.org/wiki/Rialto_Bridge",
+      "difficulty": "hard",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_048",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Basilica_di_San_Pietro_in_Vaticano_September_2015-1a.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Basilica_di_San_Pietro_in_Vaticano_September_2015-1a.jpg",
+        "creator": "Alvesgaspar",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Basilica_di_San_Pietro_in_Vaticano_September_2015-1a.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "St. Peter's Basilica",
+        "St Paul's Cathedral",
+        "Florence Cathedral",
+        "Basilica of Our Lady of Peace"
+      ],
+      "answer": "St. Peter's Basilica",
+      "explanation": "St. Peter's Basilica in Vatican City has a dome designed by Michelangelo.",
+      "factSource": "https://en.wikipedia.org/wiki/St._Peter%27s_Basilica",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_049",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Florence_Duomo_from_Michelangelo_hill.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Florence_Duomo_from_Michelangelo_hill.jpg",
+        "creator": "Petar Milošević",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Florence_Duomo_from_Michelangelo_hill.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Florence Cathedral",
+        "Siena Cathedral",
+        "Milan Cathedral",
+        "St. Peter's Basilica"
+      ],
+      "answer": "Florence Cathedral",
+      "explanation": "Filippo Brunelleschi's dome on Florence Cathedral was completed in 1436 and is still the largest brick dome ever built.",
+      "factSource": "https://en.wikipedia.org/wiki/Florence_Cathedral",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_050",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Milano%2C_Duomo%2C_2016-06_CN-05.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Milano,_Duomo,_2016-06_CN-05.jpg",
+        "creator": "Steffen Schmitz",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Milano%2C_Duomo%2C_2016-06_CN-05.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Milan Cathedral",
+        "Cologne Cathedral",
+        "Florence Cathedral",
+        "Seville Cathedral"
+      ],
+      "answer": "Milan Cathedral",
+      "explanation": "Milan Cathedral took nearly six centuries to complete and is covered in spires and statues.",
+      "factSource": "https://en.wikipedia.org/wiki/Milan_Cathedral",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_051",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/K%C3%B6lner_Dom_nachts_2013.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:K%C3%B6lner_Dom_nachts_2013.jpg",
+        "creator": "Thomas Wolf, www.foto-tw.de",
+        "license": "CC BY-SA 3.0 de",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/K%C3%B6lner_Dom_nachts_2013.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Cologne Cathedral",
+        "Milan Cathedral",
+        "Notre-Dame de Paris",
+        "Ulm Minster"
+      ],
+      "answer": "Cologne Cathedral",
+      "explanation": "Cologne Cathedral's twin Gothic spires rise 157 metres; it was finally completed in 1880.",
+      "factSource": "https://en.wikipedia.org/wiki/Cologne_Cathedral",
+      "difficulty": "hard",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_052",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Atomium_during_civil_twilight_%28DSCF1135%29.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Atomium_during_civil_twilight_(DSCF1135).jpg",
+        "creator": "Trougnouf (Benoit Brummer)",
+        "license": "CC BY 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Atomium_during_civil_twilight_%28DSCF1135%29.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Atomium",
+        "Unisphere",
+        "Space Needle",
+        "Spaceship Earth"
+      ],
+      "answer": "Atomium",
+      "explanation": "The Atomium in Brussels was built for Expo 58 and models an iron crystal magnified 165 billion times.",
+      "factSource": "https://en.wikipedia.org/wiki/Atomium",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_053",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Pavillon_Cour_des_Lions_Alhambra_Granada_Spain.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Pavillon_Cour_des_Lions_Alhambra_Granada_Spain.jpg",
+        "creator": "Jebulon",
+        "license": "CC0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Pavillon_Cour_des_Lions_Alhambra_Granada_Spain.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Alhambra",
+        "Alcázar of Seville",
+        "Mosque–Cathedral of Córdoba",
+        "Aljafería"
+      ],
+      "answer": "Alhambra",
+      "explanation": "The Alhambra in Granada, Spain, was the palace-fortress of the Nasrid rulers.",
+      "factSource": "https://en.wikipedia.org/wiki/Alhambra",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_054",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Potala.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Potala.jpg",
+        "creator": "Ondřej Žváček",
+        "license": "CC BY 2.5",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Potala.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Potala Palace",
+        "Forbidden City",
+        "Punakha Dzong",
+        "Jokhang Temple"
+      ],
+      "answer": "Potala Palace",
+      "explanation": "The Potala Palace in Lhasa, Tibet, was the winter residence of the Dalai Lamas.",
+      "factSource": "https://en.wikipedia.org/wiki/Potala_Palace",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_055",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Temple_of_Heaven_-_Hall_of_Prayer_for_Good_Harvests.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Temple_of_Heaven_-_Hall_of_Prayer_for_Good_Harvests.jpg",
+        "creator": "xiquinhosilva",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Temple_of_Heaven_-_Hall_of_Prayer_for_Good_Harvests.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Temple of Heaven",
+        "Forbidden City",
+        "Summer Palace",
+        "Yellow Crane Tower"
+      ],
+      "answer": "Temple of Heaven",
+      "explanation": "At Beijing's Temple of Heaven, emperors prayed for good harvests; the round hall dates from the Ming dynasty.",
+      "factSource": "https://en.wikipedia.org/wiki/Temple_of_Heaven",
+      "difficulty": "hard",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_056",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/51714-Terracota-Army.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:51714-Terracota-Army.jpg",
+        "creator": "xiquinhosilva",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/51714-Terracota-Army.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Terracotta Army",
+        "Moai statues of Rapa Nui",
+        "Leshan Giant Buddha",
+        "Longmen Grottoes"
+      ],
+      "answer": "Terracotta Army",
+      "explanation": "Thousands of clay soldiers were buried with China's first emperor, Qin Shi Huang, and found near Xi'an in 1974.",
+      "factSource": "https://en.wikipedia.org/wiki/Terracotta_Army",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_057",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Torii_path_with_lantern_at_Fushimi_Inari_Taisha_Shrine%2C_Kyoto%2C_Japan.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Torii_path_with_lantern_at_Fushimi_Inari_Taisha_Shrine,_Kyoto,_Japan.jpg",
+        "creator": "Basile Morin",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Torii_path_with_lantern_at_Fushimi_Inari_Taisha_Shrine%2C_Kyoto%2C_Japan.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Fushimi Inari Taisha",
+        "Itsukushima Shrine",
+        "Meiji Shrine",
+        "Kinkaku-ji"
+      ],
+      "answer": "Fushimi Inari Taisha",
+      "explanation": "Fushimi Inari Taisha in Kyoto is famous for paths lined with thousands of vermilion torii gates.",
+      "factSource": "https://en.wikipedia.org/wiki/Fushimi_Inari-taisha",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_058",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Golden_Pavilion_Kinkaku-ji_2024.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Golden_Pavilion_Kinkaku-ji_2024.jpg",
+        "creator": "Nacaru",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Golden_Pavilion_Kinkaku-ji_2024.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Kinkaku-ji",
+        "Ginkaku-ji",
+        "Byōdō-in",
+        "Kiyomizu-dera"
+      ],
+      "answer": "Kinkaku-ji",
+      "explanation": "Kinkaku-ji, the Golden Pavilion in Kyoto, is covered in gold leaf; it was rebuilt in 1955 after a fire.",
+      "factSource": "https://en.wikipedia.org/wiki/Kinkaku-ji",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_059",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Himeji_Castle_0804_1.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Himeji_Castle_0804_1.jpg",
+        "creator": "Gorgo",
+        "license": "Public domain",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Himeji_Castle_0804_1.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Himeji Castle",
+        "Osaka Castle",
+        "Matsumoto Castle",
+        "Nagoya Castle"
+      ],
+      "answer": "Himeji Castle",
+      "explanation": "Himeji Castle is nicknamed the White Heron Castle for its brilliant white walls.",
+      "factSource": "https://en.wikipedia.org/wiki/Himeji_Castle",
+      "difficulty": "hard",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_060",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Petronas_Twin_Towers_%28230715-1406%29.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Petronas_Twin_Towers_(230715-1406).jpg",
+        "creator": "Wee Hong",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Petronas_Twin_Towers_%28230715-1406%29.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Petronas Towers",
+        "Burj Khalifa",
+        "Taipei 101",
+        "Willis Tower"
+      ],
+      "answer": "Petronas Towers",
+      "explanation": "Kuala Lumpur's Petronas Towers, finished in 1998, are the tallest twin towers in the world, linked by a skybridge.",
+      "factSource": "https://en.wikipedia.org/wiki/Petronas_Towers",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_061",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cricket_match_and_Marina_Bay_Sands_Hotel_in_Singapore.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Cricket_match_and_Marina_Bay_Sands_Hotel_in_Singapore.jpg",
+        "creator": "Basile Morin",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Cricket_match_and_Marina_Bay_Sands_Hotel_in_Singapore.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Marina Bay Sands",
+        "Burj Al Arab",
+        "Sydney Opera House",
+        "Petronas Towers"
+      ],
+      "answer": "Marina Bay Sands",
+      "explanation": "Marina Bay Sands in Singapore opened in 2010; a sky park sits across the tops of its three towers.",
+      "factSource": "https://en.wikipedia.org/wiki/Marina_Bay_Sands",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_062",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Madinat_Jumeirah-Dubai3303.JPG?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Madinat_Jumeirah-Dubai3303.JPG",
+        "creator": "Diego Delso",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Madinat_Jumeirah-Dubai3303.JPG?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Burj Al Arab",
+        "Burj Khalifa",
+        "Marina Bay Sands",
+        "Emirates Palace"
+      ],
+      "answer": "Burj Al Arab",
+      "explanation": "Dubai's sail-shaped Burj Al Arab hotel stands on an artificial island and opened in 1999.",
+      "factSource": "https://en.wikipedia.org/wiki/Burj_Al_Arab",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_064",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Gateway_Of_India.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Gateway_Of_India.jpg",
+        "creator": "Joe Ravi",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Gateway_Of_India.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Gateway of India",
+        "India Gate",
+        "Arc de Triomphe",
+        "Buland Darwaza"
+      ],
+      "answer": "Gateway of India",
+      "explanation": "The Gateway of India on Mumbai's waterfront was completed in 1924.",
+      "factSource": "https://en.wikipedia.org/wiki/Gateway_of_India",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_065",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/India_Gate%2C_New_Delhi_from_West.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:India_Gate,_New_Delhi_from_West.jpg",
+        "creator": "Nikhilb239",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/India_Gate%2C_New_Delhi_from_West.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "India Gate",
+        "Gateway of India",
+        "Arc de Triomphe",
+        "Brandenburg Gate"
+      ],
+      "answer": "India Gate",
+      "explanation": "India Gate in New Delhi is a war memorial to Indian soldiers who died in the First World War.",
+      "factSource": "https://en.wikipedia.org/wiki/India_Gate",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_066",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hamandir_Sahib_%28Golden_Temple%29.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Hamandir_Sahib_(Golden_Temple).jpg",
+        "creator": "Oleg Yunakov",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Hamandir_Sahib_%28Golden_Temple%29.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Golden Temple",
+        "Akshardham",
+        "Lotus Temple",
+        "Meenakshi Temple"
+      ],
+      "answer": "Golden Temple",
+      "explanation": "The Golden Temple (Harmandir Sahib) in Amritsar is the holiest gurdwara of Sikhism.",
+      "factSource": "https://en.wikipedia.org/wiki/Golden_Temple",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_067",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/East_facade_Hawa_Mahal_Jaipur_from_ground_level_%28July_2022%29_-_img_01.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:East_facade_Hawa_Mahal_Jaipur_from_ground_level_(July_2022)_-_img_01.jpg",
+        "creator": "Chainwit.",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/East_facade_Hawa_Mahal_Jaipur_from_ground_level_%28July_2022%29_-_img_01.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Hawa Mahal",
+        "Amber Fort",
+        "City Palace, Jaipur",
+        "Mysore Palace"
+      ],
+      "answer": "Hawa Mahal",
+      "explanation": "Jaipur's pink sandstone Hawa Mahal, built in 1799, has 953 small windows.",
+      "factSource": "https://en.wikipedia.org/wiki/Hawa_Mahal",
+      "difficulty": "hard",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_068",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Lotus_Temple_Front_view_with_garden_-_During_WCI_2016_-_IMG_6499.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Lotus_Temple_Front_view_with_garden_-_During_WCI_2016_-_IMG_6499.jpg",
+        "creator": "Bijay chaurasia",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Lotus_Temple_Front_view_with_garden_-_During_WCI_2016_-_IMG_6499.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Lotus Temple",
+        "Sydney Opera House",
+        "Golden Temple",
+        "Akshardham"
+      ],
+      "answer": "Lotus Temple",
+      "explanation": "New Delhi's Lotus Temple is a Baháʼí House of Worship shaped like a lotus flower; it opened in 1986.",
+      "factSource": "https://en.wikipedia.org/wiki/Lotus_Temple",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_069",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Qutb_Minar_2011.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Qutb_Minar_2011.jpg",
+        "creator": "Sfu",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Qutb_Minar_2011.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Qutub Minar",
+        "Minaret of Jam",
+        "Charminar",
+        "Hassan Tower"
+      ],
+      "answer": "Qutub Minar",
+      "explanation": "Delhi's Qutub Minar is a tapering brick minaret about 73 metres tall, begun around 1200.",
+      "factSource": "https://en.wikipedia.org/wiki/Qutb_Minar",
+      "difficulty": "hard",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_070",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Charminar_Hyderabad_111.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Charminar_Hyderabad_111.jpg",
+        "creator": "Joydeep",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Charminar_Hyderabad_111.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Charminar",
+        "Gateway of India",
+        "Qutub Minar",
+        "Bibi Ka Maqbara"
+      ],
+      "answer": "Charminar",
+      "explanation": "The Charminar in Hyderabad, India, with its four minarets, was built in 1591.",
+      "factSource": "https://en.wikipedia.org/wiki/Charminar",
+      "difficulty": "hard",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_071",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Shwedagon_Zedi_Daw_Yangon_11.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Shwedagon_Zedi_Daw_Yangon_11.jpg",
+        "creator": "kallerna",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Shwedagon_Zedi_Daw_Yangon_11.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Shwedagon Pagoda",
+        "Wat Arun",
+        "Borobudur",
+        "Boudhanath"
+      ],
+      "answer": "Shwedagon Pagoda",
+      "explanation": "The gilded Shwedagon Pagoda towers over Yangon and is Myanmar's most sacred Buddhist site.",
+      "factSource": "https://en.wikipedia.org/wiki/Shwedagon_Pagoda",
+      "difficulty": "hard",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_072",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Templo_Wat_Arun%2C_Bangkok%2C_Tailandia%2C_2013-08-22%2C_DD_05.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Templo_Wat_Arun,_Bangkok,_Tailandia,_2013-08-22,_DD_05.jpg",
+        "creator": "Diego Delso",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Templo_Wat_Arun%2C_Bangkok%2C_Tailandia%2C_2013-08-22%2C_DD_05.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Wat Arun",
+        "Wat Phra Kaew",
+        "Shwedagon Pagoda",
+        "Wat Pho"
+      ],
+      "answer": "Wat Arun",
+      "explanation": "Wat Arun, the Temple of Dawn, stands on the bank of the Chao Phraya River in Bangkok.",
+      "factSource": "https://en.wikipedia.org/wiki/Wat_Arun",
+      "difficulty": "hard",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_073",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Borobudur%2C_Java%2C_Indonesia%2C_20220817_1013_8739.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Borobudur,_Java,_Indonesia,_20220817_1013_8739.jpg",
+        "creator": "Jakub Hałun",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Borobudur%2C_Java%2C_Indonesia%2C_20220817_1013_8739.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Borobudur",
+        "Angkor Wat",
+        "Prambanan",
+        "Bagan temples"
+      ],
+      "answer": "Borobudur",
+      "explanation": "Borobudur in Central Java, Indonesia, is a 9th-century temple and the largest Buddhist temple in the world.",
+      "factSource": "https://en.wikipedia.org/wiki/Borobudur",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_075",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Templo_de_Rams%C3%A9s_II%2C_Abu_Simbel%2C_Egipto%2C_2022-04-02%2C_DD_03.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Templo_de_Rams%C3%A9s_II,_Abu_Simbel,_Egipto,_2022-04-02,_DD_03.jpg",
+        "creator": "Diego Delso",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Templo_de_Rams%C3%A9s_II%2C_Abu_Simbel%2C_Egipto%2C_2022-04-02%2C_DD_03.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Abu Simbel",
+        "Karnak",
+        "Luxor Temple",
+        "Temple of Hatshepsut"
+      ],
+      "answer": "Abu Simbel",
+      "explanation": "Abu Simbel's giant statues of Ramesses II were moved to higher ground in the 1960s to escape the Aswan Dam's lake.",
+      "factSource": "https://en.wikipedia.org/wiki/Abu_Simbel",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_076",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Great_Sphinx_of_Giza_%28%D8%A3%D8%A8%D9%88_%D8%A7%D9%84%D9%87%D9%88%D9%84%29.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Great_Sphinx_of_Giza_(%D8%A3%D8%A8%D9%88_%D8%A7%D9%84%D9%87%D9%88%D9%84).jpg",
+        "creator": "Petar Milošević",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Great_Sphinx_of_Giza_%28%D8%A3%D8%A8%D9%88_%D8%A7%D9%84%D9%87%D9%88%D9%84%29.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Great Sphinx of Giza",
+        "Colossi of Memnon",
+        "Lamassu",
+        "Abu Simbel"
+      ],
+      "answer": "Great Sphinx of Giza",
+      "explanation": "The Great Sphinx of Giza, a lion with a human head, was carved from limestone in ancient Egypt.",
+      "factSource": "https://en.wikipedia.org/wiki/Great_Sphinx_of_Giza",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_078",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Kilimanjaro_from_Amboseli.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Kilimanjaro_from_Amboseli.jpg",
+        "creator": "Sergey Pesterev",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Kilimanjaro_from_Amboseli.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Mount Kilimanjaro",
+        "Mount Kenya",
+        "Mount Fuji",
+        "Mount Meru"
+      ],
+      "answer": "Mount Kilimanjaro",
+      "explanation": "Kilimanjaro in Tanzania is Africa's highest mountain at 5,895 metres.",
+      "factSource": "https://en.wikipedia.org/wiki/Mount_Kilimanjaro",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_079",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Toronto_-_ON_-_Toronto_Harbourfront7.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Toronto_-_ON_-_Toronto_Harbourfront7.jpg",
+        "creator": "Wladyslaw",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Toronto_-_ON_-_Toronto_Harbourfront7.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "CN Tower",
+        "Space Needle",
+        "Tokyo Skytree",
+        "Ostankino Tower"
+      ],
+      "answer": "CN Tower",
+      "explanation": "Toronto's CN Tower, completed in 1976, is 553 metres tall.",
+      "factSource": "https://en.wikipedia.org/wiki/CN_Tower",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_080",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Seattle_%28WA%2C_USA%29%2C_Space_Needle_--_2022_--_1498.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Seattle_(WA,_USA),_Space_Needle_--_2022_--_1498.jpg",
+        "creator": "Dietmar Rabich",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Seattle_%28WA%2C_USA%29%2C_Space_Needle_--_2022_--_1498.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Space Needle",
+        "CN Tower",
+        "Stratosphere Tower",
+        "Sky Tower"
+      ],
+      "answer": "Space Needle",
+      "explanation": "Seattle's Space Needle was built for the 1962 World's Fair.",
+      "factSource": "https://en.wikipedia.org/wiki/Space_Needle",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_081",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu.jpg",
+        "creator": "Dllu",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Empire State Building",
+        "Chrysler Building",
+        "One World Trade Center",
+        "Willis Tower"
+      ],
+      "answer": "Empire State Building",
+      "explanation": "New York's Empire State Building was completed in 1931 and was the world's tallest building for nearly 40 years.",
+      "factSource": "https://en.wikipedia.org/wiki/Empire_State_Building",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_082",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chrysler_Building_NYC-20090519-RM-094845.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Chrysler_Building_NYC-20090519-RM-094845.jpg",
+        "creator": "Ermell",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Chrysler_Building_NYC-20090519-RM-094845.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Chrysler Building",
+        "Empire State Building",
+        "Woolworth Building",
+        "Flatiron Building"
+      ],
+      "answer": "Chrysler Building",
+      "explanation": "The Art Deco Chrysler Building in New York, with its stainless-steel crown, was completed in 1930.",
+      "factSource": "https://en.wikipedia.org/wiki/Chrysler_Building",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_083",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Flatiron_Building%2C_Fifth_Avenue%2C_Manhattan%2C_New_York.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Flatiron_Building,_Fifth_Avenue,_Manhattan,_New_York.jpg",
+        "creator": "Christian David",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Flatiron_Building%2C_Fifth_Avenue%2C_Manhattan%2C_New_York.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Flatiron Building",
+        "Chrysler Building",
+        "Gooderham Building",
+        "Woolworth Building"
+      ],
+      "answer": "Flatiron Building",
+      "explanation": "New York's triangular Flatiron Building was completed in 1902.",
+      "factSource": "https://en.wikipedia.org/wiki/Flatiron_Building",
+      "difficulty": "hard",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_084",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/White_House_lawn.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:White_House_lawn.jpg",
+        "creator": "Daniel Schwen",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/White_House_lawn.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "White House",
+        "United States Capitol",
+        "Buckingham Palace",
+        "Lincoln Memorial"
+      ],
+      "answer": "White House",
+      "explanation": "The White House in Washington, D.C., has been home to every US president since John Adams in 1800.",
+      "factSource": "https://en.wikipedia.org/wiki/White_House",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_085",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/US_Capitol_west_side.JPG?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:US_Capitol_west_side.JPG",
+        "creator": "Martin Falbisoner",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/US_Capitol_west_side.JPG?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "United States Capitol",
+        "White House",
+        "Hungarian Parliament Building",
+        "Texas State Capitol"
+      ],
+      "answer": "United States Capitol",
+      "explanation": "The domed United States Capitol in Washington, D.C., is the seat of the US Congress.",
+      "factSource": "https://en.wikipedia.org/wiki/United_States_Capitol",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_086",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Lincoln_Memorial_east_side.JPG?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Lincoln_Memorial_east_side.JPG",
+        "creator": "Martin Falbisoner",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Lincoln_Memorial_east_side.JPG?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Lincoln Memorial",
+        "Jefferson Memorial",
+        "Parthenon",
+        "Mount Rushmore"
+      ],
+      "answer": "Lincoln Memorial",
+      "explanation": "The Lincoln Memorial in Washington, D.C., opened in 1922 with a giant seated statue of Abraham Lincoln.",
+      "factSource": "https://en.wikipedia.org/wiki/Lincoln_Memorial",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_087",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Gateway_Arch%2C_St._Louis.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Gateway_Arch,_St._Louis.jpg",
+        "creator": "Lewis Hulbert",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Gateway_Arch%2C_St._Louis.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Gateway Arch",
+        "Arch of Constantine",
+        "Delicate Arch",
+        "Grande Arche"
+      ],
+      "answer": "Gateway Arch",
+      "explanation": "St. Louis's stainless-steel Gateway Arch, completed in 1965, is 192 metres tall, the tallest arch in the world.",
+      "factSource": "https://en.wikipedia.org/wiki/Gateway_Arch",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_088",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Brooklyn_Bridge_August_2017.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Brooklyn_Bridge_August_2017.jpg",
+        "creator": "Arild Vågen",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Brooklyn_Bridge_August_2017.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Brooklyn Bridge",
+        "Tower Bridge",
+        "Golden Gate Bridge",
+        "Manhattan Bridge"
+      ],
+      "answer": "Brooklyn Bridge",
+      "explanation": "The Brooklyn Bridge opened in 1883, linking Manhattan and Brooklyn across the East River.",
+      "factSource": "https://en.wikipedia.org/wiki/Brooklyn_Bridge",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_089",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Orsz%C3%A1gh%C3%A1z_%28Hungarian_Parliament_Building%29%281%29.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Orsz%C3%A1gh%C3%A1z_(Hungarian_Parliament_Building)(1).jpg",
+        "creator": "Lynx1211",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Orsz%C3%A1gh%C3%A1z_%28Hungarian_Parliament_Building%29%281%29.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Hungarian Parliament Building",
+        "Palace of Westminster",
+        "Reichstag building",
+        "United States Capitol"
+      ],
+      "answer": "Hungarian Parliament Building",
+      "explanation": "Budapest's Hungarian Parliament Building on the Danube was completed in 1904.",
+      "factSource": "https://en.wikipedia.org/wiki/Hungarian_Parliament_Building",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_090",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Reichstag_pano.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Reichstag_pano.jpg",
+        "creator": "Daniel Schwen",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Reichstag_pano.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Reichstag building",
+        "Hungarian Parliament Building",
+        "Federal Palace of Switzerland",
+        "Rijksmuseum"
+      ],
+      "answer": "Reichstag building",
+      "explanation": "Berlin's Reichstag building got its glass dome, designed by Norman Foster, in 1999.",
+      "factSource": "https://en.wikipedia.org/wiki/Reichstag_building",
+      "difficulty": "hard",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_091",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sevilla_-_Plaza_de_Espa%C3%B1a_-_3.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Sevilla_-_Plaza_de_Espa%C3%B1a_-_3.jpg",
+        "creator": "Benjamin Smith",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Sevilla_-_Plaza_de_Espa%C3%B1a_-_3.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Plaza de España, Seville",
+        "Royal Palace of Madrid",
+        "Alcázar of Seville",
+        "Park Güell"
+      ],
+      "answer": "Plaza de España, Seville",
+      "explanation": "Seville's Plaza de España was built for the Ibero-American Exposition of 1929.",
+      "factSource": "https://en.wikipedia.org/wiki/Plaza_de_España_(Seville)",
+      "difficulty": "hard",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_092",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sintra_Portugal_Pal%C3%A1cio_da_Pena-01.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Sintra_Portugal_Pal%C3%A1cio_da_Pena-01.jpg",
+        "creator": "CEphoto, Uwe Aranas",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Sintra_Portugal_Pal%C3%A1cio_da_Pena-01.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Pena Palace",
+        "Neuschwanstein Castle",
+        "Belém Tower",
+        "Hohenzollern Castle"
+      ],
+      "answer": "Pena Palace",
+      "explanation": "The colourful Pena Palace sits on a hilltop above Sintra, Portugal.",
+      "factSource": "https://en.wikipedia.org/wiki/Pena_Palace",
+      "difficulty": "hard",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_093",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Torre_Bel%C3%A9m_April_2009-4a.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Torre_Bel%C3%A9m_April_2009-4a.jpg",
+        "creator": "Alvesgaspar",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Torre_Bel%C3%A9m_April_2009-4a.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Belém Tower",
+        "Pena Palace",
+        "Tower of London",
+        "Torre del Oro"
+      ],
+      "answer": "Belém Tower",
+      "explanation": "Lisbon's Belém Tower is a 16th-century fortification on the Tagus River.",
+      "factSource": "https://en.wikipedia.org/wiki/Belém_Tower",
+      "difficulty": "hard",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_094",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Trevi_Fountain%2C_Rome%2C_Italy_2_-_May_2007.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Trevi_Fountain,_Rome,_Italy_2_-_May_2007.jpg",
+        "creator": "Diliff",
+        "license": "CC BY 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Trevi_Fountain%2C_Rome%2C_Italy_2_-_May_2007.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Trevi Fountain",
+        "Fountain of the Four Rivers",
+        "Trafalgar Square fountains",
+        "Bellagio fountains"
+      ],
+      "answer": "Trevi Fountain",
+      "explanation": "Rome's Baroque Trevi Fountain was completed in 1762; visitors toss coins into it.",
+      "factSource": "https://en.wikipedia.org/wiki/Trevi_Fountain",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_095",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Pantheon_%28Rome%29%2C_Dome_interior.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Pantheon_(Rome),_Dome_interior.jpg",
+        "creator": "Wilfredor",
+        "license": "CC0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Pantheon_%28Rome%29%2C_Dome_interior.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Pantheon",
+        "Parthenon",
+        "Maison Carrée",
+        "Temple of Hercules Victor"
+      ],
+      "answer": "Pantheon",
+      "explanation": "Rome's Pantheon, finished around AD 125, still has the world's largest unreinforced concrete dome.",
+      "factSource": "https://en.wikipedia.org/wiki/Pantheon,_Rome",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_096",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Roussanou_Monastery%2C_Meteora.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Roussanou_Monastery,_Meteora.jpg",
+        "creator": "Bernard Gagnon",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Roussanou_Monastery%2C_Meteora.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Meteora",
+        "Mount Athos",
+        "Montserrat",
+        "Sümela Monastery"
+      ],
+      "answer": "Meteora",
+      "explanation": "At Meteora in Greece, monasteries sit on top of tall rock pillars.",
+      "factSource": "https://en.wikipedia.org/wiki/Meteora",
+      "difficulty": "hard",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_097",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ireland_Cliffs_of_Moher_BW_2025-09-11_13-47-21.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Ireland_Cliffs_of_Moher_BW_2025-09-11_13-47-21.jpg",
+        "creator": "Berthold Werner",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ireland_Cliffs_of_Moher_BW_2025-09-11_13-47-21.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Cliffs of Moher",
+        "White Cliffs of Dover",
+        "Giant's Causeway",
+        "Twelve Apostles"
+      ],
+      "answer": "Cliffs of Moher",
+      "explanation": "The Cliffs of Moher in County Clare, Ireland, rise up to 214 metres above the Atlantic.",
+      "factSource": "https://en.wikipedia.org/wiki/Cliffs_of_Moher",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_098",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Giant%27s_Causeway_%2814%29.JPG?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Giant%27s_Causeway_(14).JPG",
+        "creator": "Chmee2",
+        "license": "CC BY 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Giant%27s_Causeway_%2814%29.JPG?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Giant's Causeway",
+        "Fingal's Cave",
+        "Cliffs of Moher",
+        "Devils Postpile"
+      ],
+      "answer": "Giant's Causeway",
+      "explanation": "About 40,000 interlocking basalt columns form the Giant's Causeway in Northern Ireland.",
+      "factSource": "https://en.wikipedia.org/wiki/Giant%27s_Causeway",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_099",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Princetown_%28AU%29%2C_Port_Campbell_National_Park%2C_Twelve_Apostles_--_2019_--_0969.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Princetown_(AU),_Port_Campbell_National_Park,_Twelve_Apostles_--_2019_--_0969.jpg",
+        "creator": "Dietmar Rabich",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Princetown_%28AU%29%2C_Port_Campbell_National_Park%2C_Twelve_Apostles_--_2019_--_0969.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Twelve Apostles",
+        "Old Harry Rocks",
+        "Cliffs of Moher",
+        "Ha Long Bay"
+      ],
+      "answer": "Twelve Apostles",
+      "explanation": "The Twelve Apostles are limestone sea stacks along the Great Ocean Road in Victoria, Australia.",
+      "factSource": "https://en.wikipedia.org/wiki/The_Twelve_Apostles_(Victoria)",
+      "difficulty": "hard",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "landmark_100",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sugarloaf_Sunrise_2.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Sugarloaf_Sunrise_2.jpg",
+        "creator": "Donatas Dabravolskas",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Sugarloaf_Sunrise_2.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Sugarloaf Mountain",
+        "Table Mountain",
+        "Uluru",
+        "Huayna Picchu"
+      ],
+      "answer": "Sugarloaf Mountain",
+      "explanation": "Sugarloaf Mountain rises 396 metres above Guanabara Bay in Rio de Janeiro; a cable car runs to the top.",
+      "factSource": "https://en.wikipedia.org/wiki/Sugarloaf_Mountain",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
     }
   ]
 }

@@ -977,6 +977,1156 @@
       "factSource": "https://en.wikipedia.org/wiki/Udon",
       "difficulty": "easy",
       "status": "approved"
+    },
+    {
+      "id": "cuisine_041",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Fish_and_chips_plate_with_peas.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Fish_and_chips_plate_with_peas.jpg",
+        "creator": "Grendelkhan",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Fish_and_chips_plate_with_peas.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Fish and chips",
+        "Fish tacos",
+        "Tempura",
+        "Wiener schnitzel"
+      ],
+      "answer": "Fish and chips",
+      "explanation": "Fish and chips, battered fried fish with thick-cut chips, became a popular takeaway in England in the 1800s.",
+      "factSource": "https://en.wikipedia.org/wiki/Fish_and_chips",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_043",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Jollof_rice_with_vegetable.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Jollof_rice_with_vegetable.jpg",
+        "creator": "Segun Famisa",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Jollof_rice_with_vegetable.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Jollof rice",
+        "Paella",
+        "Fried rice",
+        "Risotto"
+      ],
+      "answer": "Jollof rice",
+      "explanation": "Jollof rice is cooked in a tomato, onion and pepper sauce and is loved across West Africa.",
+      "factSource": "https://en.wikipedia.org/wiki/Jollof_rice",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_044",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Espaguetis_carbonara.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Espaguetis_carbonara.jpg",
+        "creator": "Javier Somoza",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Espaguetis_carbonara.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Spaghetti carbonara",
+        "Cacio e pepe",
+        "Fettuccine Alfredo",
+        "Spaghetti bolognese"
+      ],
+      "answer": "Spaghetti carbonara",
+      "explanation": "Carbonara is a Roman pasta dish made with egg, hard cheese, cured pork and black pepper.",
+      "factSource": "https://en.wikipedia.org/wiki/Carbonara",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_045",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Eggplant_Lasagna_%28Vegitarian%29_%281_of_6%29.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Eggplant_Lasagna_(Vegitarian)_(1_of_6).jpg",
+        "creator": "Wheeler Cowperthwaite",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Eggplant_Lasagna_%28Vegitarian%29_%281_of_6%29.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Lasagna",
+        "Moussaka",
+        "Cannelloni",
+        "Pastitsio"
+      ],
+      "answer": "Lasagna",
+      "explanation": "Lasagna layers wide flat pasta sheets with sauce and cheese and is baked in the oven.",
+      "factSource": "https://en.wikipedia.org/wiki/Lasagna",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_046",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Risotto_Weihnachten_2020_13.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Risotto_Weihnachten_2020_13.jpg",
+        "creator": "Burkhard Mücke",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Risotto_Weihnachten_2020_13.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Risotto",
+        "Paella",
+        "Congee",
+        "Pilaf"
+      ],
+      "answer": "Risotto",
+      "explanation": "Risotto is a northern Italian rice dish cooked slowly in broth until creamy.",
+      "factSource": "https://en.wikipedia.org/wiki/Risotto",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_047",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Flickr_-_cyclonebill_-_Tabbouleh.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Flickr_-_cyclonebill_-_Tabbouleh.jpg",
+        "creator": "cyclonebill",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Flickr_-_cyclonebill_-_Tabbouleh.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Tabbouleh",
+        "Couscous",
+        "Quinoa salad",
+        "Pesto pasta"
+      ],
+      "answer": "Tabbouleh",
+      "explanation": "Tabbouleh is a Levantine salad of finely chopped parsley, tomato, mint and bulgur.",
+      "factSource": "https://en.wikipedia.org/wiki/Tabbouleh",
+      "difficulty": "hard",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_049",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bagel_with_sesame_3.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Bagel_with_sesame_3.jpg",
+        "creator": "Shisma",
+        "license": "CC BY 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Bagel_with_sesame_3.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Bagel",
+        "Doughnut",
+        "Pretzel",
+        "Simit"
+      ],
+      "answer": "Bagel",
+      "explanation": "A bagel is a ring of dough that is boiled briefly and then baked.",
+      "factSource": "https://en.wikipedia.org/wiki/Bagel",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_050",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/2017-05-28_Wiener_Schnitzel_mit_Pommes_frites_anagoria.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:2017-05-28_Wiener_Schnitzel_mit_Pommes_frites_anagoria.jpg",
+        "creator": "Anagoria",
+        "license": "CC BY 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2017-05-28_Wiener_Schnitzel_mit_Pommes_frites_anagoria.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Wiener schnitzel",
+        "Chicken katsu",
+        "Milanesa",
+        "Fish and chips"
+      ],
+      "answer": "Wiener schnitzel",
+      "explanation": "Wiener schnitzel is a thin, breaded and fried veal cutlet from Vienna, Austria.",
+      "factSource": "https://en.wikipedia.org/wiki/Wiener_schnitzel",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_051",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Kebab%2C_Turkish_Restaurant%2C_Gniezno%2C_Poland.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Kebab,_Turkish_Restaurant,_Gniezno,_Poland.jpg",
+        "creator": "Diego Delso",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Kebab%2C_Turkish_Restaurant%2C_Gniezno%2C_Poland.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Shawarma",
+        "Burrito",
+        "Bánh mì",
+        "Hot dog"
+      ],
+      "answer": "Shawarma",
+      "explanation": "Shawarma is meat roasted on a vertical spit, shaved thin and often wrapped in flatbread.",
+      "factSource": "https://en.wikipedia.org/wiki/Shawarma",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_053",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Des_macarons_de_chez_Bouillet_%28mars_2023%29.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Des_macarons_de_chez_Bouillet_(mars_2023).jpg",
+        "creator": "Benoît Prieur",
+        "license": "CC0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Des_macarons_de_chez_Bouillet_%28mars_2023%29.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Macarons",
+        "Meringues",
+        "Whoopie pies",
+        "Alfajores"
+      ],
+      "answer": "Macarons",
+      "explanation": "French macarons are almond-meringue cookies sandwiched with a filling.",
+      "factSource": "https://en.wikipedia.org/wiki/Macaron",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_054",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ratatouille.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Ratatouille.jpg",
+        "creator": "Marcus Guimarães",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ratatouille.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Ratatouille",
+        "Caponata",
+        "Pisto",
+        "Shakshuka"
+      ],
+      "answer": "Ratatouille",
+      "explanation": "Ratatouille is a stewed vegetable dish from Provence, France, made with tomato, aubergine, courgette and peppers.",
+      "factSource": "https://en.wikipedia.org/wiki/Ratatouille",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_056",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Croque_monsieur.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Croque_monsieur.jpg",
+        "creator": "Michael Brewer",
+        "license": "CC BY-SA 2.5",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Croque_monsieur.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Croque monsieur",
+        "Grilled cheese",
+        "Monte Cristo sandwich",
+        "Cuban sandwich"
+      ],
+      "answer": "Croque monsieur",
+      "explanation": "A croque monsieur is a French toasted ham-and-cheese sandwich, often topped with béchamel.",
+      "factSource": "https://en.wikipedia.org/wiki/Croque_monsieur",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_057",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Flickr_-_cyclonebill_-_Gr%C3%A6sk_salat.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Flickr_-_cyclonebill_-_Gr%C3%A6sk_salat.jpg",
+        "creator": "cyclonebill",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Flickr_-_cyclonebill_-_Gr%C3%A6sk_salat.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Greek salad",
+        "Caprese salad",
+        "Fattoush",
+        "Caesar salad"
+      ],
+      "answer": "Greek salad",
+      "explanation": "A Greek salad combines tomato, cucumber, onion, olives and a slab of feta cheese.",
+      "factSource": "https://en.wikipedia.org/wiki/Greek_salad",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_058",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Gazpacho_andaluz.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Gazpacho_andaluz.jpg",
+        "creator": "Juan Emilio Prades Bel",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Gazpacho_andaluz.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Gazpacho",
+        "Borscht",
+        "Vichyssoise",
+        "Minestrone"
+      ],
+      "answer": "Gazpacho",
+      "explanation": "Gazpacho is a cold tomato-based soup from Andalusia in southern Spain.",
+      "factSource": "https://en.wikipedia.org/wiki/Gazpacho",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_059",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chicken_Curry_Bunny_Chow.JPG?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Chicken_Curry_Bunny_Chow.JPG",
+        "creator": "Lucinda jolly",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Chicken_Curry_Bunny_Chow.JPG?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Bunny chow",
+        "Pav bhaji",
+        "Sloppy joe",
+        "Bread pudding"
+      ],
+      "answer": "Bunny chow",
+      "explanation": "Bunny chow, a hollowed-out loaf of bread filled with curry, comes from Durban, South Africa.",
+      "factSource": "https://en.wikipedia.org/wiki/Bunny_chow",
+      "difficulty": "hard",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_060",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Full_English_breakfast_at_the_Chalet_Cafe%2C_Cowfold%2C_West_Sussex%2C_England.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Full_English_breakfast_at_the_Chalet_Cafe,_Cowfold,_West_Sussex,_England.jpg",
+        "creator": "Acabashi",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Full_English_breakfast_at_the_Chalet_Cafe%2C_Cowfold%2C_West_Sussex%2C_England.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Full breakfast",
+        "Huevos rancheros",
+        "Shakshuka",
+        "Eggs Benedict"
+      ],
+      "answer": "Full breakfast",
+      "explanation": "A full breakfast typically includes eggs, bacon, sausages, beans, tomatoes and toast.",
+      "factSource": "https://en.wikipedia.org/wiki/Full_breakfast",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_061",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Traditional_Eggs_Benedict.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Traditional_Eggs_Benedict.jpg",
+        "creator": "Mark Miller",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Traditional_Eggs_Benedict.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Eggs Benedict",
+        "Full breakfast",
+        "Croque madame",
+        "Shakshuka"
+      ],
+      "answer": "Eggs Benedict",
+      "explanation": "Eggs Benedict is poached egg and ham on an English muffin, topped with hollandaise sauce.",
+      "factSource": "https://en.wikipedia.org/wiki/Eggs_Benedict",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_062",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Foodiesfeed.com_pouring-honey-on-pancakes-with-walnuts.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Foodiesfeed.com_pouring-honey-on-pancakes-with-walnuts.jpg",
+        "creator": "Mae Mu",
+        "license": "CC0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Foodiesfeed.com_pouring-honey-on-pancakes-with-walnuts.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Pancakes",
+        "Crêpes",
+        "Waffles",
+        "Dorayaki"
+      ],
+      "answer": "Pancakes",
+      "explanation": "American-style pancakes are thick and fluffy and often stacked with butter and syrup.",
+      "factSource": "https://en.wikipedia.org/wiki/Pancake",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_063",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Banana%2C_ice_cream_and_toffee_sauce_on_waffle_at_The_Queen%27s_Head%2C_Boreham%2C_Essex%2C_England.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Banana,_ice_cream_and_toffee_sauce_on_waffle_at_The_Queen%27s_Head,_Boreham,_Essex,_England.jpg",
+        "creator": "Acabashi",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Banana%2C_ice_cream_and_toffee_sauce_on_waffle_at_The_Queen%27s_Head%2C_Boreham%2C_Essex%2C_England.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Waffles",
+        "Pancakes",
+        "Crêpes",
+        "Stroopwafel"
+      ],
+      "answer": "Waffles",
+      "explanation": "Waffles are cooked between patterned hot plates, which gives them their grid of pockets.",
+      "factSource": "https://en.wikipedia.org/wiki/Waffle",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_064",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Apple_pie_24.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Apple_pie_24.jpg",
+        "creator": "Shisma",
+        "license": "CC BY 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Apple_pie_24.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Apple pie",
+        "Cheesecake",
+        "Tarte Tatin",
+        "Pumpkin pie"
+      ],
+      "answer": "Apple pie",
+      "explanation": "Apple pie is a pastry-crust pie filled with spiced apple.",
+      "factSource": "https://en.wikipedia.org/wiki/Apple_pie",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_065",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mondays_at_Il_Forno_-_Cheesecake_with_strawberry_sauce.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Mondays_at_Il_Forno_-_Cheesecake_with_strawberry_sauce.jpg",
+        "creator": "Alex Dugger",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Mondays_at_Il_Forno_-_Cheesecake_with_strawberry_sauce.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Cheesecake",
+        "Tiramisu",
+        "Tres leches cake",
+        "Panna cotta"
+      ],
+      "answer": "Cheesecake",
+      "explanation": "Cheesecake has a creamy layer of soft cheese on a base of crushed biscuit or pastry.",
+      "factSource": "https://en.wikipedia.org/wiki/Cheesecake",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_066",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Flickr_stuart_spivack_173603796--Macaroni_and_cheese.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Flickr_stuart_spivack_173603796--Macaroni_and_cheese.jpg",
+        "creator": "Stuart Spivack from Cleveland, Ohio, USA",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Flickr_stuart_spivack_173603796--Macaroni_and_cheese.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Macaroni and cheese",
+        "Spaghetti carbonara",
+        "Risotto",
+        "Potato gratin"
+      ],
+      "answer": "Macaroni and cheese",
+      "explanation": "Macaroni and cheese is pasta baked or stirred in a cheese sauce.",
+      "factSource": "https://en.wikipedia.org/wiki/Macaroni_and_cheese",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_067",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cup_of_clam_chowder%2C_with_saltines.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Cup_of_clam_chowder,_with_saltines.jpg",
+        "creator": "Ser Amantio di Nicolao",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Cup_of_clam_chowder%2C_with_saltines.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Clam chowder",
+        "Lobster bisque",
+        "Bouillabaisse",
+        "Gumbo"
+      ],
+      "answer": "Clam chowder",
+      "explanation": "New England clam chowder is a creamy soup of clams and potatoes.",
+      "factSource": "https://en.wikipedia.org/wiki/Clam_chowder",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_068",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Knafeh_khishnah_with_cheese_of_sheep_milk.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Knafeh_khishnah_with_cheese_of_sheep_milk.jpg",
+        "creator": "白と赤茶",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Knafeh_khishnah_with_cheese_of_sheep_milk.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Knafeh",
+        "Baklava",
+        "Tres leches cake",
+        "Cheesecake"
+      ],
+      "answer": "Knafeh",
+      "explanation": "Knafeh is a Middle Eastern dessert of shredded pastry or semolina over soft cheese, soaked in syrup.",
+      "factSource": "https://en.wikipedia.org/wiki/Knafeh",
+      "difficulty": "hard",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_069",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Oaxacalifornia_Burrito_cross_section.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Oaxacalifornia_Burrito_cross_section.jpg",
+        "creator": "RightCowLeftCoast",
+        "license": "CC BY 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Oaxacalifornia_Burrito_cross_section.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Burrito",
+        "Enchiladas",
+        "Quesadilla",
+        "Tamales"
+      ],
+      "answer": "Burrito",
+      "explanation": "A burrito is a large flour tortilla wrapped around fillings such as rice, beans and meat.",
+      "factSource": "https://en.wikipedia.org/wiki/Burrito",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_070",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Guacamole_IMGP1271.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Guacamole_IMGP1271.jpg",
+        "creator": "Nikodem Nijaki",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Guacamole_IMGP1271.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Guacamole",
+        "Hummus",
+        "Salsa verde",
+        "Pesto"
+      ],
+      "answer": "Guacamole",
+      "explanation": "Guacamole is a Mexican dip of mashed avocado with lime, onion and chilli.",
+      "factSource": "https://en.wikipedia.org/wiki/Guacamole",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_071",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hallaca%2C_Venezuelan_Christmas_food.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Hallaca,_Venezuelan_Christmas_food.jpg",
+        "creator": "Wilfredor",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Hallaca%2C_Venezuelan_Christmas_food.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Tamales",
+        "Burritos",
+        "Empanadas",
+        "Arepas"
+      ],
+      "answer": "Tamales",
+      "explanation": "Tamales are masa dough steamed in a corn husk or banana leaf, a staple across Mexico and Central America.",
+      "factSource": "https://en.wikipedia.org/wiki/Tamale",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_072",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Plat%C3%B3n_de_enchiladas%2C_arroz%2C_nopales_y_cebollas.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Plat%C3%B3n_de_enchiladas,_arroz,_nopales_y_cebollas.jpg",
+        "creator": "Dahyana Yasada R. R.",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Plat%C3%B3n_de_enchiladas%2C_arroz%2C_nopales_y_cebollas.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Enchiladas",
+        "Burritos",
+        "Lasagna",
+        "Cannelloni"
+      ],
+      "answer": "Enchiladas",
+      "explanation": "Enchiladas are rolled corn tortillas filled and covered in chilli sauce.",
+      "factSource": "https://en.wikipedia.org/wiki/Enchilada",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_073",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Feijoada_%C3%A0_brasileira_1.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Feijoada_%C3%A0_brasileira_1.jpg",
+        "creator": "Melsj",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Feijoada_%C3%A0_brasileira_1.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Feijoada",
+        "Chili con carne",
+        "Cassoulet",
+        "Goulash"
+      ],
+      "answer": "Feijoada",
+      "explanation": "Feijoada, a black bean stew with pork, is often called Brazil's national dish.",
+      "factSource": "https://en.wikipedia.org/wiki/Feijoada",
+      "difficulty": "hard",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_074",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cheesebread.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Cheesebread.jpg",
+        "creator": "Murilo manzini",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Cheesebread.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Pão de queijo",
+        "Gougères",
+        "Arancini",
+        "Mochi"
+      ],
+      "answer": "Pão de queijo",
+      "explanation": "Pão de queijo are small Brazilian cheese breads made with cassava flour.",
+      "factSource": "https://en.wikipedia.org/wiki/Pão_de_queijo",
+      "difficulty": "hard",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_075",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Brigadeiro.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Brigadeiro.jpg",
+        "creator": "User Mayra (Maych) on Flickr",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Brigadeiro.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Brigadeiro",
+        "Gulab jamun",
+        "Laddu",
+        "Mochi"
+      ],
+      "answer": "Brigadeiro",
+      "explanation": "Brigadeiros are Brazilian chocolate sweets rolled in chocolate sprinkles.",
+      "factSource": "https://en.wikipedia.org/wiki/Brigadeiro",
+      "difficulty": "hard",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_077",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Naan_baked_in_Tandoor.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Naan_baked_in_Tandoor.jpg",
+        "creator": "Ravi Dwivedi",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Naan_baked_in_Tandoor.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Naan",
+        "Pita",
+        "Paratha",
+        "Lavash"
+      ],
+      "answer": "Naan",
+      "explanation": "Naan is a leavened flatbread traditionally baked against the wall of a tandoor oven.",
+      "factSource": "https://en.wikipedia.org/wiki/Naan",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_078",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tandoori_Chicken_1.JPG?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Tandoori_Chicken_1.JPG",
+        "creator": "Miansari66",
+        "license": "CC0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Tandoori_Chicken_1.JPG?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Tandoori chicken",
+        "Butter chicken",
+        "Jerk chicken",
+        "Peri-peri chicken"
+      ],
+      "answer": "Tandoori chicken",
+      "explanation": "Tandoori chicken is marinated in yoghurt and spices and roasted in a tandoor, which gives it its red colour and char.",
+      "factSource": "https://en.wikipedia.org/wiki/Tandoori_chicken",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_079",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chole_Bhature_1.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Chole_Bhature_1.jpg",
+        "creator": "Gaurav Dhwaj Khadka",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Chole_Bhature_1.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Chole bhature",
+        "Puri bhaji",
+        "Pav bhaji",
+        "Masala dosa"
+      ],
+      "answer": "Chole bhature",
+      "explanation": "Chole bhature pairs spicy chickpea curry with puffy deep-fried bread, a favourite in North India.",
+      "factSource": "https://en.wikipedia.org/wiki/Chole_bhature",
+      "difficulty": "hard",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_080",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Pav_Bhaji_at_Home.JPG?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Pav_Bhaji_at_Home.JPG",
+        "creator": "Nundhaa",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Pav_Bhaji_at_Home.JPG?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Pav bhaji",
+        "Vada pav",
+        "Chole bhature",
+        "Misal pav"
+      ],
+      "answer": "Pav bhaji",
+      "explanation": "Pav bhaji, a spiced mashed-vegetable curry with buttered bread rolls, is a Mumbai street food.",
+      "factSource": "https://en.wikipedia.org/wiki/Pav_bhaji",
+      "difficulty": "hard",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_081",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Two_Gulab_Jamun_in_a_plate_01.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Two_Gulab_Jamun_in_a_plate_01.jpg",
+        "creator": "Suyash.dwivedi",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Two_Gulab_Jamun_in_a_plate_01.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Gulab jamun",
+        "Rasgulla",
+        "Loukoumades",
+        "Brigadeiro"
+      ],
+      "answer": "Gulab jamun",
+      "explanation": "Gulab jamun are fried milk-dough balls soaked in a fragrant sugar syrup.",
+      "factSource": "https://en.wikipedia.org/wiki/Gulab_jamun",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_082",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Idli_Sambar-Noida-UP-SP004.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Idli_Sambar-Noida-UP-SP004.jpg",
+        "creator": "Sutapa Pal",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Idli_Sambar-Noida-UP-SP004.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Idli",
+        "Dhokla",
+        "Mochi",
+        "Bao buns"
+      ],
+      "answer": "Idli",
+      "explanation": "Idli are steamed cakes of fermented rice and lentil batter from South India.",
+      "factSource": "https://en.wikipedia.org/wiki/Idli",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_083",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Jalebi_1.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Jalebi_1.jpg",
+        "creator": "Gaurav Dhwaj Khadka",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Jalebi_1.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Jalebi",
+        "Funnel cake",
+        "Churros",
+        "Gulab jamun"
+      ],
+      "answer": "Jalebi",
+      "explanation": "Jalebi are spirals of fried batter soaked in syrup, popular across South Asia and the Middle East.",
+      "factSource": "https://en.wikipedia.org/wiki/Jalebi",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_085",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Nasi_Lemak%2C_Mamak%2C_Sydney.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Nasi_Lemak,_Mamak,_Sydney.jpg",
+        "creator": "Mw12310",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Nasi_Lemak%2C_Mamak%2C_Sydney.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Nasi lemak",
+        "Nasi goreng",
+        "Bibimbap",
+        "Biryani"
+      ],
+      "answer": "Nasi lemak",
+      "explanation": "Nasi lemak is rice cooked in coconut milk, served with sambal, anchovies, peanuts and egg; it is Malaysia's national dish.",
+      "factSource": "https://en.wikipedia.org/wiki/Nasi_lemak",
+      "difficulty": "hard",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_086",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Nasi_Goreng_Kampung.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Nasi_Goreng_Kampung.jpg",
+        "creator": "Supardisahabu",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Nasi_Goreng_Kampung.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Nasi goreng",
+        "Paella",
+        "Jambalaya",
+        "Biryani"
+      ],
+      "answer": "Nasi goreng",
+      "explanation": "Nasi goreng is Indonesian fried rice, often topped with a fried egg.",
+      "factSource": "https://en.wikipedia.org/wiki/Nasi_goreng",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_088",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Beef_Rendang..JPG?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Beef_Rendang..JPG",
+        "creator": "Miansari66",
+        "license": "CC0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Beef_Rendang..JPG?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Rendang",
+        "Massaman curry",
+        "Goulash",
+        "Beef bourguignon"
+      ],
+      "answer": "Rendang",
+      "explanation": "Rendang is beef slow-cooked in coconut milk and spices until almost dry, from Indonesia's Minangkabau people.",
+      "factSource": "https://en.wikipedia.org/wiki/Rendang",
+      "difficulty": "hard",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_089",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tom_Yum_Soup_with_Mushroom_-_Easythaiger_2026-04-21.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Tom_Yum_Soup_with_Mushroom_-_Easythaiger_2026-04-21.jpg",
+        "creator": "Andy Li",
+        "license": "CC0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Tom_Yum_Soup_with_Mushroom_-_Easythaiger_2026-04-21.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Tom yum",
+        "Pho",
+        "Laksa",
+        "Hot and sour soup"
+      ],
+      "answer": "Tom yum",
+      "explanation": "Tom yum is a hot and sour Thai soup flavoured with lemongrass, lime leaves and chilli.",
+      "factSource": "https://en.wikipedia.org/wiki/Tom_yum",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_090",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Thai_green_chicken_curry_and_roti.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Thai_green_chicken_curry_and_roti.jpg",
+        "creator": "Takeaway",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Thai_green_chicken_curry_and_roti.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Thai green curry",
+        "Butter chicken",
+        "Laksa",
+        "Chicken korma"
+      ],
+      "answer": "Thai green curry",
+      "explanation": "Thai green curry gets its colour from green chillies in the curry paste, cooked with coconut milk.",
+      "factSource": "https://en.wikipedia.org/wiki/Green_curry",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_091",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Spring_rolls_in_restaurant_in_Siem_Reap.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Spring_rolls_in_restaurant_in_Siem_Reap.jpg",
+        "creator": "Krzysztof Golik",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Spring_rolls_in_restaurant_in_Siem_Reap.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Spring rolls",
+        "Samosas",
+        "Churros",
+        "Falafel"
+      ],
+      "answer": "Spring rolls",
+      "explanation": "Spring rolls are thin pastry wrappers rolled around a filling and usually fried.",
+      "factSource": "https://en.wikipedia.org/wiki/Spring_roll",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_092",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/2019-02-22_Xiaolongbao_in_%22Taste_Of_Shanghai%22_restaurant%2C_Sydney%2C_Australia.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:2019-02-22_Xiaolongbao_in_%22Taste_Of_Shanghai%22_restaurant,_Sydney,_Australia.jpg",
+        "creator": "Maksym Kozlenko",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2019-02-22_Xiaolongbao_in_%22Taste_Of_Shanghai%22_restaurant%2C_Sydney%2C_Australia.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Xiaolongbao",
+        "Bao buns",
+        "Mochi",
+        "Onigiri"
+      ],
+      "answer": "Xiaolongbao",
+      "explanation": "Xiaolongbao are soup dumplings from Shanghai, steamed in bamboo baskets.",
+      "factSource": "https://en.wikipedia.org/wiki/Xiaolongbao",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_093",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Authentic_Mapo_Tofu.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Authentic_Mapo_Tofu.jpg",
+        "creator": "Sichuanfoodlover",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Authentic_Mapo_Tofu.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Mapo tofu",
+        "Kung Pao chicken",
+        "Butter chicken",
+        "Chili con carne"
+      ],
+      "answer": "Mapo tofu",
+      "explanation": "Mapo tofu is a Sichuan dish of tofu in a spicy, numbing chilli and bean sauce.",
+      "factSource": "https://en.wikipedia.org/wiki/Mapo_tofu",
+      "difficulty": "hard",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_096",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Vegen_rice_pasta_%28spicy_ver.%29_-_Korpan.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Vegen_rice_pasta_(spicy_ver.)_-_Korpan.jpg",
+        "creator": "Andy Li",
+        "license": "CC0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Vegen_rice_pasta_%28spicy_ver.%29_-_Korpan.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Tteokbokki",
+        "Gnocchi",
+        "Japchae",
+        "Pad Thai"
+      ],
+      "answer": "Tteokbokki",
+      "explanation": "Tteokbokki are chewy Korean rice cakes in a sweet and spicy red chilli sauce.",
+      "factSource": "https://en.wikipedia.org/wiki/Tteok-bokki",
+      "difficulty": "hard",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_098",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Takoyaki_dish.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Takoyaki_dish.jpg",
+        "creator": "sayo ts",
+        "license": "CC0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Takoyaki_dish.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Takoyaki",
+        "Arancini",
+        "Falafel",
+        "Mochi"
+      ],
+      "answer": "Takoyaki",
+      "explanation": "Takoyaki are batter balls filled with octopus, cooked in a special moulded pan in Osaka, Japan.",
+      "factSource": "https://en.wikipedia.org/wiki/Takoyaki",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_099",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Kashiwa-mochi_001.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Kashiwa-mochi_001.jpg",
+        "creator": "Ocdp",
+        "license": "CC0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Kashiwa-mochi_001.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Mochi",
+        "Dango",
+        "Macarons",
+        "Gulab jamun"
+      ],
+      "answer": "Mochi",
+      "explanation": "Mochi is a Japanese rice cake made from pounded glutinous rice.",
+      "factSource": "https://en.wikipedia.org/wiki/Mochi",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
+      "id": "cuisine_100",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Pastel_de_nata_-_Nazare_2021.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Pastel_de_nata_-_Nazare_2021.jpg",
+        "creator": "Addshore",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Pastel_de_nata_-_Nazare_2021.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Pastel de nata",
+        "Crème brûlée",
+        "Cheesecake",
+        "Flan"
+      ],
+      "answer": "Pastel de nata",
+      "explanation": "Pastéis de nata are Portuguese custard tarts with crisp, flaky pastry and a caramelised top.",
+      "factSource": "https://en.wikipedia.org/wiki/Pastel_de_nata",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
     }
   ]
 }
