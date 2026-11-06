@@ -3,7 +3,8 @@
  * shows up in all three once it is added to this list. tests/registry.spec.js checks that every game card on the
  * home page is here (Name Them All, a typing game with its own page code, is the one exception: data-standalone on its card;
  * it has live mode but no mix questions).
- * path: the game's folder · label: its name · emoji: its icon in lists. */
+ * path: the game's folder · label: its name · emoji: its icon in lists · region: 'india' for a game that is all
+ * Indian (left out of a Global mix; games with some Indian questions filter them themselves, see shared/region.js). */
 window.GTQ_GAMES=[
  {path:'guess-the-flag',label:'Flags',emoji:'🏳️'},
  {path:'guess-the-color',label:'Colors',emoji:'🎨'},
@@ -17,7 +18,7 @@ window.GTQ_GAMES=[
  {path:'guess-the-currencies',label:'Currencies',emoji:'💱'},
  {path:'guess-the-elements',label:'Elements',emoji:'⚗️'},
  {path:'guess-the-languages',label:'Languages',emoji:'🗣️'},
- {path:'guess-the-bollywood',label:'Bollywood',emoji:'🎬'},
+ {path:'guess-the-bollywood',label:'Bollywood',emoji:'🎬',region:'india'},
  {path:'guess-the-hollywood',label:'Hollywood',emoji:'🍿'},
  {path:'guess-the-sports',label:'Sports',emoji:'🏅'},
  {path:'guess-the-series',label:'Series',emoji:'📺'},

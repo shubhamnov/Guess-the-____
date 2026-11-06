@@ -2,7 +2,8 @@
  * Each game in GTQ_GAMES is loaded in a hidden iframe with ?mix. There the engine builds no page; it only hands out
  * questions from the game's own code (see "Mix export" in engine.js). The game's styles are copied into this page
  * so its clues look the same here. A game that fails to load within 20 seconds is left out of the mix.
- * GTQMix.load() → Promise (starts once; call it early). GTQMix.questions(seed, perGame) → shuffled list, the same
+ * GTQMix.load(region) → Promise (starts once; call it early). region 'global' or 'india' leaves out games for the
+ * other region and has each game ask only its questions for that region; Both (the default) asks everything. GTQMix.questions(seed, perGame) → shuffled list, the same
  * for the same seed on every device. GTQMix.games() → the games that loaded. */
 (function(){
 'use strict';
@@ -10,7 +11,8 @@ const ROOT=new URL('../',(document.currentScript&&document.currentScript.src)||l
 const TIMEOUT=20000;
 function hashSeed(seed){let h=2166136261;for(let i=0;i<seed.length;i++){h^=seed.charCodeAt(i);h=Math.imul(h,16777619)}return h>>>0}
 function rngFor(seed){let state=hashSeed(String(seed));return function(){state=(state+0x6D2B79F5)|0;let t=state;t=Math.imul(t^(t>>>15),t|1);t^=t+Math.imul(t^(t>>>7),t|61);return ((t^(t>>>14))>>>0)/4294967296}}
-let loading=null,loaded=[];
+let loading=null,loaded=[],region='both';
+const inRegion=g=>region==='both'||!g.region||g.region==='any'||g.region===region;
 const styles=new Set();
 function addStyles(doc){
  doc.querySelectorAll('style').forEach(s=>{const css=s.textContent;if(!css.trim()||styles.has(css))return;styles.add(css);
@@ -27,16 +29,17 @@ function loadGame(game){
    if(!exp){clearTimeout(timer);reject(new Error(game.path+' has no mix export'));return}
    exp.ready.then(()=>{clearTimeout(timer);addStyles(frame.contentDocument);resolve(Object.assign({},game,{exp}))},e=>{clearTimeout(timer);reject(e)});
   });
-  frame.src=new URL(game.path+'/?mix',ROOT).href;
+  frame.src=new URL(game.path+'/?mix'+(region==='both'?'':'&region='+region),ROOT).href;
   document.body.appendChild(frame);
  });
 }
-function load(){
+function load(r){
  if(!loading){
+  if(r==='global'||r==='india')region=r;
   const css=document.createElement('style');
   // Photo clues open a full-screen view inside their own (hidden) frame, so the enlarge button is not offered here.
   css.textContent='.clue .photo-zoom{display:none}.clue img{cursor:default!important}';document.head.appendChild(css);
-  loading=Promise.all((window.GTQ_GAMES||[]).map(g=>loadGame(g).catch(e=>{console.warn('Mix: left out',e.message);return null})))
+  loading=Promise.all((window.GTQ_GAMES||[]).filter(inRegion).map(g=>loadGame(g).catch(e=>{console.warn('Mix: left out',e.message);return null})))
    .then(list=>{loaded=list.filter(Boolean);if(!loaded.length){loading=null;throw new Error('No games could be loaded')}return loaded});
  }
  return loading;
@@ -51,5 +54,5 @@ function questions(seed,perGame){
  for(let i=out.length-1;i>0;i--){const j=Math.floor(rng()*(i+1));[out[i],out[j]]=[out[j],out[i]]}
  return out;
 }
-window.GTQMix={load,questions,games:()=>loaded.slice()};
+window.GTQMix={load,questions,games:()=>loaded.slice(),inRegion,region:()=>region};
 })();

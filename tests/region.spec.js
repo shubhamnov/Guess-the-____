@@ -51,3 +51,15 @@ test('live games have no switch', async ({ page }) => {
   await expect(page.locator('#introEyebrow')).toBeVisible();
   await expect(page.locator('.region-pick')).toHaveCount(0);
 });
+
+test('Daily Mix follows the switch: Global leaves out Bollywood and asks international questions', async ({ page }) => {
+  await page.goto('daily-challenge/?region=global&date=2026-01-15');
+  await expect(page.locator('#intro')).toContainText('International questions only');
+  await page.waitForFunction(() => window.GTQMix && GTQMix.games().length > 0, null, { timeout: 30000 });
+  const loaded = await page.evaluate(() => GTQMix.games().map(g => g.path));
+  expect(loaded).not.toContain('guess-the-bollywood');
+  expect(loaded).toContain('guess-the-series');
+  // Each game frame was asked for Global questions only.
+  const series = await page.evaluate(() => [...document.querySelectorAll('iframe')].map(f => f.src).find(s => s.includes('guess-the-series/')));
+  expect(series).toContain('region=global');
+});

@@ -81,7 +81,7 @@ A question is `{answer, options, render(clueElement), prompt?, kind?, level?, ex
 - **Live Mix** (`race/`): two questions from every game for each live round.
 - **Play live** (`live/`): one link per game.
 
-`shared/mix.js` loads each listed game in a hidden iframe with `?mix`. In that mode `GuessGame.run(cfg)` builds no page. It sets `window.GuessGameExport` with `questions(seed, count)`, which calls the game's own `next`/`makeRound` with a generator seeded from the seed and the game id. So the mix questions come from the game's real code and data, and they're the same on every device. The mixes always use Both regions. A game that fails to load within 20 seconds is left out rather than breaking the mix.
+`shared/mix.js` loads each listed game in a hidden iframe with `?mix`. In that mode `GuessGame.run(cfg)` builds no page. It sets `window.GuessGameExport` with `questions(seed, count)`, which calls the game's own `next`/`makeRound` with a generator seeded from the seed and the game id. So the mix questions come from the game's real code and data, and they're the same on every device. The Daily Mix follows the Global / India / Both switch (`GTQMix.load(region)`: games marked `region` in games.js are left out of the other region, and each game frame gets `?mix&region=`); the Live Mix uses Both. A game that fails to load within 20 seconds is left out rather than breaking the mix.
 
 ### Adding a new game
 

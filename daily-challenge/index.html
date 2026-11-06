@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="../shared/engine.css">
 </head>
 <body data-game="daily-mix">
+<script src="../shared/region.js"></script>
 <script src="../shared/engine.js"></script>
 <script src="../shared/games.js"></script>
 <script src="../shared/mix.js"></script>
@@ -16,14 +17,18 @@
 (function(){
 'use strict';
 /* One question from every game in shared/games.js, picked by the date (UTC), so everyone gets the same mix.
- * A new game joins the mix as soon as it is added to games.js. See shared/mix.js. */
+ * A new game joins the mix as soon as it is added to games.js. See shared/mix.js.
+ * It follows the Global / India / Both switch: everyone with the same setting gets the same mix (a friend game uses Both). */
 const todayUTC=()=>new Date().toISOString().slice(0,10);
 function validDate(value){if(!/^\d{4}-\d{2}-\d{2}$/.test(value||''))return false;const d=new Date(value+'T00:00:00Z');return !Number.isNaN(d.getTime())&&d.toISOString().slice(0,10)===value}
 function formatDate(value){return new Intl.DateTimeFormat('en-US',{month:'long',day:'numeric',year:'numeric',timeZone:'UTC'}).format(new Date(value+'T00:00:00Z'))}
-const GAMES=window.GTQ_GAMES;
-GTQMix.load().catch(()=>{});
+const REGION=GTQRegion.get();
+GTQMix.load(REGION).catch(()=>{});
+const GAMES=window.GTQ_GAMES.filter(GTQMix.inRegion);
 const params=new URLSearchParams(window.location.search);
 const activeDate=validDate(params.get('date'))?params.get('date'):todayUTC();
+// Both keeps the seed the mix had before the switch existed, so those dates don't change.
+const SEED='daily|'+activeDate+(REGION==='both'?'':'|'+REGION);
 function challengeURL(){const url=new URL(window.location.href);url.search='';url.hash='';url.searchParams.set('date',activeDate);return url.toString()}
 const isToday=activeDate===todayUTC();
 
@@ -33,16 +38,18 @@ const game=GuessGame.run({
  liveLink:isToday,friendText:'Play today’s mix with a friend',
  eyebrow:isToday?'Today’s Daily Mix':'Daily Mix · '+formatDate(activeDate),
  titleHtml:'Every game.<br><em>One daily mix.</em>',
- intro:GAMES.length+' questions, one from every game, and 60 seconds to get through them. The questions are the same for everyone on '+formatDate(activeDate)+' (UTC).',
+ intro:(REGION==='both'?'':GTQRegion.notePrefix(REGION))+GAMES.length+' questions, one from every game, and 60 seconds to get through them. The questions are the same for everyone on '+formatDate(activeDate)+' (UTC).',
  note:GAMES.map(g=>g.emoji+' '+g.label).join(' · '),
  prompt:'Which one is it?',legacyBest:[{key:'guessTheDailyMixBest',scale:1}],
  resultLabel:'Daily Mix · '+formatDate(activeDate),shareHeadline:'Daily Mix · '+formatDate(activeDate),
  links:[{text:'Flags',href:'../guess-the-flag/'},{text:'Brand Logos',href:'../guess-the-brand-logos/'}],
  shareUrl:challengeURL,
  resultNote:()=>isToday?'Come back tomorrow for a new mix.':'Today’s mix is waiting on the home page.',
- load:()=>GTQMix.load(),
+ load:()=>GTQMix.load(REGION),
+ // The games load for one region, so a change of setting reloads the page with the new mix.
+ onRegion(){location.reload()},
  makeRound(){
-  return GTQMix.questions('daily|'+activeDate,1);
+  return GTQMix.questions(SEED,1);
  },
  setupIntro({toast,$}){
   const btn=document.createElement('button');btn.type='button';btn.className='secondary';btn.textContent='Share this challenge ↗';

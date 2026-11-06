@@ -1,5 +1,6 @@
 /* One Global / India / Both setting for the whole site, saved on this device (localStorage "gtq:region").
  * ?region=global|india|both overrides it for one visit. Live games always use Both, because a room link does not carry it.
+ * The Daily Mix follows the setting: everyone with the same setting gets the same mix that day.
  * Games with India-specific content read GTQRegion.get() and filter with GTQRegion.keep(regionOfItem).
  * Items are 'india', 'global' or 'any' (always shown, e.g. geography or science). See shared/README.md. */
 (function(){
@@ -8,11 +9,12 @@ const KEY='gtq:region';
 const LIST=[['global','🌍 Global'],['india','🇮🇳 India'],['both','Both']];
 const valid=r=>LIST.some(x=>x[0]===r);
 const params=new URLSearchParams(location.search);
-/* Live games and the mixes (?mix) are the same for everyone, so they always use Both. */
-const live=params.has('live')||params.has('mix');
+/* Live games are the same for both players, so they always use Both. A mix question frame (?mix) uses the region it
+ * is given (?mix&region=global), else Both, never this device's setting. Neither shows a switch. */
+const mix=params.has('mix'),live=params.has('live')||mix;
 let current=params.get('region');
-if(!valid(current)){try{current=localStorage.getItem(KEY)}catch(e){current=null}}
-if(live||!valid(current))current='both';
+if(!valid(current)&&!mix){try{current=localStorage.getItem(KEY)}catch(e){current=null}}
+if(params.has('live')||!valid(current))current='both';
 const pickers=[],listeners=[];
 let styled=false;
 function style(){
