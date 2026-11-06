@@ -503,12 +503,14 @@
       "id": "landmark_021",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Burj_Khalifa_%2816260269606%29.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_021.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Burj_Khalifa_(16260269606).jpg",
         "creator": "Laika ac",
         "license": "CC BY-SA 2.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Burj_Khalifa_%2816260269606%29.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Burj_Khalifa_%2816260269606%29.jpg?width=1200",
+        "path": "assets/landmarks/landmark_021.webp"
       },
       "options": [
         "Burj Khalifa",
@@ -526,12 +528,14 @@
       "id": "landmark_022",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Stonehenge%2C_Condado_de_Wiltshire%2C_Inglaterra%2C_2014-08-12%2C_DD_18.JPG?width=1200",
+        "url": "../assets/landmarks/landmark_022.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Stonehenge,_Condado_de_Wiltshire,_Inglaterra,_2014-08-12,_DD_18.JPG",
         "creator": "Diego Delso",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Stonehenge%2C_Condado_de_Wiltshire%2C_Inglaterra%2C_2014-08-12%2C_DD_18.JPG?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Stonehenge%2C_Condado_de_Wiltshire%2C_Inglaterra%2C_2014-08-12%2C_DD_18.JPG?width=1200",
+        "path": "assets/landmarks/landmark_022.webp"
       },
       "options": [
         "Stonehenge",
@@ -549,12 +553,14 @@
       "id": "landmark_023",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chichen_Itza_3.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_023.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Chichen_Itza_3.jpg",
         "creator": "Daniel Schwen",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Chichen_Itza_3.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Chichen_Itza_3.jpg?width=1200",
+        "path": "assets/landmarks/landmark_023.webp"
       },
       "options": [
         "Chichén Itzá",
@@ -572,12 +578,14 @@
       "id": "landmark_024",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tower_Bridge_golden_hour.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_024.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Tower_Bridge_golden_hour.jpg",
         "creator": "The Cosmonaut",
         "license": "CC BY-SA 2.5 ca",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Tower_Bridge_golden_hour.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Tower_Bridge_golden_hour.jpg?width=1200",
+        "path": "assets/landmarks/landmark_024.webp"
       },
       "options": [
         "Tower Bridge",
@@ -595,12 +603,14 @@
       "id": "landmark_025",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Louvre_museum_01.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_025.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Louvre_museum_01.jpg",
         "creator": "Maksim Sokolov (maxergon.com)",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Louvre_museum_01.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Louvre_museum_01.jpg?width=1200",
+        "path": "assets/landmarks/landmark_025.webp"
       },
       "options": [
         "Louvre Pyramid",
@@ -618,12 +628,14 @@
       "id": "landmark_026",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Arc_de_Triomphe_de_l%27%C3%89toile_at_night_vertical_fix.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_026.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Arc_de_Triomphe_de_l%27%C3%89toile_at_night_vertical_fix.jpg",
         "creator": "Wilfredor",
         "license": "CC0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Arc_de_Triomphe_de_l%27%C3%89toile_at_night_vertical_fix.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Arc_de_Triomphe_de_l%27%C3%89toile_at_night_vertical_fix.jpg?width=1200",
+        "path": "assets/landmarks/landmark_026.webp"
       },
       "options": [
         "Arc de Triomphe",
@@ -641,12 +653,14 @@
       "id": "landmark_027",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Brandenburger_Tor_morgens.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_027.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Brandenburger_Tor_morgens.jpg",
         "creator": "Thomas Wolf, www.foto-tw.de",
         "license": "CC BY-SA 3.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Brandenburger_Tor_morgens.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Brandenburger_Tor_morgens.jpg?width=1200",
+        "path": "assets/landmarks/landmark_027.webp"
       },
       "options": [
         "Brandenburg Gate",
@@ -664,12 +678,14 @@
       "id": "landmark_028",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/NotreDameDeParis.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_028.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:NotreDameDeParis.jpg",
         "creator": "Sanchezn",
         "license": "CC BY-SA 3.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/NotreDameDeParis.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/NotreDameDeParis.jpg?width=1200",
+        "path": "assets/landmarks/landmark_028.webp"
       },
       "options": [
         "Notre-Dame de Paris",
@@ -687,12 +703,14 @@
       "id": "landmark_029",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Moscow_-_2025_-_Daytime_view_of_St._Basil%27s_Cathedral_from_Vasilyevsky_Spusk.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_029.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Moscow_-_2025_-_Daytime_view_of_St._Basil%27s_Cathedral_from_Vasilyevsky_Spusk.jpg",
         "creator": "Юрий Д.К.",
         "license": "CC BY 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Moscow_-_2025_-_Daytime_view_of_St._Basil%27s_Cathedral_from_Vasilyevsky_Spusk.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Moscow_-_2025_-_Daytime_view_of_St._Basil%27s_Cathedral_from_Vasilyevsky_Spusk.jpg?width=1200",
+        "path": "assets/landmarks/landmark_029.webp"
       },
       "options": [
         "Saint Basil's Cathedral",
@@ -710,12 +728,14 @@
       "id": "landmark_030",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hagia_Sophia_Mars_2013.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_030.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Hagia_Sophia_Mars_2013.jpg",
         "creator": "Arild Vågen",
         "license": "CC BY-SA 3.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Hagia_Sophia_Mars_2013.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Hagia_Sophia_Mars_2013.jpg?width=1200",
+        "path": "assets/landmarks/landmark_030.webp"
       },
       "options": [
         "Hagia Sophia",
@@ -733,12 +753,14 @@
       "id": "landmark_031",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Exterior_of_Sultan_Ahmed_I_Mosque_in_Istanbul%2C_Turkey_002.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_031.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Exterior_of_Sultan_Ahmed_I_Mosque_in_Istanbul,_Turkey_002.jpg",
         "creator": "Moonik",
         "license": "CC BY-SA 3.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Exterior_of_Sultan_Ahmed_I_Mosque_in_Istanbul%2C_Turkey_002.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Exterior_of_Sultan_Ahmed_I_Mosque_in_Istanbul%2C_Turkey_002.jpg?width=1200",
+        "path": "assets/landmarks/landmark_031.webp"
       },
       "options": [
         "Blue Mosque",
@@ -756,12 +778,14 @@
       "id": "landmark_032",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mont_Saint_Michel_and_sheep_-_2026.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_032.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Mont_Saint_Michel_and_sheep_-_2026.jpg",
         "creator": "Eric Kilby",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Mont_Saint_Michel_and_sheep_-_2026.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Mont_Saint_Michel_and_sheep_-_2026.jpg?width=1200",
+        "path": "assets/landmarks/landmark_032.webp"
       },
       "options": [
         "Mont-Saint-Michel",
@@ -779,12 +803,14 @@
       "id": "landmark_033",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mount_Fuji_at_sunset%2C_March_2025.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_033.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Mount_Fuji_at_sunset,_March_2025.jpg",
         "creator": "Romain Guy from San Francisco, USA",
         "license": "CC0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Mount_Fuji_at_sunset%2C_March_2025.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Mount_Fuji_at_sunset%2C_March_2025.jpg?width=1200",
+        "path": "assets/landmarks/landmark_033.webp"
       },
       "options": [
         "Mount Fuji",
@@ -802,12 +828,14 @@
       "id": "landmark_034",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Grand_canyon_march_2013.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_034.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Grand_canyon_march_2013.jpg",
         "creator": "Tomascastelazo",
         "license": "CC BY-SA 3.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Grand_canyon_march_2013.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Grand_canyon_march_2013.jpg?width=1200",
+        "path": "assets/landmarks/landmark_034.webp"
       },
       "options": [
         "Grand Canyon",
@@ -825,12 +853,14 @@
       "id": "landmark_035",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Maid_of_the_Mist_VII_approaching_the_Horseshoe_Falls%2C_West_view_20170418_1.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_035.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Maid_of_the_Mist_VII_approaching_the_Horseshoe_Falls,_West_view_20170418_1.jpg",
         "creator": "DXR",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Maid_of_the_Mist_VII_approaching_the_Horseshoe_Falls%2C_West_view_20170418_1.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Maid_of_the_Mist_VII_approaching_the_Horseshoe_Falls%2C_West_view_20170418_1.jpg?width=1200",
+        "path": "assets/landmarks/landmark_035.webp"
       },
       "options": [
         "Niagara Falls",
@@ -848,12 +878,14 @@
       "id": "landmark_036",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Petermann_Ranges_%28AU%29%2C_Uluru-Kata_Tjuta_National_Park%2C_Uluru%2C_Kuniya_Walk_--_2019_--_3674.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_036.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Petermann_Ranges_(AU),_Uluru-Kata_Tjuta_National_Park,_Uluru,_Kuniya_Walk_--_2019_--_3674.jpg",
         "creator": "Dietmar Rabich",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Petermann_Ranges_%28AU%29%2C_Uluru-Kata_Tjuta_National_Park%2C_Uluru%2C_Kuniya_Walk_--_2019_--_3674.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Petermann_Ranges_%28AU%29%2C_Uluru-Kata_Tjuta_National_Park%2C_Uluru%2C_Kuniya_Walk_--_2019_--_3674.jpg?width=1200",
+        "path": "assets/landmarks/landmark_036.webp"
       },
       "options": [
         "Uluru",
@@ -871,12 +903,14 @@
       "id": "landmark_038",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/View_of_sea_from_Titov_Island%2C_Ha_Long_Bay%2C_Vietnam%2C_20240128_1337_3732.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_038.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:View_of_sea_from_Titov_Island,_Ha_Long_Bay,_Vietnam,_20240128_1337_3732.jpg",
         "creator": "Jakub Hałun",
         "license": "CC BY 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/View_of_sea_from_Titov_Island%2C_Ha_Long_Bay%2C_Vietnam%2C_20240128_1337_3732.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/View_of_sea_from_Titov_Island%2C_Ha_Long_Bay%2C_Vietnam%2C_20240128_1337_3732.jpg?width=1200",
+        "path": "assets/landmarks/landmark_038.webp"
       },
       "options": [
         "Ha Long Bay",
@@ -894,12 +928,14 @@
       "id": "landmark_039",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cataratas_Victoria%2C_Zambia-Zimbabue%2C_2018-07-27%2C_DD_30-34_PAN.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_039.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Cataratas_Victoria,_Zambia-Zimbabue,_2018-07-27,_DD_30-34_PAN.jpg",
         "creator": "Diego Delso",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Cataratas_Victoria%2C_Zambia-Zimbabue%2C_2018-07-27%2C_DD_30-34_PAN.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Cataratas_Victoria%2C_Zambia-Zimbabue%2C_2018-07-27%2C_DD_30-34_PAN.jpg?width=1200",
+        "path": "assets/landmarks/landmark_039.webp"
       },
       "options": [
         "Victoria Falls",
@@ -917,12 +953,14 @@
       "id": "landmark_040",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/GGB_Bhe_2-4_Gornergrat.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_040.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:GGB_Bhe_2-4_Gornergrat.jpg",
         "creator": "Kabelleger / David Gubler (http://www.bahnbilder.ch)",
         "license": "CC BY-SA 3.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/GGB_Bhe_2-4_Gornergrat.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/GGB_Bhe_2-4_Gornergrat.jpg?width=1200",
+        "path": "assets/landmarks/landmark_040.webp"
       },
       "options": [
         "Matterhorn",
@@ -940,12 +978,14 @@
       "id": "landmark_041",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tower_of_London_viewed_from_the_River_Thames.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_041.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Tower_of_London_viewed_from_the_River_Thames.jpg",
         "creator": "Bob Collowan",
         "license": "CC BY-SA 3.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Tower_of_London_viewed_from_the_River_Thames.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Tower_of_London_viewed_from_the_River_Thames.jpg?width=1200",
+        "path": "assets/landmarks/landmark_041.webp"
       },
       "options": [
         "Tower of London",
@@ -963,12 +1003,14 @@
       "id": "landmark_042",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Buckingham_Palace%2C_London_-_April_2009.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_042.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Buckingham_Palace,_London_-_April_2009.jpg",
         "creator": "Diliff",
         "license": "CC BY-SA 3.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Buckingham_Palace%2C_London_-_April_2009.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Buckingham_Palace%2C_London_-_April_2009.jpg?width=1200",
+        "path": "assets/landmarks/landmark_042.webp"
       },
       "options": [
         "Buckingham Palace",
@@ -986,12 +1028,14 @@
       "id": "landmark_043",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chateau_Versailles_Galerie_des_Glaces.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_043.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Chateau_Versailles_Galerie_des_Glaces.jpg",
         "creator": "Myrabella",
         "license": "CC BY-SA 3.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Chateau_Versailles_Galerie_des_Glaces.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Chateau_Versailles_Galerie_des_Glaces.jpg?width=1200",
+        "path": "assets/landmarks/landmark_043.webp"
       },
       "options": [
         "Palace of Versailles",
@@ -1009,12 +1053,14 @@
       "id": "landmark_044",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edinburgh_Castle_from_Esplanade_20211019.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_044.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Edinburgh_Castle_from_Esplanade_20211019.jpg",
         "creator": "Daniel Kraft",
         "license": "CC BY-SA 3.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Edinburgh_Castle_from_Esplanade_20211019.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Edinburgh_Castle_from_Esplanade_20211019.jpg?width=1200",
+        "path": "assets/landmarks/landmark_044.webp"
       },
       "options": [
         "Edinburgh Castle",
@@ -1032,12 +1078,14 @@
       "id": "landmark_045",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Charles_Bridge_Covid.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_045.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Charles_Bridge_Covid.jpg",
         "creator": "Tadeáš Gregor",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Charles_Bridge_Covid.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Charles_Bridge_Covid.jpg?width=1200",
+        "path": "assets/landmarks/landmark_045.webp"
       },
       "options": [
         "Charles Bridge",
@@ -1055,12 +1103,14 @@
       "id": "landmark_046",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ponte_Vecchio_from_Ponte_Santa_Trinita_Blue_hour.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_046.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Ponte_Vecchio_from_Ponte_Santa_Trinita_Blue_hour.jpg",
         "creator": "Commonists",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ponte_Vecchio_from_Ponte_Santa_Trinita_Blue_hour.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ponte_Vecchio_from_Ponte_Santa_Trinita_Blue_hour.jpg?width=1200",
+        "path": "assets/landmarks/landmark_046.webp"
       },
       "options": [
         "Ponte Vecchio",
@@ -1078,12 +1128,14 @@
       "id": "landmark_047",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ponte_di_Rialto_Venice_1.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_047.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Ponte_di_Rialto_Venice_1.jpg",
         "creator": "kallerna",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ponte_di_Rialto_Venice_1.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ponte_di_Rialto_Venice_1.jpg?width=1200",
+        "path": "assets/landmarks/landmark_047.webp"
       },
       "options": [
         "Rialto Bridge",
@@ -1101,12 +1153,14 @@
       "id": "landmark_048",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Basilica_di_San_Pietro_in_Vaticano_September_2015-1a.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_048.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Basilica_di_San_Pietro_in_Vaticano_September_2015-1a.jpg",
         "creator": "Alvesgaspar",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Basilica_di_San_Pietro_in_Vaticano_September_2015-1a.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Basilica_di_San_Pietro_in_Vaticano_September_2015-1a.jpg?width=1200",
+        "path": "assets/landmarks/landmark_048.webp"
       },
       "options": [
         "St. Peter's Basilica",
@@ -1124,12 +1178,14 @@
       "id": "landmark_049",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Florence_Duomo_from_Michelangelo_hill.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_049.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Florence_Duomo_from_Michelangelo_hill.jpg",
         "creator": "Petar Milošević",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Florence_Duomo_from_Michelangelo_hill.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Florence_Duomo_from_Michelangelo_hill.jpg?width=1200",
+        "path": "assets/landmarks/landmark_049.webp"
       },
       "options": [
         "Florence Cathedral",
@@ -1147,12 +1203,14 @@
       "id": "landmark_050",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Milano%2C_Duomo%2C_2016-06_CN-05.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_050.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Milano,_Duomo,_2016-06_CN-05.jpg",
         "creator": "Steffen Schmitz",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Milano%2C_Duomo%2C_2016-06_CN-05.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Milano%2C_Duomo%2C_2016-06_CN-05.jpg?width=1200",
+        "path": "assets/landmarks/landmark_050.webp"
       },
       "options": [
         "Milan Cathedral",
@@ -1170,12 +1228,14 @@
       "id": "landmark_051",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/K%C3%B6lner_Dom_nachts_2013.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_051.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:K%C3%B6lner_Dom_nachts_2013.jpg",
         "creator": "Thomas Wolf, www.foto-tw.de",
         "license": "CC BY-SA 3.0 de",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/K%C3%B6lner_Dom_nachts_2013.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/K%C3%B6lner_Dom_nachts_2013.jpg?width=1200",
+        "path": "assets/landmarks/landmark_051.webp"
       },
       "options": [
         "Cologne Cathedral",
@@ -1193,12 +1253,14 @@
       "id": "landmark_052",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Atomium_during_civil_twilight_%28DSCF1135%29.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_052.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Atomium_during_civil_twilight_(DSCF1135).jpg",
         "creator": "Trougnouf (Benoit Brummer)",
         "license": "CC BY 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Atomium_during_civil_twilight_%28DSCF1135%29.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Atomium_during_civil_twilight_%28DSCF1135%29.jpg?width=1200",
+        "path": "assets/landmarks/landmark_052.webp"
       },
       "options": [
         "Atomium",
@@ -1216,12 +1278,14 @@
       "id": "landmark_053",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Pavillon_Cour_des_Lions_Alhambra_Granada_Spain.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_053.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Pavillon_Cour_des_Lions_Alhambra_Granada_Spain.jpg",
         "creator": "Jebulon",
         "license": "CC0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Pavillon_Cour_des_Lions_Alhambra_Granada_Spain.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Pavillon_Cour_des_Lions_Alhambra_Granada_Spain.jpg?width=1200",
+        "path": "assets/landmarks/landmark_053.webp"
       },
       "options": [
         "Alhambra",
@@ -1239,12 +1303,14 @@
       "id": "landmark_054",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Potala.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_054.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Potala.jpg",
         "creator": "Ondřej Žváček",
         "license": "CC BY 2.5",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Potala.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Potala.jpg?width=1200",
+        "path": "assets/landmarks/landmark_054.webp"
       },
       "options": [
         "Potala Palace",
@@ -1262,12 +1328,14 @@
       "id": "landmark_055",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Temple_of_Heaven_-_Hall_of_Prayer_for_Good_Harvests.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_055.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Temple_of_Heaven_-_Hall_of_Prayer_for_Good_Harvests.jpg",
         "creator": "xiquinhosilva",
         "license": "CC BY 2.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Temple_of_Heaven_-_Hall_of_Prayer_for_Good_Harvests.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Temple_of_Heaven_-_Hall_of_Prayer_for_Good_Harvests.jpg?width=1200",
+        "path": "assets/landmarks/landmark_055.webp"
       },
       "options": [
         "Temple of Heaven",
@@ -1285,12 +1353,14 @@
       "id": "landmark_056",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/51714-Terracota-Army.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_056.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:51714-Terracota-Army.jpg",
         "creator": "xiquinhosilva",
         "license": "CC BY 2.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/51714-Terracota-Army.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/51714-Terracota-Army.jpg?width=1200",
+        "path": "assets/landmarks/landmark_056.webp"
       },
       "options": [
         "Terracotta Army",
@@ -1308,12 +1378,14 @@
       "id": "landmark_057",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Torii_path_with_lantern_at_Fushimi_Inari_Taisha_Shrine%2C_Kyoto%2C_Japan.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_057.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Torii_path_with_lantern_at_Fushimi_Inari_Taisha_Shrine,_Kyoto,_Japan.jpg",
         "creator": "Basile Morin",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Torii_path_with_lantern_at_Fushimi_Inari_Taisha_Shrine%2C_Kyoto%2C_Japan.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Torii_path_with_lantern_at_Fushimi_Inari_Taisha_Shrine%2C_Kyoto%2C_Japan.jpg?width=1200",
+        "path": "assets/landmarks/landmark_057.webp"
       },
       "options": [
         "Fushimi Inari Taisha",
@@ -1331,12 +1403,14 @@
       "id": "landmark_058",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Golden_Pavilion_Kinkaku-ji_2024.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_058.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Golden_Pavilion_Kinkaku-ji_2024.jpg",
         "creator": "Nacaru",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Golden_Pavilion_Kinkaku-ji_2024.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Golden_Pavilion_Kinkaku-ji_2024.jpg?width=1200",
+        "path": "assets/landmarks/landmark_058.webp"
       },
       "options": [
         "Kinkaku-ji",
@@ -1354,12 +1428,14 @@
       "id": "landmark_059",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Himeji_Castle_0804_1.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_059.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Himeji_Castle_0804_1.jpg",
         "creator": "Gorgo",
         "license": "Public domain",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Himeji_Castle_0804_1.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Himeji_Castle_0804_1.jpg?width=1200",
+        "path": "assets/landmarks/landmark_059.webp"
       },
       "options": [
         "Himeji Castle",
@@ -1377,12 +1453,14 @@
       "id": "landmark_060",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Petronas_Twin_Towers_%28230715-1406%29.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_060.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Petronas_Twin_Towers_(230715-1406).jpg",
         "creator": "Wee Hong",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Petronas_Twin_Towers_%28230715-1406%29.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Petronas_Twin_Towers_%28230715-1406%29.jpg?width=1200",
+        "path": "assets/landmarks/landmark_060.webp"
       },
       "options": [
         "Petronas Towers",
@@ -1400,12 +1478,14 @@
       "id": "landmark_061",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cricket_match_and_Marina_Bay_Sands_Hotel_in_Singapore.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_061.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Cricket_match_and_Marina_Bay_Sands_Hotel_in_Singapore.jpg",
         "creator": "Basile Morin",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Cricket_match_and_Marina_Bay_Sands_Hotel_in_Singapore.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Cricket_match_and_Marina_Bay_Sands_Hotel_in_Singapore.jpg?width=1200",
+        "path": "assets/landmarks/landmark_061.webp"
       },
       "options": [
         "Marina Bay Sands",
@@ -1423,12 +1503,14 @@
       "id": "landmark_062",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Madinat_Jumeirah-Dubai3303.JPG?width=1200",
+        "url": "../assets/landmarks/landmark_062.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Madinat_Jumeirah-Dubai3303.JPG",
         "creator": "Diego Delso",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Madinat_Jumeirah-Dubai3303.JPG?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Madinat_Jumeirah-Dubai3303.JPG?width=1200",
+        "path": "assets/landmarks/landmark_062.webp"
       },
       "options": [
         "Burj Al Arab",
@@ -1446,12 +1528,14 @@
       "id": "landmark_064",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Gateway_Of_India.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_064.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Gateway_Of_India.jpg",
         "creator": "Joe Ravi",
         "license": "CC BY-SA 3.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Gateway_Of_India.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Gateway_Of_India.jpg?width=1200",
+        "path": "assets/landmarks/landmark_064.webp"
       },
       "options": [
         "Gateway of India",
@@ -1469,12 +1553,14 @@
       "id": "landmark_065",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/India_Gate%2C_New_Delhi_from_West.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_065.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:India_Gate,_New_Delhi_from_West.jpg",
         "creator": "Nikhilb239",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/India_Gate%2C_New_Delhi_from_West.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/India_Gate%2C_New_Delhi_from_West.jpg?width=1200",
+        "path": "assets/landmarks/landmark_065.webp"
       },
       "options": [
         "India Gate",
@@ -1492,12 +1578,14 @@
       "id": "landmark_066",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hamandir_Sahib_%28Golden_Temple%29.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_066.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Hamandir_Sahib_(Golden_Temple).jpg",
         "creator": "Oleg Yunakov",
         "license": "CC BY-SA 3.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Hamandir_Sahib_%28Golden_Temple%29.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Hamandir_Sahib_%28Golden_Temple%29.jpg?width=1200",
+        "path": "assets/landmarks/landmark_066.webp"
       },
       "options": [
         "Golden Temple",
@@ -1515,12 +1603,14 @@
       "id": "landmark_067",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/East_facade_Hawa_Mahal_Jaipur_from_ground_level_%28July_2022%29_-_img_01.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_067.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:East_facade_Hawa_Mahal_Jaipur_from_ground_level_(July_2022)_-_img_01.jpg",
         "creator": "Chainwit.",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/East_facade_Hawa_Mahal_Jaipur_from_ground_level_%28July_2022%29_-_img_01.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/East_facade_Hawa_Mahal_Jaipur_from_ground_level_%28July_2022%29_-_img_01.jpg?width=1200",
+        "path": "assets/landmarks/landmark_067.webp"
       },
       "options": [
         "Hawa Mahal",
@@ -1538,12 +1628,14 @@
       "id": "landmark_068",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Lotus_Temple_Front_view_with_garden_-_During_WCI_2016_-_IMG_6499.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_068.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Lotus_Temple_Front_view_with_garden_-_During_WCI_2016_-_IMG_6499.jpg",
         "creator": "Bijay chaurasia",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Lotus_Temple_Front_view_with_garden_-_During_WCI_2016_-_IMG_6499.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Lotus_Temple_Front_view_with_garden_-_During_WCI_2016_-_IMG_6499.jpg?width=1200",
+        "path": "assets/landmarks/landmark_068.webp"
       },
       "options": [
         "Lotus Temple",
@@ -1561,12 +1653,14 @@
       "id": "landmark_069",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Qutb_Minar_2011.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_069.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Qutb_Minar_2011.jpg",
         "creator": "Sfu",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Qutb_Minar_2011.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Qutb_Minar_2011.jpg?width=1200",
+        "path": "assets/landmarks/landmark_069.webp"
       },
       "options": [
         "Qutub Minar",
@@ -1584,12 +1678,14 @@
       "id": "landmark_070",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Charminar_Hyderabad_111.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_070.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Charminar_Hyderabad_111.jpg",
         "creator": "Joydeep",
         "license": "CC BY-SA 3.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Charminar_Hyderabad_111.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Charminar_Hyderabad_111.jpg?width=1200",
+        "path": "assets/landmarks/landmark_070.webp"
       },
       "options": [
         "Charminar",
@@ -1607,12 +1703,14 @@
       "id": "landmark_071",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Shwedagon_Zedi_Daw_Yangon_11.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_071.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Shwedagon_Zedi_Daw_Yangon_11.jpg",
         "creator": "kallerna",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Shwedagon_Zedi_Daw_Yangon_11.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Shwedagon_Zedi_Daw_Yangon_11.jpg?width=1200",
+        "path": "assets/landmarks/landmark_071.webp"
       },
       "options": [
         "Shwedagon Pagoda",
@@ -1630,12 +1728,14 @@
       "id": "landmark_072",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Templo_Wat_Arun%2C_Bangkok%2C_Tailandia%2C_2013-08-22%2C_DD_05.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_072.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Templo_Wat_Arun,_Bangkok,_Tailandia,_2013-08-22,_DD_05.jpg",
         "creator": "Diego Delso",
         "license": "CC BY-SA 3.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Templo_Wat_Arun%2C_Bangkok%2C_Tailandia%2C_2013-08-22%2C_DD_05.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Templo_Wat_Arun%2C_Bangkok%2C_Tailandia%2C_2013-08-22%2C_DD_05.jpg?width=1200",
+        "path": "assets/landmarks/landmark_072.webp"
       },
       "options": [
         "Wat Arun",
@@ -1653,12 +1753,14 @@
       "id": "landmark_073",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Borobudur%2C_Java%2C_Indonesia%2C_20220817_1013_8739.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_073.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Borobudur,_Java,_Indonesia,_20220817_1013_8739.jpg",
         "creator": "Jakub Hałun",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Borobudur%2C_Java%2C_Indonesia%2C_20220817_1013_8739.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Borobudur%2C_Java%2C_Indonesia%2C_20220817_1013_8739.jpg?width=1200",
+        "path": "assets/landmarks/landmark_073.webp"
       },
       "options": [
         "Borobudur",
@@ -1676,12 +1778,14 @@
       "id": "landmark_075",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Templo_de_Rams%C3%A9s_II%2C_Abu_Simbel%2C_Egipto%2C_2022-04-02%2C_DD_03.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_075.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Templo_de_Rams%C3%A9s_II,_Abu_Simbel,_Egipto,_2022-04-02,_DD_03.jpg",
         "creator": "Diego Delso",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Templo_de_Rams%C3%A9s_II%2C_Abu_Simbel%2C_Egipto%2C_2022-04-02%2C_DD_03.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Templo_de_Rams%C3%A9s_II%2C_Abu_Simbel%2C_Egipto%2C_2022-04-02%2C_DD_03.jpg?width=1200",
+        "path": "assets/landmarks/landmark_075.webp"
       },
       "options": [
         "Abu Simbel",
@@ -1699,12 +1803,14 @@
       "id": "landmark_076",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Great_Sphinx_of_Giza_%28%D8%A3%D8%A8%D9%88_%D8%A7%D9%84%D9%87%D9%88%D9%84%29.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_076.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Great_Sphinx_of_Giza_(%D8%A3%D8%A8%D9%88_%D8%A7%D9%84%D9%87%D9%88%D9%84).jpg",
         "creator": "Petar Milošević",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Great_Sphinx_of_Giza_%28%D8%A3%D8%A8%D9%88_%D8%A7%D9%84%D9%87%D9%88%D9%84%29.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Great_Sphinx_of_Giza_%28%D8%A3%D8%A8%D9%88_%D8%A7%D9%84%D9%87%D9%88%D9%84%29.jpg?width=1200",
+        "path": "assets/landmarks/landmark_076.webp"
       },
       "options": [
         "Great Sphinx of Giza",
@@ -1722,12 +1828,14 @@
       "id": "landmark_078",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Kilimanjaro_from_Amboseli.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_078.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Kilimanjaro_from_Amboseli.jpg",
         "creator": "Sergey Pesterev",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Kilimanjaro_from_Amboseli.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Kilimanjaro_from_Amboseli.jpg?width=1200",
+        "path": "assets/landmarks/landmark_078.webp"
       },
       "options": [
         "Mount Kilimanjaro",
@@ -1745,12 +1853,14 @@
       "id": "landmark_079",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Toronto_-_ON_-_Toronto_Harbourfront7.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_079.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Toronto_-_ON_-_Toronto_Harbourfront7.jpg",
         "creator": "Wladyslaw",
         "license": "CC BY-SA 3.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Toronto_-_ON_-_Toronto_Harbourfront7.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Toronto_-_ON_-_Toronto_Harbourfront7.jpg?width=1200",
+        "path": "assets/landmarks/landmark_079.webp"
       },
       "options": [
         "CN Tower",
@@ -1768,12 +1878,14 @@
       "id": "landmark_080",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Seattle_%28WA%2C_USA%29%2C_Space_Needle_--_2022_--_1498.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_080.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Seattle_(WA,_USA),_Space_Needle_--_2022_--_1498.jpg",
         "creator": "Dietmar Rabich",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Seattle_%28WA%2C_USA%29%2C_Space_Needle_--_2022_--_1498.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Seattle_%28WA%2C_USA%29%2C_Space_Needle_--_2022_--_1498.jpg?width=1200",
+        "path": "assets/landmarks/landmark_080.webp"
       },
       "options": [
         "Space Needle",
@@ -1791,12 +1903,14 @@
       "id": "landmark_081",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_081.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu.jpg",
         "creator": "Dllu",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu.jpg?width=1200",
+        "path": "assets/landmarks/landmark_081.webp"
       },
       "options": [
         "Empire State Building",
@@ -1814,12 +1928,14 @@
       "id": "landmark_082",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chrysler_Building_NYC-20090519-RM-094845.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_082.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Chrysler_Building_NYC-20090519-RM-094845.jpg",
         "creator": "Ermell",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Chrysler_Building_NYC-20090519-RM-094845.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Chrysler_Building_NYC-20090519-RM-094845.jpg?width=1200",
+        "path": "assets/landmarks/landmark_082.webp"
       },
       "options": [
         "Chrysler Building",
@@ -1837,12 +1953,14 @@
       "id": "landmark_083",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Flatiron_Building%2C_Fifth_Avenue%2C_Manhattan%2C_New_York.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_083.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Flatiron_Building,_Fifth_Avenue,_Manhattan,_New_York.jpg",
         "creator": "Christian David",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Flatiron_Building%2C_Fifth_Avenue%2C_Manhattan%2C_New_York.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Flatiron_Building%2C_Fifth_Avenue%2C_Manhattan%2C_New_York.jpg?width=1200",
+        "path": "assets/landmarks/landmark_083.webp"
       },
       "options": [
         "Flatiron Building",
@@ -1860,12 +1978,14 @@
       "id": "landmark_084",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/White_House_lawn.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_084.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:White_House_lawn.jpg",
         "creator": "Daniel Schwen",
         "license": "CC BY-SA 3.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/White_House_lawn.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/White_House_lawn.jpg?width=1200",
+        "path": "assets/landmarks/landmark_084.webp"
       },
       "options": [
         "White House",
@@ -1883,12 +2003,14 @@
       "id": "landmark_085",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/US_Capitol_west_side.JPG?width=1200",
+        "url": "../assets/landmarks/landmark_085.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:US_Capitol_west_side.JPG",
         "creator": "Martin Falbisoner",
         "license": "CC BY-SA 3.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/US_Capitol_west_side.JPG?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/US_Capitol_west_side.JPG?width=1200",
+        "path": "assets/landmarks/landmark_085.webp"
       },
       "options": [
         "United States Capitol",
@@ -1906,12 +2028,14 @@
       "id": "landmark_086",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Lincoln_Memorial_east_side.JPG?width=1200",
+        "url": "../assets/landmarks/landmark_086.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Lincoln_Memorial_east_side.JPG",
         "creator": "Martin Falbisoner",
         "license": "CC BY-SA 3.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Lincoln_Memorial_east_side.JPG?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Lincoln_Memorial_east_side.JPG?width=1200",
+        "path": "assets/landmarks/landmark_086.webp"
       },
       "options": [
         "Lincoln Memorial",
@@ -1929,12 +2053,14 @@
       "id": "landmark_087",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Gateway_Arch%2C_St._Louis.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_087.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Gateway_Arch,_St._Louis.jpg",
         "creator": "Lewis Hulbert",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Gateway_Arch%2C_St._Louis.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Gateway_Arch%2C_St._Louis.jpg?width=1200",
+        "path": "assets/landmarks/landmark_087.webp"
       },
       "options": [
         "Gateway Arch",
@@ -1952,12 +2078,14 @@
       "id": "landmark_088",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Brooklyn_Bridge_August_2017.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_088.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Brooklyn_Bridge_August_2017.jpg",
         "creator": "Arild Vågen",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Brooklyn_Bridge_August_2017.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Brooklyn_Bridge_August_2017.jpg?width=1200",
+        "path": "assets/landmarks/landmark_088.webp"
       },
       "options": [
         "Brooklyn Bridge",
@@ -1975,12 +2103,14 @@
       "id": "landmark_089",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Orsz%C3%A1gh%C3%A1z_%28Hungarian_Parliament_Building%29%281%29.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_089.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Orsz%C3%A1gh%C3%A1z_(Hungarian_Parliament_Building)(1).jpg",
         "creator": "Lynx1211",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Orsz%C3%A1gh%C3%A1z_%28Hungarian_Parliament_Building%29%281%29.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Orsz%C3%A1gh%C3%A1z_%28Hungarian_Parliament_Building%29%281%29.jpg?width=1200",
+        "path": "assets/landmarks/landmark_089.webp"
       },
       "options": [
         "Hungarian Parliament Building",
@@ -1998,12 +2128,14 @@
       "id": "landmark_090",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Reichstag_pano.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_090.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Reichstag_pano.jpg",
         "creator": "Daniel Schwen",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Reichstag_pano.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Reichstag_pano.jpg?width=1200",
+        "path": "assets/landmarks/landmark_090.webp"
       },
       "options": [
         "Reichstag building",
@@ -2021,12 +2153,14 @@
       "id": "landmark_091",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sevilla_-_Plaza_de_Espa%C3%B1a_-_3.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_091.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Sevilla_-_Plaza_de_Espa%C3%B1a_-_3.jpg",
         "creator": "Benjamin Smith",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Sevilla_-_Plaza_de_Espa%C3%B1a_-_3.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Sevilla_-_Plaza_de_Espa%C3%B1a_-_3.jpg?width=1200",
+        "path": "assets/landmarks/landmark_091.webp"
       },
       "options": [
         "Plaza de España, Seville",
@@ -2044,12 +2178,14 @@
       "id": "landmark_092",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sintra_Portugal_Pal%C3%A1cio_da_Pena-01.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_092.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Sintra_Portugal_Pal%C3%A1cio_da_Pena-01.jpg",
         "creator": "CEphoto, Uwe Aranas",
         "license": "CC BY-SA 3.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Sintra_Portugal_Pal%C3%A1cio_da_Pena-01.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Sintra_Portugal_Pal%C3%A1cio_da_Pena-01.jpg?width=1200",
+        "path": "assets/landmarks/landmark_092.webp"
       },
       "options": [
         "Pena Palace",
@@ -2067,12 +2203,14 @@
       "id": "landmark_093",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Torre_Bel%C3%A9m_April_2009-4a.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_093.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Torre_Bel%C3%A9m_April_2009-4a.jpg",
         "creator": "Alvesgaspar",
         "license": "CC BY-SA 3.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Torre_Bel%C3%A9m_April_2009-4a.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Torre_Bel%C3%A9m_April_2009-4a.jpg?width=1200",
+        "path": "assets/landmarks/landmark_093.webp"
       },
       "options": [
         "Belém Tower",
@@ -2090,12 +2228,14 @@
       "id": "landmark_094",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Trevi_Fountain%2C_Rome%2C_Italy_2_-_May_2007.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_094.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Trevi_Fountain,_Rome,_Italy_2_-_May_2007.jpg",
         "creator": "Diliff",
         "license": "CC BY 3.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Trevi_Fountain%2C_Rome%2C_Italy_2_-_May_2007.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Trevi_Fountain%2C_Rome%2C_Italy_2_-_May_2007.jpg?width=1200",
+        "path": "assets/landmarks/landmark_094.webp"
       },
       "options": [
         "Trevi Fountain",
@@ -2113,12 +2253,14 @@
       "id": "landmark_095",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Pantheon_%28Rome%29%2C_Dome_interior.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_095.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Pantheon_(Rome),_Dome_interior.jpg",
         "creator": "Wilfredor",
         "license": "CC0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Pantheon_%28Rome%29%2C_Dome_interior.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Pantheon_%28Rome%29%2C_Dome_interior.jpg?width=1200",
+        "path": "assets/landmarks/landmark_095.webp"
       },
       "options": [
         "Pantheon",
@@ -2136,12 +2278,14 @@
       "id": "landmark_096",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Roussanou_Monastery%2C_Meteora.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_096.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Roussanou_Monastery,_Meteora.jpg",
         "creator": "Bernard Gagnon",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Roussanou_Monastery%2C_Meteora.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Roussanou_Monastery%2C_Meteora.jpg?width=1200",
+        "path": "assets/landmarks/landmark_096.webp"
       },
       "options": [
         "Meteora",
@@ -2159,12 +2303,14 @@
       "id": "landmark_097",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ireland_Cliffs_of_Moher_BW_2025-09-11_13-47-21.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_097.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Ireland_Cliffs_of_Moher_BW_2025-09-11_13-47-21.jpg",
         "creator": "Berthold Werner",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ireland_Cliffs_of_Moher_BW_2025-09-11_13-47-21.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ireland_Cliffs_of_Moher_BW_2025-09-11_13-47-21.jpg?width=1200",
+        "path": "assets/landmarks/landmark_097.webp"
       },
       "options": [
         "Cliffs of Moher",
@@ -2182,12 +2328,14 @@
       "id": "landmark_098",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Giant%27s_Causeway_%2814%29.JPG?width=1200",
+        "url": "../assets/landmarks/landmark_098.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Giant%27s_Causeway_(14).JPG",
         "creator": "Chmee2",
         "license": "CC BY 3.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Giant%27s_Causeway_%2814%29.JPG?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Giant%27s_Causeway_%2814%29.JPG?width=1200",
+        "path": "assets/landmarks/landmark_098.webp"
       },
       "options": [
         "Giant's Causeway",
@@ -2205,12 +2353,14 @@
       "id": "landmark_099",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Princetown_%28AU%29%2C_Port_Campbell_National_Park%2C_Twelve_Apostles_--_2019_--_0969.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_099.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Princetown_(AU),_Port_Campbell_National_Park,_Twelve_Apostles_--_2019_--_0969.jpg",
         "creator": "Dietmar Rabich",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Princetown_%28AU%29%2C_Port_Campbell_National_Park%2C_Twelve_Apostles_--_2019_--_0969.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Princetown_%28AU%29%2C_Port_Campbell_National_Park%2C_Twelve_Apostles_--_2019_--_0969.jpg?width=1200",
+        "path": "assets/landmarks/landmark_099.webp"
       },
       "options": [
         "Twelve Apostles",
@@ -2228,12 +2378,14 @@
       "id": "landmark_100",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sugarloaf_Sunrise_2.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_100.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Sugarloaf_Sunrise_2.jpg",
         "creator": "Donatas Dabravolskas",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Sugarloaf_Sunrise_2.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Sugarloaf_Sunrise_2.jpg?width=1200",
+        "path": "assets/landmarks/landmark_100.webp"
       },
       "options": [
         "Sugarloaf Mountain",
