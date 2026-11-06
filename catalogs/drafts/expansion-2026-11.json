@@ -1,39 +1,6 @@
 {
   "note": "Questions waiting for a photo. Each one moves into its catalog (catalogs/landmarks-v1.json or cuisines-v1.json) once a reviewed Commons photo is chosen from the photo-review branch.",
-  "landmarks": [
-    {
-      "id": "landmark_063",
-      "prompt": "Which landmark is shown?",
-      "options": [
-        "Sacré-Cœur",
-        "Notre-Dame de Paris",
-        "St. Peter's Basilica",
-        "Florence Cathedral"
-      ],
-      "answer": "Sacré-Cœur",
-      "explanation": "The white-domed Sacré-Cœur Basilica stands on the hill of Montmartre, the highest point in Paris.",
-      "factSource": "https://en.wikipedia.org/wiki/Sacr%C3%A9-C%C5%93ur,_Paris",
-      "difficulty": "easy",
-      "status": "draft",
-      "photoQuery": "Sacré-Cœur Montmartre"
-    },
-    {
-      "id": "landmark_077",
-      "prompt": "Which landmark is shown?",
-      "options": [
-        "Sydney Harbour Bridge",
-        "Golden Gate Bridge",
-        "Tower Bridge",
-        "Brooklyn Bridge"
-      ],
-      "answer": "Sydney Harbour Bridge",
-      "explanation": "Sydney Harbour Bridge, opened in 1932, is a steel arch nicknamed 'the Coathanger'.",
-      "factSource": "https://en.wikipedia.org/wiki/Sydney_Harbour_Bridge",
-      "difficulty": "medium",
-      "status": "draft",
-      "photoQuery": "Sydney Harbour Bridge"
-    }
-  ],
+  "landmarks": [],
   "cuisines": [
     {
       "id": "cuisine_052",

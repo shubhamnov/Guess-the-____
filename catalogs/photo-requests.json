@@ -3,27 +3,17 @@
   "requests": [
     {
       "id": "cuisine_052",
-      "query": "Cheese fondue",
+      "query": "Fondue cheese pot bread",
       "answer": "Cheese fondue",
+      "anywhere": true,
       "factSource": "https://en.wikipedia.org/wiki/Fondue"
     },
     {
       "id": "cuisine_094",
-      "query": "Hot dog",
+      "query": "Hot dog bun mustard",
       "answer": "Hot dog",
+      "anywhere": true,
       "factSource": "https://en.wikipedia.org/wiki/Hot_dog"
-    },
-    {
-      "id": "landmark_063",
-      "query": "Sacré-Cœur Montmartre",
-      "answer": "Sacré-Cœur",
-      "factSource": "https://en.wikipedia.org/wiki/Sacr%C3%A9-C%C5%93ur,_Paris"
-    },
-    {
-      "id": "landmark_077",
-      "query": "Sydney Harbour Bridge",
-      "answer": "Sydney Harbour Bridge",
-      "factSource": "https://en.wikipedia.org/wiki/Sydney_Harbour_Bridge"
     }
   ]
 }

@@ -1550,6 +1550,29 @@
       "status": "approved"
     },
     {
+      "id": "landmark_063",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Paris_-_Basilique_du_Sacr%C3%A9-C%C5%93ur_de_Montmartre_-_2025-09-30_23-31-57_001.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Paris_-_Basilique_du_Sacr%C3%A9-C%C5%93ur_de_Montmartre_-_2025-09-30_23-31-57_001.jpg",
+        "creator": "Giò Terra (Terragio67)",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Paris_-_Basilique_du_Sacr%C3%A9-C%C5%93ur_de_Montmartre_-_2025-09-30_23-31-57_001.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Sacré-Cœur",
+        "Notre-Dame de Paris",
+        "St. Peter's Basilica",
+        "Florence Cathedral"
+      ],
+      "answer": "Sacré-Cœur",
+      "explanation": "The white-domed Sacré-Cœur Basilica stands on the hill of Montmartre, the highest point in Paris.",
+      "factSource": "https://en.wikipedia.org/wiki/Sacr%C3%A9-C%C5%93ur,_Paris",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
       "id": "landmark_064",
       "prompt": "Which landmark is shown?",
       "image": {
@@ -1873,6 +1896,29 @@
       "factSource": "https://en.wikipedia.org/wiki/Great_Sphinx_of_Giza",
       "difficulty": "easy",
       "status": "approved"
+    },
+    {
+      "id": "landmark_077",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sydney_Harbour_Bridge_from_Circular_Quay.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Sydney_Harbour_Bridge_from_Circular_Quay.jpg",
+        "creator": "JJ Harrison",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Sydney_Harbour_Bridge_from_Circular_Quay.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Sydney Harbour Bridge",
+        "Golden Gate Bridge",
+        "Tower Bridge",
+        "Brooklyn Bridge"
+      ],
+      "answer": "Sydney Harbour Bridge",
+      "explanation": "Sydney Harbour Bridge, opened in 1932, is a steel arch nicknamed 'the Coathanger'.",
+      "factSource": "https://en.wikipedia.org/wiki/Sydney_Harbour_Bridge",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
     },
     {
       "id": "landmark_078",
