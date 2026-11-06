@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f8f7f2">
+<meta name="description" content="Cricket quiz: nicknames, records, grounds, World Cups, IPL champions and cricket terms, in sixty seconds.">
+<title>Guess the Cricket — Guess the ____</title>
+<link rel="stylesheet" href="../shared/engine.css">
+<style>
+.clue-quote{font-family:var(--display);font-weight:950;letter-spacing:-.03em;text-align:center;line-height:1.15;max-width:calc(100% - 32px);overflow-wrap:anywhere}
+.clue-quote+.clue-sub{margin-top:10px}
+</style>
+</head>
+<body data-game="cricket">
+<script src="../shared/engine.js"></script>
+<script src="../data/cricket.js"></script>
+<script>
+const D=GTQ_DATA;
+const PLAYERS=D.cricketPlayers.map(([name,country,nick])=>({name,country,nick}));
+const BY_NAME=new Map(PLAYERS.map(p=>[p.name,p]));
+const NICKS=PLAYERS.filter(p=>p.nick);
+const RECORDS=D.cricketRecords.map(([clue,player])=>({clue,player:BY_NAME.get(player)}));
+const GROUNDS=D.cricketGrounds.map(([name,city,country])=>({name,city,country}));
+const TERMS=D.cricketTerms.map(([meaning,term])=>({meaning,term}));
+const CUPS=D.cricketWorldCups.map(([year,type,winner])=>({year,type,winner}));
+const IPL=D.iplWinners.map(([year,team])=>({year,team}));
+const decks={country:GuessGame.util.deck(PLAYERS,x=>x.name),nick:GuessGame.util.deck(NICKS,x=>x.name),record:GuessGame.util.deck(RECORDS,x=>x.clue),
+ ground:GuessGame.util.deck(GROUNDS,x=>x.name),term:GuessGame.util.deck(TERMS,x=>x.term),cup:GuessGame.util.deck(CUPS,x=>x.year+x.type),ipl:GuessGame.util.deck(IPL,x=>x.year)};
+/* Long lines get a smaller font so they fit the clue box on a phone. */
+function quote(h,text,sub){
+ const q=document.createElement('div');q.className='clue-quote';q.textContent=text;
+ q.style.fontSize=text.length>60?'clamp(20px,5.4vw,28px)':text.length>32?'clamp(24px,6.6vw,36px)':'clamp(30px,8.5vw,50px)';
+ const s=document.createElement('div');s.className='clue-sub';s.textContent=sub;h.append(q,s);
+}
+/* Teams that played in the IPL that year (Deccan Chargers 2008–12; Sunrisers from 2013; Gujarat and Lucknow from 2022). */
+function iplTeamsIn(year){
+ return D.iplTeams.filter(t=>!(year<2013&&t==='Sunrisers Hyderabad')&&!(year<2022&&(t==='Gujarat Titans'||t==='Lucknow Super Giants'))).concat(year<=2012?['Deccan Chargers']:[]);
+}
+function pickOthers(ctx,answer,list){return ctx.util.shuffle([answer].concat(ctx.util.shuffle(list.filter(x=>x!==answer)).slice(0,3)))}
+GuessGame.run({
+ id:'cricket',label:'Cricket',pill:'Howzat',eyebrow:'Howzat!',titleHtml:'Know your<br><em>cricket?</em>',
+ intro:'Name the player from a nickname or a record. Grounds, World Cups, IPL champions and cricket terms are mixed in too.',
+ note:PLAYERS.length+' players from 11 countries. After five warm-up questions, the wrong answers come from the same country.',
+ previewHtml:'<div class="preview-row"><span>🏏</span><b>“The Wall”</b></div>',
+ prompt:'Who is this?',
+ links:[{"text":"Bollywood","href":"../guess-the-bollywood/"},{"text":"Capital Cities","href":"../guess-the-capitals/"},{"text":"Flags","href":"../guess-the-flag/"}],
+ onStart(){Object.values(decks).forEach(d=>d.reset())},
+ formats:['Nickname → player','Record → player','Player → country','Ground → city','Cricket term','World Cup winners','IPL champions'],
+ next(ctx){
+  const level=ctx.hard?'Tricky':'Warm-up';
+  const f=ctx.format(['nick','record','country','ground','term','cup','ipl']);
+  const players=p=>ctx.util.choices(p,PLAYERS,{answer:x=>x.name,group:x=>x.country,hard:ctx.hard});
+  if(f==='record'){
+   const r=decks.record.draw(),p=r.player;
+   return {kind:'Record',answer:p.name,options:players(p),prompt:'Which player is this?',level,explanation:r.clue+': '+p.name+' ('+p.country+').',render(h){quote(h,r.clue,'🏆 Record')}};
+  }
+  if(f==='country'){
+   const p=decks.country.draw();
+   return {kind:'Country',answer:p.country,options:ctx.util.choices(p,PLAYERS,{answer:x=>x.country}),prompt:'Which country does this player play for?',level,
+    explanation:p.name+' plays for '+p.country+'.',render(h){quote(h,p.name,'🏏 Player')}};
+  }
+  if(f==='ground'){
+   const g=decks.ground.draw();
+   return {kind:'Ground',answer:g.city,options:ctx.util.choices(g,GROUNDS,{answer:x=>x.city,group:x=>x.country,hard:ctx.hard}),prompt:'Which city is this ground in?',level,
+    explanation:g.name+' is in '+g.city+(g.country==='West Indies'||g.country==='UAE'?'':', '+g.country)+'.',render(h){quote(h,g.name,'🏟️ Ground')}};
+  }
+  if(f==='term'){
+   const t=decks.term.draw();
+   return {kind:'Term',answer:t.term,options:ctx.util.choices(t,TERMS,{answer:x=>x.term}),prompt:'What is this called?',level,
+    explanation:t.term+': '+t.meaning.charAt(0).toLowerCase()+t.meaning.slice(1)+'.',render(h){quote(h,t.meaning,'📖 Cricket term')}};
+  }
+  if(f==='cup'){
+   const c=decks.cup.draw(),name=c.year+' '+(c.type==='ODI'?'World Cup':'T20 World Cup');
+   return {kind:'World Cup',answer:c.winner,options:pickOthers(ctx,c.winner,D.cricketTeams),prompt:'Who won the '+name+'?',level,
+    explanation:c.winner+' won the '+name+'.',render(h){ctx.util.bigClue(h,'🏆 '+c.year,c.type==='ODI'?'Men’s ODI World Cup':'Men’s T20 World Cup')}};
+  }
+  if(f==='ipl'){
+   const c=decks.ipl.draw();
+   return {kind:'IPL',answer:c.team,options:pickOthers(ctx,c.team,iplTeamsIn(c.year)),prompt:'Who won the IPL in '+c.year+'?',level,
+    explanation:c.team+' won the IPL in '+c.year+'.',render(h){ctx.util.bigClue(h,'🏆 '+c.year,'IPL champions')}};
+  }
+  const p=decks.nick.draw();
+  return {kind:'Nickname',answer:p.name,options:players(p),prompt:'Whose nickname is this?',level,explanation:'“'+p.nick+'” is '+p.name+' ('+p.country+').',
+   render(h){quote(h,'“'+p.nick+'”','🏏 Nickname')}};
+ }
+});
+</script>
+</body>
+</html>

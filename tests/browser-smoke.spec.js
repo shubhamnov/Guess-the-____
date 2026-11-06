@@ -16,7 +16,8 @@ const games = [
   { name: 'Elements', path: 'guess-the-elements/', kind: 'timed' },
   { name: 'Languages', path: 'guess-the-languages/', kind: 'timed' },
   { name: 'Bollywood', path: 'guess-the-bollywood/', kind: 'timed' },
-  { name: 'Hollywood', path: 'guess-the-hollywood/', kind: 'timed' }
+  { name: 'Hollywood', path: 'guess-the-hollywood/', kind: 'timed' },
+  { name: 'Cricket', path: 'guess-the-cricket/', kind: 'timed' }
 ];
 
 test.beforeEach(async ({ page }) => {
