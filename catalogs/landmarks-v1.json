@@ -903,12 +903,14 @@
       "id": "landmark_037",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Table_mountain_and_the_ocean_cape_town.JPG?width=1200",
+        "url": "../assets/landmarks/landmark_037.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Table_mountain_and_the_ocean_cape_town.JPG",
         "creator": "www.namastesouthafrica.com",
         "license": "CC BY 3.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Table_mountain_and_the_ocean_cape_town.JPG?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Table_mountain_and_the_ocean_cape_town.JPG?width=1200",
+        "path": "assets/landmarks/landmark_037.webp"
       },
       "options": [
         "Table Mountain",
@@ -1801,12 +1803,14 @@
       "id": "landmark_074",
       "prompt": "Which landmark is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Old_Bagan%2C_Myanmar%2C_Ancient_Buddhist_temple_in_Bagan_plains.jpg?width=1200",
+        "url": "../assets/landmarks/landmark_074.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Old_Bagan,_Myanmar,_Ancient_Buddhist_temple_in_Bagan_plains.jpg",
         "creator": "Vyacheslav Argenberg",
         "license": "CC BY 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Old_Bagan%2C_Myanmar%2C_Ancient_Buddhist_temple_in_Bagan_plains.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Old_Bagan%2C_Myanmar%2C_Ancient_Buddhist_temple_in_Bagan_plains.jpg?width=1200",
+        "path": "assets/landmarks/landmark_074.webp"
       },
       "options": [
         "Bagan temples",
