@@ -1,0 +1,2247 @@
+{
+ "note": "Questions waiting for a photo. Each one moves into its catalog (catalogs/landmarks-v1.json or cuisines-v1.json) once a reviewed Commons photo is chosen from the photo-review branch.",
+ "landmarks": [
+  {
+   "id": "landmark_021",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Burj Khalifa",
+    "Shanghai Tower",
+    "Taipei 101",
+    "Petronas Towers"
+   ],
+   "answer": "Burj Khalifa",
+   "explanation": "Burj Khalifa in Dubai has been the world's tallest building since it opened in 2010, at about 828 metres.",
+   "factSource": "https://en.wikipedia.org/wiki/Burj_Khalifa",
+   "difficulty": "easy",
+   "status": "draft",
+   "photoQuery": "Burj Khalifa"
+  },
+  {
+   "id": "landmark_022",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Stonehenge",
+    "Avebury",
+    "Carnac stones",
+    "Ring of Brodgar"
+   ],
+   "answer": "Stonehenge",
+   "explanation": "Stonehenge is a prehistoric stone circle in Wiltshire, England, built in stages from around 3000 BC.",
+   "factSource": "https://en.wikipedia.org/wiki/Stonehenge",
+   "difficulty": "easy",
+   "status": "draft",
+   "photoQuery": "Stonehenge"
+  },
+  {
+   "id": "landmark_023",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Chichén Itzá",
+    "Tikal",
+    "Teotihuacan",
+    "Palenque"
+   ],
+   "answer": "Chichén Itzá",
+   "explanation": "El Castillo, the stepped pyramid of Kukulcán, stands at the centre of the Maya city of Chichén Itzá in Yucatán, Mexico.",
+   "factSource": "https://en.wikipedia.org/wiki/Chichen_Itza",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "Chichen Itza El Castillo"
+  },
+  {
+   "id": "landmark_024",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Tower Bridge",
+    "London Bridge",
+    "Brooklyn Bridge",
+    "Charles Bridge"
+   ],
+   "answer": "Tower Bridge",
+   "explanation": "Tower Bridge crosses the River Thames in London and opened in 1894; its roadway lifts to let ships through.",
+   "factSource": "https://en.wikipedia.org/wiki/Tower_Bridge",
+   "difficulty": "easy",
+   "status": "draft",
+   "photoQuery": "Tower Bridge London"
+  },
+  {
+   "id": "landmark_025",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Louvre Pyramid",
+    "Luxor Las Vegas",
+    "Muttart Conservatory",
+    "Walter Pyramid"
+   ],
+   "answer": "Louvre Pyramid",
+   "explanation": "The glass pyramid designed by I. M. Pei became the main entrance of the Louvre museum in Paris in 1989.",
+   "factSource": "https://en.wikipedia.org/wiki/Louvre_Pyramid",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "Louvre Pyramid"
+  },
+  {
+   "id": "landmark_026",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Arc de Triomphe",
+    "Brandenburg Gate",
+    "India Gate",
+    "Washington Square Arch"
+   ],
+   "answer": "Arc de Triomphe",
+   "explanation": "Napoleon commissioned the Arc de Triomphe in Paris in 1806; it was completed in 1836.",
+   "factSource": "https://en.wikipedia.org/wiki/Arc_de_Triomphe",
+   "difficulty": "easy",
+   "status": "draft",
+   "photoQuery": "Arc de Triomphe Paris"
+  },
+  {
+   "id": "landmark_027",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Brandenburg Gate",
+    "Arc de Triomphe",
+    "Siegestor",
+    "Wellington Arch"
+   ],
+   "answer": "Brandenburg Gate",
+   "explanation": "Berlin's neoclassical Brandenburg Gate was completed in 1791 and became a symbol of German reunification.",
+   "factSource": "https://en.wikipedia.org/wiki/Brandenburg_Gate",
+   "difficulty": "easy",
+   "status": "draft",
+   "photoQuery": "Brandenburg Gate Berlin"
+  },
+  {
+   "id": "landmark_028",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Notre-Dame de Paris",
+    "Reims Cathedral",
+    "Chartres Cathedral",
+    "Amiens Cathedral"
+   ],
+   "answer": "Notre-Dame de Paris",
+   "explanation": "Notre-Dame stands on the Île de la Cité in Paris; it reopened in December 2024 after the 2019 fire.",
+   "factSource": "https://en.wikipedia.org/wiki/Notre-Dame_de_Paris",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "Notre-Dame de Paris facade"
+  },
+  {
+   "id": "landmark_029",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Saint Basil's Cathedral",
+    "Church of the Savior on Spilled Blood",
+    "Cathedral of Christ the Saviour",
+    "Kazan Cathedral"
+   ],
+   "answer": "Saint Basil's Cathedral",
+   "explanation": "Saint Basil's Cathedral, with its colourful onion domes, was built on Red Square in Moscow in the 1550s under Ivan the Terrible.",
+   "factSource": "https://en.wikipedia.org/wiki/Saint_Basil%27s_Cathedral",
+   "difficulty": "easy",
+   "status": "draft",
+   "photoQuery": "Saint Basil's Cathedral Moscow"
+  },
+  {
+   "id": "landmark_030",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Hagia Sophia",
+    "Blue Mosque",
+    "Süleymaniye Mosque",
+    "Dome of the Rock"
+   ],
+   "answer": "Hagia Sophia",
+   "explanation": "Hagia Sophia in Istanbul was completed in 537 as the cathedral of Constantinople, and its great dome still dominates the skyline.",
+   "factSource": "https://en.wikipedia.org/wiki/Hagia_Sophia",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "Hagia Sophia Istanbul"
+  },
+  {
+   "id": "landmark_031",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Blue Mosque",
+    "Hagia Sophia",
+    "Süleymaniye Mosque",
+    "Sheikh Zayed Grand Mosque"
+   ],
+   "answer": "Blue Mosque",
+   "explanation": "The Sultan Ahmed Mosque in Istanbul, completed in 1616, is called the Blue Mosque after the blue tiles inside.",
+   "factSource": "https://en.wikipedia.org/wiki/Blue_Mosque,_Istanbul",
+   "difficulty": "hard",
+   "status": "draft",
+   "photoQuery": "Sultan Ahmed Mosque Istanbul"
+  },
+  {
+   "id": "landmark_032",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Mont-Saint-Michel",
+    "St Michael's Mount",
+    "Skellig Michael",
+    "Bled Island"
+   ],
+   "answer": "Mont-Saint-Michel",
+   "explanation": "Mont-Saint-Michel is a tidal island in Normandy, France, crowned by a medieval abbey.",
+   "factSource": "https://en.wikipedia.org/wiki/Mont-Saint-Michel",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "Mont-Saint-Michel"
+  },
+  {
+   "id": "landmark_033",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Mount Fuji",
+    "Mount Kilimanjaro",
+    "Mount Rainier",
+    "Mayon Volcano"
+   ],
+   "answer": "Mount Fuji",
+   "explanation": "Mount Fuji is Japan's highest mountain at 3,776 metres and an active volcano.",
+   "factSource": "https://en.wikipedia.org/wiki/Mount_Fuji",
+   "difficulty": "easy",
+   "status": "draft",
+   "photoQuery": "Mount Fuji"
+  },
+  {
+   "id": "landmark_034",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Grand Canyon",
+    "Antelope Canyon",
+    "Bryce Canyon",
+    "Fish River Canyon"
+   ],
+   "answer": "Grand Canyon",
+   "explanation": "The Colorado River carved the Grand Canyon in Arizona, USA, over millions of years.",
+   "factSource": "https://en.wikipedia.org/wiki/Grand_Canyon",
+   "difficulty": "easy",
+   "status": "draft",
+   "photoQuery": "Grand Canyon"
+  },
+  {
+   "id": "landmark_035",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Niagara Falls",
+    "Victoria Falls",
+    "Iguazu Falls",
+    "Angel Falls"
+   ],
+   "answer": "Niagara Falls",
+   "explanation": "Niagara Falls lies on the border between Ontario, Canada, and New York, USA.",
+   "factSource": "https://en.wikipedia.org/wiki/Niagara_Falls",
+   "difficulty": "easy",
+   "status": "draft",
+   "photoQuery": "Niagara Falls Horseshoe Falls"
+  },
+  {
+   "id": "landmark_036",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Uluru",
+    "Kata Tjuta",
+    "Mount Augustus",
+    "Devils Tower"
+   ],
+   "answer": "Uluru",
+   "explanation": "Uluru is a huge sandstone rock in Australia's Northern Territory, sacred to the Aṉangu people.",
+   "factSource": "https://en.wikipedia.org/wiki/Uluru",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "Uluru"
+  },
+  {
+   "id": "landmark_037",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Table Mountain",
+    "Sugarloaf Mountain",
+    "Mount Roraima",
+    "Benbulbin"
+   ],
+   "answer": "Table Mountain",
+   "explanation": "Flat-topped Table Mountain overlooks the city of Cape Town in South Africa.",
+   "factSource": "https://en.wikipedia.org/wiki/Table_Mountain",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "Table Mountain Cape Town"
+  },
+  {
+   "id": "landmark_038",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Ha Long Bay",
+    "Phang Nga Bay",
+    "Li River",
+    "El Nido"
+   ],
+   "answer": "Ha Long Bay",
+   "explanation": "Ha Long Bay in Vietnam is dotted with thousands of limestone islands and is a UNESCO World Heritage Site.",
+   "factSource": "https://en.wikipedia.org/wiki/Ha_Long_Bay",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "Ha Long Bay"
+  },
+  {
+   "id": "landmark_039",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Victoria Falls",
+    "Niagara Falls",
+    "Iguazu Falls",
+    "Kaieteur Falls"
+   ],
+   "answer": "Victoria Falls",
+   "explanation": "Victoria Falls is on the Zambezi River, on the border between Zambia and Zimbabwe.",
+   "factSource": "https://en.wikipedia.org/wiki/Victoria_Falls",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "Victoria Falls Zambezi"
+  },
+  {
+   "id": "landmark_040",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Matterhorn",
+    "Mont Blanc",
+    "Eiger",
+    "K2"
+   ],
+   "answer": "Matterhorn",
+   "explanation": "The pyramid-shaped Matterhorn rises 4,478 metres on the border between Switzerland and Italy.",
+   "factSource": "https://en.wikipedia.org/wiki/Matterhorn",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "Matterhorn"
+  },
+  {
+   "id": "landmark_041",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Tower of London",
+    "Windsor Castle",
+    "Edinburgh Castle",
+    "Warwick Castle"
+   ],
+   "answer": "Tower of London",
+   "explanation": "The White Tower at the heart of the Tower of London was begun by William the Conqueror around 1078.",
+   "factSource": "https://en.wikipedia.org/wiki/Tower_of_London",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "Tower of London White Tower"
+  },
+  {
+   "id": "landmark_042",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Buckingham Palace",
+    "Kensington Palace",
+    "Palace of Versailles",
+    "Schönbrunn Palace"
+   ],
+   "answer": "Buckingham Palace",
+   "explanation": "Buckingham Palace in London is the official London residence of the British monarch.",
+   "factSource": "https://en.wikipedia.org/wiki/Buckingham_Palace",
+   "difficulty": "easy",
+   "status": "draft",
+   "photoQuery": "Buckingham Palace"
+  },
+  {
+   "id": "landmark_043",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Palace of Versailles",
+    "Schönbrunn Palace",
+    "Peterhof Palace",
+    "Palace of Fontainebleau"
+   ],
+   "answer": "Palace of Versailles",
+   "explanation": "Louis XIV moved the French royal court to the Palace of Versailles in 1682.",
+   "factSource": "https://en.wikipedia.org/wiki/Palace_of_Versailles",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "Palace of Versailles"
+  },
+  {
+   "id": "landmark_044",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Edinburgh Castle",
+    "Stirling Castle",
+    "Tower of London",
+    "Prague Castle"
+   ],
+   "answer": "Edinburgh Castle",
+   "explanation": "Edinburgh Castle sits on Castle Rock, the plug of an ancient volcano, above Scotland's capital.",
+   "factSource": "https://en.wikipedia.org/wiki/Edinburgh_Castle",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "Edinburgh Castle"
+  },
+  {
+   "id": "landmark_045",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Charles Bridge",
+    "Tower Bridge",
+    "Ponte Vecchio",
+    "Széchenyi Chain Bridge"
+   ],
+   "answer": "Charles Bridge",
+   "explanation": "Building of Prague's Charles Bridge over the Vltava began in 1357; it is lined with 30 statues.",
+   "factSource": "https://en.wikipedia.org/wiki/Charles_Bridge",
+   "difficulty": "hard",
+   "status": "draft",
+   "photoQuery": "Charles Bridge Prague"
+  },
+  {
+   "id": "landmark_046",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Ponte Vecchio",
+    "Rialto Bridge",
+    "Charles Bridge",
+    "Pont Neuf"
+   ],
+   "answer": "Ponte Vecchio",
+   "explanation": "Florence's Ponte Vecchio crosses the Arno and is still lined with shops, mostly jewellers.",
+   "factSource": "https://en.wikipedia.org/wiki/Ponte_Vecchio",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "Ponte Vecchio Florence"
+  },
+  {
+   "id": "landmark_047",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Rialto Bridge",
+    "Ponte Vecchio",
+    "Bridge of Sighs",
+    "Pont Alexandre III"
+   ],
+   "answer": "Rialto Bridge",
+   "explanation": "The stone Rialto Bridge over Venice's Grand Canal was completed in 1591.",
+   "factSource": "https://en.wikipedia.org/wiki/Rialto_Bridge",
+   "difficulty": "hard",
+   "status": "draft",
+   "photoQuery": "Rialto Bridge Venice"
+  },
+  {
+   "id": "landmark_048",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "St. Peter's Basilica",
+    "St Paul's Cathedral",
+    "Florence Cathedral",
+    "Basilica of Our Lady of Peace"
+   ],
+   "answer": "St. Peter's Basilica",
+   "explanation": "St. Peter's Basilica in Vatican City has a dome designed by Michelangelo.",
+   "factSource": "https://en.wikipedia.org/wiki/St._Peter%27s_Basilica",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "St. Peter's Basilica facade"
+  },
+  {
+   "id": "landmark_049",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Florence Cathedral",
+    "Siena Cathedral",
+    "Milan Cathedral",
+    "St. Peter's Basilica"
+   ],
+   "answer": "Florence Cathedral",
+   "explanation": "Filippo Brunelleschi's dome on Florence Cathedral was completed in 1436 and is still the largest brick dome ever built.",
+   "factSource": "https://en.wikipedia.org/wiki/Florence_Cathedral",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "Florence Cathedral Duomo"
+  },
+  {
+   "id": "landmark_050",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Milan Cathedral",
+    "Cologne Cathedral",
+    "Florence Cathedral",
+    "Seville Cathedral"
+   ],
+   "answer": "Milan Cathedral",
+   "explanation": "Milan Cathedral took nearly six centuries to complete and is covered in spires and statues.",
+   "factSource": "https://en.wikipedia.org/wiki/Milan_Cathedral",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "Milan Cathedral facade"
+  },
+  {
+   "id": "landmark_051",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Cologne Cathedral",
+    "Milan Cathedral",
+    "Notre-Dame de Paris",
+    "Ulm Minster"
+   ],
+   "answer": "Cologne Cathedral",
+   "explanation": "Cologne Cathedral's twin Gothic spires rise 157 metres; it was finally completed in 1880.",
+   "factSource": "https://en.wikipedia.org/wiki/Cologne_Cathedral",
+   "difficulty": "hard",
+   "status": "draft",
+   "photoQuery": "Cologne Cathedral"
+  },
+  {
+   "id": "landmark_052",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Atomium",
+    "Unisphere",
+    "Space Needle",
+    "Spaceship Earth"
+   ],
+   "answer": "Atomium",
+   "explanation": "The Atomium in Brussels was built for Expo 58 and models an iron crystal magnified 165 billion times.",
+   "factSource": "https://en.wikipedia.org/wiki/Atomium",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "Atomium Brussels"
+  },
+  {
+   "id": "landmark_053",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Alhambra",
+    "Alcázar of Seville",
+    "Mosque–Cathedral of Córdoba",
+    "Aljafería"
+   ],
+   "answer": "Alhambra",
+   "explanation": "The Alhambra in Granada, Spain, was the palace-fortress of the Nasrid rulers.",
+   "factSource": "https://en.wikipedia.org/wiki/Alhambra",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "Alhambra Granada"
+  },
+  {
+   "id": "landmark_054",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Potala Palace",
+    "Forbidden City",
+    "Punakha Dzong",
+    "Jokhang Temple"
+   ],
+   "answer": "Potala Palace",
+   "explanation": "The Potala Palace in Lhasa, Tibet, was the winter residence of the Dalai Lamas.",
+   "factSource": "https://en.wikipedia.org/wiki/Potala_Palace",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "Potala Palace Lhasa"
+  },
+  {
+   "id": "landmark_055",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Temple of Heaven",
+    "Forbidden City",
+    "Summer Palace",
+    "Yellow Crane Tower"
+   ],
+   "answer": "Temple of Heaven",
+   "explanation": "At Beijing's Temple of Heaven, emperors prayed for good harvests; the round hall dates from the Ming dynasty.",
+   "factSource": "https://en.wikipedia.org/wiki/Temple_of_Heaven",
+   "difficulty": "hard",
+   "status": "draft",
+   "photoQuery": "Temple of Heaven Hall of Prayer for Good Harvests"
+  },
+  {
+   "id": "landmark_056",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Terracotta Army",
+    "Moai statues of Rapa Nui",
+    "Leshan Giant Buddha",
+    "Longmen Grottoes"
+   ],
+   "answer": "Terracotta Army",
+   "explanation": "Thousands of clay soldiers were buried with China's first emperor, Qin Shi Huang, and found near Xi'an in 1974.",
+   "factSource": "https://en.wikipedia.org/wiki/Terracotta_Army",
+   "difficulty": "easy",
+   "status": "draft",
+   "photoQuery": "Terracotta Army"
+  },
+  {
+   "id": "landmark_057",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Fushimi Inari Taisha",
+    "Itsukushima Shrine",
+    "Meiji Shrine",
+    "Kinkaku-ji"
+   ],
+   "answer": "Fushimi Inari Taisha",
+   "explanation": "Fushimi Inari Taisha in Kyoto is famous for paths lined with thousands of vermilion torii gates.",
+   "factSource": "https://en.wikipedia.org/wiki/Fushimi_Inari-taisha",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "Fushimi Inari torii"
+  },
+  {
+   "id": "landmark_058",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Kinkaku-ji",
+    "Ginkaku-ji",
+    "Byōdō-in",
+    "Kiyomizu-dera"
+   ],
+   "answer": "Kinkaku-ji",
+   "explanation": "Kinkaku-ji, the Golden Pavilion in Kyoto, is covered in gold leaf; it was rebuilt in 1955 after a fire.",
+   "factSource": "https://en.wikipedia.org/wiki/Kinkaku-ji",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "Kinkaku-ji"
+  },
+  {
+   "id": "landmark_059",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Himeji Castle",
+    "Osaka Castle",
+    "Matsumoto Castle",
+    "Nagoya Castle"
+   ],
+   "answer": "Himeji Castle",
+   "explanation": "Himeji Castle is nicknamed the White Heron Castle for its brilliant white walls.",
+   "factSource": "https://en.wikipedia.org/wiki/Himeji_Castle",
+   "difficulty": "hard",
+   "status": "draft",
+   "photoQuery": "Himeji Castle"
+  },
+  {
+   "id": "landmark_060",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Petronas Towers",
+    "Burj Khalifa",
+    "Taipei 101",
+    "Willis Tower"
+   ],
+   "answer": "Petronas Towers",
+   "explanation": "Kuala Lumpur's Petronas Towers, finished in 1998, are the tallest twin towers in the world, linked by a skybridge.",
+   "factSource": "https://en.wikipedia.org/wiki/Petronas_Towers",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "Petronas Towers"
+  },
+  {
+   "id": "landmark_061",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Marina Bay Sands",
+    "Burj Al Arab",
+    "Sydney Opera House",
+    "Petronas Towers"
+   ],
+   "answer": "Marina Bay Sands",
+   "explanation": "Marina Bay Sands in Singapore opened in 2010; a sky park sits across the tops of its three towers.",
+   "factSource": "https://en.wikipedia.org/wiki/Marina_Bay_Sands",
+   "difficulty": "easy",
+   "status": "draft",
+   "photoQuery": "Marina Bay Sands"
+  },
+  {
+   "id": "landmark_062",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Burj Al Arab",
+    "Burj Khalifa",
+    "Marina Bay Sands",
+    "Emirates Palace"
+   ],
+   "answer": "Burj Al Arab",
+   "explanation": "Dubai's sail-shaped Burj Al Arab hotel stands on an artificial island and opened in 1999.",
+   "factSource": "https://en.wikipedia.org/wiki/Burj_Al_Arab",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "Burj Al Arab"
+  },
+  {
+   "id": "landmark_063",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Sheikh Zayed Grand Mosque",
+    "Blue Mosque",
+    "Hassan II Mosque",
+    "Faisal Mosque"
+   ],
+   "answer": "Sheikh Zayed Grand Mosque",
+   "explanation": "The white marble Sheikh Zayed Grand Mosque in Abu Dhabi was completed in 2007.",
+   "factSource": "https://en.wikipedia.org/wiki/Sheikh_Zayed_Grand_Mosque",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "Sheikh Zayed Grand Mosque"
+  },
+  {
+   "id": "landmark_064",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Gateway of India",
+    "India Gate",
+    "Arc de Triomphe",
+    "Buland Darwaza"
+   ],
+   "answer": "Gateway of India",
+   "explanation": "The Gateway of India on Mumbai's waterfront was completed in 1924.",
+   "factSource": "https://en.wikipedia.org/wiki/Gateway_of_India",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "Gateway of India Mumbai"
+  },
+  {
+   "id": "landmark_065",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "India Gate",
+    "Gateway of India",
+    "Arc de Triomphe",
+    "Brandenburg Gate"
+   ],
+   "answer": "India Gate",
+   "explanation": "India Gate in New Delhi is a war memorial to Indian soldiers who died in the First World War.",
+   "factSource": "https://en.wikipedia.org/wiki/India_Gate",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "India Gate New Delhi"
+  },
+  {
+   "id": "landmark_066",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Golden Temple",
+    "Akshardham",
+    "Lotus Temple",
+    "Meenakshi Temple"
+   ],
+   "answer": "Golden Temple",
+   "explanation": "The Golden Temple (Harmandir Sahib) in Amritsar is the holiest gurdwara of Sikhism.",
+   "factSource": "https://en.wikipedia.org/wiki/Golden_Temple",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "Golden Temple Amritsar"
+  },
+  {
+   "id": "landmark_067",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Hawa Mahal",
+    "Amber Fort",
+    "City Palace, Jaipur",
+    "Mysore Palace"
+   ],
+   "answer": "Hawa Mahal",
+   "explanation": "Jaipur's pink sandstone Hawa Mahal, built in 1799, has 953 small windows.",
+   "factSource": "https://en.wikipedia.org/wiki/Hawa_Mahal",
+   "difficulty": "hard",
+   "status": "draft",
+   "photoQuery": "Hawa Mahal Jaipur"
+  },
+  {
+   "id": "landmark_068",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Lotus Temple",
+    "Sydney Opera House",
+    "Golden Temple",
+    "Akshardham"
+   ],
+   "answer": "Lotus Temple",
+   "explanation": "New Delhi's Lotus Temple is a Baháʼí House of Worship shaped like a lotus flower; it opened in 1986.",
+   "factSource": "https://en.wikipedia.org/wiki/Lotus_Temple",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "Lotus Temple Delhi"
+  },
+  {
+   "id": "landmark_069",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Qutub Minar",
+    "Minaret of Jam",
+    "Charminar",
+    "Hassan Tower"
+   ],
+   "answer": "Qutub Minar",
+   "explanation": "Delhi's Qutub Minar is a tapering brick minaret about 73 metres tall, begun around 1200.",
+   "factSource": "https://en.wikipedia.org/wiki/Qutb_Minar",
+   "difficulty": "hard",
+   "status": "draft",
+   "photoQuery": "Qutb Minar"
+  },
+  {
+   "id": "landmark_070",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Charminar",
+    "Gateway of India",
+    "Qutub Minar",
+    "Bibi Ka Maqbara"
+   ],
+   "answer": "Charminar",
+   "explanation": "The Charminar in Hyderabad, India, with its four minarets, was built in 1591.",
+   "factSource": "https://en.wikipedia.org/wiki/Charminar",
+   "difficulty": "hard",
+   "status": "draft",
+   "photoQuery": "Charminar Hyderabad"
+  },
+  {
+   "id": "landmark_071",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Shwedagon Pagoda",
+    "Wat Arun",
+    "Borobudur",
+    "Boudhanath"
+   ],
+   "answer": "Shwedagon Pagoda",
+   "explanation": "The gilded Shwedagon Pagoda towers over Yangon and is Myanmar's most sacred Buddhist site.",
+   "factSource": "https://en.wikipedia.org/wiki/Shwedagon_Pagoda",
+   "difficulty": "hard",
+   "status": "draft",
+   "photoQuery": "Shwedagon Pagoda"
+  },
+  {
+   "id": "landmark_072",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Wat Arun",
+    "Wat Phra Kaew",
+    "Shwedagon Pagoda",
+    "Wat Pho"
+   ],
+   "answer": "Wat Arun",
+   "explanation": "Wat Arun, the Temple of Dawn, stands on the bank of the Chao Phraya River in Bangkok.",
+   "factSource": "https://en.wikipedia.org/wiki/Wat_Arun",
+   "difficulty": "hard",
+   "status": "draft",
+   "photoQuery": "Wat Arun Bangkok"
+  },
+  {
+   "id": "landmark_073",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Borobudur",
+    "Angkor Wat",
+    "Prambanan",
+    "Bagan temples"
+   ],
+   "answer": "Borobudur",
+   "explanation": "Borobudur in Central Java, Indonesia, is a 9th-century temple and the largest Buddhist temple in the world.",
+   "factSource": "https://en.wikipedia.org/wiki/Borobudur",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "Borobudur"
+  },
+  {
+   "id": "landmark_074",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Bagan temples",
+    "Angkor Wat",
+    "Ayutthaya",
+    "Sukhothai"
+   ],
+   "answer": "Bagan temples",
+   "explanation": "More than 2,000 Buddhist temples and pagodas still stand on the plain of Bagan in Myanmar.",
+   "factSource": "https://en.wikipedia.org/wiki/Bagan",
+   "difficulty": "hard",
+   "status": "draft",
+   "photoQuery": "Bagan temples"
+  },
+  {
+   "id": "landmark_075",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Abu Simbel",
+    "Karnak",
+    "Luxor Temple",
+    "Temple of Hatshepsut"
+   ],
+   "answer": "Abu Simbel",
+   "explanation": "Abu Simbel's giant statues of Ramesses II were moved to higher ground in the 1960s to escape the Aswan Dam's lake.",
+   "factSource": "https://en.wikipedia.org/wiki/Abu_Simbel",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "Abu Simbel temple"
+  },
+  {
+   "id": "landmark_076",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Great Sphinx of Giza",
+    "Colossi of Memnon",
+    "Lamassu",
+    "Abu Simbel"
+   ],
+   "answer": "Great Sphinx of Giza",
+   "explanation": "The Great Sphinx of Giza, a lion with a human head, was carved from limestone in ancient Egypt.",
+   "factSource": "https://en.wikipedia.org/wiki/Great_Sphinx_of_Giza",
+   "difficulty": "easy",
+   "status": "draft",
+   "photoQuery": "Great Sphinx of Giza"
+  },
+  {
+   "id": "landmark_077",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Hassan II Mosque",
+    "Sheikh Zayed Grand Mosque",
+    "Blue Mosque",
+    "Koutoubia Mosque"
+   ],
+   "answer": "Hassan II Mosque",
+   "explanation": "Casablanca's Hassan II Mosque stands on the Atlantic shore and has a minaret about 210 metres tall.",
+   "factSource": "https://en.wikipedia.org/wiki/Hassan_II_Mosque",
+   "difficulty": "hard",
+   "status": "draft",
+   "photoQuery": "Hassan II Mosque Casablanca"
+  },
+  {
+   "id": "landmark_078",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Mount Kilimanjaro",
+    "Mount Kenya",
+    "Mount Fuji",
+    "Mount Meru"
+   ],
+   "answer": "Mount Kilimanjaro",
+   "explanation": "Kilimanjaro in Tanzania is Africa's highest mountain at 5,895 metres.",
+   "factSource": "https://en.wikipedia.org/wiki/Mount_Kilimanjaro",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "Kilimanjaro"
+  },
+  {
+   "id": "landmark_079",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "CN Tower",
+    "Space Needle",
+    "Tokyo Skytree",
+    "Ostankino Tower"
+   ],
+   "answer": "CN Tower",
+   "explanation": "Toronto's CN Tower, completed in 1976, is 553 metres tall.",
+   "factSource": "https://en.wikipedia.org/wiki/CN_Tower",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "CN Tower Toronto"
+  },
+  {
+   "id": "landmark_080",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Space Needle",
+    "CN Tower",
+    "Stratosphere Tower",
+    "Sky Tower"
+   ],
+   "answer": "Space Needle",
+   "explanation": "Seattle's Space Needle was built for the 1962 World's Fair.",
+   "factSource": "https://en.wikipedia.org/wiki/Space_Needle",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "Space Needle Seattle"
+  },
+  {
+   "id": "landmark_081",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Empire State Building",
+    "Chrysler Building",
+    "One World Trade Center",
+    "Willis Tower"
+   ],
+   "answer": "Empire State Building",
+   "explanation": "New York's Empire State Building was completed in 1931 and was the world's tallest building for nearly 40 years.",
+   "factSource": "https://en.wikipedia.org/wiki/Empire_State_Building",
+   "difficulty": "easy",
+   "status": "draft",
+   "photoQuery": "Empire State Building"
+  },
+  {
+   "id": "landmark_082",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Chrysler Building",
+    "Empire State Building",
+    "Woolworth Building",
+    "Flatiron Building"
+   ],
+   "answer": "Chrysler Building",
+   "explanation": "The Art Deco Chrysler Building in New York, with its stainless-steel crown, was completed in 1930.",
+   "factSource": "https://en.wikipedia.org/wiki/Chrysler_Building",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "Chrysler Building"
+  },
+  {
+   "id": "landmark_083",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Flatiron Building",
+    "Chrysler Building",
+    "Gooderham Building",
+    "Woolworth Building"
+   ],
+   "answer": "Flatiron Building",
+   "explanation": "New York's triangular Flatiron Building was completed in 1902.",
+   "factSource": "https://en.wikipedia.org/wiki/Flatiron_Building",
+   "difficulty": "hard",
+   "status": "draft",
+   "photoQuery": "Flatiron Building"
+  },
+  {
+   "id": "landmark_084",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "White House",
+    "United States Capitol",
+    "Buckingham Palace",
+    "Lincoln Memorial"
+   ],
+   "answer": "White House",
+   "explanation": "The White House in Washington, D.C., has been home to every US president since John Adams in 1800.",
+   "factSource": "https://en.wikipedia.org/wiki/White_House",
+   "difficulty": "easy",
+   "status": "draft",
+   "photoQuery": "White House Washington"
+  },
+  {
+   "id": "landmark_085",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "United States Capitol",
+    "White House",
+    "Hungarian Parliament Building",
+    "Texas State Capitol"
+   ],
+   "answer": "United States Capitol",
+   "explanation": "The domed United States Capitol in Washington, D.C., is the seat of the US Congress.",
+   "factSource": "https://en.wikipedia.org/wiki/United_States_Capitol",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "United States Capitol"
+  },
+  {
+   "id": "landmark_086",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Lincoln Memorial",
+    "Jefferson Memorial",
+    "Parthenon",
+    "Mount Rushmore"
+   ],
+   "answer": "Lincoln Memorial",
+   "explanation": "The Lincoln Memorial in Washington, D.C., opened in 1922 with a giant seated statue of Abraham Lincoln.",
+   "factSource": "https://en.wikipedia.org/wiki/Lincoln_Memorial",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "Lincoln Memorial"
+  },
+  {
+   "id": "landmark_087",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Gateway Arch",
+    "Arch of Constantine",
+    "Delicate Arch",
+    "Grande Arche"
+   ],
+   "answer": "Gateway Arch",
+   "explanation": "St. Louis's stainless-steel Gateway Arch, completed in 1965, is 192 metres tall, the tallest arch in the world.",
+   "factSource": "https://en.wikipedia.org/wiki/Gateway_Arch",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "Gateway Arch St. Louis"
+  },
+  {
+   "id": "landmark_088",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Brooklyn Bridge",
+    "Tower Bridge",
+    "Golden Gate Bridge",
+    "Manhattan Bridge"
+   ],
+   "answer": "Brooklyn Bridge",
+   "explanation": "The Brooklyn Bridge opened in 1883, linking Manhattan and Brooklyn across the East River.",
+   "factSource": "https://en.wikipedia.org/wiki/Brooklyn_Bridge",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "Brooklyn Bridge"
+  },
+  {
+   "id": "landmark_089",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Hungarian Parliament Building",
+    "Palace of Westminster",
+    "Reichstag building",
+    "United States Capitol"
+   ],
+   "answer": "Hungarian Parliament Building",
+   "explanation": "Budapest's Hungarian Parliament Building on the Danube was completed in 1904.",
+   "factSource": "https://en.wikipedia.org/wiki/Hungarian_Parliament_Building",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "Hungarian Parliament Building"
+  },
+  {
+   "id": "landmark_090",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Reichstag building",
+    "Hungarian Parliament Building",
+    "Federal Palace of Switzerland",
+    "Rijksmuseum"
+   ],
+   "answer": "Reichstag building",
+   "explanation": "Berlin's Reichstag building got its glass dome, designed by Norman Foster, in 1999.",
+   "factSource": "https://en.wikipedia.org/wiki/Reichstag_building",
+   "difficulty": "hard",
+   "status": "draft",
+   "photoQuery": "Reichstag building Berlin"
+  },
+  {
+   "id": "landmark_091",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Plaza de España, Seville",
+    "Royal Palace of Madrid",
+    "Alcázar of Seville",
+    "Park Güell"
+   ],
+   "answer": "Plaza de España, Seville",
+   "explanation": "Seville's Plaza de España was built for the Ibero-American Exposition of 1929.",
+   "factSource": "https://en.wikipedia.org/wiki/Plaza_de_España_(Seville)",
+   "difficulty": "hard",
+   "status": "draft",
+   "photoQuery": "Plaza de España Seville"
+  },
+  {
+   "id": "landmark_092",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Pena Palace",
+    "Neuschwanstein Castle",
+    "Belém Tower",
+    "Hohenzollern Castle"
+   ],
+   "answer": "Pena Palace",
+   "explanation": "The colourful Pena Palace sits on a hilltop above Sintra, Portugal.",
+   "factSource": "https://en.wikipedia.org/wiki/Pena_Palace",
+   "difficulty": "hard",
+   "status": "draft",
+   "photoQuery": "Pena Palace Sintra"
+  },
+  {
+   "id": "landmark_093",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Belém Tower",
+    "Pena Palace",
+    "Tower of London",
+    "Torre del Oro"
+   ],
+   "answer": "Belém Tower",
+   "explanation": "Lisbon's Belém Tower is a 16th-century fortification on the Tagus River.",
+   "factSource": "https://en.wikipedia.org/wiki/Belém_Tower",
+   "difficulty": "hard",
+   "status": "draft",
+   "photoQuery": "Belém Tower Lisbon"
+  },
+  {
+   "id": "landmark_094",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Trevi Fountain",
+    "Fountain of the Four Rivers",
+    "Trafalgar Square fountains",
+    "Bellagio fountains"
+   ],
+   "answer": "Trevi Fountain",
+   "explanation": "Rome's Baroque Trevi Fountain was completed in 1762; visitors toss coins into it.",
+   "factSource": "https://en.wikipedia.org/wiki/Trevi_Fountain",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "Trevi Fountain"
+  },
+  {
+   "id": "landmark_095",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Pantheon",
+    "Parthenon",
+    "Maison Carrée",
+    "Temple of Hercules Victor"
+   ],
+   "answer": "Pantheon",
+   "explanation": "Rome's Pantheon, finished around AD 125, still has the world's largest unreinforced concrete dome.",
+   "factSource": "https://en.wikipedia.org/wiki/Pantheon,_Rome",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "Pantheon Rome"
+  },
+  {
+   "id": "landmark_096",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Meteora",
+    "Mount Athos",
+    "Montserrat",
+    "Sümela Monastery"
+   ],
+   "answer": "Meteora",
+   "explanation": "At Meteora in Greece, monasteries sit on top of tall rock pillars.",
+   "factSource": "https://en.wikipedia.org/wiki/Meteora",
+   "difficulty": "hard",
+   "status": "draft",
+   "photoQuery": "Meteora monastery"
+  },
+  {
+   "id": "landmark_097",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Cliffs of Moher",
+    "White Cliffs of Dover",
+    "Giant's Causeway",
+    "Twelve Apostles"
+   ],
+   "answer": "Cliffs of Moher",
+   "explanation": "The Cliffs of Moher in County Clare, Ireland, rise up to 214 metres above the Atlantic.",
+   "factSource": "https://en.wikipedia.org/wiki/Cliffs_of_Moher",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "Cliffs of Moher"
+  },
+  {
+   "id": "landmark_098",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Giant's Causeway",
+    "Fingal's Cave",
+    "Cliffs of Moher",
+    "Devils Postpile"
+   ],
+   "answer": "Giant's Causeway",
+   "explanation": "About 40,000 interlocking basalt columns form the Giant's Causeway in Northern Ireland.",
+   "factSource": "https://en.wikipedia.org/wiki/Giant%27s_Causeway",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "Giant's Causeway"
+  },
+  {
+   "id": "landmark_099",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Twelve Apostles",
+    "Old Harry Rocks",
+    "Cliffs of Moher",
+    "Ha Long Bay"
+   ],
+   "answer": "Twelve Apostles",
+   "explanation": "The Twelve Apostles are limestone sea stacks along the Great Ocean Road in Victoria, Australia.",
+   "factSource": "https://en.wikipedia.org/wiki/The_Twelve_Apostles_(Victoria)",
+   "difficulty": "hard",
+   "status": "draft",
+   "photoQuery": "Twelve Apostles Victoria"
+  },
+  {
+   "id": "landmark_100",
+   "prompt": "Which landmark is shown?",
+   "options": [
+    "Sugarloaf Mountain",
+    "Table Mountain",
+    "Uluru",
+    "Huayna Picchu"
+   ],
+   "answer": "Sugarloaf Mountain",
+   "explanation": "Sugarloaf Mountain rises 396 metres above Guanabara Bay in Rio de Janeiro; a cable car runs to the top.",
+   "factSource": "https://en.wikipedia.org/wiki/Sugarloaf_Mountain",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "Sugarloaf Mountain Rio de Janeiro"
+  }
+ ],
+ "cuisines": [
+  {
+   "id": "cuisine_041",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Fish and chips",
+    "Fish tacos",
+    "Tempura",
+    "Wiener schnitzel"
+   ],
+   "answer": "Fish and chips",
+   "explanation": "Fish and chips, battered fried fish with thick-cut chips, became a popular takeaway in England in the 1800s.",
+   "factSource": "https://en.wikipedia.org/wiki/Fish_and_chips",
+   "difficulty": "easy",
+   "status": "draft",
+   "photoQuery": "fish and chips"
+  },
+  {
+   "id": "cuisine_042",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Hamburger",
+    "Hot dog",
+    "Sloppy joe",
+    "Club sandwich"
+   ],
+   "answer": "Hamburger",
+   "explanation": "A hamburger is a cooked patty of ground meat served in a sliced bun, usually with toppings.",
+   "factSource": "https://en.wikipedia.org/wiki/Hamburger",
+   "difficulty": "easy",
+   "status": "draft",
+   "photoQuery": "hamburger"
+  },
+  {
+   "id": "cuisine_043",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Jollof rice",
+    "Paella",
+    "Fried rice",
+    "Risotto"
+   ],
+   "answer": "Jollof rice",
+   "explanation": "Jollof rice is cooked in a tomato, onion and pepper sauce and is loved across West Africa.",
+   "factSource": "https://en.wikipedia.org/wiki/Jollof_rice",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "jollof rice"
+  },
+  {
+   "id": "cuisine_044",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Spaghetti carbonara",
+    "Cacio e pepe",
+    "Fettuccine Alfredo",
+    "Spaghetti bolognese"
+   ],
+   "answer": "Spaghetti carbonara",
+   "explanation": "Carbonara is a Roman pasta dish made with egg, hard cheese, cured pork and black pepper.",
+   "factSource": "https://en.wikipedia.org/wiki/Carbonara",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "spaghetti carbonara"
+  },
+  {
+   "id": "cuisine_045",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Lasagna",
+    "Moussaka",
+    "Cannelloni",
+    "Pastitsio"
+   ],
+   "answer": "Lasagna",
+   "explanation": "Lasagna layers wide flat pasta sheets with sauce and cheese and is baked in the oven.",
+   "factSource": "https://en.wikipedia.org/wiki/Lasagna",
+   "difficulty": "easy",
+   "status": "draft",
+   "photoQuery": "lasagna"
+  },
+  {
+   "id": "cuisine_046",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Risotto",
+    "Paella",
+    "Congee",
+    "Pilaf"
+   ],
+   "answer": "Risotto",
+   "explanation": "Risotto is a northern Italian rice dish cooked slowly in broth until creamy.",
+   "factSource": "https://en.wikipedia.org/wiki/Risotto",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "risotto"
+  },
+  {
+   "id": "cuisine_047",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Tabbouleh",
+    "Couscous",
+    "Quinoa salad",
+    "Pesto pasta"
+   ],
+   "answer": "Tabbouleh",
+   "explanation": "Tabbouleh is a Levantine salad of finely chopped parsley, tomato, mint and bulgur.",
+   "factSource": "https://en.wikipedia.org/wiki/Tabbouleh",
+   "difficulty": "hard",
+   "status": "draft",
+   "photoQuery": "tabbouleh"
+  },
+  {
+   "id": "cuisine_048",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Pretzel",
+    "Bagel",
+    "Croissant",
+    "Churros"
+   ],
+   "answer": "Pretzel",
+   "explanation": "The pretzel, a bread knotted into a distinctive shape, has long been a speciality of southern Germany.",
+   "factSource": "https://en.wikipedia.org/wiki/Pretzel",
+   "difficulty": "easy",
+   "status": "draft",
+   "photoQuery": "pretzel"
+  },
+  {
+   "id": "cuisine_049",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Bagel",
+    "Doughnut",
+    "Pretzel",
+    "Simit"
+   ],
+   "answer": "Bagel",
+   "explanation": "A bagel is a ring of dough that is boiled briefly and then baked.",
+   "factSource": "https://en.wikipedia.org/wiki/Bagel",
+   "difficulty": "easy",
+   "status": "draft",
+   "photoQuery": "bagel"
+  },
+  {
+   "id": "cuisine_050",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Wiener schnitzel",
+    "Chicken katsu",
+    "Milanesa",
+    "Fish and chips"
+   ],
+   "answer": "Wiener schnitzel",
+   "explanation": "Wiener schnitzel is a thin, breaded and fried veal cutlet from Vienna, Austria.",
+   "factSource": "https://en.wikipedia.org/wiki/Wiener_schnitzel",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "Wiener schnitzel"
+  },
+  {
+   "id": "cuisine_051",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Shawarma",
+    "Burrito",
+    "Bánh mì",
+    "Hot dog"
+   ],
+   "answer": "Shawarma",
+   "explanation": "Shawarma is meat roasted on a vertical spit, shaved thin and often wrapped in flatbread.",
+   "factSource": "https://en.wikipedia.org/wiki/Shawarma",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "shawarma"
+  },
+  {
+   "id": "cuisine_052",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Crêpes",
+    "Pancakes",
+    "Dosa",
+    "Blini"
+   ],
+   "answer": "Crêpes",
+   "explanation": "Crêpes are very thin pancakes from France, served sweet or savoury.",
+   "factSource": "https://en.wikipedia.org/wiki/Crêpe",
+   "difficulty": "easy",
+   "status": "draft",
+   "photoQuery": "crêpe"
+  },
+  {
+   "id": "cuisine_053",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Macarons",
+    "Meringues",
+    "Whoopie pies",
+    "Alfajores"
+   ],
+   "answer": "Macarons",
+   "explanation": "French macarons are almond-meringue cookies sandwiched with a filling.",
+   "factSource": "https://en.wikipedia.org/wiki/Macaron",
+   "difficulty": "easy",
+   "status": "draft",
+   "photoQuery": "macarons"
+  },
+  {
+   "id": "cuisine_054",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Ratatouille",
+    "Caponata",
+    "Pisto",
+    "Shakshuka"
+   ],
+   "answer": "Ratatouille",
+   "explanation": "Ratatouille is a stewed vegetable dish from Provence, France, made with tomato, aubergine, courgette and peppers.",
+   "factSource": "https://en.wikipedia.org/wiki/Ratatouille",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "ratatouille"
+  },
+  {
+   "id": "cuisine_055",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Bouillabaisse",
+    "Cioppino",
+    "Gumbo",
+    "Clam chowder"
+   ],
+   "answer": "Bouillabaisse",
+   "explanation": "Bouillabaisse is a fish stew from the port city of Marseille, France.",
+   "factSource": "https://en.wikipedia.org/wiki/Bouillabaisse",
+   "difficulty": "hard",
+   "status": "draft",
+   "photoQuery": "bouillabaisse"
+  },
+  {
+   "id": "cuisine_056",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Croque monsieur",
+    "Grilled cheese",
+    "Monte Cristo sandwich",
+    "Cuban sandwich"
+   ],
+   "answer": "Croque monsieur",
+   "explanation": "A croque monsieur is a French toasted ham-and-cheese sandwich, often topped with béchamel.",
+   "factSource": "https://en.wikipedia.org/wiki/Croque_monsieur",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "croque monsieur"
+  },
+  {
+   "id": "cuisine_057",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Greek salad",
+    "Caprese salad",
+    "Fattoush",
+    "Caesar salad"
+   ],
+   "answer": "Greek salad",
+   "explanation": "A Greek salad combines tomato, cucumber, onion, olives and a slab of feta cheese.",
+   "factSource": "https://en.wikipedia.org/wiki/Greek_salad",
+   "difficulty": "easy",
+   "status": "draft",
+   "photoQuery": "Greek salad"
+  },
+  {
+   "id": "cuisine_058",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Gazpacho",
+    "Borscht",
+    "Vichyssoise",
+    "Minestrone"
+   ],
+   "answer": "Gazpacho",
+   "explanation": "Gazpacho is a cold tomato-based soup from Andalusia in southern Spain.",
+   "factSource": "https://en.wikipedia.org/wiki/Gazpacho",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "gazpacho"
+  },
+  {
+   "id": "cuisine_059",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Bunny chow",
+    "Pav bhaji",
+    "Sloppy joe",
+    "Bread pudding"
+   ],
+   "answer": "Bunny chow",
+   "explanation": "Bunny chow, a hollowed-out loaf of bread filled with curry, comes from Durban, South Africa.",
+   "factSource": "https://en.wikipedia.org/wiki/Bunny_chow",
+   "difficulty": "hard",
+   "status": "draft",
+   "photoQuery": "bunny chow"
+  },
+  {
+   "id": "cuisine_060",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Full breakfast",
+    "Huevos rancheros",
+    "Shakshuka",
+    "Eggs Benedict"
+   ],
+   "answer": "Full breakfast",
+   "explanation": "A full breakfast typically includes eggs, bacon, sausages, beans, tomatoes and toast.",
+   "factSource": "https://en.wikipedia.org/wiki/Full_breakfast",
+   "difficulty": "easy",
+   "status": "draft",
+   "photoQuery": "full English breakfast"
+  },
+  {
+   "id": "cuisine_061",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Eggs Benedict",
+    "Full breakfast",
+    "Croque madame",
+    "Shakshuka"
+   ],
+   "answer": "Eggs Benedict",
+   "explanation": "Eggs Benedict is poached egg and ham on an English muffin, topped with hollandaise sauce.",
+   "factSource": "https://en.wikipedia.org/wiki/Eggs_Benedict",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "eggs Benedict"
+  },
+  {
+   "id": "cuisine_062",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Pancakes",
+    "Crêpes",
+    "Waffles",
+    "Dorayaki"
+   ],
+   "answer": "Pancakes",
+   "explanation": "American-style pancakes are thick and fluffy and often stacked with butter and syrup.",
+   "factSource": "https://en.wikipedia.org/wiki/Pancake",
+   "difficulty": "easy",
+   "status": "draft",
+   "photoQuery": "pancakes stack"
+  },
+  {
+   "id": "cuisine_063",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Waffles",
+    "Pancakes",
+    "Crêpes",
+    "Stroopwafel"
+   ],
+   "answer": "Waffles",
+   "explanation": "Waffles are cooked between patterned hot plates, which gives them their grid of pockets.",
+   "factSource": "https://en.wikipedia.org/wiki/Waffle",
+   "difficulty": "easy",
+   "status": "draft",
+   "photoQuery": "waffles"
+  },
+  {
+   "id": "cuisine_064",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Apple pie",
+    "Cheesecake",
+    "Tarte Tatin",
+    "Pumpkin pie"
+   ],
+   "answer": "Apple pie",
+   "explanation": "Apple pie is a pastry-crust pie filled with spiced apple.",
+   "factSource": "https://en.wikipedia.org/wiki/Apple_pie",
+   "difficulty": "easy",
+   "status": "draft",
+   "photoQuery": "apple pie"
+  },
+  {
+   "id": "cuisine_065",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Cheesecake",
+    "Tiramisu",
+    "Tres leches cake",
+    "Panna cotta"
+   ],
+   "answer": "Cheesecake",
+   "explanation": "Cheesecake has a creamy layer of soft cheese on a base of crushed biscuit or pastry.",
+   "factSource": "https://en.wikipedia.org/wiki/Cheesecake",
+   "difficulty": "easy",
+   "status": "draft",
+   "photoQuery": "cheesecake slice"
+  },
+  {
+   "id": "cuisine_066",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Macaroni and cheese",
+    "Spaghetti carbonara",
+    "Risotto",
+    "Potato gratin"
+   ],
+   "answer": "Macaroni and cheese",
+   "explanation": "Macaroni and cheese is pasta baked or stirred in a cheese sauce.",
+   "factSource": "https://en.wikipedia.org/wiki/Macaroni_and_cheese",
+   "difficulty": "easy",
+   "status": "draft",
+   "photoQuery": "macaroni and cheese"
+  },
+  {
+   "id": "cuisine_067",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Clam chowder",
+    "Lobster bisque",
+    "Bouillabaisse",
+    "Gumbo"
+   ],
+   "answer": "Clam chowder",
+   "explanation": "New England clam chowder is a creamy soup of clams and potatoes.",
+   "factSource": "https://en.wikipedia.org/wiki/Clam_chowder",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "clam chowder"
+  },
+  {
+   "id": "cuisine_068",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Knafeh",
+    "Baklava",
+    "Tres leches cake",
+    "Cheesecake"
+   ],
+   "answer": "Knafeh",
+   "explanation": "Knafeh is a Middle Eastern dessert of shredded pastry or semolina over soft cheese, soaked in syrup.",
+   "factSource": "https://en.wikipedia.org/wiki/Knafeh",
+   "difficulty": "hard",
+   "status": "draft",
+   "photoQuery": "knafeh"
+  },
+  {
+   "id": "cuisine_069",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Burrito",
+    "Enchiladas",
+    "Quesadilla",
+    "Tamales"
+   ],
+   "answer": "Burrito",
+   "explanation": "A burrito is a large flour tortilla wrapped around fillings such as rice, beans and meat.",
+   "factSource": "https://en.wikipedia.org/wiki/Burrito",
+   "difficulty": "easy",
+   "status": "draft",
+   "photoQuery": "burrito"
+  },
+  {
+   "id": "cuisine_070",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Guacamole",
+    "Hummus",
+    "Salsa verde",
+    "Pesto"
+   ],
+   "answer": "Guacamole",
+   "explanation": "Guacamole is a Mexican dip of mashed avocado with lime, onion and chilli.",
+   "factSource": "https://en.wikipedia.org/wiki/Guacamole",
+   "difficulty": "easy",
+   "status": "draft",
+   "photoQuery": "guacamole"
+  },
+  {
+   "id": "cuisine_071",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Tamales",
+    "Burritos",
+    "Empanadas",
+    "Arepas"
+   ],
+   "answer": "Tamales",
+   "explanation": "Tamales are masa dough steamed in a corn husk or banana leaf, a staple across Mexico and Central America.",
+   "factSource": "https://en.wikipedia.org/wiki/Tamale",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "tamales"
+  },
+  {
+   "id": "cuisine_072",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Enchiladas",
+    "Burritos",
+    "Lasagna",
+    "Cannelloni"
+   ],
+   "answer": "Enchiladas",
+   "explanation": "Enchiladas are rolled corn tortillas filled and covered in chilli sauce.",
+   "factSource": "https://en.wikipedia.org/wiki/Enchilada",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "enchiladas"
+  },
+  {
+   "id": "cuisine_073",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Feijoada",
+    "Chili con carne",
+    "Cassoulet",
+    "Goulash"
+   ],
+   "answer": "Feijoada",
+   "explanation": "Feijoada, a black bean stew with pork, is often called Brazil's national dish.",
+   "factSource": "https://en.wikipedia.org/wiki/Feijoada",
+   "difficulty": "hard",
+   "status": "draft",
+   "photoQuery": "feijoada"
+  },
+  {
+   "id": "cuisine_074",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Pão de queijo",
+    "Gougères",
+    "Arancini",
+    "Mochi"
+   ],
+   "answer": "Pão de queijo",
+   "explanation": "Pão de queijo are small Brazilian cheese breads made with cassava flour.",
+   "factSource": "https://en.wikipedia.org/wiki/Pão_de_queijo",
+   "difficulty": "hard",
+   "status": "draft",
+   "photoQuery": "pão de queijo"
+  },
+  {
+   "id": "cuisine_075",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Brigadeiro",
+    "Gulab jamun",
+    "Laddu",
+    "Mochi"
+   ],
+   "answer": "Brigadeiro",
+   "explanation": "Brigadeiros are Brazilian chocolate sweets rolled in chocolate sprinkles.",
+   "factSource": "https://en.wikipedia.org/wiki/Brigadeiro",
+   "difficulty": "hard",
+   "status": "draft",
+   "photoQuery": "brigadeiro"
+  },
+  {
+   "id": "cuisine_076",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Chili con carne",
+    "Feijoada",
+    "Goulash",
+    "Dal"
+   ],
+   "answer": "Chili con carne",
+   "explanation": "Chili con carne is a spicy stew of chilli peppers and meat, often with beans, associated with Texas.",
+   "factSource": "https://en.wikipedia.org/wiki/Chili_con_carne",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "chili con carne"
+  },
+  {
+   "id": "cuisine_077",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Naan",
+    "Pita",
+    "Paratha",
+    "Lavash"
+   ],
+   "answer": "Naan",
+   "explanation": "Naan is a leavened flatbread traditionally baked against the wall of a tandoor oven.",
+   "factSource": "https://en.wikipedia.org/wiki/Naan",
+   "difficulty": "easy",
+   "status": "draft",
+   "photoQuery": "naan bread"
+  },
+  {
+   "id": "cuisine_078",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Tandoori chicken",
+    "Butter chicken",
+    "Jerk chicken",
+    "Peri-peri chicken"
+   ],
+   "answer": "Tandoori chicken",
+   "explanation": "Tandoori chicken is marinated in yoghurt and spices and roasted in a tandoor, which gives it its red colour and char.",
+   "factSource": "https://en.wikipedia.org/wiki/Tandoori_chicken",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "tandoori chicken"
+  },
+  {
+   "id": "cuisine_079",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Chole bhature",
+    "Puri bhaji",
+    "Pav bhaji",
+    "Masala dosa"
+   ],
+   "answer": "Chole bhature",
+   "explanation": "Chole bhature pairs spicy chickpea curry with puffy deep-fried bread, a favourite in North India.",
+   "factSource": "https://en.wikipedia.org/wiki/Chole_bhature",
+   "difficulty": "hard",
+   "status": "draft",
+   "photoQuery": "chole bhature"
+  },
+  {
+   "id": "cuisine_080",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Pav bhaji",
+    "Vada pav",
+    "Chole bhature",
+    "Misal pav"
+   ],
+   "answer": "Pav bhaji",
+   "explanation": "Pav bhaji, a spiced mashed-vegetable curry with buttered bread rolls, is a Mumbai street food.",
+   "factSource": "https://en.wikipedia.org/wiki/Pav_bhaji",
+   "difficulty": "hard",
+   "status": "draft",
+   "photoQuery": "pav bhaji"
+  },
+  {
+   "id": "cuisine_081",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Gulab jamun",
+    "Rasgulla",
+    "Loukoumades",
+    "Brigadeiro"
+   ],
+   "answer": "Gulab jamun",
+   "explanation": "Gulab jamun are fried milk-dough balls soaked in a fragrant sugar syrup.",
+   "factSource": "https://en.wikipedia.org/wiki/Gulab_jamun",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "gulab jamun"
+  },
+  {
+   "id": "cuisine_082",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Idli",
+    "Dhokla",
+    "Mochi",
+    "Bao buns"
+   ],
+   "answer": "Idli",
+   "explanation": "Idli are steamed cakes of fermented rice and lentil batter from South India.",
+   "factSource": "https://en.wikipedia.org/wiki/Idli",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "idli"
+  },
+  {
+   "id": "cuisine_083",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Jalebi",
+    "Funnel cake",
+    "Churros",
+    "Gulab jamun"
+   ],
+   "answer": "Jalebi",
+   "explanation": "Jalebi are spirals of fried batter soaked in syrup, popular across South Asia and the Middle East.",
+   "factSource": "https://en.wikipedia.org/wiki/Jalebi",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "jalebi"
+  },
+  {
+   "id": "cuisine_084",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Laksa",
+    "Tom yum",
+    "Ramen",
+    "Pho"
+   ],
+   "answer": "Laksa",
+   "explanation": "Laksa is a spicy noodle soup, often with coconut curry broth, from Malaysia and Singapore.",
+   "factSource": "https://en.wikipedia.org/wiki/Laksa",
+   "difficulty": "hard",
+   "status": "draft",
+   "photoQuery": "laksa"
+  },
+  {
+   "id": "cuisine_085",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Nasi lemak",
+    "Nasi goreng",
+    "Bibimbap",
+    "Biryani"
+   ],
+   "answer": "Nasi lemak",
+   "explanation": "Nasi lemak is rice cooked in coconut milk, served with sambal, anchovies, peanuts and egg; it is Malaysia's national dish.",
+   "factSource": "https://en.wikipedia.org/wiki/Nasi_lemak",
+   "difficulty": "hard",
+   "status": "draft",
+   "photoQuery": "nasi lemak"
+  },
+  {
+   "id": "cuisine_086",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Nasi goreng",
+    "Paella",
+    "Jambalaya",
+    "Biryani"
+   ],
+   "answer": "Nasi goreng",
+   "explanation": "Nasi goreng is Indonesian fried rice, often topped with a fried egg.",
+   "factSource": "https://en.wikipedia.org/wiki/Nasi_goreng",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "nasi goreng"
+  },
+  {
+   "id": "cuisine_087",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Satay",
+    "Tempura",
+    "Spring rolls",
+    "Takoyaki"
+   ],
+   "answer": "Satay",
+   "explanation": "Satay is skewered grilled meat served with peanut sauce, popular in Indonesia and Malaysia.",
+   "factSource": "https://en.wikipedia.org/wiki/Satay",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "satay"
+  },
+  {
+   "id": "cuisine_088",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Rendang",
+    "Massaman curry",
+    "Goulash",
+    "Beef bourguignon"
+   ],
+   "answer": "Rendang",
+   "explanation": "Rendang is beef slow-cooked in coconut milk and spices until almost dry, from Indonesia's Minangkabau people.",
+   "factSource": "https://en.wikipedia.org/wiki/Rendang",
+   "difficulty": "hard",
+   "status": "draft",
+   "photoQuery": "rendang"
+  },
+  {
+   "id": "cuisine_089",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Tom yum",
+    "Pho",
+    "Laksa",
+    "Hot and sour soup"
+   ],
+   "answer": "Tom yum",
+   "explanation": "Tom yum is a hot and sour Thai soup flavoured with lemongrass, lime leaves and chilli.",
+   "factSource": "https://en.wikipedia.org/wiki/Tom_yum",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "tom yum"
+  },
+  {
+   "id": "cuisine_090",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Thai green curry",
+    "Butter chicken",
+    "Laksa",
+    "Chicken korma"
+   ],
+   "answer": "Thai green curry",
+   "explanation": "Thai green curry gets its colour from green chillies in the curry paste, cooked with coconut milk.",
+   "factSource": "https://en.wikipedia.org/wiki/Green_curry",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "Thai green curry"
+  },
+  {
+   "id": "cuisine_091",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Spring rolls",
+    "Samosas",
+    "Churros",
+    "Falafel"
+   ],
+   "answer": "Spring rolls",
+   "explanation": "Spring rolls are thin pastry wrappers rolled around a filling and usually fried.",
+   "factSource": "https://en.wikipedia.org/wiki/Spring_roll",
+   "difficulty": "easy",
+   "status": "draft",
+   "photoQuery": "spring rolls"
+  },
+  {
+   "id": "cuisine_092",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Xiaolongbao",
+    "Bao buns",
+    "Mochi",
+    "Onigiri"
+   ],
+   "answer": "Xiaolongbao",
+   "explanation": "Xiaolongbao are soup dumplings from Shanghai, steamed in bamboo baskets.",
+   "factSource": "https://en.wikipedia.org/wiki/Xiaolongbao",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "xiaolongbao"
+  },
+  {
+   "id": "cuisine_093",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Mapo tofu",
+    "Kung Pao chicken",
+    "Butter chicken",
+    "Chili con carne"
+   ],
+   "answer": "Mapo tofu",
+   "explanation": "Mapo tofu is a Sichuan dish of tofu in a spicy, numbing chilli and bean sauce.",
+   "factSource": "https://en.wikipedia.org/wiki/Mapo_tofu",
+   "difficulty": "hard",
+   "status": "draft",
+   "photoQuery": "mapo tofu"
+  },
+  {
+   "id": "cuisine_094",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Hot pot",
+    "Fondue",
+    "Paella",
+    "Bibimbap"
+   ],
+   "answer": "Hot pot",
+   "explanation": "At a Chinese hot pot, diners cook raw ingredients at the table in a simmering pot of broth.",
+   "factSource": "https://en.wikipedia.org/wiki/Hot_pot",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "Chinese hot pot"
+  },
+  {
+   "id": "cuisine_095",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Kimchi",
+    "Sauerkraut",
+    "Coleslaw",
+    "Pickled ginger"
+   ],
+   "answer": "Kimchi",
+   "explanation": "Kimchi is Korean fermented cabbage, usually seasoned with chilli, garlic and ginger.",
+   "factSource": "https://en.wikipedia.org/wiki/Kimchi",
+   "difficulty": "easy",
+   "status": "draft",
+   "photoQuery": "kimchi"
+  },
+  {
+   "id": "cuisine_096",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Tteokbokki",
+    "Gnocchi",
+    "Japchae",
+    "Pad Thai"
+   ],
+   "answer": "Tteokbokki",
+   "explanation": "Tteokbokki are chewy Korean rice cakes in a sweet and spicy red chilli sauce.",
+   "factSource": "https://en.wikipedia.org/wiki/Tteok-bokki",
+   "difficulty": "hard",
+   "status": "draft",
+   "photoQuery": "tteokbokki"
+  },
+  {
+   "id": "cuisine_097",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Tempura",
+    "Fish and chips",
+    "Pakora",
+    "Karaage"
+   ],
+   "answer": "Tempura",
+   "explanation": "Tempura is seafood or vegetables fried in a very light, crisp batter, a classic of Japanese cooking.",
+   "factSource": "https://en.wikipedia.org/wiki/Tempura",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "tempura"
+  },
+  {
+   "id": "cuisine_098",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Takoyaki",
+    "Arancini",
+    "Falafel",
+    "Mochi"
+   ],
+   "answer": "Takoyaki",
+   "explanation": "Takoyaki are batter balls filled with octopus, cooked in a special moulded pan in Osaka, Japan.",
+   "factSource": "https://en.wikipedia.org/wiki/Takoyaki",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "takoyaki"
+  },
+  {
+   "id": "cuisine_099",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Mochi",
+    "Dango",
+    "Macarons",
+    "Gulab jamun"
+   ],
+   "answer": "Mochi",
+   "explanation": "Mochi is a Japanese rice cake made from pounded glutinous rice.",
+   "factSource": "https://en.wikipedia.org/wiki/Mochi",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "mochi"
+  },
+  {
+   "id": "cuisine_100",
+   "prompt": "Which dish is shown?",
+   "options": [
+    "Pastel de nata",
+    "Crème brûlée",
+    "Cheesecake",
+    "Flan"
+   ],
+   "answer": "Pastel de nata",
+   "explanation": "Pastéis de nata are Portuguese custard tarts with crisp, flaky pastry and a caramelised top.",
+   "factSource": "https://en.wikipedia.org/wiki/Pastel_de_nata",
+   "difficulty": "medium",
+   "status": "draft",
+   "photoQuery": "pastel de nata"
+  }
+ ]
+}

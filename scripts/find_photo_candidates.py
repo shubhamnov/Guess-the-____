@@ -102,6 +102,13 @@ def main():
             if len(found) >= PER_REQUEST:
                 break
         results[req["id"]] = {"query": req["query"], "answer": req.get("answer"), "candidates": found}
+        if req.get("factSource"):
+            # The fact source must be a real page (checked here because the workflow can reach it).
+            try:
+                status = session.get(req["factSource"], timeout=30, allow_redirects=True).status_code
+            except requests.RequestException as exc:
+                status = f"error: {exc}"
+            results[req["id"]]["factSourceStatus"] = status
         print(f"{req['id']} ({req['query']}): {len(found)} candidates")
     (OUT / "candidates.json").write_text(json.dumps(results, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
