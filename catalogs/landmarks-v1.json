@@ -900,6 +900,29 @@
       "status": "approved"
     },
     {
+      "id": "landmark_037",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Table_mountain_and_the_ocean_cape_town.JPG?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Table_mountain_and_the_ocean_cape_town.JPG",
+        "creator": "www.namastesouthafrica.com",
+        "license": "CC BY 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Table_mountain_and_the_ocean_cape_town.JPG?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Table Mountain",
+        "Sugarloaf Mountain",
+        "Mount Roraima",
+        "Benbulbin"
+      ],
+      "answer": "Table Mountain",
+      "explanation": "Flat-topped Table Mountain overlooks the city of Cape Town in South Africa.",
+      "factSource": "https://en.wikipedia.org/wiki/Table_Mountain",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
       "id": "landmark_038",
       "prompt": "Which landmark is shown?",
       "image": {
@@ -1773,6 +1796,29 @@
       "factSource": "https://en.wikipedia.org/wiki/Borobudur",
       "difficulty": "medium",
       "status": "approved"
+    },
+    {
+      "id": "landmark_074",
+      "prompt": "Which landmark is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Old_Bagan%2C_Myanmar%2C_Ancient_Buddhist_temple_in_Bagan_plains.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Old_Bagan,_Myanmar,_Ancient_Buddhist_temple_in_Bagan_plains.jpg",
+        "creator": "Vyacheslav Argenberg",
+        "license": "CC BY 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Old_Bagan%2C_Myanmar%2C_Ancient_Buddhist_temple_in_Bagan_plains.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Bagan temples",
+        "Angkor Wat",
+        "Ayutthaya",
+        "Sukhothai"
+      ],
+      "answer": "Bagan temples",
+      "explanation": "More than 2,000 Buddhist temples and pagodas still stand on the plain of Bagan in Myanmar.",
+      "factSource": "https://en.wikipedia.org/wiki/Bagan",
+      "difficulty": "hard",
+      "status": "needs_image_render_check"
     },
     {
       "id": "landmark_075",

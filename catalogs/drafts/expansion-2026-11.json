@@ -2,22 +2,6 @@
   "note": "Questions waiting for a photo. Each one moves into its catalog (catalogs/landmarks-v1.json or cuisines-v1.json) once a reviewed Commons photo is chosen from the photo-review branch.",
   "landmarks": [
     {
-      "id": "landmark_037",
-      "prompt": "Which landmark is shown?",
-      "options": [
-        "Table Mountain",
-        "Sugarloaf Mountain",
-        "Mount Roraima",
-        "Benbulbin"
-      ],
-      "answer": "Table Mountain",
-      "explanation": "Flat-topped Table Mountain overlooks the city of Cape Town in South Africa.",
-      "factSource": "https://en.wikipedia.org/wiki/Table_Mountain",
-      "difficulty": "medium",
-      "status": "draft",
-      "photoQuery": "Table Mountain Cape Town"
-    },
-    {
       "id": "landmark_063",
       "prompt": "Which landmark is shown?",
       "options": [
@@ -32,22 +16,6 @@
       "difficulty": "medium",
       "status": "draft",
       "photoQuery": "Sheikh Zayed Grand Mosque"
-    },
-    {
-      "id": "landmark_074",
-      "prompt": "Which landmark is shown?",
-      "options": [
-        "Bagan temples",
-        "Angkor Wat",
-        "Ayutthaya",
-        "Sukhothai"
-      ],
-      "answer": "Bagan temples",
-      "explanation": "More than 2,000 Buddhist temples and pagodas still stand on the plain of Bagan in Myanmar.",
-      "factSource": "https://en.wikipedia.org/wiki/Bagan",
-      "difficulty": "hard",
-      "status": "draft",
-      "photoQuery": "Bagan temples"
     },
     {
       "id": "landmark_077",
@@ -68,38 +36,6 @@
   ],
   "cuisines": [
     {
-      "id": "cuisine_042",
-      "prompt": "Which dish is shown?",
-      "options": [
-        "Hamburger",
-        "Hot dog",
-        "Sloppy joe",
-        "Club sandwich"
-      ],
-      "answer": "Hamburger",
-      "explanation": "A hamburger is a cooked patty of ground meat served in a sliced bun, usually with toppings.",
-      "factSource": "https://en.wikipedia.org/wiki/Hamburger",
-      "difficulty": "easy",
-      "status": "draft",
-      "photoQuery": "hamburger"
-    },
-    {
-      "id": "cuisine_048",
-      "prompt": "Which dish is shown?",
-      "options": [
-        "Pretzel",
-        "Bagel",
-        "Croissant",
-        "Churros"
-      ],
-      "answer": "Pretzel",
-      "explanation": "The pretzel, a bread knotted into a distinctive shape, has long been a speciality of southern Germany.",
-      "factSource": "https://en.wikipedia.org/wiki/Pretzel",
-      "difficulty": "easy",
-      "status": "draft",
-      "photoQuery": "pretzel"
-    },
-    {
       "id": "cuisine_052",
       "prompt": "Which dish is shown?",
       "options": [
@@ -116,70 +52,6 @@
       "photoQuery": "crêpe"
     },
     {
-      "id": "cuisine_055",
-      "prompt": "Which dish is shown?",
-      "options": [
-        "Bouillabaisse",
-        "Cioppino",
-        "Gumbo",
-        "Clam chowder"
-      ],
-      "answer": "Bouillabaisse",
-      "explanation": "Bouillabaisse is a fish stew from the port city of Marseille, France.",
-      "factSource": "https://en.wikipedia.org/wiki/Bouillabaisse",
-      "difficulty": "hard",
-      "status": "draft",
-      "photoQuery": "bouillabaisse"
-    },
-    {
-      "id": "cuisine_076",
-      "prompt": "Which dish is shown?",
-      "options": [
-        "Chili con carne",
-        "Feijoada",
-        "Goulash",
-        "Dal"
-      ],
-      "answer": "Chili con carne",
-      "explanation": "Chili con carne is a spicy stew of chilli peppers and meat, often with beans, associated with Texas.",
-      "factSource": "https://en.wikipedia.org/wiki/Chili_con_carne",
-      "difficulty": "medium",
-      "status": "draft",
-      "photoQuery": "chili con carne"
-    },
-    {
-      "id": "cuisine_084",
-      "prompt": "Which dish is shown?",
-      "options": [
-        "Laksa",
-        "Tom yum",
-        "Ramen",
-        "Pho"
-      ],
-      "answer": "Laksa",
-      "explanation": "Laksa is a spicy noodle soup, often with coconut curry broth, from Malaysia and Singapore.",
-      "factSource": "https://en.wikipedia.org/wiki/Laksa",
-      "difficulty": "hard",
-      "status": "draft",
-      "photoQuery": "laksa"
-    },
-    {
-      "id": "cuisine_087",
-      "prompt": "Which dish is shown?",
-      "options": [
-        "Satay",
-        "Tempura",
-        "Spring rolls",
-        "Takoyaki"
-      ],
-      "answer": "Satay",
-      "explanation": "Satay is skewered grilled meat served with peanut sauce, popular in Indonesia and Malaysia.",
-      "factSource": "https://en.wikipedia.org/wiki/Satay",
-      "difficulty": "medium",
-      "status": "draft",
-      "photoQuery": "satay"
-    },
-    {
       "id": "cuisine_094",
       "prompt": "Which dish is shown?",
       "options": [
@@ -194,38 +66,6 @@
       "difficulty": "medium",
       "status": "draft",
       "photoQuery": "Chinese hot pot"
-    },
-    {
-      "id": "cuisine_095",
-      "prompt": "Which dish is shown?",
-      "options": [
-        "Kimchi",
-        "Sauerkraut",
-        "Coleslaw",
-        "Pickled ginger"
-      ],
-      "answer": "Kimchi",
-      "explanation": "Kimchi is Korean fermented cabbage, usually seasoned with chilli, garlic and ginger.",
-      "factSource": "https://en.wikipedia.org/wiki/Kimchi",
-      "difficulty": "easy",
-      "status": "draft",
-      "photoQuery": "kimchi"
-    },
-    {
-      "id": "cuisine_097",
-      "prompt": "Which dish is shown?",
-      "options": [
-        "Tempura",
-        "Fish and chips",
-        "Pakora",
-        "Karaage"
-      ],
-      "answer": "Tempura",
-      "explanation": "Tempura is seafood or vegetables fried in a very light, crisp batter, a classic of Japanese cooking.",
-      "factSource": "https://en.wikipedia.org/wiki/Tempura",
-      "difficulty": "medium",
-      "status": "draft",
-      "photoQuery": "tempura"
     }
   ]
 }

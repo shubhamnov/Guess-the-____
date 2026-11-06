@@ -1004,6 +1004,29 @@
       "status": "approved"
     },
     {
+      "id": "cuisine_042",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentine_homemade_hamburger_with_lettuce%2C_tomato_and_cheese.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Argentine_homemade_hamburger_with_lettuce,_tomato_and_cheese.jpg",
+        "creator": "Horacio Cambeiro",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentine_homemade_hamburger_with_lettuce%2C_tomato_and_cheese.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Hamburger",
+        "Hot dog",
+        "Sloppy joe",
+        "Club sandwich"
+      ],
+      "answer": "Hamburger",
+      "explanation": "A hamburger is a cooked patty of ground meat served in a sliced bun, usually with toppings.",
+      "factSource": "https://en.wikipedia.org/wiki/Hamburger",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
       "id": "cuisine_043",
       "prompt": "Which dish is shown?",
       "image": {
@@ -1129,6 +1152,29 @@
       "status": "approved"
     },
     {
+      "id": "cuisine_048",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Weisswurst.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Weisswurst.jpg",
+        "creator": "No machine-readable author provided. Mattes assumed (based on copyright claims).",
+        "license": "Public domain",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Weisswurst.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Pretzel",
+        "Bagel",
+        "Croissant",
+        "Churros"
+      ],
+      "answer": "Pretzel",
+      "explanation": "The pretzel, a bread knotted into a distinctive shape, has long been a speciality of southern Germany.",
+      "factSource": "https://en.wikipedia.org/wiki/Pretzel",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
       "id": "cuisine_049",
       "prompt": "Which dish is shown?",
       "image": {
@@ -1252,6 +1298,29 @@
       "factSource": "https://en.wikipedia.org/wiki/Ratatouille",
       "difficulty": "medium",
       "status": "approved"
+    },
+    {
+      "id": "cuisine_055",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Flickr_-_cyclonebill_-_Bouillabaisse_med_rouille.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Flickr_-_cyclonebill_-_Bouillabaisse_med_rouille.jpg",
+        "creator": "cyclonebill",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Flickr_-_cyclonebill_-_Bouillabaisse_med_rouille.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Bouillabaisse",
+        "Cioppino",
+        "Gumbo",
+        "Clam chowder"
+      ],
+      "answer": "Bouillabaisse",
+      "explanation": "Bouillabaisse is a fish stew from the port city of Marseille, France.",
+      "factSource": "https://en.wikipedia.org/wiki/Bouillabaisse",
+      "difficulty": "hard",
+      "status": "needs_image_render_check"
     },
     {
       "id": "cuisine_056",
@@ -1754,6 +1823,29 @@
       "status": "approved"
     },
     {
+      "id": "cuisine_076",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chili_con_carne_%284431800858%29.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Chili_con_carne_(4431800858).jpg",
+        "creator": "cyclonebill from Copenhagen, Denmark",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Chili_con_carne_%284431800858%29.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Chili con carne",
+        "Feijoada",
+        "Goulash",
+        "Dal"
+      ],
+      "answer": "Chili con carne",
+      "explanation": "Chili con carne is a spicy stew of chilli peppers and meat, often with beans, associated with Texas.",
+      "factSource": "https://en.wikipedia.org/wiki/Chili_con_carne",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
+    },
+    {
       "id": "cuisine_077",
       "prompt": "Which dish is shown?",
       "image": {
@@ -1929,6 +2021,29 @@
       "status": "approved"
     },
     {
+      "id": "cuisine_084",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Fish_Cakes_with_Singapore_Laksa_Ramen_Soup_%26_Grilled_Pork_Dumplings_-_Noodles_Soup%2C_Brighton.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Fish_Cakes_with_Singapore_Laksa_Ramen_Soup_%26_Grilled_Pork_Dumplings_-_Noodles_Soup,_Brighton.jpg",
+        "creator": "Andy Li",
+        "license": "CC0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Fish_Cakes_with_Singapore_Laksa_Ramen_Soup_%26_Grilled_Pork_Dumplings_-_Noodles_Soup%2C_Brighton.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Laksa",
+        "Tom yum",
+        "Ramen",
+        "Pho"
+      ],
+      "answer": "Laksa",
+      "explanation": "Laksa is a spicy noodle soup, often with coconut curry broth, from Malaysia and Singapore.",
+      "factSource": "https://en.wikipedia.org/wiki/Laksa",
+      "difficulty": "hard",
+      "status": "needs_image_render_check"
+    },
+    {
       "id": "cuisine_085",
       "prompt": "Which dish is shown?",
       "image": {
@@ -1977,6 +2092,29 @@
       "factSource": "https://en.wikipedia.org/wiki/Nasi_goreng",
       "difficulty": "medium",
       "status": "approved"
+    },
+    {
+      "id": "cuisine_087",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/DFC_2193_Sticky_char-grilled_skewers_of_savory_satay_glazed_in_a_rich_peanut_sauce_resting_on_a_banana_leaf.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:DFC_2193_Sticky_char-grilled_skewers_of_savory_satay_glazed_in_a_rich_peanut_sauce_resting_on_a_banana_leaf.jpg",
+        "creator": "PattayaPatrol",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/DFC_2193_Sticky_char-grilled_skewers_of_savory_satay_glazed_in_a_rich_peanut_sauce_resting_on_a_banana_leaf.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Satay",
+        "Tempura",
+        "Spring rolls",
+        "Takoyaki"
+      ],
+      "answer": "Satay",
+      "explanation": "Satay is skewered grilled meat served with peanut sauce, popular in Indonesia and Malaysia.",
+      "factSource": "https://en.wikipedia.org/wiki/Satay",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
     },
     {
       "id": "cuisine_088",
@@ -2129,6 +2267,29 @@
       "status": "approved"
     },
     {
+      "id": "cuisine_095",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Baechu_kimchi.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Baechu_kimchi.jpg",
+        "creator": "최광모",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Baechu_kimchi.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Kimchi",
+        "Sauerkraut",
+        "Coleslaw",
+        "Pickled ginger"
+      ],
+      "answer": "Kimchi",
+      "explanation": "Kimchi is Korean fermented cabbage, usually seasoned with chilli, garlic and ginger.",
+      "factSource": "https://en.wikipedia.org/wiki/Kimchi",
+      "difficulty": "easy",
+      "status": "needs_image_render_check"
+    },
+    {
       "id": "cuisine_096",
       "prompt": "Which dish is shown?",
       "image": {
@@ -2152,6 +2313,29 @@
       "factSource": "https://en.wikipedia.org/wiki/Tteok-bokki",
       "difficulty": "hard",
       "status": "approved"
+    },
+    {
+      "id": "cuisine_097",
+      "prompt": "Which dish is shown?",
+      "image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Shrimp_tempura_bowl_of_Japanese_National_Diet_Library.jpg?width=1200",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Shrimp_tempura_bowl_of_Japanese_National_Diet_Library.jpg",
+        "creator": "毒島みるく",
+        "license": "CC0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Shrimp_tempura_bowl_of_Japanese_National_Diet_Library.jpg?width=1200",
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+      },
+      "options": [
+        "Tempura",
+        "Fish and chips",
+        "Pakora",
+        "Karaage"
+      ],
+      "answer": "Tempura",
+      "explanation": "Tempura is seafood or vegetables fried in a very light, crisp batter, a classic of Japanese cooking.",
+      "factSource": "https://en.wikipedia.org/wiki/Tempura",
+      "difficulty": "medium",
+      "status": "needs_image_render_check"
     },
     {
       "id": "cuisine_098",

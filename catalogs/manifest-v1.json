@@ -30,8 +30,8 @@
       "approvedQuestions": 96,
       "currentVersion": 1,
       "lastRefreshedAt": "2026-11-06",
-      "nextAction": "Choose photos for the last 4 drafts in catalogs/drafts/expansion-2026-11.json (new Commons search running) to reach 100.",
-      "draftQuestions": 4,
+      "nextAction": "Find usable photos for the last 2 drafts (new search running).",
+      "draftQuestions": 2,
       "refreshHistory": [
         {
           "date": "2026-11-04",
@@ -51,8 +51,8 @@
       "approvedQuestions": 90,
       "currentVersion": 1,
       "lastRefreshedAt": "2026-11-06",
-      "nextAction": "Choose photos for the last 10 drafts in catalogs/drafts/expansion-2026-11.json (new Commons search running) to reach 100.",
-      "draftQuestions": 10,
+      "nextAction": "Find usable photos for the last 2 drafts (new search running).",
+      "draftQuestions": 2,
       "refreshHistory": [
         {
           "date": "2026-11-04",
