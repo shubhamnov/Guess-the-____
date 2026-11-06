@@ -27,15 +27,19 @@
       "title": "Guess the Landmark",
       "status": "in-progress",
       "targetQuestions": 100,
-      "approvedQuestions": 20,
+      "approvedQuestions": 96,
       "currentVersion": 1,
-      "lastRefreshedAt": "2026-11-04",
-      "nextAction": "Continue expanding the landmark catalog in curated batches toward 100 questions.",
-      "draftQuestions": 0,
+      "lastRefreshedAt": "2026-11-06",
+      "nextAction": "Choose photos for the last 4 drafts in catalogs/drafts/expansion-2026-11.json (new Commons search running) to reach 100.",
+      "draftQuestions": 4,
       "refreshHistory": [
         {
           "date": "2026-11-04",
           "summary": "Replaced hard-to-recognise photos (Great Wall, Statue of Liberty, Sydney Opera House, Neuschwanstein, Pyramids of Giza, Sagrada Família) with framed Commons photos; visually reviewed and approved."
+        },
+        {
+          "date": "2026-11-06",
+          "summary": "Added 76 questions with photos chosen from Commons candidates; cached locally, visually reviewed and approved (96 total)."
         }
       ]
     },
@@ -44,11 +48,11 @@
       "title": "Guess the Cuisine",
       "status": "in-progress",
       "targetQuestions": 100,
-      "approvedQuestions": 40,
+      "approvedQuestions": 90,
       "currentVersion": 1,
-      "lastRefreshedAt": "2026-11-04",
-      "nextAction": "Add questions 41–50 in a new batch, checking each photo against the photo quality rules in catalogs/README.md.",
-      "draftQuestions": 0,
+      "lastRefreshedAt": "2026-11-06",
+      "nextAction": "Choose photos for the last 10 drafts in catalogs/drafts/expansion-2026-11.json (new Commons search running) to reach 100.",
+      "draftQuestions": 10,
       "refreshHistory": [
         {
           "date": "2026-11-04",
@@ -57,6 +61,10 @@
         {
           "date": "2026-11-04",
           "summary": "Replaced Butter chicken (034) and Ramen (020) photos with clearer Commons photos; reviewed and approved. All 40 cuisine questions approved."
+        },
+        {
+          "date": "2026-11-06",
+          "summary": "Added 50 questions with photos chosen from Commons candidates; cached locally, visually reviewed and approved (90 total)."
         }
       ]
     },
@@ -216,6 +224,20 @@
       "change": "Added cuisine questions 31–40: baklava, Japanese curry rice, onigiri, butter chicken, Peking duck, churros, borscht, bánh mì, koshari and udon.",
       "validation": "40 unique IDs; 30 previously approved questions retained; 10 new questions remain in needs_image_render_check until local assets are verified and contact-sheet review confirms photo-to-answer matches. All 40 have four distinct choices, one correct answer, source, creator, license and fact-source metadata.",
       "commit": "6db4efffee025c780f014de3ac58034e4f75f149"
+    },
+    {
+      "date": "2026-11-06",
+      "category": "landmarks",
+      "version": 1,
+      "change": "Added 76 landmark questions (96 total).",
+      "validation": "Photos picked from Commons candidates (CC BY / BY-SA / CC0 / PD, at least 1000px), cached as local WebP and reviewed on a contact sheet; fact sources checked (HTTP 200). Four distinct options and one answer each."
+    },
+    {
+      "date": "2026-11-06",
+      "category": "cuisines",
+      "version": 1,
+      "change": "Added 50 cuisine questions (90 total).",
+      "validation": "Photos picked from Commons candidates (CC BY / BY-SA / CC0 / PD, at least 1000px), cached as local WebP and reviewed on a contact sheet; fact sources checked (HTTP 200). Four distinct options and one answer each."
     }
   ]
 }

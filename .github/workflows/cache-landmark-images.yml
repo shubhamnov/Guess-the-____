@@ -2,6 +2,7 @@ name: Cache landmark photos
 
 on:
   push:
+    branches: [main]
     paths:
       - "catalogs/landmarks-v1.json"
       - "scripts/cache_landmark_images.py"

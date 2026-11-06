@@ -2,6 +2,7 @@ name: Cache cuisine photos
 
 on:
   push:
+    branches: [main]
     paths:
       - "catalogs/cuisines-v1.json"
       - "scripts/cache_cuisine_images.py"

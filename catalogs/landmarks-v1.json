@@ -522,7 +522,7 @@
       "explanation": "Burj Khalifa in Dubai has been the world's tallest building since it opened in 2010, at about 828 metres.",
       "factSource": "https://en.wikipedia.org/wiki/Burj_Khalifa",
       "difficulty": "easy",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_022",
@@ -547,7 +547,7 @@
       "explanation": "Stonehenge is a prehistoric stone circle in Wiltshire, England, built in stages from around 3000 BC.",
       "factSource": "https://en.wikipedia.org/wiki/Stonehenge",
       "difficulty": "easy",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_023",
@@ -572,7 +572,7 @@
       "explanation": "El Castillo, the stepped pyramid of Kukulcán, stands at the centre of the Maya city of Chichén Itzá in Yucatán, Mexico.",
       "factSource": "https://en.wikipedia.org/wiki/Chichen_Itza",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_024",
@@ -597,7 +597,7 @@
       "explanation": "Tower Bridge crosses the River Thames in London and opened in 1894; its roadway lifts to let ships through.",
       "factSource": "https://en.wikipedia.org/wiki/Tower_Bridge",
       "difficulty": "easy",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_025",
@@ -622,7 +622,7 @@
       "explanation": "The glass pyramid designed by I. M. Pei became the main entrance of the Louvre museum in Paris in 1989.",
       "factSource": "https://en.wikipedia.org/wiki/Louvre_Pyramid",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_026",
@@ -647,7 +647,7 @@
       "explanation": "Napoleon commissioned the Arc de Triomphe in Paris in 1806; it was completed in 1836.",
       "factSource": "https://en.wikipedia.org/wiki/Arc_de_Triomphe",
       "difficulty": "easy",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_027",
@@ -672,7 +672,7 @@
       "explanation": "Berlin's neoclassical Brandenburg Gate was completed in 1791 and became a symbol of German reunification.",
       "factSource": "https://en.wikipedia.org/wiki/Brandenburg_Gate",
       "difficulty": "easy",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_028",
@@ -697,7 +697,7 @@
       "explanation": "Notre-Dame stands on the Île de la Cité in Paris; it reopened in December 2024 after the 2019 fire.",
       "factSource": "https://en.wikipedia.org/wiki/Notre-Dame_de_Paris",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_029",
@@ -722,7 +722,7 @@
       "explanation": "Saint Basil's Cathedral, with its colourful onion domes, was built on Red Square in Moscow in the 1550s under Ivan the Terrible.",
       "factSource": "https://en.wikipedia.org/wiki/Saint_Basil%27s_Cathedral",
       "difficulty": "easy",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_030",
@@ -741,13 +741,13 @@
         "Hagia Sophia",
         "Blue Mosque",
         "Süleymaniye Mosque",
-        "Dome of the Rock"
+        "Sheikh Zayed Grand Mosque"
       ],
       "answer": "Hagia Sophia",
       "explanation": "Hagia Sophia in Istanbul was completed in 537 as the cathedral of Constantinople, and its great dome still dominates the skyline.",
       "factSource": "https://en.wikipedia.org/wiki/Hagia_Sophia",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_031",
@@ -772,7 +772,7 @@
       "explanation": "The Sultan Ahmed Mosque in Istanbul, completed in 1616, is called the Blue Mosque after the blue tiles inside.",
       "factSource": "https://en.wikipedia.org/wiki/Blue_Mosque,_Istanbul",
       "difficulty": "hard",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_032",
@@ -797,7 +797,7 @@
       "explanation": "Mont-Saint-Michel is a tidal island in Normandy, France, crowned by a medieval abbey.",
       "factSource": "https://en.wikipedia.org/wiki/Mont-Saint-Michel",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_033",
@@ -822,7 +822,7 @@
       "explanation": "Mount Fuji is Japan's highest mountain at 3,776 metres and an active volcano.",
       "factSource": "https://en.wikipedia.org/wiki/Mount_Fuji",
       "difficulty": "easy",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_034",
@@ -847,7 +847,7 @@
       "explanation": "The Colorado River carved the Grand Canyon in Arizona, USA, over millions of years.",
       "factSource": "https://en.wikipedia.org/wiki/Grand_Canyon",
       "difficulty": "easy",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_035",
@@ -872,7 +872,7 @@
       "explanation": "Niagara Falls lies on the border between Ontario, Canada, and New York, USA.",
       "factSource": "https://en.wikipedia.org/wiki/Niagara_Falls",
       "difficulty": "easy",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_036",
@@ -897,7 +897,7 @@
       "explanation": "Uluru is a huge sandstone rock in Australia's Northern Territory, sacred to the Aṉangu people.",
       "factSource": "https://en.wikipedia.org/wiki/Uluru",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_038",
@@ -922,7 +922,7 @@
       "explanation": "Ha Long Bay in Vietnam is dotted with thousands of limestone islands and is a UNESCO World Heritage Site.",
       "factSource": "https://en.wikipedia.org/wiki/Ha_Long_Bay",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_039",
@@ -947,7 +947,7 @@
       "explanation": "Victoria Falls is on the Zambezi River, on the border between Zambia and Zimbabwe.",
       "factSource": "https://en.wikipedia.org/wiki/Victoria_Falls",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_040",
@@ -972,7 +972,7 @@
       "explanation": "The pyramid-shaped Matterhorn rises 4,478 metres on the border between Switzerland and Italy.",
       "factSource": "https://en.wikipedia.org/wiki/Matterhorn",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_041",
@@ -997,7 +997,7 @@
       "explanation": "The White Tower at the heart of the Tower of London was begun by William the Conqueror around 1078.",
       "factSource": "https://en.wikipedia.org/wiki/Tower_of_London",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_042",
@@ -1022,7 +1022,7 @@
       "explanation": "Buckingham Palace in London is the official London residence of the British monarch.",
       "factSource": "https://en.wikipedia.org/wiki/Buckingham_Palace",
       "difficulty": "easy",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_043",
@@ -1047,7 +1047,7 @@
       "explanation": "Louis XIV moved the French royal court to the Palace of Versailles in 1682.",
       "factSource": "https://en.wikipedia.org/wiki/Palace_of_Versailles",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_044",
@@ -1072,7 +1072,7 @@
       "explanation": "Edinburgh Castle sits on Castle Rock, the plug of an ancient volcano, above Scotland's capital.",
       "factSource": "https://en.wikipedia.org/wiki/Edinburgh_Castle",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_045",
@@ -1097,7 +1097,7 @@
       "explanation": "Building of Prague's Charles Bridge over the Vltava began in 1357; it is lined with 30 statues.",
       "factSource": "https://en.wikipedia.org/wiki/Charles_Bridge",
       "difficulty": "hard",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_046",
@@ -1122,7 +1122,7 @@
       "explanation": "Florence's Ponte Vecchio crosses the Arno and is still lined with shops, mostly jewellers.",
       "factSource": "https://en.wikipedia.org/wiki/Ponte_Vecchio",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_047",
@@ -1147,7 +1147,7 @@
       "explanation": "The stone Rialto Bridge over Venice's Grand Canal was completed in 1591.",
       "factSource": "https://en.wikipedia.org/wiki/Rialto_Bridge",
       "difficulty": "hard",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_048",
@@ -1172,7 +1172,7 @@
       "explanation": "St. Peter's Basilica in Vatican City has a dome designed by Michelangelo.",
       "factSource": "https://en.wikipedia.org/wiki/St._Peter%27s_Basilica",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_049",
@@ -1197,7 +1197,7 @@
       "explanation": "Filippo Brunelleschi's dome on Florence Cathedral was completed in 1436 and is still the largest brick dome ever built.",
       "factSource": "https://en.wikipedia.org/wiki/Florence_Cathedral",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_050",
@@ -1222,7 +1222,7 @@
       "explanation": "Milan Cathedral took nearly six centuries to complete and is covered in spires and statues.",
       "factSource": "https://en.wikipedia.org/wiki/Milan_Cathedral",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_051",
@@ -1247,7 +1247,7 @@
       "explanation": "Cologne Cathedral's twin Gothic spires rise 157 metres; it was finally completed in 1880.",
       "factSource": "https://en.wikipedia.org/wiki/Cologne_Cathedral",
       "difficulty": "hard",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_052",
@@ -1272,7 +1272,7 @@
       "explanation": "The Atomium in Brussels was built for Expo 58 and models an iron crystal magnified 165 billion times.",
       "factSource": "https://en.wikipedia.org/wiki/Atomium",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_053",
@@ -1297,7 +1297,7 @@
       "explanation": "The Alhambra in Granada, Spain, was the palace-fortress of the Nasrid rulers.",
       "factSource": "https://en.wikipedia.org/wiki/Alhambra",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_054",
@@ -1322,7 +1322,7 @@
       "explanation": "The Potala Palace in Lhasa, Tibet, was the winter residence of the Dalai Lamas.",
       "factSource": "https://en.wikipedia.org/wiki/Potala_Palace",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_055",
@@ -1347,7 +1347,7 @@
       "explanation": "At Beijing's Temple of Heaven, emperors prayed for good harvests; the round hall dates from the Ming dynasty.",
       "factSource": "https://en.wikipedia.org/wiki/Temple_of_Heaven",
       "difficulty": "hard",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_056",
@@ -1372,7 +1372,7 @@
       "explanation": "Thousands of clay soldiers were buried with China's first emperor, Qin Shi Huang, and found near Xi'an in 1974.",
       "factSource": "https://en.wikipedia.org/wiki/Terracotta_Army",
       "difficulty": "easy",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_057",
@@ -1397,7 +1397,7 @@
       "explanation": "Fushimi Inari Taisha in Kyoto is famous for paths lined with thousands of vermilion torii gates.",
       "factSource": "https://en.wikipedia.org/wiki/Fushimi_Inari-taisha",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_058",
@@ -1422,7 +1422,7 @@
       "explanation": "Kinkaku-ji, the Golden Pavilion in Kyoto, is covered in gold leaf; it was rebuilt in 1955 after a fire.",
       "factSource": "https://en.wikipedia.org/wiki/Kinkaku-ji",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_059",
@@ -1447,7 +1447,7 @@
       "explanation": "Himeji Castle is nicknamed the White Heron Castle for its brilliant white walls.",
       "factSource": "https://en.wikipedia.org/wiki/Himeji_Castle",
       "difficulty": "hard",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_060",
@@ -1472,7 +1472,7 @@
       "explanation": "Kuala Lumpur's Petronas Towers, finished in 1998, are the tallest twin towers in the world, linked by a skybridge.",
       "factSource": "https://en.wikipedia.org/wiki/Petronas_Towers",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_061",
@@ -1497,7 +1497,7 @@
       "explanation": "Marina Bay Sands in Singapore opened in 2010; a sky park sits across the tops of its three towers.",
       "factSource": "https://en.wikipedia.org/wiki/Marina_Bay_Sands",
       "difficulty": "easy",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_062",
@@ -1522,7 +1522,7 @@
       "explanation": "Dubai's sail-shaped Burj Al Arab hotel stands on an artificial island and opened in 1999.",
       "factSource": "https://en.wikipedia.org/wiki/Burj_Al_Arab",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_064",
@@ -1547,7 +1547,7 @@
       "explanation": "The Gateway of India on Mumbai's waterfront was completed in 1924.",
       "factSource": "https://en.wikipedia.org/wiki/Gateway_of_India",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_065",
@@ -1572,7 +1572,7 @@
       "explanation": "India Gate in New Delhi is a war memorial to Indian soldiers who died in the First World War.",
       "factSource": "https://en.wikipedia.org/wiki/India_Gate",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_066",
@@ -1597,7 +1597,7 @@
       "explanation": "The Golden Temple (Harmandir Sahib) in Amritsar is the holiest gurdwara of Sikhism.",
       "factSource": "https://en.wikipedia.org/wiki/Golden_Temple",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_067",
@@ -1622,7 +1622,7 @@
       "explanation": "Jaipur's pink sandstone Hawa Mahal, built in 1799, has 953 small windows.",
       "factSource": "https://en.wikipedia.org/wiki/Hawa_Mahal",
       "difficulty": "hard",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_068",
@@ -1647,7 +1647,7 @@
       "explanation": "New Delhi's Lotus Temple is a Baháʼí House of Worship shaped like a lotus flower; it opened in 1986.",
       "factSource": "https://en.wikipedia.org/wiki/Lotus_Temple",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_069",
@@ -1672,7 +1672,7 @@
       "explanation": "Delhi's Qutub Minar is a tapering brick minaret about 73 metres tall, begun around 1200.",
       "factSource": "https://en.wikipedia.org/wiki/Qutb_Minar",
       "difficulty": "hard",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_070",
@@ -1697,7 +1697,7 @@
       "explanation": "The Charminar in Hyderabad, India, with its four minarets, was built in 1591.",
       "factSource": "https://en.wikipedia.org/wiki/Charminar",
       "difficulty": "hard",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_071",
@@ -1722,7 +1722,7 @@
       "explanation": "The gilded Shwedagon Pagoda towers over Yangon and is Myanmar's most sacred Buddhist site.",
       "factSource": "https://en.wikipedia.org/wiki/Shwedagon_Pagoda",
       "difficulty": "hard",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_072",
@@ -1747,7 +1747,7 @@
       "explanation": "Wat Arun, the Temple of Dawn, stands on the bank of the Chao Phraya River in Bangkok.",
       "factSource": "https://en.wikipedia.org/wiki/Wat_Arun",
       "difficulty": "hard",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_073",
@@ -1772,7 +1772,7 @@
       "explanation": "Borobudur in Central Java, Indonesia, is a 9th-century temple and the largest Buddhist temple in the world.",
       "factSource": "https://en.wikipedia.org/wiki/Borobudur",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_075",
@@ -1797,7 +1797,7 @@
       "explanation": "Abu Simbel's giant statues of Ramesses II were moved to higher ground in the 1960s to escape the Aswan Dam's lake.",
       "factSource": "https://en.wikipedia.org/wiki/Abu_Simbel",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_076",
@@ -1822,7 +1822,7 @@
       "explanation": "The Great Sphinx of Giza, a lion with a human head, was carved from limestone in ancient Egypt.",
       "factSource": "https://en.wikipedia.org/wiki/Great_Sphinx_of_Giza",
       "difficulty": "easy",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_078",
@@ -1847,7 +1847,7 @@
       "explanation": "Kilimanjaro in Tanzania is Africa's highest mountain at 5,895 metres.",
       "factSource": "https://en.wikipedia.org/wiki/Mount_Kilimanjaro",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_079",
@@ -1872,7 +1872,7 @@
       "explanation": "Toronto's CN Tower, completed in 1976, is 553 metres tall.",
       "factSource": "https://en.wikipedia.org/wiki/CN_Tower",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_080",
@@ -1897,7 +1897,7 @@
       "explanation": "Seattle's Space Needle was built for the 1962 World's Fair.",
       "factSource": "https://en.wikipedia.org/wiki/Space_Needle",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_081",
@@ -1922,7 +1922,7 @@
       "explanation": "New York's Empire State Building was completed in 1931 and was the world's tallest building for nearly 40 years.",
       "factSource": "https://en.wikipedia.org/wiki/Empire_State_Building",
       "difficulty": "easy",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_082",
@@ -1947,7 +1947,7 @@
       "explanation": "The Art Deco Chrysler Building in New York, with its stainless-steel crown, was completed in 1930.",
       "factSource": "https://en.wikipedia.org/wiki/Chrysler_Building",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_083",
@@ -1972,7 +1972,7 @@
       "explanation": "New York's triangular Flatiron Building was completed in 1902.",
       "factSource": "https://en.wikipedia.org/wiki/Flatiron_Building",
       "difficulty": "hard",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_084",
@@ -1997,7 +1997,7 @@
       "explanation": "The White House in Washington, D.C., has been home to every US president since John Adams in 1800.",
       "factSource": "https://en.wikipedia.org/wiki/White_House",
       "difficulty": "easy",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_085",
@@ -2022,7 +2022,7 @@
       "explanation": "The domed United States Capitol in Washington, D.C., is the seat of the US Congress.",
       "factSource": "https://en.wikipedia.org/wiki/United_States_Capitol",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_086",
@@ -2047,7 +2047,7 @@
       "explanation": "The Lincoln Memorial in Washington, D.C., opened in 1922 with a giant seated statue of Abraham Lincoln.",
       "factSource": "https://en.wikipedia.org/wiki/Lincoln_Memorial",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_087",
@@ -2072,7 +2072,7 @@
       "explanation": "St. Louis's stainless-steel Gateway Arch, completed in 1965, is 192 metres tall, the tallest arch in the world.",
       "factSource": "https://en.wikipedia.org/wiki/Gateway_Arch",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_088",
@@ -2097,7 +2097,7 @@
       "explanation": "The Brooklyn Bridge opened in 1883, linking Manhattan and Brooklyn across the East River.",
       "factSource": "https://en.wikipedia.org/wiki/Brooklyn_Bridge",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_089",
@@ -2122,7 +2122,7 @@
       "explanation": "Budapest's Hungarian Parliament Building on the Danube was completed in 1904.",
       "factSource": "https://en.wikipedia.org/wiki/Hungarian_Parliament_Building",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_090",
@@ -2147,7 +2147,7 @@
       "explanation": "Berlin's Reichstag building got its glass dome, designed by Norman Foster, in 1999.",
       "factSource": "https://en.wikipedia.org/wiki/Reichstag_building",
       "difficulty": "hard",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_091",
@@ -2172,7 +2172,7 @@
       "explanation": "Seville's Plaza de España was built for the Ibero-American Exposition of 1929.",
       "factSource": "https://en.wikipedia.org/wiki/Plaza_de_España_(Seville)",
       "difficulty": "hard",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_092",
@@ -2197,7 +2197,7 @@
       "explanation": "The colourful Pena Palace sits on a hilltop above Sintra, Portugal.",
       "factSource": "https://en.wikipedia.org/wiki/Pena_Palace",
       "difficulty": "hard",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_093",
@@ -2222,7 +2222,7 @@
       "explanation": "Lisbon's Belém Tower is a 16th-century fortification on the Tagus River.",
       "factSource": "https://en.wikipedia.org/wiki/Belém_Tower",
       "difficulty": "hard",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_094",
@@ -2247,7 +2247,7 @@
       "explanation": "Rome's Baroque Trevi Fountain was completed in 1762; visitors toss coins into it.",
       "factSource": "https://en.wikipedia.org/wiki/Trevi_Fountain",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_095",
@@ -2272,7 +2272,7 @@
       "explanation": "Rome's Pantheon, finished around AD 125, still has the world's largest unreinforced concrete dome.",
       "factSource": "https://en.wikipedia.org/wiki/Pantheon,_Rome",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_096",
@@ -2297,7 +2297,7 @@
       "explanation": "At Meteora in Greece, monasteries sit on top of tall rock pillars.",
       "factSource": "https://en.wikipedia.org/wiki/Meteora",
       "difficulty": "hard",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_097",
@@ -2322,7 +2322,7 @@
       "explanation": "The Cliffs of Moher in County Clare, Ireland, rise up to 214 metres above the Atlantic.",
       "factSource": "https://en.wikipedia.org/wiki/Cliffs_of_Moher",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_098",
@@ -2347,7 +2347,7 @@
       "explanation": "About 40,000 interlocking basalt columns form the Giant's Causeway in Northern Ireland.",
       "factSource": "https://en.wikipedia.org/wiki/Giant%27s_Causeway",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_099",
@@ -2372,7 +2372,7 @@
       "explanation": "The Twelve Apostles are limestone sea stacks along the Great Ocean Road in Victoria, Australia.",
       "factSource": "https://en.wikipedia.org/wiki/The_Twelve_Apostles_(Victoria)",
       "difficulty": "hard",
-      "status": "needs_image_render_check"
+      "status": "approved"
     },
     {
       "id": "landmark_100",
@@ -2397,7 +2397,7 @@
       "explanation": "Sugarloaf Mountain rises 396 metres above Guanabara Bay in Rio de Janeiro; a cable car runs to the top.",
       "factSource": "https://en.wikipedia.org/wiki/Sugarloaf_Mountain",
       "difficulty": "medium",
-      "status": "needs_image_render_check"
+      "status": "approved"
     }
   ]
 }
