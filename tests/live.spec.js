@@ -135,3 +135,44 @@ test('every game links to live mode and the live page lists them all', async ({ 
     expect(res.ok(), href).toBe(true);
   }
 });
+
+test('home page: the friend switch turns every game into a new live room, and a code joins from home', async ({ page }) => {
+  await page.goto('./');
+  const flags = page.locator('.game-card[href^="./guess-the-flag/"]');
+  await expect(flags).toHaveAttribute('href', './guess-the-flag/');
+  await page.getByRole('radio', { name: /With a friend/ }).click();
+  await expect(flags).toHaveAttribute('href', './guess-the-flag/?live=new');
+  await expect(flags.locator('.tag-live')).toHaveText('⚡ Create room');
+  await expect(page.locator('.mixcard')).toBeVisible();
+  // The choice is remembered on the next visit.
+  await page.reload();
+  await expect(flags).toHaveAttribute('href', './guess-the-flag/?live=new');
+  await page.locator('#homeCode').fill('ab');
+  await page.locator('#joinForm button').click();
+  await expect(page.locator('#joinError')).toContainText('4-letter code');
+  await page.route('**/race/**', r => r.fulfill({ body: 'ok' }));
+  await page.locator('#homeCode').fill('abcd');
+  await page.locator('#joinForm button').click();
+  await expect(page).toHaveURL(/race\/\?live=ABCD$/);
+  await page.goto('./');
+  await page.getByRole('radio', { name: /Solo/ }).click();
+  await expect(flags).toHaveAttribute('href', './guess-the-flag/');
+  await expect(flags.locator('.tag-live')).toHaveCount(0);
+});
+
+test('a room made from the home page (?live=new) is ready at once, and a code typed on home finds its game', async ({ browser }) => {
+  test.skip(PUBLISHED, 'Checked locally only');
+  test.setTimeout(90000);
+  const hostCtx = await browser.newContext(), guestCtx = await browser.newContext();
+  const host = await hostCtx.newPage(), guest = await guestCtx.newPage();
+  await host.goto('guess-the-flag/?live=new' + SIGNAL);
+  await expect(host.locator('#roomCode')).toHaveText(/^[A-Z]{4}$/);
+  await expect(host.locator('#inviteBtn')).toBeVisible();
+  await expect(host.locator('#raceStatus')).toContainText('Keep this page open', { timeout: 20000 });
+  const code = await host.locator('#roomCode').innerText();
+  // The home page sends every code to the Mix page; live mode then moves the guest to the host's game.
+  await guest.goto('race/?live=' + code + SIGNAL);
+  await expect(guest).toHaveURL(/guess-the-flag\//, { timeout: 45000 });
+  await expect(guest.locator('#readyBtn')).toBeVisible({ timeout: 45000 });
+  await hostCtx.close(); await guestCtx.close();
+});

@@ -294,6 +294,8 @@ function attach(api){
  // A code in the link (?live=CODE, or ?room=CODE from the first race links) joins straight away.
  const fromLink=cleanCode(params.get('live')||params.get('room'));
  if(fromLink.length===4){$('codeInput').value=fromLink;joinRoom(fromLink)}
+ // ?live=new (from the home page in "With a friend" mode) creates a room straight away, so the code is ready to send.
+ else if(String(params.get('live')).toLowerCase()==='new')createRoom();
 
  return {
   onStart(info){R.total=info.total||0},
