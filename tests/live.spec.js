@@ -137,13 +137,16 @@ test('every game links to live mode and the live page lists them all', async ({ 
   }
 });
 
-test('home page: every game card offers Solo and With a friend, and a code joins from home', async ({ page }) => {
+test('home page: tapping a game asks Solo or With a friend, and a code joins from home', async ({ page }) => {
   await page.goto('./');
-  const flags = page.locator('.game-card[data-href="./guess-the-flag/"]');
-  await expect(flags.locator('.play-solo')).toHaveAttribute('href', './guess-the-flag/');
-  await expect(flags.locator('.play-friend')).toHaveAttribute('href', './guess-the-flag/?live=new');
-  await expect(flags.locator('.play-friend')).toBeVisible();
-  expect(await page.locator('.game-card .play-friend').count()).toBe(await page.locator('.game-card').count());
+  await page.locator('.game-card[href="./guess-the-flag/"]').click();
+  const sheet = page.locator('#modeSheet');
+  await expect(sheet).toBeVisible();
+  await expect(sheet.locator('#sheetTitle')).toHaveText('Flags');
+  await expect(sheet.locator('#sheetSolo')).toHaveAttribute('href', './guess-the-flag/');
+  await expect(sheet.locator('#sheetFriend')).toHaveAttribute('href', './guess-the-flag/?live=new');
+  await page.locator('#sheetClose').click();
+  await expect(sheet).toBeHidden();
   await page.locator('#homeCode').fill('ab');
   await page.locator('#joinForm button').click();
   await expect(page.locator('#joinError')).toContainText('4-letter code');
