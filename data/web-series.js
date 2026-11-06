@@ -289,7 +289,7 @@ GTQ_DATA.webSeriesCharacters=[
 ["Honey","Citadel: Honey Bunny","Samantha Ruth Prabhu"],
 ["Jawaharlal Nehru","Freedom at Midnight","Sidhant Gupta"],
 ["Mahatma Gandhi","Freedom at Midnight","Chirag Vohra"],
-["Trevor Belmont","Castlevania",""],
+["Trevor Belmont","Castlevania","Richard Armitage"],
 ["Guzmán","Elite","Miguel Bernardeau"],
 ["Marie Adler","Unbelievable","Kaitlyn Dever"],
 ["Emily Dickinson","Dickinson","Hailee Steinfeld"],
@@ -322,3 +322,5 @@ GTQ_DATA.webSeriesCharacters=[
 ];
 GTQ_DATA.webSeriesWhere={in:['Netflix','Prime Video','Disney+ Hotstar','SonyLIV','YouTube','Voot','ZEE5','JioCinema'],
  intl:['Netflix','Prime Video','Disney+','Apple TV+','HBO Max','Hulu']};
+/* Animated shows: their cast are voice actors (see cfg.animated in shared/series-game.js). Add new ones here. */
+GTQ_DATA.webSeriesAnimated=["Arcane","BoJack Horseman","Invincible","Castlevania","Big Mouth","Blue Eye Samurai"];

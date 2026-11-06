@@ -371,3 +371,5 @@ GTQ_DATA.seriesCharacters=[
 ];
 GTQ_DATA.seriesWhere={in:['Doordarshan','Star Plus','Sony','SAB TV','Zee TV','Colors','Star One','&TV','Life OK'],
  intl:['NBC','CBS','ABC','Fox','HBO','AMC','BBC','ITV','Showtime','USA Network','The CW','The WB','FX','Channel 4','Paramount Network']};
+/* Animated shows outside the cartoon group: their cast are voice actors (see cfg.animated in shared/series-game.js). */
+GTQ_DATA.seriesAnimated=["The Simpsons"];

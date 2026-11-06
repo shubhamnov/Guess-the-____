@@ -1,20 +1,23 @@
 /* Shared game for Guess the Series and Guess the Web Series. Rows: [show, year, cast, line, emoji, saidBy, where, group].
- * The site-wide Global / India / Both switch (shared/region.js) picks which shows are asked. */
+ * The site-wide Global / India / Both switch (shared/region.js) picks which shows are asked.
+ * cfg.animated: shows whose cast are voice actors (cartoons in the toon group have no cast at all). Their actor questions
+ * say "voices" and offer other animated shows' voice leads; with too few of those, the show gets another kind of question. */
 window.GTQSeries=function(cfg){
  const GROUP_NAME={in:'Indian',intl:'International',toon:'Cartoon'};
- const INDIAN=new Set(cfg.indianToons||[]);
- const ALL=cfg.rows.map(([show,year,cast,line,emoji,saidBy,where,group])=>({show,year,cast,star:cast[0]||'',line,emoji,saidBy:saidBy||'',where:where||'',group,
+ const INDIAN=new Set(cfg.indianToons||[]),ANIMATED=new Set(cfg.animated||[]);
+ const ALL=cfg.rows.map(([show,year,cast,line,emoji,saidBy,where,group])=>({show,year,cast,star:cast[0]||'',line,emoji,saidBy:saidBy||'',where:where||'',group,animated:ANIMATED.has(show),
   region:group==='in'||INDIAN.has(show)?'india':'global'}));
  let region=GTQRegion.get();
- let DATA=ALL,ACTORS=[],pool,charPool;
- /* The two leads of every show in play, with its group, for wrong answers. (Supporting cast are only ever right answers.) */
- function useRegion(r){region=r;DATA=r==='both'?ALL:ALL.filter(x=>x.region===r);ACTORS=[];DATA.forEach(x=>x.cast.slice(0,2).forEach(a=>ACTORS.push({name:a,group:x.group})));
+ let DATA=ALL,ACTORS=[],VOICES=[],pool,charPool;
+ /* The two leads of every show in play, with its group, for wrong answers. (Supporting cast are only ever right answers.)
+  * Animated shows' voice leads are kept apart, so a screen star is never up against a voice actor, or the reverse. */
+ function useRegion(r){region=r;DATA=r==='both'?ALL:ALL.filter(x=>x.region===r);ACTORS=[];VOICES=[];DATA.forEach(x=>x.cast.slice(0,2).forEach(a=>(x.animated?VOICES:ACTORS).push({name:a,group:x.group})));
   pool=GuessGame.util.deck(DATA,x=>x.show);charPool=GuessGame.util.deck(CHARACTERS.filter(c=>r==='both'||c.item.region===r),x=>x.name)}
  const BY_SHOW=new Map(ALL.map(x=>[x.show,x]));
  const CHARACTERS=cfg.characters.map(([name,show,actor])=>({name,actor,item:BY_SHOW.get(show)})).filter(c=>c.item);
  useRegion(region);
  function otherActors(ctx,item,exclude){
-  const bad=new Set(item.cast.concat(exclude||[])),list=ctx.util.shuffle(ACTORS.filter(a=>!bad.has(a.name)));
+  const bad=new Set(item.cast.concat(exclude||[])),list=ctx.util.shuffle((item.animated?VOICES:ACTORS).filter(a=>!bad.has(a.name)));
   const ordered=ctx.hard?list.filter(a=>a.group===item.group).concat(list):list,out=[];
   for(const a of ordered)if(!out.includes(a.name)){out.push(a.name);if(out.length===3)break}
   return out;
@@ -46,7 +49,7 @@ window.GTQSeries=function(cfg){
    if(f==='character'){
     const c=charPool.draw(),it=c.item,lab=it.show+' ('+it.year+')';
     return {kind:'Character',answer:it.show,options:shows(it),prompt:'Which show is this character from?',level,
-     explanation:c.name+' is from '+lab+(c.actor?', played by '+c.actor:'')+'.',render(h){quote(h,c.name,'Character')}};
+     explanation:c.name+' is from '+lab+(c.actor?(it.animated?', voiced by ':', played by ')+c.actor:'')+'.',render(h){quote(h,c.name,'Character')}};
    }
    if(f==='first'){
     const src=ctx.util.shuffle(ctx.hard?DATA.filter(x=>x.group===item.group&&x!==item):DATA.filter(x=>x!==item)),picked=[item],years=new Set([item.year]);
@@ -58,15 +61,19 @@ window.GTQSeries=function(cfg){
     }
     f='emoji';
    }
-   if(f==='costar'){
-    const co=item.cast[1];
-    return {kind:'Co-star',answer:co,options:ctx.util.shuffle([co].concat(otherActors(ctx,item))),prompt:'Who else stars in this show?',level,
-     explanation:co+' stars with '+item.star+' in '+label+'.',render(h){title(h,item,item.year+' · with '+item.star)}};
+   if(f==='costar'||f==='star'||f==='saidby'){
+    const wrong=otherActors(ctx,item,f==='saidby'?[item.saidBy]:null),v=item.animated;
+    if(wrong.length<3)f=item.line?'line':'emoji'; // an animated show with too few other voice actors to choose from
+    else if(f==='costar'){
+     const co=item.cast[1];
+     return {kind:'Co-star',answer:co,options:ctx.util.shuffle([co].concat(wrong)),prompt:v?'Who else voices a lead in this show?':'Who else stars in this show?',level,
+      explanation:co+(v?' voices a lead with ':' stars with ')+item.star+' in '+label+'.',render(h){title(h,item,item.year+(v?' · animated · voiced with ':' · with ')+item.star)}};
+    }
+    else if(f==='star')return {kind:'Star',answer:item.star,options:ctx.util.shuffle([item.star].concat(wrong)),prompt:v?'Who voices the lead in this show?':'Who stars in this show?',level,
+     explanation:item.star+(v?' voices the lead in ':' stars in ')+label+'.',render(h){title(h,item,v?item.year+' · animated':item.year)}};
+    else return {kind:'Who said it?',answer:item.saidBy,options:ctx.util.shuffle([item.saidBy].concat(wrong)),prompt:v?'Who voices the character who says this line?':'Who says this line?',level,
+     explanation:item.saidBy+(v?' voices that line in ':' says it in ')+label+'.',render(h){quote(h,'“'+item.line+'”',item.show+' · '+item.year)}};
    }
-   if(f==='star')return {kind:'Star',answer:item.star,options:ctx.util.shuffle([item.star].concat(otherActors(ctx,item))),prompt:'Who stars in this show?',level,
-    explanation:item.star+' stars in '+label+'.',render(h){title(h,item)}};
-   if(f==='saidby')return {kind:'Who said it?',answer:item.saidBy,options:ctx.util.shuffle([item.saidBy].concat(otherActors(ctx,item,[item.saidBy]))),prompt:'Who says this line?',level,
-    explanation:item.saidBy+' says it in '+label+'.',render(h){quote(h,'“'+item.line+'”',item.show+' · '+item.year)}};
    if(f==='line')return {kind:'Famous line',answer:item.show,options:shows(item),prompt:'Which show is this line from?',level,explanation:'That line is from '+label+'.',
     render(h){quote(h,'“'+item.line+'”','Famous line')}};
    return {kind:'Emoji plot',answer:item.show,options:shows(item),prompt:'Which show do these emoji describe?',level,explanation:'That was '+label+' · '+GROUP_NAME[item.group]+(item.group==='toon'?'':' show')+'.',
