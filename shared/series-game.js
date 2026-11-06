@@ -1,12 +1,24 @@
-/* Shared game for Guess the Series and Guess the Web Series. Rows: [show, year, cast, line, emoji, saidBy, where, group]. */
+/* Shared game for Guess the Series and Guess the Web Series. Rows: [show, year, cast, line, emoji, saidBy, where, group].
+ * A Global / India / Both switch picks which shows are asked (saved on this device, or ?region=global|india|both).
+ * It sits above the questions (switching restarts the round with the new shows) and above Play again on the result screen.
+ * Live games always use Both, because a room link does not carry the setting. */
 window.GTQSeries=function(cfg){
- const GROUP_NAME={in:'Indian',intl:'International',toon:'Cartoons'};
- const DATA=cfg.rows.map(([show,year,cast,line,emoji,saidBy,where,group])=>({show,year,cast,star:cast[0]||'',line,emoji,saidBy:saidBy||'',where:where||'',group}));
- const BY_SHOW=new Map(DATA.map(x=>[x.show,x]));
+ const GROUP_NAME={in:'Indian',intl:'International',toon:'Cartoon'};
+ const INDIAN=new Set(cfg.indianToons||[]);
+ const ALL=cfg.rows.map(([show,year,cast,line,emoji,saidBy,where,group])=>({show,year,cast,star:cast[0]||'',line,emoji,saidBy:saidBy||'',where:where||'',group,
+  region:group==='in'||INDIAN.has(show)?'india':'global'}));
+ const REGIONS=[['global','🌍 Global'],['india','🇮🇳 India'],['both','Both']],KEY='gtq:region';
+ const live=new URLSearchParams(location.search).has('live');
+ let region=new URLSearchParams(location.search).get('region');
+ if(!REGIONS.some(r=>r[0]===region)){try{region=localStorage.getItem(KEY)}catch(e){region=null}}
+ if(live||!REGIONS.some(r=>r[0]===region))region='both';
+ let DATA=ALL,ACTORS=[],pool,charPool;
+ /* The two leads of every show in play, with its group, for wrong answers. (Supporting cast are only ever right answers.) */
+ function useRegion(r){region=r;DATA=r==='both'?ALL:ALL.filter(x=>x.region===r);ACTORS=[];DATA.forEach(x=>x.cast.slice(0,2).forEach(a=>ACTORS.push({name:a,group:x.group})));
+  pool=GuessGame.util.deck(DATA,x=>x.show);charPool=GuessGame.util.deck(CHARACTERS.filter(c=>r==='both'||c.item.region===r),x=>x.name)}
+ const BY_SHOW=new Map(ALL.map(x=>[x.show,x]));
  const CHARACTERS=cfg.characters.map(([name,show,actor])=>({name,actor,item:BY_SHOW.get(show)})).filter(c=>c.item);
- /* The two leads of every show, with its group, for wrong answers. (Supporting cast are only ever right answers.) */
- const ACTORS=[];DATA.forEach(x=>x.cast.slice(0,2).forEach(a=>ACTORS.push({name:a,group:x.group})));
- const pool=GuessGame.util.deck(DATA,x=>x.show),charPool=GuessGame.util.deck(CHARACTERS,x=>x.name);
+ useRegion(region);
  function otherActors(ctx,item,exclude){
   const bad=new Set(item.cast.concat(exclude||[])),list=ctx.util.shuffle(ACTORS.filter(a=>!bad.has(a.name)));
   const ordered=ctx.hard?list.filter(a=>a.group===item.group).concat(list):list,out=[];
@@ -19,7 +31,8 @@ window.GTQSeries=function(cfg){
   q.style.fontSize=text.length>70?'clamp(19px,5vw,26px)':text.length>40?'clamp(23px,6.2vw,34px)':'clamp(28px,8vw,46px)';
   const s=document.createElement('div');s.className='clue-sub';s.textContent=sub;h.append(q,s);
  }
- GuessGame.run(Object.assign({
+ let api;
+ api=GuessGame.run(Object.assign({
   onStart(){pool.reset();charPool.reset()},
   formats:['Emoji → show','Character → show','Show → star','Co-star','Line → show','Who said it?',cfg.whereFormat,'Which came first?'],
   next(ctx){
@@ -63,8 +76,29 @@ window.GTQSeries=function(cfg){
     explanation:item.saidBy+' says it in '+label+'.',render(h){quote(h,'“'+item.line+'”',item.show+' · '+item.year)}};
    if(f==='line')return {kind:'Famous line',answer:item.show,options:shows(item),prompt:'Which show is this line from?',level,explanation:'That line is from '+label+'.',
     render(h){quote(h,'“'+item.line+'”','Famous line')}};
-   return {kind:'Emoji plot',answer:item.show,options:shows(item),prompt:'Which show do these emoji describe?',level,explanation:'That was '+label+' · '+GROUP_NAME[item.group]+'.',
+   return {kind:'Emoji plot',answer:item.show,options:shows(item),prompt:'Which show do these emoji describe?',level,explanation:'That was '+label+' · '+GROUP_NAME[item.group]+(item.group==='toon'?'':' show')+'.',
     render(h){const e=document.createElement('div');e.className='clue-emoji';e.style.cssText='font-size:clamp(38px,10.5vw,80px);text-align:center;line-height:1.2;max-width:calc(100% - 24px)';e.setAttribute('role','img');e.setAttribute('aria-label','Emoji plot of a show');e.textContent=item.emoji;h.appendChild(e)}};
   }
- },cfg.game,{note:DATA.length+' shows and '+CHARACTERS.length+' characters. '+cfg.game.note}));
+ },cfg.game,{note:noteText(),setupIntro({$}){
+  if(live)return;
+  const css=document.createElement('style');
+  css.textContent='.region-pick{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;padding:4px;border:1px solid var(--line);border-radius:16px;background:var(--paper)}'+
+   '.region-pick button{border:0;background:none;border-radius:12px;padding:11px 6px;font:inherit;font-size:13px;font-weight:850;color:var(--muted);cursor:pointer}'+
+   '.game .region-pick{padding:3px;border-radius:14px}.game .region-pick button{padding:7px 6px;font-size:12px}'+
+   '.region-pick button[aria-pressed="true"]{background:var(--ink);color:#fff}.region-pick button:focus-visible{outline:3px solid #7871e8;outline-offset:2px}';
+  document.head.appendChild(css);
+  const note=$('introNote'),picks=[];
+  function makePick(){const pick=document.createElement('div');pick.className='region-pick';pick.setAttribute('role','group');pick.setAttribute('aria-label','Which shows');
+   pick.innerHTML=REGIONS.map(r=>'<button type="button" data-region="'+r[0]+'" aria-pressed="'+(r[0]===region)+'">'+r[1]+'</button>').join('');
+   pick.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;useRegion(b.dataset.region);try{localStorage.setItem(KEY,region)}catch(err){}
+    picks.forEach(p=>p.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',String(x.dataset.region===region))));
+    note.innerHTML='';note.append(noteText(),document.createElement('br'),'Personal best saved on this device.');
+    if(pick.parentElement.id==='game'&&api)api.start()});
+   picks.push(pick);return pick}
+  $('startBtn').before(makePick());
+  $('againBtn').before(makePick());
+  $('game').prepend(makePick());
+ }}));
+ function noteText(){const shows=DATA.length,chars=CHARACTERS.filter(c=>region==='both'||c.item.region===region).length;
+  return (region==='global'?'International shows only: ':region==='india'?'Indian shows only: ':'')+shows+' shows and '+chars+' characters. '+(region==='both'?cfg.game.note:cfg.game.note.replace(/^[^.]*\.\s*/,''))}
 };
