@@ -130,6 +130,8 @@ test('homepage contains the Daily Challenge and individual games do not offer it
   const logoLink = page.locator('a[href*="guess-the-brand-logos/"]').first();
   await expect(logoLink).toBeVisible();
   await logoLink.click();
+  // Tapping a game asks Solo or With a friend first.
+  await page.locator('#sheetSolo').click();
   await expect(page.locator('#game')).toHaveClass(/active/);
   await expect(page.getByText(/adaptive random logos|play the daily mix|daily challenge/i)).toHaveCount(0);
 });
