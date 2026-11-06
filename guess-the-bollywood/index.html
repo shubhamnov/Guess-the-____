@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#f8f7f2">
-<meta name="description" content="Name the Bollywood film from a famous dialogue, a song or an emoji plot, in sixty seconds.">
+<meta name="description" content="Name the Bollywood film from its story told in emoji, a famous dialogue or a song, in sixty seconds.">
 <title>Guess the Bollywood — Guess the ____</title>
 <link rel="stylesheet" href="../shared/engine.css">
 <style>
@@ -29,18 +29,19 @@ function quote(h,text,sub){
 }
 GuessGame.run({
  id:'bollywood',label:'Bollywood',pill:'Filmy',eyebrow:'Lights, camera, guess!',titleHtml:'Know your<br><em>Bollywood?</em>',
- intro:'A famous dialogue, a hit song or an emoji plot. Name the film, or the star, before the clock runs out.',
+ intro:'Read the story in emoji and name the film. Famous dialogues, hit songs and stars are mixed in too.',
  note:DATA.length+' films from 1955 to today. After five warm-up questions, the wrong answers come from the same era.',
- previewHtml:'<div class="preview-row"><span>🚂🌻💍</span><span>🐎🔫🤝</span><span>🎓🧑‍🎓</span></div>',
+ previewHtml:'<div class="preview-row"><span>🇬🇧✈️🇨🇭🚂🌻💍</span></div>',
  prompt:'Which film is this from?',
  links:[{"text":"Languages","href":"../guess-the-languages/"},{"text":"Cuisine","href":"../guess-the-cuisine/"},{"text":"Landmarks","href":"../guess-the-landmarks/"}],
  onStart(){pool.reset()},
- formats:['Dialogue → film','Song → film','Emoji → film','Film → star'],
+ formats:['Emoji → film','Dialogue → film','Song → film','Film → star'],
  next(ctx){
   const item=pool.draw(),level=ctx.hard?'Tricky · same era':'Warm-up';
   const films=()=>ctx.util.choices(item,DATA,{answer:x=>x.film,group:x=>x.era,hard:ctx.hard});
   const label=item.film+' ('+item.year+')';
-  let f=ctx.format(['dialogue','song','emoji','star']);
+  // Emoji plots come first and make up about half the questions.
+  let f=ctx.format(['emoji','emoji','dialogue','song','star']);
   if(f==='dialogue'&&!item.dialogue)f=item.song?'song':'emoji';
   if(f==='song'&&!item.song)f=item.dialogue?'dialogue':'emoji';
   if(f==='star'){
@@ -56,7 +57,7 @@ GuessGame.run({
   if(f==='song')return {kind:'Song',answer:item.film,options:films(),prompt:'Which film is this song from?',level,explanation:'“'+item.song+'” is from '+label+'.',
    render(h){quote(h,'🎵 '+item.song,'Song')}};
   return {kind:'Emoji plot',answer:item.film,options:films(),prompt:'Which film do these emoji describe?',level,explanation:'That was '+label+'.',
-   render(h){const e=document.createElement('div');e.className='clue-emoji';e.style.fontSize='clamp(64px,19vw,104px)';e.setAttribute('role','img');e.setAttribute('aria-label','Emoji plot of a film');e.textContent=item.emoji;h.appendChild(e)}};
+   render(h){const e=document.createElement('div');e.className='clue-emoji';e.style.cssText='font-size:clamp(38px,10.5vw,80px);text-align:center;line-height:1.2;max-width:calc(100% - 24px)';e.setAttribute('role','img');e.setAttribute('aria-label','Emoji plot of a film');e.textContent=item.emoji;h.appendChild(e)}};
  }
 });
 </script>
