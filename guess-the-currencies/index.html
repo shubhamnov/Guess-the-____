@@ -15,6 +15,8 @@
 <script>
 const WORLD=new Map(window.GTQ_WORLD.map(c=>[c.name,c]));
 const DATA=GTQ_DATA.currencies.map(([country,currency])=>({country,currency,code:WORLD.get(country).code,region:WORLD.get(country).region}));
+const USERS=DATA.reduce((m,x)=>m.set(x.currency,(m.get(x.currency)||0)+1),new Map());
+const ONLY_ONE=DATA.filter(x=>USERS.get(x.currency)===1);
 const pool=GuessGame.util.deck(DATA,x=>x.country);
 GuessGame.run({
  id:'currencies',label:'Currencies',eyebrow:'Money around the world',titleHtml:'Know your<br><em>currencies?</em>',
@@ -27,8 +29,8 @@ GuessGame.run({
 formats:['Name the currency','Name the country'],
  next(ctx){
   const item=pool.draw(),level=ctx.hard?'Tricky · same continent':'Warm-up';
-  // The euro is shared by many countries, so it only appears as an answer, never as a "which country" clue.
-  if(ctx.format(['currency','country'])==='country'&&item.currency!=='Euro')return {kind:'Reverse',answer:item.country,options:ctx.util.choices(item,DATA.filter(x=>x.currency!=='Euro'),{answer:x=>x.country,group:x=>x.region,hard:ctx.hard}),prompt:'Which country uses this currency?',level,explanation:item.country+' uses the '+item.currency+'.',
+  // Shared currencies (euro, CFA franc, US dollar…) only appear as answers, never as a "which country" clue.
+  if(ctx.format(['currency','country'])==='country'&&USERS.get(item.currency)===1)return {kind:'Reverse',answer:item.country,options:ctx.util.choices(item,ONLY_ONE,{answer:x=>x.country,group:x=>x.region,hard:ctx.hard}),prompt:'Which country uses this currency?',level,explanation:item.country+' uses the '+item.currency+'.',
    render(h){ctx.util.bigClue(h,item.currency,'Currency')}};
   return {answer:item.currency,options:ctx.util.choices(item,DATA,{answer:x=>x.currency,group:x=>x.region,hard:ctx.hard}),level,explanation:item.country+' uses the '+item.currency+'.',
    render(h){const img=document.createElement('img');img.className='clue-backdrop';img.alt='';img.src='../assets/flags/'+item.code+'.webp';img.onerror=()=>img.remove();const shade=document.createElement('div');shade.className='clue-shade';const name=document.createElement('div');name.className='clue-label';name.textContent=item.country;h.append(img,shade,name)}};
