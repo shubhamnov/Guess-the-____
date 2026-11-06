@@ -8,7 +8,9 @@ module.exports = defineConfig({
   testDir: './tests',
   timeout: 60000,
   expect: { timeout: 10000 },
-  fullyParallel: false,
+  // Every test opens its own page, so tests run in parallel across files and within them.
+  fullyParallel: true,
+  workers: process.env.CI ? 4 : '100%',
   reporter: [['list'], ['html', { outputFolder: 'playwright-report', open: 'never' }]],
   use: {
     baseURL: publishedURL || 'http://localhost:4173/',
