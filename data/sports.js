@@ -1,6 +1,6 @@
-/* Cricket questions. */
+/* Sports questions. Cricket tables first, then every other sport. */
 window.GTQ_DATA=window.GTQ_DATA||{};
-/* Players: name, country, nickname ("" = none). A nickname is only used when it belongs to that one player. */
+/* Cricketers: name, country, nickname ("" = none). A nickname is only used when it belongs to that one player. */
 GTQ_DATA.cricketPlayers=[
 ["Sachin Tendulkar","India","The God of Cricket"],
 ["Virat Kohli","India","Chiku"],
@@ -223,3 +223,153 @@ GTQ_DATA.iplWinners=[
 [2020,"Mumbai Indians"],[2021,"Chennai Super Kings"],[2022,"Gujarat Titans"],[2023,"Chennai Super Kings"],[2024,"Kolkata Knight Riders"],[2025,"Royal Challengers Bengaluru"]
 ];
 GTQ_DATA.iplTeams=["Chennai Super Kings","Mumbai Indians","Kolkata Knight Riders","Royal Challengers Bengaluru","Rajasthan Royals","Sunrisers Hyderabad","Gujarat Titans","Delhi Capitals","Punjab Kings","Lucknow Super Giants"];
+
+/* Other sports. Players: name, sport, country, nickname ("" = none). A nickname is only used when it belongs to that one player. */
+GTQ_DATA.sportsPlayers=[
+["Lionel Messi","Football","Argentina","La Pulga"],
+["Cristiano Ronaldo","Football","Portugal","CR7"],
+["Pelé","Football","Brazil","O Rei"],
+["Diego Maradona","Football","Argentina","El Pibe de Oro"],
+["Kylian Mbappé","Football","France",""],
+["Neymar","Football","Brazil",""],
+["Zinedine Zidane","Football","France","Zizou"],
+["Ronaldo Nazário","Football","Brazil","O Fenômeno"],
+["Ronaldinho","Football","Brazil",""],
+["David Beckham","Football","England","Becks"],
+["Wayne Rooney","Football","England",""],
+["Harry Kane","Football","England",""],
+["Erling Haaland","Football","Norway",""],
+["Mohamed Salah","Football","Egypt","The Egyptian King"],
+["Johan Cruyff","Football","Netherlands",""],
+["Zlatan Ibrahimović","Football","Sweden",""],
+["Luka Modrić","Football","Croatia",""],
+["Robert Lewandowski","Football","Poland",""],
+["Gianluigi Buffon","Football","Italy","Gigi"],
+["Andrés Iniesta","Football","Spain",""],
+["Sunil Chhetri","Football","India",""],
+["Roger Federer","Tennis","Switzerland","FedEx"],
+["Rafael Nadal","Tennis","Spain","King of Clay"],
+["Novak Djokovic","Tennis","Serbia","Djoker"],
+["Serena Williams","Tennis","USA",""],
+["Andy Murray","Tennis","Great Britain",""],
+["Carlos Alcaraz","Tennis","Spain",""],
+["Jannik Sinner","Tennis","Italy",""],
+["Steffi Graf","Tennis","Germany",""],
+["Pete Sampras","Tennis","USA","Pistol Pete"],
+["Andre Agassi","Tennis","USA",""],
+["Björn Borg","Tennis","Sweden","Ice Borg"],
+["Maria Sharapova","Tennis","Russia",""],
+["Naomi Osaka","Tennis","Japan",""],
+["Iga Świątek","Tennis","Poland",""],
+["Sania Mirza","Tennis","India",""],
+["Leander Paes","Tennis","India",""],
+["Usain Bolt","Athletics","Jamaica","Lightning Bolt"],
+["Carl Lewis","Athletics","USA","King Carl"],
+["Neeraj Chopra","Athletics","India",""],
+["Milkha Singh","Athletics","India","The Flying Sikh"],
+["P. T. Usha","Athletics","India","Payyoli Express"],
+["Mo Farah","Athletics","Great Britain",""],
+["Eliud Kipchoge","Athletics","Kenya",""],
+["Michael Phelps","Swimming","USA","The Baltimore Bullet"],
+["Simone Biles","Gymnastics","USA",""],
+["Nadia Comăneci","Gymnastics","Romania",""],
+["Abhinav Bindra","Shooting","India",""],
+["Manu Bhaker","Shooting","India",""],
+["Mary Kom","Boxing","India","Magnificent Mary"],
+["Muhammad Ali","Boxing","USA","The Greatest"],
+["Mike Tyson","Boxing","USA","Iron Mike"],
+["P. V. Sindhu","Badminton","India",""],
+["Saina Nehwal","Badminton","India",""],
+["Lin Dan","Badminton","China","Super Dan"],
+["Viswanathan Anand","Chess","India","Tiger of Madras"],
+["Magnus Carlsen","Chess","Norway",""],
+["Garry Kasparov","Chess","Russia",""],
+["D. Gukesh","Chess","India",""],
+["Dhyan Chand","Hockey","India","The Wizard"],
+["Michael Jordan","Basketball","USA","His Airness"],
+["LeBron James","Basketball","USA","King James"],
+["Kobe Bryant","Basketball","USA","Black Mamba"],
+["Stephen Curry","Basketball","USA",""],
+["Shaquille O'Neal","Basketball","USA","Shaq"],
+["Lewis Hamilton","Formula 1","Great Britain",""],
+["Michael Schumacher","Formula 1","Germany","Schumi"],
+["Max Verstappen","Formula 1","Netherlands",""],
+["Ayrton Senna","Formula 1","Brazil",""],
+["Tiger Woods","Golf","USA",""],
+["Wayne Gretzky","Ice hockey","Canada","The Great One"],
+["Pardeep Narwal","Kabaddi","India","Dubki King"],
+["Bajrang Punia","Wrestling","India",""]
+];
+GTQ_DATA.sportsRecords=[
+["Most Olympic gold medals: 23","Michael Phelps"],
+["100 m world record: 9.58 seconds","Usain Bolt"],
+["India's first Olympic gold in athletics (2021)","Neeraj Chopra"],
+["India's first individual Olympic gold (2008)","Abhinav Bindra"],
+["First perfect 10 in Olympic gymnastics (1976)","Nadia Comăneci"],
+["Scored the 'Hand of God' goal in 1986","Diego Maradona"],
+["Won three World Cups as a player","Pelé"],
+["Most Ballon d'Or awards: 8","Lionel Messi"],
+["Most goals in men's international football","Cristiano Ronaldo"],
+["Hat-trick in the 2022 World Cup final","Kylian Mbappé"],
+["Two headed goals in the 1998 World Cup final","Zinedine Zidane"],
+["Most men's Grand Slam singles titles: 24","Novak Djokovic"],
+["14 French Open titles","Rafael Nadal"],
+["8 Wimbledon men's singles titles","Roger Federer"],
+["Golden Slam in 1988: all four majors and Olympic gold","Steffi Graf"],
+["23 Grand Slam singles titles, the most by a woman in the Open era","Serena Williams"],
+["Youngest world chess champion (2024)","D. Gukesh"],
+["Five-time world chess champion from India","Viswanathan Anand"],
+["Four F1 world titles in a row, 2021 to 2024","Max Verstappen"],
+["Six NBA titles with the Chicago Bulls","Michael Jordan"],
+["Most points in NBA history","LeBron James"],
+["Scored 81 points in one NBA game","Kobe Bryant"],
+["Olympic hockey gold in 1928, 1932 and 1936","Dhyan Chand"],
+["Six-time world boxing champion from India","Mary Kom"],
+["Olympic badminton silver in 2016 and bronze in 2020","P. V. Sindhu"],
+["Two medals at one Olympics for India, in shooting (2024)","Manu Bhaker"],
+["15 major golf titles","Tiger Woods"],
+["Ran a marathon in under two hours (2019)","Eliud Kipchoge"],
+["Most assists in NHL history","Wayne Gretzky"]
+];
+/* Venues: name, city, country. */
+GTQ_DATA.sportsVenues=[
+["Wimbledon (All England Club)","London","England"],
+["Wembley Stadium","London","England"],
+["Anfield","Liverpool","England"],
+["Roland Garros","Paris","France"],
+["Flushing Meadows","New York","USA"],
+["Madison Square Garden","New York","USA"],
+["Augusta National","Augusta","USA"],
+["Melbourne Park","Melbourne","Australia"],
+["Camp Nou","Barcelona","Spain"],
+["Santiago Bernabéu","Madrid","Spain"],
+["Maracanã","Rio de Janeiro","Brazil"],
+["San Siro","Milan","Italy"],
+["Allianz Arena","Munich","Germany"],
+["Bird's Nest (National Stadium)","Beijing","China"],
+["Salt Lake Stadium","Kolkata","India"],
+["Major Dhyan Chand National Stadium","Delhi","India"]
+];
+/* Words used in one sport only: word, sport. */
+GTQ_DATA.sportsWords=[
+["Love","Tennis"],["Deuce","Tennis"],["Bogey","Golf"],["Hole in one","Golf"],["Fairway","Golf"],
+["Checkmate","Chess"],["Castling","Chess"],["Gambit","Chess"],["Slam dunk","Basketball"],["Three-pointer","Basketball"],
+["Raid","Kabaddi"],["Pit stop","Formula 1"],["Pole position","Formula 1"],["Chequered flag","Formula 1"],
+["Yorker","Cricket"],["Googly","Cricket"],["LBW","Cricket"],["Shuttlecock","Badminton"],["Uppercut","Boxing"],
+["Butterfly stroke","Swimming"],["Penalty corner","Hockey"],["Drag flick","Hockey"],["Bicycle kick","Football"],
+["Scrum","Rugby"],["Javelin","Athletics"],["Relay baton","Athletics"]
+];
+GTQ_DATA.sportsList=["Cricket","Football","Tennis","Athletics","Swimming","Gymnastics","Shooting","Boxing","Badminton","Chess","Hockey","Basketball","Formula 1","Golf","Ice hockey","Kabaddi","Wrestling","Rugby"];
+/* Men's FIFA World Cup winners. */
+GTQ_DATA.footballWorldCups=[
+[1930,"Uruguay"],[1934,"Italy"],[1938,"Italy"],[1950,"Uruguay"],[1954,"West Germany"],[1958,"Brazil"],[1962,"Brazil"],[1966,"England"],
+[1970,"Brazil"],[1974,"West Germany"],[1978,"Argentina"],[1982,"Italy"],[1986,"Argentina"],[1990,"West Germany"],[1994,"Brazil"],
+[1998,"France"],[2002,"Brazil"],[2006,"Italy"],[2010,"Spain"],[2014,"Germany"],[2018,"France"],[2022,"Argentina"]
+];
+GTQ_DATA.footballTeams=["Brazil","Germany","Italy","Argentina","France","England","Spain","Uruguay","Netherlands"];
+/* Summer Olympics host cities. (1940 and 1944 were cancelled; Tokyo 2020 was held in 2021.) */
+GTQ_DATA.olympicHosts=[
+[1896,"Athens"],[1900,"Paris"],[1908,"London"],[1924,"Paris"],[1936,"Berlin"],[1948,"London"],[1956,"Melbourne"],[1960,"Rome"],
+[1964,"Tokyo"],[1968,"Mexico City"],[1972,"Munich"],[1976,"Montreal"],[1980,"Moscow"],[1984,"Los Angeles"],[1988,"Seoul"],
+[1992,"Barcelona"],[1996,"Atlanta"],[2000,"Sydney"],[2004,"Athens"],[2008,"Beijing"],[2012,"London"],[2016,"Rio de Janeiro"],[2020,"Tokyo"],[2024,"Paris"]
+];
