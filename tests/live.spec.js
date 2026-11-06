@@ -225,3 +225,33 @@ test('Name Them All live: the host picks the topic, both type against the same b
   await expect(guest.locator('#title')).toHaveText(title);
   await hostCtx.close(); await guestCtx.close();
 });
+
+test('lobby: a third player is told the room is full, and a friend who closes the page can rejoin with the same code', async ({ browser }) => {
+  test.skip(PUBLISHED, 'Checked locally only');
+  test.setTimeout(90000);
+  const ctx = () => browser.newContext().then(c => c.newPage().then(p => ({ c, p })));
+  const host = await ctx(), guest = await ctx(), third = await ctx();
+  await host.p.goto('guess-the-flag/?live' + SIGNAL);
+  await host.p.locator('#createBtn').click();
+  await expect(host.p.locator('#raceStatus')).toContainText('Keep this page open', { timeout: 20000 });
+  const code = await host.p.locator('#roomCode').innerText();
+  await guest.p.goto('guess-the-flag/?live=' + code + SIGNAL);
+  await expect(guest.p.locator('#readyBtn')).toBeVisible({ timeout: 30000 });
+
+  await third.p.goto('guess-the-flag/?live=' + code + SIGNAL);
+  await expect(third.p.locator('#raceStatus')).toContainText('already has two players', { timeout: 30000 });
+  await third.p.waitForTimeout(1000); // the message stays: the room closing the link is not reported as the friend leaving
+  await expect(third.p.locator('#raceStatus')).toContainText('already has two players');
+  await third.p.locator('#leaveBtn').click();
+  await expect(third.p.locator('#createBtn')).toBeVisible();
+
+  // The guest's tab closes without a goodbye; the host notices from the silence and lets them back in.
+  await guest.c.close();
+  await expect(host.p.locator('#raceStatus')).toContainText('can join with code ' + code, { timeout: 20000 });
+  const again = await ctx();
+  await again.p.goto('guess-the-flag/?live=' + code + SIGNAL);
+  await expect(again.p.locator('#readyBtn')).toBeVisible({ timeout: 30000 });
+  await again.p.locator('#readyBtn').click();
+  await expect(host.p.locator('#goBtn')).toBeEnabled();
+  for (const x of [host, third, again]) await x.c.close();
+});

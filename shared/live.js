@@ -3,7 +3,8 @@
  * Two devices connect directly (WebRTC through PeerJS); the free PeerJS service only introduces them. The host picks a
  * random seed for each round and both engines build the same questions from it. No server of our own is involved.
  * Messages: hello{name} → room{name,game,path} → ready{name} → start{name,seed,r} → answer{r,n,right,score,streak}
- * → done{r,score,correct,answered,seconds} → again{name} (rematch) → start… ; full when a room already has two players.
+ * → done{r,score,correct,answered,seconds} → again{name} (rematch) → start… ; full when a room already has two players;
+ * ping every few seconds, because a closed tab or a phone that drops off Wi-Fi often never closes the link (see heartbeat).
  * Optional extras for pages that don't use the engine (Name Them All): api.makeSeed() → the host's seed for a round
  * (it can carry the round's topic), api.onRole('host'|'guest'|null) when a room is made or joined, and
  * api.progress(n,total) → the text beside each player's bar. */
@@ -13,6 +14,7 @@ const ID_PREFIX='gtq-live-v1-';
 const CODE_LETTERS='ABCDEFGHJKMNPQRSTUVWXYZ';
 const NAME_KEY='gtq:live:name';
 const MAX_TRIES=4;
+const PING_MS=2000,QUIET_MS=9000; // each side pings while connected; this long without any message counts as a lost link
 function safeGet(k){try{return localStorage.getItem(k)}catch(e){return null}}
 function safeSet(k,v){try{localStorage.setItem(k,v)}catch(e){}}
 function newCode(){let c='';for(let i=0;i<4;i++)c+=CODE_LETTERS[Math.floor(Math.random()*CODE_LETTERS.length)];return c}
@@ -31,9 +33,9 @@ function attach(api){
   const [host,port]=signal.split(':');
   return {host,port:Number(port)||9000,path:'/',secure:false,debug:0,config:{iceServers:[]}};
  }
- const R={role:null,peer:null,conn:null,code:'',tries:0,phase:'lobby',round:0,total:0,lead:0,
+ const R={role:null,peer:null,conn:null,code:'',tries:0,phase:'lobby',round:0,total:0,lead:0,heard:0,iReady:false,last:null,
   me:{score:0,n:0,streak:0},mine:null,wantAgain:false,counted:false,tally:{me:0,rival:0},
-  rival:{name:'Friend',score:0,n:0,streak:0,done:null,gone:false,wantAgain:false}};
+  rival:{name:'Friend',score:0,n:0,streak:0,done:null,gone:false,lost:false,ready:false,wantAgain:false}};
  const ui={};
 
  const rivalName=()=>R.rival.name||'Friend';
@@ -58,6 +60,7 @@ function attach(api){
    '<button class="secondary" id="inviteBtn" type="button">Send invite link ↗</button>'+
    '<button class="primary" id="goBtn" type="button" disabled>Start the game <span class="arrow">→</span></button>'+
    '<button class="primary" id="readyBtn" type="button" hidden>I’m ready <span class="arrow">✓</span></button>'+
+   '<button class="secondary" id="leaveBtn" type="button">← Leave this room</button>'+
   '</div>'+
   '<div class="race-status" id="raceStatus" role="status" aria-live="polite"></div><div class="micro" id="raceDiag"></div>'+
   '<a class="micro solo-link" href="'+location.pathname+'">Play solo instead</a></div>');
@@ -73,7 +76,8 @@ function attach(api){
   try{if(navigator.share){await navigator.share({title:'Play me live · Guess the ____',text,url});return}}catch(e){if(e&&e.name==='AbortError')return}
   try{await navigator.clipboard.writeText(text);toast('Invite link copied. Send it to your friend.')}catch(e){window.prompt('Copy this link and send it to your friend:',url)}
  });
- ui.ready.addEventListener('click',()=>{saveName();send({t:'ready',name:myName()});ui.ready.hidden=true;ui.name.disabled=true;status('You’re ready. Waiting for '+rivalName()+' to start…','good')});
+ ui.ready.addEventListener('click',()=>{saveName();R.iReady=true;send({t:'ready',name:myName()});ui.ready.hidden=true;ui.name.disabled=true;status('You’re ready. Waiting for '+rivalName()+' to start…','good')});
+ $('leaveBtn').addEventListener('click',()=>{dropConn();backToHome();status('')});
  ui.go.addEventListener('click',()=>{if(!R.conn||!R.conn.open){status('Your friend isn’t connected.','bad');return}saveName();ui.name.disabled=true;startRound()});
 
  /* ---------- Connecting ---------- */
@@ -83,8 +87,9 @@ function attach(api){
  const D={service:'—',link:'—'};
  function diag(part,value){if(part)D[part]=value;ui.diag.textContent='Connection service: '+D.service+' · Direct link: '+D.link}
  diag();
- function showRoom(){ui.home.hidden=true;ui.room.hidden=false;ui.codeOut.textContent=R.code}
- function backToHome(){clearTimeout(tryTimer);ui.home.hidden=false;ui.room.hidden=true;R.role=null;if(api.onRole)api.onRole(null);if(R.peer){try{R.peer.destroy()}catch(e){}R.peer=null}diag('service','—');diag('link','—')}
+ /* On a phone the lobby sits below the intro, so bring it on screen: the code and the status line are what matter now. */
+ function showRoom(){ui.home.hidden=true;ui.room.hidden=false;ui.codeOut.textContent=R.code;const l=$('lobby');if(l.getBoundingClientRect().bottom>innerHeight)l.scrollIntoView({behavior:'smooth',block:'start'})}
+ function backToHome(){clearTimeout(tryTimer);ui.home.hidden=false;ui.room.hidden=true;ui.name.disabled=false;R.role=null;R.iReady=false;Object.assign(R.rival,{gone:false,lost:false,ready:false});if(api.onRole)api.onRole(null);if(R.peer){try{R.peer.destroy()}catch(e){}R.peer=null}diag('service','—');diag('link','—')}
  function peerError(err){
   const type=err&&err.type;
   if(R.role==='host'&&type==='unavailable-id'&&R.phase==='lobby'){createRoom();return}
@@ -114,7 +119,9 @@ function attach(api){
   const peer=new Peer(ID_PREFIX+R.code,peerOptions());R.peer=peer;watchPeer(peer);
   peer.on('open',()=>{diag('service','connected');if(!R.conn||!R.conn.open)status('Send the invite link (or the code) to your friend. Keep this page open on screen until they join.')});
   peer.on('connection',conn=>{
-   if(R.conn&&R.conn.open){conn.on('open',()=>{conn.send({t:'full'});setTimeout(()=>conn.close(),300)});return}
+   // A second player is turned away, unless the first one's link is gone and no game has started: then they can rejoin.
+   if(R.conn&&R.conn.open&&!(R.phase==='lobby'&&R.rival.gone)){conn.on('open',()=>{conn.send({t:'full'});setTimeout(()=>conn.close(),300)});return}
+   dropConn();R.rival.ready=false;ui.go.disabled=true;
    attachConn(conn);
   });
  }
@@ -141,23 +148,48 @@ function attach(api){
    else status('Couldn’t connect. The direct link between the two devices was blocked. Try both on the same Wi-Fi, or two separate devices.','bad');
   },8000);
  }
+ /* Closes the current link without treating it as the friend leaving (it is no longer R.conn when its close arrives). */
+ function dropConn(){const c=R.conn;R.conn=null;if(c){try{c.close()}catch(e){}}}
  function attachConn(conn){
   R.conn=conn;
   let opened=false;
-  conn.on('open',()=>{opened=true;R.conn=conn;R.rival.gone=false;clearTimeout(tryTimer);diag('link','connected');if(R.role==='guest')send({t:'hello',name:myName()})});
-  conn.on('data',onMessage);
+  conn.on('open',()=>{opened=true;R.conn=conn;R.heard=Date.now();Object.assign(R.rival,{gone:false,lost:false});clearTimeout(tryTimer);diag('link','connected');if(R.role==='guest')send({t:'hello',name:myName()})});
+  conn.on('data',m=>{if(conn!==R.conn)return;R.heard=Date.now();if(R.rival.lost)rivalBack();onMessage(m)});
   conn.on('iceStateChanged',state=>{if(!opened||state==='failed'||state==='disconnected')diag('link',state)});
   const gone=()=>{if(opened&&conn===R.conn){diag('link','closed');onRivalGone()}};
   conn.on('close',gone);
   conn.on('error',gone);
  }
- function onRivalGone(){
-  if(R.rival.gone)return;R.rival.gone=true;
-  if(R.phase==='lobby'||R.phase==='countdown'){status(rivalName()+' disconnected. Create a new room.','bad');ui.go.disabled=true;ui.ready.hidden=true;return}
-  ui.rivalRow.classList.add('gone');ui.rivalEls.q.textContent='left';
-  if(R.phase==='playing')pop(rivalName()+' disconnected','warn');
+ /* lost: nothing heard for a while (the link may come back); otherwise the link closed for good. */
+ function onRivalGone(lost){
+  if(R.rival.gone)return;R.rival.gone=true;R.rival.lost=!!lost;
+  if(R.phase==='lobby'){
+   ui.go.disabled=true;ui.ready.hidden=true;
+   if(R.role==='host')status(rivalName()+(lost?'’s connection dropped.':' left.')+' They (or someone else) can join with code '+R.code+'.','bad');
+   else status((lost?'Lost the connection to ':'')+rivalName()+(lost?'’s room.':' closed the room.')+' Leave this room and join again.','bad');
+   return}
+  ui.rivalRow.classList.add('gone');ui.rivalEls.q.textContent=lost?'offline':'left';
+  if(R.phase==='playing')pop(rivalName()+(lost?' lost connection':' disconnected'),'warn');
   renderVerdict();
  }
+ /* Messages arrive again after a quiet spell (say a phone came back on screen): carry on as before. */
+ function rivalBack(){
+  Object.assign(R.rival,{gone:false,lost:false});
+  if(R.last&&R.last.r===R.round)send(R.last); // in case our latest score went missing while the link was down
+  if(R.phase==='lobby'){
+   if(R.role==='host'){ui.go.disabled=!R.rival.ready;status(rivalName()+' is back.'+(R.rival.ready?' Tap “Start the game”.':''),'good')}
+   else{ui.ready.hidden=R.iReady;status('Reconnected to '+rivalName()+'’s room.','good')}
+   return}
+  ui.rivalRow.classList.remove('gone');renderStrip();
+  if(R.phase==='playing')pop(rivalName()+' is back');
+  renderVerdict();
+ }
+ /* Heartbeat: a closed tab or a dropped network often leaves the link looking open, so silence is what counts. */
+ setInterval(()=>{
+  if(!R.conn||!R.conn.open||!R.heard)return;
+  send({t:'ping'});
+  if(!R.rival.gone&&Date.now()-R.heard>QUIET_MS)onRivalGone(true);
+ },PING_MS);
 
  /* ---------- Messages between the devices ---------- */
  function onMessage(m){
@@ -167,8 +199,8 @@ function attach(api){
    // The code belongs to another game: open that game's page and join from there.
    if(m.game&&m.game!==cfg.id&&typeof m.path==='string'&&m.path.charAt(0)==='/'){status('Opening '+cleanName(m.name,'your friend')+'’s game…','good');try{R.peer.destroy()}catch(e){}location.replace(roomURL(m.path,R.code));return}
    R.rival.name=cleanName(m.name,'Friend');ui.ready.hidden=false;status('Connected to '+rivalName()+'’s room. Tap “I’m ready” when you are.','good')}
-  else if(m.t==='full'){status('That room already has two players. Ask for a new link.','bad')}
-  else if(m.t==='ready'){R.rival.name=cleanName(m.name,R.rival.name);ui.go.disabled=false;status(rivalName()+' is ready. Tap “Start the game”.','good')}
+  else if(m.t==='full'){dropConn();status('That room already has two players. Ask your friend for a new code.','bad')}
+  else if(m.t==='ready'){R.rival.name=cleanName(m.name,R.rival.name);R.rival.ready=true;ui.go.disabled=false;status(rivalName()+' is ready. Tap “Start the game”.','good')}
   else if(m.t==='start'){R.rival.name=cleanName(m.name,R.rival.name);R.round=Number(m.r)||R.round+1;countdown(String(m.seed))}
   else if(m.t==='answer'){if(Number(m.r)===R.round)rivalAnswered(m)}
   else if(m.t==='done'){
@@ -204,7 +236,7 @@ function attach(api){
  }
  function begin(seed){
   ui.countdown.hidden=true;R.phase='playing';
-  ui.meEls.who.textContent=myName()+' (you)';ui.rivalEls.who.textContent=rivalName();
+  ui.meEls.who.textContent='You';ui.rivalEls.who.textContent=rivalName();
   ui.rivalRow.classList.toggle('gone',R.rival.gone);
   api.start(seed);renderStrip();
  }
@@ -272,7 +304,7 @@ function attach(api){
   box.className=isWin?'win':'';box.replaceChildren();
   const s=el('strong'),sm=el('small');
   if(result){s.textContent=result.score;sm.textContent=result.correct+'/'+result.answered+' right · '+result.seconds.toFixed(1)+'s'}
-  else{s.textContent=R.rival.score;sm.textContent=R.rival.gone?'left the game':'still playing · '+qText(R.rival.n)}
+  else{s.textContent=R.rival.score;sm.textContent=R.rival.gone?(R.rival.lost?'connection lost':'left the game'):'still playing · '+qText(R.rival.n)}
   box.append(el('label',null,name),s,sm);
  }
  function renderVerdict(){
@@ -286,7 +318,7 @@ function attach(api){
   if(w==='me'){title='You win! 🏆';text=a.score===b.score?'Same score, but you finished first.':'You beat '+rivalName()+' by '+(a.score-b.score)+' points.'}
   else if(w==='rival'){title=rivalName()+' wins';text=a.score===b.score?'Same score, but '+rivalName()+' finished first.':rivalName()+' won by '+(b.score-a.score)+' points.'}
   else if(w==='draw'){title='It’s a draw!';text='Same score, same time.'}
-  else if(R.rival.gone){title='Game over';text=rivalName()+' disconnected before finishing.'}
+  else if(R.rival.gone){title='Game over';text=rivalName()+(R.rival.lost?' lost the connection before finishing. If they come back, their score will appear here.':' disconnected before finishing.')}
   else{title='Waiting for '+rivalName()+'…';text='Their score updates live.'}
   ui.verdict.textContent=text;$('resultTitle').textContent=title;
   const games=R.round;
@@ -305,12 +337,12 @@ function attach(api){
   onStart(info){R.total=info.total||0},
   onAnswer(q,right,ctx){
    R.me={score:ctx.score,n:ctx.answered,streak:ctx.streak};
-   send({t:'answer',r:R.round,n:ctx.answered,right,score:ctx.score,streak:ctx.streak});
+   send(R.last={t:'answer',r:R.round,n:ctx.answered,right,score:ctx.score,streak:ctx.streak});
    renderStrip();flash(ui.meRow,right);checkLead();
   },
   onFinish(result){
    R.phase='done';R.mine={score:result.score,correct:result.correct,answered:result.answered,seconds:result.seconds};
-   send({t:'done',r:R.round,score:result.score,correct:result.correct,answered:result.answered,seconds:result.seconds,n:result.n});
+   send(R.last={t:'done',r:R.round,score:result.score,correct:result.correct,answered:result.answered,seconds:result.seconds,n:result.n});
    renderVerdict();
   }
  };
