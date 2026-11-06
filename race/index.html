@@ -11,29 +11,25 @@
 </head>
 <body data-game="live-mix">
 <script src="../shared/engine.js"></script>
-<script src="../daily-challenge-data-v1.js"></script>
-<script src="../brand-logos-daily-v1.js"></script>
-<script src="../shared/daily-mix-v1.js"></script>
+<script src="../shared/games.js"></script>
+<script src="../shared/mix.js"></script>
 <script>
 (function(){
 'use strict';
 /* Live Mix: two players, questions from every category. Live mode itself (rooms, live scores, rematch) is in
- * shared/live.js; this page only supplies the questions. The engine seeds Math.random from the room's seed while
- * makeRound runs, so both devices draw the same mix. See race/README.md. */
-const DM=window.DailyMixV1;
-function mixQuestions(){
- // Two Daily Mix-style sets (2 per category each), with repeats removed, then shuffled together.
- const seen=new Set(),out=[];
- [0,1].forEach(()=>DM.questions('live-mix|'+Math.random()).forEach(q=>{const k=q.category+'|'+q.answer;if(!seen.has(k)){seen.add(k);out.push(q)}}));
- return GuessGame.util.shuffle(out);
-}
+ * shared/live.js; this page only supplies the questions (shared/mix.js). See race/README.md. */
+GTQMix.load().catch(()=>{});
+/* Two questions from every game in shared/games.js. The seed comes from Math.random, which the engine has seeded from
+   the room, so both devices draw the same mix. */
+function mixQuestions(){return GTQMix.questions('live-mix|'+Math.random(),2)}
 GuessGame.run({
  id:'live-mix',label:'Live Mix',pill:'Live · Mix',live:true,
  eyebrow:'⚡ With a friend',
  titleHtml:'Play with<br><em>a friend.</em>',
- intro:'A mix of questions from every category: colors, flags, countries, animals, capitals, scripts and logos. You both get the same questions and 60 seconds, and you see each other’s score as you play.',
+ intro:'A mix of questions from every game: flags, movies, sports, series, logos and more. You both get the same questions and 60 seconds, and you see each other’s score as you play.',
  prompt:'Which one is it?',
  links:[{text:'Pick one category',href:'../live/'},{text:'Daily Mix',href:'../daily-challenge/'}],
+ load:()=>GTQMix.load(),
  makeRound:mixQuestions
 });
 })();

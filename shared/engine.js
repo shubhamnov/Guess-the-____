@@ -140,7 +140,37 @@ function scoreImage(card){
 }
 
 /* ---------- The game ---------- */
+/* ---------- Mix export ----------
+ * The Daily Mix and the Live Mix take questions from every game without copying any game code: they load each game's
+ * page in a hidden iframe with ?mix (see shared/mix.js). In that mode run() builds no page; it only answers
+ * GuessGameExport.questions(seed, count), using the game's own next()/makeRound() with Math.random seeded from
+ * the seed and game id, so the same seed gives the same questions on every device. */
+const MIX=PARAMS.has('mix')&&window.parent!==window;
+function exportGame(cfg){
+ const fromList=typeof cfg.makeRound==='function';
+ const ready=Promise.resolve().then(()=>cfg.load&&cfg.load());
+ const withRng=(rng,fn)=>function(){const o=Math.random;Math.random=rng;try{return fn.apply(this,arguments)}finally{Math.random=o}};
+ function questions(seed,count){
+  const base='guess-the-mix-v2|'+seed+'|'+cfg.id;let n=3;
+  /* Like a live game a few questions in: formats mix, wrong answers are not yet the tricky same-group ones,
+     and nothing depends on how the player is doing. */
+  const ctx={util:{shuffle,pick,deck,choices,bigClue,framePhoto},get n(){return n},score:0,correct:0,answered:0,streak:0,hard:false,live:true,seed:String(seed),
+   get elapsed(){return n*2.5},format(f){return f.length<2?f[0]:pick([f[0]].concat(f))}};
+  const out=[];
+  withRng(rngFor(base),()=>{
+   if(cfg.onStart)cfg.onStart(ctx);
+   const list=fromList?cfg.makeRound(ctx)||[]:null;
+   for(let i=0;i<count;i++){n=3+i;const q=fromList?list[i]:cfg.next(ctx);if(!q)break;out.push(q)}
+  })();
+  return out.map((q,i)=>{const rng=rngFor(base+'|'+i),w=fn=>fn&&withRng(rng,fn);
+   return Object.assign({},q,{game:cfg.id,prompt:q.prompt||cfg.prompt||'',formatOption:q.formatOption||cfg.formatOption,render:w(q.render),renderOption:w(q.renderOption),credit:w(q.credit)})});
+ }
+ window.GuessGameExport={id:cfg.id,label:cfg.label,ready,questions};
+ return {};
+}
+
 function run(cfg){
+ if(MIX)return exportGame(cfg);
  // Questions come either from next(ctx), one at a time, or from a prepared list (makeRound). The clock is the same.
  const fromList=typeof cfg.makeRound==='function';
  /* Live mode (?live on any game, or cfg.live): play the same questions as a friend on another device. See shared/live.js. */
@@ -257,18 +287,19 @@ function run(cfg){
   $('feedback').textContent='';$('feedback').className='feedback';
   const wrap=$('answers');wrap.replaceChildren();
   wrap.classList.toggle('media',!!q.renderOption);
+  const fmt=q.formatOption||cfg.formatOption;
   q.options.forEach((opt,i)=>{
    const b=el('button','answer');b.type='button';b.dataset.value=opt;
    const k=el('kbd',null,String(i+1));k.setAttribute('aria-hidden','true');b.append(k);
    // Picture answers (flags, swatches, logos…) get a neutral label so the choice itself is the clue.
    if(q.renderOption){b.classList.add('media');b.setAttribute('aria-label','Choice '+(i+1));q.renderOption(opt,b)}
-   else b.append(document.createTextNode(cfg.formatOption?cfg.formatOption(opt):opt));
+   else b.append(document.createTextNode(fmt?fmt(opt):opt));
    b.addEventListener('click',()=>answer(b,opt));wrap.appendChild(b);
   });
  }
  function answer(btn,opt){
   if(!S.running||S.locked)return;S.locked=true;S.answered++;
-  const q=S.q,right=opt===q.answer;
+  const q=S.q,right=opt===q.answer,fmt=q.formatOption||cfg.formatOption;
   Array.from($('answers').children).forEach(b=>{b.disabled=true;if(b.dataset.value===q.answer)b.classList.add('correct')});
   const fb=$('feedback');
   if(right){
@@ -277,7 +308,7 @@ function run(cfg){
    fb.className='feedback good';sound.correct(S.streak>=3);
   }else{
    S.streak=0;S.score+=SCORING.wrong;btn.classList.add('wrong');
-   fb.textContent=signed(SCORING.wrong)+' · '+(q.answerText?'Not quite — it was '+q.answerText+'.':q.renderOption?'Not quite — the right one is highlighted.':'Not quite — it was '+(cfg.formatOption?cfg.formatOption(q.answer):q.answer)+'.');
+   fb.textContent=signed(SCORING.wrong)+' · '+(q.answerText?'Not quite — it was '+q.answerText+'.':q.renderOption?'Not quite — the right one is highlighted.':'Not quite — it was '+(fmt?fmt(q.answer):q.answer)+'.');
    fb.className='feedback bad';sound.wrong();
   }
   if(q.explanation){fb.appendChild(el('span','explain',q.explanation))}

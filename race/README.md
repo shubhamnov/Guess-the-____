@@ -12,7 +12,7 @@ Play against a friend on another device, live. Start from **`/live/`** (linked f
 - A code typed into the wrong game takes the friend to the right one.
 
 ## The Live Mix (`race/`)
-Two Daily Mix-style sets (two questions from each of the seven categories each) with repeats removed and shuffled: about 28 questions. It is built by the frozen `shared/daily-mix-v1.js` from the round's seed, so the Daily Mix itself never changes. Old `race/?room=CODE` links still join.
+Two questions from every game in `shared/games.js`, shuffled. `shared/mix.js` builds them from the round's seed, so both devices get the same set, and a new game joins the mix once it's listed in `shared/games.js`. Old `race/?room=CODE` links still join.
 
 ## Same questions on both devices
 For each round the host picks a random seed and sends it with the start message. While the engine builds questions it swaps `Math.random` for a generator seeded from it, so every game produces the same questions on both devices with no game-specific code. See "Live mode" in `shared/README.md`.

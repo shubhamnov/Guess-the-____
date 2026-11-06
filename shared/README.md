@@ -68,7 +68,27 @@ A question is `{answer, options, render(clueElement), prompt?, kind?, level?, ex
 - `guess-the-*/index.html` — one page per game: the game's config and question logic.
 - `data/*.js` — each game's question list, one row per line, so you can add or fix questions without touching code.
 - `catalogs/*.json` — the photo catalogs for Landmarks and Cuisine (see `catalogs/README.md`).
-- `brand-logos.js`, `daily-challenge-data-v1.js`, `brand-logos-daily-v1.js` — logo data and the frozen Daily Mix snapshot.
-- `shared/daily-mix-v1.js` — the frozen Daily Mix question builder, used by the Daily Mix page and the Live Mix.
+- `brand-logos.js` — logo data. `daily-challenge-data-v1.js` — the flag-code list `scripts/cache_flag_images.py` caches.
+- `shared/games.js` — the list of engine games. `shared/mix.js` — builds the Daily Mix and Live Mix from every game in it (see below).
 - `shared/live.js` — live mode (see above). `shared/vendor/peerjs.min.js` is the PeerJS library it uses to connect the devices.
 - `live/` — the "Play live" page: Mix of everything, or pick a category. `race/` — the Live Mix (questions from every category; see `race/README.md`).
+
+## The mixes: one question from every game
+
+`shared/games.js` lists every game that runs on the engine (`{path, label, emoji}`). Three places read it:
+
+- **Daily Mix** (`daily-challenge/`): one question from every game, the same for everyone on a given date.
+- **Live Mix** (`race/`): two questions from every game for each live round.
+- **Play live** (`live/`): one link per game.
+
+`shared/mix.js` loads each listed game in a hidden iframe with `?mix`. In that mode `GuessGame.run(cfg)` builds no page. It sets `window.GuessGameExport` with `questions(seed, count)`, which calls the game's own `next`/`makeRound` with a generator seeded from the seed and the game id. So the mix questions come from the game's real code and data, and they're the same on every device. The mixes always use Both regions. A game that fails to load within 20 seconds is left out rather than breaking the mix.
+
+### Adding a new game
+
+1. Make `guess-the-<name>/index.html` with `GuessGame.run(cfg)`.
+2. Add `{path, label, emoji}` to `shared/games.js`.
+3. Add a card to the home page (`index.html`). Give it `data-region="india"` if all of its content is Indian.
+4. Add the game to the `games` list in `tests/browser-smoke.spec.js`.
+5. If some items are India-specific, tag them `region` and filter with `GTQRegion.keep` (see "Global / India / Both").
+
+The Daily Mix, the Live Mix and the live page then include it automatically. `tests/registry.spec.js` fails if step 2, 3 or 4 is missing, or if the game can't hand questions to the mix.

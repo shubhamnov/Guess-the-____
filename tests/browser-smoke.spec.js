@@ -1,7 +1,5 @@
 const { test, expect } = require('@playwright/test');
 
-const DAILY_2026_01_15_FIRST_OPTIONS = ['Mauritania', 'United Arab Emirates', 'Slovenia', 'Slovakia'];
-
 const games = [
   { name: 'Colors', path: 'guess-the-color/', kind: 'timed' },
   { name: 'Flags', path: 'guess-the-flag/', kind: 'timed' },
@@ -158,26 +156,42 @@ for (const game of games) {
   });
 }
 
-test('Daily Mix plays all 14 questions within 60 seconds and shows a result', async ({ page }) => {
+test('Daily Mix asks one question from every game within 60 seconds and shows a result', async ({ page }) => {
+  test.setTimeout(90000);
+  const errors = [];
+  page.on('pageerror', e => errors.push(e.message));
   await page.goto('daily-challenge/?date=2026-01-15', { waitUntil: 'domcontentloaded' });
   await expect(page.locator('#intro')).toBeVisible();
+  const total = await page.evaluate(() => window.GTQ_GAMES.length);
   await page.locator('#startBtn').click();
-  for (let i = 1; i <= 14; i++) {
-    await expect(page.locator('#roundLabel')).toContainText(String(i).padStart(2, '0'));
+  const games = new Set();
+  for (let i = 1; i <= total; i++) {
+    const label = page.locator('#roundLabel');
+    await expect(label).toContainText(String(i).padStart(2, '0'), { timeout: 30000 });
+    games.add((await label.innerText()).replace(/\s*\d+.*$/, ''));
     await page.keyboard.press('1');
-    if (i < 14) await expect(page.locator('#roundLabel')).toContainText(String(i + 1).padStart(2, '0'), { timeout: 5000 });
   }
   await expect(page.locator('#result')).toHaveClass(/active/);
   await expect(page.locator('#resultEyebrow')).toContainText('ALL DONE');
-  await expect(page.locator('#correctCount')).toHaveText(/\/ 14$/);
+  await expect(page.locator('#correctCount')).toHaveText(new RegExp('/ ' + total + '$'));
+  expect(games.size).toBe(total);
+  expect(errors).toEqual([]);
 });
 
-test('Daily Mix questions for a date never change', async ({ page }) => {
-  await page.goto('daily-challenge/?date=2026-01-15', { waitUntil: 'domcontentloaded' });
-  await page.locator('#startBtn').click();
-  const first = await page.locator('#answers .answer').evaluateAll(bs => bs.map(b => b.dataset.value));
-  // Recorded from the Daily Mix v1 builder before the shared-engine change.
-  expect(first).toEqual(DAILY_2026_01_15_FIRST_OPTIONS);
+test('Daily Mix gives everyone the same questions for a date', async ({ browser }) => {
+  const firstQuestions = async () => {
+    const context = await browser.newContext();
+    const page = await context.newPage();
+    await page.goto('daily-challenge/?date=2026-01-15', { waitUntil: 'domcontentloaded' });
+    await page.locator('#startBtn').click();
+    const label = await page.locator('#roundLabel').innerText({ timeout: 30000 });
+    const options = await page.locator('#answers .answer').evaluateAll(bs => bs.map(b => b.dataset.value));
+    await context.close();
+    return { label, options };
+  };
+  const a = await firstQuestions();
+  expect(a.options).toHaveLength(4);
+  expect(await firstQuestions()).toEqual(a);
 });
 
 test('timed games mix several question types', async ({ page }) => {

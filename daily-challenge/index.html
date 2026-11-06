@@ -4,19 +4,24 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#f8f7f2">
-<meta name="description" content="The Daily Mix: 14 questions from seven Guess the ____ games, the same for everyone each day.">
+<meta name="description" content="The Daily Mix: one question from every Guess the ____ game, the same for everyone each day.">
 <title>The Daily Mix — Guess the ____</title>
 <link rel="stylesheet" href="../shared/engine.css">
 </head>
 <body data-game="daily-mix">
 <script src="../shared/engine.js"></script>
-<script src="../daily-challenge-data-v1.js"></script>
-<script src="../brand-logos-daily-v1.js"></script>
-<script src="../shared/daily-mix-v1.js"></script>
+<script src="../shared/games.js"></script>
+<script src="../shared/mix.js"></script>
 <script>
 (function(){
 'use strict';
-const {todayUTC,validDate,formatDate}=window.DailyMixV1;
+/* One question from every game in shared/games.js, picked by the date (UTC), so everyone gets the same mix.
+ * A new game joins the mix as soon as it is added to games.js. See shared/mix.js. */
+const todayUTC=()=>new Date().toISOString().slice(0,10);
+function validDate(value){if(!/^\d{4}-\d{2}-\d{2}$/.test(value||''))return false;const d=new Date(value+'T00:00:00Z');return !Number.isNaN(d.getTime())&&d.toISOString().slice(0,10)===value}
+function formatDate(value){return new Intl.DateTimeFormat('en-US',{month:'long',day:'numeric',year:'numeric',timeZone:'UTC'}).format(new Date(value+'T00:00:00Z'))}
+const GAMES=window.GTQ_GAMES;
+GTQMix.load().catch(()=>{});
 const params=new URLSearchParams(window.location.search);
 const activeDate=validDate(params.get('date'))?params.get('date'):todayUTC();
 function challengeURL(){const url=new URL(window.location.href);url.search='';url.hash='';url.searchParams.set('date',activeDate);return url.toString()}
@@ -27,16 +32,17 @@ const game=GuessGame.run({
  // A friend game always plays today's questions, so it is only offered on today's mix.
  liveLink:isToday,friendText:'Play today’s mix with a friend',
  eyebrow:isToday?'Today’s Daily Mix':'Daily Mix · '+formatDate(activeDate),
- titleHtml:'Seven games.<br><em>One daily mix.</em>',
- intro:'Fourteen questions across seven categories — two from each game — and 60 seconds to get through them. The questions are the same for everyone on '+formatDate(activeDate)+' (UTC).',
- note:'🎨 Colors · 🏳️ Flags · 🌍 Countries · 🐾 Animals · 🏙️ Capitals · あ Scripts · ✳ Brand logos',
+ titleHtml:'Every game.<br><em>One daily mix.</em>',
+ intro:GAMES.length+' questions, one from every game, and 60 seconds to get through them. The questions are the same for everyone on '+formatDate(activeDate)+' (UTC).',
+ note:GAMES.map(g=>g.emoji+' '+g.label).join(' · '),
  prompt:'Which one is it?',legacyBest:[{key:'guessTheDailyMixBest',scale:1}],
  resultLabel:'Daily Mix · '+formatDate(activeDate),shareHeadline:'Daily Mix · '+formatDate(activeDate),
  links:[{text:'Flags',href:'../guess-the-flag/'},{text:'Brand Logos',href:'../guess-the-brand-logos/'}],
  shareUrl:challengeURL,
  resultNote:()=>isToday?'Come back tomorrow for a new mix.':'Today’s mix is waiting on the home page.',
+ load:()=>GTQMix.load(),
  makeRound(){
-  return window.DailyMixV1.questions(activeDate);
+  return GTQMix.questions('daily|'+activeDate,1);
  },
  setupIntro({toast,$}){
   const btn=document.createElement('button');btn.type='button';btn.className='secondary';btn.textContent='Share this challenge ↗';

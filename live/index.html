@@ -53,33 +53,29 @@ h1 em{font-style:normal;background:linear-gradient(transparent 62%,var(--lime) 6
   <ol class="steps"><li>1 · Pick a game</li><li>2 · Create a room</li><li>3 · Send the link</li><li>4 · Play · rematch</li></ol>
   <a class="mix" id="mixLink" href="../race/?live">
    <div class="mark" aria-hidden="true">🎲</div>
-   <div><div class="eyebrow">Recommended</div><h2>Mix of everything</h2><p>Random questions from every category: colors, flags, countries, animals, capitals, scripts and logos.</p></div>
+   <div><div class="eyebrow">Recommended</div><h2>Mix of everything</h2><p>Random questions from every game: flags, landmarks, logos, sports, series and the rest.</p></div>
    <span class="arrow" aria-hidden="true">→</span>
   </a>
   <div class="eyebrow or">or pick one category</div>
   <nav class="grid" id="categories" aria-label="Categories">
-   <a class="cat" href="../guess-the-flag/?live"><span aria-hidden="true">🏳️</span><b>Flags</b><i class="arrow" aria-hidden="true">→</i></a>
-   <a class="cat" href="../guess-the-color/?live"><span aria-hidden="true">🎨</span><b>Colors</b><i class="arrow" aria-hidden="true">→</i></a>
-   <a class="cat" href="../guess-the-countries/?live"><span aria-hidden="true">🗺️</span><b>Countries</b><i class="arrow" aria-hidden="true">→</i></a>
-   <a class="cat" href="../guess-the-capitals/?live"><span aria-hidden="true">🏛️</span><b>Capital Cities</b><i class="arrow" aria-hidden="true">→</i></a>
-   <a class="cat" href="../guess-the-landmarks/?live"><span aria-hidden="true">🗼</span><b>Landmarks</b><i class="arrow" aria-hidden="true">→</i></a>
-   <a class="cat" href="../guess-the-cuisine/?live"><span aria-hidden="true">🍜</span><b>Cuisine</b><i class="arrow" aria-hidden="true">→</i></a>
-   <a class="cat" href="../guess-the-animals/?live"><span aria-hidden="true">🦊</span><b>Animals</b><i class="arrow" aria-hidden="true">→</i></a>
-   <a class="cat" href="../guess-the-scripts/?live"><span aria-hidden="true">✍️</span><b>Scripts</b><i class="arrow" aria-hidden="true">→</i></a>
-   <a class="cat" href="../guess-the-brand-logos/?live"><span aria-hidden="true">🏷️</span><b>Brand Logos</b><i class="arrow" aria-hidden="true">→</i></a>
-   <a class="cat" href="../guess-the-currencies/?live"><span aria-hidden="true">💱</span><b>Currencies</b><i class="arrow" aria-hidden="true">→</i></a>
-   <a class="cat" href="../guess-the-elements/?live"><span aria-hidden="true">⚗️</span><b>Elements</b><i class="arrow" aria-hidden="true">→</i></a>
-   <a class="cat" href="../guess-the-languages/?live"><span aria-hidden="true">🗣️</span><b>Languages</b><i class="arrow" aria-hidden="true">→</i></a>
-   <a class="cat" href="../guess-the-bollywood/?live"><span aria-hidden="true">🎬</span><b>Bollywood</b><i class="arrow" aria-hidden="true">→</i></a>
-   <a class="cat" href="../guess-the-hollywood/?live"><span aria-hidden="true">🍿</span><b>Hollywood</b><i class="arrow" aria-hidden="true">→</i></a>
-   <a class="cat" href="../guess-the-sports/?live"><span aria-hidden="true">🏅</span><b>Sports</b><i class="arrow" aria-hidden="true">→</i></a>
-   <a class="cat" href="../guess-the-series/?live"><span aria-hidden="true">📺</span><b>Series</b><i class="arrow" aria-hidden="true">→</i></a>
-   <a class="cat" href="../guess-the-web-series/?live"><span aria-hidden="true">📱</span><b>Web Series</b><i class="arrow" aria-hidden="true">→</i></a>
    <a class="cat" href="../daily-challenge/?live"><span aria-hidden="true">📅</span><b>Today’s Daily Mix</b><i class="arrow" aria-hidden="true">→</i></a>
   </nav>
   <p class="note">Got a code from a friend? Open any game above and type it under “join a friend’s room”; you’ll be taken to the right game. Use two devices (two phones, or a phone and a computer) and keep the page on screen: phones pause pages in the background.</p>
  </section>
  <footer class="footer"><span>GUESS THE ?</span><a href="https://github.com/shubhamnov" target="_blank" rel="noopener noreferrer">MADE BY SHUBHAM ↗</a></footer>
 </main>
+<script src="../shared/games.js"></script>
+<script>
+/* One link per game in shared/games.js, before the Daily Mix link, so a new game is listed here once it is added there. */
+(function(){
+ const nav=document.getElementById('categories'),daily=nav.querySelector('a[href*="daily-challenge"]');
+ (window.GTQ_GAMES||[]).forEach(g=>{
+  const a=document.createElement('a');a.className='cat';a.href='../'+g.path+'/?live';
+  a.innerHTML='<span aria-hidden="true"></span><b></b><i class="arrow" aria-hidden="true">→</i>';
+  a.querySelector('span').textContent=g.emoji;a.querySelector('b').textContent=g.label;
+  nav.insertBefore(a,daily);
+ });
+})();
+</script>
 </body>
 </html>

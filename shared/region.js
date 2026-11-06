@@ -8,7 +8,8 @@ const KEY='gtq:region';
 const LIST=[['global','🌍 Global'],['india','🇮🇳 India'],['both','Both']];
 const valid=r=>LIST.some(x=>x[0]===r);
 const params=new URLSearchParams(location.search);
-const live=params.has('live');
+/* Live games and the mixes (?mix) are the same for everyone, so they always use Both. */
+const live=params.has('live')||params.has('mix');
 let current=params.get('region');
 if(!valid(current)){try{current=localStorage.getItem(KEY)}catch(e){current=null}}
 if(live||!valid(current))current='both';
