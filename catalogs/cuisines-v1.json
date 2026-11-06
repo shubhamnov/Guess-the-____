@@ -982,12 +982,14 @@
       "id": "cuisine_041",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Fish_and_chips_plate_with_peas.jpg?width=1200",
+        "url": "../assets/cuisines/cuisine_041.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Fish_and_chips_plate_with_peas.jpg",
         "creator": "Grendelkhan",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Fish_and_chips_plate_with_peas.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Fish_and_chips_plate_with_peas.jpg?width=1200",
+        "path": "assets/cuisines/cuisine_041.webp"
       },
       "options": [
         "Fish and chips",
@@ -1005,12 +1007,14 @@
       "id": "cuisine_043",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Jollof_rice_with_vegetable.jpg?width=1200",
+        "url": "../assets/cuisines/cuisine_043.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Jollof_rice_with_vegetable.jpg",
         "creator": "Segun Famisa",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Jollof_rice_with_vegetable.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Jollof_rice_with_vegetable.jpg?width=1200",
+        "path": "assets/cuisines/cuisine_043.webp"
       },
       "options": [
         "Jollof rice",
@@ -1028,12 +1032,14 @@
       "id": "cuisine_044",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Espaguetis_carbonara.jpg?width=1200",
+        "url": "../assets/cuisines/cuisine_044.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Espaguetis_carbonara.jpg",
         "creator": "Javier Somoza",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Espaguetis_carbonara.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Espaguetis_carbonara.jpg?width=1200",
+        "path": "assets/cuisines/cuisine_044.webp"
       },
       "options": [
         "Spaghetti carbonara",
@@ -1051,12 +1057,14 @@
       "id": "cuisine_045",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Eggplant_Lasagna_%28Vegitarian%29_%281_of_6%29.jpg?width=1200",
+        "url": "../assets/cuisines/cuisine_045.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Eggplant_Lasagna_(Vegitarian)_(1_of_6).jpg",
         "creator": "Wheeler Cowperthwaite",
         "license": "CC BY 2.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Eggplant_Lasagna_%28Vegitarian%29_%281_of_6%29.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Eggplant_Lasagna_%28Vegitarian%29_%281_of_6%29.jpg?width=1200",
+        "path": "assets/cuisines/cuisine_045.webp"
       },
       "options": [
         "Lasagna",
@@ -1074,12 +1082,14 @@
       "id": "cuisine_046",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Risotto_Weihnachten_2020_13.jpg?width=1200",
+        "url": "../assets/cuisines/cuisine_046.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Risotto_Weihnachten_2020_13.jpg",
         "creator": "Burkhard Mücke",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Risotto_Weihnachten_2020_13.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Risotto_Weihnachten_2020_13.jpg?width=1200",
+        "path": "assets/cuisines/cuisine_046.webp"
       },
       "options": [
         "Risotto",
@@ -1097,12 +1107,14 @@
       "id": "cuisine_047",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Flickr_-_cyclonebill_-_Tabbouleh.jpg?width=1200",
+        "url": "../assets/cuisines/cuisine_047.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Flickr_-_cyclonebill_-_Tabbouleh.jpg",
         "creator": "cyclonebill",
         "license": "CC BY-SA 2.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Flickr_-_cyclonebill_-_Tabbouleh.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Flickr_-_cyclonebill_-_Tabbouleh.jpg?width=1200",
+        "path": "assets/cuisines/cuisine_047.webp"
       },
       "options": [
         "Tabbouleh",
@@ -1120,12 +1132,14 @@
       "id": "cuisine_049",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bagel_with_sesame_3.jpg?width=1200",
+        "url": "../assets/cuisines/cuisine_049.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Bagel_with_sesame_3.jpg",
         "creator": "Shisma",
         "license": "CC BY 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Bagel_with_sesame_3.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Bagel_with_sesame_3.jpg?width=1200",
+        "path": "assets/cuisines/cuisine_049.webp"
       },
       "options": [
         "Bagel",
@@ -1143,12 +1157,14 @@
       "id": "cuisine_050",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/2017-05-28_Wiener_Schnitzel_mit_Pommes_frites_anagoria.jpg?width=1200",
+        "url": "../assets/cuisines/cuisine_050.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:2017-05-28_Wiener_Schnitzel_mit_Pommes_frites_anagoria.jpg",
         "creator": "Anagoria",
         "license": "CC BY 3.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2017-05-28_Wiener_Schnitzel_mit_Pommes_frites_anagoria.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2017-05-28_Wiener_Schnitzel_mit_Pommes_frites_anagoria.jpg?width=1200",
+        "path": "assets/cuisines/cuisine_050.webp"
       },
       "options": [
         "Wiener schnitzel",
@@ -1166,12 +1182,14 @@
       "id": "cuisine_051",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Kebab%2C_Turkish_Restaurant%2C_Gniezno%2C_Poland.jpg?width=1200",
+        "url": "../assets/cuisines/cuisine_051.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Kebab,_Turkish_Restaurant,_Gniezno,_Poland.jpg",
         "creator": "Diego Delso",
         "license": "CC BY-SA 3.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Kebab%2C_Turkish_Restaurant%2C_Gniezno%2C_Poland.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Kebab%2C_Turkish_Restaurant%2C_Gniezno%2C_Poland.jpg?width=1200",
+        "path": "assets/cuisines/cuisine_051.webp"
       },
       "options": [
         "Shawarma",
@@ -1189,12 +1207,14 @@
       "id": "cuisine_053",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Des_macarons_de_chez_Bouillet_%28mars_2023%29.jpg?width=1200",
+        "url": "../assets/cuisines/cuisine_053.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Des_macarons_de_chez_Bouillet_(mars_2023).jpg",
         "creator": "Benoît Prieur",
         "license": "CC0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Des_macarons_de_chez_Bouillet_%28mars_2023%29.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Des_macarons_de_chez_Bouillet_%28mars_2023%29.jpg?width=1200",
+        "path": "assets/cuisines/cuisine_053.webp"
       },
       "options": [
         "Macarons",
@@ -1212,12 +1232,14 @@
       "id": "cuisine_054",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ratatouille.jpg?width=1200",
+        "url": "../assets/cuisines/cuisine_054.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Ratatouille.jpg",
         "creator": "Marcus Guimarães",
         "license": "CC BY 2.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ratatouille.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ratatouille.jpg?width=1200",
+        "path": "assets/cuisines/cuisine_054.webp"
       },
       "options": [
         "Ratatouille",
@@ -1235,12 +1257,14 @@
       "id": "cuisine_056",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Croque_monsieur.jpg?width=1200",
+        "url": "../assets/cuisines/cuisine_056.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Croque_monsieur.jpg",
         "creator": "Michael Brewer",
         "license": "CC BY-SA 2.5",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Croque_monsieur.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Croque_monsieur.jpg?width=1200",
+        "path": "assets/cuisines/cuisine_056.webp"
       },
       "options": [
         "Croque monsieur",
@@ -1258,12 +1282,14 @@
       "id": "cuisine_057",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Flickr_-_cyclonebill_-_Gr%C3%A6sk_salat.jpg?width=1200",
+        "url": "../assets/cuisines/cuisine_057.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Flickr_-_cyclonebill_-_Gr%C3%A6sk_salat.jpg",
         "creator": "cyclonebill",
         "license": "CC BY-SA 2.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Flickr_-_cyclonebill_-_Gr%C3%A6sk_salat.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Flickr_-_cyclonebill_-_Gr%C3%A6sk_salat.jpg?width=1200",
+        "path": "assets/cuisines/cuisine_057.webp"
       },
       "options": [
         "Greek salad",
@@ -1281,12 +1307,14 @@
       "id": "cuisine_058",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Gazpacho_andaluz.jpg?width=1200",
+        "url": "../assets/cuisines/cuisine_058.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Gazpacho_andaluz.jpg",
         "creator": "Juan Emilio Prades Bel",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Gazpacho_andaluz.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Gazpacho_andaluz.jpg?width=1200",
+        "path": "assets/cuisines/cuisine_058.webp"
       },
       "options": [
         "Gazpacho",
@@ -1304,12 +1332,14 @@
       "id": "cuisine_059",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chicken_Curry_Bunny_Chow.JPG?width=1200",
+        "url": "../assets/cuisines/cuisine_059.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Chicken_Curry_Bunny_Chow.JPG",
         "creator": "Lucinda jolly",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Chicken_Curry_Bunny_Chow.JPG?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Chicken_Curry_Bunny_Chow.JPG?width=1200",
+        "path": "assets/cuisines/cuisine_059.webp"
       },
       "options": [
         "Bunny chow",
@@ -1327,12 +1357,14 @@
       "id": "cuisine_060",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Full_English_breakfast_at_the_Chalet_Cafe%2C_Cowfold%2C_West_Sussex%2C_England.jpg?width=1200",
+        "url": "../assets/cuisines/cuisine_060.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Full_English_breakfast_at_the_Chalet_Cafe,_Cowfold,_West_Sussex,_England.jpg",
         "creator": "Acabashi",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Full_English_breakfast_at_the_Chalet_Cafe%2C_Cowfold%2C_West_Sussex%2C_England.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Full_English_breakfast_at_the_Chalet_Cafe%2C_Cowfold%2C_West_Sussex%2C_England.jpg?width=1200",
+        "path": "assets/cuisines/cuisine_060.webp"
       },
       "options": [
         "Full breakfast",
@@ -1350,12 +1382,14 @@
       "id": "cuisine_061",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Traditional_Eggs_Benedict.jpg?width=1200",
+        "url": "../assets/cuisines/cuisine_061.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Traditional_Eggs_Benedict.jpg",
         "creator": "Mark Miller",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Traditional_Eggs_Benedict.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Traditional_Eggs_Benedict.jpg?width=1200",
+        "path": "assets/cuisines/cuisine_061.webp"
       },
       "options": [
         "Eggs Benedict",
@@ -1373,12 +1407,14 @@
       "id": "cuisine_062",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Foodiesfeed.com_pouring-honey-on-pancakes-with-walnuts.jpg?width=1200",
+        "url": "../assets/cuisines/cuisine_062.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Foodiesfeed.com_pouring-honey-on-pancakes-with-walnuts.jpg",
         "creator": "Mae Mu",
         "license": "CC0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Foodiesfeed.com_pouring-honey-on-pancakes-with-walnuts.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Foodiesfeed.com_pouring-honey-on-pancakes-with-walnuts.jpg?width=1200",
+        "path": "assets/cuisines/cuisine_062.webp"
       },
       "options": [
         "Pancakes",
@@ -1396,12 +1432,14 @@
       "id": "cuisine_063",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Banana%2C_ice_cream_and_toffee_sauce_on_waffle_at_The_Queen%27s_Head%2C_Boreham%2C_Essex%2C_England.jpg?width=1200",
+        "url": "../assets/cuisines/cuisine_063.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Banana,_ice_cream_and_toffee_sauce_on_waffle_at_The_Queen%27s_Head,_Boreham,_Essex,_England.jpg",
         "creator": "Acabashi",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Banana%2C_ice_cream_and_toffee_sauce_on_waffle_at_The_Queen%27s_Head%2C_Boreham%2C_Essex%2C_England.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Banana%2C_ice_cream_and_toffee_sauce_on_waffle_at_The_Queen%27s_Head%2C_Boreham%2C_Essex%2C_England.jpg?width=1200",
+        "path": "assets/cuisines/cuisine_063.webp"
       },
       "options": [
         "Waffles",
@@ -1419,12 +1457,14 @@
       "id": "cuisine_064",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Apple_pie_24.jpg?width=1200",
+        "url": "../assets/cuisines/cuisine_064.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Apple_pie_24.jpg",
         "creator": "Shisma",
         "license": "CC BY 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Apple_pie_24.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Apple_pie_24.jpg?width=1200",
+        "path": "assets/cuisines/cuisine_064.webp"
       },
       "options": [
         "Apple pie",
@@ -1442,12 +1482,14 @@
       "id": "cuisine_065",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mondays_at_Il_Forno_-_Cheesecake_with_strawberry_sauce.jpg?width=1200",
+        "url": "../assets/cuisines/cuisine_065.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Mondays_at_Il_Forno_-_Cheesecake_with_strawberry_sauce.jpg",
         "creator": "Alex Dugger",
         "license": "CC BY 2.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Mondays_at_Il_Forno_-_Cheesecake_with_strawberry_sauce.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Mondays_at_Il_Forno_-_Cheesecake_with_strawberry_sauce.jpg?width=1200",
+        "path": "assets/cuisines/cuisine_065.webp"
       },
       "options": [
         "Cheesecake",
@@ -1465,12 +1507,14 @@
       "id": "cuisine_066",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Flickr_stuart_spivack_173603796--Macaroni_and_cheese.jpg?width=1200",
+        "url": "../assets/cuisines/cuisine_066.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Flickr_stuart_spivack_173603796--Macaroni_and_cheese.jpg",
         "creator": "Stuart Spivack from Cleveland, Ohio, USA",
         "license": "CC BY-SA 2.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Flickr_stuart_spivack_173603796--Macaroni_and_cheese.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Flickr_stuart_spivack_173603796--Macaroni_and_cheese.jpg?width=1200",
+        "path": "assets/cuisines/cuisine_066.webp"
       },
       "options": [
         "Macaroni and cheese",
@@ -1488,12 +1532,14 @@
       "id": "cuisine_067",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cup_of_clam_chowder%2C_with_saltines.jpg?width=1200",
+        "url": "../assets/cuisines/cuisine_067.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Cup_of_clam_chowder,_with_saltines.jpg",
         "creator": "Ser Amantio di Nicolao",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Cup_of_clam_chowder%2C_with_saltines.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Cup_of_clam_chowder%2C_with_saltines.jpg?width=1200",
+        "path": "assets/cuisines/cuisine_067.webp"
       },
       "options": [
         "Clam chowder",
@@ -1511,12 +1557,14 @@
       "id": "cuisine_068",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Knafeh_khishnah_with_cheese_of_sheep_milk.jpg?width=1200",
+        "url": "../assets/cuisines/cuisine_068.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Knafeh_khishnah_with_cheese_of_sheep_milk.jpg",
         "creator": "白と赤茶",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Knafeh_khishnah_with_cheese_of_sheep_milk.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Knafeh_khishnah_with_cheese_of_sheep_milk.jpg?width=1200",
+        "path": "assets/cuisines/cuisine_068.webp"
       },
       "options": [
         "Knafeh",
@@ -1534,12 +1582,14 @@
       "id": "cuisine_069",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Oaxacalifornia_Burrito_cross_section.jpg?width=1200",
+        "url": "../assets/cuisines/cuisine_069.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Oaxacalifornia_Burrito_cross_section.jpg",
         "creator": "RightCowLeftCoast",
         "license": "CC BY 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Oaxacalifornia_Burrito_cross_section.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Oaxacalifornia_Burrito_cross_section.jpg?width=1200",
+        "path": "assets/cuisines/cuisine_069.webp"
       },
       "options": [
         "Burrito",
@@ -1557,12 +1607,14 @@
       "id": "cuisine_070",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Guacamole_IMGP1271.jpg?width=1200",
+        "url": "../assets/cuisines/cuisine_070.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Guacamole_IMGP1271.jpg",
         "creator": "Nikodem Nijaki",
         "license": "CC BY-SA 3.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Guacamole_IMGP1271.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Guacamole_IMGP1271.jpg?width=1200",
+        "path": "assets/cuisines/cuisine_070.webp"
       },
       "options": [
         "Guacamole",
@@ -1580,12 +1632,14 @@
       "id": "cuisine_071",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hallaca%2C_Venezuelan_Christmas_food.jpg?width=1200",
+        "url": "../assets/cuisines/cuisine_071.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Hallaca,_Venezuelan_Christmas_food.jpg",
         "creator": "Wilfredor",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Hallaca%2C_Venezuelan_Christmas_food.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Hallaca%2C_Venezuelan_Christmas_food.jpg?width=1200",
+        "path": "assets/cuisines/cuisine_071.webp"
       },
       "options": [
         "Tamales",
@@ -1603,12 +1657,14 @@
       "id": "cuisine_072",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Plat%C3%B3n_de_enchiladas%2C_arroz%2C_nopales_y_cebollas.jpg?width=1200",
+        "url": "../assets/cuisines/cuisine_072.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Plat%C3%B3n_de_enchiladas,_arroz,_nopales_y_cebollas.jpg",
         "creator": "Dahyana Yasada R. R.",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Plat%C3%B3n_de_enchiladas%2C_arroz%2C_nopales_y_cebollas.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Plat%C3%B3n_de_enchiladas%2C_arroz%2C_nopales_y_cebollas.jpg?width=1200",
+        "path": "assets/cuisines/cuisine_072.webp"
       },
       "options": [
         "Enchiladas",
@@ -1626,12 +1682,14 @@
       "id": "cuisine_073",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Feijoada_%C3%A0_brasileira_1.jpg?width=1200",
+        "url": "../assets/cuisines/cuisine_073.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Feijoada_%C3%A0_brasileira_1.jpg",
         "creator": "Melsj",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Feijoada_%C3%A0_brasileira_1.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Feijoada_%C3%A0_brasileira_1.jpg?width=1200",
+        "path": "assets/cuisines/cuisine_073.webp"
       },
       "options": [
         "Feijoada",
@@ -1649,12 +1707,14 @@
       "id": "cuisine_074",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cheesebread.jpg?width=1200",
+        "url": "../assets/cuisines/cuisine_074.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Cheesebread.jpg",
         "creator": "Murilo manzini",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Cheesebread.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Cheesebread.jpg?width=1200",
+        "path": "assets/cuisines/cuisine_074.webp"
       },
       "options": [
         "Pão de queijo",
@@ -1672,12 +1732,14 @@
       "id": "cuisine_075",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Brigadeiro.jpg?width=1200",
+        "url": "../assets/cuisines/cuisine_075.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Brigadeiro.jpg",
         "creator": "User Mayra (Maych) on Flickr",
         "license": "CC BY-SA 2.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Brigadeiro.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Brigadeiro.jpg?width=1200",
+        "path": "assets/cuisines/cuisine_075.webp"
       },
       "options": [
         "Brigadeiro",
@@ -1695,12 +1757,14 @@
       "id": "cuisine_077",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Naan_baked_in_Tandoor.jpg?width=1200",
+        "url": "../assets/cuisines/cuisine_077.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Naan_baked_in_Tandoor.jpg",
         "creator": "Ravi Dwivedi",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Naan_baked_in_Tandoor.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Naan_baked_in_Tandoor.jpg?width=1200",
+        "path": "assets/cuisines/cuisine_077.webp"
       },
       "options": [
         "Naan",
@@ -1718,12 +1782,14 @@
       "id": "cuisine_078",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tandoori_Chicken_1.JPG?width=1200",
+        "url": "../assets/cuisines/cuisine_078.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Tandoori_Chicken_1.JPG",
         "creator": "Miansari66",
         "license": "CC0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Tandoori_Chicken_1.JPG?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Tandoori_Chicken_1.JPG?width=1200",
+        "path": "assets/cuisines/cuisine_078.webp"
       },
       "options": [
         "Tandoori chicken",
@@ -1741,12 +1807,14 @@
       "id": "cuisine_079",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chole_Bhature_1.jpg?width=1200",
+        "url": "../assets/cuisines/cuisine_079.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Chole_Bhature_1.jpg",
         "creator": "Gaurav Dhwaj Khadka",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Chole_Bhature_1.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Chole_Bhature_1.jpg?width=1200",
+        "path": "assets/cuisines/cuisine_079.webp"
       },
       "options": [
         "Chole bhature",
@@ -1764,12 +1832,14 @@
       "id": "cuisine_080",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Pav_Bhaji_at_Home.JPG?width=1200",
+        "url": "../assets/cuisines/cuisine_080.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Pav_Bhaji_at_Home.JPG",
         "creator": "Nundhaa",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Pav_Bhaji_at_Home.JPG?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Pav_Bhaji_at_Home.JPG?width=1200",
+        "path": "assets/cuisines/cuisine_080.webp"
       },
       "options": [
         "Pav bhaji",
@@ -1787,12 +1857,14 @@
       "id": "cuisine_081",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Two_Gulab_Jamun_in_a_plate_01.jpg?width=1200",
+        "url": "../assets/cuisines/cuisine_081.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Two_Gulab_Jamun_in_a_plate_01.jpg",
         "creator": "Suyash.dwivedi",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Two_Gulab_Jamun_in_a_plate_01.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Two_Gulab_Jamun_in_a_plate_01.jpg?width=1200",
+        "path": "assets/cuisines/cuisine_081.webp"
       },
       "options": [
         "Gulab jamun",
@@ -1810,12 +1882,14 @@
       "id": "cuisine_082",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Idli_Sambar-Noida-UP-SP004.jpg?width=1200",
+        "url": "../assets/cuisines/cuisine_082.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Idli_Sambar-Noida-UP-SP004.jpg",
         "creator": "Sutapa Pal",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Idli_Sambar-Noida-UP-SP004.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Idli_Sambar-Noida-UP-SP004.jpg?width=1200",
+        "path": "assets/cuisines/cuisine_082.webp"
       },
       "options": [
         "Idli",
@@ -1833,12 +1907,14 @@
       "id": "cuisine_083",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Jalebi_1.jpg?width=1200",
+        "url": "../assets/cuisines/cuisine_083.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Jalebi_1.jpg",
         "creator": "Gaurav Dhwaj Khadka",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Jalebi_1.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Jalebi_1.jpg?width=1200",
+        "path": "assets/cuisines/cuisine_083.webp"
       },
       "options": [
         "Jalebi",
@@ -1856,12 +1932,14 @@
       "id": "cuisine_085",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Nasi_Lemak%2C_Mamak%2C_Sydney.jpg?width=1200",
+        "url": "../assets/cuisines/cuisine_085.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Nasi_Lemak,_Mamak,_Sydney.jpg",
         "creator": "Mw12310",
         "license": "CC BY-SA 3.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Nasi_Lemak%2C_Mamak%2C_Sydney.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Nasi_Lemak%2C_Mamak%2C_Sydney.jpg?width=1200",
+        "path": "assets/cuisines/cuisine_085.webp"
       },
       "options": [
         "Nasi lemak",
@@ -1879,12 +1957,14 @@
       "id": "cuisine_086",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Nasi_Goreng_Kampung.jpg?width=1200",
+        "url": "../assets/cuisines/cuisine_086.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Nasi_Goreng_Kampung.jpg",
         "creator": "Supardisahabu",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Nasi_Goreng_Kampung.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Nasi_Goreng_Kampung.jpg?width=1200",
+        "path": "assets/cuisines/cuisine_086.webp"
       },
       "options": [
         "Nasi goreng",
@@ -1902,12 +1982,14 @@
       "id": "cuisine_088",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Beef_Rendang..JPG?width=1200",
+        "url": "../assets/cuisines/cuisine_088.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Beef_Rendang..JPG",
         "creator": "Miansari66",
         "license": "CC0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Beef_Rendang..JPG?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Beef_Rendang..JPG?width=1200",
+        "path": "assets/cuisines/cuisine_088.webp"
       },
       "options": [
         "Rendang",
@@ -1925,12 +2007,14 @@
       "id": "cuisine_089",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tom_Yum_Soup_with_Mushroom_-_Easythaiger_2026-04-21.jpg?width=1200",
+        "url": "../assets/cuisines/cuisine_089.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Tom_Yum_Soup_with_Mushroom_-_Easythaiger_2026-04-21.jpg",
         "creator": "Andy Li",
         "license": "CC0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Tom_Yum_Soup_with_Mushroom_-_Easythaiger_2026-04-21.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Tom_Yum_Soup_with_Mushroom_-_Easythaiger_2026-04-21.jpg?width=1200",
+        "path": "assets/cuisines/cuisine_089.webp"
       },
       "options": [
         "Tom yum",
@@ -1948,12 +2032,14 @@
       "id": "cuisine_090",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Thai_green_chicken_curry_and_roti.jpg?width=1200",
+        "url": "../assets/cuisines/cuisine_090.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Thai_green_chicken_curry_and_roti.jpg",
         "creator": "Takeaway",
         "license": "CC BY-SA 3.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Thai_green_chicken_curry_and_roti.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Thai_green_chicken_curry_and_roti.jpg?width=1200",
+        "path": "assets/cuisines/cuisine_090.webp"
       },
       "options": [
         "Thai green curry",
@@ -1971,12 +2057,14 @@
       "id": "cuisine_091",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Spring_rolls_in_restaurant_in_Siem_Reap.jpg?width=1200",
+        "url": "../assets/cuisines/cuisine_091.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Spring_rolls_in_restaurant_in_Siem_Reap.jpg",
         "creator": "Krzysztof Golik",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Spring_rolls_in_restaurant_in_Siem_Reap.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Spring_rolls_in_restaurant_in_Siem_Reap.jpg?width=1200",
+        "path": "assets/cuisines/cuisine_091.webp"
       },
       "options": [
         "Spring rolls",
@@ -1994,12 +2082,14 @@
       "id": "cuisine_092",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/2019-02-22_Xiaolongbao_in_%22Taste_Of_Shanghai%22_restaurant%2C_Sydney%2C_Australia.jpg?width=1200",
+        "url": "../assets/cuisines/cuisine_092.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:2019-02-22_Xiaolongbao_in_%22Taste_Of_Shanghai%22_restaurant,_Sydney,_Australia.jpg",
         "creator": "Maksym Kozlenko",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2019-02-22_Xiaolongbao_in_%22Taste_Of_Shanghai%22_restaurant%2C_Sydney%2C_Australia.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2019-02-22_Xiaolongbao_in_%22Taste_Of_Shanghai%22_restaurant%2C_Sydney%2C_Australia.jpg?width=1200",
+        "path": "assets/cuisines/cuisine_092.webp"
       },
       "options": [
         "Xiaolongbao",
@@ -2017,12 +2107,14 @@
       "id": "cuisine_093",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Authentic_Mapo_Tofu.jpg?width=1200",
+        "url": "../assets/cuisines/cuisine_093.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Authentic_Mapo_Tofu.jpg",
         "creator": "Sichuanfoodlover",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Authentic_Mapo_Tofu.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Authentic_Mapo_Tofu.jpg?width=1200",
+        "path": "assets/cuisines/cuisine_093.webp"
       },
       "options": [
         "Mapo tofu",
@@ -2040,12 +2132,14 @@
       "id": "cuisine_096",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Vegen_rice_pasta_%28spicy_ver.%29_-_Korpan.jpg?width=1200",
+        "url": "../assets/cuisines/cuisine_096.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Vegen_rice_pasta_(spicy_ver.)_-_Korpan.jpg",
         "creator": "Andy Li",
         "license": "CC0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Vegen_rice_pasta_%28spicy_ver.%29_-_Korpan.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Vegen_rice_pasta_%28spicy_ver.%29_-_Korpan.jpg?width=1200",
+        "path": "assets/cuisines/cuisine_096.webp"
       },
       "options": [
         "Tteokbokki",
@@ -2063,12 +2157,14 @@
       "id": "cuisine_098",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Takoyaki_dish.jpg?width=1200",
+        "url": "../assets/cuisines/cuisine_098.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Takoyaki_dish.jpg",
         "creator": "sayo ts",
         "license": "CC0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Takoyaki_dish.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Takoyaki_dish.jpg?width=1200",
+        "path": "assets/cuisines/cuisine_098.webp"
       },
       "options": [
         "Takoyaki",
@@ -2086,12 +2182,14 @@
       "id": "cuisine_099",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Kashiwa-mochi_001.jpg?width=1200",
+        "url": "../assets/cuisines/cuisine_099.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Kashiwa-mochi_001.jpg",
         "creator": "Ocdp",
         "license": "CC0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Kashiwa-mochi_001.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Kashiwa-mochi_001.jpg?width=1200",
+        "path": "assets/cuisines/cuisine_099.webp"
       },
       "options": [
         "Mochi",
@@ -2109,12 +2207,14 @@
       "id": "cuisine_100",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Pastel_de_nata_-_Nazare_2021.jpg?width=1200",
+        "url": "../assets/cuisines/cuisine_100.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Pastel_de_nata_-_Nazare_2021.jpg",
         "creator": "Addshore",
         "license": "CC BY-SA 3.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Pastel_de_nata_-_Nazare_2021.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Pastel_de_nata_-_Nazare_2021.jpg?width=1200",
+        "path": "assets/cuisines/cuisine_100.webp"
       },
       "options": [
         "Pastel de nata",
