@@ -107,8 +107,6 @@ GTQ_DATA.nameTopics=[
 ["Order of the Phoenix","2007"],["Half-Blood Prince","2009"],["Deathly Hallows – Part 1","2010","Deathly Hallows 1"],["Deathly Hallows – Part 2","2011","Deathly Hallows 2"]]},
 {id:'bond-actors',cat:'Hollywood',emoji:'🍸',title:'actors who played James Bond',note:'In the official Eon films.',surnames:true,items:[
 ["Sean Connery","1962"],["George Lazenby","1969"],["Roger Moore","1973"],["Timothy Dalton","1987"],["Pierce Brosnan","1995"],["Daniel Craig","2006"]]},
-{id:'friends',cat:'Hollywood',emoji:'☕',title:'six Friends',note:'The main characters of the TV show Friends.',items:[
-["Rachel","","Rachel Green"],["Monica","","Monica Geller"],["Phoebe","","Phoebe Buffay"],["Joey","","Joey Tribbiani"],["Chandler","","Chandler Bing"],["Ross","","Ross Geller"]]},
 {id:'pixar',cat:'Hollywood',emoji:'🧸',title:'Pixar films',items:[
 ["Toy Story","1995"],["A Bug’s Life","1998","Bugs Life"],["Toy Story 2","1999"],["Monsters, Inc.","2001","Monsters Inc"],["Finding Nemo","2003"],
 ["The Incredibles","2004"],["Cars","2006"],["Ratatouille","2007"],["WALL-E","2008","Wall E"],["Up","2009"],["Toy Story 3","2010"],["Cars 2","2011"],
@@ -126,6 +124,30 @@ GTQ_DATA.nameTopics=[
 ["Thor: Love and Thunder","2022"],["Black Panther: Wakanda Forever","2022"],["Ant-Man and the Wasp: Quantumania","2023"],
 ["Guardians of the Galaxy Vol. 3","2023"],["The Marvels","2023"],["Deadpool & Wolverine","2024"],["Captain America: Brave New World","2025"],
 ["Thunderbolts*","2025"],["The Fantastic Four: First Steps","2025","Fantastic Four"]]},
+
+/* ---------- TV & Web Series ---------- */
+{id:'friends',cat:'TV & Web Series',emoji:'☕',title:'six Friends',note:'The main characters of the TV show Friends.',items:[
+["Rachel","","Rachel Green"],["Monica","","Monica Geller"],["Phoebe","","Phoebe Buffay"],["Joey","","Joey Tribbiani"],["Chandler","","Chandler Bing"],["Ross","","Ross Geller"]]},
+{id:'simpsons',cat:'TV & Web Series',emoji:'🍩',title:'Simpsons family',note:'The five members of the family.',items:["Homer","Marge","Bart","Lisa","Maggie"]},
+{id:'stranger-things-kids',cat:'TV & Web Series',emoji:'🚲',title:'kids of the Stranger Things party',note:'The six main kids.',items:[
+["Eleven","","El"],["Mike","","Mike Wheeler"],["Dustin","","Dustin Henderson"],["Lucas","","Lucas Sinclair"],["Will","","Will Byers"],["Max","","Max Mayfield"]]},
+{id:'got-houses',cat:'TV & Web Series',emoji:'🐺',title:'great houses of Game of Thrones',strip:['house'],items:[
+"Stark","Lannister","Targaryen","Baratheon","Greyjoy","Tyrell","Martell","Arryn","Tully"]},
+{id:'money-heist',cat:'TV & Web Series',emoji:'🎭',title:'Money Heist city code names',note:'Every gang member named after a city.',items:[
+"Tokyo","Berlin","Nairobi","Rio","Denver","Moscow","Helsinki","Oslo","Lisbon","Stockholm","Palermo",["Bogotá","","Bogota"],"Marseille","Manila"]},
+{id:'tmkoc',cat:'TV & Web Series',emoji:'🏢',title:'Gokuldham residents',note:'Characters of Taarak Mehta Ka Ooltah Chashmah.',items:[
+["Jethalal","Gada"],["Daya","Gada","Dayaben"],["Tapu","Gada"],["Champaklal","Gada","Bapuji"],["Taarak Mehta","Mehta","Taarak","Tarak Mehta","Tarak"],["Anjali","Mehta"],
+["Atmaram Bhide","Bhide","Bhide"],["Madhavi","Bhide"],["Sonu","Bhide"],["Krishnan Iyer","Iyer","Iyer"],["Babita","Iyer","Babita ji"],["Popatlal","Pandey"],
+["Dr. Hathi","Hathi","Hathi","Hansraj Hathi"],["Komal","Hathi"],["Goli","Hathi"],["Roshan Singh Sodhi","Sodhi","Sodhi"],["Mrs. Sodhi","Sodhi","Roshan Kaur Sodhi"],["Gogi","Sodhi"],
+["Abdul","Shop"],["Bagha","Shop"],["Nattu Kaka","Shop","Natu Kaka"]]},
+{id:'mirzapur',cat:'TV & Web Series',emoji:'🧶',title:'Mirzapur characters',items:[
+["Kaleen Bhaiya","Tripathi","Akhandanand Tripathi","Kaleen"],["Munna Bhaiya","Tripathi","Munna"],["Beena","Tripathi","Beena Tripathi"],["Bauji","Tripathi","Satyanand Tripathi"],
+["Guddu","Pandit","Guddu Pandit","Guddu Bhaiya"],["Bablu","Pandit","Bablu Pandit"],["Ramakant Pandit","Pandit","Ramakant"],["Vasudha","Pandit"],["Dimpy","Pandit"],
+["Golu","Gupta","Golu Gupta"],["Sweety","Gupta","Sweety Gupta"],["Robin","","Radheshyam"],["Sharad Shukla","Shukla","Sharad"],["Rati Shankar Shukla","Shukla","Rati Shankar"],
+["Maqbool",""],["Compounder",""],["Lala",""],["Shabnam",""],["Madhuri Yadav","Yadav","Madhuri"],["JP Yadav","Yadav","J P Yadav"],["Dadda Tyagi","Tyagi","Dadda"]]},
+{id:'panchayat',cat:'TV & Web Series',emoji:'🎃',title:'Panchayat characters',note:'The people of Phulera.',items:[
+["Abhishek","Sachiv ji","Abhishek Tripathi","Sachiv ji","Secretary"],["Pradhan ji","Dubey","Brij Bhushan Dubey","Brij Bhushan"],["Manju Devi","Dubey","Manju"],["Rinki","Dubey"],
+["Vikas","",],["Prahlad","Pandey","Prahlad Pandey","Prahlad Cha"],["Binod",""],["Bhushan","Banrakas","Banrakas"],["Kranti Devi","","Kranti"],["MLA Chandrakishore Singh","MLA","Chandrakishore Singh","MLA ji","Vidhayak ji"]]},
 
 /* ---------- Sports ---------- */
 {id:'ipl-teams',cat:'Sports',emoji:'🏏',title:'IPL teams',note:'The ten teams in the IPL today.',items:[

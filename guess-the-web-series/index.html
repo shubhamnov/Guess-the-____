@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f8f7f2">
+<meta name="description" content="Name the web series from its story told in emoji, a character or a famous line, in sixty seconds.">
+<title>Guess the Web Series — Guess the ____</title>
+<link rel="stylesheet" href="../shared/engine.css">
+<style>
+.clue-quote{font-family:var(--display);font-weight:950;letter-spacing:-.03em;text-align:center;line-height:1.15;max-width:calc(100% - 32px);overflow-wrap:anywhere}
+.clue-quote+.clue-sub{margin-top:10px}
+.clue-film{font-family:var(--display);font-weight:1000;letter-spacing:-.04em;text-align:center;line-height:1.05;max-width:calc(100% - 28px);overflow-wrap:anywhere}
+.clue-film small{display:block;font-size:14px;font-weight:850;letter-spacing:.08em;color:var(--muted);margin-top:8px}
+</style>
+</head>
+<body data-game="web-series">
+<script src="../shared/engine.js"></script>
+<script src="../data/web-series.js"></script>
+<script src="../shared/series-game.js"></script>
+<script>
+GTQSeries({rows:GTQ_DATA.webSeries,characters:GTQ_DATA.webSeriesCharacters,where:GTQ_DATA.webSeriesWhere,
+ whereFormat:'Which platform?',wherePrompt:'Where did this show first stream?',whereVerb:'first streamed on',
+ game:{id:'web-series',label:'Web Series',pill:'OTT',eyebrow:'Just one more episode…',titleHtml:'Know your<br><em>web series?</em>',
+  intro:'Name the show from its story in emoji, a character or a famous line. Stars, platforms and start years are mixed in too.',
+  note:'Mostly Indian OTT shows, plus global streaming hits. After five warm-up questions, the wrong answers come from the same kind of show.',
+  previewHtml:'<div class="preview-row"><span>🧶🔫👑🏏🩸</span></div>',prompt:'Which show is this?',
+  links:[{"text":"Series","href":"../guess-the-series/"},{"text":"Bollywood","href":"../guess-the-bollywood/"},{"text":"Name Them All","href":"../name-them-all/"}]}});
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f8f7f2">
+<meta name="description" content="Name the TV show from its story told in emoji, a character or a famous line, in sixty seconds.">
+<title>Guess the Series — Guess the ____</title>
+<link rel="stylesheet" href="../shared/engine.css">
+<style>
+.clue-quote{font-family:var(--display);font-weight:950;letter-spacing:-.03em;text-align:center;line-height:1.15;max-width:calc(100% - 32px);overflow-wrap:anywhere}
+.clue-quote+.clue-sub{margin-top:10px}
+.clue-film{font-family:var(--display);font-weight:1000;letter-spacing:-.04em;text-align:center;line-height:1.05;max-width:calc(100% - 28px);overflow-wrap:anywhere}
+.clue-film small{display:block;font-size:14px;font-weight:850;letter-spacing:.08em;color:var(--muted);margin-top:8px}
+</style>
+</head>
+<body data-game="series">
+<script src="../shared/engine.js"></script>
+<script src="../data/series.js"></script>
+<script src="../shared/series-game.js"></script>
+<script>
+GTQSeries({rows:GTQ_DATA.series,characters:GTQ_DATA.seriesCharacters,where:GTQ_DATA.seriesWhere,
+ whereFormat:'Which channel?',wherePrompt:'Which channel did this show first air on?',whereVerb:'first aired on',
+ game:{id:'series',label:'Series',pill:'TV',eyebrow:'Don\'t touch that remote!',titleHtml:'Know your<br><em>TV series?</em>',
+  intro:'Name the show from its story in emoji, a character or a famous line. Stars, channels and start years are mixed in too.',
+  note:'Indian TV, international hits and cartoons. After five warm-up questions, the wrong answers come from the same kind of show.',
+  previewHtml:'<div class="preview-row"><span>☕🛋️👫👫👫🦞</span></div>',prompt:'Which show is this?',
+  links:[{"text":"Web Series","href":"../guess-the-web-series/"},{"text":"Bollywood","href":"../guess-the-bollywood/"},{"text":"Hollywood","href":"../guess-the-hollywood/"}]}});
+</script>
+</body>
+</html>
