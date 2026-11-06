@@ -96,6 +96,7 @@
  <footer class="bottomline"><span>GUESS THE ?</span><a class="creator-credit" href="https://github.com/shubhamnov" target="_blank" rel="noopener noreferrer">MADE BY SHUBHAM ↗</a></footer>
 </main>
 <div class="toast" id="toast" role="status"></div>
+<script src="../shared/region.js"></script>
 <script src="../shared/world.js"></script>
 <script src="../data/elements.js"></script>
 <script src="../data/name-them-all.js"></script>
@@ -167,12 +168,18 @@ $('soundToggle').addEventListener('click',()=>{sound.on=!sound.on;safeSet('gtq_s
 renderSound();
 
 /* ---------- Picker ---------- */
-const cats=[...new Set(TOPICS.map(t=>t.cat))];
-$('picker').innerHTML=cats.map(c=>'<section class="nta-cat"><h2>'+esc(c)+'</h2><div class="nta-topics">'+
- TOPICS.filter(t=>t.cat===c).map(t=>'<button class="topic-btn" type="button" data-topic="'+t.id+'"><span class="te" aria-hidden="true">'+t.emoji+'</span><span><b>'+esc(fullTitle(t))+'</b><small>'+t.n+' answers · '+clock(t.seconds)+'</small></span></button>').join('')+
+/* Topics follow the site-wide Global / India / Both switch; a shared ?t= link opens its topic whatever the setting. */
+const shown=()=>TOPICS.filter(t=>GTQRegion.keep(t.region));
+function renderPicker(){
+ const list=shown(),cats=[...new Set(list.map(t=>t.cat))];
+ $('picker').innerHTML=cats.map(c=>'<section class="nta-cat"><h2>'+esc(c)+'</h2><div class="nta-topics">'+
+ list.filter(t=>t.cat===c).map(t=>'<button class="topic-btn" type="button" data-topic="'+t.id+'"><span class="te" aria-hidden="true">'+t.emoji+'</span><span><b>'+esc(fullTitle(t))+'</b><small>'+t.n+' answers · '+clock(t.seconds)+'</small></span></button>').join('')+
  '</div></section>').join('');
+}
+$('picker').before(GTQRegion.picker({onChange:renderPicker}));
+renderPicker();
 $('picker').addEventListener('click',e=>{const b=e.target.closest('[data-topic]');if(b)start(BY_ID.get(b.dataset.topic))});
-$('randomBtn').addEventListener('click',()=>start(TOPICS[Math.floor(Math.random()*TOPICS.length)]));
+$('randomBtn').addEventListener('click',()=>{const l=shown();start(l[Math.floor(Math.random()*l.length)])});
 
 function setUrl(t){try{const u=new URL(location.href);if(t)u.searchParams.set('t',t.id);else u.searchParams.delete('t');history.replaceState(null,'',u)}catch(e){}}
 function showIntro(){

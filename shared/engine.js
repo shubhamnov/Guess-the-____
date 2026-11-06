@@ -355,6 +355,16 @@ function run(cfg){
 
  if(cfg.replay===false)$('againBtn').style.display='none';
  if(cfg.setupIntro)cfg.setupIntro({toast,$});
+ /* Global / India / Both (shared/region.js): games with India-specific questions set onRegion(region), which rebuilds
+    their pools and may return a new intro note. The switch sits on the intro, above the questions and above Play again;
+    changing it mid-round restarts the round. Not shown in live mode (both players use Both). */
+ if(cfg.onRegion&&window.GTQRegion&&!live){
+  const changed=r=>{const note=cfg.onRegion(r);if(note!=null){const n=$('introNote');n.textContent='';n.append(note,document.createElement('br'),'Personal best saved on this device.')}
+   if(S.running)start()};
+  $('startBtn').before(GTQRegion.picker({onChange:changed}));
+  $('game').prepend(GTQRegion.picker({compact:true,onChange:changed}));
+  $('againBtn').before(GTQRegion.picker({onChange:changed}));
+ }
  const api={toast,start,ctx,cfg,$,live,total:()=>fromList?S.round.length:0};
  if(live){
   /* Live mode: hide the solo start button, fetch the question bank early, then load the room code (PeerJS + live.js). */

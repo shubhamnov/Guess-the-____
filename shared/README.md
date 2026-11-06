@@ -39,9 +39,18 @@ Every game page loads `engine.css` and `engine.js`, then calls `GuessGame.run(co
 | `pauseWhenHidden` | Set to `false` to keep the clock running when the tab is hidden (live mode, so both players get the same 60 seconds). |
 | `live` | Set to `true` for a page that is always played live (the Live Mix). Any other game goes live when opened with `?live`. |
 | `liveLink` | Set to `false` to leave out "With a friend": the header Solo / With a friend chip (a plain pill with `pill` text shows instead) and the "⚡ Play with a friend" buttons. |
+| `onRegion(region)` | Optional: the game follows the Global / India / Both switch (see below). Rebuild the question pools; return the new intro note or nothing. |
 | `friendText` | Text for the "⚡ Play with a friend" button on the intro screen (only games with `autoStart:false` show one). |
 
 `GuessGame.run` returns `{toast, start, ctx, …}`; `start(seed)` begins a game from code. `ctx` also exposes `score`, `correct`, `answered`, `live` and `seed`.
+
+## Global / India / Both
+
+One switch for the whole site, in `shared/region.js` (saved in `localStorage` as `gtq:region`; `?region=global|india|both` overrides it for one visit; live games always use Both).
+- **Home page:** the switch sits above the game cards. Cards marked `data-region="india"` (Bollywood) are hidden in Global.
+- **Engine games:** load `region.js` before `engine.js`, build the question pools from `GTQRegion.get()`, and pass `onRegion(region)` to `GuessGame.run`. It rebuilds the pools and may return a new intro note. The engine then shows the switch on the intro, above the questions and above Play again; changing it mid-round restarts the round. Series, Web Series and Sports do this.
+- **Name Them All:** topics with `region:'india'` or `region:'global'` follow the switch; topics without one always show.
+- Games with no India-specific content (geography, science, logos) ignore it.
 
 ## Live mode
 Open any game with `?live` to play it against a friend on another device (`/live/` lists them all; `?live=CODE` joins a room).
