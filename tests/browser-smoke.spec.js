@@ -184,7 +184,8 @@ test('Daily Mix gives everyone the same questions for a date', async ({ browser 
     const page = await context.newPage();
     await page.goto('daily-challenge/?date=2026-01-15', { waitUntil: 'domcontentloaded' });
     await page.locator('#startBtn').click();
-    const label = await page.locator('#roundLabel').innerText({ timeout: 30000 });
+    await expect(page.locator('#answers .answer')).toHaveCount(4, { timeout: 30000 });
+    const label = await page.locator('#roundLabel').innerText();
     const options = await page.locator('#answers .answer').evaluateAll(bs => bs.map(b => b.dataset.value));
     await context.close();
     return { label, options };
@@ -214,6 +215,7 @@ test('Name Them All: typed answers fill the board, near misses count on Enter, a
   page.on('pageerror', e => errors.push(e.message));
   await page.goto('/');
   await page.locator('.game-card[href="./name-them-all/"]').click();
+  await page.locator('#sheetSolo').click();
   await expect(page).toHaveURL(/name-them-all\/$/);
   await page.locator('[data-topic="planets"]').click();
   await expect(page).toHaveURL(/\?t=planets/);

@@ -1,7 +1,8 @@
 /* Every game that plays with the shared engine, in the order the live page lists them.
  * The Daily Mix and the Live Mix take questions from every game here, and /live/ lists them, so a new game
  * shows up in all three once it is added to this list. tests/registry.spec.js checks that every game card on the
- * home page is here (Name Them All, a typing game, is the one exception: data-solo on its card).
+ * home page is here (Name Them All, a typing game with its own page code, is the one exception: data-standalone on its card;
+ * it has live mode but no mix questions).
  * path: the game's folder · label: its name · emoji: its icon in lists. */
 window.GTQ_GAMES=[
  {path:'guess-the-flag',label:'Flags',emoji:'🏳️'},

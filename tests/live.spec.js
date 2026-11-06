@@ -130,7 +130,7 @@ test('every game links to live mode and the live page lists them all', async ({ 
   await expect(page.locator('#modeChip a[aria-current]')).toHaveText('Solo');
   await page.goto('live/');
   const hrefs = await page.locator('#categories a, #mixLink').evaluateAll(as => as.map(a => a.getAttribute('href')));
-  expect(hrefs.length).toBe(19);
+  expect(hrefs.length).toBe(20);
   for (const href of hrefs) {
     const res = await page.request.get(new URL(href.split('?')[0], page.url()).toString());
     expect(res.ok(), href).toBe(true);
@@ -170,5 +170,58 @@ test('a room made from the home page (?live=new) is ready at once, and a code ty
   await guest.goto('race/?live=' + code + SIGNAL);
   await expect(guest).toHaveURL(/guess-the-flag\//, { timeout: 45000 });
   await expect(guest.locator('#readyBtn')).toBeVisible({ timeout: 45000 });
+  await hostCtx.close(); await guestCtx.close();
+});
+
+test('Name Them All live: the host picks the topic, both type against the same board, live scores and a rematch', async ({ browser }) => {
+  test.setTimeout(120000);
+  const hostCtx = await browser.newContext();
+  const guestCtx = await browser.newContext();
+  const host = await hostCtx.newPage();
+  const guest = await guestCtx.newPage();
+  for (const p of [host, guest]) p.on('pageerror', e => { throw e; });
+  await host.goto('name-them-all/?live' + SIGNAL);
+  await expect(host.locator('#modeChip a[aria-current]')).toContainText('With a friend');
+  await expect(host.locator('#picker')).toBeHidden();
+  await host.locator('#nameInput').fill('Sam');
+  await host.locator('#createBtn').click();
+  await expect(host.locator('#raceStatus')).toContainText('Keep this page open', { timeout: 20000 });
+  // Only the room creator sees the topics; picking one sets the room's topic.
+  await host.locator('[data-topic="planets"]').click();
+  await expect(host.locator('#roomTopicTitle')).toContainText('Name the planets');
+  const code = await host.locator('#roomCode').innerText();
+  await guest.goto('name-them-all/?live=' + code + SIGNAL);
+  await expect(guest.locator('#readyBtn')).toBeVisible({ timeout: 45000 });
+  await expect(guest.locator('#picker')).toBeHidden();
+  await expect(guest.locator('#roomTopicTitle')).toContainText('surprise');
+  await guest.locator('#nameInput').fill('Riya');
+  await guest.locator('#readyBtn').click();
+  await expect(host.locator('#raceStatus')).toContainText('Riya is ready');
+  await host.locator('#goBtn').click();
+  for (const p of [host, guest]) await expect(p.locator('#title')).toHaveText('Name the planets', { timeout: 8000 });
+
+  // The guest names one; the host sees it live.
+  await guest.locator('#answer').fill('Mars');
+  await expect(guest.locator('#found')).toContainText('1');
+  await expect(host.locator('.race-row.rival .pts')).toHaveText('10 pts');
+  await expect(host.locator('.race-row.rival .q')).toHaveText('1/8');
+
+  // The host names them all (time bonus); the guest gives up. Both agree on the winner.
+  for (const p of ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune']) await host.locator('#answer').fill(p);
+  await expect(host.locator('#result')).toBeVisible();
+  await guest.locator('#giveUp').click();
+  await expect(host.locator('#resultTitle')).toHaveText('You win! 🏆');
+  await expect(host.locator('.race-row.rival .q')).toHaveText('1/8');
+  await expect(guest.locator('#resultTitle')).toHaveText('Sam wins');
+  await expect(host.locator('#againBtn')).toBeHidden();
+
+  // Rematch: a new random topic, the same on both devices.
+  await guest.locator('#rematchBtn').click();
+  await host.locator('#rematchBtn').click();
+  await expect(host.locator('#result')).toBeHidden({ timeout: 8000 });
+  await expect(host.locator('#answer')).toBeEnabled({ timeout: 8000 });
+  const title = await host.locator('#title').innerText();
+  expect(title).not.toBe('Name the planets');
+  await expect(guest.locator('#title')).toHaveText(title);
   await hostCtx.close(); await guestCtx.close();
 });

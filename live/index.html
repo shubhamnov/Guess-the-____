@@ -58,6 +58,7 @@ h1 em{font-style:normal;background:linear-gradient(transparent 62%,var(--lime) 6
   </a>
   <div class="eyebrow or">or pick one category</div>
   <nav class="grid" id="categories" aria-label="Categories">
+   <a class="cat" href="../name-them-all/?live"><span aria-hidden="true">⌨️</span><b>Name Them All</b><i class="arrow" aria-hidden="true">→</i></a>
    <a class="cat" href="../daily-challenge/?live"><span aria-hidden="true">📅</span><b>Today’s Daily Mix</b><i class="arrow" aria-hidden="true">→</i></a>
   </nav>
   <p class="note">Got a code from a friend? Open any game above and type it under “join a friend’s room”; you’ll be taken to the right game. Use two devices (two phones, or a phone and a computer) and keep the page on screen: phones pause pages in the background.</p>
@@ -66,14 +67,14 @@ h1 em{font-style:normal;background:linear-gradient(transparent 62%,var(--lime) 6
 </main>
 <script src="../shared/games.js"></script>
 <script>
-/* One link per game in shared/games.js, before the Daily Mix link, so a new game is listed here once it is added there. */
+/* One link per game in shared/games.js, before Name Them All and the Daily Mix, so a new game is listed here once it is added there. */
 (function(){
- const nav=document.getElementById('categories'),daily=nav.querySelector('a[href*="daily-challenge"]');
+ const nav=document.getElementById('categories'),before=nav.querySelector('a[href*="name-them-all"]');
  (window.GTQ_GAMES||[]).forEach(g=>{
   const a=document.createElement('a');a.className='cat';a.href='../'+g.path+'/?live';
   a.innerHTML='<span aria-hidden="true"></span><b></b><i class="arrow" aria-hidden="true">→</i>';
   a.querySelector('span').textContent=g.emoji;a.querySelector('b').textContent=g.label;
-  nav.insertBefore(a,daily);
+  nav.insertBefore(a,before);
  });
 })();
 </script>

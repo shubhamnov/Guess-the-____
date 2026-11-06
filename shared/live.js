@@ -3,7 +3,10 @@
  * Two devices connect directly (WebRTC through PeerJS); the free PeerJS service only introduces them. The host picks a
  * random seed for each round and both engines build the same questions from it. No server of our own is involved.
  * Messages: hello{name} → room{name,game,path} → ready{name} → start{name,seed,r} → answer{r,n,right,score,streak}
- * → done{r,score,correct,answered,seconds} → again{name} (rematch) → start… ; full when a room already has two players. */
+ * → done{r,score,correct,answered,seconds} → again{name} (rematch) → start… ; full when a room already has two players.
+ * Optional extras for pages that don't use the engine (Name Them All): api.makeSeed() → the host's seed for a round
+ * (it can carry the round's topic), api.onRole('host'|'guest'|null) when a room is made or joined, and
+ * api.progress(n,total) → the text beside each player's bar. */
 (function(){
 'use strict';
 const ID_PREFIX='gtq-live-v1-';
@@ -81,7 +84,7 @@ function attach(api){
  function diag(part,value){if(part)D[part]=value;ui.diag.textContent='Connection service: '+D.service+' · Direct link: '+D.link}
  diag();
  function showRoom(){ui.home.hidden=true;ui.room.hidden=false;ui.codeOut.textContent=R.code}
- function backToHome(){clearTimeout(tryTimer);ui.home.hidden=false;ui.room.hidden=true;R.role=null;if(R.peer){try{R.peer.destroy()}catch(e){}R.peer=null}diag('service','—');diag('link','—')}
+ function backToHome(){clearTimeout(tryTimer);ui.home.hidden=false;ui.room.hidden=true;R.role=null;if(api.onRole)api.onRole(null);if(R.peer){try{R.peer.destroy()}catch(e){}R.peer=null}diag('service','—');diag('link','—')}
  function peerError(err){
   const type=err&&err.type;
   if(R.role==='host'&&type==='unavailable-id'&&R.phase==='lobby'){createRoom();return}
@@ -106,7 +109,7 @@ function attach(api){
  document.addEventListener('visibilitychange',()=>{if(!document.hidden)reconnect(R.peer)});
  function createRoom(){
   if(R.peer){try{R.peer.destroy()}catch(e){}}
-  R.role='host';R.code=newCode();showRoom();ui.invite.hidden=false;ui.go.hidden=false;ui.go.disabled=true;ui.ready.hidden=true;
+  R.role='host';R.code=newCode();showRoom();if(api.onRole)api.onRole('host');ui.invite.hidden=false;ui.go.hidden=false;ui.go.disabled=true;ui.ready.hidden=true;
   status('Setting up the room…');
   const peer=new Peer(ID_PREFIX+R.code,peerOptions());R.peer=peer;watchPeer(peer);
   peer.on('open',()=>{diag('service','connected');if(!R.conn||!R.conn.open)status('Send the invite link (or the code) to your friend. Keep this page open on screen until they join.')});
@@ -119,7 +122,7 @@ function attach(api){
   R.code=cleanCode(code);
   if(R.code.length!==4){status('Enter the 4-letter code from your friend.','bad');return}
   if(R.peer){try{R.peer.destroy()}catch(e){}}
-  R.role='guest';R.tries=0;showRoom();ui.invite.hidden=true;ui.go.hidden=true;ui.ready.hidden=true;
+  R.role='guest';R.tries=0;showRoom();if(api.onRole)api.onRole('guest');ui.invite.hidden=true;ui.go.hidden=true;ui.ready.hidden=true;
   status('Connecting to room '+R.code+'…');
   const peer=new Peer(peerOptions());R.peer=peer;watchPeer(peer);
   peer.on('open',()=>{diag('service','connected');if(!R.tries)tryConnect()});
@@ -171,7 +174,8 @@ function attach(api){
   else if(m.t==='done'){
    if(Number(m.r)!==R.round)return;
    R.rival.done={score:Number(m.score)||0,correct:Number(m.correct)||0,answered:Number(m.answered)||0,seconds:Number(m.seconds)||60};
-   R.rival.score=R.rival.done.score;R.rival.n=R.rival.done.answered;renderStrip();renderVerdict();
+   // n: the count beside the bar (Name Them All sends how many were found; engine games send nothing and use answered).
+   R.rival.score=R.rival.done.score;R.rival.n=m.n!=null?Number(m.n)||0:R.rival.done.answered;renderStrip();renderVerdict();
    if(R.phase==='playing')pop(rivalName()+' has finished!','warn')}
   else if(m.t==='again'){
    R.rival.wantAgain=true;
@@ -183,7 +187,7 @@ function attach(api){
  /* ---------- Rounds: the host picks the seed, both devices count down together ---------- */
  function startRound(){
   if(R.role!=='host'||!R.conn||!R.conn.open)return;
-  R.round++;const seed=newSeed();
+  R.round++;const seed=api.makeSeed?String(api.makeSeed()):newSeed();
   send({t:'start',name:myName(),seed,r:R.round});
   countdown(seed);
  }
@@ -213,7 +217,7 @@ function attach(api){
  document.querySelector('#game .track').after(strip);
  ui.countdown=el('div','countdown');ui.countdown.id='countdown';ui.countdown.hidden=true;ui.countdown.appendChild(el('span'));document.body.appendChild(ui.countdown);
 
- const qText=n=>R.total?'Q'+n+'/'+R.total:'Q'+n;
+ const qText=n=>api.progress?api.progress(n,R.total):R.total?'Q'+n+'/'+R.total:'Q'+n;
  function renderStrip(){
   // Games without a fixed list have no total; their bars fill relative to whoever is furthest ahead.
   const span=R.total||Math.max(10,R.me.n,R.rival.n);
@@ -306,7 +310,7 @@ function attach(api){
   },
   onFinish(result){
    R.phase='done';R.mine={score:result.score,correct:result.correct,answered:result.answered,seconds:result.seconds};
-   send({t:'done',r:R.round,score:result.score,correct:result.correct,answered:result.answered,seconds:result.seconds});
+   send({t:'done',r:R.round,score:result.score,correct:result.correct,answered:result.answered,seconds:result.seconds,n:result.n});
    renderVerdict();
   }
  };

@@ -56,11 +56,17 @@
 <body data-game="name-them-all">
 <main class="shell">
  <header class="top"><a class="brand" href="../" aria-label="Guess the ____ — all games">GUESS THE <span>?</span></a>
-  <div class="top-actions"><div class="pill">Name them all</div><button class="sound-toggle" id="soundToggle" type="button"></button></div></header>
+  <div class="top-actions"><nav class="mode-chip" id="modeChip" aria-label="How you’re playing"><a href="./" aria-current="page">Solo</a><a href="?live=new"><span aria-hidden="true">⚡</span> <span class="mc-long">With a friend</span><span class="mc-short">Friend</span></a></nav><button class="sound-toggle" id="soundToggle" type="button"></button></div></header>
 
  <section class="intro" id="intro">
-  <div class="hero"><div class="eyebrow">Type to play</div><h1>Name them<br><em>all</em></h1>
-   <p>Pick a topic and type every answer you can think of before the clock runs out. Each one you get fills in on the board. No options, no hints, just you.</p></div>
+  <div class="hero"><div class="eyebrow" id="introEyebrow">Type to play</div><h1>Name them<br><em>all</em></h1>
+   <p id="introNote">Pick a topic and type every answer you can think of before the clock runs out. Each one you get fills in on the board. No options, no hints, just you.</p></div>
+  <div id="startBtn" hidden></div>
+  <div class="nta-challenge" id="roomTopic" hidden>
+   <div class="eyebrow">Room topic</div>
+   <h2 class="nta-title" id="roomTopicTitle"></h2>
+   <p class="nta-note" id="roomTopicNote"></p>
+  </div>
   <div class="nta-challenge" id="challenge" hidden>
    <div class="eyebrow">Your challenge</div>
    <h2 class="nta-title" id="challengeTitle"></h2>
@@ -68,6 +74,7 @@
    <button class="primary" id="challengeStart" type="button">Start <span class="arrow">→</span></button>
   </div>
   <button class="primary" id="randomBtn" type="button">🎲 Random topic <span class="arrow">→</span></button>
+  <a class="friend-btn" id="friendIntroBtn" href="?live=new"><span>⚡ Play with a friend</span></a>
   <div class="rules"><span>Type the answers</span><span>+10 each</span><span>No penalty for wrong guesses</span><span>Time bonus for all of them</span></div>
   <div class="nta-picker" id="picker"></div>
   <div class="micro">Spelling doesn’t need to be perfect: press Enter and a near miss still counts. Personal best saved on this device.</div>
@@ -176,17 +183,19 @@ function renderPicker(){
  list.filter(t=>t.cat===c).map(t=>'<button class="topic-btn" type="button" data-topic="'+t.id+'"><span class="te" aria-hidden="true">'+t.emoji+'</span><span><b>'+esc(fullTitle(t))+'</b><small>'+t.n+' answers · '+clock(t.seconds)+'</small></span></button>').join('')+
  '</div></section>').join('');
 }
-$('picker').before(GTQRegion.picker({onChange:renderPicker}));
+if(!GTQRegion.live)$('picker').before(GTQRegion.picker({onChange:renderPicker}));
 renderPicker();
-$('picker').addEventListener('click',e=>{const b=e.target.closest('[data-topic]');if(b)start(BY_ID.get(b.dataset.topic))});
+$('picker').addEventListener('click',e=>{const b=e.target.closest('[data-topic]');if(!b)return;if(LIVE){chooseRoomTopic(BY_ID.get(b.dataset.topic));return}start(BY_ID.get(b.dataset.topic))});
 $('randomBtn').addEventListener('click',()=>{const l=shown();start(l[Math.floor(Math.random()*l.length)])});
 
-function setUrl(t){try{const u=new URL(location.href);if(t)u.searchParams.set('t',t.id);else u.searchParams.delete('t');history.replaceState(null,'',u)}catch(e){}}
+function setUrl(t){if(LIVE)return;try{const u=new URL(location.href);if(t)u.searchParams.set('t',t.id);else u.searchParams.delete('t');history.replaceState(null,'',u)}catch(e){}}
 function showIntro(){
  stopClock();S.topic=null;$('game').classList.remove('active');$('intro').hidden=false;setUrl(null);$('challenge').hidden=true;window.scrollTo(0,0);
 }
 
 /* ---------- The game ---------- */
+const LIVE=new URLSearchParams(location.search).has('live');
+let live=null; // the live-mode hooks once shared/live.js has loaded
 const S={topic:null,found:new Set(),score:0,left:0,timer:null,ends:0,pausedLeft:null,running:false,pending:null};
 function start(t){
  S.topic=t;S.found=new Set();S.score=0;S.left=t.seconds;S.running=true;clearTimeout(S.pending);
@@ -200,6 +209,7 @@ function start(t){
  $('entry').hidden=false;$('giveUp').hidden=false;
  feedback('','');updateStats();
  S.ends=Date.now()+t.seconds*1000;S.pausedLeft=null;
+ if(live)live.onStart({total:t.n});
  stopClock();S.timer=setInterval(tick,200);tick();
  window.scrollTo(0,0);
 }
@@ -212,7 +222,7 @@ function tick(){
  if(ms<=0)finish('time');
 }
 document.addEventListener('visibilitychange',()=>{
- if(!S.running)return;
+ if(!S.running||LIVE)return; // live: both clocks keep running, as in every other game
  if(document.hidden){S.pausedLeft=S.ends-Date.now();stopClock()}
  else if(S.pausedLeft!=null){S.ends=Date.now()+S.pausedLeft;S.pausedLeft=null;S.timer=setInterval(tick,200)}
 });
@@ -254,6 +264,7 @@ function accept(item,key){
  S.found.add(item.i);S.score+=POINTS;
  const slot=$('board').querySelector('[data-i="'+item.i+'"]');slot.classList.add('found');slot.querySelector('b').textContent=item.name;
  $('answer').value='';feedback('✓ '+item.name,'good');sound.good();updateStats();
+ if(live)live.onAnswer(null,true,{score:S.score,answered:S.found.size,streak:0});
  if(S.found.size===S.topic.n)finish('all');
 }
 function onType(){
@@ -306,10 +317,11 @@ function finish(why){
  $('resFound').textContent=n+'/'+t.n;$('resBest').textContent=Math.max(prev,S.score);
  $('result').hidden=false;window.scrollTo({top:0,behavior:'smooth'});
  if(why==='all')sound.done();
+ if(live)live.onFinish({score:S.score,correct:n,answered:t.n,n,seconds:Math.min(t.seconds,Math.max(0,t.seconds-(S.ends-Date.now())/1000))});
 }
 $('againBtn').addEventListener('click',()=>start(S.topic));
 $('topicsBtn').addEventListener('click',showIntro);
-document.addEventListener('keydown',e=>{if(e.key==='Enter'&&!S.running&&S.topic&&!$('result').hidden&&document.activeElement.tagName!=='BUTTON'){e.preventDefault();start(S.topic)}});
+document.addEventListener('keydown',e=>{if(e.key==='Enter'&&!LIVE&&!S.running&&S.topic&&!$('result').hidden&&document.activeElement.tagName!=='BUTTON'){e.preventDefault();start(S.topic)}});
 
 let toastTimer=null;
 function toast(msg){const t=$('toast');t.textContent=msg;t.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove('show'),2600)}
@@ -322,10 +334,45 @@ $('shareBtn').addEventListener('click',async()=>{
 
 /* A shared link (?t=topic) opens on that topic, ready to start. */
 const linked=BY_ID.get(new URLSearchParams(location.search).get('t'));
-if(linked){
+if(linked&&!LIVE){
  $('challenge').hidden=false;$('challengeTitle').textContent=linked.emoji+' '+fullTitle(linked);
  $('challengeNote').textContent=(linked.note?linked.note+' ':'')+linked.n+' answers · '+clock(linked.seconds)+'.';
  $('challengeStart').addEventListener('click',()=>start(linked));
+}
+
+/* ---------- With a friend (?live) ----------
+ * Rooms, codes, the live score strip and rematches come from shared/live.js, the same as every other game.
+ * The room creator picks the topic (a ?t= link or the picker; a random one if they don't). The host's seed carries
+ * the topic, so both players get the same board and clock. A rematch moves on to a new random topic. */
+let roomTopic=linked||null,lastTopic=null;
+function randomTopic(){const l=TOPICS.filter(t=>t!==lastTopic);return l[Math.floor(Math.random()*l.length)]}
+function showRoomTopic(){
+ $('roomTopicTitle').textContent=roomTopic?roomTopic.emoji+' '+fullTitle(roomTopic):'🎲 A random topic';
+ $('roomTopicNote').textContent=roomTopic?roomTopic.n+' answers · '+clock(roomTopic.seconds)+'. Tap another topic below to change it.':'Pick one below, or start and get a surprise.';
+}
+function chooseRoomTopic(t){roomTopic=t;showRoomTopic();$('roomTopic').scrollIntoView({block:'nearest',behavior:'smooth'})}
+function onRole(role){
+ // Only the room creator picks; the friend sees the topic when the countdown ends.
+ $('roomTopic').hidden=role!=='host';$('picker').hidden=role!=='host';
+ if(role==='guest'){$('roomTopic').hidden=false;$('roomTopicTitle').textContent='Topic: a surprise';$('roomTopicNote').textContent='Your friend picks the topic. You’ll both see it when the game starts.'}
+ if(role==='host')showRoomTopic();
+}
+if(LIVE){
+ ['randomBtn','friendIntroBtn','againBtn','topicsBtn'].forEach(id=>{$(id).hidden=true;$(id).style.display='none'});
+ const chip=$('modeChip').querySelectorAll('a');chip[0].removeAttribute('aria-current');chip[1].setAttribute('aria-current','page');
+ document.querySelector('.rules').innerHTML='<span>Same topic</span><span>Same clock</span><span>+10 each</span><span>Most points wins</span>';
+ $('picker').hidden=true;
+ const loading=document.createElement('div');loading.className='micro';loading.textContent='Loading live mode…';$('startBtn').after(loading);
+ const load=src=>new Promise((ok,fail)=>{const el=document.createElement('script');el.src=src;el.onload=ok;el.onerror=fail;document.head.appendChild(el)});
+ (window.Peer?Promise.resolve():load('../shared/vendor/peerjs.min.js')).then(()=>window.GuessLive?null:load('../shared/live.js')).then(()=>{
+  loading.remove();
+  live=window.GuessLive.attach({cfg:{id:'name-them-all',label:'Name Them All'},$,toast,live:true,
+   makeSeed(){const t=roomTopic||randomTopic();roomTopic=null;return t.id+'~'+Math.random().toString(36).slice(2,10)},
+   start(seed){const t=BY_ID.get(String(seed).split('~')[0])||randomTopic();lastTopic=t;start(t)},
+   onRole,
+   progress:(n,total)=>total?n+'/'+total:String(n)});
+  $('introNote').textContent='Same topic and the same clock for both of you, with live scores. Most points wins; on a tie, whoever finished first. Use two devices and keep this page on screen.';
+ }).catch(()=>{loading.textContent='Live mode could not load. Check your connection and reload the page.'});
 }
 window.__nta={TOPICS,norm,start,finish,S};
 })();
