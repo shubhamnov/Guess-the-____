@@ -35,6 +35,21 @@ def plain(value):
     return html.unescape(re.sub(r"<[^>]+>", "", value or "")).strip()
 
 
+def get(session, url, **kwargs):
+    """GET with retries: Commons answers 429 when asked too quickly, so wait and try again."""
+    for attempt in range(7):
+        response = session.get(url, timeout=60, **kwargs)
+        if response.status_code != 429 and response.status_code < 500:
+            response.raise_for_status()
+            return response
+        retry_after = response.headers.get("Retry-After", "")
+        delay = int(retry_after) if retry_after.isdigit() else min(120, 10 * (2 ** attempt))
+        print(f"HTTP {response.status_code}; waiting {delay}s")
+        time.sleep(delay)
+    response.raise_for_status()
+    return response
+
+
 def search(session, query, collection):
     params = {
         "action": "query", "format": "json", "generator": "search", "gsrnamespace": 6,
@@ -42,8 +57,8 @@ def search(session, query, collection):
         "prop": "imageinfo", "iiprop": "url|size|extmetadata|mime", "iiurlwidth": 640,
         "iiextmetadatafilter": "Artist|LicenseShortName|LicenseUrl|ImageDescription",
     }
-    response = session.get(API, params=params, timeout=60)
-    response.raise_for_status()
+    response = get(session, API, params=params)
+    time.sleep(1)
     pages = (response.json().get("query") or {}).get("pages") or {}
     return sorted(pages.values(), key=lambda p: p.get("index", 0))
 
@@ -53,8 +68,16 @@ def main():
     (OUT / "previews").mkdir(parents=True, exist_ok=True)
     session = requests.Session()
     session.headers.update({"User-Agent": USER_AGENT})
+    # Results already saved (by an earlier run that stopped part-way) are kept, so a rerun carries on from there.
+    saved = OUT / "candidates.json"
+    previous = json.loads(saved.read_text(encoding="utf-8")) if saved.exists() else {}
     results = {}
     for req in requests_list:
+        old = previous.get(req["id"])
+        done = old and old.get("query") == req["query"] and old.get("candidates")
+        if done and ("factSourceStatus" in old or not req.get("factSource")):
+            results[req["id"]] = old
+            continue
         found, seen = [], set()
         # "anywhere": true also searches all of Commons when the reviewed collections have nothing suitable.
         for collection in COLLECTIONS + ([None] if req.get("anywhere") else []):
@@ -74,7 +97,7 @@ def main():
                 index = len(found) + 1
                 preview = OUT / "previews" / f"{req['id']}_{index}.jpg"
                 try:
-                    data = session.get(info["thumburl"], timeout=60).content
+                    data = get(session, info["thumburl"]).content
                     with Image.open(BytesIO(data)) as im:
                         im = ImageOps.exif_transpose(im).convert("RGB")
                         im.thumbnail((640, 640))
@@ -109,6 +132,7 @@ def main():
             except requests.RequestException as exc:
                 status = f"error: {exc}"
             results[req["id"]]["factSourceStatus"] = status
+        saved.write_text(json.dumps(results, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         print(f"{req['id']} ({req['query']}): {len(found)} candidates")
     (OUT / "candidates.json").write_text(json.dumps(results, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
