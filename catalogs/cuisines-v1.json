@@ -1007,12 +1007,14 @@
       "id": "cuisine_042",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentine_homemade_hamburger_with_lettuce%2C_tomato_and_cheese.jpg?width=1200",
+        "url": "../assets/cuisines/cuisine_042.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Argentine_homemade_hamburger_with_lettuce,_tomato_and_cheese.jpg",
         "creator": "Horacio Cambeiro",
         "license": "CC BY-SA 3.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentine_homemade_hamburger_with_lettuce%2C_tomato_and_cheese.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentine_homemade_hamburger_with_lettuce%2C_tomato_and_cheese.jpg?width=1200",
+        "path": "assets/cuisines/cuisine_042.webp"
       },
       "options": [
         "Hamburger",
@@ -1155,12 +1157,14 @@
       "id": "cuisine_048",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Weisswurst.jpg?width=1200",
+        "url": "../assets/cuisines/cuisine_048.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Weisswurst.jpg",
         "creator": "No machine-readable author provided. Mattes assumed (based on copyright claims).",
         "license": "Public domain",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Weisswurst.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Weisswurst.jpg?width=1200",
+        "path": "assets/cuisines/cuisine_048.webp"
       },
       "options": [
         "Pretzel",
@@ -1303,12 +1307,14 @@
       "id": "cuisine_055",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Flickr_-_cyclonebill_-_Bouillabaisse_med_rouille.jpg?width=1200",
+        "url": "../assets/cuisines/cuisine_055.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Flickr_-_cyclonebill_-_Bouillabaisse_med_rouille.jpg",
         "creator": "cyclonebill",
         "license": "CC BY-SA 2.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Flickr_-_cyclonebill_-_Bouillabaisse_med_rouille.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Flickr_-_cyclonebill_-_Bouillabaisse_med_rouille.jpg?width=1200",
+        "path": "assets/cuisines/cuisine_055.webp"
       },
       "options": [
         "Bouillabaisse",
@@ -1826,12 +1832,14 @@
       "id": "cuisine_076",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chili_con_carne_%284431800858%29.jpg?width=1200",
+        "url": "../assets/cuisines/cuisine_076.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Chili_con_carne_(4431800858).jpg",
         "creator": "cyclonebill from Copenhagen, Denmark",
         "license": "CC BY-SA 2.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Chili_con_carne_%284431800858%29.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Chili_con_carne_%284431800858%29.jpg?width=1200",
+        "path": "assets/cuisines/cuisine_076.webp"
       },
       "options": [
         "Chili con carne",
@@ -2024,12 +2032,14 @@
       "id": "cuisine_084",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Fish_Cakes_with_Singapore_Laksa_Ramen_Soup_%26_Grilled_Pork_Dumplings_-_Noodles_Soup%2C_Brighton.jpg?width=1200",
+        "url": "../assets/cuisines/cuisine_084.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Fish_Cakes_with_Singapore_Laksa_Ramen_Soup_%26_Grilled_Pork_Dumplings_-_Noodles_Soup,_Brighton.jpg",
         "creator": "Andy Li",
         "license": "CC0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Fish_Cakes_with_Singapore_Laksa_Ramen_Soup_%26_Grilled_Pork_Dumplings_-_Noodles_Soup%2C_Brighton.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Fish_Cakes_with_Singapore_Laksa_Ramen_Soup_%26_Grilled_Pork_Dumplings_-_Noodles_Soup%2C_Brighton.jpg?width=1200",
+        "path": "assets/cuisines/cuisine_084.webp"
       },
       "options": [
         "Laksa",
@@ -2097,12 +2107,14 @@
       "id": "cuisine_087",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/DFC_2193_Sticky_char-grilled_skewers_of_savory_satay_glazed_in_a_rich_peanut_sauce_resting_on_a_banana_leaf.jpg?width=1200",
+        "url": "../assets/cuisines/cuisine_087.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:DFC_2193_Sticky_char-grilled_skewers_of_savory_satay_glazed_in_a_rich_peanut_sauce_resting_on_a_banana_leaf.jpg",
         "creator": "PattayaPatrol",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/DFC_2193_Sticky_char-grilled_skewers_of_savory_satay_glazed_in_a_rich_peanut_sauce_resting_on_a_banana_leaf.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/DFC_2193_Sticky_char-grilled_skewers_of_savory_satay_glazed_in_a_rich_peanut_sauce_resting_on_a_banana_leaf.jpg?width=1200",
+        "path": "assets/cuisines/cuisine_087.webp"
       },
       "options": [
         "Satay",
@@ -2270,12 +2282,14 @@
       "id": "cuisine_095",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Baechu_kimchi.jpg?width=1200",
+        "url": "../assets/cuisines/cuisine_095.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Baechu_kimchi.jpg",
         "creator": "최광모",
         "license": "CC BY-SA 4.0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Baechu_kimchi.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Baechu_kimchi.jpg?width=1200",
+        "path": "assets/cuisines/cuisine_095.webp"
       },
       "options": [
         "Kimchi",
@@ -2318,12 +2332,14 @@
       "id": "cuisine_097",
       "prompt": "Which dish is shown?",
       "image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Shrimp_tempura_bowl_of_Japanese_National_Diet_Library.jpg?width=1200",
+        "url": "../assets/cuisines/cuisine_097.webp",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Shrimp_tempura_bowl_of_Japanese_National_Diet_Library.jpg",
         "creator": "毒島みるく",
         "license": "CC0",
         "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Shrimp_tempura_bowl_of_Japanese_National_Diet_Library.jpg?width=1200",
-        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06)."
+        "selection": "Chosen from Wikimedia Commons candidates after review of framing (2026-11-06).",
+        "cachedSourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Shrimp_tempura_bowl_of_Japanese_National_Diet_Library.jpg?width=1200",
+        "path": "assets/cuisines/cuisine_097.webp"
       },
       "options": [
         "Tempura",
