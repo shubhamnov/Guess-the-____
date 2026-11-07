@@ -8,27 +8,27 @@ const D=GTQ_DATA,U=GuessGame.util;
 const ICON={Cricket:'🏏',Football:'⚽',Tennis:'🎾',Athletics:'🏃',Swimming:'🏊',Gymnastics:'🤸',Shooting:'🎯',Boxing:'🥊',Badminton:'🏸',Chess:'♟️',Hockey:'🏑',Basketball:'🏀','Formula 1':'🏎️',Golf:'⛳','Ice hockey':'🏒',Kabaddi:'🤼',Wrestling:'🤼',Rugby:'🏉',Cycling:'🚴','Table tennis':'🏓',Weightlifting:'🏋️',Archery:'🏹'};
 const OLYMPIC=['Athletics','Swimming','Gymnastics','Shooting','Boxing','Wrestling','Weightlifting','Archery','Cycling'];
 const MORE=['Basketball','Chess','Golf','Ice hockey','Kabaddi','Rugby','Badminton','Hockey','Table tennis'];
-const FORMAT_LABEL={nick:'Nickname → player',record:'Record → player',sport:'Player → sport',country:'Player → country',venue:'Venue → city',circuit:'Circuit → country',term:'Sports words',cricketTerm:'Cricket terms',champ:'Champions'};
+const FORMAT_LABEL={nick:'Nickname → player',record:'Record → player',sport:'Player → sport',country:'Player → country',venue:'Venue → city',circuit:'Circuit → country',term:'Sports words',cricketTerm:'Cricket terms',champ:'Champions',trivia:'Trivia'};
 /* sports: which sports' players, records and words (null = all) · venues: 'all', 'cricket', 'f1' or none ·
  * champs: [competition, share] · order: question formats, main one first. */
 const TOPICS={
  sports:{id:'sports',label:'Sports',pill:'Game on',eyebrow:'Game on!',titleHtml:'Know your<br><em>sports?</em>',sports:null,venues:'all',
   intro:'Football, tennis, athletics, basketball, F1, chess, boxing, the Olympics, cricket and more. Name the star, the sport, the stadium and the champions.',
   champs:[['FIFA World Cup',3],['Summer Olympics',3],['Men’s Cricket World Cup',1],['Men’s T20 World Cup',1],['IPL champions',1]],
-  order:['nick','record','sport','country','venue','term','champ'],preview:'⚽🎾🏀🏎️🏅'},
+  order:['nick','record','sport','country','venue','term','champ','trivia'],preview:'⚽🎾🏀🏎️🏅'},
  cricket:{id:'cricket',label:'Cricket',pill:'Howzat',eyebrow:'Sports · Cricket',titleHtml:'Know your<br><em>cricket?</em>',sports:['Cricket'],venues:'cricket',
   intro:'Nicknames, records, grounds, cricket terms, World Cups and the IPL. How well do you know the game?',
   champs:[['Men’s Cricket World Cup',2],['Men’s T20 World Cup',1],['IPL champions',2]],
   order:['nick','record','champ','country','venue','cricketTerm'],preview:'🏏🏆🏟️'},
  football:{id:'football',label:'Football',pill:'Kick-off',eyebrow:'Sports · Football',titleHtml:'Know your<br><em>football?</em>',sports:['Football'],
-  intro:'The stars, their nicknames and records, and every FIFA World Cup winner.',
-  champs:[['FIFA World Cup',1]],order:['nick','record','champ','country'],preview:'⚽🏆🥅'},
+  intro:'The stars, their nicknames and records, and the winners of the World Cup, the Euros, the Champions League and the Ballon d’Or.',
+  champs:[['FIFA World Cup',2],['Ballon d’Or',2],['Champions League',2],['European Championship',1]],order:['nick','record','champ','trivia','country'],preview:'⚽🏆🥅'},
  tennis:{id:'tennis',label:'Tennis',pill:'Game, set',eyebrow:'Sports · Tennis',titleHtml:'Know your<br><em>tennis?</em>',sports:['Tennis'],
-  intro:'Grand Slam legends, their nicknames, their records and the countries they play for.',
-  champs:[],order:['record','nick','country'],preview:'🎾🏆'},
+  intro:'Grand Slam legends and champions, their nicknames, their records and the countries they play for.',
+  champs:[['Wimbledon · men',2],['Wimbledon · women',1],['French Open · men',1],['US Open · men',1],['Australian Open · men',1]],order:['record','champ','trivia','nick','country'],preview:'🎾🏆'},
  f1:{id:'f1',label:'F1',pill:'Lights out',eyebrow:'Sports · Formula 1',titleHtml:'Know your<br><em>Formula 1?</em>',sports:['Formula 1'],venues:'f1',
-  intro:'Every drivers’ champion since 1988, the famous circuits and the records.',
-  champs:[['Formula 1 World Champion',1]],order:['champ','venue','record','nick','country'],preview:'🏎️🏁🏆'},
+  intro:'Every drivers’ champion since 1950, the constructors, the famous circuits and the records.',
+  champs:[['Formula 1 World Champion',3],['Constructors’ champion',1]],order:['champ','trivia','venue','record','nick','country'],preview:'🏎️🏁🏆'},
  olympics:{id:'olympics',label:'Olympics',pill:'Faster, higher',eyebrow:'Sports · Olympics',titleHtml:'Know your<br><em>Olympics?</em>',sports:OLYMPIC,
   intro:'Athletics, swimming, gymnastics, boxing, wrestling, shooting and more, plus every Summer Olympics host city.',
   champs:[['Summer Olympics',1]],order:['record','sport','champ','nick','country','term'],preview:'🏅🏃🏊🤸'},
@@ -48,19 +48,40 @@ const ALL_VENUES=T.venues==='f1'?D.f1Circuits.map(([name,city,country])=>({name,
  T.venues==='cricket'?D.cricketGrounds.map(([name,city,country])=>({name,city,country,sport:'Cricket ground'})):
  T.venues==='all'?D.cricketGrounds.map(([name,city,country])=>({name,city,country,sport:'Cricket ground'}))
   .concat(D.sportsVenues.map(([name,city,country])=>({name,city,country,sport:'Venue'}))):[];
+/* Trivia: written questions with their own wrong answers. */
+const ALL_TRIVIA=D.sportsTrivia.map(([sport,q,answer,a,b,c,tags])=>({sport,q,answer,wrong:[a,b,c],hard:/hard/.test(tags),india:/india/.test(tags)})).filter(t=>inTopic(t.sport));
 const TERMS=D.cricketTerms.map(([meaning,term])=>({meaning,term}));
 const ALL_WORDS=D.sportsWords.map(([word,sport])=>({word,sport})).filter(w=>inTopic(w.sport));
 /* Champions: one list per competition; wrong answers come from that competition's teams, cities or drivers. */
 const IPL_TEAMS=year=>D.iplTeams.filter(t=>!(year<2013&&t==='Sunrisers Hyderabad')&&!(year<2022&&(t==='Gujarat Titans'||t==='Lucknow Super Giants'))).concat(year<=2012?['Deccan Chargers']:[]);
 const OLYMPIC_CITIES=[...new Set(D.olympicHosts.map(x=>x[1]))];
-const F1_DRIVERS=[...new Set(D.f1Champions.map(x=>x[1]))];
+/* Wrong answers for a year: winners from the nearest years, so a 1960s question gets 1960s names. */
+const near=(rows,year,answer)=>[...new Set(rows.slice().sort((a,b)=>Math.abs(a[0]-year)-Math.abs(b[0]-year)).map(r=>r[1]))].filter(x=>x!==answer).slice(0,6);
+const season=y=>(y-1)+'–'+String(y).slice(2);
+const SLAM_MEN=D.wimbledonMen.concat(D.frenchOpenMen,D.usOpenMen,D.australianOpenMen);
+const SLAMS=[['wimbledonMen','Wimbledon · men','Wimbledon men’s singles',SLAM_MEN],['wimbledonWomen','Wimbledon · women','Wimbledon women’s singles',D.wimbledonWomen],
+ ['frenchOpenMen','French Open · men','French Open men’s singles',SLAM_MEN],['usOpenMen','US Open · men','US Open men’s singles',SLAM_MEN],
+ ['australianOpenMen','Australian Open · men','Australian Open men’s singles',SLAM_MEN]];
+const EURO_TEAMS=[...new Set(D.euros.map(x=>x[1]).concat(D.footballTeams))];
 const CHAMP_SUBS=new Set(T.champs.map(c=>c[0]));
 const ALL_CHAMPS=[]
  .concat(D.cricketWorldCups.map(([year,type,winner])=>({year,answer:winner,icon:'🏏',sub:type==='ODI'?'Men’s Cricket World Cup':'Men’s T20 World Cup',ask:'Who won the '+year+(type==='ODI'?' Cricket World Cup?':' T20 World Cup?'),others:D.cricketTeams})))
  .concat(D.iplWinners.map(([year,team])=>({year,answer:team,icon:'🏏',sub:'IPL champions',ask:'Who won the IPL in '+year+'?',others:IPL_TEAMS(year)})))
  .concat(D.footballWorldCups.map(([year,team])=>({year,answer:team,icon:'⚽',sub:'FIFA World Cup',ask:'Who won the '+year+' FIFA World Cup?',others:D.footballTeams.filter(t=>!(team==='West Germany'&&t==='Germany'))})))
  .concat(D.olympicHosts.map(([year,city])=>({year,answer:city,icon:'🏅',sub:'Summer Olympics',ask:'Which city hosted the '+year+' Summer Olympics?',others:OLYMPIC_CITIES,host:true})))
- .concat(D.f1Champions.map(([year,driver])=>({year,answer:driver,icon:'🏎️',sub:'Formula 1 World Champion',ask:'Who won the '+year+' F1 drivers’ title?',others:F1_DRIVERS})))
+ .concat(D.f1Champions.map(([year,driver,hard])=>({year,answer:driver,hard:!!hard,icon:'🏎️',sub:'Formula 1 World Champion',ask:'Who won the '+year+' F1 drivers’ title?',others:near(D.f1Champions,year,driver),
+  explain:driver+' won the '+year+' Formula 1 drivers’ championship.'})))
+ .concat(D.f1Constructors.map(([year,team,hard])=>({year,answer:team,hard:!!hard,icon:'🏎️',sub:'Constructors’ champion',ask:'Which team won the '+year+' F1 constructors’ title?',
+  others:near(D.f1Constructors,year,team).concat(D.f1Teams.filter(t=>t!==team)),explain:team+' won the '+year+' constructors’ championship.'})))
+ .concat(D.ballonDor.map(([year,player,hard])=>({year,answer:player,hard:!!hard,icon:'⚽',sub:'Ballon d’Or',ask:'Who won the '+year+' Ballon d’Or?',others:near(D.ballonDor,year,player),
+  explain:player+' won the '+year+' Ballon d’Or.'})))
+ .concat(D.championsLeague.map(([year,club,hard])=>{const cup=year<1993?'European Cup':'Champions League';
+  return {year,answer:club,hard:!!hard,icon:'⚽',sub:'Champions League',clue:season(year),ask:'Who won the '+season(year)+' '+cup+'?',others:near(D.championsLeague,year,club),
+   explain:club+' won the '+season(year)+' '+cup+'.'}}))
+ .concat(D.euros.map(([year,team,hard])=>({year,answer:team,hard:!!hard,icon:'⚽',sub:'European Championship',ask:'Who won Euro '+year+'?',
+  others:EURO_TEAMS.filter(t=>!((team==='West Germany'&&t==='Germany')||(team==='Germany'&&t==='West Germany'))),explain:team+' won Euro '+year+(year===2020?' (played in 2021)':'')+'.'})))
+ .concat(...SLAMS.map(([key,sub,name,pool])=>D[key].map(([year,player,hard])=>({year,answer:player,hard:!!hard,icon:'🎾',sub,ask:'Who won the '+year+' '+name+' title?',
+  others:near(pool,year,player),explain:player+' won the '+year+' '+name+' title.'}))))
  .filter(c=>CHAMP_SUBS.has(c.sub));
 /* Countries that would also be right for some players: Great Britain/England and West Indies/Jamaica. */
 const CLASH={'Great Britain':['England'],'England':['Great Britain'],'West Indies':['Jamaica'],'Jamaica':['West Indies']};
@@ -70,7 +91,7 @@ const deckOf=(list,key)=>U.deck(list,key);
    Both: everything. A topic with only a handful of Indian stars (Football, Tennis, F1) asks everything in India mode. */
 const isIndian=p=>p.country==='India';
 const FEW_INDIAN=ALL_PLAYERS.filter(isIndian).length<8;
-let region,shown,PLAYERS,NICKS,RECORDS,VENUES,WORDS,CHAMPS,COUNTRIES,SPORTS,FORMATS,decks={};
+let region,shown,PLAYERS,NICKS,RECORDS,VENUES,WORDS,CHAMPS,TRIVIA,COUNTRIES,SPORTS,FORMATS,decks={};
 function useRegion(r){
  region=r;shown=r==='india'&&FEW_INDIAN?'both':r;
  const india=shown==='india',global=shown==='global',all=T.id==='sports';
@@ -81,6 +102,7 @@ function useRegion(r){
  if(VENUES.length<4)VENUES=ALL_VENUES.filter(v=>!global||v.country!=='India');
  WORDS=ALL_WORDS.filter(w=>india?/Cricket|Kabaddi/.test(w.sport)||!all:global?w.sport!=='Kabaddi':true);
  CHAMPS=ALL_CHAMPS.filter(c=>india&&all?c.icon==='🏏':global?c.sub!=='IPL champions':true);
+ TRIVIA=ALL_TRIVIA.filter(t=>india?t.india:global?!t.india:true);
  COUNTRIES=[...new Set(PLAYERS.map(p=>p.country))];
  SPORTS=(T.sports||D.sportsList).filter(x=>!(r==='global'&&x==='Kabaddi'));
  /* A mix only uses the parts that have something in them. */
@@ -90,11 +112,12 @@ function useRegion(r){
  decks.term=mix([[{kind:'word',d:words},4],[{kind:'term',d:terms},1]].filter(([o])=>o.d)
   .map(([o,w])=>[{reset:()=>o.d.reset(),draw:()=>({kind:o.kind,item:o.d.draw()})},w]));
  decks.champ=mix(T.champs.map(([sub,w])=>part(CHAMPS.filter(c=>c.sub===sub),x=>x.sub+x.year,w)).filter(Boolean));
+ decks.trivia=TRIVIA.length?deckOf(TRIVIA,x=>x.q):null;
  decks.player=sportPicker(PLAYERS,bySport);decks.nick=sportPicker(NICKS,bySport);
  decks.record=sportPicker(RECORDS,x=>x.player.sport);
  /* Formats this topic has questions for, in this region. */
  const has={nick:NICKS.length>0&&PLAYERS.length>=4,record:RECORDS.length>0&&PLAYERS.length>=4,sport:SPORTS.length>=4&&PLAYERS.length>0,
-  country:all||COUNTRIES.length>=4,venue:VENUES.length>=4,term:!!(words||terms),cricketTerm:!!terms,champ:CHAMPS.length>0};
+  country:all||COUNTRIES.length>=4,venue:VENUES.length>=4,term:!!(words||terms),cricketTerm:!!terms,champ:CHAMPS.length>0,trivia:TRIVIA.length>0};
  FORMATS=T.order.filter(f=>has[f]);
 }
 function formatLabels(){return FORMATS.map(f=>f==='venue'&&T.venues==='f1'?FORMAT_LABEL.circuit:FORMAT_LABEL[f])}
@@ -125,9 +148,13 @@ function sportPicker(list,sportOf){
 /* Mix several decks with fixed shares, e.g. 80% sports words and 20% cricket terms. */
 function mix(parts){
  const total=parts.reduce((a,p)=>a+p[1],0);
- return {reset(){parts.forEach(p=>p[0].reset())},draw(){let r=Math.random()*total,i=0;while(i<parts.length-1&&r>parts[i][1]){r-=parts[i][1];i++}return parts[i][0].draw()}};
+ return {reset(){parts.forEach(p=>p[0].reset())},draw(filter){let r=Math.random()*total,i=0;while(i<parts.length-1&&r>parts[i][1]){r-=parts[i][1];i++}return parts[i][0].draw(filter)}};
 }
 const bySport=p=>p.sport;
+/* Hard questions (tagged in data/sports.js) wait until question 9; after that about half the questions are hard. */
+const HARD_FROM=9;
+const tier=ctx=>ctx.n<HARD_FROM?x=>!x.hard:Math.random()<.5?x=>x.hard:null;
+const HARD_LEVEL='Hard';
 useRegion(GTQRegion.get());
 function quote(h,text,sub){
  const q=document.createElement('div');q.className='clue-quote';q.textContent=text;
@@ -143,7 +170,7 @@ const game=GuessGame.run({
  note:noteText(),onRegion(r){useRegion(r);return noteText()},
  previewHtml:'<div class="preview-row"><span>'+T.preview+'</span></div>',
  prompt:'Who is this?',links:LINKS,
- onStart(){Object.values(decks).forEach(d=>d.reset())},
+ onStart(){Object.values(decks).forEach(d=>d&&d.reset())},
  formats:formatLabels(),
  next(ctx){
   const level=ctx.hard?(T.sports&&T.sports.length===1?'Tricky':'Tricky · same sport'):'Warm-up';
@@ -187,12 +214,17 @@ const game=GuessGame.run({
    return {kind:'Sports word',answer:w.sport,options:pickOthers(w.sport,SPORTS),prompt:'Which sport uses this word?',level,
     explanation:'“'+w.word+'” is from '+w.sport+'.',render(h){quote(h,'“'+w.word+'”','📖 Sports word')}};
   }
+  if(f==='trivia'){
+   const t=decks.trivia.draw(tier(ctx));
+   return {kind:'Trivia',answer:t.answer,options:U.shuffle([t.answer].concat(t.wrong)),prompt:'Pick the right answer',level:t.hard?HARD_LEVEL:level,
+    explanation:t.q.replace(/…$/,'')+' '+t.answer+'.',render(h){quote(h,t.q,(ICON[t.sport]||'🏅')+(t.hard?' Hard trivia':' Trivia'))}};
+  }
   if(f==='champ'){
-   const c=decks.champ.draw();
-   return {kind:'Champions',answer:c.answer,options:pickOthers(c.answer,c.others),prompt:c.ask,level,
-    explanation:c.host?c.answer+' hosted the '+c.year+' Summer Olympics'+(c.year===2020?' (held in 2021)':'')+'.':
-     c.icon==='🏎️'?c.answer+' won the '+c.year+' Formula 1 drivers’ championship.':c.answer+' won in '+c.year+' ('+c.sub.replace('IPL champions','IPL')+').',
-    render(h){U.bigClue(h,c.icon+' '+c.year,c.sub)}};
+   const c=decks.champ.draw(tier(ctx));
+   return {kind:'Champions',answer:c.answer,options:pickOthers(c.answer,c.others),prompt:c.ask,level:c.hard?HARD_LEVEL:level,
+    explanation:c.explain||(c.host?c.answer+' hosted the '+c.year+' Summer Olympics'+(c.year===2020?' (held in 2021)':'')+'.':
+     c.answer+' won in '+c.year+' ('+c.sub.replace('IPL champions','IPL')+').'),
+    render(h){U.bigClue(h,c.icon+' '+(c.clue||c.year),c.sub)}};
   }
   const p=decks.nick.draw();
   return {kind:'Nickname',answer:p.name,options:players(p),prompt:'Whose nickname is this?',level,explanation:'“'+p.nick+'” is '+p.name+' ('+p.sport+', '+p.country+').',
