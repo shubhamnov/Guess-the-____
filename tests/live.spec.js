@@ -130,8 +130,8 @@ test('every game links to live mode and the live page lists them all', async ({ 
   await expect(page.locator('#modeChip a[aria-current]')).toHaveText('Solo');
   await page.goto('live/');
   const hrefs = await page.locator('#categories a, #mixLink').evaluateAll(as => as.map(a => a.getAttribute('href')));
-  /* Every registered game, plus Name Them All, the Daily Mix and the Live Mix. */
-  const games = await page.evaluate(() => window.GTQ_GAMES.length);
+  /* Every registered game, the category mixes, Name Them All, the Daily Mix and the Live Mix. */
+  const games = await page.evaluate(() => window.GTQ_GAMES.length + GTQ_CATEGORIES.filter(c => c.mix && c.mix.includes('/')).length);
   expect(hrefs.length).toBe(games + 3);
   for (const href of hrefs) {
     const res = await page.request.get(new URL(href.split('?')[0], page.url()).toString());
@@ -139,16 +139,23 @@ test('every game links to live mode and the live page lists them all', async ({ 
   }
 });
 
-test('home page: tapping a game asks Solo or With a friend, and a code joins from home', async ({ page }) => {
+test('category page: tapping a topic or the mix asks Solo or With a friend, and a code joins from home', async ({ page }) => {
   await page.goto('./');
-  await page.locator('.game-card[href="./guess-the-flag/"]').click();
+  await page.locator('.game-card[href="./world/"]').click();
+  await expect(page).toHaveURL(/\/world\/$/);
+  await page.locator('.game-card[href="../guess-the-flag/"]').click();
   const sheet = page.locator('#modeSheet');
   await expect(sheet).toBeVisible();
   await expect(sheet.locator('#sheetTitle')).toHaveText('Flags');
-  await expect(sheet.locator('#sheetSolo')).toHaveAttribute('href', './guess-the-flag/');
-  await expect(sheet.locator('#sheetFriend')).toHaveAttribute('href', './guess-the-flag/?live=new');
+  await expect(sheet.locator('#sheetSolo')).toHaveAttribute('href', '../guess-the-flag/');
+  await expect(sheet.locator('#sheetFriend')).toHaveAttribute('href', '../guess-the-flag/?live=new');
   await page.locator('#sheetClose').click();
   await expect(sheet).toBeHidden();
+  await page.locator('.cat-mix').click();
+  await expect(sheet.locator('#sheetTitle')).toHaveText('World & Places mix');
+  await expect(sheet.locator('#sheetFriend')).toHaveAttribute('href', './mix/?live=new');
+  await page.locator('#sheetClose').click();
+  await page.goto('./');
   await page.locator('#homeCode').fill('ab');
   await page.locator('#joinForm button').click();
   await expect(page.locator('#joinError')).toContainText('4-letter code');

@@ -11,7 +11,10 @@ test.describe('first visit', () => {
     await expect(welcome).toBeVisible();
     await welcome.locator('button[data-region="global"]').click();
     await expect(welcome).toHaveCount(0);
-    await expect(page.locator('.game-card[href="./guess-the-bollywood/"]')).toBeHidden();
+    await expect(page.locator('[data-topics="movies-tv"]')).toHaveText('3');
+    await page.goto('movies-tv/');
+    await expect(page.locator('.game-card[href="../guess-the-bollywood/"]')).toBeHidden();
+    await expect(page.locator('#mixNote')).toContainText('all 3 topics');
     await page.goto('settings/');
     await expect(page.locator('#regionHost [aria-pressed="true"]')).toHaveText(/Global/);
     await page.goto('guess-the-sports/');
@@ -44,12 +47,12 @@ test('the Settings page and the top-right button change the same setting', async
   await expect(page.locator('#regionHelp')).toContainText('Bollywood is hidden');
   await expect(page.locator('.region-btn')).toHaveAttribute('aria-label', /Global/);
   await page.locator('.back').click();
-  const bolly = page.locator('.game-card[href="./guess-the-bollywood/"]');
-  await expect(bolly).toBeHidden();
+  const bolly = page.locator('[data-topics="movies-tv"]');
+  await expect(bolly).toHaveText('3');
   await expect(page.locator('#settingsSummary')).toHaveText('Questions: Global · Sound on');
   await page.locator('.region-btn').click();
   await page.locator('.region-menu [data-region="both"]').click();
-  await expect(bolly).toBeVisible();
+  await expect(bolly).toHaveText('4');
   await page.goto('settings/');
   await expect(page.locator('#regionHost [aria-pressed="true"]')).toHaveText('Both');
   await page.locator('#soundSetting').click();

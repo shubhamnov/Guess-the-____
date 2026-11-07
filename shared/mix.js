@@ -2,8 +2,10 @@
  * Each game in GTQ_GAMES is loaded in a hidden iframe with ?mix. There the engine builds no page; it only hands out
  * questions from the game's own code (see "Mix export" in engine.js). The game's styles are copied into this page
  * so its clues look the same here. A game that fails to load within 20 seconds is left out of the mix.
- * GTQMix.load(region) → Promise (starts once; call it early). region 'global' or 'india' leaves out games for the
- * other region and has each game ask only its questions for that region; Both (the default) asks everything. GTQMix.questions(seed, perGame) → shuffled list, the same
+ * GTQMix.load(region, cat) → Promise (starts once; call it early). region 'global' or 'india' leaves out games for the
+ * other region and has each game ask only its questions for that region; Both (the default) asks everything.
+ * cat (optional) keeps only the games of that category (a category mix). Topics marked sub are always left out:
+ * their questions are already in another game. GTQMix.questions(seed, perGame) → shuffled list, the same
  * for the same seed on every device. GTQMix.games() → the games that loaded. */
 (function(){
 'use strict';
@@ -11,8 +13,10 @@ const ROOT=new URL('../',(document.currentScript&&document.currentScript.src)||l
 const TIMEOUT=20000;
 function hashSeed(seed){let h=2166136261;for(let i=0;i<seed.length;i++){h^=seed.charCodeAt(i);h=Math.imul(h,16777619)}return h>>>0}
 function rngFor(seed){let state=hashSeed(String(seed));return function(){state=(state+0x6D2B79F5)|0;let t=state;t=Math.imul(t^(t>>>15),t|1);t^=t+Math.imul(t^(t>>>7),t|61);return ((t^(t>>>14))>>>0)/4294967296}}
-let loading=null,loaded=[],region='both';
+let loading=null,loaded=[],region='both',category=null;
 const inRegion=g=>region==='both'||!g.region||g.region==='any'||g.region===region;
+/* The games a mix plays: not sub, in the region, and in the category when one is set. */
+const inMix=g=>!g.sub&&inRegion(g)&&(!category||g.cat===category);
 const styles=new Set();
 function addStyles(doc){
  doc.querySelectorAll('style').forEach(s=>{const css=s.textContent;if(!css.trim()||styles.has(css))return;styles.add(css);
@@ -33,13 +37,14 @@ function loadGame(game){
   document.body.appendChild(frame);
  });
 }
-function load(r){
+function load(r,cat){
  if(!loading){
   if(r==='global'||r==='india')region=r;
+  if(cat)category=cat;
   const css=document.createElement('style');
   // Photo clues open a full-screen view inside their own (hidden) frame, so the enlarge button is not offered here.
   css.textContent='.clue .photo-zoom{display:none}.clue img{cursor:default!important}';document.head.appendChild(css);
-  loading=Promise.all((window.GTQ_GAMES||[]).filter(inRegion).map(g=>loadGame(g).catch(e=>{console.warn('Mix: left out',e.message);return null})))
+  loading=Promise.all((window.GTQ_GAMES||[]).filter(inMix).map(g=>loadGame(g).catch(e=>{console.warn('Mix: left out',e.message);return null})))
    .then(list=>{loaded=list.filter(Boolean);if(!loaded.length){loading=null;throw new Error('No games could be loaded')}return loaded});
  }
  return loading;
@@ -54,5 +59,5 @@ function questions(seed,perGame){
  for(let i=out.length-1;i>0;i--){const j=Math.floor(rng()*(i+1));[out[i],out[j]]=[out[j],out[i]]}
  return out;
 }
-window.GTQMix={load,questions,games:()=>loaded.slice(),inRegion,region:()=>region};
+window.GTQMix={load,questions,games:()=>loaded.slice(),inRegion,inMix,region:()=>region};
 })();

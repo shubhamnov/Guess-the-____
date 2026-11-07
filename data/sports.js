@@ -583,3 +583,27 @@ GTQ_DATA.olympicHosts=[
 [1964,"Tokyo"],[1968,"Mexico City"],[1972,"Munich"],[1976,"Montreal"],[1980,"Moscow"],[1984,"Los Angeles"],[1988,"Seoul"],
 [1992,"Barcelona"],[1996,"Atlanta"],[2000,"Sydney"],[2004,"Athens"],[2008,"Beijing"],[2012,"London"],[2016,"Rio de Janeiro"],[2020,"Tokyo"],[2024,"Paris"]
 ];
+/* Formula 1 drivers' champions: year, driver (Guess the F1). */
+GTQ_DATA.f1Champions=[
+[1988,"Ayrton Senna"],[1989,"Alain Prost"],[1990,"Ayrton Senna"],[1991,"Ayrton Senna"],[1992,"Nigel Mansell"],[1993,"Alain Prost"],
+[1994,"Michael Schumacher"],[1995,"Michael Schumacher"],[1996,"Damon Hill"],[1997,"Jacques Villeneuve"],[1998,"Mika Häkkinen"],
+[1999,"Mika Häkkinen"],[2000,"Michael Schumacher"],[2001,"Michael Schumacher"],[2002,"Michael Schumacher"],[2003,"Michael Schumacher"],
+[2004,"Michael Schumacher"],[2005,"Fernando Alonso"],[2006,"Fernando Alonso"],[2007,"Kimi Räikkönen"],[2008,"Lewis Hamilton"],
+[2009,"Jenson Button"],[2010,"Sebastian Vettel"],[2011,"Sebastian Vettel"],[2012,"Sebastian Vettel"],[2013,"Sebastian Vettel"],
+[2014,"Lewis Hamilton"],[2015,"Lewis Hamilton"],[2016,"Nico Rosberg"],[2017,"Lewis Hamilton"],[2018,"Lewis Hamilton"],
+[2019,"Lewis Hamilton"],[2020,"Lewis Hamilton"],[2021,"Max Verstappen"],[2022,"Max Verstappen"],[2023,"Max Verstappen"],
+[2024,"Max Verstappen"],[2025,"Lando Norris"]
+];
+/* Formula 1 circuits: name, nearest city, country (Guess the F1 asks for the country). */
+GTQ_DATA.f1Circuits=[
+["Silverstone Circuit","Silverstone","Great Britain"],["Autodromo Nazionale Monza","Monza","Italy"],["Imola (Enzo e Dino Ferrari)","Imola","Italy"],
+["Circuit de Spa-Francorchamps","Stavelot","Belgium"],["Circuit de Monaco","Monte Carlo","Monaco"],["Suzuka Circuit","Suzuka","Japan"],
+["Interlagos (José Carlos Pace)","São Paulo","Brazil"],["Circuit Gilles Villeneuve","Montreal","Canada"],["Albert Park Circuit","Melbourne","Australia"],
+["Marina Bay Street Circuit","Singapore","Singapore"],["Yas Marina Circuit","Abu Dhabi","UAE"],["Bahrain International Circuit","Sakhir","Bahrain"],
+["Circuit of the Americas","Austin","USA"],["Las Vegas Strip Circuit","Las Vegas","USA"],["Miami International Autodrome","Miami","USA"],
+["Hungaroring","Budapest","Hungary"],["Red Bull Ring","Spielberg","Austria"],["Circuit Zandvoort","Zandvoort","Netherlands"],
+["Circuit de Barcelona-Catalunya","Barcelona","Spain"],["Jeddah Corniche Circuit","Jeddah","Saudi Arabia"],["Baku City Circuit","Baku","Azerbaijan"],
+["Autódromo Hermanos Rodríguez","Mexico City","Mexico"],["Shanghai International Circuit","Shanghai","China"],["Lusail International Circuit","Lusail","Qatar"],
+["Hockenheimring","Hockenheim","Germany"],["Nürburgring","Nürburg","Germany"],["Sepang International Circuit","Sepang","Malaysia"],
+["Buddh International Circuit","Greater Noida","India"],["Istanbul Park","Istanbul","Turkey"],["Circuit Paul Ricard","Le Castellet","France"]
+];

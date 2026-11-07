@@ -52,31 +52,36 @@ h1 em{font-style:normal;background:linear-gradient(transparent 62%,var(--lime) 6
   <div class="eyebrow">Two players · live scores</div>
   <h1>Play with<br><em>a friend.</em></h1>
   <p class="lead">Pick what to play, create a room and send the link. You both get the same questions and 60 seconds, and you watch each other’s score as you go. Higher score wins.</p>
-  <ol class="steps"><li>1 · Pick a game</li><li>2 · Create a room</li><li>3 · Send the link</li><li>4 · Play · rematch</li></ol>
+  <ol class="steps"><li>1 · Pick a topic</li><li>2 · Create a room</li><li>3 · Send the link</li><li>4 · Play · rematch</li></ol>
   <a class="mix" id="mixLink" href="../race/?live">
    <div class="mark" aria-hidden="true">🎲</div>
    <div><div class="eyebrow">Recommended</div><h2>Mix of everything</h2><p>Random questions from every game: flags, landmarks, logos, sports, series and the rest.</p></div>
    <span class="arrow" aria-hidden="true">→</span>
   </a>
-  <div class="eyebrow or">or pick one category</div>
+  <div class="eyebrow or">or pick a category mix or one topic</div>
   <nav class="grid" id="categories" aria-label="Categories">
    <a class="cat" href="../name-them-all/?live"><span aria-hidden="true">⌨️</span><b>Name Them All</b><i class="arrow" aria-hidden="true">→</i></a>
    <a class="cat" href="../daily-challenge/?live"><span aria-hidden="true">📅</span><b>Today’s Daily Mix</b><i class="arrow" aria-hidden="true">→</i></a>
   </nav>
   <p class="note">Got a code from a friend? Open any game above and type it under “join a friend’s room”; you’ll be taken to the right game. Use two devices (two phones, or a phone and a computer) and keep the page on screen: phones pause pages in the background.</p>
  </section>
- <footer class="footer"><span>GUESS THE ?</span><a href="https://github.com/shubhamnov" target="_blank" rel="noopener noreferrer">MADE BY SHUBHAM ↗</a></footer>
+ <footer class="footer"><span>GUESS THE ?</span><a href="https://shubhamnov.github.io/shubham-portfolio/" target="_blank" rel="noopener noreferrer">MADE BY SHUBHAM JOSHI ↗</a></footer>
 </main>
 <script src="../shared/games.js"></script>
 <script>
-/* One link per game in shared/games.js, before Name Them All and the Daily Mix, so a new game is listed here once it is added there. */
+/* For each category in shared/games.js: its mix, then its topics, before Name Them All and the Daily Mix,
+   so a new game is listed here once it is added there. */
 (function(){
  const nav=document.getElementById('categories'),before=nav.querySelector('a[href*="name-them-all"]');
- (window.GTQ_GAMES||[]).forEach(g=>{
-  const a=document.createElement('a');a.className='cat';a.href='../'+g.path+'/?live';
+ function tile(href,emoji,label){
+  const a=document.createElement('a');a.className='cat';a.href='../'+href+'/?live';
   a.innerHTML='<span aria-hidden="true"></span><b></b><i class="arrow" aria-hidden="true">→</i>';
-  a.querySelector('span').textContent=g.emoji;a.querySelector('b').textContent=g.label;
+  a.querySelector('span').textContent=emoji;a.querySelector('b').textContent=label;
   nav.insertBefore(a,before);
+ }
+ (window.GTQ_CATEGORIES||[]).filter(c=>c.mix).forEach(c=>{
+  tile(c.mix,c.emoji,c.label+' mix');
+  (window.GTQ_GAMES||[]).filter(g=>g.cat===c.id&&g.path!==c.mix).forEach(g=>tile(g.path,g.emoji,g.label));
  });
 })();
 </script>

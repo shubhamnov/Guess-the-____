@@ -33,6 +33,7 @@ Every game page loads `engine.css` and `engine.js`, then calls `GuessGame.run(co
 | `formatOption(value)` | Optional display text for an answer value. |
 | `legacyBest` | Old storage keys to convert into the shared best score. |
 | `links` | Extra links on the intro and results screens. |
+| `homeHref`, `homeLabel` | Where the "back" link on the intro and results screens goes. Defaults to the game's category page (from `shared/games.js`) and its name. |
 | `autoStart` | Defaults to `true`; the Daily Mix sets it to `false` to show its intro. |
 | `onFinish(result)` | Optional: called with `{score, correct, answered, best, seconds, allDone}` when a game ends. |
 | `replay` | Set to `false` to hide "Play again" (live mode does this). |
@@ -70,27 +71,36 @@ A question is `{answer, options, render(clueElement), prompt?, kind?, level?, ex
 - `data/*.js` — each game's question list, one row per line, so you can add or fix questions without touching code.
 - `catalogs/*.json` — the photo catalogs for Landmarks and Cuisine (see `catalogs/README.md`).
 - `brand-logos.js` — logo data. `daily-challenge-data-v1.js` — the flag-code list `scripts/cache_flag_images.py` caches.
-- `shared/games.js` — the list of engine games. `shared/mix.js` — builds the Daily Mix and Live Mix from every game in it (see below).
+- `shared/games.js` — the categories and every engine game in them (see "Categories" below). `shared/mix.js` — builds the Daily Mix, the Live Mix and the category mixes from it.
+- `index.html` + `shared/home.css` — the home page: Daily Mix, "Jump back in", and one card per category.
+- `<category>/index.html` (`world/`, `movies-tv/`, `sports/`, `science-nature/`, `general-knowledge/`) — a category page: "Play the mix" and one card per topic. `<category>/mix/` runs `shared/category-mix.js`, a mix of that category's topics (Sports uses Guess the Sports).
+- `shared/cards.js` — shared by the home and category pages: the Solo / With a friend sheet for `data-play` cards, best scores on `data-id` cards, hiding `data-region` cards, topic counts, and "Jump back in" (`gtq:recent`, the last 8 games, written by the engine when a game starts).
+- `shared/sports-game.js` + `data/sports.js` — every sports page. `window.GTQ_SPORTS_TOPIC` picks the topic: `sports` (all of them), `cricket`, `football`, `tennis`, `f1`, `olympics` or `more-sports`.
 - `shared/live.js` — live mode (see above). `shared/vendor/peerjs.min.js` is the PeerJS library it uses to connect the devices.
 - `shared/mode-switch.js` — the Solo ⇄ With a friend chip in every game header. If a round is running, or a friend is in the room, it asks “Play with a friend instead?” / “Leave the room and play solo?” before leaving; a solo clock pauses while it asks. Load it after `engine.js` (Name Them All attaches it itself).
 - `live/` — the "Play live" page: Mix of everything, or pick a category. `race/` — the Live Mix (questions from every category; see `race/README.md`).
 
+## Categories
+
+`shared/games.js` has two lists. `GTQ_CATEGORIES` is the home page cards (`{id, label, emoji, blurb, mix}`; `id` is the folder, `mix` the folder of its mix game; Name Them All has `href` instead). `GTQ_GAMES` is every topic (`{path, label, emoji, id, cat}`, plus `region:'india'` for an all-Indian game and `sub:true` for a sports topic whose questions are already in Guess the Sports, so the Daily Mix and Live Mix skip it).
+
 ## The mixes: one question from every game
 
-`shared/games.js` lists every game that runs on the engine (`{path, label, emoji}`). Three places read it:
+Four places read `GTQ_GAMES`:
 
 - **Daily Mix** (`daily-challenge/`): one question from every game, the same for everyone on a given date.
 - **Live Mix** (`race/`): two questions from every game for each live round.
-- **Play live** (`live/`): one link per game.
+- **Category mixes** (`<category>/mix/`): questions from that category's topics only (`GTQMix.load(region, category)`).
+- **Play live** (`live/`): each category's mix, then its topics.
 
 `shared/mix.js` loads each listed game in a hidden iframe with `?mix`. In that mode `GuessGame.run(cfg)` builds no page. It sets `window.GuessGameExport` with `questions(seed, count)`, which calls the game's own `next`/`makeRound` with a generator seeded from the seed and the game id. So the mix questions come from the game's real code and data, and they're the same on every device. The Daily Mix follows the Global / India / Both switch (`GTQMix.load(region)`: games marked `region` in games.js are left out of the other region, and each game frame gets `?mix&region=`); the Live Mix uses Both. A game that fails to load within 20 seconds is left out rather than breaking the mix.
 
 ### Adding a new game
 
 1. Make `guess-the-<name>/index.html` with `GuessGame.run(cfg)`.
-2. Add `{path, label, emoji}` to `shared/games.js`.
-3. Add a card to the home page (`index.html`). Give it `data-region="india"` if all of its content is Indian.
+2. Add `{path, label, emoji, id, cat}` to `shared/games.js`, in its category's place.
+3. Add a card to its category page (`<category>/index.html`) with `data-play data-id="<id>"`. Give it `data-region="india"` if all of its content is Indian.
 4. Add the game to the `games` list in `tests/browser-smoke.spec.js`.
 5. If some items are India-specific, tag them `region` and filter with `GTQRegion.keep` (see "Global / India / Both").
 
-The Daily Mix, the Live Mix and the live page then include it automatically. `tests/registry.spec.js` fails if step 2, 3 or 4 is missing, or if the game can't hand questions to the mix.
+The Daily Mix, the Live Mix, the category mix and the live page then include it automatically. `tests/registry.spec.js` fails if step 2, 3 or 4 is missing, or if the game can't hand questions to the mix.

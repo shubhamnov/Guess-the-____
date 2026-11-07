@@ -25,7 +25,7 @@ function validDate(value){if(!/^\d{4}-\d{2}-\d{2}$/.test(value||''))return false
 function formatDate(value){return new Intl.DateTimeFormat('en-US',{month:'long',day:'numeric',year:'numeric',timeZone:'UTC'}).format(new Date(value+'T00:00:00Z'))}
 const REGION=GTQRegion.get();
 GTQMix.load(REGION).catch(()=>{});
-const GAMES=window.GTQ_GAMES.filter(GTQMix.inRegion);
+const GAMES=window.GTQ_GAMES.filter(GTQMix.inMix);
 const params=new URLSearchParams(window.location.search);
 const activeDate=validDate(params.get('date'))?params.get('date'):todayUTC();
 // Both keeps the seed the mix had before the switch existed, so those dates don't change.

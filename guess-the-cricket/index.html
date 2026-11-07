@@ -2,11 +2,23 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Guess the Sports — Guess the ____</title>
-<meta name="robots" content="noindex">
-<link rel="canonical" href="../guess-the-sports/">
-<script>location.replace('../guess-the-sports/'+location.search+location.hash)</script>
-<meta http-equiv="refresh" content="0; url=../guess-the-sports/">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f8f7f2">
+<meta name="description" content="Cricket quiz: nicknames, records, grounds, cricket terms, World Cups and IPL champions in sixty seconds.">
+<title>Guess the Cricket — Guess the ____</title>
+<link rel="stylesheet" href="../shared/engine.css">
+<style>
+.clue-quote{font-family:var(--display);font-weight:950;letter-spacing:-.03em;text-align:center;line-height:1.15;max-width:calc(100% - 32px);overflow-wrap:anywhere}
+.clue-quote+.clue-sub{margin-top:10px}
+</style>
 </head>
-<body><p>Cricket is now part of <a href="../guess-the-sports/">Guess the Sports</a>.</p></body>
+<body data-game="cricket">
+<script src="../shared/region.js"></script>
+<script src="../shared/games.js"></script>
+<script src="../shared/engine.js"></script>
+<script src="../shared/mode-switch.js"></script>
+<script src="../data/sports.js"></script>
+<script>window.GTQ_SPORTS_TOPIC='cricket'</script>
+<script src="../shared/sports-game.js"></script>
+</body>
 </html>

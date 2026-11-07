@@ -200,4 +200,4 @@ button:focus-visible,a:focus-visible{outline:3px solid #7871e8;outline-offset:3p
 .lobby-part{display:flex;flex-direction:column;gap:12px}
 .solo-link{text-align:center;color:var(--muted)}
 .race-tally{text-align:center;font-family:var(--display);font-weight:1000;font-size:18px;letter-spacing:-.02em;background:var(--bg);border-radius:13px;padding:8px}
-@media(max-width:374px){.mode-chip .mc-long{display:none}.mode-chip .mc-short{display:inline}.brand{font-size:16px;letter-spacing:-.9px}.brand span{width:23px;height:23px}.top{gap:6px}.top-actions{gap:5px}.mode-chip a{padding:5px 7px;letter-spacing:.03em}.sound-toggle{padding:6px 7px}}
+@media(max-width:419px){.mode-chip .mc-long{display:none}.mode-chip .mc-short{display:inline}.brand{font-size:16px;letter-spacing:-.9px}.brand span{width:23px;height:23px}.top{gap:6px}.top-actions{gap:5px}.mode-chip a{padding:5px 7px;letter-spacing:.03em}.sound-toggle{padding:6px 7px}}

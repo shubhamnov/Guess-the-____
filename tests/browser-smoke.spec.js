@@ -18,7 +18,13 @@ const games = [
   { name: 'Series', path: 'guess-the-series/', kind: 'timed' },
   { name: 'Web Series', path: 'guess-the-web-series/', kind: 'timed' },
   { name: 'World Politics', path: 'guess-the-world-politics/', kind: 'timed' },
-  { name: 'Sports', path: 'guess-the-sports/', kind: 'timed' }
+  { name: 'Sports', path: 'guess-the-sports/', kind: 'timed' },
+  { name: 'Cricket', path: 'guess-the-cricket/', kind: 'timed' },
+  { name: 'Football', path: 'guess-the-football/', kind: 'timed' },
+  { name: 'Tennis', path: 'guess-the-tennis/', kind: 'timed' },
+  { name: 'F1', path: 'guess-the-f1/', kind: 'timed' },
+  { name: 'Olympics', path: 'guess-the-olympics/', kind: 'timed' },
+  { name: 'More sports', path: 'guess-the-more-sports/', kind: 'timed' }
 ];
 
 test.beforeEach(async ({ page }) => {
@@ -130,6 +136,7 @@ for (const catalog of [
 test('homepage contains the Daily Challenge and individual games do not offer it as a mode', async ({ page }) => {
   await page.goto('./', { waitUntil: 'domcontentloaded' });
   await expect(page.locator('a[href*="daily-challenge/"]')).toBeVisible();
+  await page.locator('.game-card[href="./general-knowledge/"]').click();
   const logoLink = page.locator('a[href*="guess-the-brand-logos/"]').first();
   await expect(logoLink).toBeVisible();
   await logoLink.click();
@@ -163,7 +170,7 @@ test('Daily Mix asks one question from every game within 60 seconds and shows a 
   page.on('pageerror', e => errors.push(e.message));
   await page.goto('daily-challenge/?date=2026-01-15', { waitUntil: 'domcontentloaded' });
   await expect(page.locator('#intro')).toBeVisible();
-  const total = await page.evaluate(() => window.GTQ_GAMES.length);
+  const total = await page.evaluate(() => window.GTQ_GAMES.filter(g => !g.sub).length);
   await page.locator('#startBtn').click();
   const games = new Set();
   for (let i = 1; i <= total; i++) {

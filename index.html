@@ -4,59 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#f8f7f2">
-<meta name="description" content="Choose a quick guessing game: colors, flags, countries, landmarks, cuisine, animals, capital cities, scripts, brand logos, currencies, elements, languages, Bollywood, Hollywood, TV series, web series and sports.">
+<meta name="description" content="Quick guessing games in six categories: World &amp; Places, Movies &amp; TV, Sports, Science &amp; Nature, General Knowledge and Name Them All. Play a topic or a mix, solo or with a friend.">
 <title>Guess the ____ — Pick a Category</title>
-<style>
-:root{--bg:#f8f7f2;--ink:#191b1a;--muted:#777b75;--line:#e7e5dd;--paper:#fffefa;--lime:#d7fb55;--display:ui-rounded,"Arial Rounded MT Bold",system-ui,sans-serif}
-*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a{color:inherit}a:focus-visible{outline:3px solid #7871e8;outline-offset:4px}.shell{width:min(100% - 32px,820px);margin:0 auto;padding:24px 0 26px;min-height:100dvh;display:flex;flex-direction:column}.top{display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{font-family:var(--display);font-size:22px;font-weight:1000;letter-spacing:-1.1px;text-decoration:none;white-space:nowrap}.brand span{display:inline-grid;place-items:center;background:var(--lime);border-radius:9px;width:27px;height:27px;margin-left:3px;transform:rotate(5deg)}.pill{font-size:10px;font-weight:850;letter-spacing:.09em;text-transform:uppercase;border:1px solid var(--line);padding:8px 11px;border-radius:999px;color:#555950;white-space:nowrap}.main{width:100%;margin:auto 0;padding:clamp(38px,8vh,82px) 0 52px}.eyebrow{font-size:11px;letter-spacing:.16em;font-weight:900;color:#7a7e74;text-transform:uppercase}.hero h1{font-family:var(--display);font-size:clamp(43px,9vw,76px);line-height:.94;letter-spacing:-.067em;margin:14px 0 15px;font-weight:1000;max-width:700px}.hero h1 em{font-style:normal;position:relative;z-index:0;white-space:nowrap}.hero h1 em:after{content:"";position:absolute;z-index:-1;bottom:3px;left:0;right:0;height:33%;background:var(--lime);transform:rotate(-1.5deg);border-radius:5px}.hero p{margin:0;max-width:440px;color:#686d65;font-size:15px;line-height:1.6}.daily-feature{display:grid;grid-template-columns:64px minmax(0,1fr) auto;align-items:center;gap:15px;margin-top:28px;padding:15px;background:var(--lime);border:1.5px solid var(--ink);border-radius:22px;color:var(--ink);text-decoration:none;box-shadow:4px 4px 0 var(--ink);transition:transform .15s,box-shadow .15s}.daily-feature:hover{transform:translateY(-2px);box-shadow:5px 6px 0 var(--ink)}.daily-mark{height:64px;border-radius:15px;background:var(--paper);border:1.5px solid var(--ink);display:grid;place-items:center;font-family:var(--display);font-size:24px;font-weight:1000;letter-spacing:-.08em;transform:rotate(-3deg)}.daily-copy .eyebrow{color:#45483e;font-size:9px}.daily-copy h2{font-family:var(--display);font-size:clamp(19px,3.4vw,26px);letter-spacing:-.045em;line-height:1.05;margin:5px 0 6px;font-weight:1000}.daily-copy p{font-size:12px;line-height:1.45;color:#45483e;margin:0}.daily-feature .arrow{width:35px;height:35px;border:1.5px solid var(--ink)}.choices{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:34px}.game-card{display:flex;flex-direction:column;text-decoration:none;background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:12px;min-width:0;transition:transform .15s,border-color .15s,box-shadow .15s}.game-card:hover{transform:translateY(-3px);border-color:#cbc8bd;box-shadow:0 12px 30px #23251c0a}.visual{height:clamp(145px,25vw,240px);border-radius:16px;overflow:hidden;margin-bottom:18px}.color-visual{display:grid;grid-template-columns:1.1fr .8fr 1fr 1fr;gap:5px;background:#f0eee7;padding:7px}.color-visual i{display:block;border-radius:11px}.color-visual i:nth-child(1){background:#ff6255}.color-visual i:nth-child(2){background:#e5ef6e}.color-visual i:nth-child(3){background:#7766c6}.color-visual i:nth-child(4){background:#54bda0}.flag-visual{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;background:#f0eee7;padding:7px}.flag-visual img{display:block;width:100%;height:100%;min-width:0;object-fit:cover;border-radius:10px;border:1px solid #0000000a}.card-info{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;padding:0 5px 5px}.card-info h2{font-family:var(--display);font-weight:950;font-size:clamp(20px,3.5vw,29px);letter-spacing:-.045em;line-height:1.05;margin:0 0 8px}.card-info p{font-size:12px;line-height:1.5;color:var(--muted);margin:0;max-width:250px}.arrow{flex:none;display:grid;place-items:center;width:35px;height:35px;background:var(--lime);border-radius:50%;font-size:19px;font-weight:800;transition:transform .15s}.game-card:hover .arrow{transform:translateX(2px)}.meta{margin-top:15px;padding:0 5px;display:flex;gap:7px;align-items:center;flex-wrap:wrap}.tag{font-size:9px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;padding:6px 8px;border:1px solid var(--line);border-radius:999px;color:#666b62}.footer{margin-top:auto;display:flex;justify-content:space-between;gap:12px;padding-top:22px;color:#92958d;font-size:10px}.footer span:last-child{text-align:right}.footer .creator-credit{text-align:right}.creator-credit{color:inherit;text-decoration:none;font-size:10px;font-weight:900;letter-spacing:.04em;white-space:nowrap}.creator-credit:hover{text-decoration:underline;text-underline-offset:3px}.note{text-align:center;color:var(--muted);font-size:11px;line-height:1.5;margin:20px 0 0}.country-visual{background:#e5ede5;display:grid;place-items:center;padding:10px}.country-visual svg{width:100%;height:100%}.country-visual path{fill:#9bc5a5;stroke:#2d7252;stroke-width:2.5;stroke-linejoin:round}.animal-visual{background:#f0e8dd;display:flex;align-items:center;justify-content:space-around;gap:3px}.animal-visual span{font-size:clamp(36px,7vw,65px);filter:drop-shadow(0 4px 2px #00000009)}.capital-visual{background:#e7ebf0;display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap}.capital-visual b{font-size:clamp(12px,2.2vw,20px);font-family:var(--display);font-weight:950;background:#fffefa;border-radius:10px;padding:9px 10px;transform:rotate(-4deg)}.capital-visual b:nth-child(2){transform:translateY(-10px) rotate(4deg)}.capital-visual b:nth-child(3){transform:translateY(8px) rotate(-2deg)}.bolly-visual{background:#f6e3d3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:8px;text-align:center}.bolly-visual b{font-family:var(--display);font-size:clamp(11px,1.9vw,16px);font-weight:950;background:#fffefa;border-radius:10px;padding:6px 9px;transform:rotate(-3deg);white-space:nowrap}.bolly-visual b:last-child{transform:rotate(2deg)}.holly-visual{background:#e1e6f3}.cricket-visual{background:#dcebd6}.names-visual{background:#ecf3c9}.series-visual{background:#f3e1ea}.web-visual{background:#e3dcf2}.region-row{display:grid;gap:8px;margin-top:22px}.region-label{font-size:10px;letter-spacing:.15em;font-weight:900;color:#7a7e74;text-transform:uppercase}.region-row small{font-size:11px;line-height:1.45;color:var(--muted)}.game-card[hidden]{display:none}.bolly-visual span{font-size:clamp(17px,3.3vw,28px);line-height:1;white-space:nowrap}@media(min-width:650px){.choices{grid-template-columns:repeat(3,minmax(0,1fr))}.visual{height:clamp(130px,18vw,190px)}}@media(max-width:520px) and (min-width:361px){}@media(max-width:520px){.daily-feature{grid-template-columns:48px minmax(0,1fr) auto;gap:10px;padding:11px;border-radius:18px}.daily-mark{height:48px;font-size:19px;border-radius:12px}.daily-copy .eyebrow{font-size:8px}.daily-copy h2{font-size:18px}.daily-copy p{font-size:10px}.daily-feature .arrow{width:29px;height:29px;font-size:16px}.shell{padding-top:19px}.brand{font-size:19px}.pill{font-size:9px;padding:7px 8px}.main{padding:55px 0 40px}.choices{gap:10px;margin-top:25px}.game-card{padding:8px;border-radius:19px}.visual{height:clamp(120px,33vw,180px);margin-bottom:14px;border-radius:13px}.color-visual,.flag-visual{gap:4px;padding:5px}.color-visual i,.flag-visual img{border-radius:8px}.card-info{padding:0 3px 3px;gap:5px}.card-info h2{font-size:19px}.card-info p{font-size:11px}.arrow{width:29px;height:29px;font-size:16px}.meta{padding:0 3px;margin-top:12px}.tag{font-size:8px;padding:5px 6px}}@media(max-width:360px){.choices{grid-template-columns:1fr}.visual{height:150px}.card-info h2{font-size:23px}.card-info p{font-size:12px}.arrow{width:34px;height:34px}.main{padding-top:35px}}@media(prefers-reduced-motion:reduce){*{transition:none!important}}
-.game-card.work-in-progress{cursor:pointer;opacity:1}.game-card.work-in-progress:hover{transform:none;border-color:var(--line);box-shadow:none}.game-card.work-in-progress .arrow{background:#ecebe4;color:#666b62}.tag.wip{background:#ecebe4;border-color:#d4d1c6;color:#53574f}.script-visual{background:#eeece7;display:grid;grid-template-columns:1fr 1fr;align-items:center;justify-items:center;gap:4px;padding:8px}.script-visual span{font-family:system-ui,sans-serif;font-size:clamp(25px,6vw,46px);font-weight:750;line-height:1.25}.brand-visual{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:8px;background:#efeee7;align-items:stretch}.brand-visual span{display:grid;place-items:center;min-width:0;background:#fffefa;border:1px solid var(--line);border-radius:10px}.brand-visual img{width:clamp(25px,6vw,43px);height:clamp(25px,6vw,43px);max-width:80%;object-fit:contain}@media(min-width:650px){.brand-visual{gap:7px;padding:9px}}\n@media(min-width:650px){}@media(min-width:521px) and (max-width:649px){}
-.tag-new{background:var(--lime);border-color:var(--ink);color:var(--ink)}.element-visual b{font-size:clamp(18px,3.6vw,30px);min-width:2.2em;text-align:center}.script-visual span{font-size:clamp(17px,3.6vw,30px)}
-.mode-help{margin:22px 2px 0;font-size:13px;color:#686d65;line-height:1.5;max-width:560px}
-.daily-strip,.mixcard{display:flex;align-items:center;gap:12px;margin-top:12px;padding:10px 12px 10px 14px;border:1px solid var(--line);border-radius:17px;background:var(--paper);text-decoration:none;transition:transform .15s,border-color .15s}
-.daily-strip:hover,.mixcard:hover{transform:translateY(-2px);border-color:#cbc8bd}
-.daily-strip b,.mixcard b{font-family:var(--display);font-size:16px;letter-spacing:-.03em;white-space:nowrap}
-.daily-strip small{color:var(--muted);font-size:11px;flex:1;min-width:0}
-.strip-mark{font-size:21px;width:28px;text-align:center;flex:none}
-.daily-strip .arrow,.mixcard .arrow{width:30px;height:30px;font-size:15px;margin-left:auto}
-/* Tapping a game opens this sheet: Solo or With a friend. */
-.mode-sheet{border:0;padding:0;background:transparent;max-width:none;width:100%;margin:auto auto 0;color:var(--ink)}
-.mode-sheet::backdrop{background:rgba(25,27,26,.55);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px)}
-.sheet-box{position:relative;width:min(100% - 20px,460px);margin:0 auto 10px;background:var(--paper);border:2px solid var(--ink);border-radius:28px;box-shadow:6px 6px 0 var(--lime);padding:24px 20px 20px;display:flex;flex-direction:column;gap:12px;animation:sheetUp .2s ease-out}
-@keyframes sheetUp{from{transform:translateY(30px);opacity:0}}
-@media(min-width:650px){.mode-sheet{margin:auto}.sheet-box{margin:auto}}
-.sheet-box h2{font-family:var(--display);font-size:clamp(28px,8vw,38px);letter-spacing:-.05em;line-height:1;margin:6px 0 6px;font-weight:1000;padding-right:40px}
-.sheet-close{position:absolute;top:14px;right:14px;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--bg);font-size:20px;line-height:1;cursor:pointer;color:var(--ink)}
-.sheet-opt{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--ink);border:2px solid var(--ink);border-radius:20px;padding:16px;box-shadow:0 4px 0 var(--ink);transition:transform .12s}
-.sheet-opt:hover{transform:translateY(-2px)}
-.sheet-opt.solo{background:var(--lime)}.sheet-opt.friend{background:var(--paper)}
-.sheet-opt .ico{flex:none;width:46px;height:46px;border-radius:14px;display:grid;place-items:center;font-size:24px;background:var(--paper);border:1.5px solid var(--ink)}
-.sheet-opt.friend .ico{background:var(--lime)}
-.sheet-opt b{display:block;font-family:var(--display);font-size:21px;letter-spacing:-.03em}
-.sheet-opt small{display:block;font-size:12.5px;color:#45483e;margin-top:3px;line-height:1.35}
-.sheet-opt .arrow{margin-left:auto}
-.sheet-opt.solo .arrow{background:var(--paper);border:1.5px solid var(--ink)}
-@media(max-width:400px){.jl-long{display:none}}
-.mixcard{background:var(--lime);border:1.5px solid var(--ink)}.mixcard>span:nth-child(2){flex:1;min-width:0}.mixcard b{display:block;font-size:18px}.mixcard small{font-size:11px;color:#45483e}
-.mixcard .arrow{background:var(--paper);border:1.5px solid var(--ink)}
-.join{display:flex;align-items:center;gap:8px;margin-top:12px;padding:8px 8px 8px 14px;border:1px solid var(--line);background:var(--paper);border-radius:17px}
-.join label{font-size:12px;font-weight:850;white-space:nowrap}
-.join input{flex:1;min-width:0;border:1px solid var(--line);background:var(--bg);border-radius:11px;padding:10px 11px;font:inherit;font-size:15px;font-weight:850;letter-spacing:.2em;text-transform:uppercase}
-.join button{border:1.5px solid var(--ink);background:var(--ink);color:#fff;border-radius:11px;padding:10px 14px;font:inherit;font-size:13px;font-weight:900;cursor:pointer}
-.join-error{color:#b3261e;font-size:12px;margin:6px 4px 0;min-height:0}.join-error:empty{display:none}
-.tag-live{background:var(--ink);border-color:var(--ink);color:var(--lime)}
-@media(max-width:520px){.daily-strip small{display:none}.join label{font-size:11px}}
-.top-actions{display:flex;align-items:center;gap:8px;min-width:0}a.pill{text-decoration:none}a.pill:hover{border-color:var(--ink);color:var(--ink)}
-.info{margin-top:44px;padding-top:30px;border-top:1px solid var(--line);scroll-margin-top:16px}.info h2{font-family:var(--display);font-size:clamp(25px,5vw,36px);letter-spacing:-.05em;line-height:1.02;margin:9px 0 18px;font-weight:1000}
-.footer a{color:inherit}
-.intro-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:18px}
-.intro-link{display:flex;align-items:center;gap:12px;min-width:0;padding:12px;background:var(--paper);border:1.5px solid var(--ink);border-radius:18px;text-decoration:none;box-shadow:3px 3px 0 var(--ink);transition:transform .15s,box-shadow .15s}
-.intro-link:hover{transform:translateY(-2px);box-shadow:4px 5px 0 var(--ink)}
-.intro-link .ico{flex:none;width:40px;height:40px;border-radius:12px;background:var(--lime);border:1.5px solid var(--ink);display:grid;place-items:center;font-size:20px}
-.intro-link>span:nth-child(2){min-width:0;flex:1}.intro-link b{display:block;font-family:var(--display);font-size:17px;letter-spacing:-.03em}.intro-link small{display:block;font-size:11px;color:var(--muted);margin-top:2px}
-.intro-link .arrow{width:30px;height:30px;font-size:15px}
-@media(max-width:720px){.intro-link small,.intro-link .arrow{display:none}.intro-link{padding:10px}.intro-link b{font-size:15px}}
-@media(max-width:560px){.intro-links{gap:8px}.intro-link{flex-direction:column;gap:6px;text-align:center;padding:10px 4px;border-radius:16px}.intro-link b{font-size:13px;line-height:1.15}.intro-link .ico{width:34px;height:34px;font-size:17px}.main{padding-top:34px}}
-</style>
+<link rel="stylesheet" href="./shared/home.css">
 </head>
 <body>
 <main class="shell">
@@ -71,10 +21,10 @@
   </nav>
   <section class="main">
     <div class="hero">
-      <div class="eyebrow">Nineteen games · play solo or with a friend</div>
+      <div class="eyebrow">Six categories · play solo or with a friend</div>
       <h1>What do you want<br>to <em>guess?</em></h1>
     </div>
-    <p class="mode-help">Pick a game, then choose to play <b>solo</b> or <b>⚡ with a friend</b>.</p>
+    <p class="mode-help">Pick a category, then play one topic or a mix of all of them, <b>solo</b> or <b>⚡ with a friend</b>.</p>
     <a class="daily-strip" href="./daily-challenge/" aria-label="Play today’s Daily Mix"><span class="strip-mark" aria-hidden="true">📅</span><b>Today’s Daily Mix</b><small>One question from every game, new each day</small><span class="arrow" aria-hidden="true">→</span></a>
     <form class="join" id="joinForm" action="./race/" autocomplete="off">
       <label for="homeCode">⚡ Got a code<span class="jl-long"> from a friend</span>?</label>
@@ -82,158 +32,55 @@
       <button type="submit">Join <span aria-hidden="true">→</span></button>
     </form>
     <div class="join-error" id="joinError" role="alert"></div>
-    <nav class="choices" aria-label="Choose a guessing game">
-      <a class="game-card" data-region="india" href="./guess-the-bollywood/" aria-label="Play Guess the Bollywood">
-        <div class="visual bolly-visual" aria-hidden="true"><span>🇬🇧✈️🚂🌻💍</span><span>🤝🔫🐎🪙🦹‍♂️</span><b>“Mogambo khush hua”</b></div>
-        <div class="card-info"><div><h2>Bollywood</h2><p>Read the story in emoji and name the film.</p></div><span class="arrow" aria-hidden="true">→</span></div>
-        <div class="meta"><span class="tag">60 seconds</span><span class="tag tag-new">New</span></div>
-      </a>
-      <a class="game-card" href="./guess-the-hollywood/" aria-label="Play Guess the Hollywood">
-        <div class="visual bolly-visual holly-visual" aria-hidden="true"><span>🚢🧊💑🎨💎</span><span>🦖🏝️🚙🧬🥚</span><b>“I’ll be back.”</b></div>
-        <div class="card-info"><div><h2>Hollywood</h2><p>Emoji plots, famous lines and stars from the movies.</p></div><span class="arrow" aria-hidden="true">→</span></div>
-        <div class="meta"><span class="tag">60 seconds</span><span class="tag tag-new">New</span></div>
-      </a>
-      <a class="game-card" href="./guess-the-sports/" aria-label="Play Guess the Sports">
-        <div class="visual bolly-visual cricket-visual" aria-hidden="true"><span>⚽🎾🏀🏎️🏅</span><b>“His Airness”</b><b>“King of Clay”</b></div>
-        <div class="card-info"><div><h2>Sports</h2><p>Football, tennis, F1, Olympics, cricket and more.</p></div><span class="arrow" aria-hidden="true">→</span></div>
-        <div class="meta"><span class="tag">60 seconds</span><span class="tag tag-new">New</span></div>
-      </a>
-      <a class="game-card" href="./guess-the-series/" aria-label="Play Guess the Series">
-        <div class="visual bolly-visual series-visual" aria-hidden="true"><span>☕🛋️👫🦞📺</span><b>“Bazinga!”</b><b>“Hey Maa, Mataji!”</b></div>
-        <div class="card-info"><div><h2>Series</h2><p>Friends, Breaking Bad, TMKOC, anime and more.</p></div><span class="arrow" aria-hidden="true">→</span></div>
-        <div class="meta"><span class="tag">60 seconds</span><span class="tag tag-new">New</span></div>
-      </a>
-      <a class="game-card" href="./guess-the-web-series/" aria-label="Play Guess the Web Series">
-        <div class="visual bolly-visual web-visual" aria-hidden="true"><span>🧶🔫👑🏫🎃📈</span><b>“Dekh raha hai Binod?”</b><b>Kaleen Bhaiya</b></div>
-        <div class="card-info"><div><h2>Web Series</h2><p>Mirzapur, Panchayat, Wednesday, The Bear and more.</p></div><span class="arrow" aria-hidden="true">→</span></div>
-        <div class="meta"><span class="tag">60 seconds</span><span class="tag tag-new">New</span></div>
-      </a>
-      <a class="game-card" href="./guess-the-color/" aria-label="Play Guess the Color">
-        <div class="visual color-visual" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-        <div class="card-info"><div><h2>Colors</h2><p>Can you name the shade just by looking?</p></div><span class="arrow" aria-hidden="true">→</span></div>
-        <div class="meta"><span class="tag">60 seconds</span><span class="tag">Color instinct</span></div>
-      </a>
-      <a class="game-card" href="./guess-the-flag/" aria-label="Play Guess the Flag">
+    <section class="recent" id="recent" aria-labelledby="recentTitle" hidden><h2 class="cat-sub" id="recentTitle">Jump back in</h2><div class="recent-row"></div></section>
+    <h2 class="cat-sub">Pick a category</h2>
+    <nav class="choices" aria-label="Choose a category">
+      <a class="game-card cat-card" href="./world/" aria-label="World &amp; Places: pick a topic or play the mix">
         <div class="visual flag-visual" aria-hidden="true"><img src="./assets/flags/in.webp" alt=""><img src="./assets/flags/jp.webp" alt=""><img src="./assets/flags/br.webp" alt=""></div>
-        <div class="card-info"><div><h2>Flags</h2><p>Recognise the flag. Name the country.</p></div><span class="arrow" aria-hidden="true">→</span></div>
-        <div class="meta"><span class="tag">60 seconds</span><span class="tag">195 countries</span></div>
+        <div class="card-info"><div><h2>World &amp; Places</h2><p>Flags, capitals, landmarks, food and languages.</p></div><span class="arrow" aria-hidden="true">→</span></div>
+        <div class="meta"><span class="tag"><span data-topics="world">8</span> topics</span><span class="tag">Mix</span></div>
       </a>
-      <a class="game-card" href="./guess-the-countries/" aria-label="Play Guess the Country">
-        <div class="visual country-visual" aria-hidden="true"><svg viewBox="0 0 420 220" aria-label="Accurate country outlines shown at different angles"><g transform="translate(70 110)"><g transform="scale(0.48)"><g transform="translate(-160 -130)"><g transform="rotate(-22 160 130)"><path d="M132.2 65.7L140 67.6L141.5 65.1L154.1 62.9L156.9 67.3L175.2 70.6L173.8 76.9L176.9 82.4L166.7 80.5L156.3 85.1L155.5 95.1L159.7 101.6L171.7 108L178.1 118.6L192.3 128.9L202.3 128.8L205.5 131.6L201.9 134.2L233.7 149.3L235 151.7L232.6 156.3L225.5 150.3L214.4 148.2L209 156.5L218.3 161.2L216.7 167.9L211.4 168.7L204.6 179.6L199.2 180.6L201.9 169.9L204.7 167.1L195.8 153.3L173 138.7L163.5 137.9L141.8 123.8L133.1 116.4L129.1 103.8L112.4 98L93.8 106.6L95.2 101.1L88.3 99.5L85 89.6L89.4 85.7L85.7 80.9L86.2 77.3L91.7 80L97.9 79.4L105 75.1L107.3 77.1L113.3 76.7L116.1 71.5L125.6 73.1L131.2 71ZM187.4 177.6L197.2 176.5L192.5 186.6L194.5 190.5L191.8 197.1L157.6 184.4L159.4 177.8ZM110.1 142.4L116.5 138.4L124.1 147.5L122.3 164.4L116.5 163.6L111.3 167.9L106.5 164.5L105.9 149L103 141.7Z"/></g></g></g></g><g transform="translate(210 110)"><g transform="scale(0.48)"><g transform="translate(-160 -130)"><g transform="rotate(31 160 130)"><path d="M201 121.7L192.4 131.1L192.5 140.7L189 148.1L190.7 152.8L185.8 159.3L173.9 163.7L157.6 164.3L144.4 174.9L138.1 171.3L137.7 164.3L121.6 166.4L110.6 170.8L99.7 171L109.1 177.8L102.9 193.6L96.9 197.5L92.4 193.9L94.7 185.5L88.8 182.8L85 176.4L93.8 173.6L98.7 167.7L108 162.9L114.8 156.6L133.3 153.8L143.3 155.7L153 139.2L159.2 143.6L178.1 130.7L184 119.3L182.4 108.9L186.3 103L196.2 101.3L201.3 114.2ZM226.4 77.3L232.9 73.3L235 83.8L221.2 86.3L213.1 95.6L198.4 89.2L193.4 99.4L183 99.5L181.8 90.3L186.4 83.1L196.3 82.6L201.8 62.5L212.7 72.2ZM112.5 174.9L117.7 169.3L123 170.4L126.8 166.5L133.6 168.5L134.8 171.7L129.6 177.3L125.8 174.3L121 176.5L118.5 181.9L112.5 179.3Z"/></g></g></g></g><g transform="translate(350 110)"><g transform="scale(0.48)"><g transform="translate(-160 -130)"><g transform="rotate(73 160 130)"><path d="M234.6 96.5L235 98.4L233.2 99.4L233.6 102.5L230 101.6L223.3 105.1L223.5 108.1L220.6 112.4L220.4 114.9L218.1 119.1L214.1 117.9L213.9 123.3L212.7 125L213.3 127.2L210.7 128.4L208 120.3L206.6 120.3L205.8 123.6L203 120.9L204.5 118L206.8 117.7L209.2 113.3L196.6 111.8L196.1 108.3L193.7 108L189.6 105.8L187.8 109.3L191.5 112L188.3 113.9L187.2 115.8L190.3 117.1L189.5 120.2L192 128.3L191.3 130.2L181.5 131.2L181.8 135.1L179 138.1L171.7 141.6L165.9 147.6L156.9 154.2L156.9 156.6L147.4 159.9L145.8 163.8L147.2 174.8L145 179.6L145 188.4L142.3 188.6L140 192.5L141.5 194.2L136.8 195.7L135.1 199.2L133.1 200.6L128.2 195.9L123.9 183.5L119.3 176.1L117.2 166.5L112.5 159.5L108.8 142.9L107.9 131.9L100.4 135L96.8 134.4L90.1 128.2L92.5 126.3L91 124.3L85 119.9L88.4 116.5L99.7 116.5L98.7 112.1L95.8 109.5L95.2 105.6L91.9 103.3L97.5 97.9L103.5 98.3L117.1 82.5L117 78.9L121.3 75.9L117.2 73.4L113.6 65.4L116.1 63.2L123.9 64.4L129.6 63.7L134.6 59.4L140.1 65.4L139.6 69.6L141.6 72.2L141.5 74.8L137.8 74.1L139.2 79.8L151.4 86.6L148.1 88.9L146.1 93.7L162.6 101.1L169.7 101.7L172.6 104.4L187.1 106L187.4 98.5L190.5 97.4L191 102.4L195.7 104.4L198.9 103.6L207.4 103.8L207.8 100.6L205.7 99L209.9 98.3L220.4 91.3L224.7 92.5L228.4 90.4L230.8 93.6L229.1 95.7Z"/></g></g></g></g></svg></div>
-        <div class="card-info"><div><h2>Countries</h2><p>Recognise the outline—even when north isn't up.</p></div><span class="arrow" aria-hidden="true">→</span></div>
-        <div class="meta"><span class="tag">60 seconds</span><span class="tag">Any angle</span></div>
+      <a class="game-card cat-card" href="./movies-tv/" aria-label="Movies &amp; TV: pick a topic or play the mix">
+        <div class="visual bolly-visual holly-visual" aria-hidden="true"><span>🎬🍿📺📱</span><b>“I’ll be back.”</b><b>“Bazinga!”</b></div>
+        <div class="card-info"><div><h2>Movies &amp; TV</h2><p>Bollywood, Hollywood, series and web series.</p></div><span class="arrow" aria-hidden="true">→</span></div>
+        <div class="meta"><span class="tag"><span data-topics="movies-tv">4</span> topics</span><span class="tag">Mix</span></div>
       </a>
-      <a class="game-card" href="./guess-the-landmarks/" aria-label="Play Guess the Landmark">
-        <div class="visual animal-visual" aria-hidden="true"><span>🏛️</span><span>🗿</span><span>🛕</span></div>
-        <div class="card-info"><div><h2>Landmarks</h2><p>Recognise famous places from a photograph.</p></div><span class="arrow" aria-hidden="true">→</span></div>
-        <div class="meta"><span class="tag">60 seconds</span><span class="tag">100 photos</span></div>
+      <a class="game-card cat-card" href="./sports/" aria-label="Sports: pick a topic or play the mix">
+        <div class="visual bolly-visual cricket-visual" aria-hidden="true"><span>🏏⚽🎾🏎️🏅</span><b>“Captain Cool”</b><b>“King of Clay”</b></div>
+        <div class="card-info"><div><h2>Sports</h2><p>Cricket, football, tennis, F1, the Olympics and more.</p></div><span class="arrow" aria-hidden="true">→</span></div>
+        <div class="meta"><span class="tag"><span data-topics="sports">6</span> topics</span><span class="tag">Mix</span></div>
       </a>
-      <a class="game-card" href="./guess-the-cuisine/" aria-label="Play Guess the Cuisine">
-        <div class="visual animal-visual" aria-hidden="true"><span>🍣</span><span>🌮</span><span>🍜</span></div>
-        <div class="card-info"><div><h2>Cuisine</h2><p>Recognise dishes from around the world.</p></div><span class="arrow" aria-hidden="true">→</span></div>
-        <div class="meta"><span class="tag">60 seconds</span><span class="tag">100 photos</span></div>
+      <a class="game-card cat-card" href="./science-nature/" aria-label="Science &amp; Nature: pick a topic or play the mix">
+        <div class="visual capital-visual element-visual" aria-hidden="true"><b>Fe</b><b>🦊</b><b>🎨</b></div>
+        <div class="card-info"><div><h2>Science &amp; Nature</h2><p>Elements, animals and colors.</p></div><span class="arrow" aria-hidden="true">→</span></div>
+        <div class="meta"><span class="tag"><span data-topics="science-nature">3</span> topics</span><span class="tag">Mix</span></div>
       </a>
-      <a class="game-card" href="./guess-the-animals/" aria-label="Play Animals">
-        <div class="visual animal-visual" aria-hidden="true"><span>🦊</span><span>🦉</span><span>🐬</span></div>
-        <div class="card-info"><div><h2>Animals</h2><p>How many creatures can you recognise?</p></div><span class="arrow" aria-hidden="true">→</span></div>
-        <div class="meta"><span class="tag">60 seconds</span><span class="tag">100 animals</span></div>
+      <a class="game-card cat-card" href="./general-knowledge/" aria-label="General Knowledge: pick a topic or play the mix">
+        <div class="visual capital-visual" style="background:#efe3d6" aria-hidden="true"><b>NATO</b><b>Knesset</b><b>LOGOS</b></div>
+        <div class="card-info"><div><h2>General Knowledge</h2><p>World politics and brand logos.</p></div><span class="arrow" aria-hidden="true">→</span></div>
+        <div class="meta"><span class="tag"><span data-topics="general-knowledge">2</span> topics</span><span class="tag">Mix</span></div>
       </a>
-      <a class="game-card" href="./guess-the-capitals/" aria-label="Play Capital Cities">
-        <div class="visual capital-visual" aria-hidden="true"><b>TOKYO</b><b>LIMA</b><b>OSLO</b></div>
-        <div class="card-info"><div><h2>Capital Cities</h2><p>Match countries to their capital cities.</p></div><span class="arrow" aria-hidden="true">→</span></div>
-        <div class="meta"><span class="tag">60 seconds</span><span class="tag">World knowledge</span></div>
-      </a>
-      <a class="game-card" href="./guess-the-scripts/" aria-label="Play Guess the Scripts">
-        <div class="visual script-visual" aria-hidden="true"><span>नम</span><span>γει</span><span>مرح</span><span>あ</span></div>
-        <div class="card-info"><div><h2>Scripts</h2><p>Recognise writing systems from a short sample.</p></div><span class="arrow" aria-hidden="true">→</span></div>
-        <div class="meta"><span class="tag">60 seconds</span><span class="tag">52 scripts</span></div>
-      </a>
-      <a class="game-card" href="./guess-the-brand-logos/" aria-label="Play Guess the Brand Logos">
-        <div class="visual brand-visual" aria-hidden="true"><span><img data-preview-slug="apple" alt=""></span><span><img data-preview-slug="nike" alt=""></span><span><img data-preview-slug="netflix" alt=""></span><span><img data-preview-slug="spotify" alt=""></span><span><img data-preview-slug="googlechrome" alt=""></span><span><img data-preview-slug="github" alt=""></span></div>
-        <div class="card-info"><div><h2>Brand Logos</h2><p>Can you name the brand from its logo?</p></div><span class="arrow" aria-hidden="true">→</span></div>
-        <div class="meta"><span class="tag">60 seconds</span><span class="tag">Brand knowledge</span></div>
-      </a>
-      <a class="game-card" href="./guess-the-currencies/" aria-label="Play Guess the Currencies">
-        <div class="visual capital-visual" aria-hidden="true"><b>¥ YEN</b><b>₹ RUPEE</b><b>€ EURO</b></div>
-        <div class="card-info"><div><h2>Currencies</h2><p>Which money do they use there?</p></div><span class="arrow" aria-hidden="true">→</span></div>
-        <div class="meta"><span class="tag">60 seconds</span><span class="tag tag-new">New</span></div>
-      </a>
-      <a class="game-card" href="./guess-the-elements/" aria-label="Play Guess the Elements">
-        <div class="visual capital-visual element-visual" aria-hidden="true"><b>Fe</b><b>Au</b><b>Na</b></div>
-        <div class="card-info"><div><h2>Elements</h2><p>Name the element from its chemical symbol.</p></div><span class="arrow" aria-hidden="true">→</span></div>
-        <div class="meta"><span class="tag">60 seconds</span><span class="tag tag-new">New</span></div>
-      </a>
-      <a class="game-card" href="./guess-the-languages/" aria-label="Play Guess the Languages">
-        <div class="visual script-visual" aria-hidden="true"><span>Merci</span><span>Danke</span><span>Grazie</span><span>Asante</span></div>
-        <div class="card-info"><div><h2>Languages</h2><p>Read “thank you” and name the language.</p></div><span class="arrow" aria-hidden="true">→</span></div>
-        <div class="meta"><span class="tag">60 seconds</span><span class="tag tag-new">New</span></div>
-      </a>
-      <a class="game-card" href="./guess-the-world-politics/" aria-label="Play Guess the World Politics">
-        <div class="visual capital-visual" style="background:#efe3d6" aria-hidden="true"><b>Knesset</b><b>NATO</b><b>1989</b></div>
-        <div class="card-info"><div><h2>World Politics</h2><p>Leaders, parliaments, famous words and turning points.</p></div><span class="arrow" aria-hidden="true">→</span></div>
-        <div class="meta"><span class="tag">60 seconds</span><span class="tag tag-new">New</span></div>
-      </a>
-      <a class="game-card" href="./name-them-all/" data-standalone aria-label="Play Name Them All">
+      <a class="game-card cat-card" data-play data-id="name-them-all" href="./name-them-all/" data-standalone aria-label="Play Name Them All">
         <div class="visual bolly-visual names-visual" aria-hidden="true"><span>⌨️🇮🇳🪐🏏🎬</span><b>“Name the planets”</b><b>8 of 8 ✓</b></div>
         <div class="card-info"><div><h2>Name Them All</h2><p>Type every answer you can think of before time runs out.</p></div><span class="arrow" aria-hidden="true">→</span></div>
         <div class="meta"><span class="tag">41 topics</span><span class="tag tag-new">New</span></div>
       </a>
     </nav>
-    <p class="note">Every game works the same way: 60 seconds, +10 points for a right answer, −5 for a wrong one.<br>Each game mixes two or three kinds of question. Your best score shows on each card.</p>
+    <p class="note">Every game works the same way: 60 seconds, +10 points for a right answer, −5 for a wrong one.<br>Each category has a mix of all its topics. Your best scores show on the cards.</p>
   </section>
   <footer class="footer"><span>GUESS THE ? · <a href="./how-to-play/">How to play</a> · <a href="./settings/">Settings</a> · <a href="./about/">About</a></span><a class="creator-credit" href="https://shubhamnov.github.io/shubham-portfolio/" target="_blank" rel="noopener noreferrer">MADE BY SHUBHAM JOSHI ↗</a></footer>
 </main>
-<dialog class="mode-sheet" id="modeSheet" aria-labelledby="sheetTitle">
-  <div class="sheet-box">
-    <button class="sheet-close" type="button" id="sheetClose" aria-label="Close">×</button>
-    <div class="eyebrow">How do you want to play?</div>
-    <h2 id="sheetTitle"></h2>
-    <a class="sheet-opt solo" id="sheetSolo" href="#"><span class="ico" aria-hidden="true">🎯</span><span><b>Solo</b><small>60 seconds. Beat your best score.</small></span><span class="arrow" aria-hidden="true">→</span></a>
-    <a class="sheet-opt friend" id="sheetFriend" href="#"><span class="ico" aria-hidden="true">⚡</span><span><b>With a friend</b><small>Send a room code. Race live on the same questions.</small></span><span class="arrow" aria-hidden="true">→</span></a>
-  </div>
-</dialog>
 <script src="./shared/region.js"></script>
+<script src="./shared/games.js"></script>
+<script src="./shared/cards.js"></script>
 <script>
 (function(){
- /* Global / India / Both for the whole site (shared/region.js). India-only games (data-region="india") are hidden in Global.
-    Settings (region and sound) live on their own page, settings/. */
- function apply(r){
-  document.querySelectorAll('.game-card[data-region]').forEach(c=>{c.hidden=!GTQRegion.keep(c.dataset.region,r)});
+ /* Cards, the Solo / With a friend sheet, best scores, region and "Jump back in": shared/cards.js.
+    Settings (region and sound) live on their own page, settings/; the card shows what is set. */
+ function summary(r){
   let sound=true;try{sound=localStorage.getItem('gtq_sound')!=='off'}catch(e){}
   document.getElementById('settingsSummary').textContent='Questions: '+GTQRegion.NAME[r]+' · Sound '+(sound?'on':'off')}
- GTQRegion.onChange(apply);
- document.getElementById('topActions').appendChild(GTQRegion.toggle());
- apply(GTQRegion.get());
- /* Coming back from Settings with the back button shows the page from cache: refresh what the settings change. */
- window.addEventListener('pageshow',e=>{if(e.persisted)location.reload()});
-})();
-</script>
-<script src="./brand-logos-preview.js"></script>
-<script>
-(function(){
- const logos=window.BRAND_LOGOS_PREVIEW||[];
- document.querySelectorAll('.brand-visual [data-preview-slug]').forEach(img=>{
-  const item=logos.find(x=>x.slug===img.dataset.previewSlug);
-  if(item)img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(item.svg);
- });
-})();
-</script>
-<script>
-(function(){
- /* Tapping a game asks how to play: Solo or With a friend (?live=new makes a room straight away). */
- const sheet=document.getElementById('modeSheet');
- if(sheet&&sheet.showModal)document.querySelectorAll(".game-card").forEach(card=>card.addEventListener('click',e=>{
-  if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||e.button)return;
-  e.preventDefault();
-  const href=card.getAttribute('href'),name=card.querySelector('h2').textContent;
-  document.getElementById('sheetTitle').textContent=name;
-  document.getElementById('sheetSolo').href=href;
-  document.getElementById('sheetFriend').href=href+'?live=new';
-  sheet.showModal();document.getElementById('sheetSolo').focus();
- }));
- document.getElementById('sheetClose').addEventListener('click',()=>sheet.close());
- sheet.addEventListener('click',e=>{if(e.target===sheet)sheet.close()});
- window.addEventListener('pageshow',()=>{if(sheet.open)sheet.close()});
+ GTQRegion.onChange(summary);summary(GTQRegion.get());
  /* A code from a friend: any game page can join it, and live mode moves to the right game. */
  const form=document.getElementById('joinForm'),input=document.getElementById('homeCode'),err=document.getElementById('joinError');
  input.addEventListener('input',()=>{input.value=input.value.toUpperCase().replace(/[^A-Z]/g,'').slice(0,4);err.textContent=''});

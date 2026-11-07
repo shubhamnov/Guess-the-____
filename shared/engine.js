@@ -16,6 +16,8 @@ const $=id=>document.getElementById(id);
 const PARAMS=new URLSearchParams(location.search);
 /* Folder this script was loaded from, so live mode can load its extra files from the same place. */
 const SCRIPT_BASE=((document.currentScript&&document.currentScript.src)||'').replace(/[^/]*$/,'');
+/* The home page: the folder above shared/. */
+const SITE_ROOT=SCRIPT_BASE?SCRIPT_BASE.replace(/shared\/$/,''):'../';
 /* Seeded random numbers. In live mode both players use the same seed, so every game builds the same questions. */
 function hashSeed(seed){let h=2166136261;for(let i=0;i<seed.length;i++){h^=seed.charCodeAt(i);h=Math.imul(h,16777619)}return h>>>0}
 function rngFor(seed){let state=hashSeed(String(seed));return function(){state=(state+0x6D2B79F5)|0;let t=state;t=Math.imul(t^(t>>>15),t|1);t^=t+Math.imul(t^(t>>>7),t|61);return ((t^(t>>>14))>>>0)/4294967296}}
@@ -169,6 +171,21 @@ function exportGame(cfg){
  return {};
 }
 
+/* This page's game and category in shared/games.js (if the page loads it). */
+function placeInRegistry(){
+ const folder=decodeURIComponent(location.pathname).replace(/index\.html$/,'').replace(/\/+$/,'').split('/').pop();
+ const game=(window.GTQ_GAMES||[]).find(g=>g.path===folder)||null;
+ const cat=game&&(window.GTQ_CATEGORIES||[]).find(c=>c.id===game.cat)||null;
+ return {game,cat};
+}
+/* "Jump back in" on the home page: the last games played on this device (newest first). */
+const RECENT_KEY='gtq:recent';
+function remember(cfg,here){
+ let list=[];try{list=JSON.parse(safeGet(RECENT_KEY)||'[]');if(!Array.isArray(list))list=[]}catch(e){}
+ const href=location.pathname,item={href,id:cfg.id,label:cfg.label,emoji:cfg.emoji||(here.game&&here.game.emoji)||'🎯',t:Date.now()};
+ list=[item].concat(list.filter(x=>x&&x.href!==href)).slice(0,8);
+ safeSet(RECENT_KEY,JSON.stringify(list));
+}
 function run(cfg){
  if(MIX)return exportGame(cfg);
  // Questions come either from next(ctx), one at a time, or from a prepared list (makeRound). The clock is the same.
@@ -179,7 +196,10 @@ function run(cfg){
  let liveHooks=null;
  const seconds=SCORING.seconds;
  const label=cfg.label;
- const homeHref=cfg.homeHref||'../';
+ /* Where "back" goes: a topic's category page when shared/games.js is loaded and lists this folder, else home. */
+ const here=placeInRegistry();
+ const homeHref=cfg.homeHref||(here.cat?'../'+here.cat.id+'/':'../');
+ const homeLabel=cfg.homeLabel||(here.cat?here.cat.label:'All games');
  let best=loadBest(cfg.id,cfg.legacyBest);
  const S={rng:null,seed:null,running:false,score:0,correct:0,answered:0,streak:0,bestStreak:0,n:0,q:null,locked:true,round:[],startedAt:0,pausedAt:0,timer:null,advance:null};
 
@@ -192,7 +212,7 @@ function run(cfg){
  const links=(cfg.links||[]).map(l=>'<span>·</span><a href="'+l.href+'"'+(l.external?' target="_blank" rel="noopener noreferrer"':'')+'>'+escapeHtml(l.text)+'</a>').join('');
  document.body.insertAdjacentHTML('afterbegin',
  '<main class="shell">'+
- '<header class="top"><a class="brand" href="'+homeHref+'" aria-label="Guess the ____ — all games">GUESS THE <span>?</span></a><div class="top-actions">'+modeChip+'<button class="sound-toggle" id="soundToggle" type="button"></button></div></header>'+
+ '<header class="top"><a class="brand" href="'+SITE_ROOT+'" aria-label="Guess the ____ — home">GUESS THE <span>?</span></a><div class="top-actions">'+modeChip+'<button class="sound-toggle" id="soundToggle" type="button"></button></div></header>'+
  '<section class="intro" id="intro"><div class="hero"><div class="eyebrow" id="introEyebrow">'+escapeHtml(cfg.eyebrow||'')+'</div><h1>'+cfg.titleHtml+'</h1><p>'+escapeHtml(cfg.intro||'')+'</p></div>'+
  (cfg.previewHtml?'<div class="preview" aria-hidden="true">'+cfg.previewHtml+'</div>':'')+
  '<button class="primary" id="startBtn" type="button">Let’s play <span class="arrow">→</span></button>'+
@@ -200,7 +220,7 @@ function run(cfg){
  '<div class="rules"><span>'+seconds+' seconds</span>'+(cfg.formats&&cfg.formats.length>1?'<span>'+cfg.formats.length+' question types</span>':'')+'<span>4 choices</span><span>+10 right</span><span>−5 wrong</span></div>'+
  (cfg.formats&&cfg.formats.length>1?'<div class="micro formats">'+cfg.formats.map(f=>'<span>'+escapeHtml(f)+'</span>').join('')+'</div>':'')+
  '<div class="micro" id="introNote">'+escapeHtml(cfg.note||'')+(cfg.note?'<br>':'')+'Personal best saved on this device.</div>'+
- '<nav class="links" aria-label="More games"><a href="'+homeHref+'">All games</a>'+links+'</nav></section>'+
+ '<nav class="links" aria-label="More games"><a href="'+homeHref+'">'+escapeHtml(homeLabel)+'</a>'+links+'</nav></section>'+
  '<section class="game" id="game" aria-label="'+escapeHtml(label)+' quiz">'+
  '<div class="stats"><div class="stat timer" id="timerStat"><label>Time left</label><strong id="time">'+seconds+'</strong></div>'+
  '<div class="stat"><label>Score</label><strong id="score">0</strong></div><div class="stat"><label>Streak</label><strong id="streak">0</strong></div></div>'+
@@ -211,12 +231,12 @@ function run(cfg){
  '<div class="feedback" id="feedback" role="status" aria-live="polite"></div>'+
  '<div class="micro keys-hint">Keys 1–4 answer · Enter plays again · M toggles sound</div></section>'+
  '<section class="result" id="result" aria-label="Your final score"><div class="result-modal">'+
- '<a class="result-home" href="'+homeHref+'" aria-label="Home: all games" title="All games"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 11.2 12 4l8.5 7.2M6 9.5V20h4.5v-5.5h3V20H18V9.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>'+
+ '<a class="result-home" href="'+SITE_ROOT+'" aria-label="Home" title="Home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 11.2 12 4l8.5 7.2M6 9.5V20h4.5v-5.5h3V20H18V9.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>'+
  '<div><div class="eyebrow" id="resultEyebrow"></div><div class="bigscore" id="finalScore">0</div><h2 id="resultTitle"></h2><p id="resultText"></p></div>'+
  '<div class="resultbox"><div><label>Personal best</label><strong id="resultBest">0</strong></div><div><label>Accuracy</label><strong id="accuracy">0%</strong></div><div><label>Correct</label><strong id="correctCount">0</strong></div><div><label>Best streak</label><strong id="bestStreak">0</strong></div></div>'+
  '<div class="result-actions">'+friendBtn('friendBtn')+'<button class="secondary" id="shareBtn" type="button">Share score ↗</button></div><button class="primary" id="againBtn" type="button">Play again <span class="arrow">↻</span></button>'+
- '<nav class="links"><a href="'+homeHref+'">All games</a>'+links+'</nav></div></section>'+
- '<footer class="bottomline"><span>GUESS THE ?</span><a class="creator-credit" href="https://github.com/shubhamnov" target="_blank" rel="noopener noreferrer">MADE BY SHUBHAM ↗</a></footer></main>'+
+ '<nav class="links"><a href="'+homeHref+'">'+escapeHtml(homeLabel)+'</a>'+links+'</nav></div></section>'+
+ '<footer class="bottomline"><span>GUESS THE ?</span><a class="creator-credit" href="https://shubhamnov.github.io/shubham-portfolio/" target="_blank" rel="noopener noreferrer">MADE BY SHUBHAM JOSHI ↗</a></footer></main>'+
  '<div class="toast" id="toast" role="status"></div>');
 
  let toastTimer=null;
@@ -261,6 +281,7 @@ function run(cfg){
    catch(e){btn.textContent='Questions are unavailable right now';$('introNote').textContent='The question bank could not be loaded. Please try again later.';setScreen('intro');return}
    btn.disabled=false;btn.innerHTML=old;
   }
+  remember(cfg,here);
   S.seed=seed==null?null:String(seed);S.rng=S.seed==null?null:rngFor('guess-the-live-v1|'+S.seed);
   Object.assign(S,{running:true,score:0,correct:0,answered:0,streak:0,bestStreak:0,n:0,q:null,locked:false,startedAt:Date.now(),pausedAt:0});
   seeded(()=>{if(cfg.onStart)cfg.onStart(ctx);if(fromList)S.round=cfg.makeRound(ctx)});
