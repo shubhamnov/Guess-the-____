@@ -44,7 +44,7 @@ GuessGame.run({
   const round=fresh.concat(seen);previous=round.slice(0,12).map(q=>q.id);
   return round.map((q,i)=>Object.assign({
    answer:q.answer,options:ctx.util.shuffle(q.options),prompt:q.prompt,explanation:q.explanation,clueClass:'photo',level:q.difficulty,
-   render(h){const img=document.createElement('img');img.id='photo';img.className='clue-photo';img.alt="Photograph of a landmark to identify";img.onerror=()=>{const f=document.createElement('p');f.className='micro';f.innerHTML='This photo could not be loaded. You can still answer, or <a target="_blank" rel="noopener noreferrer">open the image source</a>.';f.querySelector('a').href=q.image.sourcePage;img.replaceWith(f)};img.src='../'+q.image.url.replace(/^(\.\.\/)+/,'');h.appendChild(img);ctx.util.framePhoto(h,img)},
+   render(h){const img=document.createElement('img');img.id='photo';img.className='clue-photo';img.alt="Photograph of a landmark to identify";img.onerror=()=>{const f=document.createElement('p');f.className='micro';f.innerHTML='This photo could not be loaded. You can still answer, or <a target="_blank" rel="noopener noreferrer">open the image source</a>.';f.querySelector('a').href=q.image.sourcePage;img.replaceWith(f)};img.src=new URL('../'+q.image.url.replace(/^(\.\.\/)+/,''),location.href).href;h.appendChild(img);ctx.util.framePhoto(h,img)},
    credit(c){const a=document.createElement('a');a.href=q.image.sourcePage;a.target='_blank';a.rel='noopener noreferrer';a.textContent='Photo: '+q.image.creator+' · '+q.image.license;c.appendChild(a)}
   },extraFormat(q,i,ctx)));
  }

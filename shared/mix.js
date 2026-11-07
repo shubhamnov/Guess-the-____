@@ -20,7 +20,9 @@ const inMix=g=>!g.sub&&inRegion(g)&&(!category||g.cat===category);
 const styles=new Set();
 function addStyles(doc){
  doc.querySelectorAll('style').forEach(s=>{const css=s.textContent;if(!css.trim()||styles.has(css))return;styles.add(css);
-  const copy=document.createElement('style');copy.dataset.mixStyle='';copy.textContent=css;document.head.appendChild(copy)});
+  const copy=document.createElement('style');copy.dataset.mixStyle='';
+  // Fonts and images in the game's CSS are relative to the game's page, not this one.
+  copy.textContent=css.replace(/url\((['"]?)(?!data:|blob:|[a-z]+:\/\/|#)([^'")]+)\1\)/gi,(m,q,u)=>'url('+q+new URL(u,doc.baseURI).href+q+')');document.head.appendChild(copy)});
 }
 function loadGame(game){
  return new Promise((resolve,reject)=>{

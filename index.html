@@ -25,7 +25,8 @@
       <h1>What do you want<br>to <em>guess?</em></h1>
     </div>
     <p class="mode-help">Pick a category, then play one topic or a mix of all of them, <b>solo</b> or <b>⚡ with a friend</b>.</p>
-    <a class="daily-strip" href="./daily-challenge/" aria-label="Play today’s Daily Mix"><span class="strip-mark" aria-hidden="true">📅</span><b>Today’s Daily Mix</b><small>One question from every game, new each day</small><span class="arrow" aria-hidden="true">→</span></a>
+    <a class="mixcard mix-all" data-play data-id="mix-all" data-title="Mix of everything" href="./mix/"><span class="strip-mark" aria-hidden="true">🎲</span><span><b>Play a mix of everything</b><small>Questions from every game in every category, new each round</small></span><span class="arrow" aria-hidden="true">→</span></a>
+    <a class="daily-strip" id="dailyStrip" href="./daily-challenge/" aria-label="Play today’s Daily Mix"><span class="strip-mark" aria-hidden="true">📅</span><b>Today’s Daily Mix</b><small id="dailyNote">One question from every game, new each day</small><span class="strip-badge" id="dailyBadge" hidden></span><span class="arrow" aria-hidden="true">→</span></a>
     <form class="join" id="joinForm" action="./race/" autocomplete="off">
       <label for="homeCode">⚡ Got a code<span class="jl-long"> from a friend</span>?</label>
       <input id="homeCode" name="live" maxlength="4" placeholder="CODE" autocapitalize="characters" aria-label="Room code from your friend">
@@ -81,6 +82,20 @@
   let sound=true;try{sound=localStorage.getItem('gtq_sound')!=='off'}catch(e){}
   document.getElementById('settingsSummary').textContent='Questions: '+GTQRegion.NAME[r]+' · Sound '+(sound?'on':'off')}
  GTQRegion.onChange(summary);summary(GTQRegion.get());
+ /* Today's Daily Mix: once it has been played (daily-challenge/ keeps the first score), say so with the score. */
+ function daily(r){
+  const today=new Date().toISOString().slice(0,10);let p=null;
+  try{p=JSON.parse(localStorage.getItem('gtq:daily:'+today+(r==='both'?'':'|'+r)))}catch(e){}
+  const strip=document.getElementById('dailyStrip'),badge=document.getElementById('dailyBadge'),note=document.getElementById('dailyNote');
+  const done=!!(p&&typeof p.score==='number');strip.classList.toggle('played',done);badge.hidden=!done;
+  if(done){
+   const now=new Date(),m=Math.max(1,Math.round((Date.UTC(now.getUTCFullYear(),now.getUTCMonth(),now.getUTCDate()+1)-now)/60000));
+   badge.textContent='✓ Played · '+p.score+' pts';
+   note.textContent=p.correct+' of '+p.answered+' right · new mix in '+(m>=60?Math.floor(m/60)+' h':m+' min');
+   strip.setAttribute('aria-label','Today’s Daily Mix: played, '+p.score+' points. See it or play again for fun');
+  }else{note.textContent='One question from every game, new each day';strip.setAttribute('aria-label','Play today’s Daily Mix')}
+ }
+ GTQRegion.onChange(daily);daily(GTQRegion.get());
  /* A code from a friend: any game page can join it, and live mode moves to the right game. */
  const form=document.getElementById('joinForm'),input=document.getElementById('homeCode'),err=document.getElementById('joinError');
  input.addEventListener('input',()=>{input.value=input.value.toUpperCase().replace(/[^A-Z]/g,'').slice(0,4);err.textContent=''});

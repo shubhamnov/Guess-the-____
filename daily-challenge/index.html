@@ -7,6 +7,12 @@
 <meta name="description" content="The Daily Mix: one question from every Guess the ____ game, the same for everyone each day.">
 <title>The Daily Mix — Guess the ____</title>
 <link rel="stylesheet" href="../shared/engine.css">
+<style>
+.played-box{display:flex;align-items:center;gap:14px;max-width:460px;margin:2px 0 4px;padding:14px 16px;border:2px solid var(--ink,#191b1a);border-radius:20px;background:var(--lime,#d7fb55);box-shadow:4px 4px 0 var(--ink,#191b1a)}
+.played-box .pb-score{font-size:30px;font-weight:1000;letter-spacing:-.05em;line-height:1;white-space:nowrap}
+.played-box .pb-score small{font-size:12px;letter-spacing:0;margin-left:2px}
+.played-box b{display:block;font-size:15px}.played-box p{margin:3px 0 0;font-size:12.5px;line-height:1.4;color:#45483e}
+</style>
 </head>
 <body data-game="daily-mix">
 <script src="../shared/region.js"></script>
@@ -32,7 +38,15 @@ const activeDate=validDate(params.get('date'))?params.get('date'):todayUTC();
 const SEED='daily|'+activeDate+(REGION==='both'?'':'|'+REGION);
 function challengeURL(){const url=new URL(window.location.href);url.search='';url.hash='';url.searchParams.set('date',activeDate);return url.toString()}
 const isToday=activeDate===todayUTC();
+/* The first solo score of each day's mix is kept, so the page and the home page can say it has been played. */
+const PLAYED_KEY='gtq:daily:'+activeDate+(REGION==='both'?'':'|'+REGION);
+function readPlayed(){try{const v=JSON.parse(localStorage.getItem(PLAYED_KEY));return v&&typeof v.score==='number'?v:null}catch(e){return null}}
+const played=readPlayed();
+const LIVE=params.has('live');
+function untilNext(){const now=new Date(),next=Date.UTC(now.getUTCFullYear(),now.getUTCMonth(),now.getUTCDate()+1),m=Math.max(1,Math.round((next-now)/60000));
+ return m>=60?Math.floor(m/60)+' h '+(m%60)+' min':m+' min'}
 
+let justSaved=0;
 const game=GuessGame.run({
  reloadOnRegion:true,
  id:'daily-mix',label:'Daily Mix',pill:'The Daily Mix',autoStart:false,
@@ -46,7 +60,14 @@ const game=GuessGame.run({
  resultLabel:'Daily Mix · '+formatDate(activeDate),shareHeadline:'Daily Mix · '+formatDate(activeDate),
  links:[{text:'Flags',href:'../guess-the-flag/'},{text:'Brand Logos',href:'../guess-the-brand-logos/'}],
  shareUrl:challengeURL,
- resultNote:()=>isToday?'Come back tomorrow for a new mix.':'Today’s mix is waiting on the home page.',
+ resultNote:()=>{const first=readPlayed();
+  const kept=first&&first.t!==justSaved?'Your first score today, '+first.score+', is the one that counts. ':'';
+  return kept+(isToday?'A new mix arrives in '+untilNext()+'.':'Today’s mix is waiting on the home page.')},
+ onFinish(res){
+  if(LIVE||readPlayed())return;
+  justSaved=Date.now();
+  try{localStorage.setItem(PLAYED_KEY,JSON.stringify({score:res.score,correct:res.correct,answered:res.answered,t:justSaved}))}catch(e){}
+ },
  load:()=>GTQMix.load(REGION),
  // The games load for one region, so a change of setting reloads the page with the new mix.
  onRegion(){location.reload()},
@@ -54,6 +75,17 @@ const game=GuessGame.run({
   return GTQMix.questions(SEED,1);
  },
  setupIntro({toast,$}){
+  if(played&&!LIVE){
+   // Already played: say so first, with the score, and make playing again an extra rather than the main thing.
+   $('introEyebrow').textContent='✓ '+(isToday?'You’ve played today’s mix':'You played this mix');
+   const box=document.createElement('div');box.className='played-box';box.id='playedBox';
+   box.innerHTML='<div class="pb-score"></div><div><b></b><p></p></div>';
+   box.querySelector('.pb-score').innerHTML=played.score+'<small>pts</small>';
+   box.querySelector('b').textContent=played.correct+' of '+played.answered+' right';
+   box.querySelector('p').textContent=isToday?'A new mix arrives in '+untilNext()+'. You can play again for fun; your first score is the one that counts.':'You can play it again for fun; your first score is the one that counts.';
+   $('startBtn').before(box);
+   $('startBtn').innerHTML='Play again for fun <span class="arrow">↻</span>';
+  }
   const btn=document.createElement('button');btn.type='button';btn.className='secondary';btn.textContent='Share this challenge ↗';
   btn.addEventListener('click',async()=>{
    const text='Play the Guess the ____ Daily Mix for '+formatDate(activeDate)+': '+challengeURL();

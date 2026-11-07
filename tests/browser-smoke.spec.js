@@ -183,7 +183,25 @@ test('Daily Mix asks one question from every game within 60 seconds and shows a 
   await expect(page.locator('#resultEyebrow')).toContainText('ALL DONE');
   await expect(page.locator('#correctCount')).toHaveText(new RegExp('/ ' + total + '$'));
   expect(games.size).toBe(total);
+  // Played: the first score is kept, and coming back says so instead of offering the same mix as new.
+  const kept = await page.evaluate(() => JSON.parse(localStorage.getItem('gtq:daily:2026-01-15')));
+  expect(kept.answered).toBe(total);
+  await page.reload();
+  await expect(page.locator('#playedBox')).toBeVisible();
+  await expect(page.locator('#playedBox')).toContainText(kept.score + 'pts');
+  await expect(page.locator('#introEyebrow')).toContainText('You played this mix');
+  await expect(page.locator('#startBtn')).toContainText('Play again for fun');
   expect(errors).toEqual([]);
+});
+
+test('the home page shows when today’s Daily Mix has been played', async ({ page }) => {
+  await page.goto('./');
+  await expect(page.locator('#dailyBadge')).toBeHidden();
+  await page.evaluate(() => localStorage.setItem('gtq:daily:' + new Date().toISOString().slice(0, 10), JSON.stringify({ score: 85, correct: 9, answered: 12, t: Date.now() })));
+  await page.reload();
+  await expect(page.locator('#dailyBadge')).toHaveText('✓ Played · 85 pts');
+  await expect(page.locator('#dailyStrip')).toHaveClass(/played/);
+  await expect(page.locator('#dailyNote')).toContainText('9 of 12 right');
 });
 
 test('Daily Mix gives everyone the same questions for a date', async ({ browser }) => {

@@ -81,3 +81,40 @@ test('a category mix plays questions from that category only, and back goes to t
   await expect(page.locator('#intro .links a').first()).toHaveAttribute('href', '../');
   expect(await page.evaluate(() => localStorage.getItem('gtq:recent'))).toContain('Movies & TV mix');
 });
+
+test('the home page offers a mix of everything, and it plays every game in every category', async ({ page }) => {
+  test.setTimeout(60000);
+  await page.goto('./');
+  await page.locator('a.mix-all').click();
+  await expect(page.locator('#sheetSolo')).toHaveAttribute('href', './mix/');
+  await expect(page.locator('#sheetFriend')).toHaveAttribute('href', './mix/?live=new');
+  await page.goto('mix/');
+  await expect(page.locator('#game')).toHaveClass(/active/, { timeout: 30000 });
+  const loaded = await page.evaluate(() => GTQMix.games().map(g => g.path));
+  expect(loaded.sort()).toEqual(registry().filter(g => !g.sub).map(g => g.path).sort());
+  expect(await page.evaluate(() => localStorage.getItem('gtq:recent'))).toContain('Mix of everything');
+});
+
+// Games build image paths relative to their own page; a mix page one folder deeper must still load them.
+test('flag, food and landmark pictures load in the World & Places mix', async ({ page }) => {
+  test.setTimeout(90000);
+  const bad = [];
+  page.on('response', r => { if (r.status() >= 400 && new URL(r.url()).pathname.includes('/assets/')) bad.push(r.url()); });
+  await page.goto('world/mix/');
+  await expect(page.locator('#game')).toHaveClass(/active/, { timeout: 30000 });
+  const srcs = await page.evaluate(() => {
+    const out = [];
+    for (let i = 0; i < 6; i++) for (const q of GTQMix.questions('img-check|' + i, 3)) {
+      const host = document.createElement('div');
+      q.render(host);
+      (q.options || []).forEach(v => { const b = document.createElement('button'); if (q.renderOption) q.renderOption(v, b); host.appendChild(b); });
+      host.querySelectorAll('img').forEach(img => out.push(img.getAttribute('src')));
+    }
+    return out;
+  });
+  expect(srcs.length).toBeGreaterThan(20);
+  for (const s of srcs) expect(s, s).not.toMatch(/\/world\/assets\//);
+  expect(srcs.some(s => /assets\/flags\//.test(s))).toBe(true);
+  expect(srcs.some(s => /assets\/(cuisines|landmarks)\//.test(s))).toBe(true);
+  expect(bad).toEqual([]);
+});

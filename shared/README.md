@@ -73,7 +73,7 @@ A question is `{answer, options, render(clueElement), prompt?, kind?, level?, ex
 - `brand-logos.js` — logo data. `daily-challenge-data-v1.js` — the flag-code list `scripts/cache_flag_images.py` caches.
 - `shared/games.js` — the categories and every engine game in them (see "Categories" below). `shared/mix.js` — builds the Daily Mix, the Live Mix and the category mixes from it.
 - `index.html` + `shared/home.css` — the home page: Daily Mix, "Jump back in", and one card per category.
-- `<category>/index.html` (`world/`, `movies-tv/`, `sports/`, `science-nature/`, `general-knowledge/`) — a category page: "Play the mix" and one card per topic. `<category>/mix/` runs `shared/category-mix.js`, a mix of that category's topics (Sports uses Guess the Sports).
+- `<category>/index.html` (`world/`, `movies-tv/`, `sports/`, `science-nature/`, `general-knowledge/`) — a category page: "Play the mix" and one card per topic. `<category>/mix/` runs `shared/category-mix.js`, a mix of that category's topics (Sports uses Guess the Sports). `mix/` (top level, no `data-cat`) runs the same script as the mix of everything, linked from the top of the home page.
 - `shared/cards.js` — shared by the home and category pages: the Solo / With a friend sheet for `data-play` cards, best scores on `data-id` cards, hiding `data-region` cards, topic counts, and "Jump back in" (`gtq:recent`, the last 8 games, written by the engine when a game starts).
 - `shared/sports-game.js` + `data/sports.js` — every sports page. `window.GTQ_SPORTS_TOPIC` picks the topic: `sports` (all of them), `cricket`, `football`, `tennis`, `f1`, `olympics` or `more-sports`.
 - `shared/live.js` — live mode (see above). `shared/vendor/peerjs.min.js` is the PeerJS library it uses to connect the devices.
@@ -88,12 +88,12 @@ A question is `{answer, options, render(clueElement), prompt?, kind?, level?, ex
 
 Four places read `GTQ_GAMES`:
 
-- **Daily Mix** (`daily-challenge/`): one question from every game, the same for everyone on a given date.
+- **Daily Mix** (`daily-challenge/`): one question from every game, the same for everyone on a given date. The first solo score of each date is kept in `gtq:daily:<date>` (plus `|global` / `|india` outside Both); the page then says it has been played and offers a replay for fun, and the home page's Daily Mix strip shows the score.
 - **Live Mix** (`race/`): two questions from every game for each live round.
 - **Category mixes** (`<category>/mix/`): questions from that category's topics only (`GTQMix.load(region, category)`).
 - **Play live** (`live/`): each category's mix, then its topics.
 
-`shared/mix.js` loads each listed game in a hidden iframe with `?mix`. In that mode `GuessGame.run(cfg)` builds no page. It sets `window.GuessGameExport` with `questions(seed, count)`, which calls the game's own `next`/`makeRound` with a generator seeded from the seed and the game id. So the mix questions come from the game's real code and data, and they're the same on every device. The Daily Mix follows the Global / India / Both switch (`GTQMix.load(region)`: games marked `region` in games.js are left out of the other region, and each game frame gets `?mix&region=`); the Live Mix uses Both. A game that fails to load within 20 seconds is left out rather than breaking the mix.
+`shared/mix.js` loads each listed game in a hidden iframe with `?mix`. In that mode `GuessGame.run(cfg)` builds no page. It sets `window.GuessGameExport` with `questions(seed, count)`, which calls the game's own `next`/`makeRound` with a generator seeded from the seed and the game id. So the mix questions come from the game's real code and data, and they're the same on every device. The Daily Mix follows the Global / India / Both switch (`GTQMix.load(region)`: games marked `region` in games.js are left out of the other region, and each game frame gets `?mix&region=`); the Live Mix uses Both. A game that fails to load within 20 seconds is left out rather than breaking the mix. Mix pages can sit at another folder depth than the games (`world/mix/`), so the export makes the image paths a question sets absolute to the game's page, and `mix.js` does the same for `url(...)` in the game styles it copies (fonts). A game that builds a photo URL and reuses it before it is on screen should build it with `new URL(path, location.href)`, as Cuisine and Landmarks do.
 
 ### Adding a new game
 

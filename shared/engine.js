@@ -164,7 +164,13 @@ function exportGame(cfg){
    const list=fromList?cfg.makeRound(ctx)||[]:null;
    for(let i=0;i<count;i++){n=3+i;const q=fromList?list[i]:cfg.next(ctx);if(!q)break;out.push(q)}
   })();
-  return out.map((q,i)=>{const rng=rngFor(base+'|'+i),w=fn=>fn&&withRng(rng,fn);
+  /* Mix pages may sit at another depth than the game (e.g. world/mix/), so a relative image path the game sets
+     would load against the wrong folder once the element joins that page: make them absolute to this game's page. */
+  const fixUrls=el=>{if(!el||!el.querySelectorAll)return;[el].concat(Array.from(el.querySelectorAll('img[src],source[srcset]'))).forEach(n=>{
+   const a=n.getAttribute&&n.getAttribute(n.tagName==='SOURCE'?'srcset':'src');if(!a||/^(data:|blob:|[a-z]+:\/\/)/i.test(a))return;
+   n.setAttribute(n.tagName==='SOURCE'?'srcset':'src',new URL(a,location.href).href)})};
+  const abs=fn=>fn&&function(){const r=fn.apply(this,arguments);for(const a of arguments)fixUrls(a);return r};
+  return out.map((q,i)=>{const rng=rngFor(base+'|'+i),w=fn=>fn&&withRng(rng,abs(fn));
    return Object.assign({},q,{game:cfg.id,prompt:q.prompt||cfg.prompt||'',formatOption:q.formatOption||cfg.formatOption,render:w(q.render),renderOption:w(q.renderOption),credit:w(q.credit)})});
  }
  window.GuessGameExport={id:cfg.id,label:cfg.label,ready,questions};
