@@ -72,6 +72,7 @@ A question is `{answer, options, render(clueElement), prompt?, kind?, level?, ex
 - `brand-logos.js` — logo data. `daily-challenge-data-v1.js` — the flag-code list `scripts/cache_flag_images.py` caches.
 - `shared/games.js` — the list of engine games. `shared/mix.js` — builds the Daily Mix and Live Mix from every game in it (see below).
 - `shared/live.js` — live mode (see above). `shared/vendor/peerjs.min.js` is the PeerJS library it uses to connect the devices.
+- `shared/mode-switch.js` — the Solo ⇄ With a friend chip in every game header. If a round is running, or a friend is in the room, it asks “Play with a friend instead?” / “Leave the room and play solo?” before leaving; a solo clock pauses while it asks. Load it after `engine.js` (Name Them All attaches it itself).
 - `live/` — the "Play live" page: Mix of everything, or pick a category. `race/` — the Live Mix (questions from every category; see `race/README.md`).
 
 ## The mixes: one question from every game

@@ -334,6 +334,8 @@ function attach(api){
  else if(String(params.get('live')).toLowerCase()==='new')createRoom();
 
  return {
+  /* A friend is connected (the mode switch asks before leaving). */
+  friendHere:()=>!!(R.conn&&R.conn.open),
   onStart(info){R.total=info.total||0},
   onAnswer(q,right,ctx){
    R.me={score:ctx.score,n:ctx.answered,streak:ctx.streak};

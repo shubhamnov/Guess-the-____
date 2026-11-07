@@ -361,16 +361,18 @@ function run(cfg){
  $('startBtn').addEventListener('click',()=>start());
  $('againBtn').addEventListener('click',()=>start());
  $('shareBtn').addEventListener('click',share);
- /* The mode chip is a label while a round is running, so a stray tap never throws a game away. */
- if($('modeChip'))$('modeChip').addEventListener('click',e=>{
-  const a=e.target.closest('a');
-  if(a&&!a.hasAttribute('aria-current')&&S.running){e.preventDefault();toast('Finish this '+(live?'game':'round')+' first.')}
- });
+ /* Solo ⇄ With a friend from the header chip: if a round is running (or a friend is in the room) it asks first, and a
+    solo clock pauses while it asks (shared/mode-switch.js). */
+ if(window.GTQModeSwitch)GTQModeSwitch.attach($('modeChip'),{live,busy:()=>S.running,
+  friendHere:()=>!!(liveHooks&&liveHooks.friendHere&&liveHooks.friendHere()),
+  pause(){if(S.running&&!S.pausedAt){S.pausedAt=Date.now();sound.stopMusic()}},
+  resume(){if(S.running&&S.pausedAt&&!document.hidden){S.startedAt+=Date.now()-S.pausedAt;S.pausedAt=0;sound.startMusic()}}});
 
  document.addEventListener('keydown',e=>{
   if(e.altKey||e.ctrlKey||e.metaKey)return;
   const tag=(e.target&&e.target.tagName)||'';
   if(/INPUT|TEXTAREA|SELECT/.test(tag))return;
+  if(window.GTQModeSwitch&&GTQModeSwitch.open())return;
   if(e.key==='m'||e.key==='M'){toggleSound();return}
   if(S.running&&!S.locked&&/^[1-9]$/.test(e.key)){const b=$('answers').children[Number(e.key)-1];if(b){e.preventDefault();b.click()}return}
   if(e.key==='Enter'&&!/BUTTON|A/.test(tag)){
@@ -380,6 +382,7 @@ function run(cfg){
  /* Timed rounds pause while the tab is hidden, so switching apps never costs time. */
  document.addEventListener('visibilitychange',()=>{
   if(!S.running||cfg.pauseWhenHidden===false)return;
+  if(window.GTQModeSwitch&&GTQModeSwitch.open())return; // already paused; it resumes when the question closes
   if(document.hidden){S.pausedAt=Date.now();sound.stopMusic()}
   else if(S.pausedAt){S.startedAt+=Date.now()-S.pausedAt;S.pausedAt=0;sound.startMusic();toast('Paused while you were away — the clock is running again.')}
  });

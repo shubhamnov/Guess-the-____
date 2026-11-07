@@ -104,6 +104,7 @@
 </main>
 <div class="toast" id="toast" role="status"></div>
 <script src="../shared/region.js"></script>
+<script src="../shared/mode-switch.js"></script>
 <script src="../shared/world.js"></script>
 <script src="../data/elements.js"></script>
 <script src="../data/name-them-all.js"></script>
@@ -224,9 +225,15 @@ function tick(){
 }
 document.addEventListener('visibilitychange',()=>{
  if(!S.running||LIVE)return; // live: both clocks keep running, as in every other game
+ if(GTQModeSwitch.open())return; // already paused; it resumes when the question closes
  if(document.hidden){S.pausedLeft=S.ends-Date.now();stopClock()}
  else if(S.pausedLeft!=null){S.ends=Date.now()+S.pausedLeft;S.pausedLeft=null;S.timer=setInterval(tick,200)}
 });
+/* Solo ⇄ With a friend from the header chip: asks first if a round is running or a friend is in the room; a solo
+   clock pauses while it asks (shared/mode-switch.js). */
+GTQModeSwitch.attach($('modeChip'),{live:LIVE,busy:()=>S.running,friendHere:()=>!!(live&&live.friendHere&&live.friendHere()),
+ pause(){if(S.running&&S.pausedLeft==null){S.pausedLeft=S.ends-Date.now();stopClock()}},
+ resume(){if(S.running&&S.pausedLeft!=null&&!document.hidden){S.ends=Date.now()+S.pausedLeft;S.pausedLeft=null;S.timer=setInterval(tick,200)}}});
 function updateStats(){$('found').innerHTML=S.found.size+'<small>/'+S.topic.n+'</small>';$('score').textContent=S.score}
 let fbTimer=null;
 function feedback(text,cls){const f=$('feedback');f.textContent=text;f.className='nta-feedback '+(cls||'');clearTimeout(fbTimer);if(text)fbTimer=setTimeout(()=>{f.textContent=''},2200)}
