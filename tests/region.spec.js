@@ -11,10 +11,11 @@ test.describe('first visit', () => {
     await expect(welcome).toBeVisible();
     await welcome.locator('button[data-region="global"]').click();
     await expect(welcome).toHaveCount(0);
-    await expect(page.locator('[data-topics="movies-tv"]')).toHaveText('3');
+    // Bollywood stays in Global.
+    await expect(page.locator('[data-topics="movies-tv"]')).toHaveText('4');
     await page.goto('movies-tv/');
-    await expect(page.locator('.game-card[href="../guess-the-bollywood/"]')).toBeHidden();
-    await expect(page.locator('#mixNote')).toContainText('all 3 topics');
+    await expect(page.locator('.game-card[href="../guess-the-bollywood/"]')).toBeVisible();
+    await expect(page.locator('#mixNote')).toContainText('all 4 topics');
     await page.goto('settings/');
     await expect(page.locator('#regionHost [aria-pressed="true"]')).toHaveText(/Global/);
     await page.goto('guess-the-sports/');
@@ -44,11 +45,11 @@ test.describe('first visit', () => {
 test('the Settings page and the top-right button change the same setting', async ({ page }) => {
   await page.goto('settings/');
   await page.locator('#regionHost button[data-region="global"]').click();
-  await expect(page.locator('#regionHelp')).toContainText('Bollywood is hidden');
+  await expect(page.locator('#regionHelp')).toContainText('Bollywood stays in every mode');
   await expect(page.locator('.region-btn')).toHaveAttribute('aria-label', /Global/);
   await page.locator('.back').click();
   const bolly = page.locator('[data-topics="movies-tv"]');
-  await expect(bolly).toHaveText('3');
+  await expect(bolly).toHaveText('4');
   await expect(page.locator('#settingsSummary')).toHaveText('Questions: Global · Sound on');
   await page.locator('.region-btn').click();
   await page.locator('.region-menu [data-region="both"]').click();
@@ -90,7 +91,8 @@ test('every game page has the top-right button', async ({ page }) => {
 
 test('Name Them All topics follow the switch', async ({ page }) => {
   await page.goto('name-them-all/?region=global');
-  await expect(page.locator('[data-topic="srk-films"]')).toHaveCount(0);
+  await expect(page.locator('[data-topic="srk-films"]')).toHaveCount(1);
+  await expect(page.locator('[data-topic="ipl-teams"]')).toHaveCount(0);
   await expect(page.locator('[data-topic="friends"]')).toHaveCount(1);
   await expect(page.locator('[data-topic="planets"]')).toHaveCount(1);
   await page.locator('.region-btn').click();
@@ -106,12 +108,12 @@ test('live games have no switch', async ({ page }) => {
   await expect(page.locator('.region-btn')).toHaveCount(0);
 });
 
-test('Daily Mix follows the switch: Global leaves out Bollywood and asks international questions', async ({ page }) => {
+test('Daily Mix follows the switch: Global keeps Bollywood and asks international questions', async ({ page }) => {
   await page.goto('daily-challenge/?region=global&date=2026-01-15');
   await expect(page.locator('#intro')).toContainText('International questions only');
   await page.waitForFunction(() => window.GTQMix && GTQMix.games().length > 0, null, { timeout: 30000 });
   const loaded = await page.evaluate(() => GTQMix.games().map(g => g.path));
-  expect(loaded).not.toContain('guess-the-bollywood');
+  expect(loaded).toContain('guess-the-bollywood');
   expect(loaded).toContain('guess-the-series');
   // Each game frame was asked for Global questions only.
   const series = await page.evaluate(() => [...document.querySelectorAll('iframe')].map(f => f.src).find(s => s.includes('guess-the-series/')));

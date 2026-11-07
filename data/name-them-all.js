@@ -63,7 +63,7 @@ GTQ_DATA.nameTopics=[
 ["Chichén Itzá","Mexico"],["Colosseum","Italy","Coliseum","Roman Colosseum"],["Taj Mahal","India"]]},
 
 /* ---------- Bollywood ---------- */
-{id:'srk-films',cat:'Bollywood',region:'india',emoji:'🎬',title:'Shah Rukh Khan films',note:'His films as the lead, 1992 to now.',items:[
+{id:'srk-films',cat:'Bollywood',emoji:'🎬',title:'Shah Rukh Khan films',note:'His films as the lead, 1992 to now.',items:[
 ["Deewana","1992"],["Raju Ban Gaya Gentleman","1992"],["Chamatkar","1992"],["Baazigar","1993","Bazigar"],["Darr","1993"],
 ["Kabhi Haan Kabhi Naa","1994"],["Anjaam","1994"],["Karan Arjun","1995"],["Dilwale Dulhania Le Jayenge","1995","DDLJ"],["Ram Jaane","1995"],
 ["Koyla","1997"],["Yes Boss","1997"],["Pardes","1997"],["Dil To Pagal Hai","1997"],["Duplicate","1998"],["Dil Se..","1998"],
@@ -74,7 +74,7 @@ GTQ_DATA.nameTopics=[
 ["Rab Ne Bana Di Jodi","2008","RNBDJ"],["Billu","2009","Billu Barber"],["My Name Is Khan","2010","MNIK"],["Ra.One","2011"],["Don 2","2011"],
 ["Jab Tak Hai Jaan","2012","JTHJ"],["Chennai Express","2013"],["Happy New Year","2014"],["Dilwale","2015"],["Fan","2016"],
 ["Dear Zindagi","2016"],["Raees","2017","Rais"],["Jab Harry Met Sejal","2017"],["Zero","2018"],["Pathaan","2023","Pathan"],["Jawan","2023"],["Dunki","2023"]]},
-{id:'aamir-films',cat:'Bollywood',region:'india',emoji:'🎬',title:'Aamir Khan films',note:'His films as the lead, 1988 to now.',items:[
+{id:'aamir-films',cat:'Bollywood',emoji:'🎬',title:'Aamir Khan films',note:'His films as the lead, 1988 to now.',items:[
 ["Qayamat Se Qayamat Tak","1988","QSQT"],["Dil","1990"],["Dil Hai Ke Manta Nahin","1991"],["Jo Jeeta Wohi Sikandar","1992","JJWS"],
 ["Hum Hain Rahi Pyar Ke","1993"],["Andaz Apna Apna","1994"],["Baazi","1995"],["Rangeela","1995"],["Akele Hum Akele Tum","1995"],
 ["Raja Hindustani","1996"],["Ishq","1997"],["Ghulam","1998"],["Sarfarosh","1999"],["Mann","1999"],["Mela","2000"],
@@ -82,7 +82,7 @@ GTQ_DATA.nameTopics=[
 ["Fanaa","2006","Fana"],["Taare Zameen Par","2007","TZP"],["Ghajini","2008"],["3 Idiots","2009"],["Talaash","2012"],["Dhoom 3","2013"],
 ["PK","2014"],["Dangal","2016"],["Secret Superstar","2017"],["Thugs of Hindostan","2018","Thugs of Hindustan"],
 ["Laal Singh Chaddha","2022","Lal Singh Chadha"],["Sitaare Zameen Par","2025","Sitare Zameen Par"]]},
-{id:'salman-films',cat:'Bollywood',region:'india',emoji:'🎬',title:'Salman Khan films',note:'His films as the lead, 1989 to now.',items:[
+{id:'salman-films',cat:'Bollywood',emoji:'🎬',title:'Salman Khan films',note:'His films as the lead, 1989 to now.',items:[
 ["Maine Pyar Kiya","1989","MPK"],["Saajan","1991","Sajan"],["Hum Aapke Hain Koun..!","1994","HAHK","Hum Aapke Hain Kaun"],["Andaz Apna Apna","1994"],
 ["Karan Arjun","1995"],["Jeet","1996"],["Judwaa","1997","Judwa"],["Pyaar Kiya To Darna Kya","1998"],["Hum Dil De Chuke Sanam","1999","HDDCS"],
 ["Biwi No.1","1999","Biwi Number 1"],["Hum Saath-Saath Hain","1999","Hum Saath Saath Hain"],["Chori Chori Chupke Chupke","2001"],["Tere Naam","2003"],
@@ -91,15 +91,15 @@ GTQ_DATA.nameTopics=[
 ["Bajrangi Bhaijaan","2015"],["Prem Ratan Dhan Payo","2015","PRDP"],["Sultan","2016"],["Tubelight","2017"],["Tiger Zinda Hai","2017"],
 ["Race 3","2018"],["Bharat","2019"],["Dabangg 3","2019","Dabang 3"],["Radhe","2021"],["Tiger 3","2023"],
 ["Kisi Ka Bhai Kisi Ki Jaan","2023"],["Sikandar","2025"]]},
-{id:'bhansali-films',cat:'Bollywood',region:'india',emoji:'🎞️',title:'films directed by Sanjay Leela Bhansali',items:[
+{id:'bhansali-films',cat:'Bollywood',emoji:'🎞️',title:'films directed by Sanjay Leela Bhansali',items:[
 ["Khamoshi: The Musical","1996","Khamoshi"],["Hum Dil De Chuke Sanam","1999","HDDCS"],["Devdas","2002"],["Black","2005"],["Saawariya","2007","Sawariya"],
 ["Guzaarish","2010","Guzarish"],["Goliyon Ki Raasleela Ram-Leela","2013","Ram-Leela","Ramleela"],["Bajirao Mastani","2015"],["Padmaavat","2018","Padmavat","Padmavati"],
 ["Gangubai Kathiawadi","2022","Gangubai"]]},
-{id:'karan-johar-films',cat:'Bollywood',region:'india',emoji:'🎞️',title:'films directed by Karan Johar',items:[
+{id:'karan-johar-films',cat:'Bollywood',emoji:'🎞️',title:'films directed by Karan Johar',items:[
 ["Kuch Kuch Hota Hai","1998","KKHH"],["Kabhi Khushi Kabhie Gham","2001","K3G","Kabhi Khushi Kabhi Gham"],["Kabhi Alvida Naa Kehna","2006","KANK"],
 ["My Name Is Khan","2010","MNIK"],["Student of the Year","2012","SOTY"],["Ae Dil Hai Mushkil","2016","ADHM"],
 ["Rocky Aur Rani Kii Prem Kahaani","2023","Rocky Aur Rani","Rocky Aur Rani Ki Prem Kahani"]]},
-{id:'hirani-films',cat:'Bollywood',region:'india',emoji:'🎞️',title:'films directed by Rajkumar Hirani',items:[
+{id:'hirani-films',cat:'Bollywood',emoji:'🎞️',title:'films directed by Rajkumar Hirani',items:[
 ["Munna Bhai M.B.B.S.","2003","Munna Bhai MBBS"],["Lage Raho Munna Bhai","2006"],["3 Idiots","2009"],["PK","2014"],["Sanju","2018"],["Dunki","2023"]]},
 
 /* ---------- Hollywood ---------- */

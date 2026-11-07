@@ -7,7 +7,7 @@
  *
  * GTQ_GAMES: every topic, in the order the category pages and /live/ list them.
  *   path: the game's folder · label: its name · emoji: its icon in lists · id: its best-score key (gtq:best:<id>) ·
- *   cat: its category · region: 'india' for a game that is all Indian (hidden in Global; games with some Indian
+ *   cat: its category · region: 'india' for a game that should be hidden in Global (none now; Bollywood plays everywhere; games with some Indian
  *   questions filter them themselves, see shared/region.js) · sub: a topic whose questions are already in another
  *   game (the sports topics are all in Guess the Sports), so the Daily Mix and the Live Mix leave it out.
  *
@@ -30,7 +30,7 @@ window.GTQ_GAMES=[
  {path:'guess-the-languages',label:'Languages',emoji:'🗣️',id:'languages',cat:'world'},
  {path:'guess-the-scripts',label:'Scripts',emoji:'✍️',id:'scripts',cat:'world'},
  {path:'guess-the-cuisine',label:'Cuisine',emoji:'🍜',id:'cuisine',cat:'world'},
- {path:'guess-the-bollywood',label:'Bollywood',emoji:'🎬',id:'bollywood',cat:'movies-tv',region:'india'},
+ {path:'guess-the-bollywood',label:'Bollywood',emoji:'🎬',id:'bollywood',cat:'movies-tv'},
  {path:'guess-the-hollywood',label:'Hollywood',emoji:'🍿',id:'hollywood',cat:'movies-tv'},
  {path:'guess-the-series',label:'Series',emoji:'📺',id:'series',cat:'movies-tv'},
  {path:'guess-the-web-series',label:'Web Series',emoji:'📱',id:'web-series',cat:'movies-tv'},

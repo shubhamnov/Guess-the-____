@@ -1,7 +1,7 @@
 /* The home page and the category pages (needs shared/region.js and shared/games.js).
  * - Cards with data-play open the "How do you want to play?" sheet: Solo, or With a friend (?live=new makes a room).
  * - Cards with data-id show the best score saved on this device (gtq:best:<id>, written by shared/engine.js).
- * - Cards with data-region are hidden when the Global / India / Both setting leaves them out (Bollywood in Global);
+ * - Cards with data-region are hidden when the Global / India / Both setting leaves them out (a game that is all Indian);
  *   the topic counts follow.
  * - #recent (home) lists the games played last ("Jump back in", gtq:recent, written by shared/engine.js). */
 (function(){
