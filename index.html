@@ -47,28 +47,30 @@
 @media(max-width:520px){.daily-strip small{display:none}.join label{font-size:11px}}
 .top-actions{display:flex;align-items:center;gap:8px;min-width:0}a.pill{text-decoration:none}a.pill:hover{border-color:var(--ink);color:var(--ink)}
 .info{margin-top:44px;padding-top:30px;border-top:1px solid var(--line);scroll-margin-top:16px}.info h2{font-family:var(--display);font-size:clamp(25px,5vw,36px);letter-spacing:-.05em;line-height:1.02;margin:9px 0 18px;font-weight:1000}
-.steps{list-style:none;counter-reset:s;margin:0;padding:0;display:grid;gap:10px}.steps li{counter-increment:s;display:grid;grid-template-columns:34px 1fr;gap:2px 12px;background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:14px}
-.steps li:before{content:counter(s);grid-row:span 2;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--lime);font-family:var(--display);font-weight:1000}
-.steps b{font-size:15px}.steps span,.how-card p,.setting small,.about p{font-size:13px;line-height:1.55;color:var(--muted)}
-.how-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:10px}.how-card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:14px}.how-card .ico{font-size:22px;display:block;margin-bottom:6px}.how-card b{font-size:15px}.how-card p{margin:5px 0 0}
 .setting{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,300px);gap:10px 18px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:14px;margin-bottom:10px}.setting b{display:block;font-size:15px;margin-bottom:3px}
 .switch{justify-self:end;min-width:76px;border:1px solid var(--line);border-radius:999px;padding:10px 16px;font:inherit;font-size:13px;font-weight:900;background:#efeee8;color:var(--muted);cursor:pointer}.switch[aria-checked="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
 .micro-note{font-size:11px;color:var(--muted);margin:6px 2px 0;line-height:1.5}
-.about{display:grid;grid-template-columns:64px 1fr;gap:16px;align-items:start;background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:18px}.about h2{margin:0 0 8px;font-size:clamp(22px,4vw,30px)}.about p{margin:0 0 10px}
-.avatar{width:64px;height:64px;border-radius:18px;background:var(--lime);border:1.5px solid var(--ink);display:grid;place-items:center;font-family:var(--display);font-size:24px;font-weight:1000;letter-spacing:-.04em;transform:rotate(-4deg)}
-.about-role{font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:-2px 0 12px}
-.about-more{display:grid;gap:6px;margin:4px 0 14px}.about-more span{font-size:10px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}.about-more a{font-size:13px;color:var(--ink);text-decoration:none;border:1px solid var(--line);border-radius:14px;padding:10px 12px;background:#fff}.about-more a:hover{border-color:var(--ink)}
-.about-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}.about-links a{font-size:12px;font-weight:850;text-decoration:none;border:1px solid var(--ink);border-radius:999px;padding:8px 12px}.about-links a:hover{background:var(--lime)}
 .footer a{color:inherit}
-@media(max-width:600px){.how-grid{grid-template-columns:1fr}.setting{grid-template-columns:1fr}.switch{justify-self:start}.about{grid-template-columns:1fr}.avatar{width:52px;height:52px;font-size:20px}}
+.intro-links{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+.intro-link{display:flex;align-items:center;gap:12px;min-width:0;padding:12px;background:var(--paper);border:1.5px solid var(--ink);border-radius:18px;text-decoration:none;box-shadow:3px 3px 0 var(--ink);transition:transform .15s,box-shadow .15s}
+.intro-link:hover{transform:translateY(-2px);box-shadow:4px 5px 0 var(--ink)}
+.intro-link .ico{flex:none;width:40px;height:40px;border-radius:12px;background:var(--lime);border:1.5px solid var(--ink);display:grid;place-items:center;font-size:20px}
+.intro-link>span:nth-child(2){min-width:0;flex:1}.intro-link b{display:block;font-family:var(--display);font-size:17px;letter-spacing:-.03em}.intro-link small{display:block;font-size:11px;color:var(--muted);margin-top:2px}
+.intro-link .arrow{width:30px;height:30px;font-size:15px}
+@media(max-width:600px){.setting{grid-template-columns:1fr}.switch{justify-self:start}}
+@media(max-width:560px){.intro-links{grid-template-columns:1fr;gap:8px}.intro-link{padding:10px}.intro-link .ico{width:34px;height:34px;font-size:17px}.main{padding-top:34px}}
 </style>
 </head>
 <body>
 <main class="shell">
   <header class="top">
     <a class="brand" href="./">GUESS THE <span>?</span></a>
-    <div class="top-actions" id="topActions"><a class="pill" href="#how">How to play</a></div>
+    <div class="top-actions" id="topActions"></div>
   </header>
+  <nav class="intro-links" aria-label="About this site">
+    <a class="intro-link" href="./how-to-play/"><span class="ico" aria-hidden="true">🎯</span><span><b>How to play</b><small>60 seconds, four choices, +10 / −5</small></span><span class="arrow" aria-hidden="true">→</span></a>
+    <a class="intro-link" href="./about/"><span class="ico" aria-hidden="true">👋</span><span><b>About the developer</b><small>Made by Shubham Joshi</small></span><span class="arrow" aria-hidden="true">→</span></a>
+  </nav>
   <section class="main">
     <div class="hero">
       <div class="eyebrow">Nineteen games · play solo or with a friend</div>
@@ -181,21 +183,6 @@
     </nav>
     <p class="note">Every game works the same way: 60 seconds, +10 points for a right answer, −5 for a wrong one.<br>Each game mixes two or three kinds of question. Your best score shows on each card.</p>
   </section>
-  <section class="info" id="how" aria-labelledby="howTitle">
-    <div class="eyebrow">How to play</div>
-    <h2 id="howTitle">Sixty seconds. Four choices. Go.</h2>
-    <ol class="steps">
-      <li><b>Pick a game</b><span>Tap any card, or play today’s Daily Mix: one question from every game, the same for everyone that day.</span></li>
-      <li><b>Answer fast</b><span>Each question has four choices. A right answer is +10, a wrong one −5, and the clock keeps running. After a wrong answer the right one lights up.</span></li>
-      <li><b>It gets harder</b><span>The first five questions are a warm-up. After that the wrong choices come from the same group, like flags from the same region or films with the same stars.</span></li>
-      <li><b>Beat your best</b><span>Your best score and longest streak are saved on this device and show on each card.</span></li>
-    </ol>
-    <div class="how-grid">
-      <div class="how-card"><span class="ico" aria-hidden="true">⚡</span><b>With a friend</b><p>Tap a game and choose <i>With a friend</i>. Send your friend the 4-letter code, or they type it in “Got a code?” above. You both get the same questions and see each other’s score live. Two players per room.</p></div>
-      <div class="how-card"><span class="ico" aria-hidden="true">✍️</span><b>Name Them All</b><p>A different kind of game: type every answer you can think of, like all the planets or every Shah Rukh Khan film, before the time runs out.</p></div>
-      <div class="how-card"><span class="ico" aria-hidden="true">⌨️</span><b>Keyboard</b><p>Keys 1–4 answer, Enter plays again and M turns sound on or off.</p></div>
-    </div>
-  </section>
   <section class="info" id="settings" aria-labelledby="settingsTitle">
     <div class="eyebrow">Settings</div>
     <h2 id="settingsTitle">Make it yours</h2>
@@ -203,32 +190,7 @@
     <div class="setting"><div><b>Sound</b><small>Music and answer sounds in every game.</small></div><button class="switch" id="soundSetting" type="button" role="switch"></button></div>
     <p class="micro-note">Settings are saved on this device. The 🌐 button at the top right of every page changes the questions too.</p>
   </section>
-  <section class="info" id="about" aria-labelledby="aboutTitle">
-    <div class="eyebrow">About the developer</div>
-    <div class="about">
-      <div class="avatar" aria-hidden="true">SJ</div>
-      <div>
-        <h2 id="aboutTitle">Made by Shubham Joshi</h2>
-        <div class="about-role">Engineering leader · Independent builder · Writer · Based in India</div>
-        <p>By day, Shubham leads data-platform engineering at Ford as Director of Data Platforms, working on connected-vehicle data. Before that: Engineering Manager at Amazon Pay, and an early chapter at Samsung.</p>
-        <p>Outside work, Shubham builds small browser games and writes <i>The Second Order Effect</i>, a newsletter about AI, technology, work and what happens next. Guess the ____ is one of those games: free, quick, no sign-up and no ads.</p>
-        <div class="about-more">
-          <span>More by Shubham</span>
-          <a href="https://shubhamnov.github.io/Life-Happens/" target="_blank" rel="noopener noreferrer"><b>Life Happens</b> · a life and money game</a>
-          <a href="https://scale-rush.com/" target="_blank" rel="noopener noreferrer"><b>Scale Rush</b> · system design in play</a>
-        </div>
-        <p>Found a wrong answer, or have an idea for a new game? Shubham would love to hear it.</p>
-        <div class="about-links">
-          <a href="https://shubhamnov.github.io/shubham-portfolio/" target="_blank" rel="noopener noreferrer">Portfolio ↗</a>
-          <a href="https://in.linkedin.com/in/shubhamjo" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-          <a href="https://github.com/shubhamnov" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-          <a href="https://thesecondordereffect.substack.com/" target="_blank" rel="noopener noreferrer">The Second Order Effect ↗</a>
-          <a href="https://github.com/shubhamnov/Guess-the-____/issues" target="_blank" rel="noopener noreferrer">Report a problem or suggest a game ↗</a>
-        </div>
-      </div>
-    </div>
-  </section>
-  <footer class="footer"><span>GUESS THE ? · <a href="#how">How to play</a> · <a href="#settings">Settings</a> · <a href="#about">About</a></span><a class="creator-credit" href="https://shubhamnov.github.io/shubham-portfolio/" target="_blank" rel="noopener noreferrer">MADE BY SHUBHAM JOSHI ↗</a></footer>
+  <footer class="footer"><span>GUESS THE ? · <a href="./how-to-play/">How to play</a> · <a href="#settings">Settings</a> · <a href="./about/">About</a></span><a class="creator-credit" href="https://shubhamnov.github.io/shubham-portfolio/" target="_blank" rel="noopener noreferrer">MADE BY SHUBHAM JOSHI ↗</a></footer>
 </main>
 <dialog class="mode-sheet" id="modeSheet" aria-labelledby="sheetTitle">
   <div class="sheet-box">
