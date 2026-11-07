@@ -55,10 +55,12 @@
 .switch{justify-self:end;min-width:76px;border:1px solid var(--line);border-radius:999px;padding:10px 16px;font:inherit;font-size:13px;font-weight:900;background:#efeee8;color:var(--muted);cursor:pointer}.switch[aria-checked="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
 .micro-note{font-size:11px;color:var(--muted);margin:6px 2px 0;line-height:1.5}
 .about{display:grid;grid-template-columns:64px 1fr;gap:16px;align-items:start;background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:18px}.about h2{margin:0 0 8px;font-size:clamp(22px,4vw,30px)}.about p{margin:0 0 10px}
-.avatar{width:64px;height:64px;border-radius:18px;background:var(--lime);border:1.5px solid var(--ink);display:grid;place-items:center;font-family:var(--display);font-size:30px;font-weight:1000;transform:rotate(-4deg)}
+.avatar{width:64px;height:64px;border-radius:18px;background:var(--lime);border:1.5px solid var(--ink);display:grid;place-items:center;font-family:var(--display);font-size:24px;font-weight:1000;letter-spacing:-.04em;transform:rotate(-4deg)}
+.about-role{font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:-2px 0 12px}
+.about-more{display:grid;gap:6px;margin:4px 0 14px}.about-more span{font-size:10px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}.about-more a{font-size:13px;color:var(--ink);text-decoration:none;border:1px solid var(--line);border-radius:14px;padding:10px 12px;background:#fff}.about-more a:hover{border-color:var(--ink)}
 .about-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}.about-links a{font-size:12px;font-weight:850;text-decoration:none;border:1px solid var(--ink);border-radius:999px;padding:8px 12px}.about-links a:hover{background:var(--lime)}
 .footer a{color:inherit}
-@media(max-width:600px){.how-grid{grid-template-columns:1fr}.setting{grid-template-columns:1fr}.switch{justify-self:start}.about{grid-template-columns:1fr}.avatar{width:52px;height:52px;font-size:24px}}
+@media(max-width:600px){.how-grid{grid-template-columns:1fr}.setting{grid-template-columns:1fr}.switch{justify-self:start}.about{grid-template-columns:1fr}.avatar{width:52px;height:52px;font-size:20px}}
 </style>
 </head>
 <body>
@@ -204,19 +206,29 @@
   <section class="info" id="about" aria-labelledby="aboutTitle">
     <div class="eyebrow">About the developer</div>
     <div class="about">
-      <div class="avatar" aria-hidden="true">S</div>
+      <div class="avatar" aria-hidden="true">SJ</div>
       <div>
-        <h2 id="aboutTitle">Made by Shubham</h2>
-        <p>Guess the ____ is a set of free, quick quiz games: no sign-up and no ads. Play solo or race a friend. Every game is built and looked after by Shubham.</p>
+        <h2 id="aboutTitle">Made by Shubham Joshi</h2>
+        <div class="about-role">Engineering leader · Independent builder · Writer · Based in India</div>
+        <p>By day, Shubham leads data-platform engineering at Ford as Director of Data Platforms, working on connected-vehicle data. Before that: Engineering Manager at Amazon Pay, and an early chapter at Samsung.</p>
+        <p>Outside work, Shubham builds small browser games and writes <i>The Second Order Effect</i>, a newsletter about AI, technology, work and what happens next. Guess the ____ is one of those games: free, quick, no sign-up and no ads.</p>
+        <div class="about-more">
+          <span>More by Shubham</span>
+          <a href="https://shubhamnov.github.io/Life-Happens/" target="_blank" rel="noopener noreferrer"><b>Life Happens</b> · a life and money game</a>
+          <a href="https://scale-rush.com/" target="_blank" rel="noopener noreferrer"><b>Scale Rush</b> · system design in play</a>
+        </div>
         <p>Found a wrong answer, or have an idea for a new game? Shubham would love to hear it.</p>
         <div class="about-links">
-          <a href="https://github.com/shubhamnov" target="_blank" rel="noopener noreferrer">GitHub profile ↗</a>
+          <a href="https://shubhamnov.github.io/shubham-portfolio/" target="_blank" rel="noopener noreferrer">Portfolio ↗</a>
+          <a href="https://in.linkedin.com/in/shubhamjo" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <a href="https://github.com/shubhamnov" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+          <a href="https://thesecondordereffect.substack.com/" target="_blank" rel="noopener noreferrer">The Second Order Effect ↗</a>
           <a href="https://github.com/shubhamnov/Guess-the-____/issues" target="_blank" rel="noopener noreferrer">Report a problem or suggest a game ↗</a>
         </div>
       </div>
     </div>
   </section>
-  <footer class="footer"><span>GUESS THE ? · <a href="#how">How to play</a> · <a href="#settings">Settings</a> · <a href="#about">About</a></span><a class="creator-credit" href="https://github.com/shubhamnov" target="_blank" rel="noopener noreferrer">MADE BY SHUBHAM ↗</a></footer>
+  <footer class="footer"><span>GUESS THE ? · <a href="#how">How to play</a> · <a href="#settings">Settings</a> · <a href="#about">About</a></span><a class="creator-credit" href="https://shubhamnov.github.io/shubham-portfolio/" target="_blank" rel="noopener noreferrer">MADE BY SHUBHAM JOSHI ↗</a></footer>
 </main>
 <dialog class="mode-sheet" id="modeSheet" aria-labelledby="sheetTitle">
   <div class="sheet-box">
