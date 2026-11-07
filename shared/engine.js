@@ -386,15 +386,16 @@ function run(cfg){
 
  if(cfg.replay===false)$('againBtn').style.display='none';
  if(cfg.setupIntro)cfg.setupIntro({toast,$});
- /* Global / India / Both (shared/region.js): games with India-specific questions set onRegion(region), which rebuilds
-    their pools and may return a new intro note. The switch sits on the intro, above the questions and above Play again;
-    changing it mid-round restarts the round. Not shown in live mode (both players use Both). */
- if(cfg.onRegion&&window.GTQRegion&&!live){
-  const changed=r=>{const note=cfg.onRegion(r);if(note!=null){const n=$('introNote');n.textContent='';n.append(note,document.createElement('br'),'Personal best saved on this device.')}
+ /* Global / India / Both (shared/region.js): a small button at the top right of every page (not in live mode, where
+    both players use Both). Games with India-specific questions set onRegion(region), which rebuilds their pools and
+    may return a new intro note; a change mid-round restarts the round. cfg.reloadOnRegion reloads the page instead. */
+ if(window.GTQRegion&&!live){
+  const changed=r=>{
+   if(cfg.reloadOnRegion){const u=new URL(location.href);u.searchParams.delete('region');location.replace(u);return}
+   if(!cfg.onRegion)return;
+   const note=cfg.onRegion(r);if(note!=null){const n=$('introNote');n.textContent='';n.append(note,document.createElement('br'),'Personal best saved on this device.')}
    if(S.running)start()};
-  $('startBtn').before(GTQRegion.picker({onChange:changed}));
-  $('game').prepend(GTQRegion.picker({compact:true,onChange:changed}));
-  $('againBtn').before(GTQRegion.picker({onChange:changed}));
+  document.querySelector('.top-actions').prepend(GTQRegion.toggle({onChange:changed}));
  }
  const api={toast,start,ctx,cfg,$,live,total:()=>fromList?S.round.length:0};
  if(live){
@@ -407,7 +408,10 @@ function run(cfg){
    .then(()=>{const l=$('liveLoading');if(l)l.remove();liveHooks=window.GuessLive.attach(api)})
    .catch(()=>{const l=$('liveLoading');if(l)l.textContent='Live mode could not load. Check your connection and reload the page.'});
  }
- if(cfg.autoStart===false)setScreen('intro');else start();
+ /* On a first visit the Global / India / Both question comes first; the clock starts once it is answered. */
+ if(cfg.autoStart===false)setScreen('intro');
+ else if(window.GTQRegion&&GTQRegion.asking()){setScreen('intro');GTQRegion.afterWelcome(()=>start())}
+ else start();
  return api;
 }
 

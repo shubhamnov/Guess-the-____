@@ -33,6 +33,7 @@ function challengeURL(){const url=new URL(window.location.href);url.search='';ur
 const isToday=activeDate===todayUTC();
 
 const game=GuessGame.run({
+ reloadOnRegion:true,
  id:'daily-mix',label:'Daily Mix',pill:'The Daily Mix',autoStart:false,
  // A friend game always plays today's questions, so it is only offered on today's mix.
  liveLink:isToday,friendText:'Play today’s mix with a friend',

@@ -47,8 +47,9 @@ Every game page loads `engine.css` and `engine.js`, then calls `GuessGame.run(co
 ## Global / India / Both
 
 One switch for the whole site, in `shared/region.js` (saved in `localStorage` as `gtq:region`; `?region=global|india|both` overrides it for one visit; live games always use Both).
-- **Home page:** the switch sits above the game cards. Cards marked `data-region="india"` (Bollywood) are hidden in Global.
-- **Engine games:** load `region.js` before `engine.js`, build the question pools from `GTQRegion.get()`, and pass `onRegion(region)` to `GuessGame.run`. It rebuilds the pools and may return a new intro note. The engine then shows the switch on the intro, above the questions and above Play again; changing it mid-round restarts the round. Series, Web Series and Sports do this.
+- **First visit:** any page that is not live or a mix frame asks once (India, Global or Both) and saves the answer. Closing it keeps Both. Games wait for the answer before their clock starts.
+- **Everywhere else:** a small 🇮🇳 / 🌍 / 🌐 button at the top right of every page (`GTQRegion.toggle`) opens a three-way menu. The home page also has the full switch in its Settings section. Cards marked `data-region="india"` (Bollywood) are hidden in Global.
+- **Engine games:** load `region.js` (every game page does, for the top-right button), build the question pools from `GTQRegion.get()`, and pass `onRegion(region)` to `GuessGame.run`. It rebuilds the pools and may return a new intro note. The engine puts the top-right button in the header; changing it mid-round restarts the round. `reloadOnRegion: true` reloads the page instead (the Daily Mix). Series, Web Series and Sports do this.
 - **Name Them All:** topics with `region:'india'` or `region:'global'` follow the switch; topics without one always show.
 - Games with no India-specific content (geography, science, logos) ignore it.
 

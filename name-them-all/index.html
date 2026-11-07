@@ -183,7 +183,8 @@ function renderPicker(){
  list.filter(t=>t.cat===c).map(t=>'<button class="topic-btn" type="button" data-topic="'+t.id+'"><span class="te" aria-hidden="true">'+t.emoji+'</span><span><b>'+esc(fullTitle(t))+'</b><small>'+t.n+' answers · '+clock(t.seconds)+'</small></span></button>').join('')+
  '</div></section>').join('');
 }
-if(!GTQRegion.live)$('picker').before(GTQRegion.picker({onChange:renderPicker}));
+/* The small Global / India / Both button sits at the top right (not in live mode, where both players see every topic). */
+if(!GTQRegion.live)document.querySelector('.top-actions').prepend(GTQRegion.toggle({onChange:renderPicker}));
 renderPicker();
 $('picker').addEventListener('click',e=>{const b=e.target.closest('[data-topic]');if(!b)return;if(LIVE){chooseRoomTopic(BY_ID.get(b.dataset.topic));return}start(BY_ID.get(b.dataset.topic))});
 $('randomBtn').addEventListener('click',()=>{const l=shown();start(l[Math.floor(Math.random()*l.length)])});

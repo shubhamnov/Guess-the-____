@@ -3,6 +3,7 @@ const { defineConfig } = require('@playwright/test');
 // With BASE_URL set (as in the post-deploy workflow) the tests run against the published site.
 // Without it they run against a local static server, so pull requests are checked before merging.
 const publishedURL = process.env.BASE_URL;
+const baseURL = publishedURL || 'http://localhost:4173/';
 
 module.exports = defineConfig({
   testDir: './tests',
@@ -13,7 +14,10 @@ module.exports = defineConfig({
   workers: process.env.CI ? 4 : '100%',
   reporter: [['list'], ['html', { outputFolder: 'playwright-report', open: 'never' }]],
   use: {
-    baseURL: publishedURL || 'http://localhost:4173/',
+    baseURL,
+    // A returning visitor: the Global / India / Both choice is already saved, so the first-visit question does not
+    // cover the page. tests/region.spec.js clears it to check that question.
+    storageState: { cookies: [], origins: [{ origin: new URL(baseURL).origin, localStorage: [{ name: 'gtq:region', value: 'both' }] }] },
     headless: true,
     screenshot: 'only-on-failure',
     trace: 'retain-on-failure'
