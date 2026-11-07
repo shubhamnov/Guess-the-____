@@ -12,6 +12,7 @@ test.describe('first visit', () => {
     await welcome.locator('button[data-region="global"]').click();
     await expect(welcome).toHaveCount(0);
     await expect(page.locator('.game-card[href="./guess-the-bollywood/"]')).toBeHidden();
+    await page.goto('settings/');
     await expect(page.locator('#regionHost [aria-pressed="true"]')).toHaveText(/Global/);
     await page.goto('guess-the-sports/');
     await expect(page.locator('dialog.region-welcome')).toHaveCount(0);
@@ -37,17 +38,23 @@ test.describe('first visit', () => {
   });
 });
 
-test('home Settings and the top-right button change the same setting', async ({ page }) => {
-  await page.goto('./');
-  const bolly = page.locator('.game-card[href="./guess-the-bollywood/"]');
-  await expect(bolly).toBeVisible();
+test('the Settings page and the top-right button change the same setting', async ({ page }) => {
+  await page.goto('settings/');
   await page.locator('#regionHost button[data-region="global"]').click();
-  await expect(bolly).toBeHidden();
+  await expect(page.locator('#regionHelp')).toContainText('Bollywood is hidden');
   await expect(page.locator('.region-btn')).toHaveAttribute('aria-label', /Global/);
+  await page.locator('.back').click();
+  const bolly = page.locator('.game-card[href="./guess-the-bollywood/"]');
+  await expect(bolly).toBeHidden();
+  await expect(page.locator('#settingsSummary')).toHaveText('Questions: Global · Sound on');
   await page.locator('.region-btn').click();
   await page.locator('.region-menu [data-region="both"]').click();
   await expect(bolly).toBeVisible();
+  await page.goto('settings/');
   await expect(page.locator('#regionHost [aria-pressed="true"]')).toHaveText('Both');
+  await page.locator('#soundSetting').click();
+  await expect(page.locator('#soundSetting')).toHaveText('Off');
+  expect(await page.evaluate(() => localStorage.getItem('gtq_sound'))).toBe('off');
 });
 
 for (const [path, region, check] of [

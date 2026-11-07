@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f8f7f2">
+<meta name="description" content="Settings for Guess the ____: Indian, international or both kinds of questions, and sound.">
+<title>Settings — Guess the ____</title>
+<link rel="stylesheet" href="../shared/site.css">
+</head>
+<body>
+<main class="shell">
+  <header class="top">
+    <a class="brand" href="../">GUESS THE <span>?</span></a>
+    <div class="top-actions" id="topActions"><a class="pill" href="../how-to-play/">How to play</a></div>
+  </header>
+  <section class="page">
+    <a class="back" href="../"><span aria-hidden="true">←</span> All games</a>
+    <div class="eyebrow">Settings</div>
+    <h1>Make it <em>yours</em></h1>
+    <p class="lead">Settings are saved on this device and apply to every game.</p>
+    <div class="setting"><div><b>Questions from</b><small id="regionHelp"></small></div><div id="regionHost"></div></div>
+    <div class="setting"><div><b>Sound</b><small>Music and answer sounds in every game.</small></div><button class="switch" id="soundSetting" type="button" role="switch"></button></div>
+    <p class="micro-note">The 🌐 button at the top right of every page changes the questions too.</p>
+    <a class="cta" href="../">Pick a game <span aria-hidden="true">→</span></a>
+  </section>
+  <footer class="footer"><span>GUESS THE ? · <a href="../">All games</a> · <a href="../how-to-play/">How to play</a> · <a href="../about/">About</a></span><a class="creator-credit" href="https://shubhamnov.github.io/shubham-portfolio/" target="_blank" rel="noopener noreferrer">MADE BY SHUBHAM JOSHI ↗</a></footer>
+</main>
+<script src="../shared/region.js"></script>
+<script>
+(function(){
+ /* Global / India / Both for the whole site (shared/region.js). */
+ const help={global:'International questions in Series, Web Series, Sports, World Politics, Name Them All and the Daily Mix. Bollywood is hidden.',
+  india:'Indian questions in Series, Web Series, Sports, World Politics, Name Them All and the Daily Mix.',
+  both:'Everything. Series, Web Series, Sports, World Politics, Name Them All and the Daily Mix follow this.'};
+ const apply=r=>{document.getElementById('regionHelp').textContent=help[r]};
+ GTQRegion.onChange(apply);
+ document.getElementById('regionHost').appendChild(GTQRegion.picker());
+ document.getElementById('topActions').appendChild(GTQRegion.toggle());
+ apply(GTQRegion.get());
+ /* Sound: the same setting the games use (localStorage "gtq_sound"). */
+ const btn=document.getElementById('soundSetting'),KEY='gtq_sound';
+ const get=()=>{try{return localStorage.getItem(KEY)!=='off'}catch(e){return true}};
+ const show=()=>{const on=get();btn.setAttribute('aria-checked',String(on));btn.textContent=on?'On':'Off';btn.setAttribute('aria-label','Sound '+(on?'on':'off'))};
+ btn.addEventListener('click',()=>{try{localStorage.setItem(KEY,get()?'off':'on')}catch(e){}show()});
+ show();
+})();
+</script>
+</body>
+</html>

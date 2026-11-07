@@ -47,18 +47,15 @@
 @media(max-width:520px){.daily-strip small{display:none}.join label{font-size:11px}}
 .top-actions{display:flex;align-items:center;gap:8px;min-width:0}a.pill{text-decoration:none}a.pill:hover{border-color:var(--ink);color:var(--ink)}
 .info{margin-top:44px;padding-top:30px;border-top:1px solid var(--line);scroll-margin-top:16px}.info h2{font-family:var(--display);font-size:clamp(25px,5vw,36px);letter-spacing:-.05em;line-height:1.02;margin:9px 0 18px;font-weight:1000}
-.setting{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,300px);gap:10px 18px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:14px;margin-bottom:10px}.setting b{display:block;font-size:15px;margin-bottom:3px}
-.switch{justify-self:end;min-width:76px;border:1px solid var(--line);border-radius:999px;padding:10px 16px;font:inherit;font-size:13px;font-weight:900;background:#efeee8;color:var(--muted);cursor:pointer}.switch[aria-checked="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
-.micro-note{font-size:11px;color:var(--muted);margin:6px 2px 0;line-height:1.5}
 .footer a{color:inherit}
-.intro-links{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+.intro-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:18px}
 .intro-link{display:flex;align-items:center;gap:12px;min-width:0;padding:12px;background:var(--paper);border:1.5px solid var(--ink);border-radius:18px;text-decoration:none;box-shadow:3px 3px 0 var(--ink);transition:transform .15s,box-shadow .15s}
 .intro-link:hover{transform:translateY(-2px);box-shadow:4px 5px 0 var(--ink)}
 .intro-link .ico{flex:none;width:40px;height:40px;border-radius:12px;background:var(--lime);border:1.5px solid var(--ink);display:grid;place-items:center;font-size:20px}
 .intro-link>span:nth-child(2){min-width:0;flex:1}.intro-link b{display:block;font-family:var(--display);font-size:17px;letter-spacing:-.03em}.intro-link small{display:block;font-size:11px;color:var(--muted);margin-top:2px}
 .intro-link .arrow{width:30px;height:30px;font-size:15px}
-@media(max-width:600px){.setting{grid-template-columns:1fr}.switch{justify-self:start}}
-@media(max-width:560px){.intro-links{grid-template-columns:1fr;gap:8px}.intro-link{padding:10px}.intro-link .ico{width:34px;height:34px;font-size:17px}.main{padding-top:34px}}
+@media(max-width:720px){.intro-link small,.intro-link .arrow{display:none}.intro-link{padding:10px}.intro-link b{font-size:15px}}
+@media(max-width:560px){.intro-links{gap:8px}.intro-link{flex-direction:column;gap:6px;text-align:center;padding:10px 4px;border-radius:16px}.intro-link b{font-size:13px;line-height:1.15}.intro-link .ico{width:34px;height:34px;font-size:17px}.main{padding-top:34px}}
 </style>
 </head>
 <body>
@@ -70,6 +67,7 @@
   <nav class="intro-links" aria-label="About this site">
     <a class="intro-link" href="./how-to-play/"><span class="ico" aria-hidden="true">🎯</span><span><b>How to play</b><small>60 seconds, four choices, +10 / −5</small></span><span class="arrow" aria-hidden="true">→</span></a>
     <a class="intro-link" href="./about/"><span class="ico" aria-hidden="true">👋</span><span><b>About the developer</b><small>Made by Shubham Joshi</small></span><span class="arrow" aria-hidden="true">→</span></a>
+    <a class="intro-link" href="./settings/"><span class="ico" aria-hidden="true">⚙️</span><span><b>Settings</b><small id="settingsSummary">Questions and sound</small></span><span class="arrow" aria-hidden="true">→</span></a>
   </nav>
   <section class="main">
     <div class="hero">
@@ -183,14 +181,7 @@
     </nav>
     <p class="note">Every game works the same way: 60 seconds, +10 points for a right answer, −5 for a wrong one.<br>Each game mixes two or three kinds of question. Your best score shows on each card.</p>
   </section>
-  <section class="info" id="settings" aria-labelledby="settingsTitle">
-    <div class="eyebrow">Settings</div>
-    <h2 id="settingsTitle">Make it yours</h2>
-    <div class="setting"><div><b>Questions from</b><small id="regionHelp"></small></div><div id="regionHost"></div></div>
-    <div class="setting"><div><b>Sound</b><small>Music and answer sounds in every game.</small></div><button class="switch" id="soundSetting" type="button" role="switch"></button></div>
-    <p class="micro-note">Settings are saved on this device. The 🌐 button at the top right of every page changes the questions too.</p>
-  </section>
-  <footer class="footer"><span>GUESS THE ? · <a href="./how-to-play/">How to play</a> · <a href="#settings">Settings</a> · <a href="./about/">About</a></span><a class="creator-credit" href="https://shubhamnov.github.io/shubham-portfolio/" target="_blank" rel="noopener noreferrer">MADE BY SHUBHAM JOSHI ↗</a></footer>
+  <footer class="footer"><span>GUESS THE ? · <a href="./how-to-play/">How to play</a> · <a href="./settings/">Settings</a> · <a href="./about/">About</a></span><a class="creator-credit" href="https://shubhamnov.github.io/shubham-portfolio/" target="_blank" rel="noopener noreferrer">MADE BY SHUBHAM JOSHI ↗</a></footer>
 </main>
 <dialog class="mode-sheet" id="modeSheet" aria-labelledby="sheetTitle">
   <div class="sheet-box">
@@ -204,22 +195,17 @@
 <script src="./shared/region.js"></script>
 <script>
 (function(){
- /* Global / India / Both for the whole site (shared/region.js). India-only games (data-region="india") are hidden in Global. */
- const help={global:'International questions in Series, Web Series, Sports, World Politics, Name Them All and the Daily Mix. Bollywood is hidden.',
-  india:'Indian questions in Series, Web Series, Sports, World Politics, Name Them All and the Daily Mix.',
-  both:'Everything. Series, Web Series, Sports, World Politics, Name Them All and the Daily Mix follow this.'};
- function apply(r){document.getElementById('regionHelp').textContent=help[r];
-  document.querySelectorAll('.game-card[data-region]').forEach(c=>{c.hidden=!GTQRegion.keep(c.dataset.region,r)})}
+ /* Global / India / Both for the whole site (shared/region.js). India-only games (data-region="india") are hidden in Global.
+    Settings (region and sound) live on their own page, settings/. */
+ function apply(r){
+  document.querySelectorAll('.game-card[data-region]').forEach(c=>{c.hidden=!GTQRegion.keep(c.dataset.region,r)});
+  let sound=true;try{sound=localStorage.getItem('gtq_sound')!=='off'}catch(e){}
+  document.getElementById('settingsSummary').textContent='Questions: '+GTQRegion.NAME[r]+' · Sound '+(sound?'on':'off')}
  GTQRegion.onChange(apply);
- document.getElementById('regionHost').appendChild(GTQRegion.picker());
  document.getElementById('topActions').appendChild(GTQRegion.toggle());
  apply(GTQRegion.get());
- /* Sound: the same setting the games use (localStorage "gtq_sound"). */
- const btn=document.getElementById('soundSetting'),KEY='gtq_sound';
- const get=()=>{try{return localStorage.getItem(KEY)!=='off'}catch(e){return true}};
- const show=()=>{const on=get();btn.setAttribute('aria-checked',String(on));btn.textContent=on?'On':'Off';btn.setAttribute('aria-label','Sound '+(on?'on':'off'))};
- btn.addEventListener('click',()=>{try{localStorage.setItem(KEY,get()?'off':'on')}catch(e){}show()});
- show();
+ /* Coming back from Settings with the back button shows the page from cache: refresh what the settings change. */
+ window.addEventListener('pageshow',e=>{if(e.persisted)location.reload()});
 })();
 </script>
 <script src="./brand-logos-preview.js"></script>

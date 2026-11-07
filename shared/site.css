@@ -50,3 +50,9 @@ h2.sub{font-family:var(--display);font-size:clamp(22px,4.5vw,30px);letter-spacin
 @media(max-width:600px){.how-grid,.more{grid-template-columns:1fr}.about{grid-template-columns:1fr}.avatar{width:56px;height:56px;font-size:22px}.shell{padding-top:19px}.brand{font-size:19px}.pill{font-size:9px;padding:7px 8px}.footer{flex-direction:column}}
 @media(max-width:360px){.score-row{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+.setting{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,300px);gap:10px 18px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:14px;margin-bottom:10px}
+.setting b{display:block;font-size:15px;margin-bottom:3px}.setting small{font-size:13px;line-height:1.55;color:var(--muted)}
+.switch{justify-self:end;min-width:76px;border:1px solid var(--line);border-radius:999px;padding:10px 16px;font:inherit;font-size:13px;font-weight:900;background:#efeee8;color:var(--muted);cursor:pointer}
+.switch[aria-checked="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}.switch:focus-visible{outline:3px solid #7871e8;outline-offset:2px}
+.micro-note{font-size:11px;color:var(--muted);margin:6px 2px 0;line-height:1.5}
+@media(max-width:600px){.setting{grid-template-columns:1fr}.switch{justify-self:start}}
