@@ -299,8 +299,8 @@ function run(cfg){
  }
  function answer(btn,opt){
   if(!S.running||S.locked)return;S.locked=true;S.answered++;
-  const q=S.q,right=opt===q.answer,fmt=q.formatOption||cfg.formatOption;
-  Array.from($('answers').children).forEach(b=>{b.disabled=true;if(b.dataset.value===q.answer)b.classList.add('correct')});
+  const q=S.q,right=String(opt)===String(q.answer),fmt=q.formatOption||cfg.formatOption;
+  Array.from($('answers').children).forEach(b=>{b.disabled=true;if(b.dataset.value===String(q.answer))b.classList.add('correct')});
   const fb=$('feedback');
   if(right){
    S.streak++;S.correct++;S.bestStreak=Math.max(S.bestStreak,S.streak);S.score+=SCORING.correct;
